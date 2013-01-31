@@ -1,0 +1,5 @@
+screen v -S Business.vim
+screen
+stuff "svn st^M"
+screen
+screen ghci -i/home/drbean/class/csfp/:/home/drbean/class/business/:/home/drbean/class/husiness/stress/adventure/

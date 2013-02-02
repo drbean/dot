@@ -36,7 +36,7 @@ alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
 alias intercultural="cd ~/class/intercultural; screen -dR intercultural; cd -"
 
 alias dot="cd ~/dot; screen -c /home/drbean/.screen/dotrc -dR dot; cd -"
-alias weechat="cd ~; screen -c /home/drbean/.screen/weechat -dR weechat; cd -"
+alias weechat="cd ~; screen -c /home/drbean/.screen/weechatrc -dR weechat; cd -"
 
 alias 001="cd ~/001; screen -dR s001; cd -"
 alias FLA0015="cd ~/001/FLA0015; screen -dR FLA0015; cd -"

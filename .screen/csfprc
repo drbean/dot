@@ -1,5 +1,5 @@
 screen v -S Csfp.vim
 screen
-stuff "svn st^M"
+stuff "svn st^Msvn log Evaluation.hs -r BASE:HEAD^M"
 screen
 screen ghci

@@ -19,13 +19,13 @@ alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
 alias vim="cd ~/vim; screen -dR vim; cd -"
 
-alias csfp="cd ~/class/csfp; screen -c /home/drbean/.screen/csfprc -dR csfp; cd -"
+alias csfp="cd ~/class/localcsfp; screen -c /home/drbean/.screen/csfprc -dR csfp; cd -"
 
 alias pagestranscripts="cd ~/class/pagestranscripts; screen -dR pagestranscripts; cd -"
 alias soundfiles="cd ~/soundfiles; screen -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"
-alias business="cd ~/class/business; screen -c /home/drbean/.screen/businessrc -dR business; cd -"
+alias business="cd ~/class/localbusiness; screen -c /home/drbean/.screen/businessrc -dR business; cd -"
 alias conversation="cd ~/class/conversation; screen -dR conversation; cd -"
 alias media="cd ~/class/curriculum/media; screen -dR media; cd -"
 alias writing="cd ~/class/curriculum/writingreading; screen -dR writing; cd -"
@@ -34,11 +34,14 @@ alias reading="cd ~/class/curriculum/reading; screen -dR reading; cd -"
 alias friends="cd ~/class/friends; screen -dR friends; cd -"
 alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
 alias intercultural="cd ~/class/intercultural; screen -dR intercultural; cd -"
+alias literature="cd ~/class/literature; screen -dR literature; cd -"
 
 alias dot="cd ~/dot; screen -c /home/drbean/.screen/dotrc -dR dot; cd -"
 alias weechat="cd ~; screen -c /home/drbean/.screen/weechatrc -dR weechat; cd -"
 
-alias 001="cd ~/001; screen -dR s001; cd -"
+alias 012="cd ~/012; screen -dR s012; cd -"
+alias AFN231="cd ~/012/AFN231; screen -dR AFN231; cd -"
+
 alias FLA0015="cd ~/001/FLA0015; screen -dR FLA0015; cd -"
 alias FLA0019="cd ~/001/FLA0019; screen -dR FLA0019; cd -"
 alias FLA0023="cd ~/001/FLA0023; screen -dR FLA0023; cd -"

@@ -19,13 +19,13 @@ alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
 alias vim="cd ~/vim; screen -dR vim; cd -"
 
-alias csfp="cd ~/class/localcsfp; screen -c /home/drbean/.screen/csfprc -dR csfp; cd -"
+alias csfp="cd ~/class/csfp; screen -c /home/drbean/.screen/csfprc -dR csfp; cd -"
 
 alias pagestranscripts="cd ~/class/pagestranscripts; screen -dR pagestranscripts; cd -"
 alias soundfiles="cd ~/soundfiles; screen -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"
-alias business="cd ~/class/localbusiness; screen -c /home/drbean/.screen/businessrc -dR business; cd -"
+alias business="cd ~/class/business; screen -c /home/drbean/.screen/businessrc -dR business; cd -"
 alias conversation="cd ~/class/conversation; screen -dR conversation; cd -"
 alias media="cd ~/class/curriculum/media; screen -dR media; cd -"
 alias writing="cd ~/class/curriculum/writingreading; screen -dR writing; cd -"

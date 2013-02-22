@@ -1,3 +1,3 @@
 screen v -S Dot.vim
 screen
-stuff "svn st^M"
+stuff "svk st^M"

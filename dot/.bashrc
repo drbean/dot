@@ -56,9 +56,6 @@ alias AFN231="cd ~/012/AFN231; screen -dR AFN231; cd -"
 alias GL00003="cd ~/001/GL00003; screen -dR GL00003; cd -"
 alias GL00016="cd ~/001/GL00016; screen -dR GL00016; cd -"
 
-alias BMA0031="cd ~/001/BMA0031; screen -dR BMA0031; cd -"
-alias MIA0015="cd ~/001/MIA0015; screen -dR MIA0015; cd -"
-alias FIA0012="cd ~/001/FIA0012; screen -dR FIA0012; cd -"
 alias contest="cd ~/001/contest; screen -dR contest; cd -"
 
 alias job="cd ~/job; screen -dR job; cd -"

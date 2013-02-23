@@ -53,11 +53,6 @@ alias 00034522="cd ~/012/00034522; screen -dR 00034522; cd -"
 alias 00034519="cd ~/012/00034519; screen -dR 00034519; cd -"
 alias AFN231="cd ~/012/AFN231; screen -dR AFN231; cd -"
 
-alias FLA0015="cd ~/001/FLA0015; screen -dR FLA0015; cd -"
-alias FLA0019="cd ~/001/FLA0019; screen -dR FLA0019; cd -"
-alias FLA0023="cd ~/001/FLA0023; screen -dR FLA0023; cd -"
-alias FLA0028="cd ~/001/FLA0028; screen -dR FLA0028; cd -"
-
 alias GL00003="cd ~/001/GL00003; screen -dR GL00003; cd -"
 alias GL00016="cd ~/001/GL00016; screen -dR GL00016; cd -"
 

@@ -49,7 +49,7 @@ alias BMA0041="cd ~/012/BMA0041; screen -dR BMA0041; cd -"
 alias MIA0009="cd ~/012/MIA0009; screen -dR MIA0009; cd -"
 alias FIA0046="cd ~/012/FIA0046; screen -dR FIA0046; cd -"
 alias FLA0037="cd ~/012/FLA0037; screen -dR FLA0037; cd -"
-alias 00034522="cd ~/012/00034522; screen -dR 00034522; cd -"
+alias 00037155="cd ~/012/00037155; screen -dR 00037155; cd -"
 alias 00034519="cd ~/012/00034519; screen -dR 00034519; cd -"
 alias AFN231="cd ~/012/AFN231; screen -dR AFN231; cd -"
 

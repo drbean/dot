@@ -50,7 +50,7 @@ alias MIA0009="cd ~/012/MIA0009; screen -dR MIA0009; cd -"
 alias FIA0046="cd ~/012/FIA0046; screen -dR FIA0046; cd -"
 alias FLA0037="cd ~/012/FLA0037; screen -dR FLA0037; cd -"
 alias 00037155="cd ~/012/00037155; screen -dR 00037155; cd -"
-alias 00034519="cd ~/012/00034519; screen -dR 00034519; cd -"
+alias 00037589="cd ~/012/00037589; screen -dR 00037589; cd -"
 alias AFN231="cd ~/012/AFN231; screen -dR AFN231; cd -"
 
 alias GL00003="cd ~/001/GL00003; screen -dR GL00003; cd -"

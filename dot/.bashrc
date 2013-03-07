@@ -45,7 +45,7 @@ alias literature="cd ~/class/literature; screen -dR literature; cd -"
 
 alias 012="cd ~/012; screen -dR s012; cd -"
 alias BMA0035="cd ~/012/BMA0035; screen -dR BMA0035; cd -"
-alias BMA0041="cd ~/012/BMA0041; screen -dR BMA0041; cd -"
+alias BMA0041="cd ~/012/BMA0041; screen -c /home/drbean/dot/.screen/BMA0041.rc -dR BMA0041; cd -"
 alias MIA0009="cd ~/012/MIA0009; screen -dR MIA0009; cd -"
 alias FIA0046="cd ~/012/FIA0046; screen -dR FIA0046; cd -"
 alias FLA0037="cd ~/012/FLA0037; screen -dR FLA0037; cd -"

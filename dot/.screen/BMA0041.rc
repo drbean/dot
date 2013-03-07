@@ -1,0 +1,5 @@
+screen v -S BMA0041.vim
+screen
+stuff "svk st -q^Msvk log -r BASE:HEAD"
+screen re.pl --rcfile ../rc/g.rc
+stuff '$g->grades'

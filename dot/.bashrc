@@ -14,7 +14,7 @@ alias beans="cd ~/class/beans; screen -dR beans; cd -"
 alias swiss="cd ~/swiss; screen -dR swiss; cd -"
 alias comp="cd ~/comp; screen -dR comp; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
-alias bett="cd ~/bett; screen -dR bett; cd -"
+alias bett="cd ~/bett; screen -c /home/drbean/dot/.screen/project.rc -dR bett; cd -"
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
 alias vim="cd ~/vim; screen -dR vim; cd -"

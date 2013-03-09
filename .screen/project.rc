@@ -1,5 +1,5 @@
 screen v -S Session.vim
 screen
 stuff "svk st -q^Msvk log -r BASE:HEAD"
-screen re.pl --rcfile ../rc/g.rc
-stuff '$g->grades'
+screen 4
+stuff "sudo su - postgres^M"

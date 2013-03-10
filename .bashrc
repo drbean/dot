@@ -29,7 +29,7 @@ alias pagestranscripts="cd ~/class/pagestranscripts; screen -dR pagestranscripts
 alias soundfiles="cd ~/soundfiles; screen -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"
-alias business="cd ~/class/business; COURSE=business STORY=stress screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
+alias business="cd ~/class/business; AREA=business TOPIC=stress screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
 alias conversation="cd ~/class/conversation; screen -dR conversation; cd -"
 alias grammar="cd ~/class/curriculum/grammar; screen -dR grammar; cd -"
 alias media="cd ~/class/curriculum/media; screen -dR media; cd -"
@@ -40,7 +40,7 @@ alias friends="cd ~/class/friends; screen -dR friends; cd -"
 alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
 alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
 alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
-alias intercultural="cd ~/class/intercultural; COURSE=intercultural screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
+alias intercultural="cd ~/class/intercultural; AREA=intercultural TOPIC=intercultural screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; screen -dR literature; cd -"
 
 alias 012="cd ~/012; screen -dR s012; cd -"

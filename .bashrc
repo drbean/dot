@@ -59,3 +59,5 @@ alias GL00016="cd ~/001/GL00016; screen -dR GL00016; cd -"
 alias contest="cd ~/001/contest; screen -dR contest; cd -"
 
 alias job="cd ~/job; screen -dR job; cd -"
+
+alias q=exit

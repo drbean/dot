@@ -29,7 +29,7 @@ alias pagestranscripts="cd ~/class/pagestranscripts; screen -dR pagestranscripts
 alias soundfiles="cd ~/soundfiles; screen -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"
-alias business="cd ~/class/business; screen -c /home/drbean/.screen/businessrc -dR business; cd -"
+alias business="cd ~/class/business; COURSE=business STORY=stress screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
 alias conversation="cd ~/class/conversation; screen -dR conversation; cd -"
 alias grammar="cd ~/class/curriculum/grammar; screen -dR grammar; cd -"
 alias media="cd ~/class/curriculum/media; screen -dR media; cd -"

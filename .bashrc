@@ -30,7 +30,7 @@ alias soundfiles="cd ~/soundfiles; screen -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"
 alias business="cd ~/class/business; VIEW=stress TOPIC=stress screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
-alias intercultural="cd ~/class/intercultural; AREA=intercultural TOPIC=intercultural screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
+alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; screen -dR literature; cd -"
 alias media="cd ~/class/curriculum/media; screen -dR media; cd -"
 alias conversation="cd ~/class/conversation; screen -dR conversation; cd -"

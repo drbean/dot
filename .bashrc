@@ -40,7 +40,7 @@ alias friends="cd ~/class/friends; screen -dR friends; cd -"
 alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
 alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
 alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
-alias intercultural="cd ~/class/intercultural; screen -dR intercultural; cd -"
+alias intercultural="cd ~/class/intercultural; COURSE=intercultural screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; screen -dR literature; cd -"
 
 alias 012="cd ~/012; screen -dR s012; cd -"

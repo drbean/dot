@@ -1,5 +1,7 @@
 screen v -S Session.vim
 screen
-stuff "svk st -q^Msvk log -r BASE:HEAD"
+stuff "svk st -q^Msvk log -vr BASE:HEAD"
 screen 4
 stuff "sudo su - postgres^M"
+screen 7
+stuff "cd /var/www/cgi-bin/$APP^M"

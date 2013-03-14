@@ -1,0 +1,4 @@
+screen 1
+stuff "ls $COURSE^M"
+screen 2 lftp web.nuu.edu.tw
+stuff "lcd $COURSE && cd public_html/$COURSE^Mls"

@@ -25,7 +25,7 @@ alias weechat="cd ~; screen -c /home/drbean/.screen/weechatrc -dR weechat; cd -"
 alias csfp="cd ~/class/csfp; screen -c /home/drbean/.screen/csfprc -dR csfp; cd -"
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
-alias pagestranscripts="cd ~/class/pagestranscripts; COURSE=literature STORY=swiss screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; cd -"
+alias pagestranscripts="cd ~/class/pagestranscripts; COURSE=literature STORY=frankenstein screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; cd -"
 alias soundfiles="cd ~/soundfiles; COURSE=intercultural screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"

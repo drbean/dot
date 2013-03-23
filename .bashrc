@@ -12,15 +12,15 @@ alias surf="cd ~/sr; screen -dR surfraw; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
-alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
+alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
 alias dic="cd ~/dic; APP=dic COURSE=literature STORY=swiss screen -c /home/drbean/dot/.screen/project.rc -dR dic; cd -"
 alias bett="cd ~/bett; APP=bett screen -c /home/drbean/dot/.screen/project.rc -dR bett; cd -"
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
 alias vim="cd ~/vim; screen -dR vim; cd -"
 
-alias dot="cd ~/dot; screen -c /home/drbean/.screen/dotrc -dR dot; cd -"
-alias weechat="cd ~; screen -c /home/drbean/.screen/weechatrc -dR weechat; cd -"
+alias dot="cd ~/dot; screen -c /home/drbean/dot/.screen/dotrc -dR dot; cd -"
+alias weechat="cd ~; screen -c /home/drbean/dot/.screen/weechatrc -dR weechat; cd -"
 
 alias csfp="cd ~/class/csfp; screen -c /home/drbean/.screen/csfprc -dR csfp; cd -"
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"

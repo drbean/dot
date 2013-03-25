@@ -1,1 +1,2 @@
 screen weechat-curses -r /iset
+screen weechat-curses --dir ~/.weechat-hybrid/

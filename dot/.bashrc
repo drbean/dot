@@ -7,7 +7,7 @@ fi
 
 # User specific aliases and functions
 
-alias web="cd; screen -dR web; cd -"
+alias web="cd; screen -c /home/drbean/dot/.screen/web.rc -dR web; cd -"
 alias surf="cd ~/sr; screen -dR surfraw; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.screen/project.rc -dR beans; cd -"
@@ -29,7 +29,7 @@ alias pagestranscripts="cd ~/class/pagestranscripts; COURSE=literature STORY=fra
 alias soundfiles="cd ~/soundfiles; COURSE=intercultural screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"
-alias business="cd ~/class/business; VIEW=marketing TOPIC=marketing STORY=uniqlo FORM=3 screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
+alias business="cd ~/class/business; VIEW=marketing TOPIC=marketing STORY=drbean FORM=3 screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
 alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/drbean/dot/.screen/course.rc -dR literature; cd -"
 alias media="cd ~/class/media; VIEW=media TOPIC= STORY=hacking FORM=0 screen -c /home/drbean/dot/.screen/course.rc -dR media; cd -"

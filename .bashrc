@@ -22,7 +22,7 @@ alias vim="cd ~/vim; screen -dR vim; cd -"
 alias dot="cd ~/dot; screen -c /home/drbean/dot/.screen/dotrc -dR dot; cd -"
 alias weechat="cd ~; screen -c /home/drbean/dot/.screen/weechatrc -dR weechat; cd -"
 
-alias csfp="cd ~/class/csfp; screen -c /home/drbean/.screen/csfprc -dR csfp; cd -"
+alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp; cd -"
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
 alias pagestranscripts="cd ~/class/pagestranscripts; COURSE=literature STORY=frankenstein screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; cd -"

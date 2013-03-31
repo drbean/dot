@@ -1,5 +1,5 @@
-screen v -S Csfp.vim
+screen v -S Session.vim
 screen
-stuff "svn st^Msvn log Evaluation.hs -r BASE:HEAD^M"
+stuff "svk st^Msvk log -vr BASE:HEAD^M"
 screen
-screen ghci
+screen ghci -i./:../business/:../business/marketing/:../business/marketing/drbean/

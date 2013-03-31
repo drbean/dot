@@ -5,3 +5,5 @@ stuff "cd ./$TOPIC && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_h
 stuff "perl ../cclass/cards.pl ./$TOPIC && xelatex quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf"
 screen lftp greg@web.nuu.edu.tw
 stuff "cd /public_html/$VIEW^Mls"
+screen ghci -i../csfp/:./:./$TOPIC/$STORY/
+stuff ":load Tests^M":

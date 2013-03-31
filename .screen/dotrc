@@ -1,3 +1,3 @@
 screen v -S Dot.vim
 screen
-stuff "svk st^M"
+stuff "svk st -q^Msvk log -vr BASE:HEAD"

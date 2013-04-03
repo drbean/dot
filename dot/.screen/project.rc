@@ -1,8 +1,6 @@
 screen v -S Session.vim
 screen
 stuff "svk st -q^Msvk log -vr BASE:HEAD^M"
-stuff "perl script_files/loadYAMLid.pl ~/class/$COURSE/dic.yaml $STORY^M"
-stuff "perl script_files/$SCRIPT Ctest $STORY"
 screen 4 sudo su - postgres
 stuff "psql ${APP}012^M"
 screen 7

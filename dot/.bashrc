@@ -13,7 +13,16 @@ alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
 alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
-alias dic="cd ~/dic; APP=dic COURSE=intercultural STORY=frank3 SCRIPT=\"create_exercise.pl Ctest\" screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
+
+alias dic="cd ~/dic; \
+APP=dic \
+COURSE=media \
+STORY=wallace-oreilly \
+OLD_STORY=oreilly-stern \
+LEAGUE=FLA0037 \
+SCRIPT=\"create_exercise.pl Ctest\" \
+screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
+
 alias bett="cd ~/bett; APP=bett screen -c /home/drbean/dot/.screen/project.rc -dR bett; cd -"
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
@@ -25,7 +34,7 @@ alias weechat="cd ~; screen -c /home/drbean/dot/.screen/weechatrc -dR weechat; c
 alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp; cd -"
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
-alias pagestranscripts="cd ~/class/pagestranscripts; COURSE=intercultural STORY=frank3 screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; cd -"
+alias pagestranscripts="cd ~/class/pagestranscripts; COURSE=media STORY=wallace-oreilly screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; cd -"
 alias soundfiles="cd ~/soundfiles; COURSE=literature screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"

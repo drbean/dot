@@ -29,7 +29,7 @@ alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 alias vim="cd ~/vim; screen -dR vim; cd -"
 
 alias dot="cd ~/dot; screen -c /home/drbean/dot/.screen/dotrc -dR dot; cd -"
-alias weechat="cd ~; screen -c /home/drbean/dot/.screen/weechatrc -dR weechat; cd -"
+alias irc="cd ~/znc; screen -c /home/drbean/dot/.screen/irc.rc -dR irc; cd -"
 
 alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp; cd -"
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"

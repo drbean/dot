@@ -1,4 +1,4 @@
-screen v -S Dot.vim
+screen v -S Session.vim
 screen
 stuff "svk st -q^Msvk log -vr BASE:HEAD^M"
 stuff "cp .bashrc ~/.bashrc"

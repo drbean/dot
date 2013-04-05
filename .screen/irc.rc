@@ -1,2 +1,3 @@
-screen weechat-curses -r /iset
 screen v -S Session.vim
+screen weechat-curses -r /iset
+screen su -c 'v /var/lib/znc/.znc'

@@ -1,0 +1,5 @@
+screen ssh freeshell.org
+screen 4 su -
+screen 5 ssh -X mai@pl625.nas921.nara.nttpc.ne.jp
+screen 9
+stuff "man perlfaq"

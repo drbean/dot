@@ -4,9 +4,11 @@ stuff "svk st -q^Msvk log -vr BASE:HEAD^M"
 stuff "perl script/loadYAMLid.pl ~/class/$COURSE/${APP}.yaml $STORY^M"
 stuff "perl script/$SCRIPT $STORY"
 screen
-stuff "perl script/grade_dic.pl -l $LEAGUE -x $OLD_STORY -o 20 -t 80 > ~/012/$LEAGUE/homework.yaml^M"
-stuff "perl delete_exercise.pl $OLD_STORY"
+stuff "perl script/grade_${APP}.pl -l $LEAGUE -x $OLD_STORY -o 20 -t 80 > ~/012/$LEAGUE/homework.yaml^M"
+stuff "# perl script/delete_exercise.pl $OLD_STORY^M"
 screen 4 sudo su - postgres
 stuff "psql ${APP}012^M"
 screen 7
 stuff "cd /var/www/cgi-bin/$APP^M"
+screen 8
+stuff "links http://sac.nuu.edu.tw/cgi-bin/${APP}/script/${APP}_cgi.pl/login?exercise=$STORY"

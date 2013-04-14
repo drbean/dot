@@ -16,14 +16,22 @@ alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/
 
 alias dic="cd ~/dic; \
 APP=dic \
-COURSE=media \
-STORY=quizkid \
-OLD_STORY=wallace-oreilly \
-LEAGUE=FLA0037 \
+COURSE=literature \
+STORY=swiss-frank-twist \
+OLD_STORY=twist \
+LEAGUE=AFN231 \
 SCRIPT=\"create_exercise.pl Ctest\" \
 screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
 
-alias bett="cd ~/bett; APP=bett screen -c /home/drbean/dot/.screen/project.rc -dR bett; cd -"
+alias bett="cd ~/bett; \
+APP=bett \
+COURSE=business \
+STORY=shoes \
+OLD_STORY=drbean \
+LEAGUE=BMA0041 \
+SCRIPT= \
+screen -c /home/drbean/dot/.screen/app.rc -dR bett; cd -"
+
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
 alias vim="cd ~/vim; screen -dR vim; cd -"
@@ -35,8 +43,8 @@ alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp;
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
 alias pagestranscripts="cd ~/class/pagestranscripts; \
-COURSE=media \
-STORY=quizkid \
+COURSE=literature \
+STORY=swissfranktwist \
 screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; \
 cd -"
 

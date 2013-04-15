@@ -16,10 +16,10 @@ alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/
 
 alias dic="cd ~/dic; \
 APP=dic \
-COURSE=literature \
-STORY=swiss-frank-twist \
-OLD_STORY=twist \
-LEAGUE=AFN231 \
+COURSE=intercultural \
+STORY=frank3 \
+OLD_STORY=frank3 \
+LEAGUE=00037589 \
 SCRIPT=\"create_exercise.pl Ctest\" \
 screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
 
@@ -58,6 +58,14 @@ TOPIC=marketing \
 STORY=sale \
 FORM=milk \
 screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
+
+alias exam="COURSE=media cd ~/class/$COURSE;
+CLASS=AFN231 \
+VIEW=media \
+TOPIC=media \
+STORY=swiss \
+FORM=0 \
+screen -c /home/drbean/dot/.screen/exam.rc -dR $COURSE; cd -"
 
 alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/drbean/dot/.screen/course.rc -dR literature; cd -"

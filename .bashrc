@@ -59,13 +59,15 @@ STORY=sale \
 FORM=milk \
 screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
 
-alias exam="COURSE=media cd ~/class/$COURSE;
-CLASS=AFN231 \
-VIEW=media \
-TOPIC=media \
-STORY=swiss \
-FORM=0 \
-screen -c /home/drbean/dot/.screen/exam.rc -dR $COURSE; cd -"
+function exam_prep () {
+	cd ~/class/$1;
+	CLASS=AFN231 \
+	VIEW=literature \
+	TOPIC= \
+	STORY=twist \
+	FORM=1 \
+	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR $1; cd -
+}
 
 alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/drbean/dot/.screen/course.rc -dR literature; cd -"

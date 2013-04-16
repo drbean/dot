@@ -4,5 +4,3 @@ stuff "svk st -q^M svk log -vr BASE:HEAD^M"
 stuff "perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf"
 screen
 stuff "perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf"
-screen
-stuff "cd ~/012/$CLASS^M create_round.pl -l $CLASS -r 2 -x tiger > comp/2/round.yaml"

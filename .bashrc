@@ -16,10 +16,10 @@ alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/
 
 alias dic="cd ~/dic; \
 APP=dic \
-COURSE=intercultural \
-STORY=frank3 \
-OLD_STORY=frank3 \
-LEAGUE=00037589 \
+COURSE=media \
+STORY=wallace \
+OLD_STORY=quiz \
+LEAGUE=00037155 \
 SCRIPT=\"create_exercise.pl Ctest\" \
 screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
 
@@ -64,14 +64,21 @@ function exam_prep () {
 	CLASS=AFN231 \
 	VIEW=literature \
 	TOPIC= \
-	STORY=twist \
+	STORY=swiss \
 	FORM=1 \
 	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR $1; cd -
 }
 
 alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/drbean/dot/.screen/course.rc -dR literature; cd -"
-alias media="cd ~/class/media; VIEW=media TOPIC= STORY=hacking FORM=0 screen -c /home/drbean/dot/.screen/course.rc -dR media; cd -"
+
+alias media="cd ~/class/media;
+VIEW=media \
+TOPIC= \
+STORY=wallace \
+FORM=0 \
+screen -c /home/drbean/dot/.screen/course.rc -dR media; cd -"
+
 alias conversation="cd ~/class/conversation; screen -dR conversation; cd -"
 alias grammar="cd ~/class/curriculum/grammar; screen -dR grammar; cd -"
 alias writing="cd ~/class/curriculum/writingreading; screen -dR writing; cd -"

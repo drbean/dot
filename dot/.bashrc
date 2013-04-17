@@ -18,7 +18,7 @@ alias dic="cd ~/dic; \
 APP=dic \
 COURSE=media \
 STORY=wallace \
-OLD_STORY=quiz \
+OLD_STORY=quizkid \
 LEAGUE=00037155 \
 SCRIPT=\"create_exercise.pl Ctest\" \
 screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
@@ -43,8 +43,8 @@ alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp;
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
 alias pagestranscripts="cd ~/class/pagestranscripts; \
-COURSE=literature \
-STORY=swissfranktwist \
+COURSE=media \
+STORY=wallace \
 screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; \
 cd -"
 
@@ -55,7 +55,7 @@ alias class="cd ~/class; screen -dR class; cd -"
 alias business="cd ~/class/business;
 VIEW=marketing \
 TOPIC=marketing \
-STORY=sale \
+STORY=shoes \
 FORM=milk \
 screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
 

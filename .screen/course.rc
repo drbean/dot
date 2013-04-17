@@ -7,3 +7,5 @@ screen lftp greg@web.nuu.edu.tw
 stuff "cd /public_html/$VIEW^Mls"
 screen ghci -i../csfp/:./:./$TOPIC/$STORY/
 stuff ":load Tests^M":
+screen
+stuff "#ghc -package ghc-7.0.4 -o /var/www/cgi-bin/bett/bin/Questioner_$STORY -i../csfp/:./:./$TOPIC/$STORY/ ../csfp/Questioner.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_$STORY -i../csfp/:./:./$TOPIC/$STORY/ /var/www/cgi-bin/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_$STORY -i../csfp/:./:./$TOPIC/$STORY/ /var/www/cgi-bin/bett/script/Words.hs"

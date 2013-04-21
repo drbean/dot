@@ -18,7 +18,7 @@ alias dic="cd ~/dic; \
 APP=dic \
 COURSE=literature \
 STORY=musketeers \
-OLD_STORY=swissfranktwist \
+OLD_STORY=twist \
 LEAGUE=AFN231 \
 SCRIPT=\"create_exercise.pl Ctest\" \
 screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"

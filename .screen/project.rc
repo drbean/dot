@@ -5,5 +5,5 @@ screen 4 sudo su - postgres
 stuff "psql ${APP}012^M"
 screen 7
 stuff "cd /var/www/cgi-bin/$APP^M"
-screen
+screen 8
 stuff "links http://sac.nuu.edu.tw/cgi-bin/${APP}/script/${APP}_cgi.pl/login?exercise=$STORY"

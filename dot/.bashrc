@@ -16,10 +16,10 @@ alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/
 
 alias dic="cd ~/dic; \
 APP=dic \
-COURSE=literature \
-STORY=musketeers \
-OLD_STORY=twist \
-LEAGUE=AFN231 \
+COURSE=media \
+STORY=espn \
+OLD_STORY=wallace \
+LEAGUE=FLA0037 \
 SCRIPT=\"create_exercise.pl Ctest\" \
 screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
 
@@ -43,8 +43,8 @@ alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp;
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
 alias pagestranscripts="cd ~/class/pagestranscripts; \
-COURSE=literature \
-STORY=musketeers \
+COURSE=media \
+STORY=espn \
 screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; \
 cd -"
 
@@ -62,10 +62,10 @@ screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
 function exam_prep () {
 	cd ~/class/$1;
 	CLASS=BMA0041 \
-	VIEW=business \
-	TOPIC=marketing \
-	STORY=sale \
-	FORM=eggs_1 \
+	VIEW=intercultural \
+	TOPIC= \
+	STORY=paying \
+	FORM=1 \
 	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR $1; cd -
 }
 

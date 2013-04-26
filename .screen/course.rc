@@ -2,10 +2,9 @@ screen v -S Session.vim
 screen
 stuff "svk st -q^M svk log -vr BASE:HEAD^M"
 stuff "cd ./$TOPIC && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && mput html/*.html && qui' && cd -^M"
-stuff "perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf"
-screen lftp greg@web.nuu.edu.tw
-stuff "cd /public_html/$VIEW^Mls"
 screen ghci -i../csfp/:./:./$TOPIC/$STORY/
 stuff ":load Tests^M":
 screen
 stuff "#ghc -package ghc-7.0.4 -o /var/www/cgi-bin/bett/bin/Questioner_$STORY -i../csfp/:./:./$TOPIC/$STORY/ ../csfp/Questioner.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_$STORY -i../csfp/:./:./$TOPIC/$STORY/ /var/www/cgi-bin/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_$STORY -i../csfp/:./:./$TOPIC/$STORY/ /var/www/cgi-bin/bett/script/Words.hs"
+screen lftp greg@web.nuu.edu.tw
+stuff "cd /public_html/$VIEW^Mls"

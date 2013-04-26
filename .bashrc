@@ -62,7 +62,7 @@ screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
 
 function exam_prep () {
 	cd ~/class/$1;
-	CLASS=BMA0041 \
+	COURSE=$1 \
 	VIEW=marketing \
 	TOPIC=marketing \
 	STORY=sale \

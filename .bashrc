@@ -19,8 +19,8 @@ APP=dic \
 COURSE=business \
 TOPIC=planning \
 STORY=palmer \
-OLD_STORY=wallace \
-LEAGUE=BMA0041 \
+OLD_STORY=musketeers \
+LEAGUE=AFN231 \
 SCRIPT=\"create_exercise.pl Ctest\" \
 screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
 
@@ -44,8 +44,8 @@ alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp;
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
 alias pagestranscripts="cd ~/class/pagestranscripts; \
-COURSE=intercultural \
-STORY=monica1 \
+COURSE=business \
+STORY=palmer \
 screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; \
 cd -"
 
@@ -54,10 +54,10 @@ alias soundfiles="cd ~/soundfiles; COURSE=literature screen -c /home/drbean/dot/
 alias class="cd ~/class; screen -dR class; cd -"
 
 alias business="cd ~/class/business;
-VIEW=marketing \
-TOPIC=marketing \
-STORY=sale \
-FORM=eggs_1 \
+VIEW=kendall \
+TOPIC=planning \
+STORY= \
+FORM= \
 screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
 
 function exam_prep () {

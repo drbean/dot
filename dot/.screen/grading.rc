@@ -1,8 +1,9 @@
 screen v -S Session.vim
 screen
-stuff "# teamseat.pl -s $NEXTROUND -n 3^M # teamseat.pl -s $NEXTROUND --latex && xelatex classwork/$NEXTROUND/teamseat.tex && evince teamseat.pdf^M # mv groups.yaml classwork/$NEXTROUND/groups.yaml^M # create_groups.pl -r 3 -n 3 | sponge groups.yaml^M"
+stuff "# teamseat.pl -s $NEXTROUND -n 3^M# lpr teamseat.pdf^M# teamseat.pl -s $NEXTROUND --latex && xelatex classwork/$NEXTROUND/teamseat.tex && evince teamseat.pdf^M # mv groups.yaml classwork/$NEXTROUND/groups.yaml^M# svk revert classwork/$NEXTROUND^M# create_groups.pl -r $NEXTROUND -n 3 | sponge groups.yaml^M"
 screen
-stuff "cd ~/012/$CLASS^M # update_db.pl -l $CLASS -r $ROUND^M # score_comp.pl -r $ROUND > comp/$ROUND/scores.yaml^M # comptron.pl -l $CLASS -r $ROUND -x 1 > comp/$ROUND/response.yaml^M # round_table.pl -l $CLASS -r $ROUND ^M # create_round.pl -l $CLASS -r $ROUND -x $FORM > comp/$ROUND/round.yaml^M # svk revert comp/2^M"
+stuff "cd ~/012/$CLASS^M # update_db.pl -l $CLASS -r $ROUND^M# sum_g1_g2.pl -l $CLASS -r $ROUND > exam/$ROUND/g.yaml^M# score_comp.pl -r $ROUND > comp/$ROUND/scores.yaml^M # comptron.pl -l $CLASS -r $ROUND -x 1 > comp/$ROUND/response.yaml^M # round_table.pl -l $CLASS -r $ROUND ^M # create_round.pl -l $CLASS -r $ROUND -x $FORM > comp/$ROUND/round.yaml^M # svk revert comp/2^M"
 screen
+stuff "# svk ci -m $TOPIC exam/$ROUND comp/$ROUND^M"
 stuff "svk st -q^M svk log -vr BASE:HEAD^M"
-stuff "# svk revert exam/3^M # cp ../BMA0041/exam/3/round.yaml exam/3/round.yaml^M"
+stuff "# svk revert exam/3^M# cp ../BMA0041/exam/3/round.yaml exam/3/round.yaml^M# scantron.pl -l $ROUND > exam/$ROUND/response.yaml^M# score_jigsaw.pl -r $ROUND > exam/$ROUND/scores.yaml^M# grade_jigsaw.pl -r $ROUND -n 3 > exam/$ROUND/g1.yaml^M"

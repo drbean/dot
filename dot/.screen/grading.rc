@@ -1,8 +1,12 @@
 screen v -S Session.vim
 screen
 stuff "svk st -q^M svk log -vr BASE:HEAD^M"
-stuff "perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf"
+stuff "# svk revert exam/3^M # cp ../BMA0041/exam/3/round.yaml exam/3/round.yaml^M # "
 screen
-stuff "perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf"
-screen
-stuff "cd ~/012/$CLASS^M # create_round.pl -l $CLASS -r 2 -x tiger > comp/2/round.yaml^M"
+stuff "
+cd ~/012/$CLASS^M \
+# update_db.pl -l $CLASS^M \
+# round_table.pl -l $CLASS^M \
+# score_comp.pl -r $ROUND > comp/$ROUND/scores.yaml^M \
+# create_round.pl -l $CLASS -r $ROUND -x $FORM > comp/$ROUND/round.yaml^M \
+# svk revert comp/2^M"

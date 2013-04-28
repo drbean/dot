@@ -70,6 +70,16 @@ function exam_prep () {
 	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR $1; cd -
 }
 
+function grading () {
+	cd ~/012/$1;
+	CLASS=$1 \
+	ROUND=2 \
+	TOPIC=marketing \
+	STORY="4 P's" \
+	FORM="4 P's" \
+	screen -c /home/drbean/dot/.screen/grading.rc -dR $1; cd -
+}
+
 alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/drbean/dot/.screen/course.rc -dR literature; cd -"
 

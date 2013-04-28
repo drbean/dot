@@ -71,9 +71,11 @@ function exam_prep () {
 }
 
 function grading () {
+	ROUND=2;
+	NEXTROUND=$(($ROUND+1));
 	cd ~/012/$1;
 	CLASS=$1 \
-	ROUND=2 \
+	ROUND=$ROUND \
 	TOPIC=marketing \
 	STORY="4 P's" \
 	FORM="4 P's" \

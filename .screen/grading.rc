@@ -1,6 +1,6 @@
 screen v -S Session.vim
 screen
-stuff "svk st -q^M svk log -vr BASE:HEAD^M"
-stuff "# svk revert exam/3^M # cp ../BMA0041/exam/3/round.yaml exam/3/round.yaml^M # "
+stuff "cd ~/012/$CLASS^M # update_db.pl -l $CLASS^M # score_comp.pl -r $ROUND > comp/$ROUND/scores.yaml^M # comptron.pl -l $CLASS -r $ROUND -x 1 > comp/$ROUND/response.yaml^M # round_table.pl -l $CLASS -r $ROUND ^M # create_round.pl -l $CLASS -r $ROUND -x $FORM > comp/$ROUND/round.yaml^M # svk revert comp/2^M"
 screen
-stuff "cd ~/012/$CLASS^M # update_db.pl -l $CLASS^M # score_comp.pl -r $ROUND > comp/$ROUND/scores.yaml^M # comptron.pl -l $CLASS -r $ROUND -x 1 > comp/$ROUND/response.yaml^M # round_table.pl -l $CLASS^M -r $ROUND ^M # create_round.pl -l $CLASS -r $ROUND -x $FORM > comp/$ROUND/round.yaml^M # svk revert comp/2^M"
+stuff "svk st -q^M svk log -vr BASE:HEAD^M"
+stuff "# svk revert exam/3^M # cp ../BMA0041/exam/3/round.yaml exam/3/round.yaml^M"

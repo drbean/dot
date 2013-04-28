@@ -76,9 +76,10 @@ function grading () {
 	cd ~/012/$1;
 	CLASS=$1 \
 	ROUND=$ROUND \
-	TOPIC=marketing \
-	STORY="4 P's" \
-	FORM="4 P's" \
+	NEXTROUND=$NEXTROUND \
+	TOPIC=interviews \
+	STORY=interviews \
+	FORM=0 \
 	screen -c /home/drbean/dot/.screen/grading.rc -dR $1; cd -
 }
 

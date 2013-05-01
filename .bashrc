@@ -16,11 +16,11 @@ alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/
 
 alias dic="cd ~/dic; \
 APP=dic \
-COURSE=intercultural \
-TOPIC=planning \
-STORY=palmer \
+COURSE=media \
+TOPIC= \
+STORY=blair \
 OLD_STORY=espn \
-LEAGUE=00037155 \
+LEAGUE= \
 SCRIPT=\"create_exercise.pl Ctest\" \
 screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
 

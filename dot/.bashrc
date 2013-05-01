@@ -16,11 +16,11 @@ alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/
 
 alias dic="cd ~/dic; \
 APP=dic \
-COURSE=business \
+COURSE=intercultural \
 TOPIC=planning \
 STORY=palmer \
-OLD_STORY=musketeers \
-LEAGUE=AFN231 \
+OLD_STORY=espn \
+LEAGUE=00037155 \
 SCRIPT=\"create_exercise.pl Ctest\" \
 screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
 
@@ -77,9 +77,9 @@ function grading () {
 	CLASS=$1 \
 	ROUND=$ROUND \
 	NEXTROUND=$NEXTROUND \
-	TOPIC=interviews \
-	STORY=interviews \
-	FORM=0 \
+	TOPIC=injury \
+	STORY=injury \
+	FORM=1 \
 	screen -c /home/drbean/dot/.screen/grading.rc -dR $1; cd -
 }
 

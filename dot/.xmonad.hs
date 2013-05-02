@@ -9,12 +9,17 @@ import XMonad.Config.Gnome
 import XMonad.Config.Kde
 import XMonad.Config.Xfce
 
+import XMonad.Layout.Tabbed
+
+myLayout = simpleTabbed ||| Full
+
 main = do
      session <- getEnv "DESKTOP_SESSION"
      -- xmonad  $ maybe desktopConfig desktop session
      xmonad  ( maybe desktopConfig desktop session )
 		{ modMask = mod4Mask
 		-- , terminal="gnome-terminal"
+		layoutHool = myLayout
 		}
 
 desktop "gnome" = gnomeConfig

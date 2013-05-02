@@ -44,8 +44,8 @@ alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp;
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
 alias pagestranscripts="cd ~/class/pagestranscripts; \
-COURSE=business \
-STORY=palmer \
+COURSE=media \
+STORY=blair,espn \
 screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; \
 cd -"
 
@@ -77,9 +77,9 @@ function grading () {
 	CLASS=$1 \
 	ROUND=$ROUND \
 	NEXTROUND=$NEXTROUND \
-	TOPIC=injury \
-	STORY=injury \
-	FORM=1 \
+	TOPIC=marketing \
+	STORY=sale \
+	FORM=shoes \
 	screen -c /home/drbean/dot/.screen/grading.rc -dR $1; cd -
 }
 

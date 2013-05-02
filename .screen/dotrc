@@ -1,5 +1,6 @@
 screen v -S Session.vim
 screen
 stuff "svk st -q^Msvk log -vr BASE:HEAD^M"
-stuff "cp .bashrc ~/.bashrc^M"
-stuff "cp .bash_profile ~/.bash_profile"
+stuff "cp .bashrc ~/.bashrc && "
+stuff "cp .bash_profile ~/.bash_profile && "
+stuff "cp .xmonad.hs ~/.xmonad/^M"

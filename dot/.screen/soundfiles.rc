@@ -1,6 +1,6 @@
-screen 1
-stuff "ls $COURSE^M"
-screen 2 lftp web.nuu.edu.tw
-stuff "lcd $COURSE && cd public_html/$COURSE^Mls"
 screen 3
 stuff "cd /home/drbean/Music/Longman/MarketLeader2^Mls^M"
+screen 2 lftp web.nuu.edu.tw
+stuff "lcd $COURSE && cd public_html/$COURSE^Mls"
+screen 1
+stuff "ls $COURSE^M"

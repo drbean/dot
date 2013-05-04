@@ -18,8 +18,8 @@ main = do
      -- xmonad  $ maybe desktopConfig desktop session
      xmonad  ( maybe desktopConfig desktop session )
 		{ modMask = mod4Mask
-		-- , terminal="gnome-terminal"
-		layoutHool = myLayout
+		, terminal="gnome-terminal --hide-menubar"
+		, layoutHook = myLayout
 		}
 
 desktop "gnome" = gnomeConfig

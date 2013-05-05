@@ -16,11 +16,11 @@ alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/
 
 alias dic="cd ~/dic; \
 APP=dic \
-COURSE=media \
-TOPIC= \
-STORY=blair \
-OLD_STORY=espn \
-LEAGUE= \
+COURSE=business \
+TOPIC=planning \
+STORY=kendall_talk \
+OLD_STORY=palmer \
+LEAGUE=BMA0041 \
 SCRIPT=\"create_exercise.pl Ctest\" \
 screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
 
@@ -44,12 +44,12 @@ alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp;
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
 alias pagestranscripts="cd ~/class/pagestranscripts; \
-COURSE=media \
-STORY=blair,espn \
+COURSE=business \
+STORY=kendall \
 screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; \
 cd -"
 
-alias soundfiles="cd ~/soundfiles; COURSE=literature screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles; cd -"
+alias soundfiles="cd ~/soundfiles; COURSE=business screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"
 

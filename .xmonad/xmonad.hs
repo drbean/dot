@@ -12,13 +12,11 @@ import XMonad.Config.Xfce
 import XMonad.Layout.Tabbed
 import XMonad.Layout.TabBarDecoration
 import XMonad.Layout.SimpleDecoration
-import XMonad.Layout.Accordion
+import XMonad.Layout.NoFrillsDecoration
 import XMonad.Util.Themes
 
 -- myLayout = Tiled ||| tabbed shrinkText defaultTheme ||| Accordion ||| tabbed shrinkText defaultTheme ||| simpleTabbed ||| tabbed ||| Full ||| addTabs ||| tabbed shrinkText (theme donaldTheme) ||| (Tall 1 (3/100) (1/2))
-myTheme = defaultTheme { decoWidth = "1400" }
-myLayout = simpleDeco shrinkText myTheme (layoutHook desktopConfig)
--- myLayout = simpleDeco shrinkText defaultTheme (layoutHook desktopConfig)
+myLayout = noFrillsDeco shrinkText defaultTheme (layoutHook defaultConfig)
 
 main = do
      session <- getEnv "DESKTOP_SESSION"

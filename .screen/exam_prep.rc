@@ -1,6 +1,6 @@
 screen v -S Session.vim
 screen
 stuff "svk st -q^M svk log -vr BASE:HEAD^M"
-stuff "perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf"
+stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl ./\$TOPIC && xelatex ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && evince jigsaw_\${STORY}_\$FORM.pdf"
 screen
-stuff "perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf"
+stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl ./\$TOPIC && xelatex ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince quiz_\${STORY}_\$FORM.pdf"

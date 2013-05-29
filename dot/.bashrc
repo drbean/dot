@@ -14,21 +14,31 @@ alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.scr
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
 alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
 
-alias dic="cd ~/dic; \
-APP=dic \
-COURSE=media \
-TOPIC= \
-STORY=eunice2 \
-OLD_STORY=espn \
-LEAGUE=00037155 \
-SCRIPT=\"create_exercise.pl Ctest\" \
-screen -c /home/drbean/dot/.screen/app.rc -dR dic; cd -"
+function dic () {
+    OPTIND=1
+    local arg app=dic course topic story old_story league script_arg
+    while getopts 'c:t:s:o:l:x' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            o) old_story=${OPTARG};;
+            l) league=${OPTARG};;
+            x) script_arg=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/$app
+    app=$app course=$course topic=$topic story=$story old_story=$old_story league=$league script_arg=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR dic
+    cd -
+}
 
 alias bett="cd ~/bett; \
 APP=bett \
 COURSE=business \
-STORY=shoes \
-OLD_STORY=drbean \
+STORY=comp \
+OLD_STORY=kendall_talk1_2 \
 LEAGUE=BMA0041 \
 SCRIPT= \
 screen -c /home/drbean/dot/.screen/app.rc -dR bett; cd -"
@@ -44,42 +54,44 @@ alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp;
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
 alias pagestranscripts="cd ~/class/pagestranscripts; \
-COURSE=intercultural \
-STORY=eunice2 \
+COURSE=literature \
+STORY=mowgli \
 screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; \
 cd -"
 
 alias soundfiles="cd ~/soundfiles; COURSE=business screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"
+alias forms="cd ~/class/forms; screen -dR forms; cd -"
+alias tmpl="cd ~/class/tmpl; screen -dR tmpl; cd -"
 
 alias business="cd ~/class/business;
-VIEW=kendall \
-TOPIC=planning \
-STORY= \
-FORM= \
+VIEW=new \
+TOPIC=newbusiness \
+STORY=huang \
+FORM=0 \
 screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
 
 function exam_prep () {
 	cd ~/class/$1;
 	COURSE=$1 \
-	VIEW=planning \
-	TOPIC=planning \
-	STORY=organic \
+	VIEW=intercultural \
+	TOPIC= \
+	STORY=monica \
 	FORM=0 \
 	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR $1; cd -
 }
 
 function grading () {
-	ROUND=2;
+	ROUND=5;
 	NEXTROUND=$(($ROUND+1));
 	cd ~/012/$1;
 	CLASS=$1 \
 	ROUND=$ROUND \
 	NEXTROUND=$NEXTROUND \
-	TOPIC=marketing \
-	STORY=sale \
-	FORM=shoes \
+	TOPIC= \
+	STORY= \
+	FORM= \
 	screen -c /home/drbean/dot/.screen/grading.rc -dR $1; cd -
 }
 

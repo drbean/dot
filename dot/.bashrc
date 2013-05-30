@@ -77,22 +77,35 @@ function exam_prep () {
 	COURSE=$1 \
 	VIEW=intercultural \
 	TOPIC= \
-	STORY=monica \
-	FORM=0 \
+	STORY=monica \ FORM=0 \
 	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR $1; cd -
 }
 
 function grading () {
-	ROUND=5;
-	NEXTROUND=$(($ROUND+1));
-	cd ~/012/$1;
-	CLASS=$1 \
-	ROUND=$ROUND \
-	NEXTROUND=$NEXTROUND \
-	TOPIC= \
-	STORY= \
-	FORM= \
-	screen -c /home/drbean/dot/.screen/grading.rc -dR $1; cd -
+    OPTIND=1
+    local arg league round topic story form
+    while getopts 'l:r:t:s:f:n:' arg
+    do
+        case ${arg} in
+            l) league=${OPTARG};;
+            r) round=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            n) n=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/012/$league
+    ROUND=$round \
+    NEXTROUND=$(($round+1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    STORY=$story \
+    FORM=$form \
+    N=$n \
+    screen -c /home/drbean/dot/.screen/grading.rc -dR $league
+    cd -
 }
 
 alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"

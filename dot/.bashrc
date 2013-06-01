@@ -17,7 +17,7 @@ alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/
 function dic () {
     OPTIND=1
     local arg app=dic course topic story old_story league script_arg
-    while getopts 'c:t:s:o:l:x' arg
+    while getopts 'c:t:s:o:l:x:' arg
     do
         case ${arg} in
             c) course=${OPTARG};;
@@ -73,12 +73,27 @@ FORM=0 \
 screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
 
 function exam_prep () {
-	cd ~/class/$1;
-	COURSE=$1 \
-	VIEW=intercultural \
-	TOPIC= \
-	STORY=monica \ FORM=0 \
-	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR $1; cd -
+    OPTIND=1
+    local arg league round topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
+	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR $course
+	cd -
 }
 
 function grading () {

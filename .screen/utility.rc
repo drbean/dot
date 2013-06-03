@@ -1,0 +1,3 @@
+screen v -S Session.vim
+screen
+stuff "svk st -q^M svk log -vr BASE:HEAD^M"

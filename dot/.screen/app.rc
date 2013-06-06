@@ -1,16 +1,16 @@
 screen v -S Session.vim
 screen
 stuff "svk st -q^Msvk log -vr BASE:HEAD^M"
-stuff "# perl script/loadYAMLid.pl ~/class/$course/$topic/${app}.yaml $story^M"
-stuff "# perl script/create_exercise.pl $script_arg $story^M"
+stuff "# perl script/loadYAMLid.pl ~/class/$COURSE/$TOPIC/${APP}.yaml $STORY^M"
+stuff "# perl script/create_exercise.pl $SCRIPT_ARG $STORY^M"
 screen
 stuff "# sudo systemctl stop httpd.service^M"
-stuff "# perl script/grade_${app}.pl -l $league -x $old_story -o 20 -t 80 > ~/012/$league/homework.yaml^M"
-stuff "# perl script/delete_exercise.pl -i $old_story -g $course^M"
+stuff "# perl script/grade_${APP}.pl -l $LEAGUE -x $OLD_STORY -o 20 -t 80 > ~/012/$LEAGUE/homework.yaml^M"
+stuff "# perl script/delete_exercise.pl -i $OLD_STORY -g $COURSE^M"
 stuff "# sudo systemctl start httpd.service^M"
 screen 4 sudo su - postgres
-stuff "psql ${app}012^M"
+stuff "psql ${APP}012^M"
 screen 7
 stuff "cd /var/www/cgi-bin/$app^Msvk st -q^Msvk log -vr BASE:HEAD^M"
 screen 8
-stuff "links http://sac.nuu.edu.tw/cgi-bin/${app}/script/${app}_cgi.pl/login?exercise=$story"
+stuff "links http://sac.nuu.edu.tw/cgi-bin/${APP}/script/${APP}_cgi.pl/login?exercise=$STORY"

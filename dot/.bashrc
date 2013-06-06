@@ -30,22 +30,38 @@ function dic () {
         esac
     done
     cd ~/$app
-    app=$app course=$course topic=$topic story=$story old_story=$old_story league=$league script_arg=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR dic
+    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR dic
     cd -
 }
 
-alias bett="cd ~/bett; \
-APP=bett \
-COURSE=business \
-STORY=comp \
-OLD_STORY=kendall_talk1_2 \
-LEAGUE=BMA0041 \
-SCRIPT= \
-screen -c /home/drbean/dot/.screen/app.rc -dR bett; cd -"
+function bett () {
+    OPTIND=1
+    local arg app=bett course topic story old_story league script_arg
+    while getopts 'c:s:o:l:x:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            s) story=${OPTARG};;
+            o) old_story=${OPTARG};;
+            l) league=${OPTARG};;
+            x) script_arg=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/bett
+    APP=bett \
+    COURSE=$course \
+    STORY=$story \
+    OLD_STORY=$old_story \
+    LEAGUE=$league \
+    SCRIPT=$script_arg \
+    screen -c /home/drbean/dot/.screen/app.rc -dR bett
+    cd -
+}
 
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
-alias vim="cd ~/vim; screen -dR vim; cd -"
+alias vim="cd ~/vim; screen -c /home/drbean/dot/.screen/vim.rc -dR vim; cd -"
 
 alias dot="cd ~/dot; screen -c /home/drbean/dot/.screen/dotrc -dR dot; cd -"
 alias irc="cd ~/znc; screen -c /home/drbean/dot/.screen/irc.rc -dR irc; cd -"
@@ -53,17 +69,30 @@ alias irc="cd ~/znc; screen -c /home/drbean/dot/.screen/irc.rc -dR irc; cd -"
 alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp; cd -"
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
-alias pagestranscripts="cd ~/class/pagestranscripts; \
-COURSE=literature \
-STORY=mowgli \
-screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts; \
-cd -"
+function pagestranscripts () {
+    OPTIND=1
+    local arg course story
+    while getopts 'c:t:s:o:l:x:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            s) story=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/class/pagestranscripts
+    COURSE=$course \
+    STORY=$story \
+    screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts
+    cd -
+}
 
 alias soundfiles="cd ~/soundfiles; COURSE=business screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles; cd -"
 
 alias class="cd ~/class; screen -dR class; cd -"
 alias forms="cd ~/class/forms; screen -dR forms; cd -"
-alias tmpl="cd ~/class/tmpl; screen -dR tmpl; cd -"
+alias tmpl="cd ~/class/tmpl; screen -c /home/drbean/dot/.screen/utility.rc -dR tmpl; cd -"
+alias rc="cd ~/012/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
 
 alias business="cd ~/class/business;
 VIEW=new \
@@ -161,3 +190,5 @@ alias contest="cd ~/001/contest; screen -dR contest; cd -"
 alias job="cd ~/job; screen -dR job; cd -"
 
 alias q=exit
+
+# vim: set ts=8 sts=4 sw=4 noet:

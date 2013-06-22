@@ -1,6 +1,13 @@
 screen v -S Session.vim
 screen
 stuff "svk st -q^M svk log -vr BASE:HEAD^M"
+stuff "# lpr jigsaw_\${STORY}_\$FORM.pdf^M"
 stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl ./\$TOPIC && xelatex ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && evince jigsaw_\${STORY}_\$FORM.pdf"
 screen
+stuff "# lpr quiz_\${STORY}_\$FORM.pdf^M"
 stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl ./\$TOPIC && xelatex ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince quiz_\${STORY}_\$FORM.pdf"
+screen lftp web.nuu.edu.tw
+stuff "cd ${COURSE}^M"
+stuff "# put jigsaw_${STORY}_$FORM.pdf^M"
+stuff "# put quiz_${STORY}_$FORM.pdf^M"
+

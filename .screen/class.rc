@@ -1,7 +1,14 @@
 screen v -S Session.vim
 screen
 stuff "svk st -q^Msvk log -vr BASE:HEAD^M"
+stuff "ls classwork^M"
+stuff "svk ls classwork/$SESSION^M"
+stuff "# svk revert classwork/$SESSION/$LASTWEEK.yaml^M"
+stuff "# svk mv classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
+screen
+stuff "# conversation.pl -l $LEAGUE -s $SESSION -r $WEEK -x $TOPIC -p $LETTER -t $TABLES && xelatex classwork/$SESSION/conversation.tex && evince conversation.pdf^M"
+stuff "# lpr conversation.pdf^M"
 screen re.pl --rcfile ../rc/g.rc
 stuff '$g->grades'
 screen lftp web.nuu.edu.tw
-stuff "cd public_html/$CLASS^M"
+stuff "cd public_html/$LEAGUE^M"

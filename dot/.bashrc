@@ -11,7 +11,7 @@ alias web="cd; screen -c /home/drbean/dot/.screen/web.rc -dR web; cd -"
 alias surf="cd ~/sr; screen -dR surfraw; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.screen/project.rc -dR beans; cd -"
-alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
+alias swiss="cd ~/swiss; APP=swiss COURSE=literature screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
 alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
 
 function dic () {
@@ -94,16 +94,32 @@ alias forms="cd ~/class/forms; screen -dR forms; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/drbean/dot/.screen/utility.rc -dR tmpl; cd -"
 alias rc="cd ~/012/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
 
-alias business="cd ~/class/business;
-VIEW=new \
-TOPIC=newbusiness \
-STORY=huang \
-FORM=0 \
-screen -c /home/drbean/dot/.screen/course.rc -dR business; cd -"
+function business () {
+    OPTIND=1
+    local arg course=business view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
+	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	cd -
+}
 
 function exam_prep () {
     OPTIND=1
-    local arg league round topic story form
+    local arg course round topic story form
     while getopts 'c:v:t:s:f:' arg
     do
         case ${arg} in
@@ -173,14 +189,161 @@ alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
 alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
 
 alias 012="cd ~/012; screen -dR s012; cd -"
-alias BMA0035="cd ~/012/BMA0035; CLASS=BMA0035 screen -c /home/drbean/dot/.screen/class.rc -dR BMA0035; cd -"
-alias BMA0041="cd ~/012/BMA0041; CLASS=BMA0041 screen -c /home/drbean/dot/.screen/class.rc -dR BMA0041; cd -"
-alias MIA0009="cd ~/012/MIA0009; CLASS=MIA0009 screen -c /home/drbean/dot/.screen/class.rc -dR MIA0009; cd -"
-alias FIA0046="cd ~/012/FIA0046; CLASS=FIA0046 screen -c /home/drbean/dot/.screen/class.rc -dR FIA0046; cd -"
+
+function BMA0035 () {
+    OPTIND=1
+    local arg league=BMA0035 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	B) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2,5-1::5-2,6-1::6-2,8-1::8-2,9-1::9-2,10-1::10-2,11-1::11-2,12-1::12-2";;
+	A) tables="6-1::1-1,1-2::2-1,2-2::3-1,3-2::4-1,4-2::5-1,5-2::6-2,12-2::8-1,8-2::9-1,9-2::10-1,10-2::11-1,11-2::12-1";;
+	*) return 1 # illegal option
+    esac
+    cd ~/012/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    cd -
+}
+
+function BMA0041 () {
+    OPTIND=1
+    local arg league=BMA0041 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	B) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2,5-1::5-2,6-1::6-2,8-1::8-2,9-1::9-2,10-1::10-2,11-1::11-2,12-1::12-2";;
+	A) tables="6-1::1-1,1-2::2-1,2-2::3-1,3-2::4-1,4-2::5-1,5-2::6-2,12-2::8-1,8-2::9-1,9-2::10-1,10-2::11-1,11-2::12-1";;
+	*) return 1 # illegal option
+    esac
+    cd ~/012/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    cd -
+}
+
+function MIA0009 () {
+    OPTIND=1
+    local arg league=MIA0009 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2,8-1::8-2,9-1::9-2,10-1::10-2,11-1::11-2,12-1::12-2,Assistants::5-1";;
+	B) tables="1-2::2-1,2-2::3-1,3-2::4-1,4-2::5-1,12-2::8-1,8-2::9-1,9-2::10-1,10-2::11-1,11-2::12-1,Assistants::1-1,";;
+	*) return 1 # illegal option
+    esac
+    cd ~/012/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    cd -
+}
+
+function FIA0046 () {
+    OPTIND=1
+    local arg league=FIA0046 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2,5-1::5-2,6-1::6-2,8-1::8-2,9-1::9-2,10-1::10-2,11-1::11-2,12-1::12-2,13-1::13-2";;
+	B) tables="6-1::1-1,1-2::2-1,2-2::3-1,3-2::4-1,4-2::5-1,5-2::6-2,13-1::8-1,8-2::9-1,9-2::10-1,10-2::11-1,11-2::12-1,12-2::13-2";;
+	*) return 1 # illegal option
+    esac
+    cd ~/012/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    cd -
+}
+
 alias FLA0037="cd ~/012/FLA0037; CLASS=FLA0037 screen -c /home/drbean/dot/.screen/class.rc -dR FLA0037; cd -"
 alias 00037155="cd ~/012/00037155; CLASS=00037155 screen -c /home/drbean/dot/.screen/class.rc -dR 00037155; cd -"
 alias 00037589="cd ~/012/00037589; CLASS=00037589 screen -c /home/drbean/dot/.screen/class.rc -dR 00037589; cd -"
-alias AFN231="cd ~/012/AFN231; CLASS=AFN231 screen -c /home/drbean/dot/.screen/class.rc -dR AFN231; cd -"
+function AFN231 () {
+    OPTIND=1
+    local arg league=AFN231 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	*) return 1 # illegal option
+    esac
+    cd ~/012/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    cd -
+}
 
 alias GL00003="cd ~/001/GL00003; screen -dR GL00003; cd -"
 alias GL00016="cd ~/001/GL00016; screen -dR GL00016; cd -"

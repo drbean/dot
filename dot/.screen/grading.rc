@@ -5,7 +5,7 @@ stuff '$g->grades'
 screen
 stuff "# teamseat.pl -s $NEXTROUND^M# lpr teamseat.pdf^M# teamseat.pl -s $NEXTROUND --latex && xelatex classwork/$NEXTROUND/teamseat.tex && evince teamseat.pdf^M# mv groups.yaml classwork/$NEXTROUND/groups.yaml^M# svk revert classwork/$NEXTROUND^M# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls classwork/"
 screen
-stuff "cd ~/012/$LEAGUE^M # update_db.pl -l $LEAGUE -r $ROUND^M# sum_g1_g2.pl -l $LEAGUE -r $ROUND > exam/$ROUND/g.yaml^M# score_comp.pl -r $ROUND > comp/$ROUND/scores.yaml^M # comptron.pl -l $LEAGUE -r $ROUND -x 1 > comp/$ROUND/response.yaml^M # round_table.pl -l $LEAGUE -r $ROUND ^M# create_round.pl -l $LEAGUE -r $ROUND -x $FORM > comp/$ROUND/round.yaml^M # svk revert comp/$ROUND^M ls comp^M"
+stuff "cd ~/012/$LEAGUE^M# update_db.pl -l $LEAGUE -r $ROUND^M# sum_g1_g2.pl -l $LEAGUE -r $ROUND > exam/$ROUND/g.yaml^M# score_comp.pl -r $ROUND > comp/$ROUND/scores.yaml^M# comptron.pl -l $LEAGUE -r $ROUND -x 1 > comp/$ROUND/response.yaml^M# round_table.pl -l $LEAGUE -r $ROUND ^M# create_round.pl -l $LEAGUE -r $ROUND -x $FORM > comp/$ROUND/round.yaml^M# svk revert comp/$ROUND^M ls comp^M"
 screen
 stuff "# svk ci -m $TOPIC exam/$ROUND comp/$ROUND^M"
 stuff "svk st -q^M svk log -vr BASE:HEAD^M"

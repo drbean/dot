@@ -1,6 +1,6 @@
 screen v -S Session.vim
 screen
-stuff "svk st -q^Msvk log -vr BASE:HEAD^M"
+stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "# perl script/loadYAMLid.pl ~/class/$COURSE/$TOPIC/${APP}.yaml $STORY^M"
 stuff "# perl script/create_exercise.pl $SCRIPT_ARG $STORY^M"
 screen
@@ -11,6 +11,6 @@ stuff "# sudo systemctl start httpd.service^M"
 screen 4 sudo su - postgres
 stuff "psql ${APP}012^M"
 screen 7
-stuff "cd /var/www/cgi-bin/$app^Msvk st -q^Msvk log -vr BASE:HEAD^M"
+stuff "cd /var/www/cgi-bin/$app^Msvn st -q^Msvn log -vr BASE:HEAD^M"
 screen 8
 stuff "links http://sac.nuu.edu.tw/cgi-bin/${APP}/script/${APP}_cgi.pl/login?exercise=$STORY"

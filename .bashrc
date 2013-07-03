@@ -14,6 +14,21 @@ alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.scr
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
 alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
 
+function edit () {
+    OPTIND=1
+    local arg source
+    while getopts 's:' arg
+    do
+        case ${arg} in
+            s) source=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/edit/$source
+    SOURCE=$source screen -c /home/drbean/dot/.screen/edit.rc -dR edit
+    cd -
+}
+
 function dic () {
     OPTIND=1
     local arg app=dic course topic story old_story league script_arg

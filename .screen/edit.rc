@@ -1,0 +1,3 @@
+screen v -S Session.vim
+screen
+stuff "svn st -q^M svn log -vr BASE:HEAD^M"

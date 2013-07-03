@@ -1,6 +1,6 @@
 screen v -S Session.vim
 screen
-stuff "svk st^Msvk log -vr BASE:HEAD^M"
+stuff "svn st^Msvn log -vr BASE:HEAD^M"
 screen
 screen ghci -i./:../business/:../business/marketing/:../business/marketing/shoes/
 stuff ":load Tests^M":

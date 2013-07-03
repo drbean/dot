@@ -1,10 +1,10 @@
 screen v -S ../012/Session.vim
 screen
-stuff "svk st -q^Msvk log -vr BASE:HEAD^M"
+stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "ls classwork^M"
-stuff "svk ls classwork/$SESSION^M"
-stuff "# svk revert classwork/$SESSION/$LASTWEEK.yaml^M"
-stuff "# svk mv classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
+stuff "svn ls classwork/$SESSION^M"
+stuff "# svn revert classwork/$SESSION/$LASTWEEK.yaml^M"
+stuff "# svn mv classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
 screen
 stuff "# conversation.pl -l $LEAGUE -s $SESSION -r $WEEK -x $TOPIC -p $LETTER -t $TABLES && xelatex classwork/$SESSION/conversation.tex && evince conversation.pdf^M"
 stuff "# lpr conversation.pdf^M"

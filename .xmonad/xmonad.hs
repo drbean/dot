@@ -24,6 +24,7 @@ main = do
      xmonad  ( maybe desktopConfig desktop session )
 		{ modMask = mod4Mask
 		, terminal="gnome-terminal --hide-menubar"
+		-- , terminal="mate-terminal --show-menubar"
 		-- , terminal = "/usr/bin/urxvt"
 		, layoutHook = myLayout
 		}

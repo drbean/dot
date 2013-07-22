@@ -34,7 +34,7 @@ main = do
 	where
 		myKeys (XConfig {modMask = modm}) = M.fromList $
 			[ ((modm, xK_f), spawn "firefox -P default")
-			, ((modm, xK_f), spawn "libreoffice --writer")
+			, ((modm, xK_o), spawn "libreoffice --writer")
 			]
 
 desktop "gnome" = gnomeConfig

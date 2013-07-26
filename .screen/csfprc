@@ -2,5 +2,5 @@ screen v -S Session.vim
 screen
 stuff "svn st^Msvn log -vr BASE:HEAD^M"
 screen
-screen ghci -i./:../business/:../business/marketing/:../business/marketing/shoes/
-stuff ":load Tests^M":
+screen gf
+stuff "import ~/.cabal/share/gf-3.14/libs/alltenses/LangEng.gfo":

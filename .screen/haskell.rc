@@ -1,0 +1,9 @@
+screen v -S Session.vim
+screen
+stuff "git status^Mgit log^M"
+screen
+stuff "gf^M import examples/tutorial/embedded/QueryEng.gf"
+screen ghci
+# screen ghci -i./:../business/:../business/marketing/:../business/marketing/shoes/
+# stuff ":load Tests^M":
+screen links doc/tutorial/gf-tutorial.html

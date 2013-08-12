@@ -7,4 +7,4 @@ screen ghci
 # screen ghci -i./:../business/:../business/marketing/:../business/marketing/shoes/
 # stuff ":load Tests^M":
 screen
-stuff "links doc/gf-refman.html^Mg doc/tutorial/gf-tutorial.html^Mg http://www.grammaticalframework.org/lib/doc/synopsis.html^Mg file:///home/drbean/GF/doc/gf-reference.html"
+stuff "links doc/gf-refman.html^Mg doc/tutorial/gf-tutorial.html^Mg file:///home/drbean/GF/lib/doc/synopsis.html^Mg file:///home/drbean/GF/doc/gf-reference.html"

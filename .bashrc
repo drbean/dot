@@ -108,7 +108,7 @@ alias soundfiles="cd ~/soundfiles; COURSE=business screen -c /home/drbean/dot/.s
 alias class="cd ~/class; screen -dR class; cd -"
 alias forms="cd ~/class/forms; screen -dR forms; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/drbean/dot/.screen/utility.rc -dR tmpl; cd -"
-alias rc="cd ~/012/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
+alias rc="cd ~/021/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
 
 function business () {
     OPTIND=1
@@ -172,7 +172,7 @@ function grading () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/012/$league
+    cd ~/021/$league
     ROUND=$round \
     NEXTROUND=$(($round+1)) \
     LEAGUE=$league \
@@ -204,7 +204,7 @@ alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
 alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
 alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
 
-alias 012="cd ~/012; screen -dR s012; cd -"
+alias 021="cd ~/021; screen -dR s021; cd -"
 
 function BMA0035 () {
     OPTIND=1
@@ -380,7 +380,7 @@ function AFN2N0 () {
 	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
 	*) return 1 # illegal option
     esac
-    cd ~/012/$league
+    cd ~/021/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \

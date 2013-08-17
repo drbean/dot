@@ -1,4 +1,4 @@
-screen v -S ../012/Session.vim
+screen v -S ../Session.vim
 screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "ls classwork^M"

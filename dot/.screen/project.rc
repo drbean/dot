@@ -2,7 +2,7 @@ screen v -S Session.vim
 screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 screen 4 sudo su - postgres
-stuff "psql ${APP}012^M"
+stuff "psql ${APP}021^M"
 screen 7
 stuff "cd /var/www/cgi-bin/$APP^Msvn st -q^Msvn log -vr BASE:HEAD^M"
 screen 8

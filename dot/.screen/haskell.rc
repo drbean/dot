@@ -8,4 +8,4 @@ screen ghci
 stuff ":"
 # stuff ":load Tests^M":
 screen
-stuff "links doc/gf-refman.html^Mg doc/tutorial/gf-tutorial.html^Mg file:///home/drbean/GF/lib/doc/synopsis.html^Mg file:///home/drbean/GF/doc/gf-reference.html"
+stuff "links doc/gf-refman.html^Mg doc/tutorial/gf-tutorial.html^Mg lib/doc/synopsis.html^Mg doc/gf-reference.html"

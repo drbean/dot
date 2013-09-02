@@ -393,6 +393,38 @@ function AFN2N0 () {
     cd -
 }
 
+function AFN300 () {
+    OPTIND=1
+    local arg league=AFN300 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	*) return 1 # illegal option
+    esac
+    cd ~/021/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    cd -
+}
+
 function AFN3Y0 () {
     OPTIND=1
     local arg league=AFN3Y0 session week letter topic tables

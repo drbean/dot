@@ -402,8 +402,69 @@ function FLA0020 () {
     cd -
 }
 
-alias GL00003="cd ~/001/GL00003; screen -dR GL00003; cd -"
-alias GL00016="cd ~/001/GL00016; screen -dR GL00016; cd -"
+function GL00006 () {
+    OPTIND=1
+    local arg league=GL00006 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	*) return 1 # illegal option
+    esac
+    cd ~/021/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    cd -
+}
+
+function GL00030 () {
+    OPTIND=1
+    local arg league=GL00030 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	*) return 1 # illegal option
+    esac
+    cd ~/021/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    cd -
+}
 
 alias contest="cd ~/001/contest; screen -dR contest; cd -"
 

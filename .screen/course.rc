@@ -1,4 +1,4 @@
-screen v -S Session.vim
+screen v $TOPIC/dic.yaml $TOPIC/cards.yaml $TOPIC/slides.vroom
 screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "cd ./$TOPIC && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && mput html/*.html && qui' && cd -^M"

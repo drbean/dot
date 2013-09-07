@@ -1,4 +1,4 @@
-screen v -S ../Session.vim
+screen v league.yaml classwork/$SESSION/groups.yaml groups.yaml
 screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "ls classwork^M"

@@ -1,4 +1,4 @@
-screen v -S Session.vim
+screen v league.yaml classwork/$ROUND/groups.yaml groups.yaml classwork/$NEXTROUND/groups.yaml 
 screen
 stuff "re.pl --rcfile ../rc/g.rc^M"
 stuff '$g->grades'

@@ -133,6 +133,52 @@ function business () {
 	cd -
 }
 
+function conversation () {
+    OPTIND=1
+    local arg course=conversation view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
+	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	cd -
+}
+
+function multimedia () {
+    OPTIND=1
+    local arg course=multimedia view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
+	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	cd -
+}
+
 function exam_prep () {
     OPTIND=1
     local arg course round topic story form

@@ -103,7 +103,21 @@ function pagestranscripts () {
     cd -
 }
 
-alias soundfiles="cd ~/soundfiles; COURSE=business screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles; cd -"
+function soundfiles () {
+    OPTIND=1
+    local arg course
+    while getopts 'c:t:s:o:l:x:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/soundfiles
+    COURSE=$course \
+    screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles
+    cd -
+}
 
 alias class="cd ~/class; screen -dR class; cd -"
 alias forms="cd ~/class/forms; screen -dR forms; cd -"
@@ -251,42 +265,6 @@ alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
 alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
 
 alias 021="cd ~/021; screen -dR s021; cd -"
-
-alias FLA0037="cd ~/012/FLA0037; CLASS=FLA0037 screen -c /home/drbean/dot/.screen/class.rc -dR FLA0037; cd -"
-alias 00037155="cd ~/012/00037155; CLASS=00037155 screen -c /home/drbean/dot/.screen/class.rc -dR 00037155; cd -"
-alias 00037589="cd ~/012/00037589; CLASS=00037589 screen -c /home/drbean/dot/.screen/class.rc -dR 00037589; cd -"
-
-function AFN231 () {
-    OPTIND=1
-    local arg league=AFN231 session week letter topic tables
-    while getopts 's:w:l:t:' arg
-    do
-        case ${arg} in
-            s) session=${OPTARG};;
-            w) week=${OPTARG};;
-            l) letter=${OPTARG};;
-            t) topic=${OPTARG};;
-            *) return 1 # illegal option
-        esac
-    done
-    case ${letter} in
-	A) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
-	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
-	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
-	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
-	*) return 1 # illegal option
-    esac
-    cd ~/012/$league
-    SESSION=$session \
-    WEEK=$week \
-    LASTWEEK=$(($week-1)) \
-    LEAGUE=$league \
-    TOPIC=$topic \
-    LETTER=$letter \
-    TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR $league
-    cd -
-}
 
 function AFN2N0 () {
     OPTIND=1

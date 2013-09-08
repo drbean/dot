@@ -11,6 +11,7 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 #greg
 PATH=$PATH:$HOME/.cabal/bin
+HISTSIZE=50000
 
 export PATH
 

@@ -472,10 +472,10 @@ function GL00030 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
-	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
-	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
-	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	A) tables="Green::BlackBlack,Purple::Pink,Orange::Yellow,OrangeOrange::Assistants";;
+	B) tables="Assistants::Green,BlackBlack::Purple,Pink::Orange,Yellow::OrangeOrange";;
+	C) tables="Green::BlackBlack,Purple::Pink,Orange::Yellow,OrangeOrange::Assistants";;
+	X) tables="Assistants::Green,BlackBlack::Purple,Pink::Orange,Yellow::OrangeOrange";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league

@@ -193,6 +193,29 @@ function multimedia () {
 	cd -
 }
 
+function media () {
+    OPTIND=1
+    local arg course=media view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
+	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	cd -
+}
+
 function exam_prep () {
     OPTIND=1
     local arg course round topic story form
@@ -246,13 +269,6 @@ function grading () {
 
 alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/drbean/dot/.screen/course.rc -dR literature; cd -"
-
-alias media="cd ~/class/media;
-VIEW=media \
-TOPIC= \
-STORY=wallace \
-FORM=0 \
-screen -c /home/drbean/dot/.screen/course.rc -dR media; cd -"
 
 alias conversation="cd ~/class/conversation; screen -dR conversation; cd -"
 alias grammar="cd ~/class/curriculum/grammar; screen -dR grammar; cd -"

@@ -10,10 +10,8 @@ fi
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 #greg
-PATH=$PATH:$HOME/.cabal/bin
-HISTSIZE=50000
-
-export PATH
+export PATH=$PATH:$HOME/.cabal/bin
+export HISTSIZE=50000
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

@@ -1,8 +1,8 @@
 screen 3
-stuff "cd /home/drbean/Music/Longman/MarketLeader2^Mls"
+stuff "cd $DIRECTORY^Mls"
 screen 2 lftp web.nuu.edu.tw
 stuff "lcd $COURSE && cd public_html/$COURSE^Mls"
 screen 1
 stuff "ls $COURSE^M"
 screen
-stuff "cd /home/drbean/Videos/Webcam/^Mls"
+stuff "cd /home/drbean/Webcam/^Mls"

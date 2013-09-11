@@ -106,15 +106,17 @@ function pagestranscripts () {
 function soundfiles () {
     OPTIND=1
     local arg course
-    while getopts 'c:t:s:o:l:x:' arg
+    while getopts 'c:d:' arg
     do
         case ${arg} in
             c) course=${OPTARG};;
+            d) directory=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     cd ~/soundfiles
     COURSE=$course \
+    DIRECTORY=$directory \
     screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles
     cd -
 }
@@ -378,6 +380,38 @@ function AFN3Y0 () {
     cd -
 }
 
+function yd40001280 () {
+    OPTIND=1
+    local arg league=yd40001280 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	*) return 1 # illegal option
+    esac
+    cd ~/021/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    cd -
+}
+
 function FLA0006 () {
     OPTIND=1
     local arg league=FLA0006 session week letter topic tables
@@ -410,9 +444,9 @@ function FLA0006 () {
     cd -
 }
 
-function FLA0020 () {
+function FLA0007 () {
     OPTIND=1
-    local arg league=FLA0020 session week letter topic tables
+    local arg league=FLA0007 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in
@@ -424,10 +458,10 @@ function FLA0020 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
-	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
-	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
-	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	A) tables="Black::Blue,Brown::Gray,Orange::Pink,Purple::Red";;
+	B) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
+	C) tables="Black::Blue,Brown::Gray,Orange::Pink,Purple::Red";;
+	X) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league

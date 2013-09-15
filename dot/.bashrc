@@ -426,9 +426,9 @@ function FLA0006 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	A) tables="Black::Blue,BlueBlue::BlackBlack,Green::Orange,Pink::Purple,Yellow::White";;
 	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
-	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::OrangeOrange";;
+	C) tables="Black::Blue,BlueBlue::BlackBlack,Green::Orange,Pink::Purple,Yellow::White";;
 	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
 	*) return 1 # illegal option
     esac
@@ -490,9 +490,9 @@ function GL00006 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Orange::Green,Gray::Red,White::Yellow";;
+	A) tables="Black::Gray,Orange::Green,White::Yellow,Blue::Assistants";;
 	B) tables="Yellow::Black,Blue::Orange,Green::Gray,Red::White";;
-	C) tables="Black::Blue,Orange::Green,Gray::Red,White::Yellow";;
+	C) tables="Black::Gray,Orange::Green,White::Yellow,Blue::Assistants";;
 	X) tables="Yellow::Black,Blue::Orange,Green::Gray,Red::White";;
 	*) return 1 # illegal option
     esac

@@ -1,4 +1,4 @@
-screen v -S Session.vim
+screen v script
 screen
 stuff "cd branch/gf^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"

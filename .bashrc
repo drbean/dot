@@ -272,7 +272,6 @@ function grading () {
 alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/drbean/dot/.screen/course.rc -dR literature; cd -"
 
-alias conversation="cd ~/class/conversation; screen -dR conversation; cd -"
 alias grammar="cd ~/class/curriculum/grammar; screen -dR grammar; cd -"
 alias writing="cd ~/class/curriculum/writingreading; screen -dR writing; cd -"
 alias speaking="cd ~/class/curriculum/speaking; screen -dR speaking; cd -"

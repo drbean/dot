@@ -1,5 +1,0 @@
-screen v -S Business.vim
-screen
-stuff "svn st^Msvn log -r BASE:HEAD"
-screen
-screen ghci -i/home/drbean/class/business/stress/adventure/:/home/drbean/class/business/:/home/drbean/class/csfp/

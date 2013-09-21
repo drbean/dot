@@ -5,6 +5,6 @@ stuff "cd ./$TOPIC && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_h
 screen ghci -i../csfp/:./:./$TOPIC/$STORY/
 stuff ":load Tests^M":
 screen
-stuff "#ghc -o /var/www/cgi-bin/bett/bin/Transfer_$STORY -i../../../../GF/contrib/drbean/business/careers/candidate../csfp/:./:./$TOPIC/$STORY/ ../../../../GF/contrib/drbean/business/careers/candidate/Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_$STORY -i../csfp/:./:./$TOPIC/$STORY/ /var/www/cgi-bin/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_$STORY -i../csfp/:./:./$TOPIC/$STORY/ /var/www/cgi-bin/bett/script/Words.hs"
+stuff "ghc -o /var/www/cgi-bin/bett/bin/Transfer_$STORY -i../../GF/contrib/drbean/business/$TOPIC/$STORY ../../GF/contrib/drbean/business/$TOPIC/$STORY/Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_$STORY -i../../GF/contrib/drbean/business/$TOPIC/$STORY ../../bett/script/ShowWords.hs"
 screen lftp greg@web.nuu.edu.tw
 stuff "cd /public_html/$VIEW^Mls"

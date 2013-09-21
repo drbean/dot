@@ -330,7 +330,7 @@ function AFN300 () {
     done
     case ${letter} in
 	A) tables="Black::Blue,Brown::Gray,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,PinkPink::OrangeOrange,Yellow::White";;
-	B) tables="1/1:1/2,2/1:2/2,3/1:3/2,4/1:4/2,5/1:5/2,6/1:6/2,8/1:8/2,9/1:9/2,10/1:10/2,11/1:11/2";;
+	B) tables="1/1::1/2,2/1::2/2,3/1::3/2,4/1::4/2,8/1::8/2,9/1::9/2,10/1::10/2,11/1::11/2";;
 	C) tables="Black::Blue,Brown::Gray,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,PinkPink::OrangeOrange,Yellow::White";;
 	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
 	*) return 1 # illegal option

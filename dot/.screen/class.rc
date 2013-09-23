@@ -12,3 +12,6 @@ screen re.pl --rcfile ../rc/g.rc
 stuff '$g->grades'
 screen lftp web.nuu.edu.tw
 stuff "cd public_html/$LEAGUE^M"
+screen
+stuff "ls homework classwork exams/*^M"
+

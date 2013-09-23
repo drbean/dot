@@ -299,7 +299,7 @@ function AFN2N0 () {
     case ${letter} in
 	A) tables="Black::Blue,BlackBlack::Green,Orange::Pink,Yellow::White,Purple::BlueBlue";;
 	B) tables="Green::Black,Blue::BlueBlue,Purple::Yellow,White::Orange,Pink::BlackBlack";;
-	C) tables="Black::Blue,BlackBlack::Green,Orange::Pink,Yellow::White,Purple::BlueBlue";;
+	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Yellow::White,Purple::Red,BrownBrown::Assistants";;
 	X) tables="Green::Black,Blue::BlueBlue,Purple::Yellow,White::Orange,Pink::BlackBlack";;
 	*) return 1 # illegal option
     esac
@@ -490,8 +490,8 @@ function GL00006 () {
     done
     case ${letter} in
 	A) tables="Black::Gray,Orange::Green,White::Yellow,Blue::Assistants";;
-	B) tables="Yellow::Black,Blue::Orange,Green::Gray,Red::White";;
-	C) tables="Black::Gray,Orange::Green,White::Yellow,Blue::Assistants";;
+	B) tables="Black::Blue,Gray::White,Yellow::Green,Orange::Brown";;
+	C) tables="Black::Gray,Orange::Green,White::Yellow,Blue::Brown";;
 	X) tables="Yellow::Black,Blue::Orange,Green::Gray,Red::White";;
 	*) return 1 # illegal option
     esac
@@ -521,9 +521,9 @@ function GL00030 () {
         esac
     done
     case ${letter} in
-	A) tables="Green::BlackBlack,Purple::Pink,Orange::Yellow,OrangeOrange::Assistants";;
-	B) tables="Assistants::Green,BlackBlack::Purple,Pink::Orange,Yellow::OrangeOrange";;
-	C) tables="Green::BlackBlack,Purple::Pink,Orange::Yellow,OrangeOrange::Assistants";;
+	A) tables="Green::Orange,BlackBlack::Pink";;
+	B) tables="Green::BlackBlack,Orange::Pink";;
+	C) tables="Green::Pink,Orange::BlackBlack";;
 	X) tables="Assistants::Green,BlackBlack::Purple,Pink::Orange,Yellow::OrangeOrange";;
 	*) return 1 # illegal option
     esac

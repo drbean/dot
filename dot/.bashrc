@@ -126,6 +126,29 @@ alias forms="cd ~/class/forms; screen -dR forms; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/drbean/dot/.screen/utility.rc -dR tmpl; cd -"
 alias rc="cd ~/021/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
 
+function college () {
+    OPTIND=1
+    local arg course=college view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
+	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	cd -
+}
+
 function business () {
     OPTIND=1
     local arg course=business view topic story form

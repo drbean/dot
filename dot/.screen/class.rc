@@ -8,6 +8,7 @@ stuff "# svn mv classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
 screen
 stuff "# conversation.pl -l $LEAGUE -s $SESSION -r $WEEK -x $TOPIC -p $LETTER -t $TABLES && xelatex classwork/$SESSION/conversation.tex && evince conversation.pdf^M"
 stuff "# lpr conversation.pdf -P kyocera^M"
+stuff "# cp conversation.pdf /run/media/drbean/5754-122B/^M"
 screen re.pl --rcfile ../rc/g.rc
 stuff '$g->grades'
 screen lftp web.nuu.edu.tw

@@ -321,7 +321,7 @@ function AFN2N0 () {
     done
     case ${letter} in
 	A) tables="Black::Blue,BlackBlack::Green,Orange::Pink,Yellow::White,Purple::BlueBlue";;
-	B) tables="Green::Black,Blue::BlueBlue,Purple::Yellow,White::Orange,Pink::BlackBlack";;
+	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Red::OrangeOrange,Yellow::";;
 	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Yellow::White,Purple::Red,BrownBrown::Assistants";;
 	X) tables="Green::Black,Blue::BlueBlue,Purple::Yellow,White::Orange,Pink::BlackBlack";;
 	*) return 1 # illegal option

@@ -7,7 +7,7 @@ stuff "# perl script/loadYAMLid.pl ~/class/$COURSE/$TOPIC/${APP}.yaml $STORY^M"
 stuff "# perl script/create_exercise.pl $SCRIPT_ARG $STORY^M"
 screen
 stuff "# sudo systemctl stop httpd.service^M"
-stuff "# perl script/grade_${APP}.pl -l $LEAGUE -x $OLD_STORY -o 20 -t 80 > ~/021/$LEAGUE/homework.yaml^M"
+stuff "# perl script/grade_${APP}.pl -l $LEAGUE -x $OLD_STORY > ~/021/$LEAGUE/homework.yaml^M"
 stuff "# perl script/delete_exercise.pl -i $OLD_STORY -g $COURSE^M"
 stuff "# sudo systemctl start httpd.service^M"
 stuff "# less ~/021/$LEAGUE/homework.yaml^M"

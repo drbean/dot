@@ -1,4 +1,4 @@
-screen v -S Session.vim
+screen v contrib/drbean/business/careers/candidate/Transfer.hs
 screen
 stuff "git status^Mgit log^M"
 screen

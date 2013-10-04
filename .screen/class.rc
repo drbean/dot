@@ -5,6 +5,7 @@ stuff "ls classwork^M"
 stuff "svn ls classwork/$SESSION^M"
 stuff "# svn revert classwork/$SESSION/$LASTWEEK.yaml^M"
 stuff "# svn mv classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
+stuff "# svn ci -m Grades/Groupwork:r1720 classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
 screen
 stuff "# conversation.pl -l $LEAGUE -s $SESSION -r $WEEK -x $TOPIC -p $LETTER -t $TABLES && xelatex classwork/$SESSION/conversation.tex && evince conversation.pdf^M"
 stuff "# lpr conversation.pdf -P kyocera^M"

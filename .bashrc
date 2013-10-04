@@ -416,7 +416,7 @@ function yd40001280 () {
     done
     case ${letter} in
 	A) tables="Black::Blue,Brown::OrangeOrange,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::White";;
-	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,BrownBrown::OrangeOrange,White::Orange,Pink::Purple,Red::Yellow";;
+	B) tables="Green::Black,Blue::Brown,Gray::BrownBrown,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Red::OrangeOrange,Yellow::";;
 	C) tables="Black::Blue,Brown::OrangeOrange,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::White";;
 	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,BrownBrown::OrangeOrange,White::Orange,Pink::Purple,Red::Yellow";;
 	*) return 1 # illegal option
@@ -479,10 +479,10 @@ function FLA0007 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::Gray,Orange::Pink,Purple::Red";;
+	A) tables="Black::Blue,Brown::Purple,Orange::Pink";;
 	B) tables="Orange::Black,Blue::Brown,Purple::Pink";;
-	C) tables="Black::Blue,Brown::Gray,Orange::Pink,Purple::Red";;
-	X) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
+	C) tables="Black::Blue,Brown::Purple,Orange::Pink";;
+	X) tables="Orange::Black,Blue::Brown,Purple::Pink";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league

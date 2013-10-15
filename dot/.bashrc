@@ -45,7 +45,7 @@ function dic () {
         esac
     done
     cd ~/$app
-    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR dic
+    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR dic_$course
     cd -
 }
 
@@ -85,7 +85,7 @@ alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp;
 alias GF="cd ~/GF; screen -c /home/drbean/dot/.screen/haskell.rc -dR GF; cd -"
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
-function pagestranscripts () {
+function pages () {
     OPTIND=1
     local arg course story
     while getopts 'c:t:s:o:l:x:' arg
@@ -99,11 +99,11 @@ function pagestranscripts () {
     cd ~/class/pagestranscripts
     COURSE=$course \
     STORY=$story \
-    screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pagestranscripts
+    screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pages_$course
     cd -
 }
 
-function soundfiles () {
+function sound () {
     OPTIND=1
     local arg course
     while getopts 'c:d:' arg
@@ -117,7 +117,7 @@ function soundfiles () {
     cd ~/soundfiles
     COURSE=$course \
     DIRECTORY=$directory \
-    screen -c /home/drbean/dot/.screen/soundfiles.rc -dR soundfiles
+    screen -c /home/drbean/dot/.screen/soundfiles.rc -dR sound_$COURSE
     cd -
 }
 
@@ -261,7 +261,7 @@ function exam_prep () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR $course
+	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR exam_$course
 	cd -
 }
 
@@ -288,7 +288,7 @@ function grading () {
     STORY=$story \
     FORM=$form \
     N=$n \
-    screen -c /home/drbean/dot/.screen/grading.rc -dR $league
+    screen -c /home/drbean/dot/.screen/grading.rc -dR s_$league
     cd -
 }
 
@@ -320,7 +320,7 @@ function AFN2N0 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,BlackBlack::Green,Orange::Pink,Yellow::White,Purple::BlueBlue";;
+	A) tables="Black::Blue,Brown::Gray,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Yellow::White,Purple::Red,OrangeOrange::";;
 	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Red::OrangeOrange,Yellow::";;
 	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Yellow::White,Purple::Red,BrownBrown::Assistants";;
 	X) tables="Green::Black,Blue::BlueBlue,Purple::Yellow,White::Orange,Pink::BlackBlack";;
@@ -334,7 +334,7 @@ function AFN2N0 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    screen -c /home/drbean/dot/.screen/class.rc -dR w_$league
     cd -
 }
 

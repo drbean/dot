@@ -10,4 +10,4 @@ stuff "cd ~/021/$LEAGUE^M# update_db.pl -l $LEAGUE -r $ROUND^M# sum_g1_g2.pl -l 
 screen
 stuff "# svn ci -m $TOPIC exam/$ROUND comp/$ROUND^M"
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
-stuff "ls exam/^M# svn revert exam/$ROUND^M# cp ../BMA0041/exam/$ROUND/round.yaml exam/$ROUND/round.yaml^M# scantron.pl -l $LEAGUE -r $ROUND > exam/$ROUND/response.yaml^M# score_jigsaw.pl -r $ROUND > exam/$ROUND/scores.yaml^M# grade_jigsaw.pl -r $ROUND -n $N > exam/$ROUND/g1.yaml^M# xelatex report.tex && evince report.pdf^M# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf'^M ls exam/"
+stuff "ls exam/^M# rm exam/$NEXTROUND -rf^M# svn revert exam/$ROUND^M# cp ../BMA0041/exam/$ROUND/round.yaml exam/$ROUND/round.yaml^M# scantron.pl -l $LEAGUE -r $ROUND > exam/$ROUND/response.yaml^M# score_jigsaw.pl -r $ROUND > exam/$ROUND/scores.yaml^M# grade_jigsaw.pl -r $ROUND -n $N > exam/$ROUND/g1.yaml^M# xelatex report.tex && evince report.pdf^M# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf'^M ls exam/"

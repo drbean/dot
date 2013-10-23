@@ -3,9 +3,11 @@ screen
 stuff "cd branch/gf^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 screen
+stuff "export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# perl script/loadYAMLid.pl ~/class/$COURSE/$TOPIC/${APP}.yaml $STORY^M"
 stuff "# perl script/create_exercise.pl $SCRIPT_ARG $STORY^M"
 screen
+stuff "export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# sudo systemctl stop httpd.service^M"
 stuff "# perl script/grade_${APP}.pl -l $LEAGUE -x $OLD_STORY > ~/021/$LEAGUE/homework.yaml^M"
 stuff "# perl script/delete_exercise.pl -i $OLD_STORY -g $COURSE^M"

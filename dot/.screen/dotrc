@@ -1,9 +1,10 @@
-screen v -S Session.vim
+screen v .bashrc .screen/
 screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "cp .bashrc ~/.bashrc && "
 stuff "cp .bash_profile ~/.bash_profile && "
 stuff "cp .xmonad/xmonad.hs ~/.xmonad/^M"
 stuff "xmonad --recompile && xmonad --restart^M"
+stuff "# export HISTTIMEFORMAT='%m-%d '
 screen
 stuff "lftp drbean@sac.nuu.edu.tw"

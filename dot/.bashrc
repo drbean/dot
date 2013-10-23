@@ -13,6 +13,7 @@ alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
 alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
+alias aca="cd ~/aca; APP=aca COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR aca; cd -"
 
 function edit () {
     OPTIND=1
@@ -117,7 +118,7 @@ function sound () {
     cd ~/soundfiles
     COURSE=$course \
     DIRECTORY=$directory \
-    screen -c /home/drbean/dot/.screen/soundfiles.rc -dR sound_$COURSE
+    screen -c /home/drbean/dot/.screen/soundfiles.rc -dR sound_$course
     cd -
 }
 
@@ -125,6 +126,27 @@ alias class="cd ~/class; screen -dR class; cd -"
 alias forms="cd ~/class/forms; screen -dR forms; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/drbean/dot/.screen/utility.rc -dR tmpl; cd -"
 alias rc="cd ~/021/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
+
+function topics () {
+    OPTIND=1
+    local arg course=topics topic
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	VIEW=$course \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=0 \
+	screen -c /home/drbean/dot/.screen/course.rc -dR topics_$topic
+	cd -
+}
 
 function college () {
     OPTIND=1
@@ -415,10 +437,10 @@ function yd40001280 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::OrangeOrange,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::White";;
+	A) tables="Black::Blue,Brown::Gray,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::White,OrangeOrange::";;
 	B) tables="Green::Black,Blue::Brown,Gray::BrownBrown,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Red::OrangeOrange,Yellow::";;
-	C) tables="Black::Blue,Brown::OrangeOrange,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::White";;
-	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,BrownBrown::OrangeOrange,White::Orange,Pink::Purple,Red::Yellow";;
+	C) tables="Black::Blue,Brown::Gray,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::White,OrangeOrange::";;
+	X) tables="Green::Black,Blue::Brown,Gray::BrownBrown,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Red::OrangeOrange,Yellow::";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league

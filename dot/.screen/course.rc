@@ -2,6 +2,7 @@ screen v $TOPIC/dic.yaml $TOPIC/cards.yaml $TOPIC/slides.vroom
 screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "cd ./$TOPIC && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && mput html/*.html && qui' && cd -^M"
+stuff "# perl ../../ttb/cards/bingo/bingo.pl -n 15 -s $STORY -f 0 '.' && xelatex bingo_${STORY}_0.tex && evince bingo_${STORY}_0.pdf^M"
 screen ghci -i../csfp/:./:./$TOPIC/$STORY/
 stuff ":load Tests^M":
 screen

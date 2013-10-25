@@ -1,12 +1,34 @@
 screen v league.yaml classwork/$ROUND/groups.yaml groups.yaml classwork/$NEXTROUND/groups.yaml 
 screen
 screen
-stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/grades && put grades.txt -o $LEAGUE.txt && qui'^M# print_grades.pl > grades.txt^M# teamseat.pl -s $NEXTROUND -n $N ^M# lpr teamseat.pdf -P kyocera^M# teamseat.pl -s $NEXTROUND --latex -n $N && xelatex classwork/$NEXTROUND/teamseat.tex && evince teamseat.pdf^M# mv groups.yaml classwork/$NEXTROUND/groups.yaml^M# svn revert classwork/$NEXTROUND^M# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls classwork/^M"
+stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/grades && put grades.txt -o $LEAGUE.txt && qui'^M"
+stuff "# print_grades.pl > grades.txt^M"
+stuff "# teamseat.pl -s $NEXTROUND -n $N ^M"
+stuff "# lpr teamseat.pdf -P kyocera^M"
+stuff "# teamseat.pl -s $NEXTROUND --latex -n $N && xelatex classwork/$NEXTROUND/teamseat.tex && evince teamseat.pdf^M"
+stuff "# mv groups.yaml classwork/$NEXTROUND/groups.yaml^M"
+stuff "# svn revert classwork/$NEXTROUND^M"
+stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls classwork/^M"
 stuff "# cp teamseat.pdf /run/media/drbean/5754-122B/^M"
 screen
-stuff "cd ~/021/$LEAGUE^M# update_db.pl -l $LEAGUE -r $ROUND^M# sum_g1_g2.pl -l $LEAGUE -r $ROUND > exam/$ROUND/g.yaml^M# score_comp.pl -r $ROUND > comp/$ROUND/scores.yaml^M# comptron.pl -l $LEAGUE -r $ROUND -x 1 > comp/$ROUND/response.yaml^M# round_table.pl -l $LEAGUE -r $ROUND ^M# create_round.pl -l $LEAGUE -r $ROUND -x $FORM > comp/$ROUND/round.yaml^M# svn revert comp/$ROUND^M ls comp^M"
+stuff "cd ~/021/$LEAGUE^M"
+stuff "# update_db.pl -l $LEAGUE -r $ROUND^M"
+stuff "# sum_g1_g2.pl -l $LEAGUE -r $ROUND > exam/$ROUND/g.yaml^M"
+stuff "# score_comp.pl -r $ROUND > comp/$ROUND/scores.yaml^M"
+stuff "# comptron.pl -l $LEAGUE -r $ROUND -x 1 > comp/$ROUND/response.yaml^M"
+stuff "# round_table.pl -l $LEAGUE -r $ROUND ^M"
+stuff "# create_round.pl -l $LEAGUE -r $ROUND -x $FORM > comp/$ROUND/round.yaml^M"
+stuff "# svn revert comp/$ROUND^M ls comp^M"
 screen
-stuff "ls exam/^M# rm exam/$NEXTROUND -rf^M# svn revert exam/$ROUND^M# cp ../BMA0041/exam/$ROUND/round.yaml exam/$ROUND/round.yaml^M# scantron.pl -l $LEAGUE -r $ROUND > exam/$ROUND/response.yaml^M# score_jigsaw.pl -r $ROUND > exam/$ROUND/scores.yaml^M# grade_jigsaw.pl -r $ROUND -n $N > exam/$ROUND/g1.yaml^M# xelatex report.tex && evince report.pdf^M# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf'^M ls exam/"
+stuff "ls exam/^M"
+stuff "# rm exam/$NEXTROUND -rf^M"
+stuff "# svn revert exam/$ROUND^M"
+stuff "# cp ../BMA0041/exam/$ROUND/round.yaml exam/$ROUND/round.yaml^M"
+stuff "# scantron.pl -l $LEAGUE -r $ROUND > exam/$ROUND/response.yaml^M"
+stuff "# score_jigsaw.pl -r $ROUND > exam/$ROUND/scores.yaml^M"
+stuff "# grade_jigsaw.pl -r $ROUND -n $N > exam/$ROUND/g1.yaml^M"
+stuff "# xelatex report.tex && evince report.pdf^M"
+stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf'^M ls exam/"
 stuff "# svn ci -m $TOPIC exam/$ROUND comp/$ROUND^M"
 screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"

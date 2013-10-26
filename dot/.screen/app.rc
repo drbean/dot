@@ -14,6 +14,8 @@ stuff "# perl script/delete_exercise.pl -i $OLD_STORY -g $COURSE^M"
 stuff "# sudo systemctl start httpd.service^M"
 stuff "# less ~/021/$LEAGUE/homework.yaml^M"
 stuff "# mv ~/021/$LEAGUE/homework.yaml ~/021/$LEAGUE/homework/ROUND.yaml^M"
+stuff "# svn add ~/021/$LEAGUE/homework/ROUND.yaml^M"
+stuff "# svn ci -m $OLD_STORY ~/021/$LEAGUE/homework/ROUND.yaml^M"
 stuff "svn st -q ~/021/$LEAGUE/homework^M"
 screen 4 sudo su - postgres
 stuff "psql ${APP}021^M"

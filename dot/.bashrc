@@ -13,7 +13,6 @@ alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
 alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
-alias aca="cd ~/aca; APP=aca COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR aca; cd -"
 
 function edit () {
     OPTIND=1
@@ -27,6 +26,26 @@ function edit () {
     done
     cd ~/edit/$source
     SOURCE=$source screen -c /home/drbean/dot/.screen/edit.rc -dR edit
+    cd -
+}
+
+function aca () {
+    OPTIND=1
+    local arg app=aca course topic story old_story league script_arg
+    while getopts 'c:t:s:o:l:x:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            o) old_story=${OPTARG};;
+            l) league=${OPTARG};;
+            x) script_arg=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/$app
+    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR aca_$course
     cd -
 }
 
@@ -342,9 +361,9 @@ function AFN2N0 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::Gray,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Yellow::White,Purple::Red,OrangeOrange::";;
-	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Red::OrangeOrange,Yellow::";;
-	C) tables="Black::Blue,Brown::BlueBlue,BlackBlack::Green,Orange::Pink,Yellow::White,Purple::Red,BrownBrown::Assistants";;
+	A) tables="Black::Blue,Gray::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Silver,White::Yellow";;
+	B) tables="Green::Black,Blue::Gray,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Silver::Yellow";;
+	C) tables="Black::Blue,Gray::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Silver,White::Yellow";;
 	X) tables="Green::Black,Blue::BlueBlue,Purple::Yellow,White::Orange,Pink::BlackBlack";;
 	*) return 1 # illegal option
     esac

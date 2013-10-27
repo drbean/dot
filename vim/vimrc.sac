@@ -1,0 +1,797 @@
+" Last Edit: 2013 Oct 13, 12:54:37 PM
+
+" I sourced this from $HOME/share/vim, using same vimrc on other platforms,
+" but now I've changed my mind, FTPing wrong file many times
+" $V/myvimrc still exists but will get out of date
+" source $V/myvimrc
+
+
+" Vim
+" An example for a vimrc file.
+"
+" To use it, copy it to
+"     for Unix and OS/2:  ~/.vimrc
+"             for Amiga:  s:.vimrc
+"  for MS-DOS and Win32:  $VIM\_vimrc
+"VIM must be set within vim, because :ec $VIM still returns ~/share/vim
+
+" default handles bom. This doesn't
+"if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
+"   set fileencodings=utf-8,latin1
+"endif
+
+"set verbose=9		"for testing autocommands
+set nocompatible	" Use Vim defaults (much better!)
+set comments=b:#,:%,fb:-,n:>,n:) "plus sr:/*,mb:*,el:*/,://,:XCOMM,
+" set   cpoptions="aABceFs"   "default! to match vi-behavior
+set   cpoptions+=M		"ignore backslashing of parentheses,
+				"as in lambda of tuple, \(x,y) matching them
+" set formatoptions=cqrt2	"for gq formatting
+set formatoptions=toncqrw	"for gq formatting
+"set iskeyword-=-
+set iskeyword=@,48-57,_,192-255,.,@-@	"- motion separator (why not work?
+"set iskeyword=@,48-57,_,192-255,-,.,@-@	"default
+set title
+"set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%) "Bram's
+set titlestring=%t%(\ %M%)%(\ [%{expand(\"%:p:h\")}]%)%(\ %a%)
+
+set bs=2		" allow backspacing over everything in insert mode
+set nostartofline	" page-changing commands don't change column
+set wrap		" display long lines on next
+set linebreak		" wrap long lines at break
+set showbreak=+		" show long line is continued with Mutt's +
+set whichwrap=b,s,h,l,<,>,[,]	" keys move to next line
+set tildeop		" ~ behaves like operator
+set ai			" always set autoindenting on
+set backup		" keep a backup file
+se exrc		" use ./.vimrc as well as ~/.vimrc
+set viminfo='2000,\"5000,:20000	" .viminfo file, 50 lines of registers
+if version >= 507
+	set viminfo='20,\"50,h,!	"no old hlsearch
+	endif
+se history=50000		" Ex commands, search patterns
+se nrformats-=octal
+
+se wildchar=<Tab>	" for expansion of command line
+"se wildignore=*~,	" files not seen in command line expansion
+" set formatoptions=tcroq2	"for gq formatting
+
+se timeoutlen=500	" how long to wait before default disambiguation
+se ttimeoutlen=500
+se showmatch 		" signals matching brackets
+se showmode		" in LLH corner
+se ttyfast		" smoothness of drawing, extra characters, copy help
+
+set   laststatus=2	" always with a status line on last window, too 
+set showcmd		" show command in progress
+set nonumber		" number on left side, I think
+se helpheight=0		" sets the minimum height of help when opened
+set winminheight=0	"non-focused window reduced to status bar
+
+"Colors
+"set term=screen
+"set t_Co=8
+"set t_Sf=^[[3%dm
+"set t_Sb=^[[4%dm
+
+if has("unix")
+        "let is_bash = 'bash'
+        "let &shell = '/bin/bash'
+        "let &term = $TERM      "default, & if not defined, =ansi
+        "cab vrc ~/.vimrc
+        nnoremap \v :confirm e ~/.vimrc<CR>
+        nnoremap \u :source ~/.vimrc<CR>
+        if hostname() != "ms" || hostname() != "ms1"
+                "let &shell = '/usr/bin/bash' "cygwin .exe screws shellpipe
+                "let &shellpipe = '2>&1| tee'
+                endif
+elseif has("win32")
+	cd a:/
+	"let is_bash = 'bash'
+	"abbreviations for calling up files
+	cab vrc A:/myvimrc
+	nnoremap \v :confirm e A:/myvimrc<CR>
+	nnoremap \u :source $V/_vimrc<CR>
+
+
+	set dir=$V	" on hard drive, A: slows swp file writing down
+	endif
+
+" " Changing myvimrc " Sven Guckes way
+" 
+"   if has("unix")
+"     let vimrc='~/myvimrc'
+"   else
+" " ie:  if has("dos16") || has("dos32") || has("win32")
+"     let vimrc='$VIM\myvimrc'
+"   endif
+" "     \u = "update" by reading this file
+" noremap  \u :source <C-R>=vimrc<CR><CR>
+" "     \v = vimrc editing (edit this file)
+" noremap  \v :edit   <C-R>=vimrc<CR><CR>
+" "or use abbreviations for the command line
+" cab rc <C-R>=vimrc<CR><CR>
+
+set path=.,		" path for files accessed by gf, etc
+" set runtimepath=~/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim63,/usr/share/vim/vimfiles/after,~/.vim/after	"fedora 3 got it wrong
+
+se report=0		"show changes in file
+se ruler		" show column, line
+
+" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+" let &guioptions = substitute(&guioptions, "t", "", "g")
+
+" Don't use Ex mode, use Q for formatting
+"map Q gq
+
+" 980527 I often reformat a paragraph to fit some textwidth -
+" and I use the following mapping to adjust it to the
+" current position of the cursor:
+  map <LocalLeader>tw :set textwidth=<C-R>=col(".")<C-M>
+
+"abbreviations for typos
+iab teh the
+
+"problems with <shift-space> on DOS Chinese input
+"imap <f4> <esc>BlcW
+"imap OS <esc>BlcW
+
+"Dates NEEDS WORK!!
+"if !has("unix")
+iab YDATE <C-R>=strftime("%a %b %d %T %Z %Y")<CR>
+"iab YDATE <C-R>=date<CR>
+"endif
+" Example: Tue Dec 16 12:07:00 CET 1997
+
+"Mappings
+
+" Toggles no/paste and reports it
+" map \P :set paste!<CR>: se paste?<CR>
+" pastetoggle for inside insert mode
+se pastetoggle=\\P
+
+" <c-a> is used in screen
+map \A <C-A>
+
+" Jakov Lerner
+noremap + I<CR><Esc>
+
+"Search stuff
+
+" 980706  Sourcing syntax files from the distribution
+" A nice and fast way to both source syntax files 
+" and to take a look at "what's there"
+  map \V  :so $V/vim55/syntax/
+
+" My syntax file goes before syntax on
+" this won't work for non-root user
+" let mysyntaxfile = "/usr/home/lang/share/vim/mysyntax.vim"
+" let myfiletypefile = "/usr/home/lang/share/vim/myfiletypes.vim"
+let myfiletypefile = "$VIMRUNTIME/myfiletype.vim"
+
+" from :h vimrc-filetype
+filetype plugin indent on
+" filetype on
+
+" Luc Hermitte's bracketing macros for html are in ftplugin, macro & plugin.
+" http://hermitte.free.fr/vim
+" but his map  ¡mark! to <M-Insert>, ¡jump! to <M-Delete>and ¡jumpB! to
+" <M-S-Delete> are not working.
+
+" imap <C-J> !jump!
+" map <C-J> !jump!
+" imap <C-K> !jumpB!
+" map <C-K> !jumpB!
+" imap <C-<> !mark!
+" vmap <C-<> !mark!
+
+" imap <End> <Plug>MarkersJumpF
+" map <End> <Plug>MarkersJumpF
+" imap <Home> <Plug>MarkersJumpB
+" map <Home> <Plug>MarkersJumpB
+" imap <C-<> <Plug>MarkersMark
+" vmap <C-<> <Plug>MarkersMark
+
+" imap \n <Plug>MarkersJumpF
+" map \n <Plug>MarkersJumpF
+" imap \p <Plug>MarkersJumpB
+" map \p <Plug>MarkersJumpB
+" imap \m <Plug>MarkersMark
+" vmap \m <Plug>MarkersMark
+
+" imap { !{!
+imap \> <Plug>MarkersJumpF
+map \> <Plug>MarkersJumpF
+imap \< <Plug>MarkersJumpB
+map \< <Plug>MarkersJumpB
+imap \m <Plug>MarkersMark
+vmap \m <Plug>MarkersMark
+
+
+
+"For better colors, specify background
+" set background=dark
+set background=light
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+"if &t_Co > 2 || has("gui_running")	"necessary because of background? no
+syntax on
+
+set hlsearch	" can be turned off till next /  with :noh[lsearch]
+" \h to turn off highliting completely when :noh not enuff
+map <LocalLeader>h :se hls!<CR> :se hls? <CR>
+set incsearch	" highlites & moves to search string in creation
+"endif
+" set grepprg=ack\ --nocolor\ --nogroup\ '$*'\ *\ /dev/null
+set grepprg=ack
+if &term=="xterm"
+     " set t_Co=8
+     set t_Sb=^[4%dm
+     set t_Sf=^[3%dm
+endif
+
+highlight MatchParen ctermbg=gray
+
+" Command and other mappings
+
+" Make CTRL-^ rebound to the *column* in the previous file
+  noremap <C-^> <C-^>`"
+"
+" Make "gf" rebound to last cursor position (line *and* column)
+  noremap gf gf`"
+"
+" When I let Vim edit/write the current buffer I frequently mistype the
+" command ":w" as ":W" - so I have to remap it to correct this typo:
+  nmap :E :e
+  nmap :W :w
+
+" The command {number}CTRL-G show the current buffer number, too.
+"  noremap <C-G> 2<C-G> 
+
+" Although I love Vi, I am quite used to this kind of editing now.
+" So here it is - command line editing commands in emacs style:
+" Commented out because of conflicts, eg ctrl-a lists directory
+" Will this create problems for Win95?
+" cnoremap <C-A> <Home>
+" cnoremap <C-F> <Right>
+" cnoremap <C-B> <Left>
+" cnoremap <C-E> <End>
+" cnoremap <ESC>b <S-Left>
+" cnoremap <ESC>f <S-Right>
+" cnoremap <ESC><C-H> <C-W>
+"
+" Additional codes for that "English" keyboard at the Xterminal
+"cnoremap <ESC>[D <Left>
+"cnoremap <ESC>[C <Right>
+
+" Make p in Visual mode replace the selected text with the "" register.
+vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
+
+" User commands example
+" returns no of lines in range, visual area, between marks
+com! -range -nargs=0 Lines :echo <line2> - <line1> + 1
+
+command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+	\ | wincmd p | diffthis
+
+" YAML editing 
+"
+" Maps
+
+" Convert output of SQLite dump to YAML of last round
+nn \Y :%s/^\w*\s//<CR>:%s/<Tab>/:<Space>/<CR>G$"eyiw:v/e$/d<CR>:%s/\s*e$//<CR>ggO---<Esc>
+
+" Email editing
+
+" removes > in front of blank lines in quoted mail
+nmap \cq :%s/^[><Tab> ]\+$//e<CR>
+vmap \cq  :s/^[><Tab> ]\+$//e<CR>
+
+" toggle im for quick emails
+" nmap \i :set insertmode!<CR> :set insertmode?<CR>
+
+" quote visually-selected section
+vmap \qp :s/^/> /<CR>
+"map \qp :'q,.s/^/> /<CR>
+"map \qp vip:s/^/> /<CR>
+
+vmap \dp :s/^> //<CR>
+
+" prevent das deleting quote mark
+map \das dasi> <ESC>
+
+" delete, change rest of email message, except my signature
+map \dG :.,$-5d<CR>
+" map \cG mXG5kmY`xd`YO<CR>
+map \cG y0:.,$-5d<CR>"0Pa<CR><CR><CR><CR><Up><Up>
+" map \cG :.,$-5d<CR>i<CR>
+
+" Bram's signature-choosing mapping. Uses mark X
+map \S mX:sp ~/.mutt/fortunes<CR>ggd/^--/<CR>Gp:wq<CR>'XGA<CR><Esc>p`X
+
+"      \ri = "Read in" basic lines from the email header NEEDS WORK
+"            Useful when replying to an email:
+"nmap \ri :r!readmsg \|egrep '^From:\|^Subject:\|^Date:\|^To:\|^Cc:'
+"            NOTE: "readmsg" ships with the mailer ELM.
+
+cab HEMAIL ^\(From\\|Cc\\|To\\|Date\\|Subject\\|Message-ID\\|Message-Id\\|X-\)
+nmap \we vip:v/HEMAIL/d
+vmap \we    :v/HEMAIL/d
+
+" for gqap formatting in INSERT
+imap gqap <C-O>gqap
+
+" join line in commented/quoted text and formats it. This is breaking something.
+"nmap J Vjgq
+
+"words=changes. u undoes. do \h first.
+map \wc :%s/[^ <Tab>]\+/&/g<CR>``
+
+
+" dic.yaml question creator
+nn <buffer> <Leader>answers y14y"0P"0P"0P14j3j27.jrB7k.1347.jrC7k.1367.jrD7k.27-wC
+
+"snipMate
+
+fu! Increment_i()
+	let s:i = @i
+	let @i = s:i+1
+	return s:i
+endf
+
+fu! Insert_increment()
+	let s:i = Increment_i()
+	let s:line = getline(".")
+	let s:chars = split( s:line, '\zs')
+	call insert( s:chars, s:i, col(".") )
+	let s:line = join( s:chars, "" )
+	call setline(".", s:line)
+endf
+
+map <LocalLeader>i :call Insert_increment()<CR>
+
+map <silent> <LocalLeader>snip <Esc>:call ResetSnippets() \| call GetSnippets(g:snippets_dir, "_") \| call GetSnippets(g:snippets_dir, &ft)<CR><Esc>:echo "Snippets for format \"" . &ft . "\" updated."<CR>
+
+
+
+"autocmds
+
+augroup mutt
+au!
+
+" Brams signature changing mapping. Didn't work in autocmd with <F3>
+" with BufNewFile or whatever
+autocmd BufNewFile /tmp/mutt* normal \S
+
+"I did this better before
+autocmd BufRead /tmp/mutt* %s/^[><C-I> ]\+$//
+"autocmd BufRead /tmp/mutt* normal \cq
+autocmd BufRead /tmp/mutt* set tw=65 
+" DOS terminal problem with <shift+space>
+autocmd BufRead /tmp/mutt* imap <f4> <esc>BlcW
+" \S,\M macros to make folder-hook index returners
+" replaced now with perl script
+autocmd BufRead ~/.muttrc map \S {O<CR>folder-hook . 'macro index h <lt>change-folder>?<lt>tab><lt>jump><lt>enter>0<lt>enter>'<CR><Esc>kma/^mailboxes '!'<CR>
+autocmd BufRead ~/.muttrc map \M f lmb"yyiW'ayypWmaciWy/\d\A`b\M
+"autocmd FileType mail source $V/bracketing.no-meta.vim
+" Sec Zehl's mappings for mail templates
+"autocmd FileType mail source $V/mail.mac
+"autocmd BufRead /tmp/mutt* set dir=$HOME
+
+" reply, quoting message
+autocmd BufRead /tmp/mutt* if getline(1) =~ '^On.*wrote:$'
+"autocmd BufRead /tmp/mutt* normal G?^> -- $<CR>d/^-- $/<CR>
+autocmd BufRead /tmp/mutt* 	normal \cq1Go
+" autocmd BufRead /tmp/mutt* set formatoptions=tcq2
+" c in format options continues the comment to the next line
+autocmd BufRead /tmp/mutt* set formatoptions=tq2
+au BufRead /tmp/mutt* normal :g/^> -- $/,/^$/-1d/^$
+"boiler plate for students [uses register r]
+"autocmd BufRead /tmp/mutt*      normal ggOr
+"put cursor below quoted message
+"autocmd BufRead /tmp/mutt*	normal G5k
+
+" new message, reply without quoting
+"sometimes postponed message has blank first line problem
+autocmd BufRead /tmp/mutt* elseif (getline(1) =~ '^$') 
+"autocmd BufRead /tmp/mutt*      set insertmode
+"autocmd BufRead /tmp/mutt*      startinsert 
+"not until script ended problem
+
+" postponed message [or reply to listserv, etc]
+autocmd BufRead /tmp/mutt* else
+autocmd BufRead /tmp/mutt*      1
+autocmd BufRead /tmp/mutt* endif
+
+autocmd BufRead *mutt*    map <F1> :!less /home/lang/bin/doc/mutt/manual.txt<CR>
+autocmd BufRead *mutt*    map <F2> :!lynx file://localhost/home/lang/manual/index.html<CR>
+
+" Deletes signature from replied to emails in mutt (but requires <CR>)
+"au BufRead /tmp/mutt* normal :g/^> -- $/,/^$/-1d/^$
+
+"nmap \m :g/^> -- $/,/^$/-1d
+augroup END 
+
+augroup text
+au!
+
+autocmd FileType text set <buffer> tw=78	
+" DOS terminal problem with <shift+space>
+autocmd FileType text imap <buffer> <f4> <esc>BlcW
+autocmd FileType text ino <buffer> _  _________
+autocmd FileType text source <buffer> ~lang/share/vim/bracks.vim
+augroup END
+
+" augroup html
+" au!
+" 
+" autocmd FileType html source ~lang/share/vim/bracks.vim
+" augroup end
+
+augroup edup
+	au!
+
+" Edit time updater
+" au BufWrite * call StampFileEditTime()
+" 
+" There is the StampFileEditTime and a support fn, SubstLine below.
+" 
+" alan kelly
+" 
+" Perform substitution on the existing line
+" args :linenum s/pat/rep/flags
+fu! SubstLine ( linenum, pat, rep, flags )
+    let thislineStr = getline( a:linenum )
+    if strlen( thislineStr )
+        let thislineStr = substitute( thislineStr, a:pat, a:rep, a:flags )
+        call setline( a:linenum, thislineStr )
+    endif
+endf
+
+" It requires a .vimrc entry like:
+" au BufWrite * call StampFileEditTime()
+function! StampFileEditTime()
+    let pat = '^\(.*Last Edit:\).*'
+    let rep = '\1 '.strftime('%Y %b %d, %X')
+    " Try the first 5 lines
+    let lineno = 1
+    while lineno <= 5
+	call SubstLine (lineno,pat,rep,"")
+	let lineno = lineno + 1
+    endwhile
+    " Try the last line
+    let lineno = line("$")
+	" if exists( getline( lineno ) )
+    call SubstLine (lineno,pat,rep,"")
+    	" endif
+endfunction
+	autocmd BufWrite * call StampFileEditTime()
+augroup END
+
+" augroup cprog
+"   " Remove all cprog autocommands
+"   au!
+" 
+"   " When starting to edit a file:
+"   "   For *.c and *.h files set formatting of comments and set C-indenting on.
+"   "   For other files switch it off.
+"   "   Don't change the order, it's important that the line with * comes first.
+"   autocmd BufRead *       set formatoptions=tcql nocindent comments&
+"   autocmd BufRead *.c,*.h set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
+" augroup END
+
+"WINDOWS MANAGEMENT
+set hidden	" should be hiding, not hidden (need to be careful with this)
+
+  " Uses autocmd to give more lines to the window moved into
+" augroup widewin
+"   " Remove all widewin autocommands (looks like comment can't be on same line)
+"   au!	
+" 
+"   autocmd WinEnter *  resize  +6
+" augroup END
+
+"removes help files from buffer list
+augroup help
+au!
+
+"au BufUnload,BufHidden * if &filetype == "help" | bdel | endif
+"au BufUnload * if &filetype == "help" | bdel | endif
+
+augroup END
+
+" scoring classwork/$week.yaml files
+"
+nn <LocalLeader>f :if !empty(getline('.')) <Bar>
+	\ call search('^$', 'bW') <Bar>
+	\ endif <Bar>
+	\ exe "normal /merits\r$r3n$r2/^\\w\r"
+	\ <CR>
+	\ <CR>
+
+nn <LocalLeader>s :if !empty(getline('.')) <Bar>
+		\ call search('^$', 'bW') <Bar>
+	\ endif <Bar>
+	\ call search('merits', 'W') <Bar>
+	\ call setline('.', substitute(getline('.'), ".$", "2", "") ) <Bar>
+	\ call search('merits', 'W') <Bar>
+	\ call setline('.', substitute(getline('.'), ".$", "3", "") ) <Bar>
+	\ call search('^$', 'W') 
+	\ <CR>
+	\ <CR>
+
+" entering compcomp, jigsaw, homework, writing exam responses
+"
+augroup comp
+au!
+
+au BufEnter comp/*/response.yaml nn <buffer> - $s-1<Esc>2<CR>
+au BufEnter comp/*/response.yaml nn <buffer> 0 $r0yyp<C-A>$r~
+au BufEnter comp/*/response.yaml nn <buffer> 1 $r1yyp<C-A>$r~
+au BufEnter comp/*/response.yaml nn <buffer> 2 $r2yyp<C-A>$r~
+au BufEnter comp/*/response.yaml nn <buffer> 3 $r3yyp<C-A>$r~
+au BufEnter comp/*/response.yaml nn <buffer> t $rTyyp<C-A>$r~3h
+au BufEnter comp/*/response.yaml nn <buffer> f $s  F<Esc>yyp<C-A>$2Xr~3h
+au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>f $sFault<Esc>yyp<C-A>WC~<Esc>3h
+au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>u $sUnreturned<Esc>yyp<C-A>WC~<Esc>3h
+au BufEnter comp/*/response.yaml nn <buffer> r $sReturned<Esc>yyp<C-A>WC~<Esc>3h
+au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>o $sOld<Esc>yyp<C-A>WC~<Esc>3h
+au BufEnter comp/*/response.yaml nn <buffer> l $sNil<Esc>^/ \~$<CR>2h
+" au User comp/*/response.yaml nn <buffer> t $rTj$
+" au User comp/*/response.yaml nn <buffer> f $s  F<Esc>j$
+au BufEnter comp/*/response.yaml nn <buffer> a ^<C-A>"ayl
+au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>~ $r~yyp<C-A>$r~
+au BufEnter comp/*/response.yaml nn <buffer> O $sOther<Esc>yyp<C-A>WC~<Esc>3h
+au BufEnter comp/*/response.yaml nn <buffer> d dd^/ \~$<CR>2h
+
+
+augroup END
+
+augroup jigsaw
+au!
+
+au BufEnter exam/*/*response.yaml nn <buffer> 0 $r0j$
+au BufEnter exam/*/*response.yaml nn <buffer> 1 $r1j$
+au BufEnter exam/*/*response.yaml nn <buffer> 2 $r2j$
+au BufEnter exam/*/*response.yaml nn <buffer> 3 $r3j$
+au BufEnter exam/*/*response.yaml nn <buffer> 4 $r4j$
+au BufEnter exam/*/*response.yaml nn <buffer> 5 $r5j$
+au BufEnter exam/*/*response.yaml nn <buffer> 6 $r6j$
+au BufEnter exam/*/*response.yaml nn <buffer> 7 $r7j$
+au BufEnter exam/*/*response.yaml nn <buffer> 8 $r8j$
+au BufEnter exam/*/*response.yaml nn <buffer> 9 $r9j$
+au BufEnter exam/*/*response.yaml nn <buffer> <LocalLeader>1 $s10<Esc>j$
+au BufEnter exam/*/*response.yaml nn <buffer> t $rTj$
+au BufEnter exam/*/*response.yaml nn <buffer> f $s  F<Esc>j$
+au BufEnter exam/*/*response.yaml nn <buffer> p $sPresent<Esc>j$
+au BufEnter exam/*/*response.yaml nn <buffer> a $sAbsent<Esc>j$
+au BufEnter exam/*/*response.yaml nn <buffer> o $sOther<Esc>j$
+
+augroup END
+
+augroup classify
+au!
+
+au User *Eng.gf nn <buffer> a dd'aP''
+au User *Eng.gf nn <buffer> d dd'dP''
+au User *Eng.gf nn <buffer> n dd'nP''
+au User *Eng.gf nn <buffer> v dd'vP''
+
+augroup END
+
+augroup subjective
+au!
+
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 0 $r0j$
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 1 $r1j$
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 2 $r2j$
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 3 $r3j$
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 4 $r4j$
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 5 $r5j$
+
+augroup END
+
+function! Nun()
+	nun <buffer> 0
+	nun <buffer> 1
+	nun <buffer> 2
+	nun <buffer> 3
+	nun <buffer> 4
+	nun <buffer> 5
+	nun <buffer> t
+	nun <buffer> f
+	nun <buffer> o
+	nun <buffer> c
+	nun <buffer> r
+	nun <buffer> l
+	nun <buffer> p
+	nun <buffer> a
+	nun <buffer> d
+	nun <buffer> n
+	nun <buffer> v
+	nun <buffer> <LocalLeader>~
+endfunction
+
+" wordlist from text
+fu! Wordlist()
+perl << EOF
+	use strict;
+	use List::MoreUtils qw/any/;
+	my $buf = VIM::Buffers( 'text.txt' );
+	my $lines = $buf->Count();
+	my @text = $buf->Get( 1 .. $lines );
+	my ( %words, %tokens, @tokens );
+	for my $line ( @text ) {
+		chomp $line;
+		my @words = map { lc } split / /, $line;
+		for my $word ( @words ) {
+			$word =~ s/\W$//;
+			$words{$word}++;
+		}
+	}
+	for my $word ( keys %words ) {
+		my $letter = substr( $word, 0, 1 );
+		my $Letter = uc $letter;
+		my $tokens = $tokens{$Letter};
+		push @{ $tokens{$Letter} }, $word;
+	}
+	for my $token ( sort keys %tokens ) {
+		my $tokenarray = $tokens{$token};
+		my $alphabeticgroup = "$token: " . join ' ', sort @$tokenarray;
+		push @tokens, $alphabeticgroup;
+	}
+	print @tokens;
+	my $words = VIM::Buffers( 'words.txt' );
+	my $linecount = $words->Count();
+	$words->Delete( 1, $linecount );
+	$words->Append( 0, @tokens );
+EOF
+endf
+
+map <LocalLeader>words :call Wordlist()<CR>
+" function to open man page of command under cursor
+
+"fun! Man(page)
+"   new
+"   set ft=man
+"   exe"r!man ".a:page." 2>/dev/null \|col -b\|uniq -u"
+"   set nomod
+"   normal 1G
+"endfun
+"
+"" map \K :call Man(expand("<cword>"))<CR>
+"
+"fun! Percent()
+"perl << EOF
+"	use strict;
+"	my @buffers = VIM::Buffers( 'finals' );
+"	my $buffer = shift @buffers;
+"	my $lines = $buffer->Count();
+"	my $title = $buffer->Get( 1 );
+"	my $denominator;
+"	($denominator = $title) =~ s/^.*Total\/(\d+).*$/$1/;
+"	foreach my $line ( 4 .. $lines )
+"	{
+"		my @fields = split ' ', $buffer->Get( $line );
+"		my $numerator = $fields[-1];
+"		die unless $numerator =~ m/\d+/;
+"		my $percentage = 100 * $numerator / $denominator;
+"		my $record = $buffer->Get( $line );
+"		$record .= "  $percentage";
+"		$buffer->Set( $line, $record );
+"	}
+"EOF
+"endfun
+"
+"fun! Totaler()
+"perl << EOF
+"	use strict;
+"	my @buffers = VIM::Buffers( '%' );
+"	my $buffer = shift @buffers;
+"	die "$!" unless $buffer;
+"	my $lines = $buffer->Count();
+"	my $title = $buffer->Get( 1 );
+"	my $lastround;
+"	# ($title, $lastround) = ($title =~ /^(.*)\s(\d+)\s\sTotal$/);
+"	# $buffer->Set( 1, "$title $lastround " . ++$lastround . '  Total' );
+"	foreach my $line ( 4 .. $lines )
+"	{
+"		my @fields = split ' ', $buffer->Get( $line );
+"		next unless @fields;
+"		my $name = shift @fields;
+"		die unless $name =~ m/\w+/;
+"		my $record = ' ' . $name . "\t";
+"		my $id;
+"		$id = shift @fields if $fields[0] =~ m/\d{7}/;
+"		die unless $id =~ m/\d{7}/;
+"		$record .= $id . "\t"  if $id;
+"		my $total = 0;
+"		while ( @fields > 1 )
+"		{
+"			my $round = shift @fields;
+"			$total += $round if $round =~ m/^\d*\.?\d+$/;
+"			$record .= $round . " ";
+"		}
+"		$record .= " $total";
+"		$buffer->Set( $line, $record );
+"	}
+"EOF
+"endfun
+
+fun! CharUnderCursor()
+	return matchstr(getline('.'), '.\%>' . (col('.')) . 'c')
+endfun
+
+fun! FindNext()
+	let a:char = CharUnderCursor()
+	exe "normal f" . a:char
+endfun
+
+nn <LocalLeader>F :call FindNext()<CR>
+
+"""""""""" slime.vim
+
+function! Send_to_Screen(text)
+  if !exists("b:slime")
+    call Screen_Vars()
+  end
+
+  let escaped_text = substitute(shellescape(a:text), "\\\\\n", "\n", "g")
+  let dollar_escaped_text = substitute(escaped_text, "\\\$", "\\\\\$", "g")
+  call system("screen -S " . b:slime["sessionname"] . " -p " . b:slime["windowname"] . " -X stuff " . dollar_escaped_text)
+endfunction
+
+function! Screen_Session_Names(A,L,P)
+  return system("screen -ls | awk '/Attached/ {print $1}'")
+endfunction
+
+function! Screen_Vars()
+  if !exists("b:slime")
+    let b:slime = {"sessionname": "", "windowname": "0"}
+  end
+
+  let b:slime["sessionname"] = input("session name: ", b:slime["sessionname"], "custom,Screen_Session_Names")
+  let b:slime["windowname"]  = input("window name: ", b:slime["windowname"])
+endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+vmap <C-c><C-c> "ry :call Send_to_Screen(@r)<CR>
+nmap <C-c><C-c> vip<C-c><C-c>
+
+nmap <C-c>v :call Screen_Vars()<CR>
+
+map <LocalLeader>l :ls<CR>:b<Space>
+
+nn <LocalLeader>jigsaw 4<CR>d4d3kP<CR>d3dp<CR>d2dp<CR>ddp<CR>d4d6-P<CR>d3d<CR>p<CR>d2d<CR>p<CR>dd<CR>p<CR>d4d9-P<CR>d3d2<CR>p<CR>d2d2<CR>p<CR>dd2<CR>p
+
+fu! Ucfirst(word)
+	let up = substitute( a:word, "^.", "\\=toupper(submatch(0))", "")
+	return up
+endfunction
+
+fu! Firstletter(word)
+	let first = substitute( a:word, '^\(.\).*$', '\1', "")
+	return first
+endfunction
+
+fu! Underscore()
+	let str = expand('<cword>')
+	let n = str2nr( str )
+	let underscore = repeat('\\_', n)
+	let newline = substitute(getline('.'), '\d\+', underscore, '' )
+	call setline(".", newline)
+endfunction
+ino <LocalLeader>_ <Esc>:call Underscore()<CR>A 
+
+fu! Rtfcolor()
+	let xreg = @x
+	normal! gv"xy
+	let vissel = @x
+	let @x = xreg
+	let newline = substitute( getline("."), vissel, "}{\\\\cf3\\\\rtlch \\\\ltrch\\\\loch " . vissel .  "}{\\\\rtlch \\\\ltrch\\\\loch ", "")
+	call setline(".", newline)
+endfunction
+vno <LocalLeader>c <Esc>:call Rtfcolor()<CR>
+

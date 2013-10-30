@@ -6,6 +6,7 @@ screen
 stuff "export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# perl script/loadYAMLid.pl ~/class/$COURSE/$TOPIC/${APP}.yaml $STORY^M"
 stuff "# perl script/create_exercise.pl $SCRIPT_ARG $STORY^M"
+stuff "# export HISTTIMEFORMAT=^M"
 screen
 stuff "export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# sudo systemctl stop httpd.service^M"
@@ -17,6 +18,7 @@ stuff "# mv ~/021/$LEAGUE/homework.yaml ~/021/$LEAGUE/homework/ROUND.yaml^M"
 stuff "# svn add ~/021/$LEAGUE/homework/ROUND.yaml^M"
 stuff "# svn ci -m $OLD_STORY ~/021/$LEAGUE/homework/ROUND.yaml^M"
 stuff "svn st -q ~/021/$LEAGUE/homework^M"
+stuff "# export HISTTIMEFORMAT=^M"
 screen 4 sudo su - postgres
 stuff "psql ${APP}021^M"
 screen 7

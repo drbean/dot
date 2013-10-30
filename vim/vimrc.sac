@@ -1,4 +1,4 @@
-" Last Edit: 2013 Oct 13, 12:54:37 PM
+" Last Edit: 2013 Oct 28, 07:46:58 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -412,6 +412,12 @@ autocmd BufRead *mutt*    map <F2> :!lynx file://localhost/home/lang/manual/inde
 
 "nmap \m :g/^> -- $/,/^$/-1d
 augroup END 
+
+augroup yaml
+au!
+
+autocmd FileType yaml setlocal sw=2
+augroup END
 
 augroup text
 au!

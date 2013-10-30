@@ -395,6 +395,7 @@ function AFN300 () {
     case ${letter} in
 	A) tables="1/1::2/1,1/2::2/2,3/1::4/1,3/2::4/2,8/1::9/1,8/2::9/2,10/1::11/1,10/2::11/2,12/1::13/1,12/2::5/1";;
 	B) tables="1/1::1/2,2/1::2/2,3/1::3/2,4/1::4/2,8/1::8/2,9/1::9/2,10/1::10/2,11/1::11/2";;
+	C) tables="Black::Blue,Brown::Gray,Green::BlackBlack,BlueBlue::OrangeOrange,Orange::Pink,Purple::Red,White::Yellow";;
 	X) tables="1/1::1/2,2/1::2/2,3/1::3/2,4/1::4/2,8/1::8/2,9/1::9/2,10/1::10/2,11/1::11/2,12/1::13/1,12/2::5/1";;
 	*) return 1 # illegal option
     esac
@@ -456,10 +457,10 @@ function yd40001280 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::Gray,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::White,OrangeOrange::";;
-	B) tables="Green::Black,Blue::Brown,Gray::BrownBrown,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Red::OrangeOrange,Yellow::";;
-	C) tables="Black::Blue,Brown::Gray,BrownBrown::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Red,Yellow::White,OrangeOrange::";;
-	X) tables="Green::Black,Blue::Brown,Gray::BrownBrown,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Red::OrangeOrange,Yellow::";;
+	A) tables="Black::Blue,Brown::Khaki,Chocolate::Charcoal,Green::Orange,Pink::Purple,Red::Silver,Yellow::White";;
+	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Red,Orange::White,Pink::Yellow,Purple::Silver";;
+	C) tables="Black::Blue,Brown::Khaki,Chocolate::Charcoal,Green::Orange,Pink::Purple,Red::Silver,Yellow::White";;
+	X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Red,Orange::White,Pink::Yellow,Purple::Silver";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league
@@ -552,7 +553,7 @@ function GL00006 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Gray,Orange::Green,White::Yellow,Blue::Assistants";;
+	A) tables="Black::Gray,Orange::Green,White::Yellow,Blue::Brown";;
 	B) tables="Black::Blue,Gray::White,Yellow::Green,Orange::Brown";;
 	C) tables="Black::Gray,Orange::Green,White::Yellow,Blue::Brown";;
 	X) tables="Yellow::Black,Blue::Orange,Green::Gray,Red::White";;

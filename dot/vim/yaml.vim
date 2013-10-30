@@ -120,7 +120,7 @@ function GetYAMLIndent(lnum)
     elseif prevline =~# '^\s*- '
         " - List with
         "   multiline scalar
-        return previndent+2
+        return previndent
     elseif prevline =~# s:mapkeyregex
         " Mapping with: value
         "     that is multiline scalar

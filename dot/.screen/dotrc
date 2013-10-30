@@ -7,4 +7,6 @@ stuff "cp .xmonad/xmonad.hs ~/.xmonad/ && "
 stuff "xmonad --recompile && xmonad --restart^M"
 stuff "# export HISTTIMEFORMAT='%m-%d '"
 screen
+stuff "# su -c 'cp vim/vimrc.sac /etc/vimrc'^M"
+screen
 stuff "lftp drbean@sac.nuu.edu.tw"

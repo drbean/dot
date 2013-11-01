@@ -407,7 +407,7 @@ function AFN300 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    screen -c /home/drbean/dot/.screen/class.rc -dR w_$league
     cd -
 }
 
@@ -439,7 +439,7 @@ function AFN3Y0 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    screen -c /home/drbean/dot/.screen/class.rc -dR w_$league
     cd -
 }
 
@@ -471,7 +471,7 @@ function yd40001280 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    screen -c /home/drbean/dot/.screen/class.rc -dR w_$league
     cd -
 }
 
@@ -503,7 +503,7 @@ function FLA0006 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    screen -c /home/drbean/dot/.screen/class.rc -dR w_$league
     cd -
 }
 
@@ -535,7 +535,7 @@ function FLA0007 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    screen -c /home/drbean/dot/.screen/class.rc -dR w_$league
     cd -
 }
 
@@ -567,7 +567,7 @@ function GL00006 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    screen -c /home/drbean/dot/.screen/class.rc -dR w_$league
     cd -
 }
 
@@ -599,7 +599,7 @@ function GL00030 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR $league
+    screen -c /home/drbean/dot/.screen/class.rc -dR w_$league
     cd -
 }
 

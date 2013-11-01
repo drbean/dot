@@ -425,10 +425,10 @@ function AFN3Y0 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Green,BlackBlack::Pink,Yellow::Orange,Purple::Blue";;
-	B) tables="Black::Blue,BlackBlack::Green,Orange::Pink,Yellow::Purple";;
-	C) tables="Black::Green,BlackBlack::Pink,Yellow::Orange,Purple::Blue";;
-	X) tables="Black::Blue,BlackBlack::Green,Orange::Pink,Yellow::Purple";;
+	A) tables="Black::Green,Charcoal::Pink,Yellow::Orange,Purple::Blue";;
+	B) tables="Black::Blue,Charcoal::Green,Orange::Pink,Yellow::Purple";;
+	C) tables="Black::Green,Charcoal::Pink,Yellow::Orange,Purple::Blue";;
+	X) tables="Black::Blue,Charcoal::Green,Orange::Pink,Yellow::Purple";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league

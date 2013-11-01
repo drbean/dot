@@ -427,7 +427,7 @@ function AFN3Y0 () {
     case ${letter} in
 	A) tables="Black::Green,Charcoal::Pink,Yellow::Orange,Purple::Blue";;
 	B) tables="Black::Blue,Charcoal::Green,Orange::Pink,Yellow::Purple";;
-	C) tables="Black::Green,Charcoal::Pink,Yellow::Orange,Purple::Blue";;
+	C) tables="Black::Charcoal,Blue::Green,Pink::Purple,Orange::Yellow";;
 	X) tables="Black::Blue,Charcoal::Green,Orange::Pink,Yellow::Purple";;
 	*) return 1 # illegal option
     esac

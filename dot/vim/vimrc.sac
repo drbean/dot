@@ -1,4 +1,4 @@
-" Last Edit: 2013 Oct 28, 07:46:58 PM
+" Last Edit: 2013 Nov 03, 04:40:29 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -422,11 +422,11 @@ augroup END
 augroup text
 au!
 
-autocmd FileType text set <buffer> tw=78	
+autocmd FileType text setlocal tw=78	
 " DOS terminal problem with <shift+space>
 autocmd FileType text imap <buffer> <f4> <esc>BlcW
 autocmd FileType text ino <buffer> _  _________
-autocmd FileType text source <buffer> ~lang/share/vim/bracks.vim
+autocmd FileType text <buffer> source ~lang/share/vim/bracks.vim
 augroup END
 
 " augroup html

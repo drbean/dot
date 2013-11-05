@@ -1,11 +1,11 @@
-screen v cards.yaml
+screen v $TOPIC/cards.yaml
 screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
-stuff "# cp jigsaw_\${STORY}_\$FORM.pdf /run/media/drbean/5754-122B/^M"
+stuff "# cp jigsaw_\${STORY}_\$FORM.pdf /run/media/drbean/DIE2GV1/^M"
 stuff "# lpr jigsaw_\${STORY}_\$FORM.pdf^M"
 stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl ./\$TOPIC && xelatex ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && evince jigsaw_\${STORY}_\$FORM.pdf"
 screen
-stuff "# cp quiz_\${STORY}_\$FORM.pdf /run/media/drbean/5754-122B/^M"
+stuff "# cp quiz_\${STORY}_\$FORM.pdf /run/media/drbean/DIE2GV1/^M"
 stuff "# lpr quiz_\${STORY}_\$FORM.pdf^M"
 stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl ./\$TOPIC && xelatex ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince quiz_\${STORY}_\$FORM.pdf"
 screen lftp web.nuu.edu.tw

@@ -28,7 +28,7 @@ stuff "# scantron.pl -l $LEAGUE -r $ROUND > exam/$ROUND/response.yaml^M"
 stuff "# score_jigsaw.pl -r $ROUND > exam/$ROUND/scores.yaml^M"
 stuff "# grade_jigsaw.pl -r $ROUND -n $N > exam/$ROUND/g1.yaml^M"
 stuff "# xelatex report.tex && evince report.pdf^M"
-stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf'^M ls exam/"
+stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf'^M"
 stuff "# svn ci -m $TOPIC exam/$ROUND comp/$ROUND^M"
 screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"

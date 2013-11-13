@@ -489,10 +489,10 @@ function FLA0006 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,BlueBlue::BlackBlack,Green::Orange,Pink::Purple,Yellow::White";;
-	B) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
-	C) tables="Black::Blue,BlueBlue::BlackBlack,Green::Orange,Pink::Purple,Yellow::White";;
-	X) tables="Green::Black,Blue::Brown,BlueBlue::BlackBlack,Yellow::Orange,Pink::Purple,Red::OrangeOrange";;
+	A) tables="Black::Blue,Chocolate::Charcoal,Green::Orange,Pink::Purple,Yellow::White";;
+	B) tables="Green::Black,Blue::Charcoal,Chocolate::Purple,White::Orange,Pink::Yellow";;
+	C) tables="Black::Blue,Chocolate::Charcoal,Green::Orange,Pink::Purple,Yellow::White";;
+	X) tables="Green::Black,Blue::Charcoal,Chocolate::Purple,White::Orange,Pink::Yellow";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league
@@ -553,9 +553,9 @@ function GL00006 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Gray,Orange::Green,White::Yellow,Blue::Brown";;
-	B) tables="Black::Blue,Gray::White,Yellow::Green,Orange::Brown";;
-	C) tables="Black::Gray,Orange::Green,White::Yellow,Blue::Brown";;
+	A) tables="Black::Gray,Orange::Yellow,Blue::Brown,Green::";;
+	B) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
+	C) tables="Black::Gray,Orange::Green,Blue::Brown,Yellow::";;
 	X) tables="Yellow::Black,Blue::Orange,Green::Gray,Red::White";;
 	*) return 1 # illegal option
     esac

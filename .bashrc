@@ -393,10 +393,10 @@ function AFN300 () {
         esac
     done
     case ${letter} in
-	A) tables="1/1::2/1,1/2::2/2,3/1::4/1,3/2::4/2,8/1::9/1,8/2::9/2,10/1::11/1,10/2::11/2,12/1::13/1,12/2::5/1";;
-	B) tables="1/1::1/2,2/1::2/2,3/1::3/2,4/1::4/2,8/1::8/2,9/1::9/2,10/1::10/2,11/1::11/2";;
-	C) tables="Black::Blue,Brown::Gray,Green::BlackBlack,BlueBlue::OrangeOrange,Orange::Pink,Purple::Red,White::Yellow";;
-	X) tables="1/1::1/2,2/1::2/2,3/1::3/2,4/1::4/2,8/1::8/2,9/1::9/2,10/1::10/2,11/1::11/2,12/1::13/1,12/2::5/1";;
+	A) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Purple::Silver,White::Yellow";;
+	B) tables="Green::Black,Blue::Brown,Charcoal::Chocolate,White::Orange,Pink::Purple,Yellow::Silver";;
+	C) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Purple::Silver,White::Yellow";;
+	X) tables="Green::Black,Blue::Brown,Charcoal::Chocolate,White::Orange,Pink::Purple,Yellow::Silver";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league
@@ -521,9 +521,9 @@ function FLA0007 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::Purple,Orange::Pink";;
-	B) tables="Orange::Black,Blue::Brown,Purple::Pink";;
-	C) tables="Black::Blue,Brown::Purple,Orange::Pink";;
+	A) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
+	B) tables="Orange::Black,Blue::Brown,Red::Purple,Pink::";;
+	C) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
 	X) tables="Orange::Black,Blue::Brown,Purple::Pink";;
 	*) return 1 # illegal option
     esac

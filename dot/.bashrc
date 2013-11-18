@@ -363,7 +363,7 @@ function AFN2N0 () {
     case ${letter} in
 	A) tables="Black::Blue,Gray::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Silver,White::Yellow";;
 	B) tables="Green::Black,Blue::Gray,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Silver::Yellow";;
-	C) tables="Black::Blue,Gray::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Silver,White::Yellow";;
+	C) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow";;
 	X) tables="Green::Black,Blue::BlueBlue,Purple::Yellow,White::Orange,Pink::BlackBlack";;
 	*) return 1 # illegal option
     esac

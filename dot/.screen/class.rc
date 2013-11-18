@@ -15,5 +15,5 @@ stuff '$g->grades'
 screen lftp web.nuu.edu.tw
 stuff "cd public_html/$LEAGUE^M"
 screen
-stuff "ls homework classwork exams/*^M"
+stuff "ls homework classwork exam/*^M"
 

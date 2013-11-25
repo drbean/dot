@@ -560,7 +560,6 @@ function GL00006 () {
 	*) return 1 # illegal option
     esac
     cd ~/021/$league
-    echo -e "---\n$tables" >> "classwork/$week.yaml"
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \

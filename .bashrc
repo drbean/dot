@@ -362,7 +362,7 @@ function AFN2N0 () {
     done
     case ${letter} in
 	A) tables="Black::Blue,Gray::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Silver,White::Yellow";;
-	B) tables="Green::Black,Blue::Gray,BlueBlue::BlackBlack,White::Orange,Pink::Purple,Silver::Yellow";;
+	B) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
 	C) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow";;
 	X) tables="Green::Black,Blue::BlueBlue,Purple::Yellow,White::Orange,Pink::BlackBlack";;
 	*) return 1 # illegal option
@@ -394,8 +394,8 @@ function AFN300 () {
     done
     case ${letter} in
 	A) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Purple::Silver,White::Yellow";;
-	B) tables="Green::Black,Blue::Brown,Charcoal::Chocolate,White::Orange,Pink::Purple,Yellow::Silver";;
-	C) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Purple::Silver,White::Yellow";;
+	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
+	C) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Red::Khaki,White::Gray,Purple::";;
 	X) tables="Green::Black,Blue::Brown,Charcoal::Chocolate,White::Orange,Pink::Purple,Yellow::Silver";;
 	*) return 1 # illegal option
     esac
@@ -522,7 +522,7 @@ function FLA0007 () {
     done
     case ${letter} in
 	A) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
-	B) tables="Orange::Black,Blue::Brown,Red::Purple,Pink::";;
+	B) tables="Orange::,Black::Blue,Brown::Red,Purple::Pink";;
 	C) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
 	X) tables="Orange::Black,Blue::Brown,Purple::Pink";;
 	*) return 1 # illegal option
@@ -560,6 +560,7 @@ function GL00006 () {
 	*) return 1 # illegal option
     esac
     cd ~/021/$league
+    echo -e "---\n$tables" >> "classwork/$week.yaml"
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \

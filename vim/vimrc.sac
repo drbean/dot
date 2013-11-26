@@ -1,4 +1,4 @@
-" Last Edit: 2013 Nov 25, 10:29:05 PM
+" Last Edit: 2013 Nov 26, 10:51:15 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -507,8 +507,16 @@ au!
 
 augroup END
 
+augroup classwork
+
 " scoring classwork/$week.yaml files
 "
+
+nn <LocalLeader>r :set paste<CR>G
+       \ :.s/,/,<C-V><CR>/g <CR>
+       \ :%s/\v(::<Bar>,)/:<C-V><CR>  absent:<C-V><CR>  merits: \~<C-V><CR>/g <CR>
+       \ :se paste!<CR><CR>
+
 nn <LocalLeader>f :if !empty(getline('.')) <Bar>
 	\ call search('^$', 'bW') <Bar>
 	\ endif <Bar>
@@ -526,6 +534,8 @@ nn <LocalLeader>s :if !empty(getline('.')) <Bar>
 	\ call search('^$', 'W') 
 	\ <CR>
 	\ <CR>
+
+augroup END
 
 " entering compcomp, jigsaw, homework, writing exam responses
 "

@@ -1,13 +1,14 @@
 screen v league.yaml classwork/$SESSION/groups.yaml classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml
 screen
-stuff "echo -e \"---\n$TABLES\" >> \"classwork/$WEEK.yaml.orig\"^M"
+stuff "echo -e \"---\n# topic: $TOPIC\n$TABLES\" >> \"classwork/$WEEK.yaml.orig\"^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "ls classwork^M"
-# stuff "svn ls classwork/$SESSION^M"
+stuff "svn ls classwork/$SESSION^M"
+stuff "# svn add classwork/$LASTWEEK.yaml^M"
 # stuff "# svn revert classwork/$SESSION/$LASTWEEK.yaml^M"
 # stuff "# svn mv classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
 # stuff "# svn ci -m Grades/Groupwork:r1720 classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
-stuff "# mv classwork/$SESSION/$LASTWEEK.yaml.orig classwork/$SESSION/$LASTWEEK.yaml^M" 
+stuff "# mv classwork/$LASTWEEK.yaml.orig classwork/$LASTWEEK.yaml^M" 
 stuff "# svn ci -m $TOPIC classwork/$LASTWEEK.yaml^M"
 screen
 stuff "# conversation.pl -l $LEAGUE -s $SESSION -r $WEEK -x $TOPIC -p $LETTER -t $TABLES && xelatex classwork/$SESSION/conversation.tex && evince conversation.pdf^M"

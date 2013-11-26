@@ -29,7 +29,7 @@ main = do
 		-- , terminal="mate-terminal --show-menubar"
 		-- , terminal = "/usr/bin/urxvt"
 		, layoutHook = myLayout
-		, keys = myKeys <+> keys foundconfig
+		-- , keys = myKeys <+> keys foundconfig
 		}
 	where
 		myKeys (XConfig {modMask = modm}) = M.fromList $

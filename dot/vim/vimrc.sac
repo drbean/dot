@@ -1,4 +1,4 @@
-" Last Edit: 2013 Nov 03, 04:40:29 PM
+" Last Edit: 2013 Nov 25, 10:29:05 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -416,7 +416,7 @@ augroup END
 augroup yaml
 au!
 
-autocmd FileType yaml setlocal sw=2
+autocmd FileType yaml setlocal shiftwidth=2
 augroup END
 
 augroup text

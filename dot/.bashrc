@@ -236,9 +236,9 @@ function conversation () {
 	cd -
 }
 
-function multimedia () {
+function call () {
     OPTIND=1
-    local arg course=multimedia view topic story form
+    local arg course=call view topic story form
     while getopts 'c:v:t:s:f:' arg
     do
         case ${arg} in

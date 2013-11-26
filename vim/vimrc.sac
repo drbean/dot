@@ -1,4 +1,4 @@
-" Last Edit: 2013 Nov 26, 10:51:15 AM
+" Last Edit: 2013 Nov 26, 12:55:38 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -513,10 +513,14 @@ augroup classwork
 "
 
 nn <LocalLeader>r :set paste<CR>G
-       \ :.s/,/,<C-V><CR>/g <CR>
-       \ :%s/\v(::<Bar>,)/:<C-V><CR>  absent:<C-V><CR>  merits: \~<C-V><CR>/g <CR>
-       \ :se paste!<CR><CR>
-
+       \ :.s/,/,<C-V><CR>/g<CR>
+       \ gg<CR>o<Esc><CR>
+       \ :.,$s/\v(::<Bar>,)/:<C-V><CR>  absent:<C-V><CR>  merits: \~<C-V><CR>/ge<CR>
+       \ A:<CR>  absent:<CR>  merits: ~<CR><Esc><CR>
+       \ :set paste!<CR>
+       \ gg<CR><CR>
+       \ <CR>
+       \ <CR>
 nn <LocalLeader>f :if !empty(getline('.')) <Bar>
 	\ call search('^$', 'bW') <Bar>
 	\ endif <Bar>

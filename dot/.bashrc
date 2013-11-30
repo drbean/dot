@@ -375,7 +375,7 @@ function AFN2N0 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
@@ -407,7 +407,7 @@ function AFN300 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
@@ -425,9 +425,9 @@ function AFN3Y0 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Green,Charcoal::Pink,Yellow::Orange,Purple::Blue";;
-	B) tables="Black::Blue,Charcoal::Green,Orange::Pink,Yellow::Purple";;
-	C) tables="Black::Charcoal,Blue::Green,Pink::Purple,Orange::Yellow";;
+	A) tables="Green::Blue,Charcoal::Black,Yellow::Pink,Purple::Orange";;
+	B) tables="Green::Black,Charcoal::Blue,Yellow::Orange,Purple::Pink";;
+	C) tables="Black::Blue,Charcoal::Green,Orange::Pink,Purple::Yellow";;
 	X) tables="Black::Blue,Charcoal::Green,Orange::Pink,Yellow::Purple";;
 	*) return 1 # illegal option
     esac
@@ -439,7 +439,7 @@ function AFN3Y0 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
@@ -471,7 +471,7 @@ function yd40001280 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
@@ -503,7 +503,7 @@ function FLA0006 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
@@ -535,7 +535,7 @@ function FLA0007 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
@@ -567,7 +567,7 @@ function GL00006 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
@@ -599,7 +599,7 @@ function GL00030 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 

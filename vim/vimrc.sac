@@ -1,4 +1,4 @@
-" Last Edit: 2013 Nov 26, 12:55:38 PM
+" Last Edit: 2013 Dec 01, 02:52:37 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -417,6 +417,7 @@ augroup yaml
 au!
 
 autocmd FileType yaml setlocal shiftwidth=2
+autocmd FileType yaml setlocal runtimepath+=~/dot/vim/ultisnips
 augroup END
 
 augroup text

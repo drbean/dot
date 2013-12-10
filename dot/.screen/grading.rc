@@ -2,6 +2,7 @@ screen v league.yaml classwork/$ROUND/groups.yaml exam/$ROUND/round.yaml comp/$R
 screen
 screen
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/grades && put grades.txt -o $LEAGUE.txt && qui'^M"
+stuff "# svn ci -m create_groups_n=$N classwork/$NEXTROUND/groups.yaml^M"
 stuff "# print_grades.pl > grades.txt^M"
 stuff "# teamseat.pl -s $NEXTROUND -n $N ^M"
 stuff "# lpr teamseat.pdf -P kyocera^M"

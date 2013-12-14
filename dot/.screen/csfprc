@@ -1,6 +1,13 @@
-screen v -S Session.vim
+screen v LogicalForm.hs Parsing.hs Cats.hs Interpretation.hs
 screen
 stuff "svn st^Msvn log -vr BASE:HEAD^M"
+stuff "# ln -s ../business/newbusiness/people/Model.hs ./Model.hs^M"
+stuff "# ln -s ../business/newbusiness/people/Story_Interpretation.hs ./Story_Interpretation.hs^M"
+stuff "# ln -s ../business/newbusiness/people/Story_Cats.hs ./Story_Cats.hs^M"
+stuff "# ln -s ../business/newbusiness/people/Tests.hs ./Tests.hs^M"
+stuff "# ln -s ../business/Topic_Cats.hs ./Topic_Cats.hs^M"
+stuff "# ln -s ../business/Topic_Interpretation.hs ./Topic_Interpretation.hs^M"
+
 screen
 screen ghci -i./:../business/:../business/marketing/:../business/marketing/shoes/
 stuff ":load Tests^M":

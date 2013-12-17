@@ -1,6 +1,5 @@
 screen v league.yaml classwork/$ROUND/groups.yaml exam/$ROUND/round.yaml comp/$ROUND/round.yaml groups.yaml classwork/$NEXTROUND/groups.yaml 
-screen
-screen
+screen 1
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/grades && put grades.txt -o $LEAGUE.txt && qui'^M"
 stuff "# svn ci -m create_groups_n=$N classwork/$NEXTROUND/groups.yaml^M"
 stuff "# print_grades.pl > grades.txt^M"
@@ -11,7 +10,7 @@ stuff "# mv groups.yaml classwork/$NEXTROUND/groups.yaml^M"
 stuff "# svn revert classwork/$NEXTROUND^M"
 stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls classwork/^M"
 stuff "# cp teamseat.pdf /run/media/drbean/5754-122B/^M"
-screen
+screen 2
 stuff "cd ~/021/$LEAGUE^M"
 stuff "# update_db.pl -l $LEAGUE -r $ROUND^M"
 stuff "# sum_g1_g2.pl -l $LEAGUE -r $ROUND > exam/$ROUND/g.yaml^M"
@@ -20,7 +19,7 @@ stuff "# comptron.pl -l $LEAGUE -r $ROUND -x 1 > comp/$ROUND/response.yaml^M"
 stuff "# round_table.pl -l $LEAGUE -r $ROUND ^M"
 stuff "# create_round.pl -l $LEAGUE -r $ROUND -x $FORM > comp/$ROUND/round.yaml^M"
 stuff "# svn revert comp/$ROUND^M ls comp^M"
-screen
+screen 3
 stuff "ls exam/^M"
 stuff "# rm exam/$NEXTROUND -rf^M"
 stuff "# svn revert exam/$ROUND^M"
@@ -31,8 +30,8 @@ stuff "# grade_jigsaw.pl -r $ROUND -n $N > exam/$ROUND/g1.yaml^M"
 stuff "# xelatex report.tex && evince report.pdf^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf'^M"
 stuff "# svn ci -m $TOPIC exam/$ROUND comp/$ROUND^M"
-screen
+screen 5
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
-screen
+screen 4
 stuff "re.pl --rcfile ../rc/g.rc^M"
 stuff '$g->grades'

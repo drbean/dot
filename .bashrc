@@ -259,7 +259,7 @@ function call () {
 	cd -
 }
 
-function media () {
+function m () {
     OPTIND=1
     local arg course=media view topic story form
     while getopts 'c:v:t:s:f:' arg

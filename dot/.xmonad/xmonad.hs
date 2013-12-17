@@ -28,8 +28,8 @@ main = do
 		, terminal="gnome-terminal --hide-menubar"
 		-- , terminal="mate-terminal --show-menubar"
 		-- , terminal = "/usr/bin/urxvt"
-		, layoutHook = myLayout
-		-- , keys = myKeys <+> keys foundconfig
+		-- , layoutHook = myLayout
+		, keys = myKeys <+> keys foundconfig
 		}
 	where
 		myKeys (XConfig {modMask = modm}) = M.fromList $

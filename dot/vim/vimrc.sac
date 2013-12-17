@@ -1,4 +1,4 @@
-" Last Edit: 2013 Dec 01, 03:03:20 PM
+" Last Edit: 2013 Dec 07, 10:02:18 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -113,6 +113,8 @@ elseif has("win32")
 " cab rc <C-R>=vimrc<CR><CR>
 
 set path=.,		" path for files accessed by gf, etc
+set runtimepath+=~drbean/dot/vim/ultisnips
+
 " set runtimepath=~/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim63,/usr/share/vim/vimfiles/after,~/.vim/after	"fedora 3 got it wrong
 
 se report=0		"show changes in file
@@ -417,18 +419,26 @@ augroup yaml
 au!
 
 autocmd FileType yaml setlocal shiftwidth=2
-autocmd FileType yaml,snippets setlocal runtimepath+=~/dot/vim/ultisnips
+" autocmd FileType yaml set runtimepath+=~/dot/vim/ultisnips
+" autocmd FileType yaml let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+" autocmd FileType yaml let g:UltiSnipsExpandTrigger="<tab>"
 augroup END
 
-augroup text
-au!
+" augroup snippets
+" au!
+" 
+" autocmd FileType snippets setlocal runtimepath+=~/dot/vim/ultisnips
+" augroup END
 
-autocmd FileType text setlocal tw=78	
-" DOS terminal problem with <shift+space>
-autocmd FileType text imap <buffer> <f4> <esc>BlcW
-autocmd FileType text ino <buffer> _  _________
-autocmd FileType text <buffer> source ~lang/share/vim/bracks.vim
-augroup END
+" augroup text
+" au!
+" 
+" autocmd FileType text setlocal tw=78	
+" " DOS terminal problem with <shift+space>
+" autocmd FileType text imap <buffer> <f4> <esc>BlcW
+" autocmd FileType text ino <buffer> _  _________
+" autocmd FileType text <buffer> source ~lang/share/vim/bracks.vim
+" augroup END
 
 " augroup html
 " au!

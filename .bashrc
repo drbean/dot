@@ -393,10 +393,10 @@ function AFN300 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Purple::Silver,White::Yellow";;
+	A) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Red::Khaki,White::Gray,Purple::Yellow";;
 	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
-	C) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Red::Khaki,White::Gray,Purple::";;
-	X) tables="Green::Black,Blue::Brown,Charcoal::Chocolate,White::Orange,Pink::Purple,Yellow::Silver";;
+	C) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Red::Khaki,White::Gray,Purple::Yellow";;
+	X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league

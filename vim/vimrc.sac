@@ -1,4 +1,4 @@
-" Last Edit: 2013 Dec 07, 10:02:18 AM
+" Last Edit: 2013 Dec 20, 01:03:28 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -528,7 +528,7 @@ nn <LocalLeader>r :set paste<CR>G
        \ gg<CR>o<Esc><CR>
        \ :.,$s/\v(::<Bar>,)/:<C-V><CR>  absent:<C-V><CR>  merits: \~<C-V><CR>/ge<CR>
        \ A:<CR>  absent:<CR>  merits: ~<CR><Esc><CR>
-       \ :set paste!<CR>
+       \ :set paste!<CR><CR>
        \ gg<CR><CR>
        \ <CR>
        \ <CR>

@@ -361,10 +361,10 @@ function AFN2N0 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Gray::BlueBlue,BlackBlack::Green,Orange::Pink,Purple::Silver,White::Yellow";;
+	A) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow,Purple::";;
 	B) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
-	C) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow";;
-	X) tables="Green::Black,Blue::BlueBlue,Purple::Yellow,White::Orange,Pink::BlackBlack";;
+	C) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow,Purple::";;
+	B) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league
@@ -395,7 +395,7 @@ function AFN300 () {
     case ${letter} in
 	A) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Red::Khaki,White::Gray,Purple::Yellow";;
 	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
-	C) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Red::Khaki,White::Gray,Purple::Yellow";;
+	C) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow";;
 	X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
 	*) return 1 # illegal option
     esac
@@ -425,8 +425,11 @@ function AFN3Y0 () {
         esac
     done
     case ${letter} in
-	A) tables="Green::Blue,Charcoal::Black,Yellow::Pink,Purple::Orange";;
-	B) tables="Green::Black,Charcoal::Blue,Yellow::Orange,Purple::Pink";;
+	# A) tables="Green::Blue,Charcoal::Black,Yellow::Pink,Purple::Orange";;
+	# B) tables="Green::Black,Charcoal::Blue,Yellow::Orange,Purple::Pink";;
+	# C) tables="Black::Blue,Charcoal::Green,Orange::Pink,Purple::Yellow";;
+	A) tables="Green::Pink,Charcoal::Orange,Black::Yellow,Purple::Blue";;
+	B) tables="Green::Orange,Charcoal::Pink,Black::Purple,Blue::Yellow";;
 	C) tables="Black::Blue,Charcoal::Green,Orange::Pink,Purple::Yellow";;
 	X) tables="Black::Blue,Charcoal::Green,Orange::Pink,Yellow::Purple";;
 	*) return 1 # illegal option

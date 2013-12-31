@@ -190,7 +190,7 @@ function college () {
 	cd -
 }
 
-function business () {
+function biz () {
     OPTIND=1
     local arg course=business view topic story form
     while getopts 'c:v:t:s:f:' arg

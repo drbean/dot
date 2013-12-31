@@ -1,4 +1,4 @@
-screen v contrib/drbean/business/careers/candidate/Transfer.hs
+screen v gf-contrib/drbean/conversation/work/dickson/Dickson.gf gf-contrib/drbean/conversation/work/dickson/DicksonEng.gf gf-contrib/drbean/conversation/work/dickson/DicksonI.gf gf-contrib/drbean/conversation/work/dickson/LexDickson.gf gf-contrib/drbean/conversation/work/dickson/LexDicksonEng.gf gf-contrib/drbean/conversation/work/dickson/WordsCharacters.hs
 screen
 stuff "git status^Mgit log^M"
 screen

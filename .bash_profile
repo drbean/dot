@@ -13,7 +13,7 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 export PATH=$PATH:$HOME/.cabal/bin
 export HISTSIZE=50000
 
-export PATH=v
+export EDITOR=v
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

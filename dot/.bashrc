@@ -213,7 +213,7 @@ function business () {
 	cd -
 }
 
-function conversation () {
+function cnv () {
     OPTIND=1
     local arg course=conversation view topic story form
     while getopts 'c:v:t:s:f:' arg
@@ -559,7 +559,7 @@ function GL00006 () {
 	A) tables="Black::Gray,Orange::Yellow,Blue::Brown,Green::";;
 	B) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
 	C) tables="Black::Gray,Orange::Green,Blue::Brown,Yellow::";;
-	X) tables="Yellow::Black,Blue::Orange,Green::Gray,Red::White";;
+	X) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league

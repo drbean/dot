@@ -2,7 +2,7 @@ screen v gf-contrib/drbean/conversation/work/dickson/Dickson.gf gf-contrib/drbea
 screen
 stuff "git status^Mgit log^M"
 screen
-stuff "gf -coding utf-8^M import contrib/drbean/business/careers/candidate/CandidateEng.gf^M "
+stuff "gf -coding utf-8^M import gf-contrib/drbean/conversation/work/dickson/DicksonEng.gf^M "
 screen ghci
 # screen ghci -i./:../business/:../business/marketing/:../business/marketing/shoes/
 stuff ":"

@@ -89,7 +89,8 @@ function bett () {
     STORY=$story \
     OLD_STORY=$old_story \
     LEAGUE=$league \
-    SCRIPT=$script_arg \
+    # SCRIPT_ARG='-t Non-competitive -g call -i $story -d $script_arg' \
+    SCRIPT_ARG=$script_arg \
     screen -c /home/drbean/dot/.screen/app.rc -dR bett
     cd -
 }
@@ -393,8 +394,8 @@ function AFN300 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::Chocolate,Green::Charcoal,Orange::Pink,Red::Khaki,White::Gray,Purple::Yellow";;
-	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
+	A) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow";;
+	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
 	C) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow";;
 	X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
 	*) return 1 # illegal option
@@ -463,7 +464,7 @@ function yd40001280 () {
 	A) tables="Black::Blue,Brown::Khaki,Chocolate::Charcoal,Green::Orange,Pink::Purple,Red::Silver,Yellow::White";;
 	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Red,Orange::White,Pink::Yellow,Purple::Silver";;
 	C) tables="Black::Blue,Brown::Khaki,Chocolate::Charcoal,Green::Orange,Pink::Purple,Red::Silver,Yellow::White";;
-	X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Red,Orange::White,Pink::Yellow,Purple::Silver";;
+	X) tables="Green::Blue,Charcoal::Black,Chocolate::Khaki,Brown::Red,Orange::Yellow,White::Purple,Silver::Pink";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league
@@ -527,7 +528,7 @@ function FLA0007 () {
 	A) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
 	B) tables="Orange::,Black::Blue,Brown::Red,Purple::Pink";;
 	C) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
-	X) tables="Orange::Black,Blue::Brown,Purple::Pink";;
+	X) tables="Black::Blue,Brown::Red,Orange::Pink";;
 	*) return 1 # illegal option
     esac
     cd ~/021/$league

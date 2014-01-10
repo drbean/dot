@@ -1,5 +1,17 @@
-screen v league.yaml classwork/$SESSION/groups.yaml classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml
-screen
+screen 8 links http://sac.nuu.edu.tw/grades/?league=$LEAGUE
+
+screen 0 v league.yaml classwork/$SESSION/groups.yaml classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml
+
+screen 4 re.pl --rcfile ../rc/g.rc
+stuff '$g->grades'
+
+screen 5 lftp web.nuu.edu.tw
+stuff "cd public_html/$LEAGUE^M"
+
+screen 3
+stuff "ls homework classwork exam/*^M"
+
+screen 1
 stuff "echo -e \"---\n# topic: $TOPIC\n$TABLES\" >> \"classwork/$WEEK.yaml.noform\"^M"
 stuff "svn st | grep '\^\(A\|M\|D\)'^Msvn log -vr BASE:HEAD^M"
 stuff "ls classwork^M"
@@ -10,15 +22,9 @@ stuff "# svn mv classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
 stuff "# svn ci -m Grades/Groupwork:r1720 classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
 stuff "# mv classwork/$LASTWEEK.yaml.noform classwork/$LASTWEEK.yaml^M" 
 stuff "# svn ci -m $TOPIC classwork/$LASTWEEK.yaml^M"
-screen
+
+screen 2
 stuff "# conversation.pl -l $LEAGUE -s $SESSION -r $WEEK -x $TOPIC -p $LETTER -t $TABLES && xelatex classwork/$SESSION/conversation.tex && evince conversation.pdf^M"
 stuff "# lpr conversation.pdf -P kyocera^M"
 stuff "# cp conversation.pdf /run/media/drbean/DIE2GV1/^M"
 stuff "# sudo cp conversation.pdf /var/www/html^M"
-screen re.pl --rcfile ../rc/g.rc
-stuff '$g->grades'
-screen lftp web.nuu.edu.tw
-stuff "cd public_html/$LEAGUE^M"
-screen
-stuff "ls homework classwork exam/*^M"
-

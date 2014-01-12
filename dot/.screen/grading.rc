@@ -14,7 +14,7 @@ screen 2
 stuff "cd ~/021/$LEAGUE/comp^M"
 stuff "# update_db.pl -l $LEAGUE -r $ROUND^M"
 stuff "# sum_g1_g2.pl -l $LEAGUE -r $ROUND > ../exam/$ROUND/g.yaml^M"
-stuff "# score_comp.pl -r $ROUND > $ROUND/scores.yaml^M"
+stuff "# score_comp.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml^M"
 stuff "# perl ~/comp/web/script_files/comptron.pl -l $LEAGUE -r $ROUND -x 1 > $ROUND/response.yaml^M"
 stuff "# round_table.pl -l $LEAGUE -r $ROUND ^M"
 stuff "# create_round.pl -l $LEAGUE -r $ROUND -x $FORM > $ROUND/round.yaml^M"

@@ -23,5 +23,6 @@ screen 4 sudo su - postgres
 stuff "psql ${APP}021^M"
 screen 7
 stuff "cd /var/www/cgi-bin/$APP^Msvn st -q^Msvn log -vr BASE:HEAD^M"
+stuff "# perl script/words.pl -s $STORY && perl script/characters.pl -s $STORY^M"
 screen 8
 stuff "links http://localhost/cgi-bin/${APP}/script/${APP}_cgi.pl/login?exercise=$STORY"

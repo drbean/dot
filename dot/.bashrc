@@ -89,8 +89,7 @@ function bett () {
     STORY=$story \
     OLD_STORY=$old_story \
     LEAGUE=$league \
-    # SCRIPT_ARG='-t Non-competitive -g call -i $story -d $script_arg' \
-    SCRIPT_ARG=$script_arg \
+    SCRIPT_ARG="-t Non-competitive -g $course -i $story -d \"$script_arg\"" \
     screen -c /home/drbean/dot/.screen/app.rc -dR bett
     cd -
 }

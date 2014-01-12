@@ -5,7 +5,7 @@ stuff "cd ./$TOPIC && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_h
 stuff "# bingo.pl -n 15 -s $STORY -f 0 $TOPIC && xelatex $TOPIC/bingo_${STORY}_0.tex && evince bingo_${STORY}_0.pdf^M"
 stuff "# cp bingo_${STORY}_0.pdf /run/media/drbean/DIE2GV1/^M"
 stuff "# lpr bingo_${STORY}_0.pdf -P kyocera^M"
-screen ghci -i../csfp/:./:./$TOPIC/$STORY/
+screen ghci -i../csfp/:./:./$TOPIC:./$TOPIC/$STORY/
 stuff ":load Tests^M":
 screen
 stuff "ghc -o /var/www/cgi-bin/bett/bin/Transfer_$STORY -i../../GF/contrib/drbean/business/$TOPIC/$STORY ../../GF/contrib/drbean/business/$TOPIC/$STORY/Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_$STORY -i../../GF/contrib/drbean/business/$TOPIC/$STORY ../../bett/script/ShowWords.hs"

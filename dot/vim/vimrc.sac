@@ -1,4 +1,4 @@
-" Last Edit: 2013 Dec 20, 01:03:28 PM
+" Last Edit: 2014 Jan 13, 11:32:37 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -566,7 +566,7 @@ au BufEnter comp/*/response.yaml nn <buffer> t $rTyyp<C-A>$r~3h
 au BufEnter comp/*/response.yaml nn <buffer> f $s  F<Esc>yyp<C-A>$2Xr~3h
 au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>f $sFault<Esc>yyp<C-A>WC~<Esc>3h
 au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>u $sUnreturned<Esc>yyp<C-A>WC~<Esc>3h
-au BufEnter comp/*/response.yaml nn <buffer> r $sReturned<Esc>yyp<C-A>WC~<Esc>3h
+au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>r $sReturned<Esc>yyp<C-A>WC~<Esc>3h
 au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>o $sOld<Esc>yyp<C-A>WC~<Esc>3h
 au BufEnter comp/*/response.yaml nn <buffer> l $sNil<Esc>^/ \~$<CR>2h
 " au User comp/*/response.yaml nn <buffer> t $rTj$

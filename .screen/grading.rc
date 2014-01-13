@@ -10,6 +10,7 @@ stuff "# mv groups.yaml classwork/$NEXTROUND/groups.yaml^M"
 stuff "# svn revert classwork/$NEXTROUND^M"
 stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls classwork/^M"
 stuff "# cp teamseat.pdf /run/media/drbean/5754-122B/^M"
+stuff "# svn ci -m $TOPIC ../comp/$ROUND $ROUND^M"
 screen 2
 stuff "cd ~/021/$LEAGUE/comp^M"
 stuff "# update_db.pl -l $LEAGUE -r $ROUND^M"
@@ -30,7 +31,6 @@ stuff "# score_jigsaw.pl -r $ROUND > $ROUND/scores.yaml^M"
 stuff "# grade_jigsaw.pl -r $ROUND -n $N > $ROUND/g1.yaml^M"
 stuff "# xelatex report.tex && evince report.pdf^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf'^M"
-stuff "# svn ci -m $TOPIC ../comp/$ROUND $ROUND^M"
 screen 5
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 screen 4

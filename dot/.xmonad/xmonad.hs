@@ -25,7 +25,8 @@ main = do
 	let foundconfig = maybe desktopConfig desktop session
 	xmonad foundconfig
 		{ modMask = mod4Mask
-		, terminal="gnome-terminal --hide-menubar"
+		, terminal="mate-terminal --hide-menubar"
+		-- , terminal="gnome-terminal --hide-menubar"
 		-- , terminal="mate-terminal --show-menubar"
 		-- , terminal = "/usr/bin/urxvt"
 		-- , layoutHook = myLayout
@@ -42,4 +43,5 @@ desktop "kde" = kde4Config
 desktop "xfce" = xfceConfig
 desktop "xmonad-mate" = gnomeConfig
 desktop "xmonad-gnome" = gnomeConfig
+-- desktop "xmonad" = gnomeConfig
 desktop _ = desktopConfig

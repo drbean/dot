@@ -1,11 +1,28 @@
-screen v gf-contrib/drbean/conversation/work/dickson/Dickson.gf gf-contrib/drbean/conversation/work/dickson/DicksonEng.gf gf-contrib/drbean/conversation/work/dickson/DicksonI.gf gf-contrib/drbean/conversation/work/dickson/LexDickson.gf gf-contrib/drbean/conversation/work/dickson/LexDicksonEng.gf gf-contrib/drbean/conversation/work/dickson/WordsCharacters.hs gf-contrib/drbean/conversation/work/dickson/Transfer.hs
 screen
-stuff "git status^Mgit log^M"
+stuff "v^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/Dickson.gf^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/DicksonEng.gf^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/DicksonI.gf^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/LexDickson.gf^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/LexDicksonEng.gf^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/WordsCharacters.hs^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/Transfer.hs^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/Dickson.hs^M"
+stuff ":e src/runtime/haskell/PGF.hs^M"
+stuff ":brewind^M"
 screen
+stuff "cd gf-contrib^M cd -^M"
+stuff "git status^M"
+stuff "# git fetch upstream^M"
+stuff "# git merge upstream/master^M"
+screen
+stuff "cd gf-contrib/drbean/conversation/work/dickson/^M cd -^M"
 stuff "gf -coding utf-8^M import gf-contrib/drbean/conversation/work/dickson/DicksonEng.gf^M "
-screen ghci
+screen
+stuff "cd gf-contrib/drbean/conversation/work/dickson/^M"
+stuff "./Transfer^M"
 # screen ghci -i./:../business/:../business/marketing/:../business/marketing/shoes/
-stuff ":"
+# stuff ":"
 # stuff ":load Tests^M":
 screen
 stuff "/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html^M"

@@ -6,9 +6,16 @@ stuff ":e gf-contrib/drbean/conversation/work/dickson/DicksonI.gf^M"
 stuff ":e gf-contrib/drbean/conversation/work/dickson/LexDickson.gf^M"
 stuff ":e gf-contrib/drbean/conversation/work/dickson/LexDicksonEng.gf^M"
 stuff ":e gf-contrib/drbean/conversation/work/dickson/WordsCharacters.hs^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/Model.hs^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/Story_Interpretation.hs^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/Tests.hs^M"
+stuff ":e gf-contrib/drbean/conversation/work/Topic_Interpretation.hs^M"
+stuff ":e gf-contrib/drbean/Interpretation.hs^M"
+stuff ":e gf-contrib/drbean/Evaluation.hs^M"
 stuff ":e gf-contrib/drbean/conversation/work/dickson/Transfer.hs^M"
-stuff ":e gf-contrib/drbean/conversation/work/dickson/Dickson.hs^M"
+stuff ":e gf-contrib/drbean/LogicalForm.hs^M"
 stuff ":e src/runtime/haskell/PGF.hs^M"
+stuff ":e gf-contrib/drbean/conversation/work/dickson/Dickson.hs^M"
 stuff ":brewind^M"
 screen
 stuff "cd gf-contrib^M cd -^M"
@@ -20,10 +27,11 @@ stuff "cd gf-contrib/drbean/conversation/work/dickson/^M cd -^M"
 stuff "gf -coding utf-8^M import gf-contrib/drbean/conversation/work/dickson/DicksonEng.gf^M "
 screen
 stuff "cd gf-contrib/drbean/conversation/work/dickson/^M"
-stuff "./Transfer^M"
-# screen ghci -i./:../business/:../business/marketing/:../business/marketing/shoes/
+# stuff "./Transfer^M"
+stuff "ghci -i./:../:../../../^M"
 # stuff ":"
-# stuff ":load Tests^M":
+stuff ":load Tests^M"
+stuff "let gr = readPGF \"Dickson.pgf\"^M":
 screen
 stuff "/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html^M"
 screen

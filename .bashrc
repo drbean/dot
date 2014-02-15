@@ -364,7 +364,7 @@ function AFB1J0 () {
 	A) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow,Purple::";;
 	B) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
 	C) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow,Purple::";;
-	B) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
+	X) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
 	*) return 1 # illegal option
     esac
     cd ~/022/$league
@@ -411,9 +411,9 @@ function AFBB32 () {
     cd -
 }
 
-function yd40001280 () {
+function yd40112040 () {
     OPTIND=1
-    local arg league=yd40001280 session week letter topic tables
+    local arg league=40112040 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in
@@ -443,9 +443,41 @@ function yd40001280 () {
     cd -
 }
 
-function FLA0006 () {
+function yd40113024 () {
     OPTIND=1
-    local arg league=FLA0006 session week letter topic tables
+    local arg league=40113024 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="Black::Blue,Brown::Khaki,Chocolate::Charcoal,Green::Orange,Pink::Purple,Red::Silver,Yellow::White";;
+	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Red,Orange::White,Pink::Yellow,Purple::Silver";;
+	C) tables="Black::Blue,Brown::Khaki,Chocolate::Charcoal,Green::Orange,Pink::Purple,Red::Silver,Yellow::White";;
+	X) tables="Green::Blue,Charcoal::Black,Chocolate::Khaki,Brown::Red,Orange::Yellow,White::Purple,Silver::Pink";;
+	*) return 1 # illegal option
+    esac
+    cd ~/022/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
+    cd -
+}
+
+function FLA0021 () {
+    OPTIND=1
+    local arg league=FLA0021 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in
@@ -475,9 +507,9 @@ function FLA0006 () {
     cd -
 }
 
-function FLA0007 () {
+function FLA0027 () {
     OPTIND=1
-    local arg league=FLA0007 session week letter topic tables
+    local arg league=FLA0027 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in

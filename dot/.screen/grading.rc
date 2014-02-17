@@ -9,7 +9,7 @@ stuff "# teamseat.pl -s $NEXTROUND --latex -n $N && xelatex classwork/$NEXTROUND
 stuff "# mv groups.yaml classwork/$NEXTROUND/groups.yaml^M"
 stuff "# svn revert classwork/$NEXTROUND^M"
 stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls classwork/^M"
-stuff "# cp teamseat.pdf /run/media/drbean/5754-122B/^M"
+stuff "# cp teamseat.pdf /run/media/drbean/DIE2GV1/^M"
 stuff "# svn ci -m $TOPIC comp/$ROUND exam/$ROUND^M"
 screen 2
 stuff "cd ~/021/$LEAGUE/comp^M"

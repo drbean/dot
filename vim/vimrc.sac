@@ -1,4 +1,4 @@
-" Last Edit: 2014 Jan 13, 11:32:37 AM
+" Last Edit: 2014 Feb 16, 11:59:45 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -805,6 +805,11 @@ endfunction
 fu! Firstletter(word)
 	let first = substitute( a:word, '^\(.\).*$', '\1', "")
 	return first
+endfunction
+
+fu! Tailletters(word)
+	let tail = substitute( a:word, '^.\(.*\)$', '\1', "")
+	return tail
 endfunction
 
 fu! Underscore()

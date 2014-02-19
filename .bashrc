@@ -475,9 +475,9 @@ function yd40113024 () {
     cd -
 }
 
-function FLA0021 () {
+function FLA0018 () {
     OPTIND=1
-    local arg league=FLA0021 session week letter topic tables
+    local arg league=FLA0018 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in
@@ -493,6 +493,38 @@ function FLA0021 () {
 	B) tables="Green::Black,Blue::Charcoal,Chocolate::Purple,White::Orange,Pink::Yellow";;
 	C) tables="Black::Blue,Chocolate::Charcoal,Green::Orange,Pink::Purple,Yellow::White";;
 	X) tables="Green::Black,Blue::Charcoal,Chocolate::Purple,White::Orange,Pink::Yellow";;
+	*) return 1 # illegal option
+    esac
+    cd ~/022/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
+    cd -
+}
+
+function FLA0021 () {
+    OPTIND=1
+    local arg league=FLA0021 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden";;
+	B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,Khaki::Red,White::Orange,Pink::Purple,Red::White,Yellow::Silver,Golden::Violet";;
+	C) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden";;
+	X) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden";;
 	*) return 1 # illegal option
     esac
     cd ~/022/$league
@@ -525,6 +557,70 @@ function FLA0027 () {
 	B) tables="Orange::,Black::Blue,Brown::Red,Purple::Pink";;
 	C) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
 	X) tables="Black::Blue,Brown::Red,Orange::Pink";;
+	*) return 1 # illegal option
+    esac
+    cd ~/022/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
+    cd -
+}
+
+function GL00005 () {
+    OPTIND=1
+    local arg league=GL00005 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="Black::Gray,Orange::Yellow,Blue::Brown,Green::";;
+	B) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
+	C) tables="Black::Gray,Orange::Green,Blue::Brown,Yellow::";;
+	X) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
+	*) return 1 # illegal option
+    esac
+    cd ~/022/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
+    cd -
+}
+
+function GL00019 () {
+    OPTIND=1
+    local arg league=GL00019 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="Black::Gray,Orange::Yellow,Blue::Brown,Green::";;
+	B) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
+	C) tables="Black::Gray,Orange::Green,Blue::Brown,Yellow::";;
+	X) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
 	*) return 1 # illegal option
     esac
     cd ~/022/$league

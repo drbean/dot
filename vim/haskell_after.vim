@@ -36,9 +36,15 @@ ino <LocalLeader>N <Esc>:call Inflect()<CR>o
 
 
 fu! Constantterm()
-	let term = expand('<cword>')
-	let letter = Firstletter(term)
-	call setline(".", "fint \"" . term . "\" [] =	" . letter)
+	let string = expand('<cword>')
+	let cap = Ucfirst( string )
+	let term = 'G' . string
+	call inputsave()
+	let key = input("Feature: '(A)dj', '(C)ommon noun', or '(E)ntity' ")
+	call inputrestore()
+	let feature = get( {'a': 'adjective', 'c': 'kind', 'e': 'entity'}, key )
+	call setline(".", feature . "_list " . term .
+		\ "\t = characters \"" . cap . "\"")
 endfunction
 ino <LocalLeader>C <Esc>:call Constantterm()<CR>o
 

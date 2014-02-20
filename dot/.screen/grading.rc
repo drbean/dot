@@ -12,7 +12,7 @@ stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls classwor
 stuff "# cp teamseat.pdf /run/media/drbean/DIE2GV1/^M"
 stuff "# svn ci -m $TOPIC comp/$ROUND exam/$ROUND^M"
 screen 2
-stuff "cd ~/021/$LEAGUE/comp^M"
+stuff "cd ~/022/$LEAGUE/comp^M"
 stuff "# update_db.pl -l $LEAGUE -r $ROUND^M"
 stuff "# sum_g1_g2.pl -l $LEAGUE -r $ROUND > ../exam/$ROUND/g.yaml^M"
 stuff "# score_comp.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml^M"
@@ -21,7 +21,7 @@ stuff "# round_table.pl -l $LEAGUE -r $ROUND ^M"
 stuff "# create_round.pl -l $LEAGUE -r $ROUND -x $FORM > $ROUND/round.yaml^M"
 stuff "# svn revert $ROUND^M ls^M"
 screen 3
-stuff "cd ~/021/$LEAGUE/exam^M"
+stuff "cd ~/022/$LEAGUE/exam^M"
 stuff "ls ^M"
 stuff "# rm $NEXTROUND -rf^M"
 stuff "# svn revert $ROUND^M"

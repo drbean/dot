@@ -236,9 +236,55 @@ function cnv () {
 	cd -
 }
 
+function intm () {
+    OPTIND=1
+    local arg course=intm view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
+	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	cd -
+}
+
 function call () {
     OPTIND=1
     local arg course=call view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
+	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	cd -
+}
+
+function tech () {
+    OPTIND=1
+    local arg course=tech view topic story form
     while getopts 'c:v:t:s:f:' arg
     do
         case ${arg} in

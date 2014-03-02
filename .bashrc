@@ -457,24 +457,93 @@ function AFBB32 () {
     cd -
 }
 
-function yd40112040 () {
-    OPTIND=1
-    local arg league=40112040 session week letter topic tables
-    while getopts 's:w:l:t:' arg
+function session () {
+    local league week
+    league=$1
+    week=$2
+    case ${league} in
+	2040)
+	    if (($week <= 5)); then session=1
+	    elif (($week <= 9)); then session=2
+	    elif (($week <= 13)); then session=3
+	    elif (($week <= 18)); then session=4
+	    else return 1 # illegal week
+	    fi;;
+	*) return 1 # illegal league
+    esac
+}
+
+function tables () {
+    local league letter
+    league=$1
+    letter=$2
+    case ${league} in
+		# 16 groups
+	2040)
+	    case ${letter} in
+		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
+		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
+		*) return 1 # illegal letter
+	    esac;;
+	*) return 1 # illegal league
+    esac
+}
+
+function w () {
+    local arg league session week letter topic tables
+    case $1 in
+	2040) league=$1;;
+	*) return 1 # illegal league
+    esac
+    week=$2
+    OPTIND=3
+    while getopts 'w:l:t:' arg
     do
         case ${arg} in
-            s) session=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    session $league $week
+    tables $league $letter
+    cd ~/022/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
+    cd -
+}
+
+function yd2040 () {
+    OPTIND=1
+    local arg league=2040 session week letter topic tables
+    while getopts 'w:l:t:' arg
+    do
+        case ${arg} in
             w) week=${OPTARG};;
             l) letter=${OPTARG};;
             t) topic=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
+    if (($week <= 5)); then session=1
+    elif (($week <= 9)); then session=2
+    elif (($week <= 13)); then session=3
+    elif (($week <= 18)); then session=4
+    else session=NONE
+    fi
     case ${letter} in
-	A) tables="Black::Blue,Brown::Khaki,Chocolate::Charcoal,Green::Orange,Pink::Purple,Red::Silver,Yellow::White";;
-	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Red,Orange::White,Pink::Yellow,Purple::Silver";;
-	C) tables="Black::Blue,Brown::Khaki,Chocolate::Charcoal,Green::Orange,Pink::Purple,Red::Silver,Yellow::White";;
-	X) tables="Green::Blue,Charcoal::Black,Chocolate::Khaki,Brown::Red,Orange::Yellow,White::Purple,Silver::Pink";;
+	A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+	B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
+	C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+	X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
 	*) return 1 # illegal option
     esac
     cd ~/022/$league
@@ -503,10 +572,10 @@ function yd40113024 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Brown::Khaki,Chocolate::Charcoal,Green::Orange,Pink::Purple,Red::Silver,Yellow::White";;
-	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Red,Orange::White,Pink::Yellow,Purple::Silver";;
-	C) tables="Black::Blue,Brown::Khaki,Chocolate::Charcoal,Green::Orange,Pink::Purple,Red::Silver,Yellow::White";;
-	X) tables="Green::Blue,Charcoal::Black,Chocolate::Khaki,Brown::Red,Orange::Yellow,White::Purple,Silver::Pink";;
+	A) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Yellow,White::";;
+	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::";;
+	C) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Yellow,White::";;
+	X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::";;
 	*) return 1 # illegal option
     esac
     cd ~/022/$league
@@ -535,7 +604,7 @@ function FLA0018 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Blue,Chocolate::Charcoal,Green::Orange,Pink::Purple,Yellow::White";;
+	A) tables="Black::Blue,Brown::Gray,Orange::Pink,Purple::Red";;
 	B) tables="Green::Black,Blue::Charcoal,Chocolate::Purple,White::Orange,Pink::Yellow";;
 	C) tables="Black::Blue,Chocolate::Charcoal,Green::Orange,Pink::Purple,Yellow::White";;
 	X) tables="Green::Black,Blue::Charcoal,Chocolate::Purple,White::Orange,Pink::Yellow";;
@@ -663,7 +732,7 @@ function GL00019 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Gray,Orange::Yellow,Blue::Brown,Green::";;
+	A) tables="Black::Green,Orange::Charcoal,Pink::";;
 	B) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
 	C) tables="Black::Gray,Orange::Green,Blue::Brown,Yellow::";;
 	X) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;

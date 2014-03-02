@@ -1,4 +1,5 @@
-screen v script
+screen
+stuff "# v script"
 screen
 stuff "cd branch/gf^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"

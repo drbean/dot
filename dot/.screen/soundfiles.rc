@@ -1,8 +1,14 @@
-screen 3
-stuff "cd $DIRECTORY^Mls"
-screen 2 lftp web.nuu.edu.tw
+screen 5
+stuff "lftp elearning.nuu.edu.tw"
+screen 4 lftp web.nuu.edu.tw
 stuff "lcd $COURSE && cd public_html/$COURSE^Mls"
+screen 3
+stuff "cd ~/Music/^Mls"
+screen 2
+stuff "cd $DIRECTORY^Mls"
 screen 1
 stuff "ls $COURSE^M"
+screen 0
+stuff "v ~/.netrc"
 screen
 stuff "cd /home/drbean/Webcam/^Mls"

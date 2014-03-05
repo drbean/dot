@@ -1,4 +1,4 @@
-" Last Edit: 2014 Feb 16, 11:59:45 AM
+" Last Edit: 2014 Mar 05, 02:54:21 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -501,14 +501,6 @@ augroup END
 "WINDOWS MANAGEMENT
 set hidden	" should be hiding, not hidden (need to be careful with this)
 
-  " Uses autocmd to give more lines to the window moved into
-" augroup widewin
-"   " Remove all widewin autocommands (looks like comment can't be on same line)
-"   au!	
-" 
-"   autocmd WinEnter *  resize  +6
-" augroup END
-
 "removes help files from buffer list
 augroup help
 au!
@@ -620,6 +612,20 @@ au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 2 $r2j$
 au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 3 $r3j$
 au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 4 $r4j$
 au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 5 $r5j$
+
+augroup END
+
+  " Uses autocmd to give more lines to the window moved into
+  " or editing superlong 1 line in vimdiff
+augroup widewin
+  " Remove all widewin autocommands (looks like comment can't be on same line)
+  au!	
+
+  " autocmd WinEnter *  resize  +6
+au BufEnter ~/edit/\.svn/.*\.svn-base nn <buffer> g<Left> g^ze
+au BufEnter Teach.*\.txt nn <buffer> g<Left> g^ze
+au BufEnter ~/edit/\.svn/.*\.svn-base nn <buffer> g<Right> g$zs
+au BufEnter Teach.*\.txt nn <buffer> g<Right> g$zs
 
 augroup END
 

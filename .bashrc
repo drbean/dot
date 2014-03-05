@@ -469,6 +469,27 @@ function session () {
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
+	GL00005)
+	    if (($week <= 5)); then session=1
+	    elif (($week <= 9)); then session=2
+	    elif (($week <= 13)); then session=3
+	    elif (($week <= 18)); then session=4
+	    else return 1 # illegal week
+	    fi;;
+	AFB1J0)
+	    if (($week <= 5)); then session=1
+	    elif (($week <= 9)); then session=2
+	    elif (($week <= 13)); then session=3
+	    elif (($week <= 18)); then session=4
+	    else return 1 # illegal week
+	    fi;;
+	FLA0018)
+	    if (($week <= 5)); then session=1
+	    elif (($week <= 9)); then session=2
+	    elif (($week <= 13)); then session=3
+	    elif (($week <= 18)); then session=4
+	    else return 1 # illegal week
+	    fi;;
 	*) return 1 # illegal league
     esac
 }
@@ -487,6 +508,30 @@ function tables () {
 		X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
 		*) return 1 # illegal letter
 	    esac;;
+	GL00005)
+	    case ${letter} in
+		A) tables="Black::Gray,Green::White";;
+		B) tables="Black::Green,Gray::White";;
+		C) tables="Black::Gray,Orange::Green,Blue::Brown,Yellow::";;
+		X) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
+		*) return 1 # illegal option
+	    esac;;
+	AFB1J0)
+	    case ${letter} in
+		A) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow,Purple::";;
+		B) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
+		C) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow,Purple::";;
+		X) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
+		*) return 1 # illegal option
+	    esac;;
+	FLA0018)
+	    case ${letter} in
+		A) tables="Black::Blue,Brown::Gray,Orange::Pink,Purple::Red";;
+		B) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
+		C) tables="Black::Blue,Brown::Gray,Orange::Pink,Purple::Red";;
+		X) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
+		*) return 1 # illegal option
+	    esac;;
 	*) return 1 # illegal league
     esac
 }
@@ -495,6 +540,9 @@ function w () {
     local arg league session week letter topic tables
     case $1 in
 	2040) league=$1;;
+	GL00005) league=$1;;
+	AFB1J0) league=$1;;
+	FLA0018) league=$1;;
 	*) return 1 # illegal league
     esac
     week=$2

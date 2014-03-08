@@ -3,6 +3,6 @@ screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "export HISTTIMEFORMAT='%m-%d'^M"
 stuff "# perl htmlexerciselist.pl -a $COURSE -l dic -s $STORY  > $COURSE.html && lftp -c 'open web.nuu.edu.tw; cd public_html; put $COURSE.html'^M"
-stuff "# perl htmlexerciselist.pl -a $COURSE -l dic -s $STORY  > $COURSE.html && sudo cp $COURSE.html /var/www/html/"
+# stuff "# perl htmlexerciselist.pl -a $COURSE -l dic -s $STORY  > $COURSE.html && sudo cp $COURSE.html /var/www/html/"
 screen lftp web.nuu.edu.tw
 stuff "cd public_html/^Mls"

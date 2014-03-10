@@ -1,4 +1,4 @@
-" Last Edit: 2014 Mar 05, 02:54:21 PM
+" Last Edit: 2014 Mar 10, 12:41:44 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -520,10 +520,11 @@ nn <LocalLeader>r :set paste<CR>G
        \ gg<CR>o<Esc><CR>
        \ :.,$s/\v(::<Bar>,)/:<C-V><CR>  absent:<C-V><CR>  merits: \~<C-V><CR>/ge<CR>
        \ A:<CR>  absent:<CR>  merits: ~<CR><Esc><CR>
-       \ :set paste!<CR><CR>
+       \ :set nopaste<CR><CR>
        \ gg<CR><CR>
        \ <CR>
        \ <CR>
+       \ :set nopaste<CR><CR>
 nn <LocalLeader>f :if !empty(getline('.')) <Bar>
 	\ call search('^$', 'bW') <Bar>
 	\ endif <Bar>

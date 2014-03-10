@@ -31,53 +31,56 @@ function edit () {
 
 function aca () {
     OPTIND=1
-    local arg app=aca course topic story old_story league script_arg
-    while getopts 'c:t:s:o:l:x:' arg
+    local arg app=aca course topic story old_story round league script_arg
+    while getopts 'c:t:s:o:r:l:x:' arg
     do
         case ${arg} in
             c) course=${OPTARG};;
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
             o) old_story=${OPTARG};;
+	    r) round=${OPTARG};;
             l) league=${OPTARG};;
             x) script_arg=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     cd ~/$app
-    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR aca_$course
+    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR aca_$course
     cd -
 }
 
 function dic () {
     OPTIND=1
-    local arg app=dic course topic story old_story league script_arg
-    while getopts 'c:t:s:o:l:x:' arg
+    local arg app=dic course topic story old_story round league script_arg
+    while getopts 'c:t:s:o:r:l:x:' arg
     do
         case ${arg} in
             c) course=${OPTARG};;
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
             o) old_story=${OPTARG};;
+	    r) round=${OPTARG};;
             l) league=${OPTARG};;
             x) script_arg=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     cd ~/$app
-    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR dic_$course
+    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR dic_$course
     cd -
 }
 
 function bett () {
     OPTIND=1
-    local arg app=bett course topic story old_story league script_arg
-    while getopts 'c:s:o:l:x:' arg
+    local arg app=bett course topic story old_story round league script_arg
+    while getopts 'c:s:o:r:l:x:' arg
     do
         case ${arg} in
             c) course=${OPTARG};;
             s) story=${OPTARG};;
             o) old_story=${OPTARG};;
+	    r) round=${OPTARG};;
             l) league=${OPTARG};;
             x) script_arg=${OPTARG};;
             *) return 1 # illegal option
@@ -88,6 +91,7 @@ function bett () {
     COURSE=$course \
     STORY=$story \
     OLD_STORY=$old_story \
+    ROUND=$round \
     LEAGUE=$league \
     SCRIPT_ARG="-t Non-competitive -g $course -i $story -d \"$script_arg\"" \
     screen -c /home/drbean/dot/.screen/app.rc -dR bett
@@ -469,6 +473,13 @@ function session () {
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
+	3024)
+	    if (($week <= 5)); then session=1
+	    elif (($week <= 9)); then session=2
+	    elif (($week <= 13)); then session=3
+	    elif (($week <= 18)); then session=4
+	    else return 1 # illegal week
+	    fi;;
 	GL00005)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
@@ -508,6 +519,31 @@ function tables () {
 		X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
 		*) return 1 # illegal letter
 	    esac;;
+		# 19 groups
+	FLA0021)
+	    case ${letter} in
+		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
+		B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
+		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
+		B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
+		*) return 1 # illegal option
+	    esac;;
+	FLA0027)
+	    case ${letter} in
+		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
+		B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
+		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
+		*) return 1 # illegal letter
+	    esac;;
+	3024)
+	    case ${letter} in
+		A) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Yellow,White::";;
+		B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::";;
+		C) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Yellow,White::";;
+		X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::";;
+		*) return 1 # illegal option
+	    esac;;
 	GL00005)
 	    case ${letter} in
 		A) tables="Black::Gray,Green::White";;
@@ -540,6 +576,7 @@ function w () {
     local arg league session week letter topic tables
     case $1 in
 	2040) league=$1;;
+	3024) league=$1;;
 	GL00005) league=$1;;
 	AFB1J0) league=$1;;
 	FLA0018) league=$1;;

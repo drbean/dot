@@ -501,6 +501,13 @@ function session () {
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
+	FLA0021)
+	    if (($week <= 5)); then session=1
+	    elif (($week <= 9)); then session=2
+	    elif (($week <= 13)); then session=3
+	    elif (($week <= 18)); then session=4
+	    else return 1 # illegal week
+	    fi;;
 	*) return 1 # illegal league
     esac
 }
@@ -580,6 +587,7 @@ function w () {
 	GL00005) league=$1;;
 	AFB1J0) league=$1;;
 	FLA0018) league=$1;;
+	FLA0021) league=$1;;
 	*) return 1 # illegal league
     esac
     week=$2

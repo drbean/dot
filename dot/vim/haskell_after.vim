@@ -39,15 +39,16 @@ fu! Constantterm()
 	let string = expand('<cword>')
 	let cap = Ucfirst( string )
 	let term = 'G' . string
-	call inputsave()
-	let key = input("Feature: '(A)dj', '(C)ommon noun', or '(E)ntity' ")
-	call inputrestore()
-	let feature = get( {'a': 'adjective', 'c': 'kind', 'e': 'entity'}, key )
-	if feature == 'entity'
-		call setline(".", feature . "_list " . term .
+	let lnum = line('.')
+	let prevline = getline(prevnonblank(lnum - 1))
+	let mx = '\(\w\+\).*'
+	let line = matchstr(prevline, mx)
+	let catlist = substitute(line, mx, '\1', '')
+	if catlist == 'entity_list'
+		call setline(".", catlist . " " . term .
 			\ "\t= ent_ided \"" . cap . "\"")
 	else
-		call setline(".", feature . "_list " . term .
+		call setline(".", catlist . " " . term .
 			\ "\t= \"" . string . "\"")
 	endif
 endfunction

@@ -45,7 +45,7 @@ fu! Constantterm()
 	let feature = get( {'a': 'adjective', 'c': 'kind', 'e': 'entity'}, key )
 	if feature == 'entity'
 		call setline(".", feature . "_list " . term .
-			\ "\t= \"" . cap . "\"")
+			\ "\t= ent_ided \"" . cap . "\"")
 	else
 		call setline(".", feature . "_list " . term .
 			\ "\t= \"" . string . "\"")

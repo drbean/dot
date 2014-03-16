@@ -43,8 +43,13 @@ fu! Constantterm()
 	let key = input("Feature: '(A)dj', '(C)ommon noun', or '(E)ntity' ")
 	call inputrestore()
 	let feature = get( {'a': 'adjective', 'c': 'kind', 'e': 'entity'}, key )
-	call setline(".", feature . "_list " . term .
-		\ "\t = characters \"" . cap . "\"")
+	if feature == 'entity'
+		call setline(".", feature . "_list " . term .
+			\ "\t= \"" . cap . "\"")
+	else
+		call setline(".", feature . "_list " . term .
+			\ "\t= \"" . string . "\"")
+	endif
 endfunction
 ino <LocalLeader>C <Esc>:call Constantterm()<CR>o
 

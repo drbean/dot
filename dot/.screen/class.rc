@@ -1,6 +1,7 @@
 screen 8 links http://sac.nuu.edu.tw/grades/?league=$LEAGUE
 
-screen 0 v league.yaml classwork/$SESSION/groups.yaml classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml
+screen 0
+stuff "v league.yaml classwork/$SESSION/groups.yaml classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml"
 
 screen 4 re.pl --rcfile ../rc/g.rc
 stuff '$g->grades'

@@ -540,7 +540,7 @@ function tables () {
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 		B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
 		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-		X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
+		X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 		*) return 1 # illegal letter
 	    esac;;
 	3024)
@@ -764,7 +764,7 @@ function FLA0027 () {
 	A) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
 	B) tables="Orange::,Black::Blue,Brown::Red,Purple::Pink";;
 	C) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
-	X) tables="Black::Blue,Brown::Red,Orange::Pink";;
+	X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 	*) return 1 # illegal option
     esac
     cd ~/022/$league

@@ -1,4 +1,4 @@
-screen v league.yaml classwork/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml groups.yaml grades.txt classwork/$NEXTROUND/groups.yaml 
+screen # v league.yaml classwork/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml groups.yaml grades.txt classwork/$NEXTROUND/groups.yaml 
 screen 1
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/grades && put grades.txt -o $LEAGUE.txt && qui'^M"
 stuff "# svn ci -m create_groups_n=$N classwork/$NEXTROUND/groups.yaml^M"

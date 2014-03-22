@@ -107,4 +107,7 @@ fu! Oneword()
 endf
 ino <LocalLeader>1 <Esc>:call Oneword()<CR>o
 
+nn <LocalLeader>M
+	yiwPV>A	: PN;:w:2bn"0PV>A      = mkPN "0pA_N;o:w:bn"0PV>A_N  : N;lO: "<80>kbw:bn"0PA_N       = mkN "0";bb~lV>o:w:bn"0PV>I, "l~lA":w:        brew}w
+
 let &cpo = s:save_cpo

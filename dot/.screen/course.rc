@@ -7,6 +7,7 @@ stuff "# cp bingo_${STORY}_0.pdf /run/media/drbean/DIE2GV1/^M"
 stuff "# lpr bingo_${STORY}_0.pdf -P kyocera^M"
 screen
 stuff "# perl ../cclass/cards.pl ./$TOPIC && xelatex ./\$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf^M"
+stuff "# perl ../cclass/cards.pl ./$TOPIC && xelatex ./\$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf^M"
 screen ghci -i../csfp/:./:./$TOPIC:./$TOPIC/$STORY/
 stuff ":load Tests^M":
 screen

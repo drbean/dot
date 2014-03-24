@@ -1,4 +1,3 @@
-screen # v league.yaml classwork/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml groups.yaml grades.txt classwork/$NEXTROUND/groups.yaml 
 screen 1
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/grades && put grades.txt -o $LEAGUE.txt && qui'^M"
 stuff "# svn ci -m create_groups_n=$N classwork/$NEXTROUND/groups.yaml^M"
@@ -36,3 +35,9 @@ stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 screen 4
 stuff "re.pl --rcfile ../rc/g.rc^M"
 stuff '$g->grades'
+screen 6
+stuff "lftp web.nuu.edu.tw^M"
+stuff "cd public_html/$LEAGUE^M"
+
+screen 0
+stuff "v league.yaml classwork/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml groups.yaml grades.txt classwork/$NEXTROUND/groups.yaml"

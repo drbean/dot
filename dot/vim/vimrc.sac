@@ -1,4 +1,4 @@
-" Last Edit: 2014 Mar 16, 01:23:46 PM
+" Last Edit: 2014 Mar 24, 02:32:06 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -74,8 +74,8 @@ set winminheight=0	"non-focused window reduced to status bar
 "set t_Sf=^[[3%dm
 "set t_Sb=^[[4%dm
 
-let mapleader = "\"
-let maplocalleader = "\"
+let mapleader = "\\"
+let maplocalleader = "\\"
 
 if has("unix")
         "let is_bash = 'bash'

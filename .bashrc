@@ -481,7 +481,7 @@ function session () {
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	GL00005)
+	GL00019)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -552,12 +552,12 @@ function tables () {
 		X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::";;
 		*) return 1 # illegal option
 	    esac;;
-	GL00005)
+	GL00019)
 	    case ${letter} in
-		A) tables="Black::Gray,Green::White";;
-		B) tables="Black::Green,Gray::White";;
-		C) tables="Black::Gray,Orange::Green,Blue::Brown,Yellow::";;
-		X) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
+		A) tables="2-1::2-2,3-1::3-2";;
+		A) tables="2-1::3-1,2-2::3-2";;
+		C) tables="2-1::2-2,3-1::3-2";;
+		X) tables="2-1::3-1,2-2::3-2";;
 		*) return 1 # illegal option
 	    esac;;
 	AFB1J0)
@@ -585,7 +585,7 @@ function w () {
     case $1 in
 	2040) league=$1;;
 	3024) league=$1;;
-	GL00005) league=$1;;
+	GL00019) league=$1;;
 	AFB1J0) league=$1;;
 	FLA0018) league=$1;;
 	FLA0021) league=$1;;
@@ -766,38 +766,6 @@ function FLA0027 () {
 	B) tables="Orange::,Black::Blue,Brown::Red,Purple::Pink";;
 	C) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
 	X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
-	*) return 1 # illegal option
-    esac
-    cd ~/022/$league
-    SESSION=$session \
-    WEEK=$week \
-    LASTWEEK=$(($week-1)) \
-    LEAGUE=$league \
-    TOPIC=$topic \
-    LETTER=$letter \
-    TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
-    cd -
-}
-
-function GL00005 () {
-    OPTIND=1
-    local arg league=GL00005 session week letter topic tables
-    while getopts 's:w:l:t:' arg
-    do
-        case ${arg} in
-            s) session=${OPTARG};;
-            w) week=${OPTARG};;
-            l) letter=${OPTARG};;
-            t) topic=${OPTARG};;
-            *) return 1 # illegal option
-        esac
-    done
-    case ${letter} in
-	A) tables="Black::Gray,Green::White";;
-	B) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
-	C) tables="Black::Gray,Orange::Green,Blue::Brown,Yellow::";;
-	X) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
 	*) return 1 # illegal option
     esac
     cd ~/022/$league

@@ -129,11 +129,12 @@ endf
 ino <LocalLeader>1 <Esc>:call Oneword()<CR>o
 
 fu! Populate(module)
-	let word = expand('<cWORD>')
+	let quoted_word = expand('<cWORD>')
+	let word = substitute( quoted_word, "\"". "", "g")
 	call inputsave()
 	let key = input("Cat: '(A)P', '(C)N', '(P)N', '(V)*' ")
 	call inputrestore()
-	let category = get( {'a': 'AP', 'c': 'CN', 'p': 'PN', 'v': 'V*'}, key )
+	let category = get( {'a': 'AP', 'c': 'CN', 'p': 'PN', 'v': 'V'}, key )
 "	call setline('.', word . "\t: " . category . ";")
 	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
@@ -144,31 +145,31 @@ fu! Populate(module)
 
 	let ab_gf = bufnr( "/" . a:module . "\.gf")
 	execute "buffer" ab_gf
-	let module_lnum = line("'b")
-"	call setline(module_lnum, "\t" . word . "\t: " . category . ";")
-"	call append(module_lnum,'')
-"	call setpos("'b", [0, (module_lnum+1), 1, 0])
+"	let last_line = line("$")
+"	call cursor(last_line, 1)
+"	call search(category, "b")
+"	call append(line('.'), "\t" . word . "\t: " . category . ";")
 
 	let ab_i_gf = bufnr( a:module . "I.gf")
 	execute "buffer" ab_i_gf
-	let module_lnum = line("'c")
-	call setline(module_lnum, "\t" . word . "\t= mk" . category . " " . word . "_" . category . ";")
-	call append(module_lnum,'')
-	call setpos("'c", [0, (module_lnum+1), 1, 0])
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search(category, "b")
+	call append(line('.'), "\t" . word . "\t= mk" . category . " " . word . "_" . category . ";")
 
 	let lex_ab_gf = bufnr( "Lex" . a:module . ".gf")
 	execute "buffer" lex_ab_gf
-	let module_lnum = line("'d")
-	call setline(module_lnum, "\t" . word . "_" . category . "\t: " . category . ";")
-	call append(module_lnum,'')
-	call setpos("'d", [0, (module_lnum+1), 1, 0])
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search(category, "b")
+	call append(line('.'), "\t" . word . "_" . category . "\t: " . category . ";")
 
 	let lex_ab_eng_gf = bufnr( "Lex" . a:module . "Eng.gf")
 	execute "buffer" lex_ab_eng_gf
-	let module_lnum = line("'e")
-	call setline(module_lnum, "\t" . word . "_" . category . "\t= mk" . category . " \"" . word . "\";")
-	call append(module_lnum,'')
-	call setpos("'e", [0, (module_lnum+1), 1, 0])
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search(category, "b")
+	call append(line('.'), "\t" . word . "_" . category . "\t= mk" . category . " \"" . word . "\";")
 
 	execute "buffer" word_buf
 	call setpos('.', save_cursor)

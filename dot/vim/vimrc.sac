@@ -1,4 +1,4 @@
-" Last Edit: 2014 Mar 24, 02:32:06 PM
+" Last Edit: 2014 Mar 26, 02:14:29 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -561,8 +561,11 @@ au BufEnter comp/*/response.yaml nn <buffer> 3 $r3yyp<C-A>$r~
 au BufEnter comp/*/response.yaml nn <buffer> t $rTyyp<C-A>$r~3h
 au BufEnter comp/*/response.yaml nn <buffer> f $s  F<Esc>yyp<C-A>$2Xr~3h
 au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>f $sFault<Esc>yyp<C-A>WC~<Esc>3h
+au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>ff $sFault on 2nd chance<Esc>yyp<C-A>WC~<Esc>3h
 au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>u $sUnreturned<Esc>yyp<C-A>WC~<Esc>3h
+au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>uu $sUnreturned on 2nd chance<Esc>yyp<C-A>WC~<Esc>3h
 au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>r $sReturned<Esc>yyp<C-A>WC~<Esc>3h
+au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>rr $sReturned on 2nd chance<Esc>yyp<C-A>WC~<Esc>3h
 au BufEnter comp/*/response.yaml nn <buffer> <LocalLeader>o $sOld<Esc>yyp<C-A>WC~<Esc>3h
 au BufEnter comp/*/response.yaml nn <buffer> l $sNil<Esc>^/ \~$<CR>2h
 " au User comp/*/response.yaml nn <buffer> t $rTj$

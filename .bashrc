@@ -444,10 +444,11 @@ function AFBB32 () {
         esac
     done
     case ${letter} in
-	A) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow";;
-	B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
-	C) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow";;
+	A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Beige::Golden,Turquoise::Window";;
+	B) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Beige::Turquoise,Golden::Window";;
+	C) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Beige::Turquoise,Golden::Window";;
 	X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
+	Y) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
 	*) return 1 # illegal option
     esac
     cd ~/022/$league
@@ -546,10 +547,10 @@ function tables () {
 	    esac;;
 	3024)
 	    case ${letter} in
-		A) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Yellow,White::";;
-		B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::";;
-		C) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Yellow,White::";;
-		X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::";;
+		A) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Silver,Yellow::White";;
+		B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::Silver";;
+		C) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Silver,Yellow::White";;
+		X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::Silver";;
 		*) return 1 # illegal option
 	    esac;;
 	GL00019)
@@ -562,17 +563,26 @@ function tables () {
 	    esac;;
 	AFB1J0)
 	    case ${letter} in
-		A) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow,Purple::";;
-		B) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
-		C) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow,Purple::";;
-		X) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
+		A) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow";;
+		B) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink";;
+		C) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow";;
+		X) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink";;
+		*) return 1 # illegal option
+	    esac;;
+	AFBB32)
+	    case ${letter} in
+		A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
+		B) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Beige::Turquoise,Golden::Window";;
+		C) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Silver::Violet,Beige::Turquoise,Golden::Window";;
+		X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
+		Y) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
 		*) return 1 # illegal option
 	    esac;;
 	FLA0018)
 	    case ${letter} in
-		A) tables="Black::Blue,Brown::Gray,Orange::Pink,Purple::Red";;
-		B) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
-		C) tables="Black::Blue,Brown::Gray,Orange::Pink,Purple::Red";;
+		A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
+		B) tables="Orange::Black,Blue::Brown,Purple::Pink";;
+		C) tables="Black::Blue,Brown::Purple,Pink::Orange";;
 		X) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
 		*) return 1 # illegal option
 	    esac;;

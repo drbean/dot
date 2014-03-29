@@ -128,9 +128,43 @@ fu! Oneword()
 endf
 ino <LocalLeader>1 <Esc>:call Oneword()<CR>o
 
+fu! Populate_pn(word, module)
+	let lc_name = tolower( a:word )
+	let category = "PN"
+	let super_cat = "N"
+
+	let ab_gf = bufnr( "/" . a:module . "\.gf")
+	execute "buffer" ab_gf
+"	let last_line = line("$")
+"	call cursor(last_line, 1)
+"	call search(category, "bc")
+"	call append(line('.'), "\t" . lc_name . "\t: PN;")
+
+	let ab_i_gf = bufnr( a:module . "I.gf")
+	execute "buffer" ab_i_gf
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search("_" . super_cat, "bc")
+	call append(line('.'), "\t" . lc_name . "\t= mk" . category . " " . lc_name . "_" . super_cat . ";")
+
+	let lex_ab_gf = bufnr( "Lex" . a:module . ".gf")
+	execute "buffer" lex_ab_gf
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search("_" . super_cat, "bc")
+	call append(line('.'), "\t" . lc_name . "_" . super_cat . "\t: " . super_cat . ";")
+
+	let lex_ab_eng_gf = bufnr( "Lex" . a:module . "Eng.gf")
+	execute "buffer" lex_ab_eng_gf
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search("_" . super_cat, "bc")
+	call append(line('.'), "\t" . lc_name . "_" . super_cat . "\t= mk" . super_cat . " masculine (mk" . super_cat ." \"" . a:word . "\");")
+endf
+
 fu! Populate(module)
 	let quoted_word = expand('<cWORD>')
-	let word = substitute( quoted_word, "\"". "", "g")
+	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
 	let key = input("Cat: '(A)P', '(C)N', '(P)N', '(V)*' ")
 	call inputrestore()
@@ -143,44 +177,47 @@ fu! Populate(module)
 "	call append(word_lnum,'')
 "	call setpos("'a", [0, (word_lnum+1), 1, 0])
 
-	let ab_gf = bufnr( "/" . a:module . "\.gf")
-	execute "buffer" ab_gf
-"	let last_line = line("$")
-"	call cursor(last_line, 1)
-"	call search(category, "b")
-"	call append(line('.'), "\t" . word . "\t: " . category . ";")
+	if category == "PN"
+		call Populate_pn(word, a:module) 
+	else 
+		let ab_gf = bufnr( "/" . a:module . "\.gf")
+		execute "buffer" ab_gf
+	"	let last_line = line("$")
+	"	call cursor(last_line, 1)
+	"	call search(category, "bc")
+	"	call append(line('.'), "\t" . word . "\t: " . category . ";")
 
-	let ab_i_gf = bufnr( a:module . "I.gf")
-	execute "buffer" ab_i_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search(category, "b")
-	call append(line('.'), "\t" . word . "\t= mk" . category . " " . word . "_" . category . ";")
+		let ab_i_gf = bufnr( a:module . "I.gf")
+		execute "buffer" ab_i_gf
+		let last_line = line("$")
+		call cursor(last_line, 1)
+		call search(category, "bc")
+		call append(line('.'), "\t" . word . "\t= mk" . category . " " . word . "_" . category . ";")
 
-	let lex_ab_gf = bufnr( "Lex" . a:module . ".gf")
-	execute "buffer" lex_ab_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search(category, "b")
-	call append(line('.'), "\t" . word . "_" . category . "\t: " . category . ";")
+		let lex_ab_gf = bufnr( "Lex" . a:module . ".gf")
+		execute "buffer" lex_ab_gf
+		let last_line = line("$")
+		call cursor(last_line, 1)
+		call search(category, "bc")
+		call append(line('.'), "\t" . word . "_" . category . "\t: " . category . ";")
 
-	let lex_ab_eng_gf = bufnr( "Lex" . a:module . "Eng.gf")
-	execute "buffer" lex_ab_eng_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search(category, "b")
-	call append(line('.'), "\t" . word . "_" . category . "\t= mk" . category . " \"" . word . "\";")
+		let lex_ab_eng_gf = bufnr( "Lex" . a:module . "Eng.gf")
+		execute "buffer" lex_ab_eng_gf
+		let last_line = line("$")
+		call cursor(last_line, 1)
+		call search(category, "bc")
+		call append(line('.'), "\t" . word . "_" . category . "\t= mk" . category . " \"" . word . "\";")
+	endif
 
 	execute "buffer" word_buf
 	call setpos('.', save_cursor)
 
 endf
-nn <LocalLeader>p <Esc>:call Populate("Cusp")<CR><CR>
+nn <LocalLeader>p <Esc>:call Populate("Cusp")<CR>j
 
 " put words in DicksonI.gf, LexDickson.gf, LexDicksonEng.gf
 
-nn <LocalLeader>M
-	yiwPV>A	: PN;:w:2bn"0PV>A      = mkPN "0pA_N;o:w:bn"0PV>A_N  : N;lO: "<80>kbw:bn"0PA_N       = mkN "0";bb~lV>o:w:bn"0PV>I, "l~lA":w:        brew}w
+nn <LocalLeader>M yiwPV>A	: PN;:w:2bn"0PV>A      = mkPN "0pA_N;o:w:bn"0PV>A_N  : N;lO: "<80>kbw:bn"0PA_N       = mkN "0";bb~lV>o:w:bn"0PV>I, "l~lA":w:        brew}w
 
 " put words in categories in WordsCharacters.hs and in Dickson.gf
 

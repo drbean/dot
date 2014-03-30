@@ -8,10 +8,10 @@ stuff "git status^M"
 stuff "# git fetch upstream^M"
 stuff "# git merge upstream/master^M"
 screen
-stuff "cd gf-contrib/drbean/business/careers/candidate/^M cd -^M"
 stuff "cd gf-contrib/drbean/conversation/work/dickson/^M cd -^M"
 stuff "cd gf-contrib/drbean/call/intros/AFB1J0^M cd -^M"
-stuff "gf -coding utf-8^M import gf-contrib/drbean/call/intros/AFB1J0/AFB1J0Eng.gf^M "
+stuff "cd gf-contrib/drbean/business/careers/$MOD/^M cd -^M"
+stuff "gf -coding utf-8^M import gf-contrib/drbean/business/stress/$MOD/$MOD/Eng.gf^M "
 screen
 stuff "cd gf-contrib/drbean/business/careers/candidate/^M cd -^M"
 stuff "cd gf-contrib/drbean/conversation/work/dickson/^M"

@@ -39,11 +39,8 @@ fu! Interp()
 		call setline(".", "\t, ( \"" . relation . "\",\t\\[x,y,z,w]\t-> predid4 \"" .
 			\ relation . "\" w z y x\t)")
 	else
-		call setline(".", "\t, ( \"" . relation . "\",\t\\args -> case args of
-			[x,y,z,w]\t-> predid4 \"" . relation ."\" w z y x
-			[x,y,z]\t-> (forgetful4 . predid4) \"" . relation . "\" z y x
-			[x,y]\t-> (forgetful3 . forgetful4 . predid4) \"" . relation . "\" y x
-                         [x]\t-> (forgetful2 . forgetful3 . forgetful4 . predid4) \"" . relation . "\" x\t)")
+		call setline(".", "\t, ( \"" . relation . "\",\t\\args -> case args of")
+		call append(".", [ "\t\t[x,y,z,w]\t-> predid4 \"" . relation ."\" w z y x", "\t\t[x,y,z]\t-> (forgetful4 . predid4) \"" . relation . "\" z y x", "\t\t[x,y]\t-> (forgetful3 . forgetful4 . predid4) \"" . relation . "\" y x", "\t\t[x]\t-> (forgetful2 . forgetful3 . forgetful4 . predid4) \"" . relation . "\" x\t)" ])
 	endif
 endfunction
 ino <LocalLeader>I <Esc>:call Interp()<CR>o

@@ -107,8 +107,23 @@ alias irc="cd ~/znc; screen -c /home/drbean/dot/.screen/irc.rc -dR irc; cd -"
 
 alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp; cd -"
 
-alias GF="cd ~/GF; screen -c /home/drbean/dot/.screen/haskell.rc -dR GF; cd -"
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
+
+function GF () {
+    OPTIND=1
+    local module
+    while getopts 'm:' arg
+    do
+        case ${arg} in
+            m) module=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/GF
+    MOD=$module \
+    screen -c /home/drbean/dot/.screen/gf.rc -dR GF
+    cd -
+}
 
 function pages () {
     OPTIND=1

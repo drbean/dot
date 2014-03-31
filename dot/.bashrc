@@ -112,14 +112,20 @@ alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 function GF () {
     OPTIND=1
     local module
-    while getopts 'm:' arg
+    while getopts 'c:t:s:m:' arg
     do
         case ${arg} in
+	    c) course=${OPTARG}
+	    t) topic=${OPTARG}
+	    s) story=${OPTARG}
             m) module=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     cd ~/GF
+    COURSE=$course \
+    TOPIC=$topic \
+    STORY=$story \
     MOD=$module \
     screen -c /home/drbean/dot/.screen/gf.rc -dR GF
     cd -

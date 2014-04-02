@@ -3,7 +3,7 @@
 # copied from youtube-dl
 
 function _w () {
-	local cur prev opts fileopts diropts keywords
+	local cur prev opts league league_re letter_opt letter week fileopts diropts keywords
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"

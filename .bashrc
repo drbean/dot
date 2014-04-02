@@ -115,9 +115,9 @@ function GF () {
     while getopts 'c:t:s:m:' arg
     do
         case ${arg} in
-	    c) course=${OPTARG}
-	    t) topic=${OPTARG}
-	    s) story=${OPTARG}
+	    c) course=${OPTARG};;
+	    t) topic=${OPTARG};;
+	    s) story=${OPTARG};;
             m) module=${OPTARG};;
             *) return 1 # illegal option
         esac
@@ -577,7 +577,7 @@ function tables () {
 	GL00019)
 	    case ${letter} in
 		A) tables="2-1::2-2,3-1::3-2";;
-		A) tables="2-1::3-1,2-2::3-2";;
+		B) tables="2-1::3-2,2-2::3-1";;
 		C) tables="2-1::2-2,3-1::3-2";;
 		X) tables="2-1::3-1,2-2::3-2";;
 		*) return 1 # illegal option

@@ -1,3 +1,5 @@
-gf-contrib/drbean/business/stress/$MOD/WordsCharacters.hs
+/home/drbean/class/business/stress/dic.yaml
+gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
 gf-contrib/drbean/business/stress/cusp/Model.hs
 gf-contrib/drbean/business/stress/cusp/Story_Interpretation.hs
+gf-contrib/drbean/business/stress/cusp/Tests.hs

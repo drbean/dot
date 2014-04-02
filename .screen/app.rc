@@ -12,7 +12,7 @@ stuff "# export HISTTIMEFORMAT=^M"
 screen
 stuff "export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# sudo systemctl stop httpd.service^M"
-stuff "# perl script/grade_${APP}.pl -l $LEAGUE -x $OLD_STORY > ~/022/$LEAGUE/homework.yaml^M"
+stuff "# perl script/grade_${APP}.pl -l $LEAGUE -q 3 -o 1 -w 2 -x $OLD_STORY > ~/022/$LEAGUE/homework.yaml^M"
 stuff "# perl script/delete_exercise.pl -i $OLD_STORY -g $COURSE^M"
 stuff "# sudo systemctl start httpd.service^M"
 stuff "# less ~/022/$LEAGUE/homework.yaml^M"

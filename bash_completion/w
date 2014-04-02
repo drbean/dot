@@ -1,0 +1,42 @@
+# file: w
+# w parameter completion
+# copied from youtube-dl
+
+function _w () {
+	local cur prev opts fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	opts="-t -l"
+	league="GL00019 FLA0018 FLA0021 FLA0027 2040 3024 AFB1J0 AFBB32"
+	league_re="GL00019|FLA0018|FLA0021|FLA0027|2040|3024|AFB1J0|AFBB32"
+	letter_opt="-l"
+	letter="A B C X"
+	week="7 8 9 10 11 12 13 14 15 16 17 18"
+	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
+	diropts="--cache-dir"
+
+	if [[ ${prev} =~ ${fileopts} ]]; then
+	COMPREPLY=( $(compgen -f -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${diropts} ]]; then
+	COMPREPLY=( $(compgen -d -- ${cur}) )
+	return 0
+	fi
+
+	if [[ ${prev} == w ]]; then
+	COMPREPLY=( $(compgen -W "${league}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${league_re} ]] ; then
+	COMPREPLY=( $(compgen -W "${week}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${letter_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${letter}" -- ${cur}) )
+	return 0
+	elif [[ ${cur} == * ]] ; then
+	COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+	return 0
+	fi
+}
+
+complete -F _w w

@@ -1,25 +1,22 @@
 screen
-# stuff "v $(< ~/dot/gf_files.txt)"
-# stuff "v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs"
-stuff "v -O gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs gf-contrib/drbean/business/stress/cusp/Model.hs gf-contrib/drbean/business/stress/cusp/Story_Interpretation.hs"
+# stuff "v -O $(< ~/dot/gf_files.txt)"
+stuff "v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs"
+# stuff "v -O gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs gf-contrib/drbean/business/stress/cusp/Model.hs gf-contrib/drbean/business/stress/cusp/Story_Interpretation.hs"
 screen
 stuff "cd gf-contrib^M cd -^M"
 stuff "git status^M"
 stuff "# git fetch upstream^M"
 stuff "# git merge upstream/master^M"
-screen
-stuff "cd gf-contrib/drbean/conversation/work/dickson/^M cd -^M"
-stuff "cd gf-contrib/drbean/call/intros/AFB1J0^M cd -^M"
-stuff "cd gf-contrib/drbean/business/careers/$MOD/^M cd -^M"
-stuff "gf -coding utf-8^M import gf-contrib/drbean/business/stress/$MOD/${MOD}Eng.gf^M "
-screen
-stuff "cd gf-contrib/drbean/business/careers/candidate/^M cd -^M"
-stuff "cd gf-contrib/drbean/conversation/work/dickson/^M"
-stuff "cd gf-contrib/drbean/call/intros/$MOD/^M"
-stuff "# gf --make --output-format=haskell ${MOD}Eng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_$MOD -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_$MOD -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_$MOD -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp ${MOD}.pgf /var/www/cgi-bin/bett/bin/${MOD}.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s $MOD && perl /var/www/cgi-bin/bett/script/words.pl -s $MOD^M"
-# stuff "./Transfer^M"
+screen 2
+stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/%STORY^M cd -^M"
+stuff "gf -coding utf-8^M import gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf^M "
+screen 3
+stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/$STORY/^M"
+stuff "gf --make --output-format=haskell ${MOD}Eng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_$MOD -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_$MOD -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_$MOD -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp ${MOD}.pgf /var/www/cgi-bin/bett/bin/${MOD}.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s $MOD && perl /var/www/cgi-bin/bett/script/words.pl -s $MOD^M"
+stuff "cd -^M"
+stuff "./Transfer^M"
 stuff "ghci -i./:../:../../../^M"
-# stuff ":"
+stuff ":"
 stuff ":load Tests^M"
 stuff "let gr = readPGF \"${MOD}.pgf\"^M":
 screen

@@ -620,6 +620,7 @@ function w () {
 	AFB1J0) league=$1;;
 	FLA0018) league=$1;;
 	FLA0021) league=$1;;
+	FLA0027) league=$1;;
 	*) return 1 # illegal league
     esac
     week=$2

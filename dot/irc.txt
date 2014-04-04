@@ -1,0 +1,1 @@
+semanage port -a -t ircd_port_t -p tcp 6665

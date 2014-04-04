@@ -1,0 +1,954 @@
+2013-09-07 13:40:27	--	irc: connecting to server 127.0.0.1/6667...
+2013-09-07 13:40:27	=!=	irc: connection refused
+2013-09-07 13:40:27	--	irc: reconnecting to server in 10 seconds
+2013-09-07 13:40:37	--	irc: reconnecting to server...
+2013-09-07 13:40:37	--	irc: connecting to server 127.0.0.1/6667...
+2013-09-07 13:40:37	=!=	irc: connection refused
+2013-09-07 13:40:37	--	irc: reconnecting to server in 20 seconds
+2013-09-07 13:40:42		irc: auto-reconnection is cancelled
+2013-09-07 13:40:42	--	irc: disconnected from server
+2013-09-07 13:42:49	--	irc: connecting to server 127.0.0.1/6667...
+2013-09-07 13:42:49	--	irc: connected to 127.0.0.1/6667 (127.0.0.1)
+2013-09-07 13:42:49	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2013-09-07 13:42:49	--	Welcome to the BitlBee gateway, drbean
+2013-09-07 13:42:49	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-09-07 13:42:49	--	BitlBee <http://www.bitlbee.org/>
+2013-09-07 13:42:49	--	localhost 3.2 abiswRo ntC
+2013-09-07 13:42:49	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-09-07 13:42:49	--	- localhost Message Of The Day -
+2013-09-07 13:42:49	--	- Welcome to the BitlBee server at localhost.
+2013-09-07 13:42:49	--	-
+2013-09-07 13:42:49	--	- This server is running BitlBee version 3.2.
+2013-09-07 13:42:49	--	- The newest version can be found on http://www.bitlbee.org/
+2013-09-07 13:42:49	--	-
+2013-09-07 13:42:49	--	- You are getting this message because the server administrator has not
+2013-09-07 13:42:49	--	- yet had the time (or need) to change it.
+2013-09-07 13:42:49	--	-
+2013-09-07 13:42:49	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-09-07 13:42:49	--	- Relay Chat server. Please see the site mentioned above for more
+2013-09-07 13:42:49	--	- information.
+2013-09-07 13:42:49	--	-
+2013-09-07 13:42:49	--	-
+2013-09-07 13:42:49	--	- The developers of the Bee hope you have a buzzing time.
+2013-09-07 13:42:49	--	-
+2013-09-07 13:42:49	--	- * BitlBee development team.
+2013-09-07 13:42:49	--	-
+2013-09-07 13:42:49	--	- ... Buzzing, haha, get it?
+2013-09-07 13:42:49	--	End of MOTD
+2013-09-07 13:42:49	--	User mode [+s] by drbean
+2013-09-07 13:44:40	--	User mode [+R] by drbean
+2013-09-08 21:41:02	--	irc: connecting to server bitlbee/6667...
+2013-09-08 21:41:03	=!=	irc: address "bitlbee" not found
+2013-09-08 21:41:03	=!=	irc: error: Name or service not known
+2013-09-08 21:41:03	--	irc: reconnecting to server in 10 seconds
+2013-09-08 21:41:13	--	irc: reconnecting to server...
+2013-09-08 21:41:13	--	irc: connecting to server bitlbee/6667...
+2013-09-08 21:41:13	=!=	irc: address "bitlbee" not found
+2013-09-08 21:41:13	=!=	irc: error: Name or service not known
+2013-09-08 21:41:13	--	irc: reconnecting to server in 20 seconds
+2013-09-08 21:41:18		irc: auto-reconnection is cancelled
+2013-09-08 21:41:18	--	irc: disconnected from server
+2013-09-08 21:50:02	--	irc: connecting to server bitlbee/6667...
+2013-09-08 21:50:02	=!=	irc: address "bitlbee" not found
+2013-09-08 21:50:02	=!=	irc: error: Name or service not known
+2013-09-08 21:50:02	--	irc: reconnecting to server in 10 seconds
+2013-09-08 21:50:12	--	irc: reconnecting to server...
+2013-09-08 21:50:12	--	irc: connecting to server bitlbee/6667...
+2013-09-08 21:50:12	=!=	irc: address "bitlbee" not found
+2013-09-08 21:50:12	=!=	irc: error: Name or service not known
+2013-09-08 21:50:12	--	irc: reconnecting to server in 20 seconds
+2013-09-08 21:50:32	--	irc: reconnecting to server...
+2013-09-08 21:50:32	--	irc: connecting to server bitlbee/6667...
+2013-09-08 21:50:32	=!=	irc: address "bitlbee" not found
+2013-09-08 21:50:32	=!=	irc: error: Name or service not known
+2013-09-08 21:50:32	--	irc: reconnecting to server in 40 seconds
+2013-09-08 21:51:05		irc: auto-reconnection is cancelled
+2013-09-08 21:51:05	--	irc: disconnected from server
+2013-09-12 08:01:40	--	irc: connecting to server bitlbee/6667...
+2013-09-12 08:01:40	=!=	irc: address "bitlbee" not found
+2013-09-12 08:01:40	=!=	irc: error: Name or service not known
+2013-09-12 08:01:40	--	irc: reconnecting to server in 10 seconds
+2013-09-12 08:01:50		irc: auto-reconnection is cancelled
+2013-09-12 08:01:50	--	irc: disconnected from server
+2013-09-12 08:03:33	--	irc: connecting to server 203.64.184.141/6666...
+2013-09-12 08:03:33	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-09-12 08:03:33	--	Invalid Password
+2013-09-12 08:03:33	=!=	irc: reading data on socket: error 131 (connection closed by peer)
+2013-09-12 08:03:33	--	irc: disconnecting from server...
+2013-09-12 08:03:33	--	irc: disconnected from server
+2013-09-12 08:03:33	--	irc: reconnecting to server in 10 seconds
+2013-09-12 08:03:43	--	irc: reconnecting to server...
+2013-09-12 08:03:43	--	irc: connecting to server 203.64.184.141/6666...
+2013-09-12 08:03:43	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-09-12 08:03:43	--	Invalid Password
+2013-09-12 08:03:43	=!=	irc: reading data on socket: error 131 (connection closed by peer)
+2013-09-12 08:03:43	--	irc: disconnecting from server...
+2013-09-12 08:03:43	--	irc: disconnected from server
+2013-09-12 08:03:43	--	irc: reconnecting to server in 20 seconds
+2013-09-12 08:03:55		irc: auto-reconnection is cancelled
+2013-09-12 08:03:55	--	irc: disconnected from server
+2013-09-12 08:05:09	--	irc: connecting to server 203.64.184.141/6666...
+2013-09-12 08:05:09	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-09-12 08:05:09	--	Invalid Password
+2013-09-12 08:05:09	=!=	irc: reading data on socket: error 131 (connection closed by peer)
+2013-09-12 08:05:09	--	irc: disconnecting from server...
+2013-09-12 08:05:09	--	irc: disconnected from server
+2013-09-12 08:05:09	--	irc: reconnecting to server in 10 seconds
+2013-09-12 08:05:19	--	irc: reconnecting to server...
+2013-09-12 08:05:19	--	irc: connecting to server 203.64.184.141/6666...
+2013-09-12 08:05:19	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-09-12 08:05:19	--	Invalid Password
+2013-09-12 08:05:19	=!=	irc: reading data on socket: error 131 (connection closed by peer)
+2013-09-12 08:05:19	--	irc: disconnecting from server...
+2013-09-12 08:05:19	--	irc: disconnected from server
+2013-09-12 08:05:19	--	irc: reconnecting to server in 20 seconds
+2013-09-12 08:05:31		irc: auto-reconnection is cancelled
+2013-09-12 08:05:31	--	irc: disconnected from server
+2013-09-12 21:57:55	--	irc: connecting to server 203.64.184.141/6666...
+2013-09-12 21:57:55	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-09-12 21:57:55	--	Welcome to the BitlBee gateway, drbean
+2013-09-12 21:57:55	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-09-12 21:57:55	--	BitlBee <http://www.bitlbee.org/>
+2013-09-12 21:57:55	--	localhost 3.2 abiswRo ntC
+2013-09-12 21:57:55	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-09-12 21:57:55	--	- localhost Message Of The Day -
+2013-09-12 21:57:55	--	- Welcome to the BitlBee server at localhost.
+2013-09-12 21:57:55	--	-
+2013-09-12 21:57:55	--	- This server is running BitlBee version 3.2.
+2013-09-12 21:57:55	--	- The newest version can be found on http://www.bitlbee.org/
+2013-09-12 21:57:55	--	-
+2013-09-12 21:57:55	--	- You are getting this message because the server administrator has not
+2013-09-12 21:57:55	--	- yet had the time (or need) to change it.
+2013-09-12 21:57:55	--	-
+2013-09-12 21:57:55	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-09-12 21:57:55	--	- Relay Chat server. Please see the site mentioned above for more
+2013-09-12 21:57:55	--	- information.
+2013-09-12 21:57:55	--	-
+2013-09-12 21:57:55	--	-
+2013-09-12 21:57:55	--	- The developers of the Bee hope you have a buzzing time.
+2013-09-12 21:57:55	--	-
+2013-09-12 21:57:55	--	- * BitlBee development team.
+2013-09-12 21:57:55	--	-
+2013-09-12 21:57:55	--	- ... Buzzing, haha, get it?
+2013-09-12 21:57:55	--	End of MOTD
+2013-09-12 21:57:55	--	User mode [+s] by drbean
+2013-09-12 22:00:13	=!=	irc: too few arguments for "oper" command
+2013-09-12 22:01:13	--	User mode [+R] by drbean
+2013-09-15 15:53:50	--	irc: disconnected from server
+2013-09-15 19:18:23	--	irc: connecting to server 203.64.184.141/6666...
+2013-09-15 19:18:23	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-09-15 19:18:23	--	Welcome to the BitlBee gateway, drbean
+2013-09-15 19:18:23	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-09-15 19:18:23	--	BitlBee <http://www.bitlbee.org/>
+2013-09-15 19:18:23	--	localhost 3.2 abiswRo ntC
+2013-09-15 19:18:23	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-09-15 19:18:23	--	- localhost Message Of The Day -
+2013-09-15 19:18:23	--	- Welcome to the BitlBee server at localhost.
+2013-09-15 19:18:23	--	-
+2013-09-15 19:18:23	--	- This server is running BitlBee version 3.2.
+2013-09-15 19:18:23	--	- The newest version can be found on http://www.bitlbee.org/
+2013-09-15 19:18:23	--	-
+2013-09-15 19:18:23	--	- You are getting this message because the server administrator has not
+2013-09-15 19:18:23	--	- yet had the time (or need) to change it.
+2013-09-15 19:18:23	--	-
+2013-09-15 19:18:23	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-09-15 19:18:23	--	- Relay Chat server. Please see the site mentioned above for more
+2013-09-15 19:18:23	--	- information.
+2013-09-15 19:18:23	--	-
+2013-09-15 19:18:23	--	-
+2013-09-15 19:18:23	--	- The developers of the Bee hope you have a buzzing time.
+2013-09-15 19:18:23	--	-
+2013-09-15 19:18:23	--	- * BitlBee development team.
+2013-09-15 19:18:23	--	-
+2013-09-15 19:18:23	--	- ... Buzzing, haha, get it?
+2013-09-15 19:18:23	--	End of MOTD
+2013-09-15 19:18:23	--	User mode [+s] by drbean
+2013-09-15 19:20:00	=!=	irc: too few arguments for "oper" command
+2013-09-15 19:24:22	--	MSG(*status): help
+2013-09-15 19:28:24	=!=	irc: too few arguments for "oper" command
+2013-09-15 19:30:57	--	User mode [+R] by drbean
+2013-09-23 09:02:31	--	irc: connecting to server 203.64.184.141/6666...
+2013-09-23 09:02:31	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-09-23 09:02:31	--	Welcome to the BitlBee gateway, drbean
+2013-09-23 09:02:31	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-09-23 09:02:31	--	BitlBee <http://www.bitlbee.org/>
+2013-09-23 09:02:31	--	localhost 3.2 abiswRo ntC
+2013-09-23 09:02:31	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-09-23 09:02:31	--	- localhost Message Of The Day -
+2013-09-23 09:02:31	--	- Welcome to the BitlBee server at localhost.
+2013-09-23 09:02:31	--	-
+2013-09-23 09:02:31	--	- This server is running BitlBee version 3.2.
+2013-09-23 09:02:31	--	- The newest version can be found on http://www.bitlbee.org/
+2013-09-23 09:02:31	--	-
+2013-09-23 09:02:31	--	- You are getting this message because the server administrator has not
+2013-09-23 09:02:31	--	- yet had the time (or need) to change it.
+2013-09-23 09:02:31	--	-
+2013-09-23 09:02:31	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-09-23 09:02:31	--	- Relay Chat server. Please see the site mentioned above for more
+2013-09-23 09:02:31	--	- information.
+2013-09-23 09:02:31	--	-
+2013-09-23 09:02:31	--	-
+2013-09-23 09:02:31	--	- The developers of the Bee hope you have a buzzing time.
+2013-09-23 09:02:31	--	-
+2013-09-23 09:02:31	--	- * BitlBee development team.
+2013-09-23 09:02:31	--	-
+2013-09-23 09:02:31	--	- ... Buzzing, haha, get it?
+2013-09-23 09:02:31	--	End of MOTD
+2013-09-23 09:02:31	--	User mode [+s] by drbean
+2013-09-23 09:06:49	--	User mode [+R] by drbean
+2013-09-26 22:14:17	--	irc: connecting to server 203.64.184.141/6666...
+2013-09-26 22:14:17	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-09-26 22:14:17	--	Welcome to the BitlBee gateway, drbean
+2013-09-26 22:14:17	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-09-26 22:14:17	--	BitlBee <http://www.bitlbee.org/>
+2013-09-26 22:14:17	--	localhost 3.2 abiswRo ntC
+2013-09-26 22:14:17	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-09-26 22:14:17	--	- localhost Message Of The Day -
+2013-09-26 22:14:17	--	- Welcome to the BitlBee server at localhost.
+2013-09-26 22:14:17	--	-
+2013-09-26 22:14:17	--	- This server is running BitlBee version 3.2.
+2013-09-26 22:14:17	--	- The newest version can be found on http://www.bitlbee.org/
+2013-09-26 22:14:17	--	-
+2013-09-26 22:14:17	--	- You are getting this message because the server administrator has not
+2013-09-26 22:14:17	--	- yet had the time (or need) to change it.
+2013-09-26 22:14:17	--	-
+2013-09-26 22:14:17	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-09-26 22:14:17	--	- Relay Chat server. Please see the site mentioned above for more
+2013-09-26 22:14:17	--	- information.
+2013-09-26 22:14:17	--	-
+2013-09-26 22:14:17	--	-
+2013-09-26 22:14:17	--	- The developers of the Bee hope you have a buzzing time.
+2013-09-26 22:14:17	--	-
+2013-09-26 22:14:17	--	- * BitlBee development team.
+2013-09-26 22:14:17	--	-
+2013-09-26 22:14:17	--	- ... Buzzing, haha, get it?
+2013-09-26 22:14:17	--	End of MOTD
+2013-09-26 22:14:17	--	User mode [+s] by drbean
+2013-09-26 22:14:27	--	User mode [+R] by drbean
+2013-10-04 18:56:15	--	[koara8] is away: Offline
+2013-10-05 08:32:40	--	[koara8] is away: Offline
+2013-10-05 11:54:59	--	irc: disconnected from server
+2013-10-06 09:55:26	--	irc: connecting to server 203.64.184.141/6666...
+2013-10-06 09:55:26	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-10-06 09:55:26	--	Welcome to the BitlBee gateway, drbean
+2013-10-06 09:55:26	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-10-06 09:55:26	--	BitlBee <http://www.bitlbee.org/>
+2013-10-06 09:55:26	--	localhost 3.2 abiswRo ntC
+2013-10-06 09:55:26	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-10-06 09:55:26	--	- localhost Message Of The Day -
+2013-10-06 09:55:26	--	- Welcome to the BitlBee server at localhost.
+2013-10-06 09:55:26	--	-
+2013-10-06 09:55:26	--	- This server is running BitlBee version 3.2.
+2013-10-06 09:55:26	--	- The newest version can be found on http://www.bitlbee.org/
+2013-10-06 09:55:26	--	-
+2013-10-06 09:55:26	--	- You are getting this message because the server administrator has not
+2013-10-06 09:55:26	--	- yet had the time (or need) to change it.
+2013-10-06 09:55:26	--	-
+2013-10-06 09:55:26	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-10-06 09:55:26	--	- Relay Chat server. Please see the site mentioned above for more
+2013-10-06 09:55:26	--	- information.
+2013-10-06 09:55:26	--	-
+2013-10-06 09:55:26	--	-
+2013-10-06 09:55:26	--	- The developers of the Bee hope you have a buzzing time.
+2013-10-06 09:55:26	--	-
+2013-10-06 09:55:26	--	- * BitlBee development team.
+2013-10-06 09:55:26	--	-
+2013-10-06 09:55:26	--	- ... Buzzing, haha, get it?
+2013-10-06 09:55:26	--	End of MOTD
+2013-10-06 09:55:26	--	User mode [+Rs] by drbean
+2013-10-06 09:55:35	--	[koara8] is away: Offline
+2013-10-06 13:09:23	--	[koara8] is away: Offline
+2013-10-06 15:32:41	--	User mode [-Rs] by drbean
+2013-10-06 15:32:42	=!=	irc: reading data on socket: error 446 (connection closed by peer)
+2013-10-06 15:32:42	--	irc: disconnecting from server...
+2013-10-06 15:32:42	--	irc: disconnected from server
+2013-10-06 15:32:42	--	irc: reconnecting to server in 10 seconds
+2013-10-06 15:32:52	--	irc: reconnecting to server...
+2013-10-06 15:32:52	--	irc: connecting to server 203.64.184.141/6666...
+2013-10-06 15:32:52	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-10-06 15:32:52	--	Welcome to the BitlBee gateway, drbean
+2013-10-06 15:32:52	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-10-06 15:32:52	--	BitlBee <http://www.bitlbee.org/>
+2013-10-06 15:32:52	--	localhost 3.2 abiswRo ntC
+2013-10-06 15:32:52	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-10-06 15:32:52	--	- localhost Message Of The Day -
+2013-10-06 15:32:52	--	- Welcome to the BitlBee server at localhost.
+2013-10-06 15:32:52	--	-
+2013-10-06 15:32:52	--	- This server is running BitlBee version 3.2.
+2013-10-06 15:32:52	--	- The newest version can be found on http://www.bitlbee.org/
+2013-10-06 15:32:52	--	-
+2013-10-06 15:32:52	--	- You are getting this message because the server administrator has not
+2013-10-06 15:32:52	--	- yet had the time (or need) to change it.
+2013-10-06 15:32:52	--	-
+2013-10-06 15:32:52	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-10-06 15:32:52	--	- Relay Chat server. Please see the site mentioned above for more
+2013-10-06 15:32:52	--	- information.
+2013-10-06 15:32:52	--	-
+2013-10-06 15:32:52	--	-
+2013-10-06 15:32:52	--	- The developers of the Bee hope you have a buzzing time.
+2013-10-06 15:32:52	--	-
+2013-10-06 15:32:52	--	- * BitlBee development team.
+2013-10-06 15:32:52	--	-
+2013-10-06 15:32:52	--	- ... Buzzing, haha, get it?
+2013-10-06 15:32:52	--	End of MOTD
+2013-10-06 15:32:52	--	User mode [+s] by drbean
+2013-10-06 19:56:18	--	User mode [+R] by drbean
+2013-10-06 19:56:35	--	[koara8] is away: Offline
+2013-10-08 08:57:38	--	[koara8] is away: Offline
+2013-10-08 20:45:53	--	[koara8] is away: Offline
+2013-10-15 10:04:58	--	irc: disconnected from server
+2013-10-15 11:12:29	--	irc: connecting to server 203.64.184.141/6666...
+2013-10-15 11:12:29	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-10-15 11:12:29	--	Welcome to the BitlBee gateway, drbean
+2013-10-15 11:12:29	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-10-15 11:12:29	--	BitlBee <http://www.bitlbee.org/>
+2013-10-15 11:12:29	--	localhost 3.2 abiswRo ntC
+2013-10-15 11:12:29	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-10-15 11:12:29	--	- localhost Message Of The Day -
+2013-10-15 11:12:29	--	- Welcome to the BitlBee server at localhost.
+2013-10-15 11:12:29	--	-
+2013-10-15 11:12:29	--	- This server is running BitlBee version 3.2.
+2013-10-15 11:12:29	--	- The newest version can be found on http://www.bitlbee.org/
+2013-10-15 11:12:29	--	-
+2013-10-15 11:12:29	--	- You are getting this message because the server administrator has not
+2013-10-15 11:12:29	--	- yet had the time (or need) to change it.
+2013-10-15 11:12:29	--	-
+2013-10-15 11:12:29	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-10-15 11:12:29	--	- Relay Chat server. Please see the site mentioned above for more
+2013-10-15 11:12:29	--	- information.
+2013-10-15 11:12:29	--	-
+2013-10-15 11:12:29	--	-
+2013-10-15 11:12:29	--	- The developers of the Bee hope you have a buzzing time.
+2013-10-15 11:12:29	--	-
+2013-10-15 11:12:29	--	- * BitlBee development team.
+2013-10-15 11:12:29	--	-
+2013-10-15 11:12:29	--	- ... Buzzing, haha, get it?
+2013-10-15 11:12:29	--	End of MOTD
+2013-10-15 11:12:29	--	User mode [+Rs] by drbean
+2013-10-23 22:35:57	--	irc: disconnected from server
+2013-10-27 10:03:02	--	irc: connecting to server 203.64.184.141/6666...
+2013-10-27 10:03:02	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-10-27 10:03:02	--	Welcome to the BitlBee gateway, drbean
+2013-10-27 10:03:02	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-10-27 10:03:02	--	BitlBee <http://www.bitlbee.org/>
+2013-10-27 10:03:02	--	localhost 3.2 abiswRo ntC
+2013-10-27 10:03:02	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-10-27 10:03:02	--	- localhost Message Of The Day -
+2013-10-27 10:03:02	--	- Welcome to the BitlBee server at localhost.
+2013-10-27 10:03:02	--	-
+2013-10-27 10:03:02	--	- This server is running BitlBee version 3.2.
+2013-10-27 10:03:02	--	- The newest version can be found on http://www.bitlbee.org/
+2013-10-27 10:03:02	--	-
+2013-10-27 10:03:02	--	- You are getting this message because the server administrator has not
+2013-10-27 10:03:02	--	- yet had the time (or need) to change it.
+2013-10-27 10:03:02	--	-
+2013-10-27 10:03:02	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-10-27 10:03:02	--	- Relay Chat server. Please see the site mentioned above for more
+2013-10-27 10:03:02	--	- information.
+2013-10-27 10:03:02	--	-
+2013-10-27 10:03:02	--	-
+2013-10-27 10:03:02	--	- The developers of the Bee hope you have a buzzing time.
+2013-10-27 10:03:02	--	-
+2013-10-27 10:03:02	--	- * BitlBee development team.
+2013-10-27 10:03:02	--	-
+2013-10-27 10:03:02	--	- ... Buzzing, haha, get it?
+2013-10-27 10:03:02	--	End of MOTD
+2013-10-27 10:03:02	--	User mode [+s] by drbean
+2013-10-27 10:04:47	--	User mode [+R] by drbean
+2013-11-09 10:21:14	--	User mode [-Rs] by drbean
+2013-11-09 10:21:15	=!=	irc: reading data on socket: error 403 (connection closed by peer)
+2013-11-09 10:21:15	--	irc: disconnecting from server...
+2013-11-09 10:21:15	--	irc: disconnected from server
+2013-11-09 10:21:15	--	irc: reconnecting to server in 10 seconds
+2013-11-09 10:21:25	--	irc: reconnecting to server...
+2013-11-09 10:21:25	--	irc: connecting to server 203.64.184.141/6666...
+2013-11-09 10:21:25	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-11-09 10:21:25	--	Welcome to the BitlBee gateway, drbean
+2013-11-09 10:21:25	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-11-09 10:21:25	--	BitlBee <http://www.bitlbee.org/>
+2013-11-09 10:21:25	--	localhost 3.2 abiswRo ntC
+2013-11-09 10:21:25	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-11-09 10:21:25	--	- localhost Message Of The Day -
+2013-11-09 10:21:25	--	- Welcome to the BitlBee server at localhost.
+2013-11-09 10:21:25	--	-
+2013-11-09 10:21:25	--	- This server is running BitlBee version 3.2.
+2013-11-09 10:21:25	--	- The newest version can be found on http://www.bitlbee.org/
+2013-11-09 10:21:25	--	-
+2013-11-09 10:21:25	--	- You are getting this message because the server administrator has not
+2013-11-09 10:21:25	--	- yet had the time (or need) to change it.
+2013-11-09 10:21:25	--	-
+2013-11-09 10:21:25	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-11-09 10:21:25	--	- Relay Chat server. Please see the site mentioned above for more
+2013-11-09 10:21:25	--	- information.
+2013-11-09 10:21:25	--	-
+2013-11-09 10:21:25	--	-
+2013-11-09 10:21:25	--	- The developers of the Bee hope you have a buzzing time.
+2013-11-09 10:21:25	--	-
+2013-11-09 10:21:25	--	- * BitlBee development team.
+2013-11-09 10:21:25	--	-
+2013-11-09 10:21:25	--	- ... Buzzing, haha, get it?
+2013-11-09 10:21:25	--	End of MOTD
+2013-11-09 10:21:25	--	User mode [+s] by drbean
+2013-11-17 12:40:29	--	User mode [+R] by drbean
+2013-11-17 12:40:44	--	[koara8] is away: Offline
+2013-11-17 14:29:45	--	[koara8] is away: Offline
+2013-11-17 16:01:48	--	[koara8] is away: Offline
+2013-11-17 20:06:04	--	[koara8] is away: Offline
+2013-11-26 15:05:08	--	User mode [-Rs] by drbean
+2013-11-26 15:05:09	=!=	irc: reading data on socket: error 486 (connection closed by peer)
+2013-11-26 15:05:09	--	irc: disconnecting from server...
+2013-11-26 15:05:09	--	irc: disconnected from server
+2013-11-26 15:05:09	--	irc: reconnecting to server in 10 seconds
+2013-11-26 15:05:19	--	irc: reconnecting to server...
+2013-11-26 15:05:19	--	irc: connecting to server 203.64.184.141/6666...
+2013-11-26 15:05:19	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-11-26 15:05:19	--	Welcome to the BitlBee gateway, drbean
+2013-11-26 15:05:19	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-11-26 15:05:19	--	BitlBee <http://www.bitlbee.org/>
+2013-11-26 15:05:19	--	localhost 3.2 abiswRo ntC
+2013-11-26 15:05:19	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-11-26 15:05:19	--	- localhost Message Of The Day -
+2013-11-26 15:05:19	--	- Welcome to the BitlBee server at localhost.
+2013-11-26 15:05:19	--	-
+2013-11-26 15:05:19	--	- This server is running BitlBee version 3.2.
+2013-11-26 15:05:19	--	- The newest version can be found on http://www.bitlbee.org/
+2013-11-26 15:05:19	--	-
+2013-11-26 15:05:19	--	- You are getting this message because the server administrator has not
+2013-11-26 15:05:19	--	- yet had the time (or need) to change it.
+2013-11-26 15:05:19	--	-
+2013-11-26 15:05:19	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-11-26 15:05:19	--	- Relay Chat server. Please see the site mentioned above for more
+2013-11-26 15:05:19	--	- information.
+2013-11-26 15:05:19	--	-
+2013-11-26 15:05:19	--	-
+2013-11-26 15:05:19	--	- The developers of the Bee hope you have a buzzing time.
+2013-11-26 15:05:19	--	-
+2013-11-26 15:05:19	--	- * BitlBee development team.
+2013-11-26 15:05:19	--	-
+2013-11-26 15:05:19	--	- ... Buzzing, haha, get it?
+2013-11-26 15:05:19	--	End of MOTD
+2013-11-26 15:05:19	--	User mode [+s] by drbean
+2013-11-26 19:49:48	--	User mode [+R] by drbean
+2013-11-29 19:40:20	--	[koara8] is away: Offline
+2013-12-06 02:54:31	--	User mode [-Rs] by drbean
+2013-12-06 02:54:36	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2013-12-06 02:54:36	--	Welcome to the BitlBee gateway, drbean
+2013-12-06 02:54:36	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-12-06 02:54:36	--	BitlBee <http://www.bitlbee.org/>
+2013-12-06 02:54:36	--	localhost 3.2 abiswRo ntC
+2013-12-06 02:54:36	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-12-06 02:54:36	--	- localhost Message Of The Day -
+2013-12-06 02:54:36	--	- Welcome to the BitlBee server at localhost.
+2013-12-06 02:54:36	--	-
+2013-12-06 02:54:36	--	- This server is running BitlBee version 3.2.
+2013-12-06 02:54:36	--	- The newest version can be found on http://www.bitlbee.org/
+2013-12-06 02:54:36	--	-
+2013-12-06 02:54:36	--	- You are getting this message because the server administrator has not
+2013-12-06 02:54:36	--	- yet had the time (or need) to change it.
+2013-12-06 02:54:36	--	-
+2013-12-06 02:54:36	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-12-06 02:54:36	--	- Relay Chat server. Please see the site mentioned above for more
+2013-12-06 02:54:36	--	- information.
+2013-12-06 02:54:36	--	-
+2013-12-06 02:54:36	--	-
+2013-12-06 02:54:36	--	- The developers of the Bee hope you have a buzzing time.
+2013-12-06 02:54:36	--	-
+2013-12-06 02:54:36	--	- * BitlBee development team.
+2013-12-06 02:54:36	--	-
+2013-12-06 02:54:36	--	- ... Buzzing, haha, get it?
+2013-12-06 02:54:36	--	End of MOTD
+2013-12-06 02:54:36	--	User mode [+s] by drbean
+2013-12-06 02:54:36	--	[*] drbean (drbean@localhost) H 0 (Dr Bean)
+2013-12-06 02:54:36	--	[drbean] End of /WHO list
+2013-12-06 13:06:11	--	User mode [+R] by drbean
+2013-12-17 22:14:03	--	User mode [-Rs] by drbean
+2013-12-17 22:14:05	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2013-12-17 22:14:05	--	Welcome to the BitlBee gateway, drbean
+2013-12-17 22:14:05	--	Host localhost is running BitlBee 3.2 Linux/i686.
+2013-12-17 22:14:05	--	BitlBee <http://www.bitlbee.org/>
+2013-12-17 22:14:05	--	localhost 3.2 abiswRo ntC
+2013-12-17 22:14:05	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-12-17 22:14:05	--	- localhost Message Of The Day -
+2013-12-17 22:14:05	--	- Welcome to the BitlBee server at localhost.
+2013-12-17 22:14:05	--	-
+2013-12-17 22:14:05	--	- This server is running BitlBee version 3.2.
+2013-12-17 22:14:05	--	- The newest version can be found on http://www.bitlbee.org/
+2013-12-17 22:14:05	--	-
+2013-12-17 22:14:05	--	- You are getting this message because the server administrator has not
+2013-12-17 22:14:05	--	- yet had the time (or need) to change it.
+2013-12-17 22:14:05	--	-
+2013-12-17 22:14:05	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-12-17 22:14:05	--	- Relay Chat server. Please see the site mentioned above for more
+2013-12-17 22:14:05	--	- information.
+2013-12-17 22:14:05	--	-
+2013-12-17 22:14:05	--	-
+2013-12-17 22:14:05	--	- The developers of the Bee hope you have a buzzing time.
+2013-12-17 22:14:05	--	-
+2013-12-17 22:14:05	--	- * BitlBee development team.
+2013-12-17 22:14:05	--	-
+2013-12-17 22:14:05	--	- ... Buzzing, haha, get it?
+2013-12-17 22:14:05	--	End of MOTD
+2013-12-17 22:14:05	--	User mode [+s] by drbean
+2013-12-17 22:14:05	--	[*] drbean (drbean@localhost) H 0 (Dr Bean)
+2013-12-17 22:14:05	--	[drbean] End of /WHO list
+2013-12-19 22:08:28	--	User mode [+R] by drbean
+2013-12-24 11:12:01	--	User mode [-Rs] by drbean
+2013-12-24 11:12:08	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2013-12-24 11:12:08	--	Welcome to the BitlBee gateway, drbean
+2013-12-24 11:12:08	--	Host localhost is running BitlBee 3.2.1 Linux/i686.
+2013-12-24 11:12:08	--	BitlBee <http://www.bitlbee.org/>
+2013-12-24 11:12:08	--	localhost 3.2.1 abiswRo ntC
+2013-12-24 11:12:08	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-12-24 11:12:08	--	- localhost Message Of The Day -
+2013-12-24 11:12:08	--	- Welcome to the BitlBee server at localhost.
+2013-12-24 11:12:08	--	-
+2013-12-24 11:12:08	--	- This server is running BitlBee version 3.2.1.
+2013-12-24 11:12:08	--	- The newest version can be found on http://www.bitlbee.org/
+2013-12-24 11:12:08	--	-
+2013-12-24 11:12:08	--	- You are getting this message because the server administrator has not
+2013-12-24 11:12:08	--	- yet had the time (or need) to change it.
+2013-12-24 11:12:08	--	-
+2013-12-24 11:12:08	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-12-24 11:12:08	--	- Relay Chat server. Please see the site mentioned above for more
+2013-12-24 11:12:08	--	- information.
+2013-12-24 11:12:08	--	-
+2013-12-24 11:12:08	--	- The developers of the Bee hope you have a buzzing time.
+2013-12-24 11:12:08	--	- -- BitlBee development team.
+2013-12-24 11:12:08	--	-
+2013-12-24 11:12:08	--	- ... Buzzing, haha, get it?
+2013-12-24 11:12:08	--	End of MOTD
+2013-12-24 11:12:08	--	User mode [+s] by drbean
+2013-12-24 11:12:09	--	[*] drbean (drbean@localhost) H 0 (Dr Bean)
+2013-12-24 11:12:09	--	[drbean] End of /WHO list
+2013-12-24 11:50:01	--	User mode [-s] by drbean
+2013-12-24 11:50:07	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2013-12-24 11:50:07	--	Welcome to the BitlBee gateway, drbean
+2013-12-24 11:50:07	--	Host localhost is running BitlBee 3.2.1 Linux/i686.
+2013-12-24 11:50:07	--	BitlBee <http://www.bitlbee.org/>
+2013-12-24 11:50:07	--	localhost 3.2.1 abiswRo ntC
+2013-12-24 11:50:07	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-12-24 11:50:07	--	- localhost Message Of The Day -
+2013-12-24 11:50:07	--	- Welcome to the BitlBee server at localhost.
+2013-12-24 11:50:07	--	-
+2013-12-24 11:50:07	--	- This server is running BitlBee version 3.2.1.
+2013-12-24 11:50:07	--	- The newest version can be found on http://www.bitlbee.org/
+2013-12-24 11:50:07	--	-
+2013-12-24 11:50:07	--	- You are getting this message because the server administrator has not
+2013-12-24 11:50:07	--	- yet had the time (or need) to change it.
+2013-12-24 11:50:07	--	-
+2013-12-24 11:50:07	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-12-24 11:50:07	--	- Relay Chat server. Please see the site mentioned above for more
+2013-12-24 11:50:07	--	- information.
+2013-12-24 11:50:07	--	-
+2013-12-24 11:50:07	--	- The developers of the Bee hope you have a buzzing time.
+2013-12-24 11:50:07	--	- -- BitlBee development team.
+2013-12-24 11:50:07	--	-
+2013-12-24 11:50:07	--	- ... Buzzing, haha, get it?
+2013-12-24 11:50:07	--	End of MOTD
+2013-12-24 11:50:07	--	User mode [+s] by drbean
+2013-12-24 11:50:07	--	[*] drbean (drbean@localhost) H 0 (Dr Bean)
+2013-12-24 11:50:07	--	[drbean] End of /WHO list
+2013-12-24 11:51:11	--	User mode [+R] by drbean
+2013-12-26 21:27:41	--	User mode [-Rs] by drbean
+2013-12-26 21:28:28	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2013-12-26 21:28:28	--	Welcome to the BitlBee gateway, drbean
+2013-12-26 21:28:28	--	Host localhost is running BitlBee 3.2.1 Linux/i686.
+2013-12-26 21:28:28	--	BitlBee <http://www.bitlbee.org/>
+2013-12-26 21:28:28	--	localhost 3.2.1 abiswRo ntC
+2013-12-26 21:28:28	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-12-26 21:28:28	--	- localhost Message Of The Day -
+2013-12-26 21:28:28	--	- Welcome to the BitlBee server at localhost.
+2013-12-26 21:28:28	--	-
+2013-12-26 21:28:28	--	- This server is running BitlBee version 3.2.1.
+2013-12-26 21:28:28	--	- The newest version can be found on http://www.bitlbee.org/
+2013-12-26 21:28:28	--	-
+2013-12-26 21:28:28	--	- You are getting this message because the server administrator has not
+2013-12-26 21:28:28	--	- yet had the time (or need) to change it.
+2013-12-26 21:28:28	--	-
+2013-12-26 21:28:28	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-12-26 21:28:28	--	- Relay Chat server. Please see the site mentioned above for more
+2013-12-26 21:28:28	--	- information.
+2013-12-26 21:28:28	--	-
+2013-12-26 21:28:28	--	- The developers of the Bee hope you have a buzzing time.
+2013-12-26 21:28:28	--	- -- BitlBee development team.
+2013-12-26 21:28:28	--	-
+2013-12-26 21:28:28	--	- ... Buzzing, haha, get it?
+2013-12-26 21:28:28	--	End of MOTD
+2013-12-26 21:28:28	--	User mode [+s] by drbean
+2013-12-26 21:28:28	--	[*] drbean (drbean@localhost) H 0 (Dr Bean)
+2013-12-26 21:28:28	--	[drbean] End of /WHO list
+2013-12-26 22:02:12	--	irc: connecting to server 203.64.184.141/6666...
+2013-12-26 22:02:12	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-12-26 22:02:12	--	Welcome to the BitlBee gateway, drbean
+2013-12-26 22:02:12	--	Host localhost is running BitlBee 3.2.1 Linux/i686.
+2013-12-26 22:02:12	--	BitlBee <http://www.bitlbee.org/>
+2013-12-26 22:02:12	--	localhost 3.2.1 abiswRo ntC
+2013-12-26 22:02:12	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2013-12-26 22:02:12	--	- localhost Message Of The Day -
+2013-12-26 22:02:12	--	- Welcome to the BitlBee server at localhost.
+2013-12-26 22:02:12	--	-
+2013-12-26 22:02:12	--	- This server is running BitlBee version 3.2.1.
+2013-12-26 22:02:12	--	- The newest version can be found on http://www.bitlbee.org/
+2013-12-26 22:02:12	--	-
+2013-12-26 22:02:12	--	- You are getting this message because the server administrator has not
+2013-12-26 22:02:12	--	- yet had the time (or need) to change it.
+2013-12-26 22:02:12	--	-
+2013-12-26 22:02:12	--	- For those who don't know it yet, this is not quite a regular Internet
+2013-12-26 22:02:12	--	- Relay Chat server. Please see the site mentioned above for more
+2013-12-26 22:02:12	--	- information.
+2013-12-26 22:02:12	--	-
+2013-12-26 22:02:12	--	- The developers of the Bee hope you have a buzzing time.
+2013-12-26 22:02:12	--	- -- BitlBee development team.
+2013-12-26 22:02:12	--	-
+2013-12-26 22:02:12	--	- ... Buzzing, haha, get it?
+2013-12-26 22:02:12	--	End of MOTD
+2013-12-26 22:02:12	--	User mode [+s] by drbean
+2013-12-26 22:02:18	--	User mode [+R] by drbean
+2014-01-19 21:29:43	--	irc: disconnected from server
+2014-01-28 12:39:41	--	irc: サーバ 203.64.184.141/6666 に接続中...
+2014-01-28 12:39:41	=!=	irc: 接続拒否
+2014-01-28 12:39:41	--	irc: 10 秒 後にサーバに再接続します
+2014-01-28 12:39:51	--	irc: サーバに再接続中...
+2014-01-28 12:39:51	--	irc: サーバ 203.64.184.141/6666 に接続中...
+2014-01-28 12:39:51	=!=	irc: 接続拒否
+2014-01-28 12:39:51	--	irc: 20 秒 後にサーバに再接続します
+2014-01-28 12:40:11	--	irc: サーバに再接続中...
+2014-01-28 12:40:11	--	irc: サーバ 203.64.184.141/6666 に接続中...
+2014-01-28 12:40:11	=!=	irc: 接続拒否
+2014-01-28 12:40:11	--	irc: 40 秒 後にサーバに再接続します
+2014-01-28 12:40:51	--	irc: サーバに再接続中...
+2014-01-28 12:40:51	--	irc: サーバ 203.64.184.141/6666 に接続中...
+2014-01-28 12:40:51	=!=	irc: 接続拒否
+2014-01-28 12:40:51	--	irc: 1 分 後にサーバに再接続します、20 秒
+2014-01-28 12:41:07	--	irc: サーバ 203.64.184.141/6667 に接続中...
+2014-01-28 12:41:07	--	irc: 203.64.184.141/6667 (203.64.184.141) に接続完了
+2014-01-28 12:41:07	--	- Welcome to ZNC -
+2014-01-28 12:41:49	--	Password required
+2014-01-28 12:41:49	--	irc.znc.in (irc.znc.in): *** You need to send your password. Try /quote PASS <username>:<password>
+2014-01-28 12:42:20	--	- Welcome to ZNC -
+2014-01-28 12:42:22	--	Password required
+2014-01-28 12:42:22	--	irc.znc.in (irc.znc.in): *** You need to send your password. Try /quote PASS <username>:<password>
+2014-01-28 12:42:57	--	- Welcome to ZNC -
+2014-01-28 12:42:59	--	Password required
+2014-01-28 12:42:59	--	irc.znc.in (irc.znc.in): *** You need to send your password. Try /quote PASS <username>:<password>
+2014-01-28 12:48:29	--	Password required
+2014-01-28 12:48:29	--	irc.znc.in (irc.znc.in): *** You need to send your password. Try /quote PASS <username>:<password>
+2014-01-28 15:05:51	--	irc: サーバから切断
+2014-02-15 20:09:05	--	irc: サーバ 127.0.0.1/6667 に接続中...
+2014-02-15 20:09:05	--	irc: 127.0.0.1/6667 (127.0.0.1) に接続完了
+2014-02-15 20:09:05	--	- Welcome to ZNC -
+2014-02-15 20:11:19	--	irc: サーバから切断
+2014-02-15 20:11:25	--	irc: サーバ 203.64.184.141/6667 に接続中...
+2014-02-15 20:11:25	--	irc: 203.64.184.141/6667 (203.64.184.141) に接続完了
+2014-02-15 20:11:25	--	- Welcome to ZNC -
+2014-02-15 20:12:35	--	irc: サーバから切断
+2014-02-19 10:33:11	--	irc: connecting to server 127.0.0.1/6667...
+2014-02-19 10:33:11	--	irc: connected to 127.0.0.1/6667 (127.0.0.1)
+2014-02-19 10:33:11	--	- Welcome to ZNC -
+2014-02-19 10:35:22	--	irc: disconnected from server
+2014-02-19 10:35:36	--	irc: connecting to server 203.64.184.141/6667...
+2014-02-19 10:35:36	--	irc: connected to 203.64.184.141/6667 (203.64.184.141)
+2014-02-19 10:35:36	--	- Welcome to ZNC -
+2014-02-19 10:39:00	--	sac.nuu.edu.tw (sac.nuu.edu.tw): BitlBee-IRCd initialized, please go on
+2014-02-19 10:39:00	--	Welcome to the BitlBee gateway, drbean
+2014-02-19 10:39:00	--	Host sac.nuu.edu.tw is running BitlBee 3.2.1 Linux/i686.
+2014-02-19 10:39:00	--	BitlBee <http://www.bitlbee.org/>
+2014-02-19 10:39:00	--	sac.nuu.edu.tw 3.2.1 abiswRo ntC
+2014-02-19 10:39:00	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-02-19 10:39:00	--	- sac.nuu.edu.tw Message Of The Day -
+2014-02-19 10:39:00	--	- Welcome to the BitlBee server at sac.nuu.edu.tw.
+2014-02-19 10:39:00	--	-
+2014-02-19 10:39:00	--	- This server is running BitlBee version 3.2.1.
+2014-02-19 10:39:00	--	- The newest version can be found on http://www.bitlbee.org/
+2014-02-19 10:39:00	--	-
+2014-02-19 10:39:00	--	- You are getting this message because the server administrator has not
+2014-02-19 10:39:00	--	- yet had the time (or need) to change it.
+2014-02-19 10:39:00	--	-
+2014-02-19 10:39:00	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-02-19 10:39:00	--	- Relay Chat server. Please see the site mentioned above for more
+2014-02-19 10:39:00	--	- information.
+2014-02-19 10:39:00	--	-
+2014-02-19 10:39:00	--	- The developers of the Bee hope you have a buzzing time.
+2014-02-19 10:39:00	--	- -- BitlBee development team.
+2014-02-19 10:39:00	--	-
+2014-02-19 10:39:00	--	- ... Buzzing, haha, get it?
+2014-02-19 10:39:00	--	End of MOTD
+2014-02-19 10:39:00	--	User mode [+s] by drbean
+2014-02-19 10:39:01	--	[*] drbean (drbean@sac.nuu.edu.tw) H 0 (Dr Bean)
+2014-02-19 10:39:01	--	[drbean] End of /WHO list
+2014-02-19 10:44:48	--	User mode [-s] by drbean
+2014-02-19 10:45:19	--	sac.nuu.edu.tw (sac.nuu.edu.tw): BitlBee-IRCd initialized, please go on
+2014-02-19 10:45:19	--	Welcome to the BitlBee gateway, drbean
+2014-02-19 10:45:19	--	Host sac.nuu.edu.tw is running BitlBee 3.2.1 Linux/i686.
+2014-02-19 10:45:19	--	BitlBee <http://www.bitlbee.org/>
+2014-02-19 10:45:19	--	sac.nuu.edu.tw 3.2.1 abiswRo ntC
+2014-02-19 10:45:19	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-02-19 10:45:19	--	- sac.nuu.edu.tw Message Of The Day -
+2014-02-19 10:45:19	--	- Welcome to the BitlBee server at sac.nuu.edu.tw.
+2014-02-19 10:45:19	--	-
+2014-02-19 10:45:19	--	- This server is running BitlBee version 3.2.1.
+2014-02-19 10:45:19	--	- The newest version can be found on http://www.bitlbee.org/
+2014-02-19 10:45:19	--	-
+2014-02-19 10:45:19	--	- You are getting this message because the server administrator has not
+2014-02-19 10:45:19	--	- yet had the time (or need) to change it.
+2014-02-19 10:45:19	--	-
+2014-02-19 10:45:19	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-02-19 10:45:19	--	- Relay Chat server. Please see the site mentioned above for more
+2014-02-19 10:45:19	--	- information.
+2014-02-19 10:45:19	--	-
+2014-02-19 10:45:19	--	- The developers of the Bee hope you have a buzzing time.
+2014-02-19 10:45:19	--	- -- BitlBee development team.
+2014-02-19 10:45:19	--	-
+2014-02-19 10:45:19	--	- ... Buzzing, haha, get it?
+2014-02-19 10:45:19	--	End of MOTD
+2014-02-19 10:45:19	--	User mode [+s] by drbean
+2014-02-19 10:45:20	--	[*] drbean (drbean@sac.nuu.edu.tw) H 0 (Dr Bean)
+2014-02-19 10:45:20	--	[drbean] End of /WHO list
+2014-02-19 10:56:22	--	User mode [+R] by drbean
+2014-03-24 19:55:08	--	irc: connecting to server 127.0.0.1/6667...
+2014-03-24 19:55:08	--	irc: connected to 127.0.0.1/6667 (127.0.0.1)
+2014-03-24 19:55:08	--	Welcome to the BitlBee gateway, drbean
+2014-03-24 19:55:08	--	Host sac.nuu.edu.tw is running BitlBee 3.2.1 Linux/i686.
+2014-03-24 19:55:08	--	BitlBee <http://www.bitlbee.org/>
+2014-03-24 19:55:08	--	sac.nuu.edu.tw 3.2.1 abiswRo ntC
+2014-03-24 19:55:08	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-03-24 19:55:08	--	- sac.nuu.edu.tw Message Of The Day -
+2014-03-24 19:55:08	--	- Welcome to the BitlBee server at sac.nuu.edu.tw.
+2014-03-24 19:55:08	--	-
+2014-03-24 19:55:08	--	- This server is running BitlBee version 3.2.1.
+2014-03-24 19:55:08	--	- The newest version can be found on http://www.bitlbee.org/
+2014-03-24 19:55:08	--	-
+2014-03-24 19:55:08	--	- You are getting this message because the server administrator has not
+2014-03-24 19:55:08	--	- yet had the time (or need) to change it.
+2014-03-24 19:55:08	--	-
+2014-03-24 19:55:08	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-03-24 19:55:08	--	- Relay Chat server. Please see the site mentioned above for more
+2014-03-24 19:55:08	--	- information.
+2014-03-24 19:55:08	--	-
+2014-03-24 19:55:08	--	- The developers of the Bee hope you have a buzzing time.
+2014-03-24 19:55:08	--	- -- BitlBee development team.
+2014-03-24 19:55:08	--	-
+2014-03-24 19:55:08	--	- ... Buzzing, haha, get it?
+2014-03-24 19:55:08	--	End of MOTD
+2014-03-24 19:55:08	--	User mode [+s] by drbean
+2014-03-24 19:55:28	--	User mode [+R] by drbean
+2014-03-24 19:55:43	=!=	irc: this buffer is not a channel!
+2014-03-25 20:59:52	--	irc: disconnected from server
+2014-03-25 21:28:14	--	irc: connecting to server 127.0.0.1/6667...
+2014-03-25 21:28:14	--	irc: connected to 127.0.0.1/6667 (127.0.0.1)
+2014-03-25 21:28:14	--	- Welcome to ZNC -
+2014-03-25 21:30:34	--	sac.nuu.edu.tw (sac.nuu.edu.tw): BitlBee-IRCd initialized, please go on
+2014-03-25 21:30:34	--	Welcome to the BitlBee gateway, drbean
+2014-03-25 21:30:34	--	Host sac.nuu.edu.tw is running BitlBee 3.2.1 Linux/i686.
+2014-03-25 21:30:34	--	BitlBee <http://www.bitlbee.org/>
+2014-03-25 21:30:34	--	sac.nuu.edu.tw 3.2.1 abiswRo ntC
+2014-03-25 21:30:34	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-03-25 21:30:34	--	- sac.nuu.edu.tw Message Of The Day -
+2014-03-25 21:30:34	--	- Welcome to the BitlBee server at sac.nuu.edu.tw.
+2014-03-25 21:30:34	--	-
+2014-03-25 21:30:34	--	- This server is running BitlBee version 3.2.1.
+2014-03-25 21:30:34	--	- The newest version can be found on http://www.bitlbee.org/
+2014-03-25 21:30:34	--	-
+2014-03-25 21:30:34	--	- You are getting this message because the server administrator has not
+2014-03-25 21:30:34	--	- yet had the time (or need) to change it.
+2014-03-25 21:30:34	--	-
+2014-03-25 21:30:34	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-03-25 21:30:34	--	- Relay Chat server. Please see the site mentioned above for more
+2014-03-25 21:30:34	--	- information.
+2014-03-25 21:30:34	--	-
+2014-03-25 21:30:34	--	- The developers of the Bee hope you have a buzzing time.
+2014-03-25 21:30:34	--	- -- BitlBee development team.
+2014-03-25 21:30:34	--	-
+2014-03-25 21:30:34	--	- ... Buzzing, haha, get it?
+2014-03-25 21:30:34	--	End of MOTD
+2014-03-25 21:30:34	--	User mode [+s] by drbean
+2014-03-25 21:30:35	--	[*] drbean (drbean@sac.nuu.edu.tw) H 0 (Dr Bean)
+2014-03-25 21:30:35	--	[drbean] End of /WHO list
+2014-03-25 21:30:48	--	User mode [+R] by drbean
+2014-03-25 21:36:55	--	irc: disconnected from server
+2014-03-25 21:41:30	--	irc: connecting to server 127.0.0.1/6667...
+2014-03-25 21:41:30	--	irc: connected to 127.0.0.1/6667 (127.0.0.1)
+2014-03-25 21:41:30	--	- Welcome to ZNC -
+2014-03-25 21:42:08	--	sac.nuu.edu.tw (sac.nuu.edu.tw): BitlBee-IRCd initialized, please go on
+2014-03-25 21:42:08	--	Welcome to the BitlBee gateway, drbean
+2014-03-25 21:42:08	--	Host sac.nuu.edu.tw is running BitlBee 3.2.1 Linux/i686.
+2014-03-25 21:42:08	--	BitlBee <http://www.bitlbee.org/>
+2014-03-25 21:42:08	--	sac.nuu.edu.tw 3.2.1 abiswRo ntC
+2014-03-25 21:42:08	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-03-25 21:42:08	--	- sac.nuu.edu.tw Message Of The Day -
+2014-03-25 21:42:08	--	- Welcome to the BitlBee server at sac.nuu.edu.tw.
+2014-03-25 21:42:08	--	-
+2014-03-25 21:42:08	--	- This server is running BitlBee version 3.2.1.
+2014-03-25 21:42:08	--	- The newest version can be found on http://www.bitlbee.org/
+2014-03-25 21:42:08	--	-
+2014-03-25 21:42:08	--	- You are getting this message because the server administrator has not
+2014-03-25 21:42:08	--	- yet had the time (or need) to change it.
+2014-03-25 21:42:08	--	-
+2014-03-25 21:42:08	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-03-25 21:42:08	--	- Relay Chat server. Please see the site mentioned above for more
+2014-03-25 21:42:08	--	- information.
+2014-03-25 21:42:08	--	-
+2014-03-25 21:42:08	--	- The developers of the Bee hope you have a buzzing time.
+2014-03-25 21:42:08	--	- -- BitlBee development team.
+2014-03-25 21:42:08	--	-
+2014-03-25 21:42:08	--	- ... Buzzing, haha, get it?
+2014-03-25 21:42:08	--	End of MOTD
+2014-03-25 21:42:08	--	User mode [+s] by drbean
+2014-03-25 21:42:09	--	[*] drbean (drbean@sac.nuu.edu.tw) H 0 (Dr Bean)
+2014-03-25 21:42:09	--	[drbean] End of /WHO list
+2014-03-25 21:42:18	--	User mode [+R] by drbean
+2014-03-30 20:57:26	--	irc: disconnected from server
+2014-03-30 21:01:32	--	irc: connecting to server 127.0.0.1/6667...
+2014-03-30 21:01:32	--	irc: connected to 127.0.0.1/6667 (127.0.0.1)
+2014-03-30 21:01:32	--	- Welcome to ZNC -
+2014-03-30 21:02:29	--	sac.nuu.edu.tw (sac.nuu.edu.tw): BitlBee-IRCd initialized, please go on
+2014-03-30 21:02:29	--	Welcome to the BitlBee gateway, drbean
+2014-03-30 21:02:29	--	Host sac.nuu.edu.tw is running BitlBee 3.2.1 Linux/i686.
+2014-03-30 21:02:29	--	BitlBee <http://www.bitlbee.org/>
+2014-03-30 21:02:29	--	sac.nuu.edu.tw 3.2.1 abiswRo ntC
+2014-03-30 21:02:29	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-03-30 21:02:29	--	- sac.nuu.edu.tw Message Of The Day -
+2014-03-30 21:02:29	--	- Welcome to the BitlBee server at sac.nuu.edu.tw.
+2014-03-30 21:02:29	--	-
+2014-03-30 21:02:29	--	- This server is running BitlBee version 3.2.1.
+2014-03-30 21:02:29	--	- The newest version can be found on http://www.bitlbee.org/
+2014-03-30 21:02:29	--	-
+2014-03-30 21:02:29	--	- You are getting this message because the server administrator has not
+2014-03-30 21:02:29	--	- yet had the time (or need) to change it.
+2014-03-30 21:02:29	--	-
+2014-03-30 21:02:29	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-03-30 21:02:29	--	- Relay Chat server. Please see the site mentioned above for more
+2014-03-30 21:02:29	--	- information.
+2014-03-30 21:02:29	--	-
+2014-03-30 21:02:29	--	- The developers of the Bee hope you have a buzzing time.
+2014-03-30 21:02:29	--	- -- BitlBee development team.
+2014-03-30 21:02:29	--	-
+2014-03-30 21:02:29	--	- ... Buzzing, haha, get it?
+2014-03-30 21:02:29	--	End of MOTD
+2014-03-30 21:02:29	--	User mode [+s] by drbean
+2014-03-30 21:02:30	--	[*] drbean (drbean@sac.nuu.edu.tw) H 0 (Dr Bean)
+2014-03-30 21:02:30	--	[drbean] End of /WHO list
+2014-03-30 21:02:42	--	User mode [+R] by drbean
+2014-04-01 12:57:00	--	irc: disconnected from server
+2014-04-01 15:40:09	--	irc: connecting to server 127.0.0.1/6667...
+2014-04-01 15:40:09	--	irc: connected to 127.0.0.1/6667 (127.0.0.1)
+2014-04-01 15:40:09	--	- Welcome to ZNC -
+2014-04-01 21:12:44	--	sac.nuu.edu.tw (sac.nuu.edu.tw): BitlBee-IRCd initialized, please go on
+2014-04-01 21:12:44	--	Welcome to the BitlBee gateway, drbean
+2014-04-01 21:12:44	--	Host sac.nuu.edu.tw is running BitlBee 3.2.1 Linux/i686.
+2014-04-01 21:12:44	--	BitlBee <http://www.bitlbee.org/>
+2014-04-01 21:12:44	--	sac.nuu.edu.tw 3.2.1 abiswRo ntC
+2014-04-01 21:12:44	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-04-01 21:12:44	--	- sac.nuu.edu.tw Message Of The Day -
+2014-04-01 21:12:44	--	- Welcome to the BitlBee server at sac.nuu.edu.tw.
+2014-04-01 21:12:44	--	-
+2014-04-01 21:12:44	--	- This server is running BitlBee version 3.2.1.
+2014-04-01 21:12:44	--	- The newest version can be found on http://www.bitlbee.org/
+2014-04-01 21:12:44	--	-
+2014-04-01 21:12:44	--	- You are getting this message because the server administrator has not
+2014-04-01 21:12:44	--	- yet had the time (or need) to change it.
+2014-04-01 21:12:44	--	-
+2014-04-01 21:12:44	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-04-01 21:12:44	--	- Relay Chat server. Please see the site mentioned above for more
+2014-04-01 21:12:44	--	- information.
+2014-04-01 21:12:44	--	-
+2014-04-01 21:12:44	--	- The developers of the Bee hope you have a buzzing time.
+2014-04-01 21:12:44	--	- -- BitlBee development team.
+2014-04-01 21:12:44	--	-
+2014-04-01 21:12:44	--	- ... Buzzing, haha, get it?
+2014-04-01 21:12:44	--	End of MOTD
+2014-04-01 21:12:44	--	User mode [+s] by drbean
+2014-04-01 21:12:45	--	[*] drbean (drbean@sac.nuu.edu.tw) H 0 (Dr Bean)
+2014-04-01 21:12:45	--	[drbean] End of /WHO list
+2014-04-01 21:12:53	--	User mode [+R] by drbean
+2014-04-04 08:37:44	--	irc: connecting to server 127.0.0.1/6665...
+2014-04-04 08:37:44	=!=	irc: connection refused
+2014-04-04 08:37:44	--	irc: reconnecting to server in 10 seconds
+2014-04-04 08:37:54	--	irc: reconnecting to server...
+2014-04-04 08:37:54	--	irc: connecting to server 127.0.0.1/6665...
+2014-04-04 08:37:54	=!=	irc: connection refused
+2014-04-04 08:37:54	--	irc: reconnecting to server in 20 seconds
+2014-04-04 08:37:59		irc: auto-reconnection is cancelled
+2014-04-04 08:37:59	--	irc: disconnected from server
+2014-04-04 09:12:30	--	irc: connecting to server 127.0.0.1/6665...
+2014-04-04 09:12:30	--	irc: connected to 127.0.0.1/6665 (127.0.0.1)
+2014-04-04 09:12:30	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-04-04 09:12:30	--	Welcome to the BitlBee gateway, drbean
+2014-04-04 09:12:30	--	Host localhost is running BitlBee 3.2.1 Linux/i686.
+2014-04-04 09:12:30	--	BitlBee <http://www.bitlbee.org/>
+2014-04-04 09:12:30	--	localhost 3.2.1 abiswRo ntC
+2014-04-04 09:12:30	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-04-04 09:12:30	--	- localhost Message Of The Day -
+2014-04-04 09:12:30	--	- Welcome to the BitlBee server at localhost.
+2014-04-04 09:12:30	--	-
+2014-04-04 09:12:30	--	- This server is running BitlBee version 3.2.1.
+2014-04-04 09:12:30	--	- The newest version can be found on http://www.bitlbee.org/
+2014-04-04 09:12:30	--	-
+2014-04-04 09:12:30	--	- You are getting this message because the server administrator has not
+2014-04-04 09:12:30	--	- yet had the time (or need) to change it.
+2014-04-04 09:12:30	--	-
+2014-04-04 09:12:30	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-04-04 09:12:30	--	- Relay Chat server. Please see the site mentioned above for more
+2014-04-04 09:12:30	--	- information.
+2014-04-04 09:12:30	--	-
+2014-04-04 09:12:30	--	- The developers of the Bee hope you have a buzzing time.
+2014-04-04 09:12:30	--	- -- BitlBee development team.
+2014-04-04 09:12:30	--	-
+2014-04-04 09:12:30	--	- ... Buzzing, haha, get it?
+2014-04-04 09:12:30	--	End of MOTD
+2014-04-04 09:12:30	--	User mode [+s] by drbean
+2014-04-04 09:26:52	--	irc: connecting to server 127.0.0.1/6665...
+2014-04-04 09:26:52	--	irc: connected to 127.0.0.1/6665 (127.0.0.1)
+2014-04-04 09:26:52	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-04-04 09:26:52	--	Welcome to the BitlBee gateway, drbean
+2014-04-04 09:26:52	--	Host localhost is running BitlBee 3.2.1 Linux/i686.
+2014-04-04 09:26:52	--	BitlBee <http://www.bitlbee.org/>
+2014-04-04 09:26:52	--	localhost 3.2.1 abiswRo ntC
+2014-04-04 09:26:52	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-04-04 09:26:52	--	- localhost Message Of The Day -
+2014-04-04 09:26:52	--	- Welcome to the BitlBee server at localhost.
+2014-04-04 09:26:52	--	-
+2014-04-04 09:26:52	--	- This server is running BitlBee version 3.2.1.
+2014-04-04 09:26:52	--	- The newest version can be found on http://www.bitlbee.org/
+2014-04-04 09:26:52	--	-
+2014-04-04 09:26:52	--	- You are getting this message because the server administrator has not
+2014-04-04 09:26:52	--	- yet had the time (or need) to change it.
+2014-04-04 09:26:52	--	-
+2014-04-04 09:26:52	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-04-04 09:26:52	--	- Relay Chat server. Please see the site mentioned above for more
+2014-04-04 09:26:52	--	- information.
+2014-04-04 09:26:52	--	-
+2014-04-04 09:26:52	--	- The developers of the Bee hope you have a buzzing time.
+2014-04-04 09:26:52	--	- -- BitlBee development team.
+2014-04-04 09:26:52	--	-
+2014-04-04 09:26:52	--	- ... Buzzing, haha, get it?
+2014-04-04 09:26:52	--	End of MOTD
+2014-04-04 09:26:52	--	User mode [+s] by drbean
+2014-04-04 09:50:18	--	irc: connecting to server 127.0.0.1/6665...
+2014-04-04 09:50:18	--	irc: connected to 127.0.0.1/6665 (127.0.0.1)
+2014-04-04 09:50:18	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-04-04 09:50:18	--	Welcome to the BitlBee gateway, drbean
+2014-04-04 09:50:18	--	Host localhost is running BitlBee 3.2.1 Linux/i686.
+2014-04-04 09:50:18	--	BitlBee <http://www.bitlbee.org/>
+2014-04-04 09:50:18	--	localhost 3.2.1 abiswRo ntC
+2014-04-04 09:50:18	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-04-04 09:50:18	--	- localhost Message Of The Day -
+2014-04-04 09:50:18	--	- Welcome to the BitlBee server at localhost.
+2014-04-04 09:50:18	--	-
+2014-04-04 09:50:18	--	- This server is running BitlBee version 3.2.1.
+2014-04-04 09:50:18	--	- The newest version can be found on http://www.bitlbee.org/
+2014-04-04 09:50:18	--	-
+2014-04-04 09:50:18	--	- You are getting this message because the server administrator has not
+2014-04-04 09:50:18	--	- yet had the time (or need) to change it.
+2014-04-04 09:50:18	--	-
+2014-04-04 09:50:18	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-04-04 09:50:18	--	- Relay Chat server. Please see the site mentioned above for more
+2014-04-04 09:50:18	--	- information.
+2014-04-04 09:50:18	--	-
+2014-04-04 09:50:18	--	- The developers of the Bee hope you have a buzzing time.
+2014-04-04 09:50:18	--	- -- BitlBee development team.
+2014-04-04 09:50:18	--	-
+2014-04-04 09:50:18	--	- ... Buzzing, haha, get it?
+2014-04-04 09:50:18	--	End of MOTD
+2014-04-04 09:50:18	--	User mode [+s] by drbean
+2014-04-04 09:50:38	--	User mode [+R] by drbean

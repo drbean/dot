@@ -1,0 +1,78 @@
+2013-09-07 10:12:33	*nickserv	+--------------+-----------------+-----------------------------------------------------------------------------------------------------------+
+2013-09-07 10:12:33	*nickserv	| Command      | Arguments       | Description                                                                                               |
+2013-09-07 10:12:33	*nickserv	+--------------+-----------------+-----------------------------------------------------------------------------------------------------------+
+2013-09-07 10:12:33	*nickserv	| Clear        |                 | Clear your nickserv password                                                                              |
+2013-09-07 10:12:33	*nickserv	| ClearNSName  |                 | Reset NickServ name to default (NickServ)                                                                 |
+2013-09-07 10:12:33	*nickserv	| Ghost        | nickname        | GHOST disconnects an old user session, or somebody attempting to use your nickname without authorization. |
+2013-09-07 10:12:33	*nickserv	| Group        | nickname        |                                                                                                           |
+2013-09-07 10:12:33	*nickserv	| Help         | search          | Generate this output                                                                                      |
+2013-09-07 10:12:33	*nickserv	| Recover      | nickname        |                                                                                                           |
+2013-09-07 10:12:33	*nickserv	| Release      | nickname        |                                                                                                           |
+2013-09-07 10:12:33	*nickserv	| Set          | password        |                                                                                                           |
+2013-09-07 10:12:33	*nickserv	| SetCommand   | cmd new-pattern | Set pattern for commands                                                                                  |
+2013-09-07 10:12:33	*nickserv	| SetNSName    | nickname        | Set NickServ name (Useful on networks like EpiKnet, where NickServ is named Themis)                       |
+2013-09-07 10:12:33	*nickserv	| ViewCommands |                 | Show patterns for lines, which are being sent to NickServ                                                 |
+2013-09-07 10:12:33	*nickserv	+--------------+-----------------+-----------------------------------------------------------------------------------------------------------+
+2013-09-07 10:13:15	drbean	ViewCommands
+2013-09-07 10:13:15	*nickserv	IDENTIFY PRIVMSG NickServ :IDENTIFY {password}
+2013-09-07 10:13:15	*nickserv	GHOST PRIVMSG NickServ :GHOST {nickname} {password}
+2013-09-07 10:13:15	*nickserv	RECOVER PRIVMSG NickServ :RECOVER {nickname} {password}
+2013-09-07 10:13:15	*nickserv	RELEASE PRIVMSG NickServ :RELEASE {nickname} {password}
+2013-09-07 10:13:15	*nickserv	GROUP PRIVMSG NickServ :GROUP {nickname} {password}
+2013-09-15 19:54:35	*nickserv	+--------------+-----------------+-----------------------------------------------------------------------------------------------------------+
+2013-09-15 19:54:35	*nickserv	| Command      | Arguments       | Description                                                                                               |
+2013-09-15 19:54:35	*nickserv	+--------------+-----------------+-----------------------------------------------------------------------------------------------------------+
+2013-09-15 19:54:35	*nickserv	| Clear        |                 | Clear your nickserv password                                                                              |
+2013-09-15 19:54:35	*nickserv	| ClearNSName  |                 | Reset NickServ name to default (NickServ)                                                                 |
+2013-09-15 19:54:35	*nickserv	| Ghost        | nickname        | GHOST disconnects an old user session, or somebody attempting to use your nickname without authorization. |
+2013-09-15 19:54:35	*nickserv	| Group        | nickname        |                                                                                                           |
+2013-09-15 19:54:35	*nickserv	| Help         | search          | Generate this output                                                                                      |
+2013-09-15 19:54:35	*nickserv	| Recover      | nickname        |                                                                                                           |
+2013-09-15 19:54:35	*nickserv	| Release      | nickname        |                                                                                                           |
+2013-09-15 19:54:35	*nickserv	| Set          | password        |                                                                                                           |
+2013-09-15 19:54:35	*nickserv	| SetCommand   | cmd new-pattern | Set pattern for commands                                                                                  |
+2013-09-15 19:54:35	*nickserv	| SetNSName    | nickname        | Set NickServ name (Useful on networks like EpiKnet, where NickServ is named Themis)                       |
+2013-09-15 19:54:35	*nickserv	| ViewCommands |                 | Show patterns for lines, which are being sent to NickServ                                                 |
+2013-09-15 19:54:35	*nickserv	+--------------+-----------------+-----------------------------------------------------------------------------------------------------------+
+2013-09-15 19:59:36	drbean	set 1949
+2013-09-15 19:59:36	*nickserv	Password set
+2013-09-15 20:00:54	drbean	ghost drbean
+2013-09-15 20:01:14	drbean	ghost
+2013-09-15 20:01:14	*nickserv	Syntax: ghost <nickname>
+2013-10-01 19:43:52	*nickserv	Hello. How may I help you?
+2013-10-01 19:45:57	--	irc: disconnected from server
+2013-10-01 19:54:32	drbean-	set 2901
+2013-10-01 19:54:32	*nickserv	Password set
+2013-10-01 19:55:08	--	irc: disconnected from server
+2013-10-01 19:56:58	drbean-	ghost drbean-
+2013-10-01 19:57:16	drbean-	ghost drbean
+2013-10-01 20:07:39	drbean-	viewcommands
+2013-10-01 20:07:39	*nickserv	IDENTIFY PRIVMSG NickServ :IDENTIFY {password}
+2013-10-01 20:07:39	*nickserv	GHOST PRIVMSG NickServ :GHOST {nickname} {password}
+2013-10-01 20:07:39	*nickserv	RECOVER PRIVMSG NickServ :RECOVER {nickname} {password}
+2013-10-01 20:07:39	*nickserv	RELEASE PRIVMSG NickServ :RELEASE {nickname} {password}
+2013-10-01 20:07:39	*nickserv	GROUP PRIVMSG NickServ :GROUP {nickname} {password}
+2013-10-01 20:08:30	drbean-	recover drbean
+2013-10-01 20:19:05	drbean	set 2901
+2013-10-01 20:19:05	*nickserv	Password set
+2013-10-05 11:54:59	--	irc: disconnected from server
+2013-10-06 16:12:39	*nickserv	+--------------+-----------------+-----------------------------------------------------------------------------------------------------------+
+2013-10-06 16:12:39	*nickserv	| Command      | Arguments       | Description                                                                                               |
+2013-10-06 16:12:39	*nickserv	+--------------+-----------------+-----------------------------------------------------------------------------------------------------------+
+2013-10-06 16:12:39	*nickserv	| Clear        |                 | Clear your nickserv password                                                                              |
+2013-10-06 16:12:39	*nickserv	| ClearNSName  |                 | Reset NickServ name to default (NickServ)                                                                 |
+2013-10-06 16:12:39	*nickserv	| Ghost        | nickname        | GHOST disconnects an old user session, or somebody attempting to use your nickname without authorization. |
+2013-10-06 16:12:39	*nickserv	| Group        | nickname        |                                                                                                           |
+2013-10-06 16:12:39	*nickserv	| Help         | search          | Generate this output                                                                                      |
+2013-10-06 16:12:39	*nickserv	| Recover      | nickname        |                                                                                                           |
+2013-10-06 16:12:39	*nickserv	| Release      | nickname        |                                                                                                           |
+2013-10-06 16:12:39	*nickserv	| Set          | password        |                                                                                                           |
+2013-10-06 16:12:39	*nickserv	| SetCommand   | cmd new-pattern | Set pattern for commands                                                                                  |
+2013-10-06 16:12:39	*nickserv	| SetNSName    | nickname        | Set NickServ name (Useful on networks like EpiKnet, where NickServ is named Themis)                       |
+2013-10-06 16:12:39	*nickserv	| ViewCommands |                 | Show patterns for lines, which are being sent to NickServ                                                 |
+2013-10-06 16:12:39	*nickserv	+--------------+-----------------+-----------------------------------------------------------------------------------------------------------+
+2013-10-06 16:16:13	drbean	set 2901
+2013-10-06 16:16:13	*nickserv	Password set
+2013-10-06 16:16:43	drbean	set 2901
+2013-10-06 16:16:43	*nickserv	Password set
+2013-10-15 10:04:58	--	irc: disconnected from server

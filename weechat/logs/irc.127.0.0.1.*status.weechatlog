@@ -1,0 +1,6 @@
+2014-01-28 13:41:26	*status	You are currently disconnected from IRC. Use 'connect' to reconnect.
+2014-01-28 13:42:48	drbean	delserver 127.0.0.1
+2014-01-28 13:42:48	*status	No such server
+2014-01-28 13:43:05	drbean	delnetwork 127.0.0.1
+2014-01-28 13:43:05	*status	Failed to delete network
+2014-01-28 13:43:05	*status	Perhaps this network doesn't exist

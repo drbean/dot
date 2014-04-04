@@ -1,0 +1,4 @@
+2014-01-19 11:19:38	*adminlog	Commands: show, target <file|syslog|both>
+2014-01-19 11:19:45	drbean	show
+2014-01-19 11:19:45	*adminlog	Logging is enabled for file
+2014-01-19 11:19:45	*adminlog	Log file will be written to [/var/lib/znc/.znc/moddata/adminlog/znc.log]

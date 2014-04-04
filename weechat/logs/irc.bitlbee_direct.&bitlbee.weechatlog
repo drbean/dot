@@ -1,0 +1,73 @@
+2014-01-28 13:36:12	-->	drbean (drbean@localhost) が &bitlbee に参加
+2014-01-28 13:36:12	--	localhost がモードを変更 &bitlbee [+Ct]
+2014-01-28 13:36:12	--	ニックネーム &bitlbee: [@drbean @root]
+2014-01-28 13:36:12	--	チャンネル &bitlbee: 2 ニックネーム (2 オペレータ, 0 halfops, 0 発言, 0 通常)
+2014-01-28 13:36:12	--	&bitlbee のトピックは "Welcome to the control channel. Type help for help information." です
+2014-01-28 13:36:12	--	トピックは root (root@localhost) が 火, 28  1月 2014 13:36:12 に設定
+2014-01-28 13:36:12	@root	Welcome to the BitlBee gateway!
+2014-01-28 13:36:12	@root	 
+2014-01-28 13:36:12	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2014-01-28 13:36:12	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2014-01-28 13:36:12	@root	Incorrect password
+2014-01-28 13:36:12	--	モード &bitlbee [+Ct]
+2014-01-28 13:36:35	@drbean	help identify
+2014-01-28 13:36:35	@root	Syntax: identify [-noload|-force] [<password>]
+2014-01-28 13:36:35	@root	 
+2014-01-28 13:36:35	@root	BitlBee saves all your settings (contacts, accounts, passwords) on-server. To prevent other users from just logging in as you and getting this information, you'll have to identify yourself with your password. You can register this password using the register command.
+2014-01-28 13:36:35	@root	 
+2014-01-28 13:36:35	@root	Once you're registered, you can change your password using set password <password>.
+2014-01-28 13:36:35	@root	 
+2014-01-28 13:36:35	@root	The -noload and -force flags can be used to identify when you're logged into some IM accounts already. -force will let you identify yourself and load all saved accounts (and keep the accounts you're logged into already).
+2014-01-28 13:36:35	@root	 
+2014-01-28 13:36:35	@root	-noload will log you in but not load any accounts and settings saved under your current nickname. These will be overwritten once you save your settings (i.e. when you disconnect).
+2014-01-28 13:36:35	@root	 
+2014-01-28 13:36:35	@root	You can omit the password and enter it separately using the IRC /OPER command. This lets you enter your password without your IRC client echoing it on screen or recording it in logs.
+2014-01-28 13:36:49	@drbean	identify 2901
+2014-01-28 13:36:49	--	root がモードを変更 &bitlbee [-C]
+2014-01-28 13:36:49	--	root がモードを変更 &bitlbee [+C]
+2014-01-28 13:36:49	@root	Password accepted, settings and accounts loaded
+2014-01-28 13:36:49	@root	Trying to get all accounts connected...
+2014-01-28 13:36:49	@root	msn - Logging in: Connecting
+2014-01-28 13:36:49	@root	twitter - Logging in: Connecting
+2014-01-28 13:36:49	-->	twitter_beancounterbean (twitter_beancounterbean@twitter.com) が &bitlbee に参加
+2014-01-28 13:36:49	--	localhost がモードを変更 &bitlbee [+v twitter_beancounterbean]
+2014-01-28 13:36:49	@root	twitter - Logging in: Getting contact list
+2014-01-28 13:36:50	@root	msn - Logging in: Connected to server, waiting for reply
+2014-01-28 13:36:50	@root	msn - Logging in: Transferring to other server
+2014-01-28 13:36:50	@root	msn - Logging in: Connected to server, waiting for reply
+2014-01-28 13:36:52	@root	twitter - Logging in: Getting initial statuses
+2014-01-28 13:36:53	@root	twitter - Logging in: Logged in
+2014-01-28 13:36:54	@root	msn - Logging in: Authenticated, getting buddy list
+2014-01-28 13:37:00	@root	msn - Logging in: Logged in
+2014-01-28 13:40:17	--	irc: サーバから切断
+2014-02-15 20:12:44	-->	drbean (drbean@localhost) が &bitlbee に参加
+2014-02-15 20:12:44	--	localhost がモードを変更 &bitlbee [+Ct]
+2014-02-15 20:12:44	--	ニックネーム &bitlbee: [@drbean @root]
+2014-02-15 20:12:44	--	チャンネル &bitlbee: 2 ニックネーム (2 オペレータ, 0 halfops, 0 発言, 0 通常)
+2014-02-15 20:12:44	--	&bitlbee のトピックは "Welcome to the control channel. Type help for help information." です
+2014-02-15 20:12:44	--	トピックは root (root@localhost) が 土, 15  2月 2014 20:12:44 に設定
+2014-02-15 20:12:44	@root	Welcome to the BitlBee gateway!
+2014-02-15 20:12:44	@root	 
+2014-02-15 20:12:44	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2014-02-15 20:12:44	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2014-02-15 20:12:44	@root	Incorrect password
+2014-02-15 20:12:44	--	モード &bitlbee [+Ct]
+2014-02-15 20:13:20	@drbean	identify 1949
+2014-02-15 20:13:20	@root	Incorrect password
+2014-02-15 20:13:31	@drbean	identify 2901
+2014-02-15 20:13:31	--	root がモードを変更 &bitlbee [-C]
+2014-02-15 20:13:31	--	root がモードを変更 &bitlbee [+C]
+2014-02-15 20:13:31	@root	Password accepted, settings and accounts loaded
+2014-02-15 20:13:31	@root	Trying to get all accounts connected...
+2014-02-15 20:13:31	@root	msn - Logging in: Connecting
+2014-02-15 20:13:31	@root	twitter - Logging in: Connecting
+2014-02-15 20:13:31	-->	twitter_beancounterbean (twitter_beancounterbean@twitter.com) が &bitlbee に参加
+2014-02-15 20:13:31	--	localhost がモードを変更 &bitlbee [+v twitter_beancounterbean]
+2014-02-15 20:13:31	@root	twitter - Logging in: Getting contact list
+2014-02-15 20:13:31	@root	msn - Logging in: Connected to server, waiting for reply
+2014-02-15 20:13:32	@root	msn - Logging in: Transferring to other server
+2014-02-15 20:13:32	@root	msn - Logging in: Connected to server, waiting for reply
+2014-02-15 20:13:33	@root	twitter - Logging in: Getting initial statuses
+2014-02-15 20:13:34	@root	twitter - Logging in: Logged in
+2014-02-15 20:13:36	@root	msn - Logging in: Authenticated, getting buddy list
+2014-02-15 20:13:42	@root	msn - Logging in: Logged in

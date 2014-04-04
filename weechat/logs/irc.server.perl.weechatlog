@@ -1,0 +1,2394 @@
+2013-09-16 15:54:37	--	irc: connecting to server 203.64.184.141/6666...
+2013-09-16 15:54:37	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-09-16 15:54:37	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-09-16 15:54:37	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-09-16 15:54:37	--	This server was created Feb 15 2010 at 23:39:34
+2013-09-16 15:54:37	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-09-16 15:54:37	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-09-16 15:54:37	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-09-16 15:54:37	--	There are 5 users and 1301 invisible on 1 servers
+2013-09-16 15:54:37	--	14 :IRC Operators online
+2013-09-16 15:54:37	--	454 :channels formed
+2013-09-16 15:54:37	--	I have 1306 clients and 0 servers
+2013-09-16 15:54:37	--	Current local users: 1306  Max: 1614
+2013-09-16 15:54:37	--	Current global users: 1306  Max: 1614
+2013-09-16 15:54:37	--	- astral.shadowcat.co.uk Message of the Day -
+2013-09-16 15:54:37	--	-            _             _
+2013-09-16 15:54:37	--	-   __ _ ___| |_ _ __ __ _| |
+2013-09-16 15:54:37	--	-  / _` / __| __| '__/ _` | |
+2013-09-16 15:54:37	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-09-16 15:54:37	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-09-16 15:54:37	--	-      _               _                        _
+2013-09-16 15:54:37	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-09-16 15:54:37	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-09-16 15:54:37	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-09-16 15:54:37	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-09-16 15:54:37	--	-
+2013-09-16 15:54:37	--	- We scan all connecting clients for open proxies and other
+2013-09-16 15:54:37	--	- exploitable nasties. If you don't wish to be scanned,
+2013-09-16 15:54:37	--	- don't connect again, and sorry for scanning you this time.
+2013-09-16 15:54:37	--	-
+2013-09-16 15:54:37	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-09-16 15:54:37	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-09-16 15:54:37	--	- your client to /connect irc.perl.org, not directly.
+2013-09-16 15:54:37	--	End of /MOTD command.
+2013-09-16 15:54:37	--	User mode [+i] by drbean
+2013-09-16 15:54:52	--	#catalyst: Cannot join channel (+b)
+2013-09-17 02:33:47	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2013-09-17 02:33:47	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2013-09-17 02:33:47	--	magnet.llarian.net (magnet.llarian.net): *** Couldn't look up your hostname
+2013-09-17 02:33:58	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2013-09-17 02:33:58	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2013-09-17 02:33:58	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-09-17 02:33:58	--	This server was created Jan 18 2010 at 10:48:49
+2013-09-17 02:33:58	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-09-17 02:33:58	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 MAGNET=73 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 :are supported by this server
+2013-09-17 02:33:58	--	CHANTYPES=#& CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-09-17 02:33:58	--	There are 5 users and 1355 invisible on 1 servers
+2013-09-17 02:33:58	--	14 :IRC Operators online
+2013-09-17 02:33:58	--	2 :unknown connection(s)
+2013-09-17 02:33:58	--	456 :channels formed
+2013-09-17 02:33:58	--	I have 1360 clients and 0 servers
+2013-09-17 02:33:58	--	Current local users: 1360  Max: 1614
+2013-09-17 02:33:58	--	Current global users: 1360  Max: 1614
+2013-09-17 02:33:58	--	- magnet.llarian.net Message of the Day -
+2013-09-17 02:33:58	--	- Welcome to magnet.llarian.net
+2013-09-17 02:33:58	--	-
+2013-09-17 02:33:58	--	- You will be / have been scanned via an automated process to check for
+2013-09-17 02:33:58	--	- various disallowed and insecure services.
+2013-09-17 02:33:58	--	-
+2013-09-17 02:33:58	--	- -------
+2013-09-17 02:33:58	--	-
+2013-09-17 02:33:58	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-09-17 02:33:58	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-09-17 02:33:58	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-09-17 02:33:58	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-09-17 02:33:58	--	- yourself.
+2013-09-17 02:33:58	--	-
+2013-09-17 02:33:58	--	- -------
+2013-09-17 02:33:58	--	-
+2013-09-17 02:33:58	--	- Reasonable person principle applies.
+2013-09-17 02:33:58	--	- http://www.irc.perl.org/reasonable_person.html
+2013-09-17 02:33:58	--	-
+2013-09-17 02:33:58	--	- Please also read the FAQ, particularly the section about #perl:
+2013-09-17 02:33:58	--	- http://www.irc.perl.org/faq.html
+2013-09-17 02:33:58	--	-
+2013-09-17 02:33:58	--	- -----
+2013-09-17 02:33:58	--	-
+2013-09-17 02:33:58	--	- Do not publish the logs of any person or any channel on this server without
+2013-09-17 02:33:58	--	- their express consent. Failure to abide is a kline-able offense.
+2013-09-17 02:33:58	--	-
+2013-09-17 02:33:58	--	- IPv6 connections available at 2001:5d8:11::16
+2013-09-17 02:33:58	--	- SSL connections available on port 7062
+2013-09-17 02:33:58	--	End of /MOTD command.
+2013-09-17 02:33:58	--	User mode [+i] by drbean_
+2013-09-17 02:33:58	--	[*] drbean_ (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-09-17 02:33:58	--	[drbean_] End of /WHO list.
+2013-09-17 02:47:42	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2013-09-17 02:47:42	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2013-09-17 02:47:42	--	magnet.llarian.net (magnet.llarian.net): *** Couldn't look up your hostname
+2013-09-17 02:47:53	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2013-09-17 02:47:53	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-09-17 02:47:53	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-09-17 02:47:53	--	This server was created Jan 18 2010 at 10:48:49
+2013-09-17 02:47:53	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-09-17 02:47:53	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 MAGNET=73 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 :are supported by this server
+2013-09-17 02:47:53	--	CHANTYPES=#& CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-09-17 02:47:53	--	There are 5 users and 1350 invisible on 1 servers
+2013-09-17 02:47:53	--	14 :IRC Operators online
+2013-09-17 02:47:53	--	2 :unknown connection(s)
+2013-09-17 02:47:53	--	456 :channels formed
+2013-09-17 02:47:53	--	I have 1355 clients and 0 servers
+2013-09-17 02:47:53	--	Current local users: 1355  Max: 1614
+2013-09-17 02:47:53	--	Current global users: 1355  Max: 1614
+2013-09-17 02:47:53	--	- magnet.llarian.net Message of the Day -
+2013-09-17 02:47:53	--	- Welcome to magnet.llarian.net
+2013-09-17 02:47:53	--	-
+2013-09-17 02:47:53	--	- You will be / have been scanned via an automated process to check for
+2013-09-17 02:47:53	--	- various disallowed and insecure services.
+2013-09-17 02:47:53	--	-
+2013-09-17 02:47:53	--	- -------
+2013-09-17 02:47:53	--	-
+2013-09-17 02:47:53	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-09-17 02:47:53	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-09-17 02:47:53	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-09-17 02:47:53	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-09-17 02:47:53	--	- yourself.
+2013-09-17 02:47:53	--	-
+2013-09-17 02:47:53	--	- -------
+2013-09-17 02:47:53	--	-
+2013-09-17 02:47:53	--	- Reasonable person principle applies.
+2013-09-17 02:47:53	--	- http://www.irc.perl.org/reasonable_person.html
+2013-09-17 02:47:53	--	-
+2013-09-17 02:47:53	--	- Please also read the FAQ, particularly the section about #perl:
+2013-09-17 02:47:53	--	- http://www.irc.perl.org/faq.html
+2013-09-17 02:47:53	--	-
+2013-09-17 02:47:53	--	- -----
+2013-09-17 02:47:53	--	-
+2013-09-17 02:47:53	--	- Do not publish the logs of any person or any channel on this server without
+2013-09-17 02:47:53	--	- their express consent. Failure to abide is a kline-able offense.
+2013-09-17 02:47:53	--	-
+2013-09-17 02:47:53	--	- IPv6 connections available at 2001:5d8:11::16
+2013-09-17 02:47:53	--	- SSL connections available on port 7062
+2013-09-17 02:47:53	--	End of /MOTD command.
+2013-09-17 02:47:53	--	User mode [+i] by drbean
+2013-09-17 02:47:53	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-09-17 02:47:53	--	[drbean] End of /WHO list.
+2013-09-17 03:11:56	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2013-09-17 03:11:56	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2013-09-17 03:11:56	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-09-17 03:12:34	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2013-09-17 03:12:35	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2013-09-17 03:12:35	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-09-17 03:12:35	--	This server was created Feb 15 2010 at 23:39:34
+2013-09-17 03:12:35	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-09-17 03:12:35	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-09-17 03:12:35	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-09-17 03:12:35	--	There are 5 users and 1350 invisible on 1 servers
+2013-09-17 03:12:35	--	14 :IRC Operators online
+2013-09-17 03:12:35	--	2 :unknown connection(s)
+2013-09-17 03:12:35	--	456 :channels formed
+2013-09-17 03:12:35	--	I have 1355 clients and 0 servers
+2013-09-17 03:12:35	--	Current local users: 1355  Max: 1614
+2013-09-17 03:12:35	--	Current global users: 1355  Max: 1614
+2013-09-17 03:12:35	--	- astral.shadowcat.co.uk Message of the Day -
+2013-09-17 03:12:35	--	-            _             _
+2013-09-17 03:12:35	--	-   __ _ ___| |_ _ __ __ _| |
+2013-09-17 03:12:35	--	-  / _` / __| __| '__/ _` | |
+2013-09-17 03:12:35	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-09-17 03:12:35	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-09-17 03:12:35	--	-      _               _                        _
+2013-09-17 03:12:35	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-09-17 03:12:35	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-09-17 03:12:35	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-09-17 03:12:35	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-09-17 03:12:35	--	-
+2013-09-17 03:12:35	--	- We scan all connecting clients for open proxies and other
+2013-09-17 03:12:35	--	- exploitable nasties. If you don't wish to be scanned,
+2013-09-17 03:12:35	--	- don't connect again, and sorry for scanning you this time.
+2013-09-17 03:12:35	--	-
+2013-09-17 03:12:35	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-09-17 03:12:35	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-09-17 03:12:35	--	- your client to /connect irc.perl.org, not directly.
+2013-09-17 03:12:35	--	End of /MOTD command.
+2013-09-17 03:12:35	--	User mode [+i] by drbean_
+2013-09-17 03:12:36	--	[*] drbean_ (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-09-17 03:12:36	--	[drbean_] End of /WHO list.
+2013-09-23 09:03:18	--	irc: connecting to server perl/6667...
+2013-09-23 09:03:19	=!=	irc: address "perl" not found
+2013-09-23 09:03:19	=!=	irc: error: Name or service not known
+2013-09-23 09:03:19	--	irc: reconnecting to server in 10 seconds
+2013-09-23 09:03:23		irc: auto-reconnection is cancelled
+2013-09-23 09:03:23	--	irc: disconnected from server
+2013-09-29 12:16:12	--	irc: connecting to server 203.64.184.141/6666...
+2013-09-29 12:16:12	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-09-29 12:16:12	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-09-29 12:16:12	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-09-29 12:16:12	--	This server was created Feb 15 2010 at 23:39:34
+2013-09-29 12:16:12	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-09-29 12:16:12	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-09-29 12:16:12	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-09-29 12:16:12	--	There are 5 users and 1221 invisible on 1 servers
+2013-09-29 12:16:12	--	13 :IRC Operators online
+2013-09-29 12:16:12	--	449 :channels formed
+2013-09-29 12:16:12	--	I have 1226 clients and 0 servers
+2013-09-29 12:16:12	--	Current local users: 1226  Max: 1876
+2013-09-29 12:16:12	--	Current global users: 1226  Max: 1876
+2013-09-29 12:16:12	--	- astral.shadowcat.co.uk Message of the Day -
+2013-09-29 12:16:12	--	-            _             _
+2013-09-29 12:16:12	--	-   __ _ ___| |_ _ __ __ _| |
+2013-09-29 12:16:12	--	-  / _` / __| __| '__/ _` | |
+2013-09-29 12:16:12	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-09-29 12:16:12	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-09-29 12:16:12	--	-      _               _                        _
+2013-09-29 12:16:12	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-09-29 12:16:12	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-09-29 12:16:12	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-09-29 12:16:12	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-09-29 12:16:12	--	-
+2013-09-29 12:16:12	--	- We scan all connecting clients for open proxies and other
+2013-09-29 12:16:12	--	- exploitable nasties. If you don't wish to be scanned,
+2013-09-29 12:16:12	--	- don't connect again, and sorry for scanning you this time.
+2013-09-29 12:16:12	--	-
+2013-09-29 12:16:12	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-09-29 12:16:12	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-09-29 12:16:12	--	- your client to /connect irc.perl.org, not directly.
+2013-09-29 12:16:12	--	End of /MOTD command.
+2013-09-29 12:16:12	--	User mode [+i] by drbean
+2013-10-01 12:32:14	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Looking up your hostname...
+2013-10-01 12:32:14	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Checking Ident
+2013-10-01 12:32:15	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-10-01 12:32:25	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** No Ident response
+2013-10-01 12:32:26	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-10-01 12:32:26	--	Your host is spectral.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-10-01 12:32:26	--	This server was created Feb  8 2010 at 21:26:22
+2013-10-01 12:32:26	--	spectral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-01 12:32:26	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-01 12:32:26	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 :are supported by this server
+2013-10-01 12:32:26	--	There are 5 users and 1264 invisible on 1 servers
+2013-10-01 12:32:26	--	13 :IRC Operators online
+2013-10-01 12:32:26	--	450 :channels formed
+2013-10-01 12:32:26	--	I have 1269 clients and 0 servers
+2013-10-01 12:32:26	--	Current local users: 1269  Max: 1401
+2013-10-01 12:32:26	--	Current global users: 1269  Max: 1401
+2013-10-01 12:32:26	--	- spectral.shadowcat.co.uk Message of the Day -
+2013-10-01 12:32:26	--	-                      _             _
+2013-10-01 12:32:26	--	-  ___ _ __   ___  ___| |_ _ __ __ _| |
+2013-10-01 12:32:26	--	- / __| '_ \ / _ \/ __| __| '__/ _` | |
+2013-10-01 12:32:26	--	- \__ \ |_) |  __/ (__| |_| | | (_| | |  _
+2013-10-01 12:32:26	--	- |___/ .__/ \___|\___|\__|_|  \__,_|_| (_)
+2013-10-01 12:32:26	--	-     |_|
+2013-10-01 12:32:26	--	-      _               _                        _
+2013-10-01 12:32:26	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-01 12:32:26	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-01 12:32:26	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-01 12:32:26	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-01 12:32:26	--	-
+2013-10-01 12:32:26	--	- We scan all connecting clients for open proxies and other
+2013-10-01 12:32:26	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-01 12:32:26	--	- don't connect again, and sorry for scanning you this time.
+2013-10-01 12:32:26	--	-
+2013-10-01 12:32:26	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-01 12:32:26	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-01 12:32:26	--	- your client to /connect irc.perl.org, not directly.
+2013-10-01 12:32:26	--	End of /MOTD command.
+2013-10-01 12:32:26	--	User mode [+i] by drbean
+2013-10-01 12:32:26	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-01 12:32:26	--	[drbean] End of /WHO list.
+2013-10-01 12:33:27	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2013-10-01 12:33:27	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2013-10-01 12:33:27	--	magnet.llarian.net (magnet.llarian.net): *** Couldn't look up your hostname
+2013-10-01 12:33:38	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2013-10-01 12:33:38	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2013-10-01 12:33:38	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-10-01 12:33:38	--	This server was created Jan 18 2010 at 10:48:49
+2013-10-01 12:33:38	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-01 12:33:38	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 MAGNET=73 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 :are supported by this server
+2013-10-01 12:33:38	--	CHANTYPES=#& CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-10-01 12:33:38	--	There are 5 users and 1265 invisible on 1 servers
+2013-10-01 12:33:38	--	13 :IRC Operators online
+2013-10-01 12:33:38	--	1 :unknown connection(s)
+2013-10-01 12:33:38	--	450 :channels formed
+2013-10-01 12:33:38	--	I have 1270 clients and 0 servers
+2013-10-01 12:33:38	--	Current local users: 1270  Max: 1876
+2013-10-01 12:33:38	--	Current global users: 1270  Max: 1876
+2013-10-01 12:33:38	--	- magnet.llarian.net Message of the Day -
+2013-10-01 12:33:38	--	- Welcome to magnet.llarian.net
+2013-10-01 12:33:38	--	-
+2013-10-01 12:33:38	--	- You will be / have been scanned via an automated process to check for
+2013-10-01 12:33:38	--	- various disallowed and insecure services.
+2013-10-01 12:33:38	--	-
+2013-10-01 12:33:38	--	- -------
+2013-10-01 12:33:38	--	-
+2013-10-01 12:33:38	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-10-01 12:33:38	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-10-01 12:33:38	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-10-01 12:33:38	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-10-01 12:33:38	--	- yourself.
+2013-10-01 12:33:38	--	-
+2013-10-01 12:33:38	--	- -------
+2013-10-01 12:33:38	--	-
+2013-10-01 12:33:38	--	- Reasonable person principle applies.
+2013-10-01 12:33:38	--	- http://www.irc.perl.org/reasonable_person.html
+2013-10-01 12:33:38	--	-
+2013-10-01 12:33:38	--	- Please also read the FAQ, particularly the section about #perl:
+2013-10-01 12:33:38	--	- http://www.irc.perl.org/faq.html
+2013-10-01 12:33:38	--	-
+2013-10-01 12:33:38	--	- -----
+2013-10-01 12:33:38	--	-
+2013-10-01 12:33:38	--	- Do not publish the logs of any person or any channel on this server without
+2013-10-01 12:33:38	--	- their express consent. Failure to abide is a kline-able offense.
+2013-10-01 12:33:38	--	-
+2013-10-01 12:33:38	--	- IPv6 connections available at 2001:5d8:11::16
+2013-10-01 12:33:38	--	- SSL connections available on port 7062
+2013-10-01 12:33:38	--	End of /MOTD command.
+2013-10-01 12:33:38	--	User mode [+i] by drbean_
+2013-10-01 12:33:38	--	[*] drbean_ (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-01 12:33:38	--	[drbean_] End of /WHO list.
+2013-10-01 12:42:46	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Looking up your hostname...
+2013-10-01 12:42:46	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Checking Ident
+2013-10-01 12:42:46	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-10-01 12:42:57	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** No Ident response
+2013-10-01 12:42:57	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-10-01 12:42:57	--	Your host is spectral.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-10-01 12:42:57	--	This server was created Feb  8 2010 at 21:26:22
+2013-10-01 12:42:57	--	spectral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-01 12:42:57	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-01 12:42:57	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 :are supported by this server
+2013-10-01 12:42:57	--	There are 5 users and 1266 invisible on 1 servers
+2013-10-01 12:42:57	--	13 :IRC Operators online
+2013-10-01 12:42:57	--	450 :channels formed
+2013-10-01 12:42:57	--	I have 1271 clients and 0 servers
+2013-10-01 12:42:57	--	Current local users: 1271  Max: 1401
+2013-10-01 12:42:57	--	Current global users: 1271  Max: 1401
+2013-10-01 12:42:57	--	- spectral.shadowcat.co.uk Message of the Day -
+2013-10-01 12:42:57	--	-                      _             _
+2013-10-01 12:42:57	--	-  ___ _ __   ___  ___| |_ _ __ __ _| |
+2013-10-01 12:42:57	--	- / __| '_ \ / _ \/ __| __| '__/ _` | |
+2013-10-01 12:42:57	--	- \__ \ |_) |  __/ (__| |_| | | (_| | |  _
+2013-10-01 12:42:57	--	- |___/ .__/ \___|\___|\__|_|  \__,_|_| (_)
+2013-10-01 12:42:57	--	-     |_|
+2013-10-01 12:42:57	--	-      _               _                        _
+2013-10-01 12:42:57	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-01 12:42:57	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-01 12:42:57	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-01 12:42:57	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-01 12:42:57	--	-
+2013-10-01 12:42:57	--	- We scan all connecting clients for open proxies and other
+2013-10-01 12:42:57	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-01 12:42:57	--	- don't connect again, and sorry for scanning you this time.
+2013-10-01 12:42:57	--	-
+2013-10-01 12:42:57	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-01 12:42:57	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-01 12:42:57	--	- your client to /connect irc.perl.org, not directly.
+2013-10-01 12:42:57	--	End of /MOTD command.
+2013-10-01 12:42:57	--	User mode [+i] by drbean
+2013-10-01 12:42:58	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-01 12:42:58	--	[drbean] End of /WHO list.
+2013-10-01 12:57:55	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2013-10-01 12:57:55	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2013-10-01 12:57:55	--	magnet.llarian.net (magnet.llarian.net): *** Couldn't look up your hostname
+2013-10-01 12:58:06	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2013-10-01 12:58:06	--	*: Register first.
+2013-10-01 12:58:07	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2013-10-01 12:58:07	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-10-01 12:58:07	--	This server was created Jan 18 2010 at 10:48:49
+2013-10-01 12:58:07	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-01 12:58:07	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 MAGNET=73 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 :are supported by this server
+2013-10-01 12:58:07	--	CHANTYPES=#& CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-10-01 12:58:07	--	There are 5 users and 1268 invisible on 1 servers
+2013-10-01 12:58:07	--	13 :IRC Operators online
+2013-10-01 12:58:07	--	1 :unknown connection(s)
+2013-10-01 12:58:07	--	450 :channels formed
+2013-10-01 12:58:07	--	I have 1273 clients and 0 servers
+2013-10-01 12:58:07	--	Current local users: 1273  Max: 1876
+2013-10-01 12:58:07	--	Current global users: 1273  Max: 1876
+2013-10-01 12:58:07	--	- magnet.llarian.net Message of the Day -
+2013-10-01 12:58:07	--	- Welcome to magnet.llarian.net
+2013-10-01 12:58:07	--	-
+2013-10-01 12:58:07	--	- You will be / have been scanned via an automated process to check for
+2013-10-01 12:58:07	--	- various disallowed and insecure services.
+2013-10-01 12:58:07	--	-
+2013-10-01 12:58:07	--	- -------
+2013-10-01 12:58:07	--	-
+2013-10-01 12:58:07	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-10-01 12:58:07	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-10-01 12:58:07	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-10-01 12:58:07	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-10-01 12:58:07	--	- yourself.
+2013-10-01 12:58:07	--	-
+2013-10-01 12:58:07	--	- -------
+2013-10-01 12:58:07	--	-
+2013-10-01 12:58:07	--	- Reasonable person principle applies.
+2013-10-01 12:58:07	--	- http://www.irc.perl.org/reasonable_person.html
+2013-10-01 12:58:07	--	-
+2013-10-01 12:58:07	--	- Please also read the FAQ, particularly the section about #perl:
+2013-10-01 12:58:07	--	- http://www.irc.perl.org/faq.html
+2013-10-01 12:58:07	--	-
+2013-10-01 12:58:07	--	- -----
+2013-10-01 12:58:07	--	-
+2013-10-01 12:58:07	--	- Do not publish the logs of any person or any channel on this server without
+2013-10-01 12:58:07	--	- their express consent. Failure to abide is a kline-able offense.
+2013-10-01 12:58:07	--	-
+2013-10-01 12:58:07	--	- IPv6 connections available at 2001:5d8:11::16
+2013-10-01 12:58:07	--	- SSL connections available on port 7062
+2013-10-01 12:58:07	--	End of /MOTD command.
+2013-10-01 12:58:07	--	User mode [+i] by drbean_
+2013-10-01 12:58:07	--	[*] drbean_ (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-01 12:58:07	--	[drbean_] End of /WHO list.
+2013-10-01 17:09:42	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2013-10-01 17:09:42	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2013-10-01 17:09:44	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-10-01 17:09:53	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2013-10-01 17:09:54	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-10-01 17:09:54	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-10-01 17:09:54	--	This server was created Feb 15 2010 at 23:39:34
+2013-10-01 17:09:54	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-01 17:09:54	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-01 17:09:54	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-10-01 17:09:54	--	There are 5 users and 1332 invisible on 1 servers
+2013-10-01 17:09:54	--	13 :IRC Operators online
+2013-10-01 17:09:54	--	2 :unknown connection(s)
+2013-10-01 17:09:54	--	449 :channels formed
+2013-10-01 17:09:54	--	I have 1337 clients and 0 servers
+2013-10-01 17:09:54	--	Current local users: 1337  Max: 1876
+2013-10-01 17:09:54	--	Current global users: 1337  Max: 1876
+2013-10-01 17:09:54	--	- astral.shadowcat.co.uk Message of the Day -
+2013-10-01 17:09:54	--	-            _             _
+2013-10-01 17:09:54	--	-   __ _ ___| |_ _ __ __ _| |
+2013-10-01 17:09:54	--	-  / _` / __| __| '__/ _` | |
+2013-10-01 17:09:54	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-10-01 17:09:54	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-10-01 17:09:54	--	-      _               _                        _
+2013-10-01 17:09:54	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-01 17:09:54	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-01 17:09:54	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-01 17:09:54	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-01 17:09:54	--	-
+2013-10-01 17:09:54	--	- We scan all connecting clients for open proxies and other
+2013-10-01 17:09:54	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-01 17:09:54	--	- don't connect again, and sorry for scanning you this time.
+2013-10-01 17:09:54	--	-
+2013-10-01 17:09:54	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-01 17:09:54	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-01 17:09:54	--	- your client to /connect irc.perl.org, not directly.
+2013-10-01 17:09:54	--	End of /MOTD command.
+2013-10-01 17:09:54	--	User mode [+i] by drbean
+2013-10-01 17:09:54	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-01 17:09:54	--	[drbean] End of /WHO list.
+2013-10-01 17:15:56	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Looking up your hostname...
+2013-10-01 17:15:56	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Checking Ident
+2013-10-01 17:15:57	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-10-01 17:16:06	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** No Ident response
+2013-10-01 17:16:07	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2013-10-01 17:16:07	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-10-01 17:16:07	--	This server was created Nov 12 2007 at 19:25:00
+2013-10-01 17:16:07	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-01 17:16:07	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-01 17:16:07	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-10-01 17:16:07	--	There are 5 users and 1330 invisible on 1 servers
+2013-10-01 17:16:07	--	13 :IRC Operators online
+2013-10-01 17:16:07	--	1 :unknown connection(s)
+2013-10-01 17:16:07	--	449 :channels formed
+2013-10-01 17:16:07	--	I have 1335 clients and 0 servers
+2013-10-01 17:16:07	--	Current local users: 1335  Max: 1876
+2013-10-01 17:16:07	--	Current global users: 1335  Max: 1876
+2013-10-01 17:16:07	--	- electret.shadowcat.co.uk Message of the Day -
+2013-10-01 17:16:07	--	-       _           _            _
+2013-10-01 17:16:07	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2013-10-01 17:16:07	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2013-10-01 17:16:07	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2013-10-01 17:16:07	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2013-10-01 17:16:07	--	-      _               _                        _
+2013-10-01 17:16:07	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-01 17:16:07	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-01 17:16:07	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-01 17:16:07	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-01 17:16:07	--	-
+2013-10-01 17:16:07	--	- We scan all connecting clients for open proxies and other
+2013-10-01 17:16:07	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-01 17:16:07	--	- don't connect again, and sorry for scanning you this time.
+2013-10-01 17:16:07	--	-
+2013-10-01 17:16:07	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-01 17:16:07	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-01 17:16:07	--	- your client to /connect irc.perl.org, not directly.
+2013-10-01 17:16:07	--	End of /MOTD command.
+2013-10-01 17:16:07	--	User mode [+i] by drbean_
+2013-10-01 17:16:07	--	[*] drbean_ (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-01 17:16:07	--	[drbean_] End of /WHO list.
+2013-10-01 17:17:08	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2013-10-01 17:17:08	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2013-10-01 17:17:08	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-10-01 17:17:19	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2013-10-01 17:17:20	--	Welcome to the MAGnet Internet Relay Chat Network drbean-
+2013-10-01 17:17:20	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-10-01 17:17:20	--	This server was created Feb 15 2010 at 23:39:34
+2013-10-01 17:17:20	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-01 17:17:20	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-01 17:17:20	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-10-01 17:17:20	--	There are 5 users and 1330 invisible on 1 servers
+2013-10-01 17:17:20	--	13 :IRC Operators online
+2013-10-01 17:17:20	--	2 :unknown connection(s)
+2013-10-01 17:17:20	--	449 :channels formed
+2013-10-01 17:17:20	--	I have 1335 clients and 0 servers
+2013-10-01 17:17:20	--	Current local users: 1335  Max: 1876
+2013-10-01 17:17:20	--	Current global users: 1335  Max: 1876
+2013-10-01 17:17:20	--	- astral.shadowcat.co.uk Message of the Day -
+2013-10-01 17:17:20	--	-            _             _
+2013-10-01 17:17:20	--	-   __ _ ___| |_ _ __ __ _| |
+2013-10-01 17:17:20	--	-  / _` / __| __| '__/ _` | |
+2013-10-01 17:17:20	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-10-01 17:17:20	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-10-01 17:17:20	--	-      _               _                        _
+2013-10-01 17:17:20	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-01 17:17:20	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-01 17:17:20	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-01 17:17:20	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-01 17:17:20	--	-
+2013-10-01 17:17:20	--	- We scan all connecting clients for open proxies and other
+2013-10-01 17:17:20	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-01 17:17:20	--	- don't connect again, and sorry for scanning you this time.
+2013-10-01 17:17:20	--	-
+2013-10-01 17:17:20	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-01 17:17:20	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-01 17:17:20	--	- your client to /connect irc.perl.org, not directly.
+2013-10-01 17:17:20	--	End of /MOTD command.
+2013-10-01 17:17:20	--	User mode [+i] by drbean-
+2013-10-01 17:17:21	--	[*] drbean- (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-01 17:17:21	--	[drbean-] End of /WHO list.
+2013-10-05 11:49:29	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2013-10-05 11:49:29	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2013-10-05 11:49:30	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-10-05 11:49:40	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2013-10-05 11:49:41	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-10-05 11:49:41	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-10-05 11:49:41	--	This server was created Feb 15 2010 at 23:39:34
+2013-10-05 11:49:41	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-05 11:49:41	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-05 11:49:41	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-10-05 11:49:41	--	There are 5 users and 1256 invisible on 1 servers
+2013-10-05 11:49:41	--	14 :IRC Operators online
+2013-10-05 11:49:41	--	2 :unknown connection(s)
+2013-10-05 11:49:41	--	444 :channels formed
+2013-10-05 11:49:41	--	I have 1261 clients and 0 servers
+2013-10-05 11:49:41	--	Current local users: 1261  Max: 1876
+2013-10-05 11:49:41	--	Current global users: 1261  Max: 1876
+2013-10-05 11:49:41	--	- astral.shadowcat.co.uk Message of the Day -
+2013-10-05 11:49:41	--	-            _             _
+2013-10-05 11:49:41	--	-   __ _ ___| |_ _ __ __ _| |
+2013-10-05 11:49:41	--	-  / _` / __| __| '__/ _` | |
+2013-10-05 11:49:41	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-10-05 11:49:41	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-10-05 11:49:41	--	-      _               _                        _
+2013-10-05 11:49:41	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-05 11:49:41	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-05 11:49:41	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-05 11:49:41	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-05 11:49:41	--	-
+2013-10-05 11:49:41	--	- We scan all connecting clients for open proxies and other
+2013-10-05 11:49:41	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-05 11:49:41	--	- don't connect again, and sorry for scanning you this time.
+2013-10-05 11:49:41	--	-
+2013-10-05 11:49:41	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-05 11:49:41	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-05 11:49:41	--	- your client to /connect irc.perl.org, not directly.
+2013-10-05 11:49:41	--	End of /MOTD command.
+2013-10-05 11:49:41	--	User mode [+i] by drbean
+2013-10-05 11:49:41	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-05 11:49:41	--	[drbean] End of /WHO list.
+2013-10-05 11:54:59	--	irc: disconnected from server
+2013-10-06 09:58:08	--	irc: connecting to server 203.64.184.141/6666...
+2013-10-06 09:58:08	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-10-06 09:58:08	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-10-06 09:58:08	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-10-06 09:58:08	--	This server was created Nov 12 2007 at 19:25:00
+2013-10-06 09:58:08	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-06 09:58:08	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-06 09:58:08	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-10-06 09:58:08	--	There are 4 users and 1237 invisible on 1 servers
+2013-10-06 09:58:08	--	14 :IRC Operators online
+2013-10-06 09:58:08	--	442 :channels formed
+2013-10-06 09:58:08	--	I have 1241 clients and 0 servers
+2013-10-06 09:58:08	--	Current local users: 1241  Max: 1876
+2013-10-06 09:58:08	--	Current global users: 1241  Max: 1876
+2013-10-06 09:58:08	--	- electret.shadowcat.co.uk Message of the Day -
+2013-10-06 09:58:08	--	-       _           _            _
+2013-10-06 09:58:08	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2013-10-06 09:58:08	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2013-10-06 09:58:08	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2013-10-06 09:58:08	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2013-10-06 09:58:08	--	-      _               _                        _
+2013-10-06 09:58:08	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-06 09:58:08	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-06 09:58:08	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-06 09:58:08	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-06 09:58:08	--	-
+2013-10-06 09:58:08	--	- We scan all connecting clients for open proxies and other
+2013-10-06 09:58:08	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-06 09:58:08	--	- don't connect again, and sorry for scanning you this time.
+2013-10-06 09:58:08	--	-
+2013-10-06 09:58:08	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-06 09:58:08	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-06 09:58:08	--	- your client to /connect irc.perl.org, not directly.
+2013-10-06 09:58:08	--	End of /MOTD command.
+2013-10-06 09:58:08	--	User mode [+i] by drbean
+2013-10-06 15:32:42	--	User mode [-i] by drbean
+2013-10-06 15:32:42	=!=	irc: reading data on socket: error 446 (connection closed by peer)
+2013-10-06 15:32:42	--	irc: disconnecting from server...
+2013-10-06 15:32:42	--	irc: disconnected from server
+2013-10-06 15:32:42	--	irc: reconnecting to server in 10 seconds
+2013-10-06 15:32:52	--	irc: reconnecting to server...
+2013-10-06 15:32:52	--	irc: connecting to server 203.64.184.141/6666...
+2013-10-06 15:32:52	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-10-06 15:32:52	--	- Welcome to ZNC -
+2013-10-06 15:33:08	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2013-10-06 15:33:08	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2013-10-06 15:33:10	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-10-06 15:33:19	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2013-10-06 15:33:19	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-10-06 15:33:19	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-10-06 15:33:19	--	This server was created Feb 15 2010 at 23:39:34
+2013-10-06 15:33:19	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-06 15:33:19	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-06 15:33:19	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-10-06 15:33:19	--	There are 4 users and 1225 invisible on 1 servers
+2013-10-06 15:33:19	--	14 :IRC Operators online
+2013-10-06 15:33:19	--	3 :unknown connection(s)
+2013-10-06 15:33:19	--	443 :channels formed
+2013-10-06 15:33:19	--	I have 1229 clients and 0 servers
+2013-10-06 15:33:19	--	Current local users: 1229  Max: 1876
+2013-10-06 15:33:19	--	Current global users: 1229  Max: 1876
+2013-10-06 15:33:19	--	- astral.shadowcat.co.uk Message of the Day -
+2013-10-06 15:33:19	--	-            _             _
+2013-10-06 15:33:19	--	-   __ _ ___| |_ _ __ __ _| |
+2013-10-06 15:33:19	--	-  / _` / __| __| '__/ _` | |
+2013-10-06 15:33:19	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-10-06 15:33:19	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-10-06 15:33:19	--	-      _               _                        _
+2013-10-06 15:33:19	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-06 15:33:19	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-06 15:33:19	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-06 15:33:19	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-06 15:33:19	--	-
+2013-10-06 15:33:19	--	- We scan all connecting clients for open proxies and other
+2013-10-06 15:33:19	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-06 15:33:19	--	- don't connect again, and sorry for scanning you this time.
+2013-10-06 15:33:19	--	-
+2013-10-06 15:33:19	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-06 15:33:19	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-06 15:33:19	--	- your client to /connect irc.perl.org, not directly.
+2013-10-06 15:33:19	--	End of /MOTD command.
+2013-10-06 15:33:19	--	User mode [+i] by drbean
+2013-10-06 15:33:20	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-06 15:33:20	--	[drbean] End of /WHO list.
+2013-10-07 23:45:23	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2013-10-07 23:45:23	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2013-10-07 23:45:24	--	magnet.llarian.net (magnet.llarian.net): *** Couldn't look up your hostname
+2013-10-07 23:45:34	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2013-10-07 23:45:34	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-10-07 23:45:34	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-10-07 23:45:34	--	This server was created Jan 18 2010 at 10:48:49
+2013-10-07 23:45:34	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-07 23:45:34	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 MAGNET=73 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 :are supported by this server
+2013-10-07 23:45:34	--	CHANTYPES=#& CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-10-07 23:45:34	--	There are 4 users and 824 invisible on 1 servers
+2013-10-07 23:45:34	--	8 :IRC Operators online
+2013-10-07 23:45:34	--	1 :unknown connection(s)
+2013-10-07 23:45:34	--	357 :channels formed
+2013-10-07 23:45:34	--	I have 828 clients and 0 servers
+2013-10-07 23:45:34	--	Current local users: 828  Max: 1876
+2013-10-07 23:45:34	--	Current global users: 828  Max: 1876
+2013-10-07 23:45:34	--	- magnet.llarian.net Message of the Day -
+2013-10-07 23:45:34	--	- Welcome to magnet.llarian.net
+2013-10-07 23:45:34	--	-
+2013-10-07 23:45:34	--	- You will be / have been scanned via an automated process to check for
+2013-10-07 23:45:34	--	- various disallowed and insecure services.
+2013-10-07 23:45:34	--	-
+2013-10-07 23:45:34	--	- -------
+2013-10-07 23:45:34	--	-
+2013-10-07 23:45:34	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-10-07 23:45:34	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-10-07 23:45:34	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-10-07 23:45:34	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-10-07 23:45:34	--	- yourself.
+2013-10-07 23:45:34	--	-
+2013-10-07 23:45:34	--	- -------
+2013-10-07 23:45:34	--	-
+2013-10-07 23:45:34	--	- Reasonable person principle applies.
+2013-10-07 23:45:34	--	- http://www.irc.perl.org/reasonable_person.html
+2013-10-07 23:45:34	--	-
+2013-10-07 23:45:34	--	- Please also read the FAQ, particularly the section about #perl:
+2013-10-07 23:45:34	--	- http://www.irc.perl.org/faq.html
+2013-10-07 23:45:34	--	-
+2013-10-07 23:45:34	--	- -----
+2013-10-07 23:45:34	--	-
+2013-10-07 23:45:34	--	- Do not publish the logs of any person or any channel on this server without
+2013-10-07 23:45:34	--	- their express consent. Failure to abide is a kline-able offense.
+2013-10-07 23:45:34	--	-
+2013-10-07 23:45:34	--	- IPv6 connections available at 2001:5d8:11::16
+2013-10-07 23:45:34	--	- SSL connections available on port 7062
+2013-10-07 23:45:34	--	End of /MOTD command.
+2013-10-07 23:45:34	--	User mode [+i] by drbean
+2013-10-07 23:45:34	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-07 23:45:34	--	[drbean] End of /WHO list.
+2013-10-08 11:34:30	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2013-10-08 11:34:30	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2013-10-08 11:34:30	--	magnet.llarian.net (magnet.llarian.net): *** Couldn't look up your hostname
+2013-10-08 11:34:40	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2013-10-08 11:34:40	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2013-10-08 11:34:40	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-10-08 11:34:40	--	This server was created Jan 18 2010 at 10:48:49
+2013-10-08 11:34:40	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-08 11:34:40	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 MAGNET=73 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 :are supported by this server
+2013-10-08 11:34:40	--	CHANTYPES=#& CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-10-08 11:34:40	--	There are 4 users and 1266 invisible on 1 servers
+2013-10-08 11:34:40	--	14 :IRC Operators online
+2013-10-08 11:34:40	--	1 :unknown connection(s)
+2013-10-08 11:34:40	--	448 :channels formed
+2013-10-08 11:34:40	--	I have 1270 clients and 0 servers
+2013-10-08 11:34:40	--	Current local users: 1270  Max: 1876
+2013-10-08 11:34:40	--	Current global users: 1270  Max: 1876
+2013-10-08 11:34:40	--	- magnet.llarian.net Message of the Day -
+2013-10-08 11:34:40	--	- Welcome to magnet.llarian.net
+2013-10-08 11:34:40	--	-
+2013-10-08 11:34:40	--	- You will be / have been scanned via an automated process to check for
+2013-10-08 11:34:40	--	- various disallowed and insecure services.
+2013-10-08 11:34:40	--	-
+2013-10-08 11:34:40	--	- -------
+2013-10-08 11:34:40	--	-
+2013-10-08 11:34:40	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-10-08 11:34:40	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-10-08 11:34:40	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-10-08 11:34:40	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-10-08 11:34:40	--	- yourself.
+2013-10-08 11:34:40	--	-
+2013-10-08 11:34:40	--	- -------
+2013-10-08 11:34:40	--	-
+2013-10-08 11:34:40	--	- Reasonable person principle applies.
+2013-10-08 11:34:40	--	- http://www.irc.perl.org/reasonable_person.html
+2013-10-08 11:34:40	--	-
+2013-10-08 11:34:40	--	- Please also read the FAQ, particularly the section about #perl:
+2013-10-08 11:34:40	--	- http://www.irc.perl.org/faq.html
+2013-10-08 11:34:40	--	-
+2013-10-08 11:34:40	--	- -----
+2013-10-08 11:34:40	--	-
+2013-10-08 11:34:40	--	- Do not publish the logs of any person or any channel on this server without
+2013-10-08 11:34:40	--	- their express consent. Failure to abide is a kline-able offense.
+2013-10-08 11:34:40	--	-
+2013-10-08 11:34:40	--	- IPv6 connections available at 2001:5d8:11::16
+2013-10-08 11:34:40	--	- SSL connections available on port 7062
+2013-10-08 11:34:40	--	End of /MOTD command.
+2013-10-08 11:34:40	--	User mode [+i] by drbean_
+2013-10-08 11:34:41	--	[*] drbean_ (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-08 11:34:41	--	[drbean_] End of /WHO list.
+2013-10-15 10:04:58	--	irc: disconnected from server
+2013-10-15 11:12:59	--	irc: connecting to server 203.64.184.141/6666...
+2013-10-15 11:12:59	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-10-15 11:12:59	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-10-15 11:12:59	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-10-15 11:12:59	--	This server was created Feb 15 2010 at 23:39:34
+2013-10-15 11:12:59	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-15 11:12:59	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-15 11:12:59	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-10-15 11:12:59	--	There are 5 users and 1280 invisible on 1 servers
+2013-10-15 11:12:59	--	14 :IRC Operators online
+2013-10-15 11:12:59	--	449 :channels formed
+2013-10-15 11:12:59	--	I have 1285 clients and 0 servers
+2013-10-15 11:12:59	--	Current local users: 1285  Max: 1876
+2013-10-15 11:12:59	--	Current global users: 1285  Max: 1876
+2013-10-15 11:12:59	--	- astral.shadowcat.co.uk Message of the Day -
+2013-10-15 11:12:59	--	-            _             _
+2013-10-15 11:12:59	--	-   __ _ ___| |_ _ __ __ _| |
+2013-10-15 11:12:59	--	-  / _` / __| __| '__/ _` | |
+2013-10-15 11:12:59	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-10-15 11:12:59	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-10-15 11:12:59	--	-      _               _                        _
+2013-10-15 11:12:59	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-15 11:12:59	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-15 11:12:59	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-15 11:12:59	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-15 11:12:59	--	-
+2013-10-15 11:12:59	--	- We scan all connecting clients for open proxies and other
+2013-10-15 11:12:59	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-15 11:12:59	--	- don't connect again, and sorry for scanning you this time.
+2013-10-15 11:12:59	--	-
+2013-10-15 11:12:59	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-15 11:12:59	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-15 11:12:59	--	- your client to /connect irc.perl.org, not directly.
+2013-10-15 11:12:59	--	End of /MOTD command.
+2013-10-15 11:12:59	--	User mode [+i] by drbean
+2013-10-15 11:14:00	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Looking up your hostname...
+2013-10-15 11:14:00	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Checking Ident
+2013-10-15 11:14:01	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-10-15 11:14:11	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** No Ident response
+2013-10-15 11:14:12	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2013-10-15 11:14:12	--	Your host is spectral.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-10-15 11:14:12	--	This server was created Feb  8 2010 at 21:26:22
+2013-10-15 11:14:12	--	spectral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-15 11:14:12	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-15 11:14:12	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 :are supported by this server
+2013-10-15 11:14:12	--	There are 5 users and 1277 invisible on 1 servers
+2013-10-15 11:14:12	--	14 :IRC Operators online
+2013-10-15 11:14:12	--	1 :unknown connection(s)
+2013-10-15 11:14:12	--	449 :channels formed
+2013-10-15 11:14:12	--	I have 1282 clients and 0 servers
+2013-10-15 11:14:12	--	Current local users: 1282  Max: 1401
+2013-10-15 11:14:12	--	Current global users: 1282  Max: 1401
+2013-10-15 11:14:12	--	- spectral.shadowcat.co.uk Message of the Day -
+2013-10-15 11:14:12	--	-                      _             _
+2013-10-15 11:14:12	--	-  ___ _ __   ___  ___| |_ _ __ __ _| |
+2013-10-15 11:14:12	--	- / __| '_ \ / _ \/ __| __| '__/ _` | |
+2013-10-15 11:14:12	--	- \__ \ |_) |  __/ (__| |_| | | (_| | |  _
+2013-10-15 11:14:12	--	- |___/ .__/ \___|\___|\__|_|  \__,_|_| (_)
+2013-10-15 11:14:12	--	-     |_|
+2013-10-15 11:14:12	--	-      _               _                        _
+2013-10-15 11:14:12	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-15 11:14:12	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-15 11:14:12	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-15 11:14:12	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-15 11:14:12	--	-
+2013-10-15 11:14:12	--	- We scan all connecting clients for open proxies and other
+2013-10-15 11:14:12	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-15 11:14:12	--	- don't connect again, and sorry for scanning you this time.
+2013-10-15 11:14:12	--	-
+2013-10-15 11:14:12	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-15 11:14:12	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-15 11:14:12	--	- your client to /connect irc.perl.org, not directly.
+2013-10-15 11:14:12	--	End of /MOTD command.
+2013-10-15 11:14:12	--	User mode [+i] by drbean_
+2013-10-15 11:14:12	--	[*] drbean_ (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-15 11:14:12	--	[drbean_] End of /WHO list.
+2013-10-23 22:35:40	=!=	irc: reading data on socket: error 110 Connection timed out
+2013-10-23 22:35:40	--	irc: disconnecting from server...
+2013-10-23 22:35:40	--	irc: disconnected from server
+2013-10-23 22:35:40	--	irc: reconnecting to server in 10 seconds
+2013-10-23 22:35:50	--	irc: reconnecting to server...
+2013-10-23 22:35:50	--	irc: connecting to server 203.64.184.141/6666...
+2013-10-23 22:35:50	=!=	irc: address "203.64.184.141" not found
+2013-10-23 22:35:50	=!=	irc: error: Address family for hostname not supported
+2013-10-23 22:35:50	--	irc: reconnecting to server in 20 seconds
+2013-10-23 22:35:57	--	irc: disconnected from server
+2013-10-27 10:14:17	--	irc: connecting to server 203.64.184.141/6666...
+2013-10-27 10:14:17	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-10-27 10:14:17	--	- Welcome to ZNC -
+2013-10-28 17:01:27	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2013-10-28 17:01:27	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2013-10-28 17:01:27	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2013-10-28 17:01:28	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Found your hostname
+2013-10-28 17:01:29	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-10-28 17:01:29	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-10-28 17:01:29	--	This server was created Feb 15 2010 at 23:39:34
+2013-10-28 17:01:29	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-28 17:01:29	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-28 17:01:29	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-10-28 17:01:29	--	There are 5 users and 1297 invisible on 1 servers
+2013-10-28 17:01:29	--	13 :IRC Operators online
+2013-10-28 17:01:29	--	2 :unknown connection(s)
+2013-10-28 17:01:29	--	482 :channels formed
+2013-10-28 17:01:29	--	I have 1302 clients and 0 servers
+2013-10-28 17:01:29	--	Current local users: 1302  Max: 1876
+2013-10-28 17:01:29	--	Current global users: 1302  Max: 1876
+2013-10-28 17:01:29	--	- astral.shadowcat.co.uk Message of the Day -
+2013-10-28 17:01:29	--	-            _             _
+2013-10-28 17:01:29	--	-   __ _ ___| |_ _ __ __ _| |
+2013-10-28 17:01:29	--	-  / _` / __| __| '__/ _` | |
+2013-10-28 17:01:29	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-10-28 17:01:29	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-10-28 17:01:29	--	-      _               _                        _
+2013-10-28 17:01:29	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-28 17:01:29	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-28 17:01:29	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-28 17:01:29	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-28 17:01:29	--	-
+2013-10-28 17:01:29	--	- We scan all connecting clients for open proxies and other
+2013-10-28 17:01:29	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-28 17:01:29	--	- don't connect again, and sorry for scanning you this time.
+2013-10-28 17:01:29	--	-
+2013-10-28 17:01:29	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-28 17:01:29	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-28 17:01:29	--	- your client to /connect irc.perl.org, not directly.
+2013-10-28 17:01:29	--	End of /MOTD command.
+2013-10-28 17:01:29	--	User mode [+i] by drbean
+2013-10-28 17:01:29	--	[*] drbean (~drbean@59-125-81-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-10-28 17:01:29	--	[drbean] End of /WHO list.
+2013-10-29 16:53:30	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Looking up your hostname...
+2013-10-29 16:53:30	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Checking Ident
+2013-10-29 16:53:32	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-10-29 16:53:41	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** No Ident response
+2013-10-29 16:53:42	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-10-29 16:53:42	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-10-29 16:53:42	--	This server was created Nov 12 2007 at 19:25:00
+2013-10-29 16:53:42	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-10-29 16:53:42	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-10-29 16:53:42	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-10-29 16:53:42	--	There are 5 users and 1304 invisible on 1 servers
+2013-10-29 16:53:42	--	13 :IRC Operators online
+2013-10-29 16:53:42	--	481 :channels formed
+2013-10-29 16:53:42	--	I have 1309 clients and 0 servers
+2013-10-29 16:53:42	--	Current local users: 1309  Max: 1876
+2013-10-29 16:53:42	--	Current global users: 1309  Max: 1876
+2013-10-29 16:53:42	--	- electret.shadowcat.co.uk Message of the Day -
+2013-10-29 16:53:42	--	-       _           _            _
+2013-10-29 16:53:42	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2013-10-29 16:53:42	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2013-10-29 16:53:42	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2013-10-29 16:53:42	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2013-10-29 16:53:42	--	-      _               _                        _
+2013-10-29 16:53:42	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-10-29 16:53:42	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-10-29 16:53:42	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-10-29 16:53:42	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-10-29 16:53:42	--	-
+2013-10-29 16:53:42	--	- We scan all connecting clients for open proxies and other
+2013-10-29 16:53:42	--	- exploitable nasties. If you don't wish to be scanned,
+2013-10-29 16:53:42	--	- don't connect again, and sorry for scanning you this time.
+2013-10-29 16:53:42	--	-
+2013-10-29 16:53:42	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-10-29 16:53:42	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-10-29 16:53:42	--	- your client to /connect irc.perl.org, not directly.
+2013-10-29 16:53:42	--	End of /MOTD command.
+2013-10-29 16:53:42	--	User mode [+i] by drbean
+2013-10-29 16:53:42	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-10-29 16:53:42	--	[drbean] End of /WHO list.
+2013-11-09 10:21:15	=!=	irc: reading data on socket: error 5344 (connection closed by peer)
+2013-11-09 10:21:15	--	irc: disconnecting from server...
+2013-11-09 10:21:15	--	irc: disconnected from server
+2013-11-09 10:21:15	--	irc: reconnecting to server in 10 seconds
+2013-11-09 10:21:25	--	irc: reconnecting to server...
+2013-11-09 10:21:25	--	irc: connecting to server 203.64.184.141/6666...
+2013-11-09 10:21:25	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-11-09 10:21:25	--	- Welcome to ZNC -
+2013-11-09 10:21:43	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2013-11-09 10:21:43	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2013-11-09 10:21:43	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2013-11-09 10:21:45	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Found your hostname
+2013-11-09 10:21:45	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-11-09 10:21:45	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-11-09 10:21:45	--	This server was created Feb 15 2010 at 23:39:34
+2013-11-09 10:21:45	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-09 10:21:45	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-09 10:21:45	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-11-09 10:21:45	--	There are 5 users and 1227 invisible on 1 servers
+2013-11-09 10:21:45	--	15 :IRC Operators online
+2013-11-09 10:21:45	--	2 :unknown connection(s)
+2013-11-09 10:21:45	--	498 :channels formed
+2013-11-09 10:21:45	--	I have 1232 clients and 0 servers
+2013-11-09 10:21:45	--	Current local users: 1232  Max: 1876
+2013-11-09 10:21:45	--	Current global users: 1232  Max: 1876
+2013-11-09 10:21:45	--	- astral.shadowcat.co.uk Message of the Day -
+2013-11-09 10:21:45	--	-            _             _
+2013-11-09 10:21:45	--	-   __ _ ___| |_ _ __ __ _| |
+2013-11-09 10:21:45	--	-  / _` / __| __| '__/ _` | |
+2013-11-09 10:21:45	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-11-09 10:21:45	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-11-09 10:21:45	--	-      _               _                        _
+2013-11-09 10:21:45	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-11-09 10:21:45	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-11-09 10:21:45	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-11-09 10:21:45	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-11-09 10:21:45	--	-
+2013-11-09 10:21:45	--	- We scan all connecting clients for open proxies and other
+2013-11-09 10:21:45	--	- exploitable nasties. If you don't wish to be scanned,
+2013-11-09 10:21:45	--	- don't connect again, and sorry for scanning you this time.
+2013-11-09 10:21:45	--	-
+2013-11-09 10:21:45	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-11-09 10:21:45	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-11-09 10:21:45	--	- your client to /connect irc.perl.org, not directly.
+2013-11-09 10:21:45	--	End of /MOTD command.
+2013-11-09 10:21:45	--	User mode [+i] by drbean
+2013-11-09 10:21:45	--	[*] drbean (~drbean@59-125-83-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-11-09 10:21:45	--	[drbean] End of /WHO list.
+2013-11-09 17:13:42	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2013-11-09 17:13:42	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2013-11-09 17:13:42	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2013-11-09 17:13:43	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Found your hostname
+2013-11-09 17:13:43	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-11-09 17:13:43	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-11-09 17:13:43	--	This server was created Feb 15 2010 at 23:39:34
+2013-11-09 17:13:43	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-09 17:13:43	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-09 17:13:43	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-11-09 17:13:43	--	There are 6 users and 1220 invisible on 1 servers
+2013-11-09 17:13:43	--	15 :IRC Operators online
+2013-11-09 17:13:43	--	2 :unknown connection(s)
+2013-11-09 17:13:43	--	500 :channels formed
+2013-11-09 17:13:43	--	I have 1226 clients and 0 servers
+2013-11-09 17:13:43	--	Current local users: 1226  Max: 1876
+2013-11-09 17:13:43	--	Current global users: 1226  Max: 1876
+2013-11-09 17:13:43	--	- astral.shadowcat.co.uk Message of the Day -
+2013-11-09 17:13:43	--	-            _             _
+2013-11-09 17:13:43	--	-   __ _ ___| |_ _ __ __ _| |
+2013-11-09 17:13:43	--	-  / _` / __| __| '__/ _` | |
+2013-11-09 17:13:43	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-11-09 17:13:43	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-11-09 17:13:43	--	-      _               _                        _
+2013-11-09 17:13:43	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-11-09 17:13:43	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-11-09 17:13:43	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-11-09 17:13:43	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-11-09 17:13:43	--	-
+2013-11-09 17:13:43	--	- We scan all connecting clients for open proxies and other
+2013-11-09 17:13:43	--	- exploitable nasties. If you don't wish to be scanned,
+2013-11-09 17:13:43	--	- don't connect again, and sorry for scanning you this time.
+2013-11-09 17:13:43	--	-
+2013-11-09 17:13:43	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-11-09 17:13:43	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-11-09 17:13:43	--	- your client to /connect irc.perl.org, not directly.
+2013-11-09 17:13:43	--	End of /MOTD command.
+2013-11-09 17:13:43	--	User mode [+i] by drbean
+2013-11-09 17:13:43	--	[*] drbean (~drbean@59-125-82-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-11-09 17:13:43	--	[drbean] End of /WHO list.
+2013-11-11 21:42:55	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Looking up your hostname...
+2013-11-11 21:42:55	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Checking Ident
+2013-11-11 21:42:56	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Found your hostname
+2013-11-11 21:42:58	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** No Ident response
+2013-11-11 21:42:59	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2013-11-11 21:42:59	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-11-11 21:42:59	--	This server was created Nov 12 2007 at 19:25:00
+2013-11-11 21:42:59	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-11 21:42:59	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-11 21:42:59	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-11-11 21:42:59	--	There are 7 users and 1320 invisible on 1 servers
+2013-11-11 21:42:59	--	14 :IRC Operators online
+2013-11-11 21:42:59	--	497 :channels formed
+2013-11-11 21:42:59	--	I have 1327 clients and 0 servers
+2013-11-11 21:42:59	--	Current local users: 1327  Max: 1876
+2013-11-11 21:42:59	--	Current global users: 1327  Max: 1876
+2013-11-11 21:42:59	--	- electret.shadowcat.co.uk Message of the Day -
+2013-11-11 21:42:59	--	-       _           _            _
+2013-11-11 21:42:59	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2013-11-11 21:42:59	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2013-11-11 21:42:59	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2013-11-11 21:42:59	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2013-11-11 21:42:59	--	-      _               _                        _
+2013-11-11 21:42:59	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-11-11 21:42:59	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-11-11 21:42:59	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-11-11 21:42:59	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-11-11 21:42:59	--	-
+2013-11-11 21:42:59	--	- We scan all connecting clients for open proxies and other
+2013-11-11 21:42:59	--	- exploitable nasties. If you don't wish to be scanned,
+2013-11-11 21:42:59	--	- don't connect again, and sorry for scanning you this time.
+2013-11-11 21:42:59	--	-
+2013-11-11 21:42:59	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-11-11 21:42:59	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-11-11 21:42:59	--	- your client to /connect irc.perl.org, not directly.
+2013-11-11 21:42:59	--	End of /MOTD command.
+2013-11-11 21:42:59	--	User mode [+i] by drbean_
+2013-11-11 21:42:59	--	[*] drbean_ (~drbean@59-125-83-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-11-11 21:42:59	--	[drbean_] End of /WHO list.
+2013-11-18 20:47:25	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2013-11-18 20:47:25	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2013-11-18 20:47:25	--	magnet.llarian.net (magnet.llarian.net): *** Couldn't look up your hostname
+2013-11-18 20:47:35	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2013-11-18 20:47:35	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-11-18 20:47:35	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-11-18 20:47:35	--	This server was created Oct 17 2013 at 12:43:02
+2013-11-18 20:47:35	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-18 20:47:35	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-18 20:47:35	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-11-18 20:47:35	--	There are 5 users and 1332 invisible on 1 servers
+2013-11-18 20:47:35	--	14 :IRC Operators online
+2013-11-18 20:47:35	--	500 :channels formed
+2013-11-18 20:47:35	--	I have 1337 clients and 0 servers
+2013-11-18 20:47:35	--	Current local users: 1337  Max: 1409
+2013-11-18 20:47:35	--	Current global users: 1337  Max: 1409
+2013-11-18 20:47:35	--	- magnet.llarian.net Message of the Day -
+2013-11-18 20:47:35	--	- Welcome to magnet.llarian.net
+2013-11-18 20:47:35	--	-
+2013-11-18 20:47:35	--	- You will be / have been scanned via an automated process to check for
+2013-11-18 20:47:35	--	- various disallowed and insecure services.
+2013-11-18 20:47:35	--	-
+2013-11-18 20:47:35	--	- -------
+2013-11-18 20:47:35	--	-
+2013-11-18 20:47:35	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-11-18 20:47:35	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-11-18 20:47:35	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-11-18 20:47:35	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-11-18 20:47:35	--	- yourself.
+2013-11-18 20:47:35	--	-
+2013-11-18 20:47:35	--	- -------
+2013-11-18 20:47:35	--	-
+2013-11-18 20:47:35	--	- Reasonable person principle applies.
+2013-11-18 20:47:35	--	- http://www.irc.perl.org/reasonable_person.html
+2013-11-18 20:47:35	--	-
+2013-11-18 20:47:35	--	- Please also read the FAQ, particularly the section about #perl:
+2013-11-18 20:47:35	--	- http://www.irc.perl.org/faq.html
+2013-11-18 20:47:35	--	-
+2013-11-18 20:47:35	--	- -----
+2013-11-18 20:47:35	--	-
+2013-11-18 20:47:35	--	- Do not publish the logs of any person or any channel on this server without
+2013-11-18 20:47:35	--	- their express consent. Failure to abide is a kline-able offense.
+2013-11-18 20:47:35	--	-
+2013-11-18 20:47:35	--	- IPv6 connections available at 2001:5d8:11::16
+2013-11-18 20:47:35	--	- SSL connections available on port 7062
+2013-11-18 20:47:35	--	End of /MOTD command.
+2013-11-18 20:47:35	--	User mode [+i] by drbean
+2013-11-18 20:47:35	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-11-18 20:47:35	--	[drbean] End of /WHO list.
+2013-11-20 12:13:44	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Looking up your hostname...
+2013-11-20 12:13:44	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Checking Ident
+2013-11-20 12:13:44	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** No Ident response
+2013-11-20 12:13:45	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-11-20 12:13:45	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2013-11-20 12:13:45	--	Your host is spectral.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-11-20 12:13:45	--	This server was created Feb  8 2010 at 21:26:22
+2013-11-20 12:13:45	--	spectral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-20 12:13:45	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-20 12:13:45	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 :are supported by this server
+2013-11-20 12:13:45	--	There are 4 users and 1285 invisible on 1 servers
+2013-11-20 12:13:45	--	15 :IRC Operators online
+2013-11-20 12:13:45	--	505 :channels formed
+2013-11-20 12:13:45	--	I have 1289 clients and 0 servers
+2013-11-20 12:13:45	--	Current local users: 1289  Max: 1744
+2013-11-20 12:13:45	--	Current global users: 1289  Max: 1744
+2013-11-20 12:13:45	--	- spectral.shadowcat.co.uk Message of the Day -
+2013-11-20 12:13:45	--	-                      _             _
+2013-11-20 12:13:45	--	-  ___ _ __   ___  ___| |_ _ __ __ _| |
+2013-11-20 12:13:45	--	- / __| '_ \ / _ \/ __| __| '__/ _` | |
+2013-11-20 12:13:45	--	- \__ \ |_) |  __/ (__| |_| | | (_| | |  _
+2013-11-20 12:13:45	--	- |___/ .__/ \___|\___|\__|_|  \__,_|_| (_)
+2013-11-20 12:13:45	--	-     |_|
+2013-11-20 12:13:45	--	-      _               _                        _
+2013-11-20 12:13:45	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-11-20 12:13:45	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-11-20 12:13:45	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-11-20 12:13:45	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-11-20 12:13:45	--	-
+2013-11-20 12:13:45	--	- We scan all connecting clients for open proxies and other
+2013-11-20 12:13:45	--	- exploitable nasties. If you don't wish to be scanned,
+2013-11-20 12:13:45	--	- don't connect again, and sorry for scanning you this time.
+2013-11-20 12:13:45	--	-
+2013-11-20 12:13:45	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-11-20 12:13:45	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-11-20 12:13:45	--	- your client to /connect irc.perl.org, not directly.
+2013-11-20 12:13:45	--	End of /MOTD command.
+2013-11-20 12:13:45	--	User mode [+i] by drbean_
+2013-11-20 12:13:47	--	[*] drbean_ (~drbean@59.125.81.253) H 0 (Dr Bean)
+2013-11-20 12:13:47	--	[drbean_] End of /WHO list.
+2013-11-20 12:40:51	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Looking up your hostname...
+2013-11-20 12:40:51	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Checking Ident
+2013-11-20 12:40:52	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Found your hostname
+2013-11-20 12:40:54	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** No Ident response
+2013-11-20 12:40:55	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-11-20 12:40:55	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-11-20 12:40:55	--	This server was created Nov 12 2007 at 19:25:00
+2013-11-20 12:40:55	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-20 12:40:55	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-20 12:40:55	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-11-20 12:40:55	--	There are 5 users and 1283 invisible on 1 servers
+2013-11-20 12:40:55	--	15 :IRC Operators online
+2013-11-20 12:40:55	--	504 :channels formed
+2013-11-20 12:40:55	--	I have 1288 clients and 0 servers
+2013-11-20 12:40:55	--	Current local users: 1288  Max: 1876
+2013-11-20 12:40:55	--	Current global users: 1288  Max: 1876
+2013-11-20 12:40:55	--	- electret.shadowcat.co.uk Message of the Day -
+2013-11-20 12:40:55	--	-       _           _            _
+2013-11-20 12:40:55	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2013-11-20 12:40:55	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2013-11-20 12:40:55	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2013-11-20 12:40:55	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2013-11-20 12:40:55	--	-      _               _                        _
+2013-11-20 12:40:55	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-11-20 12:40:55	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-11-20 12:40:55	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-11-20 12:40:55	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-11-20 12:40:55	--	-
+2013-11-20 12:40:55	--	- We scan all connecting clients for open proxies and other
+2013-11-20 12:40:55	--	- exploitable nasties. If you don't wish to be scanned,
+2013-11-20 12:40:55	--	- don't connect again, and sorry for scanning you this time.
+2013-11-20 12:40:55	--	-
+2013-11-20 12:40:55	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-11-20 12:40:55	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-11-20 12:40:55	--	- your client to /connect irc.perl.org, not directly.
+2013-11-20 12:40:55	--	End of /MOTD command.
+2013-11-20 12:40:55	--	User mode [+i] by drbean
+2013-11-20 12:40:55	--	[*] drbean (~drbean@59-125-81-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-11-20 12:40:55	--	[drbean] End of /WHO list.
+2013-11-20 13:07:59	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2013-11-20 13:07:59	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2013-11-20 13:07:59	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2013-11-20 13:08:01	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Found your hostname
+2013-11-20 13:08:01	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-11-20 13:08:01	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-11-20 13:08:01	--	This server was created Feb 15 2010 at 23:39:34
+2013-11-20 13:08:01	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-20 13:08:01	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-20 13:08:01	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-11-20 13:08:01	--	There are 5 users and 1281 invisible on 1 servers
+2013-11-20 13:08:01	--	15 :IRC Operators online
+2013-11-20 13:08:01	--	2 :unknown connection(s)
+2013-11-20 13:08:01	--	503 :channels formed
+2013-11-20 13:08:01	--	I have 1286 clients and 0 servers
+2013-11-20 13:08:01	--	Current local users: 1286  Max: 1876
+2013-11-20 13:08:01	--	Current global users: 1286  Max: 1876
+2013-11-20 13:08:01	--	- astral.shadowcat.co.uk Message of the Day -
+2013-11-20 13:08:01	--	-            _             _
+2013-11-20 13:08:01	--	-   __ _ ___| |_ _ __ __ _| |
+2013-11-20 13:08:01	--	-  / _` / __| __| '__/ _` | |
+2013-11-20 13:08:01	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-11-20 13:08:01	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-11-20 13:08:01	--	-      _               _                        _
+2013-11-20 13:08:01	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-11-20 13:08:01	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-11-20 13:08:01	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-11-20 13:08:01	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-11-20 13:08:01	--	-
+2013-11-20 13:08:01	--	- We scan all connecting clients for open proxies and other
+2013-11-20 13:08:01	--	- exploitable nasties. If you don't wish to be scanned,
+2013-11-20 13:08:01	--	- don't connect again, and sorry for scanning you this time.
+2013-11-20 13:08:01	--	-
+2013-11-20 13:08:01	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-11-20 13:08:01	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-11-20 13:08:01	--	- your client to /connect irc.perl.org, not directly.
+2013-11-20 13:08:01	--	End of /MOTD command.
+2013-11-20 13:08:01	--	User mode [+i] by drbean
+2013-11-20 13:08:01	--	[*] drbean (~drbean@59-125-83-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-11-20 13:08:01	--	[drbean] End of /WHO list.
+2013-11-20 13:18:02	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Looking up your hostname...
+2013-11-20 13:18:02	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Checking Ident
+2013-11-20 13:18:02	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** No Ident response
+2013-11-20 13:18:03	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Found your hostname
+2013-11-20 13:18:03	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-11-20 13:18:03	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-11-20 13:18:03	--	This server was created Nov 12 2007 at 19:25:00
+2013-11-20 13:18:03	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-20 13:18:03	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-20 13:18:03	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-11-20 13:18:03	--	There are 5 users and 1279 invisible on 1 servers
+2013-11-20 13:18:03	--	15 :IRC Operators online
+2013-11-20 13:18:03	--	503 :channels formed
+2013-11-20 13:18:03	--	I have 1284 clients and 0 servers
+2013-11-20 13:18:03	--	Current local users: 1284  Max: 1876
+2013-11-20 13:18:03	--	Current global users: 1284  Max: 1876
+2013-11-20 13:18:03	--	- electret.shadowcat.co.uk Message of the Day -
+2013-11-20 13:18:03	--	-       _           _            _
+2013-11-20 13:18:03	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2013-11-20 13:18:03	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2013-11-20 13:18:03	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2013-11-20 13:18:03	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2013-11-20 13:18:03	--	-      _               _                        _
+2013-11-20 13:18:03	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-11-20 13:18:03	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-11-20 13:18:04	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-11-20 13:18:04	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-11-20 13:18:04	--	-
+2013-11-20 13:18:04	--	- We scan all connecting clients for open proxies and other
+2013-11-20 13:18:04	--	- exploitable nasties. If you don't wish to be scanned,
+2013-11-20 13:18:04	--	- don't connect again, and sorry for scanning you this time.
+2013-11-20 13:18:04	--	-
+2013-11-20 13:18:04	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-11-20 13:18:04	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-11-20 13:18:04	--	- your client to /connect irc.perl.org, not directly.
+2013-11-20 13:18:04	--	End of /MOTD command.
+2013-11-20 13:18:04	--	User mode [+i] by drbean
+2013-11-20 13:18:04	--	[*] drbean (~drbean@59-125-82-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-11-20 13:18:04	--	[drbean] End of /WHO list.
+2013-11-26 12:21:16	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2013-11-26 12:21:16	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2013-11-26 12:21:16	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2013-11-26 12:21:18	--	magnet.llarian.net (magnet.llarian.net): *** Found your hostname
+2013-11-26 12:21:19	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-11-26 12:21:19	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-11-26 12:21:19	--	This server was created Oct 17 2013 at 12:43:02
+2013-11-26 12:21:19	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-26 12:21:19	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-26 12:21:19	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-11-26 12:21:19	--	There are 4 users and 1279 invisible on 1 servers
+2013-11-26 12:21:19	--	15 :IRC Operators online
+2013-11-26 12:21:19	--	477 :channels formed
+2013-11-26 12:21:19	--	I have 1283 clients and 0 servers
+2013-11-26 12:21:19	--	Current local users: 1283  Max: 1409
+2013-11-26 12:21:19	--	Current global users: 1283  Max: 1409
+2013-11-26 12:21:19	--	- magnet.llarian.net Message of the Day -
+2013-11-26 12:21:19	--	- Welcome to magnet.llarian.net
+2013-11-26 12:21:19	--	-
+2013-11-26 12:21:19	--	- You will be / have been scanned via an automated process to check for
+2013-11-26 12:21:19	--	- various disallowed and insecure services.
+2013-11-26 12:21:19	--	-
+2013-11-26 12:21:19	--	- -------
+2013-11-26 12:21:19	--	-
+2013-11-26 12:21:19	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-11-26 12:21:19	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-11-26 12:21:19	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-11-26 12:21:19	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-11-26 12:21:19	--	- yourself.
+2013-11-26 12:21:19	--	-
+2013-11-26 12:21:19	--	- -------
+2013-11-26 12:21:19	--	-
+2013-11-26 12:21:19	--	- Reasonable person principle applies.
+2013-11-26 12:21:19	--	- http://www.irc.perl.org/reasonable_person.html
+2013-11-26 12:21:19	--	-
+2013-11-26 12:21:19	--	- Please also read the FAQ, particularly the section about #perl:
+2013-11-26 12:21:19	--	- http://www.irc.perl.org/faq.html
+2013-11-26 12:21:19	--	-
+2013-11-26 12:21:19	--	- -----
+2013-11-26 12:21:19	--	-
+2013-11-26 12:21:19	--	- Do not publish the logs of any person or any channel on this server without
+2013-11-26 12:21:19	--	- their express consent. Failure to abide is a kline-able offense.
+2013-11-26 12:21:19	--	-
+2013-11-26 12:21:19	--	- IPv6 connections available at 2001:5d8:11::16
+2013-11-26 12:21:19	--	- SSL connections available on port 7062
+2013-11-26 12:21:19	--	End of /MOTD command.
+2013-11-26 12:21:19	--	User mode [+i] by drbean
+2013-11-26 12:21:19	--	[*] drbean (~drbean@59-125-82-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-11-26 12:21:19	--	[drbean] End of /WHO list.
+2013-11-26 12:30:38	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Looking up your hostname...
+2013-11-26 12:30:38	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Checking Ident
+2013-11-26 12:30:40	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Couldn't look up your hostname
+2013-11-26 12:30:49	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** No Ident response
+2013-11-26 12:30:49	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-11-26 12:30:49	--	Your host is spectral.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-11-26 12:30:49	--	This server was created Feb  8 2010 at 21:26:22
+2013-11-26 12:30:49	--	spectral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-26 12:30:49	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-26 12:30:49	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 :are supported by this server
+2013-11-26 12:30:49	--	There are 4 users and 1282 invisible on 1 servers
+2013-11-26 12:30:49	--	15 :IRC Operators online
+2013-11-26 12:30:49	--	476 :channels formed
+2013-11-26 12:30:49	--	I have 1286 clients and 0 servers
+2013-11-26 12:30:49	--	Current local users: 1286  Max: 1744
+2013-11-26 12:30:49	--	Current global users: 1286  Max: 1744
+2013-11-26 12:30:49	--	- spectral.shadowcat.co.uk Message of the Day -
+2013-11-26 12:30:49	--	-                      _             _
+2013-11-26 12:30:49	--	-  ___ _ __   ___  ___| |_ _ __ __ _| |
+2013-11-26 12:30:49	--	- / __| '_ \ / _ \/ __| __| '__/ _` | |
+2013-11-26 12:30:49	--	- \__ \ |_) |  __/ (__| |_| | | (_| | |  _
+2013-11-26 12:30:49	--	- |___/ .__/ \___|\___|\__|_|  \__,_|_| (_)
+2013-11-26 12:30:49	--	-     |_|
+2013-11-26 12:30:49	--	-      _               _                        _
+2013-11-26 12:30:49	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-11-26 12:30:49	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-11-26 12:30:49	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-11-26 12:30:49	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-11-26 12:30:49	--	-
+2013-11-26 12:30:49	--	- We scan all connecting clients for open proxies and other
+2013-11-26 12:30:49	--	- exploitable nasties. If you don't wish to be scanned,
+2013-11-26 12:30:49	--	- don't connect again, and sorry for scanning you this time.
+2013-11-26 12:30:49	--	-
+2013-11-26 12:30:49	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-11-26 12:30:49	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-11-26 12:30:49	--	- your client to /connect irc.perl.org, not directly.
+2013-11-26 12:30:49	--	End of /MOTD command.
+2013-11-26 12:30:49	--	User mode [+i] by drbean
+2013-11-26 12:30:50	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2013-11-26 12:30:50	--	[drbean] End of /WHO list.
+2013-11-26 15:05:08	=!=	irc: reading data on socket: error 39 (connection closed by peer)
+2013-11-26 15:05:08	--	irc: disconnecting from server...
+2013-11-26 15:05:08	--	irc: disconnected from server
+2013-11-26 15:05:08	--	irc: reconnecting to server in 10 seconds
+2013-11-26 15:05:18	--	irc: reconnecting to server...
+2013-11-26 15:05:18	--	irc: connecting to server 203.64.184.141/6666...
+2013-11-26 15:05:19	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-11-26 15:05:19	--	- Welcome to ZNC -
+2013-11-26 15:05:34	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2013-11-26 15:05:34	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2013-11-26 15:05:34	--	magnet.llarian.net (magnet.llarian.net): *** Found your hostname
+2013-11-26 15:05:35	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2013-11-26 15:05:35	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-11-26 15:05:35	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-11-26 15:05:35	--	This server was created Oct 17 2013 at 12:43:02
+2013-11-26 15:05:35	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-11-26 15:05:35	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-11-26 15:05:35	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-11-26 15:05:35	--	There are 4 users and 1273 invisible on 1 servers
+2013-11-26 15:05:35	--	15 :IRC Operators online
+2013-11-26 15:05:35	--	479 :channels formed
+2013-11-26 15:05:35	--	I have 1277 clients and 0 servers
+2013-11-26 15:05:35	--	Current local users: 1277  Max: 1409
+2013-11-26 15:05:35	--	Current global users: 1277  Max: 1409
+2013-11-26 15:05:35	--	- magnet.llarian.net Message of the Day -
+2013-11-26 15:05:35	--	- Welcome to magnet.llarian.net
+2013-11-26 15:05:35	--	-
+2013-11-26 15:05:35	--	- You will be / have been scanned via an automated process to check for
+2013-11-26 15:05:35	--	- various disallowed and insecure services.
+2013-11-26 15:05:35	--	-
+2013-11-26 15:05:35	--	- -------
+2013-11-26 15:05:35	--	-
+2013-11-26 15:05:35	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-11-26 15:05:35	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-11-26 15:05:35	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-11-26 15:05:35	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-11-26 15:05:35	--	- yourself.
+2013-11-26 15:05:35	--	-
+2013-11-26 15:05:35	--	- -------
+2013-11-26 15:05:35	--	-
+2013-11-26 15:05:35	--	- Reasonable person principle applies.
+2013-11-26 15:05:35	--	- http://www.irc.perl.org/reasonable_person.html
+2013-11-26 15:05:35	--	-
+2013-11-26 15:05:35	--	- Please also read the FAQ, particularly the section about #perl:
+2013-11-26 15:05:35	--	- http://www.irc.perl.org/faq.html
+2013-11-26 15:05:35	--	-
+2013-11-26 15:05:35	--	- -----
+2013-11-26 15:05:35	--	-
+2013-11-26 15:05:35	--	- Do not publish the logs of any person or any channel on this server without
+2013-11-26 15:05:35	--	- their express consent. Failure to abide is a kline-able offense.
+2013-11-26 15:05:35	--	-
+2013-11-26 15:05:35	--	- IPv6 connections available at 2001:5d8:11::16
+2013-11-26 15:05:35	--	- SSL connections available on port 7062
+2013-11-26 15:05:35	--	End of /MOTD command.
+2013-11-26 15:05:35	--	User mode [+i] by drbean
+2013-11-26 15:05:36	--	[*] drbean (~drbean@59-125-82-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-11-26 15:05:36	--	[drbean] End of /WHO list.
+2013-12-26 10:46:30	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2013-12-26 10:46:30	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2013-12-26 10:46:30	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2013-12-26 10:46:30	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Found your hostname
+2013-12-26 10:46:31	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2013-12-26 10:46:31	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2013-12-26 10:46:31	--	This server was created Feb 15 2010 at 23:39:34
+2013-12-26 10:46:31	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-12-26 10:46:31	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-12-26 10:46:31	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-12-26 10:46:31	--	There are 6 users and 1185 invisible on 1 servers
+2013-12-26 10:46:31	--	16 :IRC Operators online
+2013-12-26 10:46:31	--	2 :unknown connection(s)
+2013-12-26 10:46:31	--	445 :channels formed
+2013-12-26 10:46:31	--	I have 1191 clients and 0 servers
+2013-12-26 10:46:31	--	Current local users: 1191  Max: 1876
+2013-12-26 10:46:31	--	Current global users: 1191  Max: 1876
+2013-12-26 10:46:31	--	- astral.shadowcat.co.uk Message of the Day -
+2013-12-26 10:46:31	--	-            _             _
+2013-12-26 10:46:31	--	-   __ _ ___| |_ _ __ __ _| |
+2013-12-26 10:46:31	--	-  / _` / __| __| '__/ _` | |
+2013-12-26 10:46:31	--	- | (_| \__ \ |_| | | (_| | |  _
+2013-12-26 10:46:31	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2013-12-26 10:46:31	--	-      _               _                        _
+2013-12-26 10:46:31	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-12-26 10:46:31	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-12-26 10:46:31	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-12-26 10:46:31	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-12-26 10:46:31	--	-
+2013-12-26 10:46:31	--	- We scan all connecting clients for open proxies and other
+2013-12-26 10:46:31	--	- exploitable nasties. If you don't wish to be scanned,
+2013-12-26 10:46:31	--	- don't connect again, and sorry for scanning you this time.
+2013-12-26 10:46:31	--	-
+2013-12-26 10:46:31	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-12-26 10:46:31	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-12-26 10:46:31	--	- your client to /connect irc.perl.org, not directly.
+2013-12-26 10:46:31	--	End of /MOTD command.
+2013-12-26 10:46:31	--	User mode [+i] by drbean_
+2013-12-26 10:46:32	--	[*] drbean_ (~drbean@59-125-81-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-12-26 10:46:32	--	[drbean_] End of /WHO list.
+2013-12-26 10:57:56	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Looking up your hostname...
+2013-12-26 10:57:56	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Checking Ident
+2013-12-26 10:57:56	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Found your hostname
+2013-12-26 10:57:56	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** No Ident response
+2013-12-26 10:57:57	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-12-26 10:57:57	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-12-26 10:57:57	--	This server was created Nov 12 2007 at 19:25:00
+2013-12-26 10:57:57	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-12-26 10:57:57	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-12-26 10:57:57	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2013-12-26 10:57:57	--	There are 6 users and 1185 invisible on 1 servers
+2013-12-26 10:57:57	--	16 :IRC Operators online
+2013-12-26 10:57:57	--	445 :channels formed
+2013-12-26 10:57:57	--	I have 1191 clients and 0 servers
+2013-12-26 10:57:57	--	Current local users: 1191  Max: 1876
+2013-12-26 10:57:57	--	Current global users: 1191  Max: 1876
+2013-12-26 10:57:57	--	- electret.shadowcat.co.uk Message of the Day -
+2013-12-26 10:57:57	--	-       _           _            _
+2013-12-26 10:57:57	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2013-12-26 10:57:57	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2013-12-26 10:57:57	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2013-12-26 10:57:57	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2013-12-26 10:57:57	--	-      _               _                        _
+2013-12-26 10:57:57	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-12-26 10:57:57	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-12-26 10:57:57	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-12-26 10:57:57	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-12-26 10:57:57	--	-
+2013-12-26 10:57:57	--	- We scan all connecting clients for open proxies and other
+2013-12-26 10:57:57	--	- exploitable nasties. If you don't wish to be scanned,
+2013-12-26 10:57:57	--	- don't connect again, and sorry for scanning you this time.
+2013-12-26 10:57:57	--	-
+2013-12-26 10:57:57	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-12-26 10:57:57	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-12-26 10:57:57	--	- your client to /connect irc.perl.org, not directly.
+2013-12-26 10:57:57	--	End of /MOTD command.
+2013-12-26 10:57:57	--	User mode [+i] by drbean
+2013-12-26 10:57:57	--	[*] drbean (~drbean@59-125-82-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-12-26 10:57:57	--	[drbean] End of /WHO list.
+2013-12-26 11:01:26	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2013-12-26 11:01:26	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2013-12-26 11:01:26	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2013-12-26 11:01:26	--	magnet.llarian.net (magnet.llarian.net): *** Found your hostname
+2013-12-26 11:01:27	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-12-26 11:01:27	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-12-26 11:01:27	--	This server was created Oct 17 2013 at 12:43:02
+2013-12-26 11:01:27	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-12-26 11:01:27	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-12-26 11:01:27	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-12-26 11:01:27	--	There are 6 users and 1184 invisible on 1 servers
+2013-12-26 11:01:27	--	16 :IRC Operators online
+2013-12-26 11:01:27	--	446 :channels formed
+2013-12-26 11:01:27	--	I have 1190 clients and 0 servers
+2013-12-26 11:01:27	--	Current local users: 1190  Max: 1409
+2013-12-26 11:01:27	--	Current global users: 1190  Max: 1409
+2013-12-26 11:01:27	--	- magnet.llarian.net Message of the Day -
+2013-12-26 11:01:27	--	- Welcome to magnet.llarian.net
+2013-12-26 11:01:27	--	-
+2013-12-26 11:01:27	--	- You will be / have been scanned via an automated process to check for
+2013-12-26 11:01:27	--	- various disallowed and insecure services.
+2013-12-26 11:01:27	--	-
+2013-12-26 11:01:27	--	- -------
+2013-12-26 11:01:27	--	-
+2013-12-26 11:01:27	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-12-26 11:01:27	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-12-26 11:01:27	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-12-26 11:01:27	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-12-26 11:01:27	--	- yourself.
+2013-12-26 11:01:27	--	-
+2013-12-26 11:01:27	--	- -------
+2013-12-26 11:01:27	--	-
+2013-12-26 11:01:27	--	- Reasonable person principle applies.
+2013-12-26 11:01:27	--	- http://www.irc.perl.org/reasonable_person.html
+2013-12-26 11:01:27	--	-
+2013-12-26 11:01:27	--	- Please also read the FAQ, particularly the section about #perl:
+2013-12-26 11:01:27	--	- http://www.irc.perl.org/faq.html
+2013-12-26 11:01:27	--	-
+2013-12-26 11:01:27	--	- -----
+2013-12-26 11:01:27	--	-
+2013-12-26 11:01:27	--	- Do not publish the logs of any person or any channel on this server without
+2013-12-26 11:01:27	--	- their express consent. Failure to abide is a kline-able offense.
+2013-12-26 11:01:27	--	-
+2013-12-26 11:01:27	--	- IPv6 connections available at 2001:5d8:11::16
+2013-12-26 11:01:27	--	- SSL connections available on port 7062
+2013-12-26 11:01:27	--	End of /MOTD command.
+2013-12-26 11:01:27	--	User mode [+i] by drbean
+2013-12-26 11:01:28	--	[*] drbean (~drbean@59-125-83-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-12-26 11:01:28	--	[drbean] End of /WHO list.
+2013-12-26 21:27:41	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Looking up your hostname...
+2013-12-26 21:27:42	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Checking Ident
+2013-12-26 21:27:42	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** No Ident response
+2013-12-26 21:27:43	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Found your hostname
+2013-12-26 21:27:43	--	*: Register first.
+2013-12-26 21:27:45	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-12-26 21:27:45	--	Your host is spectral.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2013-12-26 21:27:45	--	This server was created Feb  8 2010 at 21:26:22
+2013-12-26 21:27:45	--	spectral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-12-26 21:27:45	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-12-26 21:27:45	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 :are supported by this server
+2013-12-26 21:27:45	--	There are 6 users and 1201 invisible on 1 servers
+2013-12-26 21:27:45	--	16 :IRC Operators online
+2013-12-26 21:27:45	--	1 :unknown connection(s)
+2013-12-26 21:27:45	--	448 :channels formed
+2013-12-26 21:27:45	--	I have 1207 clients and 0 servers
+2013-12-26 21:27:45	--	Current local users: 1207  Max: 1744
+2013-12-26 21:27:45	--	Current global users: 1207  Max: 1744
+2013-12-26 21:27:45	--	- spectral.shadowcat.co.uk Message of the Day -
+2013-12-26 21:27:45	--	-                      _             _
+2013-12-26 21:27:45	--	-  ___ _ __   ___  ___| |_ _ __ __ _| |
+2013-12-26 21:27:45	--	- / __| '_ \ / _ \/ __| __| '__/ _` | |
+2013-12-26 21:27:45	--	- \__ \ |_) |  __/ (__| |_| | | (_| | |  _
+2013-12-26 21:27:45	--	- |___/ .__/ \___|\___|\__|_|  \__,_|_| (_)
+2013-12-26 21:27:45	--	-     |_|
+2013-12-26 21:27:45	--	-      _               _                        _
+2013-12-26 21:27:45	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2013-12-26 21:27:45	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2013-12-26 21:27:45	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2013-12-26 21:27:45	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2013-12-26 21:27:45	--	-
+2013-12-26 21:27:45	--	- We scan all connecting clients for open proxies and other
+2013-12-26 21:27:45	--	- exploitable nasties. If you don't wish to be scanned,
+2013-12-26 21:27:45	--	- don't connect again, and sorry for scanning you this time.
+2013-12-26 21:27:45	--	-
+2013-12-26 21:27:45	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2013-12-26 21:27:45	--	- of the http://www.irc.perl.org/ network. Please configure
+2013-12-26 21:27:45	--	- your client to /connect irc.perl.org, not directly.
+2013-12-26 21:27:45	--	End of /MOTD command.
+2013-12-26 21:27:45	--	User mode [+i] by drbean
+2013-12-26 21:27:45	--	[*] drbean (~drbean@59-125-82-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2013-12-26 21:27:45	--	[drbean] End of /WHO list.
+2013-12-26 22:05:02	--	irc: connecting to server 203.64.184.141/6666...
+2013-12-26 22:05:02	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2013-12-26 22:05:02	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2013-12-26 22:05:02	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2013-12-26 22:05:02	--	This server was created Oct 17 2013 at 12:43:02
+2013-12-26 22:05:02	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2013-12-26 22:05:02	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2013-12-26 22:05:02	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2013-12-26 22:05:02	--	There are 6 users and 1200 invisible on 1 servers
+2013-12-26 22:05:02	--	16 :IRC Operators online
+2013-12-26 22:05:02	--	450 :channels formed
+2013-12-26 22:05:02	--	I have 1206 clients and 0 servers
+2013-12-26 22:05:02	--	Current local users: 1206  Max: 1409
+2013-12-26 22:05:02	--	Current global users: 1206  Max: 1409
+2013-12-26 22:05:02	--	- magnet.llarian.net Message of the Day -
+2013-12-26 22:05:02	--	- Welcome to magnet.llarian.net
+2013-12-26 22:05:02	--	-
+2013-12-26 22:05:02	--	- You will be / have been scanned via an automated process to check for
+2013-12-26 22:05:02	--	- various disallowed and insecure services.
+2013-12-26 22:05:02	--	-
+2013-12-26 22:05:02	--	- -------
+2013-12-26 22:05:02	--	-
+2013-12-26 22:05:02	--	- Usage of this server is a privilege, not a right. Your access can be
+2013-12-26 22:05:02	--	- revoked at any time for any reason. The reason doesn't have to make
+2013-12-26 22:05:02	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2013-12-26 22:05:02	--	- to make you feel happy and special. Play nice and keep the emo to
+2013-12-26 22:05:02	--	- yourself.
+2013-12-26 22:05:02	--	-
+2013-12-26 22:05:02	--	- -------
+2013-12-26 22:05:02	--	-
+2013-12-26 22:05:02	--	- Reasonable person principle applies.
+2013-12-26 22:05:02	--	- http://www.irc.perl.org/reasonable_person.html
+2013-12-26 22:05:02	--	-
+2013-12-26 22:05:02	--	- Please also read the FAQ, particularly the section about #perl:
+2013-12-26 22:05:02	--	- http://www.irc.perl.org/faq.html
+2013-12-26 22:05:02	--	-
+2013-12-26 22:05:02	--	- -----
+2013-12-26 22:05:02	--	-
+2013-12-26 22:05:02	--	- Do not publish the logs of any person or any channel on this server without
+2013-12-26 22:05:02	--	- their express consent. Failure to abide is a kline-able offense.
+2013-12-26 22:05:02	--	-
+2013-12-26 22:05:02	--	- IPv6 connections available at 2001:5d8:11::16
+2013-12-26 22:05:02	--	- SSL connections available on port 7062
+2013-12-26 22:05:02	--	End of /MOTD command.
+2013-12-26 22:05:02	--	User mode [+i] by drbean
+2014-01-02 04:47:03	--	User mode [-i] by drbean
+2014-01-02 04:51:09	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2014-01-02 04:51:09	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2014-01-02 04:51:12	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Couldn't look up your hostname
+2014-01-02 04:51:20	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2014-01-02 04:51:20	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-01-02 04:51:20	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2014-01-02 04:51:20	--	This server was created Feb 15 2010 at 23:39:34
+2014-01-02 04:51:20	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-01-02 04:51:20	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-01-02 04:51:20	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2014-01-02 04:51:20	--	There are 5 users and 1205 invisible on 1 servers
+2014-01-02 04:51:20	--	16 :IRC Operators online
+2014-01-02 04:51:20	--	2 :unknown connection(s)
+2014-01-02 04:51:20	--	451 :channels formed
+2014-01-02 04:51:20	--	I have 1210 clients and 0 servers
+2014-01-02 04:51:20	--	Current local users: 1210  Max: 1876
+2014-01-02 04:51:20	--	Current global users: 1210  Max: 1876
+2014-01-02 04:51:20	--	- astral.shadowcat.co.uk Message of the Day -
+2014-01-02 04:51:20	--	-            _             _
+2014-01-02 04:51:20	--	-   __ _ ___| |_ _ __ __ _| |
+2014-01-02 04:51:20	--	-  / _` / __| __| '__/ _` | |
+2014-01-02 04:51:20	--	- | (_| \__ \ |_| | | (_| | |  _
+2014-01-02 04:51:20	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2014-01-02 04:51:20	--	-      _               _                        _
+2014-01-02 04:51:20	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-01-02 04:51:20	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-01-02 04:51:20	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-01-02 04:51:20	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-01-02 04:51:20	--	-
+2014-01-02 04:51:20	--	- We scan all connecting clients for open proxies and other
+2014-01-02 04:51:20	--	- exploitable nasties. If you don't wish to be scanned,
+2014-01-02 04:51:20	--	- don't connect again, and sorry for scanning you this time.
+2014-01-02 04:51:20	--	-
+2014-01-02 04:51:20	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-01-02 04:51:20	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-01-02 04:51:20	--	- your client to /connect irc.perl.org, not directly.
+2014-01-02 04:51:20	--	End of /MOTD command.
+2014-01-02 04:51:20	--	User mode [+i] by drbean
+2014-01-02 04:51:21	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2014-01-02 04:51:21	--	[drbean] End of /WHO list.
+2014-01-15 18:36:41	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Looking up your hostname...
+2014-01-15 18:36:41	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Checking Ident
+2014-01-15 18:36:41	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** No Ident response
+2014-01-15 18:36:42	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Found your hostname
+2014-01-15 18:36:43	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-01-15 18:36:43	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2014-01-15 18:36:43	--	This server was created Nov 12 2007 at 19:25:00
+2014-01-15 18:36:43	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-01-15 18:36:43	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-01-15 18:36:43	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2014-01-15 18:36:43	--	There are 6 users and 1321 invisible on 1 servers
+2014-01-15 18:36:43	--	18 :IRC Operators online
+2014-01-15 18:36:43	--	506 :channels formed
+2014-01-15 18:36:43	--	I have 1327 clients and 0 servers
+2014-01-15 18:36:43	--	Current local users: 1327  Max: 1876
+2014-01-15 18:36:43	--	Current global users: 1327  Max: 1876
+2014-01-15 18:36:43	--	- electret.shadowcat.co.uk Message of the Day -
+2014-01-15 18:36:43	--	-       _           _            _
+2014-01-15 18:36:43	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2014-01-15 18:36:43	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2014-01-15 18:36:43	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2014-01-15 18:36:43	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2014-01-15 18:36:43	--	-      _               _                        _
+2014-01-15 18:36:43	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-01-15 18:36:43	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-01-15 18:36:43	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-01-15 18:36:43	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-01-15 18:36:43	--	-
+2014-01-15 18:36:43	--	- We scan all connecting clients for open proxies and other
+2014-01-15 18:36:43	--	- exploitable nasties. If you don't wish to be scanned,
+2014-01-15 18:36:43	--	- don't connect again, and sorry for scanning you this time.
+2014-01-15 18:36:43	--	-
+2014-01-15 18:36:43	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-01-15 18:36:43	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-01-15 18:36:43	--	- your client to /connect irc.perl.org, not directly.
+2014-01-15 18:36:43	--	End of /MOTD command.
+2014-01-15 18:36:43	--	User mode [+i] by drbean
+2014-01-15 18:36:43	--	[*] drbean (~drbean@59-125-82-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2014-01-15 18:36:43	--	[drbean] End of /WHO list.
+2014-01-17 15:21:22	--	irc: disconnected from server
+2014-01-17 15:21:30	--	irc: connecting to server 203.64.184.141/6666...
+2014-01-17 15:21:30	--	irc: connected to 203.64.184.141/6666 (203.64.184.141)
+2014-01-17 15:21:30	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-01-17 15:21:30	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2014-01-17 15:21:30	--	This server was created Nov 12 2007 at 19:25:00
+2014-01-17 15:21:30	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-01-17 15:21:30	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-01-17 15:21:30	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2014-01-17 15:21:30	--	There are 6 users and 1321 invisible on 1 servers
+2014-01-17 15:21:30	--	18 :IRC Operators online
+2014-01-17 15:21:30	--	506 :channels formed
+2014-01-17 15:21:30	--	I have 1327 clients and 0 servers
+2014-01-17 15:21:30	--	Current local users: 1327  Max: 1876
+2014-01-17 15:21:30	--	Current global users: 1327  Max: 1876
+2014-01-17 15:21:30	--	- electret.shadowcat.co.uk Message of the Day -
+2014-01-17 15:21:30	--	-       _           _            _
+2014-01-17 15:21:30	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2014-01-17 15:21:30	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2014-01-17 15:21:30	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2014-01-17 15:21:30	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2014-01-17 15:21:30	--	-      _               _                        _
+2014-01-17 15:21:30	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-01-17 15:21:30	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-01-17 15:21:30	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-01-17 15:21:30	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-01-17 15:21:30	--	-
+2014-01-17 15:21:30	--	- We scan all connecting clients for open proxies and other
+2014-01-17 15:21:30	--	- exploitable nasties. If you don't wish to be scanned,
+2014-01-17 15:21:30	--	- don't connect again, and sorry for scanning you this time.
+2014-01-17 15:21:30	--	-
+2014-01-17 15:21:30	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-01-17 15:21:30	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-01-17 15:21:30	--	- your client to /connect irc.perl.org, not directly.
+2014-01-17 15:21:30	--	End of /MOTD command.
+2014-01-17 15:21:30	--	User mode [+i] by drbean
+2014-01-19 11:19:38	--	MSG(*adminlog): help
+2014-01-19 14:12:31	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2014-01-19 14:12:31	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2014-01-19 14:12:32	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2014-01-19 14:12:32	--	magnet.llarian.net (magnet.llarian.net): *** Found your hostname
+2014-01-19 14:12:32	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-01-19 14:12:32	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2014-01-19 14:12:32	--	This server was created Oct 17 2013 at 12:43:02
+2014-01-19 14:12:32	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-01-19 14:12:32	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-01-19 14:12:32	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2014-01-19 14:12:32	--	There are 6 users and 1216 invisible on 1 servers
+2014-01-19 14:12:32	--	18 :IRC Operators online
+2014-01-19 14:12:32	--	452 :channels formed
+2014-01-19 14:12:32	--	I have 1222 clients and 0 servers
+2014-01-19 14:12:32	--	Current local users: 1222  Max: 1409
+2014-01-19 14:12:32	--	Current global users: 1222  Max: 1409
+2014-01-19 14:12:32	--	- magnet.llarian.net Message of the Day -
+2014-01-19 14:12:32	--	- Welcome to magnet.llarian.net
+2014-01-19 14:12:32	--	-
+2014-01-19 14:12:32	--	- You will be / have been scanned via an automated process to check for
+2014-01-19 14:12:32	--	- various disallowed and insecure services.
+2014-01-19 14:12:32	--	-
+2014-01-19 14:12:32	--	- -------
+2014-01-19 14:12:32	--	-
+2014-01-19 14:12:32	--	- Usage of this server is a privilege, not a right. Your access can be
+2014-01-19 14:12:32	--	- revoked at any time for any reason. The reason doesn't have to make
+2014-01-19 14:12:32	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2014-01-19 14:12:32	--	- to make you feel happy and special. Play nice and keep the emo to
+2014-01-19 14:12:32	--	- yourself.
+2014-01-19 14:12:32	--	-
+2014-01-19 14:12:32	--	- -------
+2014-01-19 14:12:32	--	-
+2014-01-19 14:12:32	--	- Reasonable person principle applies.
+2014-01-19 14:12:32	--	- http://www.irc.perl.org/reasonable_person.html
+2014-01-19 14:12:32	--	-
+2014-01-19 14:12:32	--	- Please also read the FAQ, particularly the section about #perl:
+2014-01-19 14:12:32	--	- http://www.irc.perl.org/faq.html
+2014-01-19 14:12:32	--	-
+2014-01-19 14:12:32	--	- -----
+2014-01-19 14:12:32	--	-
+2014-01-19 14:12:32	--	- Do not publish the logs of any person or any channel on this server without
+2014-01-19 14:12:32	--	- their express consent. Failure to abide is a kline-able offense.
+2014-01-19 14:12:32	--	-
+2014-01-19 14:12:32	--	- IPv6 connections available at 2001:5d8:11::16
+2014-01-19 14:12:32	--	- SSL connections available on port 7062
+2014-01-19 14:12:32	--	End of /MOTD command.
+2014-01-19 14:12:32	--	User mode [+i] by drbean
+2014-01-19 14:12:33	--	[*] drbean (~drbean@59-125-82-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2014-01-19 14:12:33	--	[drbean] End of /WHO list.
+2014-01-19 16:10:03	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Looking up your hostname...
+2014-01-19 16:10:03	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Checking Ident
+2014-01-19 16:10:05	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Couldn't look up your hostname
+2014-01-19 16:10:14	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** No Ident response
+2014-01-19 16:10:15	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2014-01-19 16:10:15	--	Your host is spectral.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2014-01-19 16:10:15	--	This server was created Feb  8 2010 at 21:26:22
+2014-01-19 16:10:15	--	spectral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-01-19 16:10:15	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-01-19 16:10:15	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 :are supported by this server
+2014-01-19 16:10:15	--	There are 6 users and 1234 invisible on 1 servers
+2014-01-19 16:10:15	--	18 :IRC Operators online
+2014-01-19 16:10:15	--	450 :channels formed
+2014-01-19 16:10:15	--	I have 1240 clients and 0 servers
+2014-01-19 16:10:15	--	Current local users: 1240  Max: 1744
+2014-01-19 16:10:15	--	Current global users: 1240  Max: 1744
+2014-01-19 16:10:15	--	- spectral.shadowcat.co.uk Message of the Day -
+2014-01-19 16:10:15	--	-                      _             _
+2014-01-19 16:10:15	--	-  ___ _ __   ___  ___| |_ _ __ __ _| |
+2014-01-19 16:10:15	--	- / __| '_ \ / _ \/ __| __| '__/ _` | |
+2014-01-19 16:10:15	--	- \__ \ |_) |  __/ (__| |_| | | (_| | |  _
+2014-01-19 16:10:15	--	- |___/ .__/ \___|\___|\__|_|  \__,_|_| (_)
+2014-01-19 16:10:15	--	-     |_|
+2014-01-19 16:10:15	--	-      _               _                        _
+2014-01-19 16:10:15	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-01-19 16:10:15	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-01-19 16:10:15	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-01-19 16:10:15	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-01-19 16:10:15	--	-
+2014-01-19 16:10:15	--	- We scan all connecting clients for open proxies and other
+2014-01-19 16:10:15	--	- exploitable nasties. If you don't wish to be scanned,
+2014-01-19 16:10:15	--	- don't connect again, and sorry for scanning you this time.
+2014-01-19 16:10:15	--	-
+2014-01-19 16:10:15	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-01-19 16:10:15	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-01-19 16:10:15	--	- your client to /connect irc.perl.org, not directly.
+2014-01-19 16:10:15	--	End of /MOTD command.
+2014-01-19 16:10:15	--	User mode [+i] by drbean_
+2014-01-19 16:10:15	--	[*] drbean_ (~drbean@113.196.171.151) H 0 (Dr Bean)
+2014-01-19 16:10:15	--	[drbean_] End of /WHO list.
+2014-01-19 20:45:59	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Looking up your hostname...
+2014-01-19 20:45:59	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Checking Ident
+2014-01-19 20:45:59	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** No Ident response
+2014-01-19 20:46:01	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Couldn't look up your hostname
+2014-01-19 20:46:02	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-01-19 20:46:02	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2014-01-19 20:46:02	--	This server was created Nov 12 2007 at 19:25:00
+2014-01-19 20:46:02	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-01-19 20:46:02	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-01-19 20:46:02	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2014-01-19 20:46:02	--	There are 6 users and 1244 invisible on 1 servers
+2014-01-19 20:46:02	--	18 :IRC Operators online
+2014-01-19 20:46:02	--	452 :channels formed
+2014-01-19 20:46:02	--	I have 1250 clients and 0 servers
+2014-01-19 20:46:02	--	Current local users: 1250  Max: 1876
+2014-01-19 20:46:02	--	Current global users: 1250  Max: 1876
+2014-01-19 20:46:02	--	- electret.shadowcat.co.uk Message of the Day -
+2014-01-19 20:46:02	--	-       _           _            _
+2014-01-19 20:46:02	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2014-01-19 20:46:02	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2014-01-19 20:46:02	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2014-01-19 20:46:02	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2014-01-19 20:46:02	--	-      _               _                        _
+2014-01-19 20:46:02	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-01-19 20:46:02	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-01-19 20:46:02	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-01-19 20:46:02	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-01-19 20:46:02	--	-
+2014-01-19 20:46:02	--	- We scan all connecting clients for open proxies and other
+2014-01-19 20:46:02	--	- exploitable nasties. If you don't wish to be scanned,
+2014-01-19 20:46:02	--	- don't connect again, and sorry for scanning you this time.
+2014-01-19 20:46:02	--	-
+2014-01-19 20:46:02	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-01-19 20:46:02	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-01-19 20:46:02	--	- your client to /connect irc.perl.org, not directly.
+2014-01-19 20:46:02	--	End of /MOTD command.
+2014-01-19 20:46:02	--	User mode [+i] by drbean
+2014-01-19 20:46:02	--	[*] drbean (~drbean@59.125.81.253) H 0 (Dr Bean)
+2014-01-19 20:46:02	--	[drbean] End of /WHO list.
+2014-01-19 20:55:06	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2014-01-19 20:55:06	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2014-01-19 20:55:06	--	magnet.llarian.net (magnet.llarian.net): *** Found your hostname
+2014-01-19 20:55:06	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2014-01-19 20:55:08	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2014-01-19 20:55:08	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2014-01-19 20:55:08	--	This server was created Oct 17 2013 at 12:43:02
+2014-01-19 20:55:08	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-01-19 20:55:08	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-01-19 20:55:08	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2014-01-19 20:55:08	--	There are 6 users and 1243 invisible on 1 servers
+2014-01-19 20:55:08	--	18 :IRC Operators online
+2014-01-19 20:55:08	--	453 :channels formed
+2014-01-19 20:55:08	--	I have 1249 clients and 0 servers
+2014-01-19 20:55:08	--	Current local users: 1249  Max: 1409
+2014-01-19 20:55:08	--	Current global users: 1249  Max: 1409
+2014-01-19 20:55:08	--	- magnet.llarian.net Message of the Day -
+2014-01-19 20:55:08	--	- Welcome to magnet.llarian.net
+2014-01-19 20:55:08	--	-
+2014-01-19 20:55:08	--	- You will be / have been scanned via an automated process to check for
+2014-01-19 20:55:08	--	- various disallowed and insecure services.
+2014-01-19 20:55:08	--	-
+2014-01-19 20:55:08	--	- -------
+2014-01-19 20:55:08	--	-
+2014-01-19 20:55:08	--	- Usage of this server is a privilege, not a right. Your access can be
+2014-01-19 20:55:08	--	- revoked at any time for any reason. The reason doesn't have to make
+2014-01-19 20:55:08	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2014-01-19 20:55:08	--	- to make you feel happy and special. Play nice and keep the emo to
+2014-01-19 20:55:08	--	- yourself.
+2014-01-19 20:55:08	--	-
+2014-01-19 20:55:08	--	- -------
+2014-01-19 20:55:08	--	-
+2014-01-19 20:55:08	--	- Reasonable person principle applies.
+2014-01-19 20:55:08	--	- http://www.irc.perl.org/reasonable_person.html
+2014-01-19 20:55:08	--	-
+2014-01-19 20:55:08	--	- Please also read the FAQ, particularly the section about #perl:
+2014-01-19 20:55:08	--	- http://www.irc.perl.org/faq.html
+2014-01-19 20:55:08	--	-
+2014-01-19 20:55:08	--	- -----
+2014-01-19 20:55:08	--	-
+2014-01-19 20:55:08	--	- Do not publish the logs of any person or any channel on this server without
+2014-01-19 20:55:08	--	- their express consent. Failure to abide is a kline-able offense.
+2014-01-19 20:55:08	--	-
+2014-01-19 20:55:08	--	- IPv6 connections available at 2001:5d8:11::16
+2014-01-19 20:55:08	--	- SSL connections available on port 7062
+2014-01-19 20:55:08	--	End of /MOTD command.
+2014-01-19 20:55:08	--	User mode [+i] by drbean_
+2014-01-19 20:55:09	--	[*] drbean_ (~drbean@59-125-82-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2014-01-19 20:55:09	--	[drbean_] End of /WHO list.
+2014-01-19 21:29:43	--	irc: disconnected from server
+2014-02-10 09:16:34	--	irc: サーバ 203.64.184.141/6666 に接続中...
+2014-02-10 09:16:34	=!=	irc: 接続拒否
+2014-02-10 09:16:34	--	irc: 10 秒 後にサーバに再接続します
+2014-02-10 09:16:44	--	irc: サーバに再接続中...
+2014-02-10 09:16:44	--	irc: サーバ 203.64.184.141/6666 に接続中...
+2014-02-10 09:16:44	=!=	irc: 接続拒否
+2014-02-10 09:16:44	--	irc: 20 秒 後にサーバに再接続します
+2014-02-10 09:17:04	--	irc: サーバに再接続中...
+2014-02-10 09:17:04	--	irc: サーバ 203.64.184.141/6667 に接続中...
+2014-02-10 09:17:04	--	irc: 203.64.184.141/6667 (203.64.184.141) に接続完了
+2014-02-10 09:17:04	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2014-02-10 09:17:04	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2014-02-10 09:17:04	--	This server was created Feb 15 2010 at 23:39:34
+2014-02-10 09:17:04	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-02-10 09:17:04	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-02-10 09:17:04	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2014-02-10 09:17:04	--	There are 5 users and 1253 invisible on 1 servers
+2014-02-10 09:17:04	--	14 :IRC Operators online
+2014-02-10 09:17:04	--	505 :channels formed
+2014-02-10 09:17:04	--	I have 1258 clients and 0 servers
+2014-02-10 09:17:04	--	Current local users: 1258  Max: 1876
+2014-02-10 09:17:04	--	Current global users: 1258  Max: 1876
+2014-02-10 09:17:04	--	- astral.shadowcat.co.uk Message of the Day -
+2014-02-10 09:17:04	--	-            _             _
+2014-02-10 09:17:04	--	-   __ _ ___| |_ _ __ __ _| |
+2014-02-10 09:17:04	--	-  / _` / __| __| '__/ _` | |
+2014-02-10 09:17:04	--	- | (_| \__ \ |_| | | (_| | |  _
+2014-02-10 09:17:04	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2014-02-10 09:17:04	--	-      _               _                        _
+2014-02-10 09:17:04	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-02-10 09:17:04	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-02-10 09:17:04	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-02-10 09:17:04	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-02-10 09:17:04	--	-
+2014-02-10 09:17:04	--	- We scan all connecting clients for open proxies and other
+2014-02-10 09:17:04	--	- exploitable nasties. If you don't wish to be scanned,
+2014-02-10 09:17:04	--	- don't connect again, and sorry for scanning you this time.
+2014-02-10 09:17:04	--	-
+2014-02-10 09:17:04	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-02-10 09:17:04	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-02-10 09:17:04	--	- your client to /connect irc.perl.org, not directly.
+2014-02-10 09:17:04	--	End of /MOTD command.
+2014-02-10 09:17:04	--	drbean_ がユーザモードを変更 [+i]
+2014-02-10 14:27:09	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2014-02-10 14:27:09	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2014-02-10 14:27:11	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Couldn't look up your hostname
+2014-02-10 14:27:20	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2014-02-10 14:27:21	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-02-10 14:27:21	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2014-02-10 14:27:21	--	This server was created Feb 15 2010 at 23:39:34
+2014-02-10 14:27:21	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-02-10 14:27:21	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-02-10 14:27:21	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2014-02-10 14:27:21	--	There are 5 users and 1246 invisible on 1 servers
+2014-02-10 14:27:21	--	14 :IRC Operators online
+2014-02-10 14:27:21	--	2 :unknown connection(s)
+2014-02-10 14:27:21	--	501 :channels formed
+2014-02-10 14:27:21	--	I have 1251 clients and 0 servers
+2014-02-10 14:27:21	--	Current local users: 1251  Max: 1876
+2014-02-10 14:27:21	--	Current global users: 1251  Max: 1876
+2014-02-10 14:27:21	--	- astral.shadowcat.co.uk Message of the Day -
+2014-02-10 14:27:21	--	-            _             _
+2014-02-10 14:27:21	--	-   __ _ ___| |_ _ __ __ _| |
+2014-02-10 14:27:21	--	-  / _` / __| __| '__/ _` | |
+2014-02-10 14:27:21	--	- | (_| \__ \ |_| | | (_| | |  _
+2014-02-10 14:27:21	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2014-02-10 14:27:21	--	-      _               _                        _
+2014-02-10 14:27:21	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-02-10 14:27:21	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-02-10 14:27:21	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-02-10 14:27:21	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-02-10 14:27:21	--	-
+2014-02-10 14:27:21	--	- We scan all connecting clients for open proxies and other
+2014-02-10 14:27:21	--	- exploitable nasties. If you don't wish to be scanned,
+2014-02-10 14:27:21	--	- don't connect again, and sorry for scanning you this time.
+2014-02-10 14:27:21	--	-
+2014-02-10 14:27:21	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-02-10 14:27:21	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-02-10 14:27:21	--	- your client to /connect irc.perl.org, not directly.
+2014-02-10 14:27:21	--	End of /MOTD command.
+2014-02-10 14:27:21	--	drbean がユーザモードを変更 [+i]
+2014-02-10 14:27:21	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2014-02-10 14:27:21	--	[drbean] End of /WHO list.
+2014-02-10 16:38:31	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Looking up your hostname...
+2014-02-10 16:38:31	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Checking Ident
+2014-02-10 16:38:32	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Couldn't look up your hostname
+2014-02-10 16:38:42	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** No Ident response
+2014-02-10 16:38:42	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-02-10 16:38:42	--	Your host is spectral.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2014-02-10 16:38:42	--	This server was created Feb  8 2010 at 21:26:22
+2014-02-10 16:38:42	--	spectral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-02-10 16:38:42	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-02-10 16:38:42	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 :are supported by this server
+2014-02-10 16:38:42	--	There are 5 users and 1289 invisible on 1 servers
+2014-02-10 16:38:42	--	14 :IRC Operators online
+2014-02-10 16:38:42	--	502 :channels formed
+2014-02-10 16:38:42	--	I have 1294 clients and 0 servers
+2014-02-10 16:38:42	--	Current local users: 1294  Max: 1744
+2014-02-10 16:38:42	--	Current global users: 1294  Max: 1744
+2014-02-10 16:38:42	--	- spectral.shadowcat.co.uk Message of the Day -
+2014-02-10 16:38:42	--	-                      _             _
+2014-02-10 16:38:42	--	-  ___ _ __   ___  ___| |_ _ __ __ _| |
+2014-02-10 16:38:42	--	- / __| '_ \ / _ \/ __| __| '__/ _` | |
+2014-02-10 16:38:42	--	- \__ \ |_) |  __/ (__| |_| | | (_| | |  _
+2014-02-10 16:38:42	--	- |___/ .__/ \___|\___|\__|_|  \__,_|_| (_)
+2014-02-10 16:38:42	--	-     |_|
+2014-02-10 16:38:42	--	-      _               _                        _
+2014-02-10 16:38:42	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-02-10 16:38:42	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-02-10 16:38:42	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-02-10 16:38:42	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-02-10 16:38:42	--	-
+2014-02-10 16:38:42	--	- We scan all connecting clients for open proxies and other
+2014-02-10 16:38:42	--	- exploitable nasties. If you don't wish to be scanned,
+2014-02-10 16:38:42	--	- don't connect again, and sorry for scanning you this time.
+2014-02-10 16:38:42	--	-
+2014-02-10 16:38:42	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-02-10 16:38:42	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-02-10 16:38:42	--	- your client to /connect irc.perl.org, not directly.
+2014-02-10 16:38:42	--	End of /MOTD command.
+2014-02-10 16:38:42	--	drbean がユーザモードを変更 [+i]
+2014-02-10 16:38:43	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2014-02-10 16:38:43	--	[drbean] End of /WHO list.
+2014-02-10 19:56:42	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2014-02-10 19:56:42	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2014-02-10 19:56:45	--	magnet.llarian.net (magnet.llarian.net): *** Found your hostname
+2014-02-10 19:56:53	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2014-02-10 19:56:53	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2014-02-10 19:56:53	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2014-02-10 19:56:53	--	This server was created Oct 17 2013 at 12:43:02
+2014-02-10 19:56:53	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-02-10 19:56:53	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-02-10 19:56:53	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2014-02-10 19:56:53	--	There are 5 users and 1327 invisible on 1 servers
+2014-02-10 19:56:53	--	14 :IRC Operators online
+2014-02-10 19:56:53	--	1 :unknown connection(s)
+2014-02-10 19:56:53	--	505 :channels formed
+2014-02-10 19:56:53	--	I have 1332 clients and 0 servers
+2014-02-10 19:56:53	--	Current local users: 1332  Max: 1409
+2014-02-10 19:56:53	--	Current global users: 1332  Max: 1409
+2014-02-10 19:56:53	--	- magnet.llarian.net Message of the Day -
+2014-02-10 19:56:53	--	- Welcome to magnet.llarian.net
+2014-02-10 19:56:53	--	-
+2014-02-10 19:56:53	--	- You will be / have been scanned via an automated process to check for
+2014-02-10 19:56:53	--	- various disallowed and insecure services.
+2014-02-10 19:56:53	--	-
+2014-02-10 19:56:53	--	- -------
+2014-02-10 19:56:53	--	-
+2014-02-10 19:56:53	--	- Usage of this server is a privilege, not a right. Your access can be
+2014-02-10 19:56:53	--	- revoked at any time for any reason. The reason doesn't have to make
+2014-02-10 19:56:53	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2014-02-10 19:56:53	--	- to make you feel happy and special. Play nice and keep the emo to
+2014-02-10 19:56:53	--	- yourself.
+2014-02-10 19:56:53	--	-
+2014-02-10 19:56:53	--	- -------
+2014-02-10 19:56:53	--	-
+2014-02-10 19:56:53	--	- Reasonable person principle applies.
+2014-02-10 19:56:53	--	- http://www.irc.perl.org/reasonable_person.html
+2014-02-10 19:56:53	--	-
+2014-02-10 19:56:53	--	- Please also read the FAQ, particularly the section about #perl:
+2014-02-10 19:56:53	--	- http://www.irc.perl.org/faq.html
+2014-02-10 19:56:53	--	-
+2014-02-10 19:56:53	--	- -----
+2014-02-10 19:56:53	--	-
+2014-02-10 19:56:53	--	- Do not publish the logs of any person or any channel on this server without
+2014-02-10 19:56:53	--	- their express consent. Failure to abide is a kline-able offense.
+2014-02-10 19:56:53	--	-
+2014-02-10 19:56:53	--	- IPv6 connections available at 2001:5d8:11::16
+2014-02-10 19:56:53	--	- SSL connections available on port 7062
+2014-02-10 19:56:53	--	End of /MOTD command.
+2014-02-10 19:56:53	--	drbean_ がユーザモードを変更 [+i]
+2014-02-10 19:56:53	--	[*] drbean_ (~drbean@sac.nuu.edu.tw) H 0 (Dr Bean)
+2014-02-10 19:56:53	--	[drbean_] End of /WHO list.
+2014-02-19 10:47:18	--	irc: connecting to server 203.64.184.141/6666...
+2014-02-19 10:47:18	=!=	irc: connection refused
+2014-02-19 10:47:18	--	irc: reconnecting to server in 10 seconds
+2014-02-19 10:47:28	--	irc: reconnecting to server...
+2014-02-19 10:47:28	--	irc: connecting to server 203.64.184.141/6666...
+2014-02-19 10:47:28	=!=	irc: connection refused
+2014-02-19 10:47:28	--	irc: reconnecting to server in 20 seconds
+2014-02-19 10:47:48	--	irc: reconnecting to server...
+2014-02-19 10:47:48	--	irc: connecting to server 203.64.184.141/6666...
+2014-02-19 10:47:48	=!=	irc: connection refused
+2014-02-19 10:47:48	--	irc: reconnecting to server in 40 seconds
+2014-02-19 10:48:22		irc: auto-reconnection is cancelled
+2014-02-19 10:48:22	--	irc: disconnected from server
+2014-02-19 10:52:14	=!=	irc: sending data to server: error 9 Bad file descriptor
+2014-02-19 10:53:33	--	irc: connecting to server 203.64.184.141/6667...
+2014-02-19 10:53:33	--	irc: connected to 203.64.184.141/6667 (203.64.184.141)
+2014-02-19 10:53:33	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-02-19 10:53:33	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2014-02-19 10:53:33	--	This server was created Oct 17 2013 at 12:43:02
+2014-02-19 10:53:33	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-02-19 10:53:33	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-02-19 10:53:33	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2014-02-19 10:53:33	--	There are 5 users and 1259 invisible on 1 servers
+2014-02-19 10:53:33	--	16 :IRC Operators online
+2014-02-19 10:53:33	--	487 :channels formed
+2014-02-19 10:53:33	--	I have 1264 clients and 0 servers
+2014-02-19 10:53:33	--	Current local users: 1264  Max: 1409
+2014-02-19 10:53:33	--	Current global users: 1264  Max: 1409
+2014-02-19 10:53:33	--	- magnet.llarian.net Message of the Day -
+2014-02-19 10:53:33	--	- Welcome to magnet.llarian.net
+2014-02-19 10:53:33	--	-
+2014-02-19 10:53:33	--	- You will be / have been scanned via an automated process to check for
+2014-02-19 10:53:33	--	- various disallowed and insecure services.
+2014-02-19 10:53:33	--	-
+2014-02-19 10:53:33	--	- -------
+2014-02-19 10:53:33	--	-
+2014-02-19 10:53:33	--	- Usage of this server is a privilege, not a right. Your access can be
+2014-02-19 10:53:33	--	- revoked at any time for any reason. The reason doesn't have to make
+2014-02-19 10:53:33	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2014-02-19 10:53:33	--	- to make you feel happy and special. Play nice and keep the emo to
+2014-02-19 10:53:33	--	- yourself.
+2014-02-19 10:53:33	--	-
+2014-02-19 10:53:33	--	- -------
+2014-02-19 10:53:33	--	-
+2014-02-19 10:53:33	--	- Reasonable person principle applies.
+2014-02-19 10:53:33	--	- http://www.irc.perl.org/reasonable_person.html
+2014-02-19 10:53:33	--	-
+2014-02-19 10:53:33	--	- Please also read the FAQ, particularly the section about #perl:
+2014-02-19 10:53:33	--	- http://www.irc.perl.org/faq.html
+2014-02-19 10:53:33	--	-
+2014-02-19 10:53:33	--	- -----
+2014-02-19 10:53:33	--	-
+2014-02-19 10:53:33	--	- Do not publish the logs of any person or any channel on this server without
+2014-02-19 10:53:33	--	- their express consent. Failure to abide is a kline-able offense.
+2014-02-19 10:53:33	--	-
+2014-02-19 10:53:33	--	- IPv6 connections available at 2001:5d8:11::16
+2014-02-19 10:53:33	--	- SSL connections available on port 7062
+2014-02-19 10:53:33	--	End of /MOTD command.
+2014-02-19 10:53:33	--	User mode [+i] by drbean
+2014-02-19 10:54:34	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Looking up your hostname...
+2014-02-19 10:54:34	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Checking Ident
+2014-02-19 10:54:34	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** Found your hostname
+2014-02-19 10:54:44	--	spectral.shadowcat.co.uk (spectral.shadowcat.co.uk): *** No Ident response
+2014-02-19 10:54:45	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2014-02-19 10:54:45	--	Your host is spectral.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2014-02-19 10:54:45	--	This server was created Feb  8 2010 at 21:26:22
+2014-02-19 10:54:45	--	spectral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-02-19 10:54:45	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-02-19 10:54:45	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 :are supported by this server
+2014-02-19 10:54:45	--	There are 5 users and 1260 invisible on 1 servers
+2014-02-19 10:54:45	--	16 :IRC Operators online
+2014-02-19 10:54:45	--	487 :channels formed
+2014-02-19 10:54:45	--	I have 1265 clients and 0 servers
+2014-02-19 10:54:45	--	Current local users: 1265  Max: 1744
+2014-02-19 10:54:45	--	Current global users: 1265  Max: 1744
+2014-02-19 10:54:45	--	- spectral.shadowcat.co.uk Message of the Day -
+2014-02-19 10:54:45	--	-                      _             _
+2014-02-19 10:54:45	--	-  ___ _ __   ___  ___| |_ _ __ __ _| |
+2014-02-19 10:54:45	--	- / __| '_ \ / _ \/ __| __| '__/ _` | |
+2014-02-19 10:54:45	--	- \__ \ |_) |  __/ (__| |_| | | (_| | |  _
+2014-02-19 10:54:45	--	- |___/ .__/ \___|\___|\__|_|  \__,_|_| (_)
+2014-02-19 10:54:45	--	-     |_|
+2014-02-19 10:54:45	--	-      _               _                        _
+2014-02-19 10:54:45	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-02-19 10:54:45	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-02-19 10:54:45	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-02-19 10:54:45	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-02-19 10:54:45	--	-
+2014-02-19 10:54:45	--	- We scan all connecting clients for open proxies and other
+2014-02-19 10:54:45	--	- exploitable nasties. If you don't wish to be scanned,
+2014-02-19 10:54:45	--	- don't connect again, and sorry for scanning you this time.
+2014-02-19 10:54:45	--	-
+2014-02-19 10:54:45	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-02-19 10:54:45	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-02-19 10:54:45	--	- your client to /connect irc.perl.org, not directly.
+2014-02-19 10:54:45	--	End of /MOTD command.
+2014-02-19 10:54:45	--	User mode [+i] by drbean_
+2014-02-19 10:54:45	--	[*] drbean_ (~drbean@59-125-81-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2014-02-19 10:54:45	--	[drbean_] End of /WHO list.
+2014-02-27 23:55:10	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2014-02-27 23:55:10	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2014-02-27 23:55:11	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2014-02-27 23:55:11	--	magnet.llarian.net (magnet.llarian.net): *** Found your hostname
+2014-02-27 23:55:12	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-02-27 23:55:12	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2014-02-27 23:55:12	--	This server was created Oct 17 2013 at 12:43:02
+2014-02-27 23:55:12	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-02-27 23:55:12	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-02-27 23:55:13	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2014-02-27 23:55:13	--	There are 5 users and 1338 invisible on 1 servers
+2014-02-27 23:55:13	--	16 :IRC Operators online
+2014-02-27 23:55:13	--	479 :channels formed
+2014-02-27 23:55:13	--	I have 1343 clients and 0 servers
+2014-02-27 23:55:13	--	Current local users: 1343  Max: 1409
+2014-02-27 23:55:13	--	Current global users: 1343  Max: 1409
+2014-02-27 23:55:13	--	- magnet.llarian.net Message of the Day -
+2014-02-27 23:55:13	--	- Welcome to magnet.llarian.net
+2014-02-27 23:55:13	--	-
+2014-02-27 23:55:13	--	- You will be / have been scanned via an automated process to check for
+2014-02-27 23:55:13	--	- various disallowed and insecure services.
+2014-02-27 23:55:13	--	-
+2014-02-27 23:55:13	--	- -------
+2014-02-27 23:55:13	--	-
+2014-02-27 23:55:13	--	- Usage of this server is a privilege, not a right. Your access can be
+2014-02-27 23:55:13	--	- revoked at any time for any reason. The reason doesn't have to make
+2014-02-27 23:55:13	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2014-02-27 23:55:13	--	- to make you feel happy and special. Play nice and keep the emo to
+2014-02-27 23:55:13	--	- yourself.
+2014-02-27 23:55:13	--	-
+2014-02-27 23:55:13	--	- -------
+2014-02-27 23:55:13	--	-
+2014-02-27 23:55:13	--	- Reasonable person principle applies.
+2014-02-27 23:55:13	--	- http://www.irc.perl.org/reasonable_person.html
+2014-02-27 23:55:13	--	-
+2014-02-27 23:55:13	--	- Please also read the FAQ, particularly the section about #perl:
+2014-02-27 23:55:13	--	- http://www.irc.perl.org/faq.html
+2014-02-27 23:55:13	--	-
+2014-02-27 23:55:13	--	- -----
+2014-02-27 23:55:13	--	-
+2014-02-27 23:55:13	--	- Do not publish the logs of any person or any channel on this server without
+2014-02-27 23:55:13	--	- their express consent. Failure to abide is a kline-able offense.
+2014-02-27 23:55:13	--	-
+2014-02-27 23:55:13	--	- IPv6 connections available at 2001:5d8:11::16
+2014-02-27 23:55:13	--	- SSL connections available on port 7062
+2014-02-27 23:55:13	--	End of /MOTD command.
+2014-02-27 23:55:13	--	User mode [+i] by drbean
+2014-02-27 23:55:13	--	[*] drbean (~drbean@59-125-83-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2014-02-27 23:55:13	--	[drbean] End of /WHO list.
+2014-03-08 11:00:16	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Looking up your hostname...
+2014-03-08 11:00:16	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Checking Ident
+2014-03-08 11:00:17	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** Couldn't look up your hostname
+2014-03-08 11:00:27	--	astral.shadowcat.co.uk (astral.shadowcat.co.uk): *** No Ident response
+2014-03-08 11:00:27	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-03-08 11:00:27	--	Your host is astral.shadowcat.co.uk[217.168.150.39/6667], running version hybrid-7.2.3
+2014-03-08 11:00:27	--	This server was created Feb 15 2010 at 23:39:34
+2014-03-08 11:00:27	--	astral.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-03-08 11:00:27	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-03-08 11:00:27	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst KNOCK ELIST=CMNTU SAFELIST AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2014-03-08 11:00:27	--	There are 5 users and 1216 invisible on 1 servers
+2014-03-08 11:00:27	--	18 :IRC Operators online
+2014-03-08 11:00:27	--	2 :unknown connection(s)
+2014-03-08 11:00:27	--	475 :channels formed
+2014-03-08 11:00:27	--	I have 1221 clients and 0 servers
+2014-03-08 11:00:27	--	Current local users: 1221  Max: 1876
+2014-03-08 11:00:27	--	Current global users: 1221  Max: 1876
+2014-03-08 11:00:27	--	- astral.shadowcat.co.uk Message of the Day -
+2014-03-08 11:00:27	--	-            _             _
+2014-03-08 11:00:27	--	-   __ _ ___| |_ _ __ __ _| |
+2014-03-08 11:00:27	--	-  / _` / __| __| '__/ _` | |
+2014-03-08 11:00:27	--	- | (_| \__ \ |_| | | (_| | |  _
+2014-03-08 11:00:27	--	-  \__,_|___/\__|_|  \__,_|_| (_)
+2014-03-08 11:00:27	--	-      _               _                        _
+2014-03-08 11:00:27	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-03-08 11:00:27	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-03-08 11:00:27	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-03-08 11:00:27	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-03-08 11:00:27	--	-
+2014-03-08 11:00:27	--	- We scan all connecting clients for open proxies and other
+2014-03-08 11:00:27	--	- exploitable nasties. If you don't wish to be scanned,
+2014-03-08 11:00:27	--	- don't connect again, and sorry for scanning you this time.
+2014-03-08 11:00:27	--	-
+2014-03-08 11:00:27	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-03-08 11:00:27	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-03-08 11:00:27	--	- your client to /connect irc.perl.org, not directly.
+2014-03-08 11:00:27	--	End of /MOTD command.
+2014-03-08 11:00:27	--	User mode [+i] by drbean
+2014-03-08 11:00:28	--	[*] drbean (~drbean@113.196.171.151) H 0 (Dr Bean)
+2014-03-08 11:00:28	--	[drbean] End of /WHO list.
+2014-03-13 14:37:50	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Looking up your hostname...
+2014-03-13 14:37:50	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Checking Ident
+2014-03-13 14:37:50	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** Found your hostname
+2014-03-13 14:37:53	--	electret.shadowcat.co.uk (electret.shadowcat.co.uk): *** No Ident response
+2014-03-13 14:37:53	--	*: Register first.
+2014-03-13 14:37:54	--	Welcome to the MAGnet Internet Relay Chat Network drbean_
+2014-03-13 14:37:54	--	Your host is electret.shadowcat.co.uk[0.0.0.0/6667], running version hybrid-7.2.3
+2014-03-13 14:37:54	--	This server was created Nov 12 2007 at 19:25:00
+2014-03-13 14:37:54	--	electret.shadowcat.co.uk hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-03-13 14:37:54	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-03-13 14:37:54	--	CHANLIMIT=#&:50 CHANNELLEN=50 CHANMODES=eIb,k,l,imnpst ELIST=CMNTU SAFELIST KNOCK AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2014-03-13 14:37:54	--	There are 5 users and 1230 invisible on 1 servers
+2014-03-13 14:37:54	--	14 :IRC Operators online
+2014-03-13 14:37:54	--	478 :channels formed
+2014-03-13 14:37:54	--	I have 1235 clients and 0 servers
+2014-03-13 14:37:54	--	Current local users: 1235  Max: 1876
+2014-03-13 14:37:54	--	Current global users: 1235  Max: 1876
+2014-03-13 14:37:54	--	- electret.shadowcat.co.uk Message of the Day -
+2014-03-13 14:37:54	--	-       _           _            _
+2014-03-13 14:37:54	--	-   ___| | ___  ___| |_ _ __ ___| |_
+2014-03-13 14:37:54	--	-  / _ \ |/ _ \/ __| __| '__/ _ \ __|
+2014-03-13 14:37:54	--	- |  __/ |  __/ (__| |_| | |  __/ |_   _
+2014-03-13 14:37:54	--	-  \___|_|\___|\___|\__|_|  \___|\__| |_|
+2014-03-13 14:37:54	--	-      _               _                        _
+2014-03-13 14:37:54	--	-  ___| |__   __ _  __| | _____      _____ __ _| |_
+2014-03-13 14:37:55	--	- / __| '_ \ / _` |/ _` |/ _ \ \ /\ / / __/ _` | __|
+2014-03-13 14:37:55	--	- \__ \ | | | (_| | (_| | (_) \ V  V / (_| (_| | |_
+2014-03-13 14:37:55	--	- |___/_| |_|\__,_|\__,_|\___/ \_/\_/ \___\__,_|\__|
+2014-03-13 14:37:55	--	-
+2014-03-13 14:37:55	--	- We scan all connecting clients for open proxies and other
+2014-03-13 14:37:55	--	- exploitable nasties. If you don't wish to be scanned,
+2014-03-13 14:37:55	--	- don't connect again, and sorry for scanning you this time.
+2014-03-13 14:37:55	--	-
+2014-03-13 14:37:55	--	- This server is run by http://www.shadowcat.co.uk/ as part
+2014-03-13 14:37:55	--	- of the http://www.irc.perl.org/ network. Please configure
+2014-03-13 14:37:55	--	- your client to /connect irc.perl.org, not directly.
+2014-03-13 14:37:55	--	End of /MOTD command.
+2014-03-13 14:37:55	--	User mode [+i] by drbean_
+2014-03-13 14:37:55	--	[*] drbean_ (~drbean@59-125-81-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2014-03-13 14:37:55	--	[drbean_] End of /WHO list.
+2014-03-16 05:42:56	--	User mode [-i] by drbean_
+2014-03-16 05:42:56	--	magnet.llarian.net (magnet.llarian.net): *** Looking up your hostname...
+2014-03-16 05:42:56	--	magnet.llarian.net (magnet.llarian.net): *** Checking Ident
+2014-03-16 05:42:57	--	magnet.llarian.net (magnet.llarian.net): *** Found your hostname
+2014-03-16 05:43:07	--	magnet.llarian.net (magnet.llarian.net): *** No Ident response
+2014-03-16 05:43:07	--	Welcome to the MAGnet Internet Relay Chat Network drbean
+2014-03-16 05:43:07	--	Your host is magnet.llarian.net[209.221.142.115/6667], running version hybrid-7.2.3
+2014-03-16 05:43:07	--	This server was created Oct 17 2013 at 12:43:02
+2014-03-16 05:43:07	--	magnet.llarian.net hybrid-7.2.3 CDGabcdfgiklnorsuwxyz biklmnopstveIh bkloveIh
+2014-03-16 05:43:07	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=19 PREFIX=(ohv)@%+ STATUSMSG=@%+ TOPICLEN=390 NETWORK=MAGnet MAXLIST=beI:50 MAXTARGETS=4 CHANTYPES=#& :are supported by this server
+2014-03-16 05:43:07	--	CHANLIMIT=#&:50 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=eIb,k,l,imnpst AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST :are supported by this server
+2014-03-16 05:43:07	--	There are 5 users and 1242 invisible on 1 servers
+2014-03-16 05:43:07	--	14 :IRC Operators online
+2014-03-16 05:43:07	--	1 :unknown connection(s)
+2014-03-16 05:43:07	--	481 :channels formed
+2014-03-16 05:43:07	--	I have 1247 clients and 0 servers
+2014-03-16 05:43:07	--	Current local users: 1247  Max: 1409
+2014-03-16 05:43:07	--	Current global users: 1247  Max: 1409
+2014-03-16 05:43:07	--	- magnet.llarian.net Message of the Day -
+2014-03-16 05:43:07	--	- Welcome to magnet.llarian.net
+2014-03-16 05:43:07	--	-
+2014-03-16 05:43:07	--	- You will be / have been scanned via an automated process to check for
+2014-03-16 05:43:07	--	- various disallowed and insecure services.
+2014-03-16 05:43:07	--	-
+2014-03-16 05:43:07	--	- -------
+2014-03-16 05:43:07	--	-
+2014-03-16 05:43:07	--	- Usage of this server is a privilege, not a right. Your access can be
+2014-03-16 05:43:07	--	- revoked at any time for any reason. The reason doesn't have to make
+2014-03-16 05:43:07	--	- sense to you and it doesn't have to be fair.  This server does not exist
+2014-03-16 05:43:07	--	- to make you feel happy and special. Play nice and keep the emo to
+2014-03-16 05:43:07	--	- yourself.
+2014-03-16 05:43:07	--	-
+2014-03-16 05:43:07	--	- -------
+2014-03-16 05:43:07	--	-
+2014-03-16 05:43:07	--	- Reasonable person principle applies.
+2014-03-16 05:43:07	--	- http://www.irc.perl.org/reasonable_person.html
+2014-03-16 05:43:07	--	-
+2014-03-16 05:43:07	--	- Please also read the FAQ, particularly the section about #perl:
+2014-03-16 05:43:07	--	- http://www.irc.perl.org/faq.html
+2014-03-16 05:43:07	--	-
+2014-03-16 05:43:07	--	- -----
+2014-03-16 05:43:07	--	-
+2014-03-16 05:43:07	--	- Do not publish the logs of any person or any channel on this server without
+2014-03-16 05:43:07	--	- their express consent. Failure to abide is a kline-able offense.
+2014-03-16 05:43:07	--	-
+2014-03-16 05:43:07	--	- IPv6 connections available at 2001:5d8:11::16
+2014-03-16 05:43:07	--	- SSL connections available on port 7062
+2014-03-16 05:43:07	--	End of /MOTD command.
+2014-03-16 05:43:07	--	User mode [+i] by drbean
+2014-03-16 05:43:07	--	[*] drbean (~drbean@59-125-82-253.HINET-IP.hinet.net) H 0 (Dr Bean)
+2014-03-16 05:43:07	--	[drbean] End of /WHO list.
+2014-03-25 21:32:12	--	irc: connecting to server 203.64.184.141/6666...
+2014-03-25 21:32:12	=!=	irc: connection refused
+2014-03-25 21:32:12	--	irc: reconnecting to server in 10 seconds
+2014-03-25 21:32:22	--	irc: reconnecting to server...
+2014-03-25 21:32:22	--	irc: connecting to server 203.64.184.141/6666...
+2014-03-25 21:32:22	=!=	irc: connection refused
+2014-03-25 21:32:22	--	irc: reconnecting to server in 20 seconds
+2014-03-25 21:32:42	--	irc: reconnecting to server...
+2014-03-25 21:32:42	--	irc: connecting to server 203.64.184.141/6666...
+2014-03-25 21:32:42	=!=	irc: connection refused
+2014-03-25 21:32:42	--	irc: reconnecting to server in 40 seconds
+2014-03-25 21:33:22	--	irc: reconnecting to server...
+2014-03-25 21:33:22	--	irc: connecting to server 203.64.184.141/6666...
+2014-03-25 21:33:22	=!=	irc: connection refused
+2014-03-25 21:33:22	--	irc: reconnecting to server in 1 minute, 20 seconds
+2014-03-25 21:33:45		irc: auto-reconnection is cancelled
+2014-03-25 21:33:45	--	irc: disconnected from server
+2014-03-25 21:36:55	--	irc: disconnected from server
+2014-03-25 21:55:01	--	irc: connecting to server 203.64.184.141/6666...
+2014-03-25 21:55:01	=!=	irc: connection refused
+2014-03-25 21:55:01	--	irc: reconnecting to server in 10 seconds
+2014-03-25 21:55:11	--	irc: reconnecting to server...
+2014-03-25 21:55:11	--	irc: connecting to server 203.64.184.141/6666...
+2014-03-25 21:55:11	=!=	irc: connection refused
+2014-03-25 21:55:11	--	irc: reconnecting to server in 20 seconds
+2014-03-25 21:55:31	--	irc: reconnecting to server...
+2014-03-25 21:55:31	--	irc: connecting to server 203.64.184.141/6666...
+2014-03-25 21:55:31	=!=	irc: connection refused
+2014-03-25 21:55:31	--	irc: reconnecting to server in 40 seconds
+2014-03-25 21:56:11	--	irc: reconnecting to server...
+2014-03-25 21:56:11	--	irc: connecting to server 203.64.184.141/6666...
+2014-03-25 21:56:11	=!=	irc: connection refused
+2014-03-25 21:56:11	--	irc: reconnecting to server in 1 minute, 20 seconds
+2014-03-25 21:57:31	--	irc: reconnecting to server...
+2014-03-25 21:57:31	--	irc: connecting to server 203.64.184.141/6666...
+2014-03-25 21:57:31	=!=	irc: connection refused
+2014-03-25 21:57:31	--	irc: reconnecting to server in 2 minutes, 40 seconds
+2014-03-25 21:58:30		irc: auto-reconnection is cancelled
+2014-03-25 21:58:30	--	irc: disconnected from server
+2014-03-30 20:57:26	--	irc: disconnected from server

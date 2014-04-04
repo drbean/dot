@@ -451,39 +451,6 @@ function AFB1J0 () {
     cd -
 }
 
-function AFBB32 () {
-    OPTIND=1
-    local arg league=AFBB32 session week letter topic tables
-    while getopts 's:w:l:t:' arg
-    do
-        case ${arg} in
-            s) session=${OPTARG};;
-            w) week=${OPTARG};;
-            l) letter=${OPTARG};;
-            t) topic=${OPTARG};;
-            *) return 1 # illegal option
-        esac
-    done
-    case ${letter} in
-	A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Beige::Golden,Turquoise::Window";;
-	B) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Beige::Turquoise,Golden::Window";;
-	C) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Beige::Turquoise,Golden::Window";;
-	X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
-	Y) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
-	*) return 1 # illegal option
-    esac
-    cd ~/022/$league
-    SESSION=$session \
-    WEEK=$week \
-    LASTWEEK=$(($week-1)) \
-    LEAGUE=$league \
-    TOPIC=$topic \
-    LETTER=$letter \
-    TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
-    cd -
-}
-
 function session () {
     local league week
     league=$1
@@ -511,6 +478,13 @@ function session () {
 	    else return 1 # illegal week
 	    fi;;
 	AFB1J0)
+	    if (($week <= 5)); then session=1
+	    elif (($week <= 9)); then session=2
+	    elif (($week <= 13)); then session=3
+	    elif (($week <= 18)); then session=4
+	    else return 1 # illegal week
+	    fi;;
+	AFBB32)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -550,6 +524,15 @@ function tables () {
 		*) return 1 # illegal letter
 	    esac;;
 		# 19 groups
+	AFBB32)
+	    case ${letter} in
+		A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
+		B) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
+		C) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Silver::Violet,Beige::Turquoise,Golden::Window";;
+		X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
+		Y) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
+		*) return 1 # illegal option
+	    esac;;
 	FLA0021)
 	    case ${letter} in
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
@@ -590,15 +573,6 @@ function tables () {
 		X) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink";;
 		*) return 1 # illegal option
 	    esac;;
-	AFBB32)
-	    case ${letter} in
-		A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
-		B) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Beige::Turquoise,Golden::Window";;
-		C) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Silver::Violet,Beige::Turquoise,Golden::Window";;
-		X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
-		Y) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
-		*) return 1 # illegal option
-	    esac;;
 	FLA0018)
 	    case ${letter} in
 		A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
@@ -618,6 +592,7 @@ function w () {
 	3024) league=$1;;
 	GL00019) league=$1;;
 	AFB1J0) league=$1;;
+	AFBB32) league=$1;;
 	FLA0018) league=$1;;
 	FLA0021) league=$1;;
 	FLA0027) league=$1;;

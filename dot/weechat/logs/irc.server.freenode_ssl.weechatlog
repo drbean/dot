@@ -1,0 +1,191 @@
+2014-01-26 11:40:31	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:40:31	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:40:31	=!=	irc: エラー: The TLS connection was non-properly terminated.
+2014-01-26 11:40:31	--	irc: 10 秒 後にサーバに再接続します
+2014-01-26 11:40:41	--	irc: サーバに再接続中...
+2014-01-26 11:40:41	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:40:41	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:40:41	=!=	irc: エラー: Error in the pull function.
+2014-01-26 11:40:41	--	irc: 20 秒 後にサーバに再接続します
+2014-01-26 11:41:01	--	irc: サーバに再接続中...
+2014-01-26 11:41:01	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:41:01	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:41:01	=!=	irc: エラー: Error in the pull function.
+2014-01-26 11:41:01	--	irc: 40 秒 後にサーバに再接続します
+2014-01-26 11:41:41	--	irc: サーバに再接続中...
+2014-01-26 11:41:41	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:41:41	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:41:41	=!=	irc: エラー: Error in the pull function.
+2014-01-26 11:41:41	--	irc: 1 分 後にサーバに再接続します、20 秒
+2014-01-26 11:41:52	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:41:52	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:41:52	=!=	irc: エラー: Error in the pull function.
+2014-01-26 11:41:52	--	irc: 10 秒 後にサーバに再接続します
+2014-01-26 11:42:02	--	irc: サーバに再接続中...
+2014-01-26 11:42:02	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:42:02	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:42:02	=!=	irc: エラー: Error in the pull function.
+2014-01-26 11:42:02	--	irc: 20 秒 後にサーバに再接続します
+2014-01-26 11:42:22	--	irc: サーバに再接続中...
+2014-01-26 11:42:22	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:42:22	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:42:22	=!=	irc: エラー: Error in the pull function.
+2014-01-26 11:42:22	--	irc: 40 秒 後にサーバに再接続します
+2014-01-26 11:43:02	--	irc: サーバに再接続中...
+2014-01-26 11:43:02	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:43:02	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:43:02	=!=	irc: エラー: Error in the pull function.
+2014-01-26 11:43:02	--	irc: 1 分 後にサーバに再接続します、20 秒
+2014-01-26 11:44:22	--	irc: サーバに再接続中...
+2014-01-26 11:44:22	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:44:22	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:44:22	=!=	irc: エラー: Error in the pull function.
+2014-01-26 11:44:22	--	irc: 2 分 後にサーバに再接続します、40 秒
+2014-01-26 11:47:02	--	irc: サーバに再接続中...
+2014-01-26 11:47:02	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:47:02	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:47:02	=!=	irc: エラー: Error in the pull function.
+2014-01-26 11:47:02	--	irc: 5 分 後にサーバに再接続します、20 秒
+2014-01-26 11:52:22	--	irc: サーバに再接続中...
+2014-01-26 11:52:22	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 11:52:22	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 11:52:22	=!=	irc: エラー: Error in the pull function.
+2014-01-26 11:52:22	--	irc: 10 分 後にサーバに再接続します、40 秒
+2014-01-26 12:03:02	--	irc: サーバに再接続中...
+2014-01-26 12:03:02	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 12:03:02	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 12:03:02	=!=	irc: エラー: Error in the pull function.
+2014-01-26 12:03:02	--	irc: 21 分 後にサーバに再接続します、20 秒
+2014-01-26 12:24:22	--	irc: サーバに再接続中...
+2014-01-26 12:24:22	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 12:24:22	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 12:24:22	=!=	irc: エラー: Error in the pull function.
+2014-01-26 12:24:22	--	irc: 30 分 後にサーバに再接続します
+2014-01-26 12:26:09		irc: 自動再接続がキャンセルされました
+2014-01-26 12:26:09	--	irc: サーバから切断
+2014-01-26 12:45:49	=!=	irc: サーバ "freenode_ssl" に接続されていません!
+2014-01-26 22:13:52	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 22:13:52	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 22:13:52	=!=	irc: エラー: Error in the pull function.
+2014-01-26 22:13:52	--	irc: 10 秒 後にサーバに再接続します
+2014-01-26 22:14:02	--	irc: サーバに再接続中...
+2014-01-26 22:14:02	--	irc: サーバ 203.64.184.141/6696 (SSL) に接続中...
+2014-01-26 22:14:02	=!=	irc: TLS ハンドシェイクに失敗
+2014-01-26 22:14:02	=!=	irc: エラー: Error in the pull function.
+2014-01-26 22:14:02	--	irc: 20 秒 後にサーバに再接続します
+2014-01-26 22:14:07		irc: 自動再接続がキャンセルされました
+2014-01-26 22:14:07	--	irc: サーバから切断
+2014-01-27 15:17:21	--	irc: サーバから切断
+2014-02-05 16:04:49	--	irc: サーバ chat.freenode.net/6697 (SSL) に接続中...
+2014-02-05 16:05:00	--	gnutls: 2048-bit Diffie-Hellman 共有鍵交換を使って接続しました
+2014-02-05 16:05:00	=!=	gnutls: ピア証明書は信頼できません
+2014-02-05 16:05:00	=!=	gnutls: ピア証明書に未知の問題
+2014-02-05 16:05:00	--	gnutls: 2 個の証明書を受け取りました
+2014-02-05 16:05:00	--	 - 証明書[1] 情報:
+2014-02-05 16:05:00	--	   - subject `OU=Domain Control Validated,OU=Gandi Standard Wildcard SSL,CN=*.freenode.net', issuer `C=FR,O=GANDI SAS,CN=Gandi Standard SSL CA', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-01-13 00:00:00 UTC', expires `2015-01-14 23:59:59 UTC', SHA-1 fingerprint `f664309a3e209eeff4e2eb0bbdd7a541fdc25e73'
+2014-02-05 16:05:00	--	 - 証明書[2] 情報:
+2014-02-05 16:05:00	--	   - subject `C=FR,O=GANDI SAS,CN=Gandi Standard SSL CA', issuer `C=US,ST=UT,L=Salt Lake City,O=The USERTRUST Network,OU=http://www.usertrust.com,CN=UTN-USERFirst-Hardware', RSA key 2048 bits, signed using RSA-SHA1, activated `2008-10-23 00:00:00 UTC', expires `2020-05-30 10:48:38 UTC', SHA-1 fingerprint `a9f79883a075ce82d20d274d1368e876140d33b3'
+2014-02-05 16:05:00	=!=	irc: TLS ハンドシェイクに失敗
+2014-02-05 16:05:00	=!=	irc: エラー: Error in the certificate.
+2014-02-05 16:05:00	--	irc: 10 秒 後にサーバに再接続します
+2014-02-05 16:05:10	--	irc: サーバに再接続中...
+2014-02-05 16:05:10	--	irc: サーバ chat.freenode.net/6697 (SSL) に接続中...
+2014-02-05 16:05:11	--	gnutls: 2048-bit Diffie-Hellman 共有鍵交換を使って接続しました
+2014-02-05 16:05:11	=!=	gnutls: ピア証明書は信頼できません
+2014-02-05 16:05:11	=!=	gnutls: ピア証明書に未知の問題
+2014-02-05 16:05:11	--	gnutls: 2 個の証明書を受け取りました
+2014-02-05 16:05:11	--	 - 証明書[1] 情報:
+2014-02-05 16:05:11	--	   - subject `OU=Domain Control Validated,OU=Gandi Standard Wildcard SSL,CN=*.freenode.net', issuer `C=FR,O=GANDI SAS,CN=Gandi Standard SSL CA', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-01-13 00:00:00 UTC', expires `2015-01-14 23:59:59 UTC', SHA-1 fingerprint `f664309a3e209eeff4e2eb0bbdd7a541fdc25e73'
+2014-02-05 16:05:11	--	 - 証明書[2] 情報:
+2014-02-05 16:05:11	--	   - subject `C=FR,O=GANDI SAS,CN=Gandi Standard SSL CA', issuer `C=US,ST=UT,L=Salt Lake City,O=The USERTRUST Network,OU=http://www.usertrust.com,CN=UTN-USERFirst-Hardware', RSA key 2048 bits, signed using RSA-SHA1, activated `2008-10-23 00:00:00 UTC', expires `2020-05-30 10:48:38 UTC', SHA-1 fingerprint `a9f79883a075ce82d20d274d1368e876140d33b3'
+2014-02-05 16:05:11	=!=	irc: TLS ハンドシェイクに失敗
+2014-02-05 16:05:11	=!=	irc: エラー: Error in the certificate.
+2014-02-05 16:05:11	--	irc: 20 秒 後にサーバに再接続します
+2014-02-05 16:05:21		irc: 自動再接続がキャンセルされました
+2014-02-05 16:05:21	--	irc: サーバから切断
+2014-02-05 16:06:50	--	irc: サーバ chat.freenode.net/6697 (SSL) に接続中...
+2014-02-05 16:06:50	--	gnutls: 1024-bit Diffie-Hellman 共有鍵交換を使って接続しました
+2014-02-05 16:06:50	=!=	gnutls: ピア証明書は信頼できません
+2014-02-05 16:06:50	=!=	gnutls: ピア証明書に未知の問題
+2014-02-05 16:06:50	--	gnutls: 2 個の証明書を受け取りました
+2014-02-05 16:06:50	--	 - 証明書[1] 情報:
+2014-02-05 16:06:50	--	   - subject `OU=Domain Control Validated,OU=Gandi Standard Wildcard SSL,CN=*.freenode.net', issuer `C=FR,O=GANDI SAS,CN=Gandi Standard SSL CA', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-01-13 00:00:00 UTC', expires `2015-01-14 23:59:59 UTC', SHA-1 fingerprint `f664309a3e209eeff4e2eb0bbdd7a541fdc25e73'
+2014-02-05 16:06:50	--	 - 証明書[2] 情報:
+2014-02-05 16:06:50	--	   - subject `C=FR,O=GANDI SAS,CN=Gandi Standard SSL CA', issuer `C=US,ST=UT,L=Salt Lake City,O=The USERTRUST Network,OU=http://www.usertrust.com,CN=UTN-USERFirst-Hardware', RSA key 2048 bits, signed using RSA-SHA1, activated `2008-10-23 00:00:00 UTC', expires `2020-05-30 10:48:38 UTC', SHA-1 fingerprint `a9f79883a075ce82d20d274d1368e876140d33b3'
+2014-02-05 16:06:50	=!=	gnutls: 証明書 "/home/drbean/.weechat/certs/nick.pem" が読めません
+2014-02-05 16:06:51	--	irc: chat.freenode.net/6697 (94.125.182.252) に接続完了
+2014-02-05 16:06:51	--	adams.freenode.net (adams.freenode.net): *** Looking up your hostname...
+2014-02-05 16:06:51	--	adams.freenode.net (adams.freenode.net): *** Checking Ident
+2014-02-05 16:06:51	--	adams.freenode.net (adams.freenode.net): *** Found your hostname
+2014-02-05 16:06:51	--	adams.freenode.net (adams.freenode.net): *** No Ident response
+2014-02-05 16:06:51	--	irc: ニックネーム "drbean" は既に使われています、ニックネーム "drbean1" を試行しています
+2014-02-05 16:06:52	--	Welcome to the freenode Internet Relay Chat Network drbean1
+2014-02-05 16:06:52	--	Your host is adams.freenode.net[94.125.182.252/6697], running version ircd-seven-1.1.3
+2014-02-05 16:06:52	--	This server was created Sat Mar 10 2012 at 14:55:48 CET
+2014-02-05 16:06:52	--	adams.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+2014-02-05 16:06:52	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2014-02-05 16:06:52	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2014-02-05 16:06:52	--	EXTBAN=$,arxz WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2014-02-05 16:06:52	--	There are 197 users and 80846 invisible on 27 servers
+2014-02-05 16:06:52	--	32 :IRC Operators online
+2014-02-05 16:06:52	--	12 :unknown connection(s)
+2014-02-05 16:06:52	--	42839 :channels formed
+2014-02-05 16:06:52	--	I have 8014 clients and 1 servers
+2014-02-05 16:06:52	--	8014 10111 :Current local users 8014, max 10111
+2014-02-05 16:06:52	--	81043 98963 :Current global users 81043, max 98963
+2014-02-05 16:06:52	--	Highest connection count: 10112 (10111 clients) (9059042 connections received)
+2014-02-05 16:06:52	--	- adams.freenode.net Message of the Day -
+2014-02-05 16:06:52	--	- Welcome to adams.freenode.net. Thanks to ATW Internet Kft
+2014-02-05 16:06:52	--	- (http://www.atw.hu) for sponsoring this server!
+2014-02-05 16:06:52	--	-
+2014-02-05 16:06:52	--	- ADAMS, DOUGLAS (1952-2001).  Author of The Hitch Hikers Guide
+2014-02-05 16:06:52	--	- to the Galaxy and many other witty and humourous books,
+2014-02-05 16:06:52	--	- portrayed in his uniquely British irony. He is sorely missed
+2014-02-05 16:06:52	--	- by many millions of devoted fans. "So long and thanks for all
+2014-02-05 16:06:52	--	- the books!"
+2014-02-05 16:06:52	--	-
+2014-02-05 16:06:52	--	- Welcome to freenode - supporting the free and open source
+2014-02-05 16:06:52	--	- software communities since 1998.
+2014-02-05 16:06:52	--	-
+2014-02-05 16:06:52	--	- By connecting to freenode you indicate that you have read and
+2014-02-05 16:06:52	--	- agree to adhere to our policies and procedures as per the
+2014-02-05 16:06:52	--	- website (http://freenode.net/).
+2014-02-05 16:06:52	--	-
+2014-02-05 16:06:52	--	- We would like to remind you that unauthorised public logging
+2014-02-05 16:06:52	--	- of channels on the network is prohibited. Public channel
+2014-02-05 16:06:52	--	- logging should only take place where the channel owner(s) has
+2014-02-05 16:06:52	--	- requested this and users of the channel are all made aware
+2014-02-05 16:06:52	--	- (if you are publically logging your channel, you may wish to
+2014-02-05 16:06:52	--	- keep a notice in the topic and perhaps as an on-join message).
+2014-02-05 16:06:52	--	-
+2014-02-05 16:06:52	--	- freenode runs an open proxy scanner. For details on freenode
+2014-02-05 16:06:52	--	- network policy, please take a look at our policy page
+2014-02-05 16:06:52	--	- (http://freenode.net/policy.shtml).  Your use of the network
+2014-02-05 16:06:52	--	- indicates your acceptance of this policy.
+2014-02-05 16:06:52	--	-
+2014-02-05 16:06:52	--	- Please join #freenode for any network-related questions or
+2014-02-05 16:06:52	--	- queries, there are numerous freenode volunteers and helpful
+2014-02-05 16:06:52	--	- users who would be happy to try answer any questions you might
+2014-02-05 16:06:52	--	- have.
+2014-02-05 16:06:52	--	-
+2014-02-05 16:06:52	--	- Check out www.fossevents.org to find out what is happening in
+2014-02-05 16:06:52	--	- your area, join us at FOSSCON (www.fosscon.org) for talks and
+2014-02-05 16:06:52	--	- real-life collaboration or bring a picnic and come join
+2014-02-05 16:06:52	--	- like-minded geeks for a geeknic (www.geeknic.org) somewhere
+2014-02-05 16:06:52	--	- close to you.
+2014-02-05 16:06:52	--	- Lastly, massive thanks to the OSU Open Source Lab
+2014-02-05 16:06:52	--	- (http://osuosl.org/) and Private Internet Access
+2014-02-05 16:06:52	--	- (https://www.privateinternetaccess.com/) for their sustained,
+2014-02-05 16:06:52	--	- long term support and dedication they show to the FOSS
+2014-02-05 16:06:52	--	- communities.
+2014-02-05 16:06:52	--	-
+2014-02-05 16:06:52	--	- ***************************************************************
+2014-02-05 16:06:52	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2014-02-05 16:06:52	--	- ***************************************************************
+2014-02-05 16:06:52	--	End of /MOTD command.
+2014-02-05 16:06:52	--	drbean1 がユーザモードを変更 [+Zi]
+2014-02-05 16:06:52	--	NickServ (NickServ@services.): drbean/freenode_ssl is not a registered nickname.
+2014-02-05 16:07:48	--	irc: サーバから切断
+2014-02-05 16:12:44	=!=	irc: サーバ "freenode_ssl" に接続されていません!
+2014-02-05 16:12:59	=!=	irc: サーバ "freenode_ssl" に接続されていません!
+2014-02-05 16:13:12	=!=	irc: サーバ "freenode_ssl" に接続されていません!

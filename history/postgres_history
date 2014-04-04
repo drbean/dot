@@ -1,0 +1,37 @@
+exit
+psql dic022
+exit
+ls
+lftp
+ls
+createdb mydb
+ls
+ls data/
+createdb mydb
+dropdb mydb
+#createdb aca021 -T template0
+psql
+createdb aca021 -T template0
+createdb aca022 -T template0
+psql aca022 < aca022.sql 
+dropdb aca022
+psql --set ON_ERROR_STOP=on aca022 < aca022.sql
+createdb aca022 -T template0
+psql --set ON_ERROR_STOP=on aca022 < aca022.sql
+createuser drbean
+createuser apache
+psql --set ON_ERROR_STOP=on aca022 < aca022.sql
+dropdb aca022
+createdb aca022 -T template0
+psql --set ON_ERROR_STOP=on aca022 < aca022.sql
+psql aca022 
+createdb dic022 -T template0
+psql --set ON_ERROR_STOP=on dic022 < dic022.sql
+psql --set ON_ERROR_STOP=on bett022 < bett022.sql
+createdb bett022 -T template0
+psql --set ON_ERROR_STOP=on bett022 < bett022.sql
+psql bett022 
+exit
+psql dic022 
+less ~/.bash_history 
+psql dic022 

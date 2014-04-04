@@ -1,0 +1,2 @@
+alternatives --install /usr/bin/links links /usr/bin/lynx 40
+

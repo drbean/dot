@@ -7,4 +7,5 @@ stuff "# su -c 'cp vim-gf/ftdetect/gf.vim /usr/share/vim/vimfiles/ftdetect/'^M"
 stuff "# su -c 'cp vim-gf/syntax/gf.vim /usr/share/vim/vimfiles/syntax/'^M"
 stuff "# cd vim && git clone https://github.com/drbean/perl-tags.git && cd vim-gf && git remote add upstream https://github.com/osfameron/perl-tags && git fetch upstream && git merge upstream/master && cd ../..^M"
 stuff "# cd vim && git clone https://github.com/drbean/perl-tags-moose.git && cd vim-gf && git remote add upstream https://github.com/nothingmuch/perl-tags-moose && git fetch upstream && git merge upstream/master && cd ../..^M"
+stuff "# cd vim && git clone https://github.com/drbean/vroom-pm.git && cd vim-gf && git remote add upstream https://github.com/ingydotnet/vroom-pm.git && git fetch upstream && git merge upstream/master && cd ../..^M"
 

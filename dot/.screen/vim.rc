@@ -1,5 +1,3 @@
-screen v -S Session.vim
-screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "# cp haskell_after.vim ~/.vim/after/ftplugin/^M"
 stuff "# su -c 'cp vimrc.sac /etc/vimrc'^M"

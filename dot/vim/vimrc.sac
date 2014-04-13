@@ -1,4 +1,4 @@
-" Last Edit: 2014 Apr 12, 03:04:33 PM
+" Last Edit: 2014 Apr 13, 08:35:58 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -625,14 +625,14 @@ augroup END
   " Uses autocmd to give more lines to the window moved into
   " or editing superlong 1 line in vimdiff
 augroup widewin
-  " Remove all widewin autocommands (looks like comment can't be on same line)
   au!	
+  " Remove all widewin autocommands (looks like comment can't be on same line)
 
   " autocmd WinEnter *  resize  +6
-au BufEnter ~/edit/\.svn/.*\.svn-base nn <buffer> g<Left> g^ze
-au BufEnter Indexes.*\.txt nn <buffer> g<Left> g^ze
-au BufEnter ~/edit/\.svn/.*\.svn-base nn <buffer> g<Right> g$zs
-au BufEnter Indexes.*\.txt nn <buffer> g<Right> g$zs
+au BufEnter ~/edit/.svn/*.svn-base nn <buffer> g<Left> g^ze
+au BufEnter Indexes*.txt nn <buffer> g<Left> g^ze
+au BufEnter ~/edit/.svn/*.svn-base nn <buffer> g<Right> g$zs
+au BufEnter Indexes*.txt nn <buffer> g<Right> g$zs
 
 augroup END
 

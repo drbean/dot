@@ -1,4 +1,4 @@
-" Last Edit: 2014 Mar 26, 02:14:29 PM
+" Last Edit: 2014 Apr 12, 03:04:33 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -630,9 +630,9 @@ augroup widewin
 
   " autocmd WinEnter *  resize  +6
 au BufEnter ~/edit/\.svn/.*\.svn-base nn <buffer> g<Left> g^ze
-au BufEnter Teach.*\.txt nn <buffer> g<Left> g^ze
+au BufEnter Indexes.*\.txt nn <buffer> g<Left> g^ze
 au BufEnter ~/edit/\.svn/.*\.svn-base nn <buffer> g<Right> g$zs
-au BufEnter Teach.*\.txt nn <buffer> g<Right> g$zs
+au BufEnter Indexes.*\.txt nn <buffer> g<Right> g$zs
 
 augroup END
 

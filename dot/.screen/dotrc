@@ -1,12 +1,13 @@
-screen v .bashrc .screen/
-screen
+screen 9
+stuff "man screen"
+screen 0
+stuff "v .bashrc .screen/"
+screen 2
+source vim.rc
+screen 1
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "cp .bashrc ~/.bashrc^M"
 stuff "cp .bash_profile ~/.bash_profile^M"
 stuff "cp .xmonad/xmonad.hs ~/.xmonad/ && "
 stuff "xmonad --recompile && xmonad --restart^M"
 stuff "# export HISTTIMEFORMAT='%m-%d '"
-screen
-stuff "# su -c 'cp vim/vimrc.sac /etc/vimrc'^M"
-screen
-stuff "lftp web.nuu.edu.tw"

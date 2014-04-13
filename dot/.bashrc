@@ -100,8 +100,6 @@ function bett () {
 
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
-alias vim="cd ~/vim; screen -c /home/drbean/dot/.screen/vim.rc -dR vim; cd -"
-
 alias dot="cd ~/dot; screen -c /home/drbean/dot/.screen/dotrc -dR dot; cd -"
 alias irc="cd ~/znc; screen -c /home/drbean/dot/.screen/irc.rc -dR irc; cd -"
 

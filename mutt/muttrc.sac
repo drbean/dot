@@ -1,4 +1,4 @@
-# Last Edit: 2014 Mar 31, 11:14:05 AM
+# Last Edit: 2014 Apr 14, 10:51:13 AM
 #
 # The ultimate Mutt settings
 #
@@ -183,14 +183,16 @@ set sort_alias=alias
 
 #reset dotlock_program	# where to find mutt_dotlock (reset uses default)
 # set editor="/bin/vi -u NONE -U NONE"
-set editor="/usr/pkg/bin/vim"
+# set editor="/usr/pkg/bin/vim"
+set editor="v"
 # set editor="screen $HOME/bin/vim -f"
 #set editor="exec gnuclient +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
 			# start 2 lines after first empty line
 #set editor="emacsclient +8 %s"	# start editor in line 8
 set folder=~/Mail	# where are the mailboxs (+ and = are shortcuts)
 #set folder="{luv}Mail"	# where are the mailboxs (+ and = are shortcuts)
-set from="drbean@freeshell.org"		# From: address (see send-hook my_hdr From)
+set from="counterbean@gmail.com"		# From: address (see send-hook my_hdr From)
+# set from="drbean@freeshell.org"		# From: address (see send-hook my_hdr From)
 # set from="lang@ms.chinmin.edu.tw"		# From: address (see send-hook my_hdr From)
 # set from="greg@momotaro.chinmin.edu.tw"		# From: address (see send-hook my_hdr From)
 #reset ispell		# ispell binary (compile time default)
@@ -208,6 +210,8 @@ set record="=z/sent"		# Don't save a copy of outgoing messages (Fcc)
 #reset sendmail		# Default-Sendmail with options ("-oem -oi")
 set sendmail="/usr/sbin/sendmail -oem -oi"
 # set sendmail="/usr/sbin/exim -oem -oi"
+# not from roland
+set sendmail_url="smtp://greg@mail.nuu.edu.tw"
 reset shell		# Take shell from /etc/passwd 
 # set signature='~/.signature'	# Signature (See send-hook!)
 set signature='fortune ~/.mutt/fortunes|'	# Signature (See send-hook!)

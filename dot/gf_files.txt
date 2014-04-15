@@ -1,5 +1,5 @@
-/home/drbean/class/business/stress/dic.yaml
+/home/drbean/class/call/youtube/dic.yaml
 gf-contrib/drbean/LogicalForm.hs
-gf-contrib/drbean/business/stress/cusp/Model.hs
-gf-contrib/drbean/business/stress/cusp/Story_Interpretation.hs
-gf-contrib/drbean/business/stress/cusp/Tests.hs
+gf-contrib/drbean/call/intros/AFB1J0/Model.hs
+gf-contrib/drbean/call/intros/AFB1J0/Story_Interpretation.hs
+gf-contrib/drbean/call/intros/AFB1J0/Tests.hs

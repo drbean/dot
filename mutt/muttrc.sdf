@@ -1,4 +1,4 @@
-# Last Edit: 2014 Apr 16, 01:06:46 PM
+# Last Edit: 2014 Apr 16, 01:24:30 PM
 #
 # The ultimate Mutt settings
 #
@@ -778,6 +778,9 @@ send-hook 'mari_kitaoka@gmx.yamaha.com|marimo-x@wonder.ocn.ne.jp' 'set send_char
 send-hook 'john.m.sewell@gmail.com' 'set send_charset=iso-8859-1:utf-8 signature=""'
 send-hook '.edu.tw' 'set send_charset=utf-8 signature=""'
 
+##send-hook . 'unmy_hdr Cc'
+send-hook 'ets\\.k888@msa\\.hinet\\.net' 'my_hdr Cc: ets.k888@gmail.com'
+
 
 # signature/attribution/locale for robots:
 # this is not working when I edit mail in folder for resending.
@@ -788,9 +791,6 @@ send-hook ^(listproc|listserv|lyris|majordomo|sympa|pgp|newsupd|gup@|areafix|are
 # Check "To" and "Cc" address for address send hooks:
 #
 set default_hook="~C %s"
-
-##send-hook . 'unmy_hdr Cc'
-send-hook ets\.k888@msa.hinet.net' 'my_hdr Cc: ets.k888@gmail\.com'
 
 ###send-hook . 'unmy_hdr From'
 #send-hook . \

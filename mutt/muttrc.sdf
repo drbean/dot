@@ -1,4 +1,4 @@
-# Last Edit: 2013 Nov 11, 07:19:13
+# Last Edit: 2014 Apr 16, 01:06:46 PM
 #
 # The ultimate Mutt settings
 #
@@ -210,7 +210,7 @@ set sendmail="/usr/sbin/sendmail -oem -oi"
 # set sendmail="/usr/sbin/exim -oem -oi"
 reset shell		# Take shell from /etc/passwd 
 # set signature='~/.signature'	# Signature (See send-hook!)
-set signature='~/.mutt/signature|'	# Signature (See send-hook!)
+set signature='fortune ~/.mutt/fortunes|'	# Signature (See send-hook!)
 reset spoolfile	# Default spool-file (e.g. /var/spool/mail/user)
 #set spoolfile=+mbox	# Maildir incoming file (~/Mail/incoming)
 reset tmpdir		# tmp-Dir (use compile time default)
@@ -788,6 +788,9 @@ send-hook ^(listproc|listserv|lyris|majordomo|sympa|pgp|newsupd|gup@|areafix|are
 # Check "To" and "Cc" address for address send hooks:
 #
 set default_hook="~C %s"
+
+##send-hook . 'unmy_hdr Cc'
+send-hook ets\.k888@msa.hinet.net' 'my_hdr Cc: ets.k888@gmail\.com'
 
 ###send-hook . 'unmy_hdr From'
 #send-hook . \

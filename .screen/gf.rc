@@ -1,6 +1,7 @@
 screen
 # stuff "v -O $(< ~/dot/gf_files.txt)"
-stuff "v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs"
+stuff "v -O gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}I.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Lex${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Lex${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs"
+#gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf
 # stuff "v -O gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs gf-contrib/drbean/business/stress/cusp/Model.hs gf-contrib/drbean/business/stress/cusp/Story_Interpretation.hs"
 screen
 stuff "cd gf-contrib^M cd -^M"

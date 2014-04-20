@@ -1,0 +1,5 @@
+/home/drbean/class/call/youtube/dic.yaml
+gf-contrib/drbean/LogicalForm.hs
+gf-contrib/drbean/call/intros/AFB1J0/Model.hs
+gf-contrib/drbean/call/intros/AFB1J0/Story_Interpretation.hs
+gf-contrib/drbean/call/intros/AFB1J0/Tests.hs

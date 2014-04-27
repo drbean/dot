@@ -132,10 +132,10 @@ fu! Populate_pn(word, module)
 
 	let ab_gf = bufnr( "/" . a:module . "\.gf")
 	execute "buffer" ab_gf
-"	let last_line = line("$")
-"	call cursor(last_line, 1)
-"	call search(category, "bc")
-"	call append(line('.'), "\t" . lc_name . "\t: PN;")
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search(category, "bc")
+	call append(line('.'), "\t" . lc_name . "\t: PN;")
 
 	let ab_i_gf = bufnr( a:module . "I.gf")
 	execute "buffer" ab_i_gf
@@ -166,23 +166,23 @@ fu! Populate(module)
 	let key = input("Cat: '(A)P', '(C)N', '(P)N', '(V)*' ")
 	call inputrestore()
 	let category = get( {'a': 'AP', 'c': 'CN', 'p': 'PN', 'v': 'V'}, key )
-"	call setline('.', word . "\t: " . category . ";")
+	call setline('.', word . "\t: " . category . ";")
 	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
 	let word_lnum = line("'a")
-"	call setline(word_lnum, "\t, \"" . word . "\"")
-"	call append(word_lnum,'')
-"	call setpos("'a", [0, (word_lnum+1), 1, 0])
+	call setline(word_lnum, "\t, \"" . word . "\"")
+	call append(word_lnum,'')
+	call setpos("'a", [0, (word_lnum+1), 1, 0])
 
 	if category == "PN"
 		call Populate_pn(word, a:module) 
 	else 
 		let ab_gf = bufnr( "/" . a:module . "\.gf")
 		execute "buffer" ab_gf
-	"	let last_line = line("$")
-	"	call cursor(last_line, 1)
-	"	call search(category, "bc")
-	"	call append(line('.'), "\t" . word . "\t: " . category . ";")
+		let last_line = line("$")
+		call cursor(last_line, 1)
+		call search(category, "bc")
+		call append(line('.'), "\t" . word . "\t: " . category . ";")
 
 		let ab_i_gf = bufnr( a:module . "I.gf")
 		execute "buffer" ab_i_gf
@@ -210,7 +210,7 @@ fu! Populate(module)
 	call setpos('.', save_cursor)
 
 endf
-nn <LocalLeader>p <Esc>:call Populate("Cusp")<CR>j
+nn <LocalLeader>p <Esc>:call Populate("AFB1J0")<CR>j
 
 " put words in DicksonI.gf, LexDickson.gf, LexDicksonEng.gf
 

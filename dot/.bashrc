@@ -125,7 +125,7 @@ function GF () {
     TOPIC=$topic \
     STORY=$story \
     MOD=$module \
-    screen -c /home/drbean/dot/.screen/gf.rc -dR GF
+    screen -c /home/drbean/dot/.screen/gf.rc -dR GF_$story
     cd -
 }
 

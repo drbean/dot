@@ -1,4 +1,4 @@
-# Last Edit: 2014  4月 25, 21時13分57秒
+# Last Edit: 2014  4月 27, 13時43分21秒
 #
 # The ultimate Mutt settings
 #
@@ -783,7 +783,6 @@ send-hook 'ghm2y@sikasenbey.or.jp|j27acebc4225qa@k.vodafone.ne.jp' 'set send_cha
 send-hook 'mari_kitaoka@gmx.yamaha.com|marimo-x@wonder.ocn.ne.jp' 'set send_charset=iso-8859-1:iso-2022-jp signature=""'
 send-hook 'john.m.sewell@gmail.com' 'set send_charset=iso-8859-1:utf-8 signature=""'
 send-hook '.edu.tw' 'set send_charset=utf-8 signature=""'
-send-hook 'ets.k888@msa.hinet.net' 'my_hdr Cc: ets.k888@gmail.com'
 
 # signature/attribution/locale for robots:
 # this is not working when I edit mail in folder for resending.

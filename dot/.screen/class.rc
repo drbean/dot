@@ -22,6 +22,7 @@ stuff "# svn revert classwork/$SESSION/$LASTWEEK.yaml^M"
 stuff "# svn mv classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
 stuff "# svn ci -m Grades/Groupwork:r1720 classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
 stuff "# mv classwork/$LASTWEEK.yaml.noform classwork/$LASTWEEK.yaml^M" 
+stuff "# mv classwork/$WEEK.yaml.noform classwork/$WEEK.yaml^M" 
 stuff "# svn ci -m $TOPIC classwork/$LASTWEEK.yaml^M"
 
 screen 2

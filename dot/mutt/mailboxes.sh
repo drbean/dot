@@ -7,7 +7,7 @@ do {
 };
 done;
 
-cd Mail;
+cd $HOME/Mail;
 for mailbox in *;
 do {
 	printf =$mailbox;

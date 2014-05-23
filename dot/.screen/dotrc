@@ -1,7 +1,7 @@
 screen 9
 stuff "man screen"
 screen 0
-stuff "v .bashrc .screen/"
+stuff "v .bashrc .screen/ vim/"
 screen 2
 source vim.rc
 screen 1

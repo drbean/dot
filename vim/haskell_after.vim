@@ -159,23 +159,63 @@ fu! Populate_pn(word, module)
 	call append(line('.'), "\t" . lc_name . "_" . super_cat . "\t= mk" . super_cat . " masculine (mk" . super_cat ." \"" . a:word . "\");")
 endf
 
+fu! Populate_a(word, module, category, super_cat)
+	let lc_name = tolower( a:word )
+
+	let ab_gf = bufnr( "/" . a:module . "\.gf")
+	execute "buffer" ab_gf
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search(a:category, "bc")
+	call append(line('.'), "\t" . lc_name . "\t: " . a:category . ";")
+
+	let ab_i_gf = bufnr( a:module . "I.gf")
+	execute "buffer" ab_i_gf
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search("mk" . a:category, "bc")
+	call append(line('.'), "\t" . lc_name . "\t= mk" . a:category . " " . lc_name . "_" . a:super_cat . ";")
+
+	let lex_ab_gf = bufnr( "Lex" . a:module . ".gf")
+	execute "buffer" lex_ab_gf
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search("_" . a:super_cat, "bc")
+	call append(line('.'), "\t" . lc_name . "_" . a:super_cat . "\t: " . a:super_cat . ";")
+
+	let lex_ab_eng_gf = bufnr( "Lex" . a:module . "Eng.gf")
+	execute "buffer" lex_ab_eng_gf
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search("_" . a:super_cat, "bc")
+	call append(line('.'), "\t" . lc_name . "_" . a:super_cat . "\t= mk" . a:super_cat . " \"" . a:word . "\";")
+endf
+
 fu! Populate(module)
-	let quoted_word = expand('<cWORD>')
+	let quoted_word = matchstr( getline('.'), "\".*\"")
+	if quoted_word == ""
+		let quoted_word = expand('<cWORD>')
+	endif
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
-	let key = input("Cat: '(A)P', '(C)N', '(P)N', '(V)*' ")
+	let key = input("Cat: '(A)', '(C)N', '(P)N', '(V)*' ")
 	call inputrestore()
-	let category = get( {'a': 'AP', 'c': 'CN', 'p': 'PN', 'v': 'V'}, key )
+	let category = get( {'a': 'A', 'c': 'CN', 'p': 'PN', 'v': 'V'}, key )
 	call setline('.', word . "\t: " . category . ";")
 	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
-	let word_lnum = line("'a")
+	let mark = strpart(category, 0, 1)
+	let word_lnum = line("'" . mark)
 	call setline(word_lnum, "\t, \"" . word . "\"")
 	call append(word_lnum,'')
-	call setpos("'a", [0, (word_lnum+1), 1, 0])
+	call setpos("'" . mark, [0, (word_lnum+1), 1, 0])
 
 	if category == "PN"
 		call Populate_pn(word, a:module) 
+	elseif category == "A"
+		call Populate_a(word, a:module, "AP", "A") 
+	elseif category == "CN"
+		call Populate_a(word, a:module, "CN", "N") 
 	else 
 		let ab_gf = bufnr( "/" . a:module . "\.gf")
 		execute "buffer" ab_gf

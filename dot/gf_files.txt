@@ -1,5 +1,4 @@
-/home/drbean/class/call/youtube/dic.yaml
 gf-contrib/drbean/LogicalForm.hs
-gf-contrib/drbean/call/intros/AFB1J0/Model.hs
-gf-contrib/drbean/call/intros/AFB1J0/Story_Interpretation.hs
-gf-contrib/drbean/call/intros/AFB1J0/Tests.hs
+gf-contrib/drbean/conversation/work/trinka/Model.hs
+gf-contrib/drbean/conversation/work/trinka/Story_Interpretation.hs
+gf-contrib/drbean/conversation/work/trinka/Tests.hs

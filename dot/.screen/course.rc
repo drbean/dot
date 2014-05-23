@@ -9,6 +9,9 @@ stuff "# lpr bingo_${STORY}_0.pdf -P kyocera^M"
 screen
 stuff "# perl ../cclass/cards.pl ./$TOPIC && xelatex ./\$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf^M"
 stuff "# perl ../cclass/cards.pl ./$TOPIC && xelatex ./\$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf^M"
+stuff "# sudo mount -t vfat /dev/sdb1 /media/drbean/^M"
+stuff "# sudo cp jigsaw_${STORY}_$FORM.pdf /media/drbean^M"
+stuff "# sudo umount /media/drbean^M"
 screen ghci -i../csfp/:./:./$TOPIC:./$TOPIC/$STORY/
 stuff ":load Tests^M":
 screen

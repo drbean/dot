@@ -1,4 +1,4 @@
-# Last Edit: 2014  4月 27, 13時43分21秒
+# Last Edit: 2014  5月 02, 12時45分54秒
 #
 # The ultimate Mutt settings
 #
@@ -9,7 +9,7 @@
 #
 
 reset all		# reset all variables to system defaults.
-unhook *		# remove all hooks
+# unhook *		# remove all hooks
 
 
 #
@@ -264,6 +264,7 @@ set mbox_type=mbox
 # (seems to be limited to 114 chars!)
 #
 #set alternates="\^(((roland(.rosenfeld)?)(\\+.*)?@(.*\\.)?(rhein|spinnaker)\\.de)|(roland(\\+.*)?@(.*\\.)?debian\\.org)|(rosenfel(\\+.*)?@(.*\\.)?(cs|informatik)\\.(uni-bonn\\.de|bonn\\.edu))|(uzs14f@(.*\\.)?uni-bonn\\.de)|(rrosenf@linux01\\.gwdg\\.de)|(roland(\\+.*)?@(.*\\.)?does-not-exist\\.org))$"				# alternate usernames
+alternates ^(drbean@.*(freeshell|sdf)\\.org)$
 
 set mask="."			# Show these files in the file browser
 #set mask="!^\\.[^.]"		# Default
@@ -768,10 +769,10 @@ folder-hook =v 'macro index S <change-folder>~/Mail/z/l<enter><search>vim<enter>
 set default_hook="~t %s"
 
 # not in Rosenfeld, send-hooks not working when reply
-reply-hook . 'unmy_hdr Cc'
-reply-hook 'ets.k888' 'my_hdr Cc: ets.k888@gmail.com'
-reply-hook 'ets.k888\@gmail.com' 'my_hdr Cc: ets.k888@msa.hinet.net'
-
+# reply-hook . 'unmy_hdr cc'
+# reply-hook 'ets' 'my_hdr Cc: ets.k888@gmail.com'
+# reply-hook 'ets.k888\@gmail.com' 'my_hdr Cc: ets.k888@msa.hinet.net'
+# send-hook 'ets.k888' 'my_hdr Cc: ets.k888@gmail.com'
 
 # First send-hook
 send-hook . "set attribution='On %{%a, %d %b %Y}, %n wrote:\n' indent_string='> '"

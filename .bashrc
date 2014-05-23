@@ -515,18 +515,24 @@ function tables () {
 		# 16 groups
 	2040)
 	    case ${letter} in
-		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		# A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		# B) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		# C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		A) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
 		B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
-		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		C) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
+		# C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
 		X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
 		*) return 1 # illegal letter
 	    esac;;
 		# 19 groups
 	AFBB32)
 	    case ${letter} in
-		A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
+		# A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
+		A) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
 		B) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
-		C) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Silver::Violet,Beige::Turquoise,Golden::Window";;
+		C) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
+		# C) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Silver::Violet,Beige::Turquoise,Golden::Window";;
 		X) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
 		Y) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
 		Z) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
@@ -550,9 +556,13 @@ function tables () {
 	    esac;;
 	3024)
 	    case ${letter} in
-		A) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Silver,Yellow::White";;
-		B) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::Silver";;
-		C) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Silver,Yellow::White";;
+		# A) tables="Black::Blue,Charcoal::Green,Orange::Pink,Purple::Chocolate,Yellow::White";;
+		# B) tables="Black::Blue,Charcoal::Green,Orange::Pink,Purple::Chocolate,Yellow::White";;
+		# C) tables="Black::Blue,Charcoal::Green,Orange::Pink,Purple::Chocolate,Yellow::White";;
+		A) tables="Green::Black,Charcoal::Blue,White::Orange,Yellow::Pink,Purple::Chocolate,Silver::Brown";;
+		B) tables="Green::Black,Charcoal::Blue,White::Orange,Yellow::Pink,Purple::Chocolate,Silver::Brown";;
+		C) tables="Green::Black,Charcoal::Blue,White::Orange,Yellow::Pink,Purple::Chocolate,Silver::Brown";;
+		# C) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Silver,Yellow::White";;
 		X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::Silver";;
 		*) return 1 # illegal option
 	    esac;;

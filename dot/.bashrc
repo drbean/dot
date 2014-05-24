@@ -391,6 +391,9 @@ function grading () {
             *) return 1 # illegal option
         esac
     done
+    if [[ -z "$n" ]]
+	then n=3
+    fi
     cd ~/022/$league
     ROUND=$round \
     NEXTROUND=$(($round+1)) \

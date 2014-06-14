@@ -1,4 +1,4 @@
-" Last Edit: 2014  4月 28, 16時16分01秒
+" Last Edit: 2014  6月 14, 21時16分41秒
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -518,16 +518,48 @@ au!
 
 " scoring classwork/$week.yaml files
 
-au BufEnter classwork/*.yaml nn <LocalLeader>r :set paste<CR>G
-       \ :.s/,/,<C-V><CR>/g<CR>
-       \ gg<CR>o<Esc><CR>
-       \ :.,$s/\v(::<Bar>,)/:<C-V><CR>  absent:<C-V><CR>  merits: \~<C-V><CR>/ge<CR>
-       \ A:<CR>  absent:<CR>  merits: ~<CR><Esc><CR>
-       \ :set nopaste<CR><CR>
-       \ gg<CR><CR>
-       \ <CR>
-       \ <CR>
-       \ :set nopaste<CR><CR>
+fu! Reformat ()
+	@ts = 2
+	let lnum = line('$')
+	let tables = split( getline(lnum), ',' )
+	call setline(lnum, "")
+	for table in tables
+		let lnum = line('$')
+		let groups = split( table, '::' )
+		for group in groups
+			call append (lnum, [group . ":", "  absent:", "  merits: ~"])
+			let lnum = line('$')
+		endfor
+		let lnum = line('$')
+		call append(lnum, "")
+	endfor
+	let lnum = line('$')
+	call append (lnum, "report:")
+	let lnum = line('$')
+	let n = 1
+	for table in tables
+		call append(lnum, "  Table " . n . ":")
+		let lnum = line('$')
+		let groups = split( table, '::' )
+		let m = -1
+		for group in groups
+			for letter in ["A", "B", "C"]
+				call append (lnum, "    " . letter . ":")
+				let lnum = line('$')
+				let name = system( "letter2name.pl --league AFBB32 -s 4 -g " . group . " --letter " . letter )
+				call append (lnum, ["      " . (2 * n + m) . ": ","        " . group . ": " . name])
+				let lnum = line('$')
+				call append (lnum, "      winner: ~")
+				let lnum = line('$')
+			endfor
+			let m = m + 1
+			let lnum = line('$')
+		endfor
+		let n = n + 1
+	endfor
+endf
+
+au BufEnter classwork/*.yaml nn <LocalLeader>r <Esc>:call Reformat()<CR>j
 au BufEnter classwork/*.yaml nn <LocalLeader>f :if !empty(getline('.')) <Bar>
 	\ call search('^$', 'bW') <Bar>
 	\ endif <Bar>

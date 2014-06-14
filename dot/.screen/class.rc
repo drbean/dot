@@ -13,7 +13,7 @@ screen 3
 stuff "ls homework classwork exam/*^M"
 
 screen 1
-stuff "echo -e \"---\n# topic: $TOPIC\n$TABLES\" >> \"classwork/$WEEK.yaml.noform\"^M"
+stuff "echo -e \"---\ntopic: $TOPIC\n\n$TABLES\" >> \"classwork/$WEEK.yaml.noform\"^M"
 stuff "svn st | grep '\^\(A\|M\|D\)'^Msvn log -vr BASE:HEAD^M"
 stuff "ls classwork^M"
 stuff "svn ls classwork/$SESSION^M"

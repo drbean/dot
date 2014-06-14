@@ -12,6 +12,7 @@ stuff "# cp teamseat.pdf /run/media/drbean/DIE2GV1/^M"
 stuff "# svn ci -m $TOPIC comp/$ROUND exam/$ROUND^M"
 screen 2
 stuff "cd ~/022/$LEAGUE/comp^M"
+stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put $ROUND/g2.yaml && put $ROUND/points.yaml'^M"
 stuff "# update_db.pl -l $LEAGUE -r $ROUND^M"
 stuff "# sum_g1_g2.pl -l $LEAGUE -r $ROUND > ../exam/$ROUND/g.yaml^M"
 stuff "# score_comp.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml^M"
@@ -29,7 +30,7 @@ stuff "# scantron.pl -l $LEAGUE -r $ROUND > $ROUND/response.yaml^M"
 stuff "# score_jigsaw.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml^M"
 stuff "# grade_jigsaw.pl -l $LEAGUE -r $ROUND -n $N > $ROUND/g1.yaml^M"
 stuff "# xelatex report.tex && evince report.pdf^M"
-stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf'^M"
+stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf && put $ROUND/g1.yaml'^M"
 screen 5
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 screen 4

@@ -1,4 +1,4 @@
-# Last Edit: 2014  5月 02, 12時45分54秒
+# Last Edit: 2014  6月 11, 22時17分45秒
 #
 # The ultimate Mutt settings
 #
@@ -769,10 +769,10 @@ folder-hook =v 'macro index S <change-folder>~/Mail/z/l<enter><search>vim<enter>
 set default_hook="~t %s"
 
 # not in Rosenfeld, send-hooks not working when reply
-# reply-hook . 'unmy_hdr cc'
-# reply-hook 'ets' 'my_hdr Cc: ets.k888@gmail.com'
-# reply-hook 'ets.k888\@gmail.com' 'my_hdr Cc: ets.k888@msa.hinet.net'
-# send-hook 'ets.k888' 'my_hdr Cc: ets.k888@gmail.com'
+reply-hook . 'unmy_hdr cc'
+reply-hook 'ets' 'my_hdr Cc: ets.k888@gmail.com'
+reply-hook 'ets.k888\@gmail.com' 'my_hdr Cc: ets.k888@msa.hinet.net'
+send-hook 'ets.k888' 'my_hdr Cc: ets.k888@gmail.com'
 
 # First send-hook
 send-hook . "set attribution='On %{%a, %d %b %Y}, %n wrote:\n' indent_string='> '"

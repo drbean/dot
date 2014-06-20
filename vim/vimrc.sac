@@ -1,4 +1,4 @@
-" Last Edit: 2014  6月 15, 10時28分14秒
+" Last Edit: 2014  6月 20, 22時05分03秒
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -339,13 +339,13 @@ nn <buffer> <Leader>answers y14y"0P"0P"0P14j3j27.jrB7k.1347.jrC7k.1367.j
 
 "snipMate
 
-let s:i = @i
-fu! MyCounter()
-	let s:i = s:i+1
-	echo s:i
+fu! Increment_i()
+       let s:i = @i
+       let @i = s:i+1
+       return s:i
 endf
-command Increment call MyCounter()
 
+let s:i = @i
 fu! Insert_increment()
 	let s:i = Increment_i()
 	let s:line = getline(".")
@@ -520,6 +520,8 @@ au!
 " scoring classwork/$week.yaml files
 
 fu! Reformat ()
+	let dir = getcwd()
+	let league = substitute(dir, "/home/drbean/022/", "", "")
 	@ts = 2
 	let lnum = line('$')
 	let tables = split( getline(lnum), ',' )
@@ -547,7 +549,7 @@ fu! Reformat ()
 			let lnum = line('$')
 			let m = -1
 			for group in groups
-				let name = system( "letter2name.pl --league AFBB32 -s 4 -g " . group . " --letter " . letter )
+				let name = system( "letter2name.pl --league " . league . " -s 4 -g " . group . " --letter " . letter )
 				call append (lnum, ["      " . (2 * n + m) . ": ","        " . group . ": " . name])
 				let lnum = line('$')
 				let m = m + 1

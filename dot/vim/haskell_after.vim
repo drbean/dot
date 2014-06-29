@@ -45,6 +45,16 @@ fu! Interp()
 endfunction
 ino <LocalLeader>I <Esc>:call Interp()<CR>o
 
+fu! Predid() 
+	let relation = expand('<cword>')
+	call inputsave()
+	let key = input("Predicate Places: '1', '2', '3', '4' or  (C)ase")
+	call inputrestore()
+	let feature = get( {'1': '1', '2': '2', '3': '3', '4': '4'}, key )
+	call setline(".", "\t, ( \"" . relation . "\",\tpred" . feature . " [] )")
+endfunction
+ino <LocalLeader>p <Esc>:call Predid()<CR>o
+
 fu! Inflect()
 	let words = split(getline('.'), '\s\+')
 	let inflection = "\t, (\"" . get(words, 0) . "\",\t\"" . get(words, 1) . "\" )"

@@ -12,7 +12,7 @@ alias surf="cd ~/sr; screen -dR surfraw; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
-alias comp="cd ~/comp; APP=comp COURSE=business STORY=adventure screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
+alias comp="cd ~/comp; APP=comp COURSE=conversation STORY=trinka screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
 
 function edit () {
     OPTIND=1
@@ -518,12 +518,12 @@ function tables () {
 		# 16 groups
 	2040)
 	    case ${letter} in
-		# A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-		# B) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-		# C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-		A) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
-		B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
-		C) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
+		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		B) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
+		# A) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
+		# B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
+		# C) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
 		# C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
 		X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
 		*) return 1 # illegal letter
@@ -532,6 +532,8 @@ function tables () {
 	AFBB32)
 	    case ${letter} in
 		# A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
+		# B) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
+		# C) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
 		A) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
 		B) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
 		C) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
@@ -544,8 +546,10 @@ function tables () {
 	FLA0021)
 	    case ${letter} in
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
-		B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
+		B) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
 		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
+		# B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
+		# C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
 		X) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
 		*) return 1 # illegal option
 	    esac;;
@@ -579,17 +583,22 @@ function tables () {
 	    esac;;
 	AFB1J0)
 	    case ${letter} in
-		A) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow";;
-		B) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink";;
-		C) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow";;
-		X) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink";;
+		A) tables="2-1::2-2,3-1::3-2,4-1::,";;
+		B) tables="2-1::2-2,3-1::3-2,4-1::,";;
+		C) tables="2-1::2-2,3-1::3-2,4-1::,";;
+		X) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow";;
 		*) return 1 # illegal option
 	    esac;;
 	FLA0018)
 	    case ${letter} in
-		A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
-		B) tables="Orange::Black,Blue::Brown,Purple::Pink";;
-		C) tables="Black::Blue,Brown::Purple,Pink::Orange";;
+		# A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
+		A) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
+		B) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
+		C) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
+		# A) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
+		# B) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
+		# C) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
+		# C) tables="Black::Blue,Brown::Purple,Pink::Orange";;
 		X) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
 		*) return 1 # illegal option
 	    esac;;
@@ -833,7 +842,7 @@ function GL00019 () {
 
 alias contest="cd ~/001/contest; screen -dR contest; cd -"
 
-alias job="cd ~/job; screen -dR job; cd -"
+alias job="cd ~/job; screen -c /home/drbean/dot/.screen/job.rc -dR job; cd -"
 
 alias q=exit
 

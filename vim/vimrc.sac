@@ -1,4 +1,4 @@
-" Last Edit: 2014  6月 20, 22時05分03秒
+" Last Edit: 2014  6月 26, 12時00分29秒
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -339,18 +339,17 @@ nn <buffer> <Leader>answers y14y"0P"0P"0P14j3j27.jrB7k.1347.jrC7k.1367.j
 
 "snipMate
 
+let s:i = 0
 fu! Increment_i()
-       let s:i = @i
-       let @i = s:i+1
+       let s:i = s:i + 1
        return s:i
 endf
 
-let s:i = @i
 fu! Insert_increment()
-	let s:i = Increment_i()
+	let s:n = Increment_i()
 	let s:line = getline(".")
 	let s:chars = split( s:line, '\zs')
-	call insert( s:chars, s:i, col(".") )
+	call insert( s:chars, s:n, col(".") )
 	let s:line = join( s:chars, "" )
 	call setline(".", s:line)
 endf

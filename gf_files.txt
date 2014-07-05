@@ -1,4 +1,4 @@
 gf-contrib/drbean/LogicalForm.hs
-gf-contrib/drbean/conversation/work/trinka/Model.hs
-gf-contrib/drbean/conversation/work/trinka/Story_Interpretation.hs
-gf-contrib/drbean/conversation/work/trinka/Tests.hs
+gf-contrib/drbean/conversation/work/dickson/Model.hs
+gf-contrib/drbean/conversation/work/dickson/Story_Interpretation.hs
+gf-contrib/drbean/conversation/work/dickson/Tests.hs

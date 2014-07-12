@@ -9,7 +9,7 @@ stuff "git status^M"
 stuff "# git fetch upstream^M"
 stuff "# git merge upstream/master^M"
 screen 2
-stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/%STORY^M cd -^M"
+stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/$STORY^M cd -^M"
 stuff "gf -coding utf-8^M import gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf^M "
 screen 3
 stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/$STORY/^M"

@@ -168,7 +168,7 @@ function sound () {
 alias class="cd ~/class; screen -dR class; cd -"
 alias forms="cd ~/class/forms; screen -dR forms; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/drbean/dot/.screen/utility.rc -dR tmpl; cd -"
-alias rc="cd ~/022/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
+alias rc="cd ~/031/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
 
 function topics () {
     OPTIND=1
@@ -394,7 +394,7 @@ function grading () {
     if [[ -z "$n" ]]
 	then n=3
     fi
-    cd ~/022/$league
+    cd ~/031/$league
     ROUND=$round \
     NEXTROUND=$(($round+1)) \
     LEAGUE=$league \
@@ -418,7 +418,7 @@ alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
 alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
 alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
 
-alias 022="cd ~/022; screen -dR s022; cd -"
+alias 031="cd ~/031; screen -dR s031; cd -"
 
 function AFB1J0 () {
     OPTIND=1
@@ -440,7 +440,7 @@ function AFB1J0 () {
 	X) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
 	*) return 1 # illegal option
     esac
-    cd ~/022/$league
+    cd ~/031/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -631,7 +631,7 @@ function w () {
     done
     session $league $week
     tables $league $letter
-    cd ~/022/$league
+    cd ~/031/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -668,7 +668,7 @@ function yd2040 () {
 	X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
 	*) return 1 # illegal option
     esac
-    cd ~/022/$league
+    cd ~/031/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -700,7 +700,7 @@ function yd40113024 () {
 	X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::";;
 	*) return 1 # illegal option
     esac
-    cd ~/022/$league
+    cd ~/031/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -732,7 +732,7 @@ function FLA0018 () {
 	X) tables="Green::Black,Blue::Charcoal,Chocolate::Purple,White::Orange,Pink::Yellow";;
 	*) return 1 # illegal option
     esac
-    cd ~/022/$league
+    cd ~/031/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -764,7 +764,7 @@ function FLA0021 () {
 	B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
 	*) return 1 # illegal option
     esac
-    cd ~/022/$league
+    cd ~/031/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -796,7 +796,7 @@ function FLA0027 () {
 	X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 	*) return 1 # illegal option
     esac
-    cd ~/022/$league
+    cd ~/031/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -828,7 +828,7 @@ function GL00019 () {
 	X) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
 	*) return 1 # illegal option
     esac
-    cd ~/022/$league
+    cd ~/031/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \

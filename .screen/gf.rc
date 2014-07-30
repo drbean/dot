@@ -1,6 +1,6 @@
 screen
 # stuff "v -O $(< ~/dot/gf_files.txt)"
-stuff "v -O gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
+stuff "v -O gf-contrib/drbean/LogicalForm.hs gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/conversation/work/dickson/Model.hs gf-contrib/drbean/conversation/work/dickson/Story_Interpretation.hs"
 
 # stuff "v -O gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs gf-contrib/drbean/business/stress/cusp/Model.hs gf-contrib/drbean/business/stress/cusp/Story_Interpretation.hs"
 screen

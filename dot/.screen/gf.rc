@@ -32,3 +32,5 @@ screen
 stuff "/usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html^M"
 screen
 stuff "/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html^M"
+screen
+stuff "/usr/bin/links http://hackage.haskell.org/package/gf-3.6/docs/^M"

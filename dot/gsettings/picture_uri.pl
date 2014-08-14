@@ -20,4 +20,4 @@ $seen->print(@seen, $pic);
 
 chomp $pic;
 
-system("gsettings set org.mate.background picture-filename /home/drbean/Pictures/$pic");
+system("dbus-launch gsettings set org.mate.background picture-filename /home/drbean/Pictures/$pic");

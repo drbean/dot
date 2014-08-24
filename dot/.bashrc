@@ -13,6 +13,7 @@ alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
 alias comp="cd ~/comp; APP=comp COURSE=conversation STORY=trinka screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
+alias rdf="cd ~/rdf; screen -c /home/drbean/dot/.screen/rdf.rc -dR rdf; cd -"
 
 function edit () {
     OPTIND=1
@@ -67,7 +68,7 @@ function dic () {
         esac
     done
     cd ~/$app
-    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR dic_$course
+    APP=$app MOD=${app^} COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR dic_$course
     cd -
 }
 
@@ -88,6 +89,7 @@ function bett () {
     done
     cd ~/bett
     APP=bett \
+    MOD=${app^} \
     COURSE=$course \
     STORY=$story \
     OLD_STORY=$old_story \
@@ -110,13 +112,12 @@ alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 function GF () {
     OPTIND=1
     local module
-    while getopts 'c:t:s:m:' arg
+    while getopts 'c:t:s:' arg
     do
         case ${arg} in
 	    c) course=${OPTARG};;
 	    t) topic=${OPTARG};;
 	    s) story=${OPTARG};;
-            m) module=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
@@ -124,7 +125,7 @@ function GF () {
     COURSE=$course \
     TOPIC=$topic \
     STORY=$story \
-    MOD=$module \
+    MOD=${story^} \
     screen -c /home/drbean/dot/.screen/gf.rc -dR GF_$story
     cd -
 }
@@ -240,7 +241,7 @@ function biz () {
 function cnv () {
     OPTIND=1
     local arg course=conversation view topic story form
-    while getopts 'c:v:t:s:f:' arg
+    while getopts 'v:t:s:f:' arg
     do
         case ${arg} in
             v) view=${OPTARG};;
@@ -352,41 +353,53 @@ function m () {
 	cd -
 }
 
-function exam_prep () {
-    OPTIND=1
+function ex () {
     local arg course round topic story form
-    while getopts 'c:v:t:s:f:' arg
+    case $1 in
+	conversation) course=$1;;
+	business) course=$1;;
+	*) return 1 # illegal league
+    esac
+    OPTIND=2
+    while getopts 'c:t:s:f:' arg
     do
         case ${arg} in
-            c) course=${OPTARG};;
-            v) view=${OPTARG};;
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
             f) form=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/drbean/dot/.screen/exam_prep.rc -dR exam_$course
-	cd -
+    cd ~/class/$course
+    COURSE=$course \
+    TOPIC=$topic \
+    STORY=$story \
+    FORM=$form \
+    screen -c /home/drbean/dot/.screen/exam_prep.rc -dR exam_$course
+    cd -
 }
 
-function grading () {
-    OPTIND=1
-    local arg league round topic story form
-    while getopts 'l:r:t:s:f:n:' arg
+function gr () {
+    local arg league round topic n
+    case $1 in
+	2040) league=$1;;
+	3024) league=$1;;
+	GL00019) league=$1;;
+	2L1) league=$1;;
+	MB1) league=$1;;
+	3K0) league=$1;;
+	B32) league=$1;;
+	FLA0018) league=$1;;
+	FLA0021) league=$1;;
+	FLA0027) league=$1;;
+	*) return 1 # illegal league
+    esac
+    OPTIND=2
+    while getopts 'r:t:n:' arg
     do
         case ${arg} in
-            l) league=${OPTARG};;
             r) round=${OPTARG};;
             t) topic=${OPTARG};;
-            s) story=${OPTARG};;
-            f) form=${OPTARG};;
             n) n=${OPTARG};;
             *) return 1 # illegal option
         esac
@@ -395,12 +408,10 @@ function grading () {
 	then n=3
     fi
     cd ~/031/$league
+    LEAGUE=$league \
     ROUND=$round \
     NEXTROUND=$(($round+1)) \
-    LEAGUE=$league \
     TOPIC=$topic \
-    STORY=$story \
-    FORM=$form \
     N=$n \
     screen -c /home/drbean/dot/.screen/grading.rc -dR s_$league
     cd -
@@ -419,38 +430,6 @@ alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
 alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
 
 alias 031="cd ~/031; screen -dR s031; cd -"
-
-function AFB1J0 () {
-    OPTIND=1
-    local arg league=AFB1J0 session week letter topic tables
-    while getopts 's:w:l:t:' arg
-    do
-        case ${arg} in
-            s) session=${OPTARG};;
-            w) week=${OPTARG};;
-            l) letter=${OPTARG};;
-            t) topic=${OPTARG};;
-            *) return 1 # illegal option
-        esac
-    done
-    case ${letter} in
-	A) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow,Purple::";;
-	B) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
-	C) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow,Purple::";;
-	X) tables="Green::Black,Blue::Charcoal,White::Orange,Yellow::Pink,Purple::";;
-	*) return 1 # illegal option
-    esac
-    cd ~/031/$league
-    SESSION=$session \
-    WEEK=$week \
-    LASTWEEK=$(($week-1)) \
-    LEAGUE=$league \
-    TOPIC=$topic \
-    LETTER=$letter \
-    TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
-    cd -
-}
 
 function session () {
     local league week
@@ -478,21 +457,21 @@ function session () {
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	AFB1J0)
+	2L1)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	AFBB32)
+	MB1)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0018)
+	3K0)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -529,7 +508,7 @@ function tables () {
 		*) return 1 # illegal letter
 	    esac;;
 		# 19 groups
-	AFBB32)
+	2L1)
 	    case ${letter} in
 		# A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
 		# B) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
@@ -543,7 +522,7 @@ function tables () {
 		Z) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0021)
+	MB1)
 	    case ${letter} in
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
 		B) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
@@ -553,7 +532,7 @@ function tables () {
 		X) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0027)
+	3K0)
 	    case ${letter} in
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 		B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
@@ -612,8 +591,10 @@ function w () {
 	2040) league=$1;;
 	3024) league=$1;;
 	GL00019) league=$1;;
-	AFB1J0) league=$1;;
-	AFBB32) league=$1;;
+	2L1) league=$1;;
+	2MB1) league=$1;;
+	3K0) league=$1;;
+	B32) league=$1;;
 	FLA0018) league=$1;;
 	FLA0021) league=$1;;
 	FLA0027) league=$1;;

@@ -1,0 +1,49 @@
+# file: gr
+# grading parameter completion
+# copied from w
+
+function _gr () {
+	local cur prev opts league league_re round_opt round topic_opt topic
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	opts="-r -t"
+	league="2L1 MB1 3K0 GL00019 FLA0018 FLA0021 FLA0027 2040 3024"
+	league_re="2L1|MB1|3K0|GL00019|FLA0018|FLA0021|FLA0027|2040|3024"
+	round_opt="-r"
+	round="0 1 2 3 4"
+	round_re="0|1|2|3|4"
+	topic_opt="-t"
+	topic="work careers"
+	topic_re="work|careers"
+	n_opt="-n"
+	n="2 3"
+
+	if [[ ${prev} == gr ]]; then
+	COMPREPLY=( $(compgen -W "${league}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${league_re} ]] ; then
+	COMPREPLY=( $(compgen -W "${round_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${round_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${round}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${round_re} ]] ; then
+	COMPREPLY=( $(compgen -W "${topic_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${topic_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${topic}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${topic_re} ]] ; then
+	COMPREPLY=( $(compgen -W "${n_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${n_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${n}" -- ${cur}) )
+	return 0
+	elif [[ ${cur} == * ]] ; then
+	COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+	return 0
+	fi
+}
+
+complete -F _gr gr

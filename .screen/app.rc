@@ -1,5 +1,5 @@
 screen
-stuff "v script"
+stuff "v lib/$MOD/Controller/Play.pm lib/$MOD/Controller/Game.pm lib/$MOD/Controller/Login.pm script"
 screen
 stuff "cd branch/gf^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"

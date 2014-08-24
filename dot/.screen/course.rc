@@ -1,5 +1,5 @@
 screen 0
-stuff "v slides.txt $TOPIC/dic.yaml $TOPIC/cards.yaml $TOPIC/slides.txt $TOPIC/questionsA5.tex $TOPIC/$STORY/Model.hs $TOPIC/$STORY/Story_Cats.hs $TOPIC/$STORY/Story_Interpretation.hs  $TOPIC/$STORY/Tests.hs"
+stuff "v slides.txt $TOPIC/dic.yaml $TOPIC/cards.yaml $TOPIC/slides.txt $TOPIC/questionsA5.tex $TOPIC/$STORY/Model.hs ~/GF/gf-contrib/$COURSE/$TOPIC/$STORY/Model.hs  ~/GF/gf-contrib/$COURSE/$TOPIC/$STORY/Story_Interpretation.hs  ~/GF/gf-contrib/$COURSE/$TOPIC/$STORY/Tests.hs"
 screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "cd ./$TOPIC && pandoc -t beamer --latex-engine=xelatex --variable mainfont='WenQuanYi Zen Hei' slides.txt -o slides.pdf && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put slides.pdf && qui' && cd -^M"
@@ -16,6 +16,7 @@ stuff "# sudo umount /media/drbean^M"
 screen ghci -i../csfp/:./:./$TOPIC:./$TOPIC/$STORY/
 stuff ":load Tests^M":
 screen
-stuff "ghc -o /var/www/cgi-bin/bett/bin/Transfer_$STORY -i../../GF/contrib/drbean/business/$TOPIC/$STORY ../../GF/contrib/drbean/business/$TOPIC/$STORY/Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_$STORY -i../../GF/contrib/drbean/business/$TOPIC/$STORY ../../bett/script/ShowWords.hs"
+stuff "# gf --make --output-format=haskell ${MOD}Eng.gf^M"
+stuff "ghc -o /var/www/cgi-bin/bett/bin/Transfer_$STORY -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_$STORY -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_$STORY -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp ${MOD}.pgf /var/www/cgi-bin/bett/bin/${MOD}.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s $STORY && perl /var/www/cgi-bin/bett/script/words.pl -s $STORY^M"
 screen lftp greg@web.nuu.edu.tw
 stuff "cd /public_html/$VIEW^Mls"

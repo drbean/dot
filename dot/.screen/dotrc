@@ -1,7 +1,7 @@
 screen 9
-stuff "man screen"
+stuff "man bash"
 screen 0
-stuff "v .bashrc .screen/ vim/"
+stuff "v .bashrc .screen/ vim/ bash/bash_completion"
 screen 2
 source vim.rc
 screen 1
@@ -10,4 +10,5 @@ stuff "cp .bashrc ~/.bashrc^M"
 stuff "cp .bash_profile ~/.bash_profile^M"
 stuff "cp .xmonad/xmonad.hs ~/.xmonad/ && "
 stuff "xmonad --recompile && xmonad --restart^M"
-stuff "# export HISTTIMEFORMAT='%m-%d '"
+stuff "# export HISTTIMEFORMAT='%m-%d '^M"
+stuff "su -c 'cp bash/bash_completion/{ex,gr,w,aca,bett,dic} /etc/bash_completion.d/'"

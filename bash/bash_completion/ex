@@ -1,0 +1,60 @@
+# file: ex
+# ex parameter completion
+# copied from gr
+
+function _ex () {
+	local cur prev opts course course_re topic_opt topic topic_re story_opt story story_re form_opt form form_re fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	opts="-t -s -f"
+	course="conversation business media"
+	course_re="conversation|business|media"
+	topic_opt="-t"
+	topic="work careers"
+	topic_re="work|careers"
+	story_opt="-s"
+	story="dickson jackson"
+	story_re="dickson|jackson"
+	form_opt="-f"
+	form="1 2 3 4"
+	form_re="1|2|3|4"
+	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
+	diropts="--cache-dir"
+
+	if [[ ${prev} =~ ${fileopts} ]]; then
+	COMPREPLY=( $(compgen -f -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${diropts} ]]; then
+	COMPREPLY=( $(compgen -d -- ${cur}) )
+	return 0
+	fi
+
+	if [[ ${prev} == ex ]]; then
+	COMPREPLY=( $(compgen -W "${course}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${course_re} ]] ; then
+	COMPREPLY=( $(compgen -W "${topic_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${topic_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${topic}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${topic_re} ]] ; then
+	COMPREPLY=( $(compgen -W "${story_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${story_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${story}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${story_re} ]] ; then
+	COMPREPLY=( $(compgen -W "${form_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${form_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${form}" -- ${cur}) )
+	return 0
+	elif [[ ${cur} == * ]] ; then
+	COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+	return 0
+	fi
+}
+
+complete -F _ex ex

@@ -1,10 +1,4 @@
-screen
-# stuff "v -O gf-contrib/drbean/{conversation/work/dickson/Dickson,LogicalForm,Interpretation,Evaluation,Transfer}.hs"
-# stuff "v -O $(< ~/dot/gf_files.txt)"
-stuff "v -O gf-contrib/drbean/LogicalForm.hs gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Story_Interpretation.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
-
-# stuff "v -O gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs gf-contrib/drbean/business/stress/cusp/Model.hs gf-contrib/drbean/business/stress/cusp/Story_Interpretation.hs"
-screen
+screen 1
 stuff "cd gf-contrib^M cd -^M"
 stuff "git status^M"
 stuff "# git fetch upstream^M"
@@ -22,15 +16,21 @@ stuff ":load Tests^M"
 stuff "let gr = readPGF \"${MOD}.pgf\"^M":
 # stuff "./Transfer_$STORY^M"
 # stuff "cd -^M"
-screen
+screen 4
 stuff "/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html^M"
-screen
+screen 5
 stuff "/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html^M"
-screen
+screen 6
 stuff "/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html^M"
-screen
+screen 7
 stuff "/usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html^M"
-screen
+screen 8
 stuff "/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html^M"
-screen
+screen 9
 stuff "/usr/bin/links http://hackage.haskell.org/package/gf-3.6/docs/^M"
+screen 0
+# stuff "v -O gf-contrib/drbean/{conversation/work/dickson/Dickson,LogicalForm,Interpretation,Evaluation,Transfer}.hs"
+# stuff "v -O $(< ~/dot/gf_files.txt)"
+stuff "v -O gf-contrib/drbean/LogicalForm.hs gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
+
+# stuff "v -O gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs gf-contrib/drbean/business/stress/cusp/Model.hs

@@ -147,22 +147,8 @@ fu! Populate_pn(word, module)
 	call search(category, "bc")
 	call append(line('.'), "\t" . lc_name . "\t: PN;")
 
-	let ab_i_gf = bufnr( a:module . "I.gf")
-	execute "buffer" ab_i_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search("_" . super_cat, "bc")
-	call append(line('.'), "\t" . lc_name . "\t= mk" . category . " " . lc_name . "_" . super_cat . ";")
-
-	let lex_ab_gf = bufnr( "Lex" . a:module . ".gf")
-	execute "buffer" lex_ab_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search("_" . super_cat, "bc")
-	call append(line('.'), "\t" . lc_name . "_" . super_cat . "\t: " . super_cat . ";")
-
-	let lex_ab_eng_gf = bufnr( "Lex" . a:module . "Eng.gf")
-	execute "buffer" lex_ab_eng_gf
+	let ab_eng_gf = bufnr( a:module . "Eng.gf")
+	execute "buffer" ab_eng_gf
 	let last_line = line("$")
 	call cursor(last_line, 1)
 	call search("_" . super_cat, "bc")
@@ -179,22 +165,8 @@ fu! Populate_a(word, module, category, super_cat)
 	call search(a:category, "bc")
 	call append(line('.'), "\t" . lc_name . "\t: " . a:category . ";")
 
-	let ab_i_gf = bufnr( a:module . "I.gf")
-	execute "buffer" ab_i_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search("mk" . a:category, "bc")
-	call append(line('.'), "\t" . lc_name . "\t= mk" . a:category . " " . lc_name . "_" . a:super_cat . ";")
-
-	let lex_ab_gf = bufnr( "Lex" . a:module . ".gf")
-	execute "buffer" lex_ab_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search("_" . a:super_cat, "bc")
-	call append(line('.'), "\t" . lc_name . "_" . a:super_cat . "\t: " . a:super_cat . ";")
-
-	let lex_ab_eng_gf = bufnr( "Lex" . a:module . "Eng.gf")
-	execute "buffer" lex_ab_eng_gf
+	let ab_eng_gf = bufnr( a:module . "Eng.gf")
+	execute "buffer" ab_eng_gf
 	let last_line = line("$")
 	call cursor(last_line, 1)
 	call search("_" . a:super_cat, "bc")
@@ -233,28 +205,7 @@ fu! Populate(module)
 		call cursor(last_line, 1)
 		call search(category, "bc")
 		call append(line('.'), "\t" . word . "\t: " . category . ";")
-
-		let ab_i_gf = bufnr( a:module . "I.gf")
-		execute "buffer" ab_i_gf
-		let last_line = line("$")
-		call cursor(last_line, 1)
-		call search(category, "bc")
-		call append(line('.'), "\t" . word . "\t= mk" . category . " " . word . "_" . category . ";")
-
-		let lex_ab_gf = bufnr( "Lex" . a:module . ".gf")
-		execute "buffer" lex_ab_gf
-		let last_line = line("$")
-		call cursor(last_line, 1)
-		call search(category, "bc")
-		call append(line('.'), "\t" . word . "_" . category . "\t: " . category . ";")
-
-		let lex_ab_eng_gf = bufnr( "Lex" . a:module . "Eng.gf")
-		execute "buffer" lex_ab_eng_gf
-		let last_line = line("$")
-		call cursor(last_line, 1)
-		call search(category, "bc")
-		call append(line('.'), "\t" . word . "_" . category . "\t= mk" . category . " \"" . word . "\";")
-
+        
 		let ab_eng_gf = bufnr( a:module . "Eng.gf")
 		execute "buffer" ab_eng_gf
 		let last_line = line("$")

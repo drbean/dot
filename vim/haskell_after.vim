@@ -254,13 +254,20 @@ fu! Populate(module)
 		call cursor(last_line, 1)
 		call search(category, "bc")
 		call append(line('.'), "\t" . word . "_" . category . "\t= mk" . category . " \"" . word . "\";")
+
+		let ab_eng_gf = bufnr( a:module . "Eng.gf")
+		execute "buffer" ab_eng_gf
+		let last_line = line("$")
+		call cursor(last_line, 1)
+		call search(category, "bc")
+		call append(line('.'), "\t" . word . "_" . category . "\t= mk" . category . " \"" . word . "\";")
 	endif
 
 	execute "buffer" word_buf
 	call setpos('.', save_cursor)
 
 endf
-nn <LocalLeader>p <Esc>:call Populate("Trinka")<CR>j
+nn <LocalLeader>p <Esc>:call Populate("Candidate")<CR>j
 
 " put words in DicksonI.gf, LexDickson.gf, LexDicksonEng.gf
 

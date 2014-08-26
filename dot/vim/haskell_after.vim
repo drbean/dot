@@ -137,7 +137,7 @@ ino <LocalLeader>1 <Esc>:call Oneword()<CR>o
 
 fu! Populate_pn(word, module)
 	let lc_name = tolower( a:word )
-	let down_name = substitute(lc_name, "-| ", "_", "g")
+	let down_name = substitute(lc_name, '\(-\| \)', "_", "g")
 	let category = "PN"
 	let super_cat = "N"
 
@@ -158,7 +158,7 @@ endf
 
 fu! Populate_a(word, module, category, super_cat)
 	let lc_name = tolower( a:word )
-	let down_name = substitute(lc_name, "-| ", "_", "g")
+	let down_name = substitute(lc_name, '\(-\| \)', "_", "g")
 
 	let ab_gf = bufnr( "/" . a:module . "\.gf")
 	execute "buffer" ab_gf

@@ -1,4 +1,4 @@
-" Last Edit: 2014  6月 26, 12時00分29秒
+" Last Edit: 2014  8月 25, 21時55分44秒
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -49,7 +49,7 @@ set viminfo='2000,\"5000,:20000	" .viminfo file, 50 lines of registers
 if version >= 507
 	set viminfo='20,\"50,h,!	"no old hlsearch
 	endif
-se history=50000		" Ex commands, search patterns
+se history=10000		" Ex commands, search patterns
 se nrformats-=octal
 
 se wildchar=<Tab>	" for expansion of command line

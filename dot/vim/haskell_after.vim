@@ -137,6 +137,7 @@ ino <LocalLeader>1 <Esc>:call Oneword()<CR>o
 
 fu! Populate_pn(word, module)
 	let lc_name = tolower( a:word )
+	let down_name = substitute(lc_name, "-", "_", "g")
 	let category = "PN"
 	let super_cat = "N"
 
@@ -145,14 +146,14 @@ fu! Populate_pn(word, module)
 	let last_line = line("$")
 	call cursor(last_line, 1)
 	call search(category, "bc")
-	call append(line('.'), "\t" . lc_name . "\t: PN;")
+	call append(line('.'), "\t" . down_name . "\t: PN;")
 
 	let ab_eng_gf = bufnr( a:module . "Eng.gf")
 	execute "buffer" ab_eng_gf
 	let last_line = line("$")
 	call cursor(last_line, 1)
 	call search("_" . super_cat, "bc")
-	call append(line('.'), "\t" . lc_name . "_" . super_cat . "\t= mk" . super_cat . " masculine (mk" . super_cat ." \"" . a:word . "\");")
+	call append(line('.'), "\t" . down_name . "\t= mk" . category . "( mk" . super_cat . " masculine (mk" . super_cat ." \"" . a:word . "\") );")
 endf
 
 fu! Populate_a(word, module, category, super_cat)

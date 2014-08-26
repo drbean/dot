@@ -137,7 +137,7 @@ ino <LocalLeader>1 <Esc>:call Oneword()<CR>o
 
 fu! Populate_pn(word, module)
 	let lc_name = tolower( a:word )
-	let down_name = substitute(lc_name, "-", "_", "g")
+	let down_name = substitute(lc_name, "-| ", "_", "g")
 	let category = "PN"
 	let super_cat = "N"
 
@@ -158,20 +158,21 @@ endf
 
 fu! Populate_a(word, module, category, super_cat)
 	let lc_name = tolower( a:word )
+	let down_name = substitute(lc_name, "-| ", "_", "g")
 
 	let ab_gf = bufnr( "/" . a:module . "\.gf")
 	execute "buffer" ab_gf
 	let last_line = line("$")
 	call cursor(last_line, 1)
 	call search(a:category, "bc")
-	call append(line('.'), "\t" . lc_name . "\t: " . a:category . ";")
+	call append(line('.'), "\t" . down_name . "\t: " . a:category . ";")
 
 	let ab_eng_gf = bufnr( a:module . "Eng.gf")
 	execute "buffer" ab_eng_gf
 	let last_line = line("$")
 	call cursor(last_line, 1)
-	call search("_" . a:super_cat, "bc")
-	call append(line('.'), "\t" . lc_name . "_" . a:super_cat . "\t= mk" . a:super_cat . " \"" . a:word . "\";")
+	call search("mk" . a:super_cat, "bc")
+	call append(line('.'), "\t" . down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\");")
 endf
 
 fu! Populate(module)
@@ -189,8 +190,8 @@ fu! Populate(module)
 	let save_cursor = getpos(".")
 	let mark = strpart(category, 0, 1)
 	let word_lnum = line("'" . mark)
-	call setline(word_lnum, "\t, \"" . word . "\"")
 	call append(word_lnum,'')
+	call setline((word_lnum+1), "\t, \"" . word . "\"")
 	call setpos("'" . mark, [0, (word_lnum+1), 1, 0])
 
 	if category == "PN"

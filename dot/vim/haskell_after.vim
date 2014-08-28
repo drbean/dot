@@ -182,9 +182,9 @@ fu! Populate(module)
 	endif
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
-	let key = input("Cat: '(A)', '(C)N', '(P)N', '(V)*' ")
+	let key = input("Cat: '(A)', '(C)N', '(P)N', '(V)*', a(D)v, p(R)ep ")
 	call inputrestore()
-	let category = get( {'a': 'A', 'c': 'CN', 'p': 'PN', 'v': 'V'}, key )
+	let category = get( {'a': 'A', 'c': 'CN', 'p': 'PN', 'v': 'V', 'd': "Adv", 'r': "Prep"}, key )
 	call setline('.', word . "\t: " . category . ";")
 	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
@@ -201,19 +201,22 @@ fu! Populate(module)
 	elseif category == "CN"
 		call Populate_a(word, a:module, "CN", "N") 
 	else 
+		let lc_name = word
+		let down_name = substitute(lc_name, '\(-\| \)', "_", "g")
+
 		let ab_gf = bufnr( "/" . a:module . "\.gf")
 		execute "buffer" ab_gf
 		let last_line = line("$")
 		call cursor(last_line, 1)
 		call search(category, "bc")
-		call append(line('.'), "\t" . word . "\t: " . category . ";")
+		call append(line('.'), "\t" . down_name . "\t: " . category . ";")
         
 		let ab_eng_gf = bufnr( a:module . "Eng.gf")
 		execute "buffer" ab_eng_gf
 		let last_line = line("$")
 		call cursor(last_line, 1)
 		call search(category, "bc")
-		call append(line('.'), "\t" . word . "_" . category . "\t= mk" . category . " \"" . word . "\";")
+		call append(line('.'), "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif
 
 	execute "buffer" word_buf

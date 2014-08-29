@@ -136,42 +136,10 @@ endf
 ino <LocalLeader>1 <Esc>:call Oneword()<CR>o
 
 fu! Populate_pn(word, module)
-	let lc_name = tolower( a:word )
-	let down_name = substitute(lc_name, '\(-\| \)', "_", "g")
-	let category = "PN"
-	let super_cat = "N"
-
-	let ab_gf = bufnr( "/" . a:module . "\.gf")
-	execute "buffer" ab_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search(category, "bc")
-	call append(line('.'), "\t" . down_name . "\t: PN;")
-
-	let ab_eng_gf = bufnr( a:module . "Eng.gf")
-	execute "buffer" ab_eng_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search("_" . super_cat, "bc")
 	call append(line('.'), "\t" . down_name . "\t= mk" . category . "( mk" . super_cat . " masculine (mk" . super_cat ." \"" . a:word . "\") );")
 endf
 
-fu! Populate_a(word, module, category, super_cat)
-	let lc_name = tolower( a:word )
-	let down_name = substitute(lc_name, '\(-\| \)', "_", "g")
-
-	let ab_gf = bufnr( "/" . a:module . "\.gf")
-	execute "buffer" ab_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search(a:category, "bc")
-	call append(line('.'), "\t" . down_name . "\t: " . a:category . ";")
-
-	let ab_eng_gf = bufnr( a:module . "Eng.gf")
-	execute "buffer" ab_eng_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search("mk" . a:super_cat, "bc")
+fu! Populate_ap_like(word, module, category, super_cat)
 	call append(line('.'), "\t" . down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\");")
 endf
 
@@ -182,9 +150,9 @@ fu! Populate(module)
 	endif
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
-	let key = input("Cat: '(A)', '(C)N', '(P)N', '(V)*', a(D)v, p(R)ep ")
+	let key = input("Cat: '(A)', '(U)N', '(C)N', '(P)N', '(V)*', a(D)v, p(R)ep ")
 	call inputrestore()
-	let category = get( {'a': 'A', 'c': 'CN', 'p': 'PN', 'v': 'V', 'd': "Adv", 'r': "Prep"}, key )
+	let category = get( {'a': 'A', 'u': 'N', 'c': 'CN', 'p': 'PN', 'v': 'V', 'd': "Adv", 'r': "Prep"}, key )
 	call setline('.', word . "\t: " . category . ";")
 	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
@@ -194,28 +162,28 @@ fu! Populate(module)
 	call setline((word_lnum+1), "\t, \"" . word . "\"")
 	call setpos("'" . mark, [0, (word_lnum+1), 1, 0])
 
-	if category == "PN"
-		call Populate_pn(word, a:module) 
-	elseif category == "A"
-		call Populate_a(word, a:module, "AP", "A") 
-	elseif category == "CN"
-		call Populate_a(word, a:module, "CN", "N") 
-	else 
-		let lc_name = word
-		let down_name = substitute(lc_name, '\(-\| \)', "_", "g")
+	let lc_name = word
+	let down_name = substitute(lc_name, '\(-\| \)', "_", "g")
 
-		let ab_gf = bufnr( "/" . a:module . "\.gf")
-		execute "buffer" ab_gf
-		let last_line = line("$")
-		call cursor(last_line, 1)
-		call search(category, "bc")
-		call append(line('.'), "\t" . down_name . "\t: " . category . ";")
-        
-		let ab_eng_gf = bufnr( a:module . "Eng.gf")
-		execute "buffer" ab_eng_gf
-		let last_line = line("$")
-		call cursor(last_line, 1)
-		call search(category, "bc")
+	let ab_gf = bufnr( "/" . a:module . "\.gf")
+	execute "buffer" ab_gf
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search(category, "bc")
+	call append(line('.'), "\t" . down_name . "\t: " . category . ";")
+
+	let ab_eng_gf = bufnr( a:module . "Eng.gf")
+	execute "buffer" ab_eng_gf
+	let last_line = line("$")
+	call cursor(last_line, 1)
+	call search(category, "bc")
+	if category == "PN"
+		call Populate_pn(word, a:module, "PN", "N") 
+	elseif category == "A"
+		call Populate_ap_like(word, a:module, "AP", "A") 
+	elseif category == "CN"
+		call Populate_ap_like(word, a:module, "CN", "N") 
+	else 
 		call append(line('.'), "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif
 

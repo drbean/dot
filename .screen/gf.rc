@@ -29,10 +29,10 @@ stuff "/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html^M"
 screen 9
 stuff "/usr/bin/links http://hackage.haskell.org/package/gf-3.6/docs/^M"
 screen 0
-# stuff "v -O gf-contrib/drbean/{conversation/work/dickson/Dickson,LogicalForm,Interpretation,Evaluation,Transfer}.hs"
+# stuff "v -O gf-contrib/drbean/{$COURSE/$TOPIC/$STORY/$MOD,LogicalForm,Interpretation,Evaluation,Transfer}.hs"
 # stuff "v -O $(< ~/dot/gf_files.txt)"
 # stuff "v -O gf-contrib/drbean/LogicalForm.hs gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
-# stuff "v -O gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
+stuff "v -O gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
 # stuff "v -O gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs gf-contrib/drbean/business/stress/cusp/Model.hs
-stuff "v -O gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs"
+# stuff "v -O gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs"
 

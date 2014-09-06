@@ -53,7 +53,7 @@ fu! Predid()
 	let feature = get( {'1': '1', '2': '2', '3': '3', '4': '4'}, key )
 	call setline(".", "\t, ( \"" . relation . "\",\tpred" . feature . " [] )")
 endfunction
-ino <LocalLeader>p <Esc>:call Predid()<CR>o
+" ino <LocalLeader>p <Esc>:call Predid()<CR>o
 
 fu! Inflect()
 	let words = split(getline('.'), '\s\+')

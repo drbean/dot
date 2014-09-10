@@ -1,13 +1,13 @@
 screen 1
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put grades.txt && qui'^M"
-stuff "# svn ci -m create_groups_n=$N classwork/$NEXTROUND/groups.yaml^M"
+stuff "# svn ci -m create_groups_n=$N session/$NEXTROUND/groups.yaml^M"
 stuff "# print_grades.pl > grades.txt^M"
 stuff "# teamseat.pl -s $NEXTROUND -n $N ^M"
 stuff "# lpr teamseat.pdf -P kyocera^M"
-stuff "# teamseat.pl -s $NEXTROUND --latex -n $N && xelatex classwork/$NEXTROUND/teamseat.tex && evince teamseat.pdf^M"
-stuff "# mv groups.yaml classwork/$NEXTROUND/groups.yaml^M"
-stuff "# svn revert classwork/$NEXTROUND^M"
-stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls classwork/^M"
+stuff "# teamseat.pl -s $NEXTROUND --latex -n $N && xelatex session/$NEXTROUND/teamseat.tex && evince teamseat.pdf^M"
+stuff "# mv groups.yaml session/$NEXTROUND/groups.yaml^M"
+stuff "# svn revert session/$NEXTROUND^M"
+stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls session/^M"
 stuff "# sudo cp teamseat.pdf /media/drbean^M"
 stuff "# svn ci -m $TOPIC comp/$ROUND exam/$ROUND^M"
 screen 2
@@ -41,4 +41,4 @@ stuff "lftp web.nuu.edu.tw^M"
 stuff "cd public_html/$LEAGUE^M"
 
 screen 0
-stuff "v league.yaml classwork/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml groups.yaml grades.txt classwork/$NEXTROUND/groups.yaml"
+stuff "v league.yaml session/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml groups.yaml grades.txt session/$NEXTROUND/groups.yaml"

@@ -4,14 +4,15 @@ stuff "# svn ci -m create_groups_n=$N session/$NEXTROUND/groups.yaml^M"
 stuff "# print_grades.pl > grades.txt^M"
 stuff "# teamseat.pl -s $NEXTROUND -n $N ^M"
 stuff "# lpr teamseat.pdf -P kyocera^M"
-stuff "# teamseat.pl -s $NEXTROUND --latex -n $N && xelatex session/$NEXTROUND/teamseat.tex && evince teamseat.pdf^M"
+stuff "# perl ../../class/seats/script_files/teamseat.pl -s $NEXTROUND --latex -n $N && xelatex session/$NEXTROUND/teamseat.tex && evince teamseat.pdf^M"
+stuff "# svn add session/$NEXTROUND/groups.yaml^M"
 stuff "# mv groups.yaml session/$NEXTROUND/groups.yaml^M"
-stuff "# svn revert session/$NEXTROUND^M"
-stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls session/^M"
+stuff "# svn mkdir session/$NEXTROUND^M"
+stuff "# perl ../../class/beans/script_files/create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls session/^M"
 stuff "# sudo cp teamseat.pdf /media/drbean^M"
 stuff "# svn ci -m $TOPIC comp/$ROUND exam/$ROUND^M"
 screen 2
-stuff "cd ~/022/$LEAGUE/comp^M"
+stuff "cd ~/031/$LEAGUE/comp^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put $ROUND/g2.yaml && put $ROUND/points.yaml'^M"
 stuff "# update_db.pl -l $LEAGUE -r $ROUND^M"
 stuff "# sum_g1_g2.pl -l $LEAGUE -r $ROUND > ../exam/$ROUND/g.yaml^M"
@@ -21,7 +22,7 @@ stuff "# perl ../../../swiss/web/script/round_table.pl -l $LEAGUE -r $ROUND ^M"
 stuff "# perl ../../../swiss/web/script/create_round.pl -l $LEAGUE -r $ROUND > $ROUND/round.yaml^M"
 stuff "# svn revert $ROUND^M ls^M"
 screen 3
-stuff "cd ~/022/$LEAGUE/exam^M"
+stuff "cd ~/031/$LEAGUE/exam^M"
 stuff "ls ^M"
 stuff "# rm $NEXTROUND -rf^M"
 stuff "# svn revert $ROUND^M"
@@ -31,14 +32,22 @@ stuff "# score_jigsaw.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml^M"
 stuff "# grade_jigsaw.pl -l $LEAGUE -r $ROUND -n $N > $ROUND/g1.yaml^M"
 stuff "# xelatex report.tex && evince report.pdf^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf && put $ROUND/g1.yaml'^M"
-screen 5
-stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 screen 4
 stuff "re.pl --rcfile ../rc/g.rc^M"
 stuff '$g->grades'
-screen 6
+screen 5
 stuff "lftp web.nuu.edu.tw^M"
 stuff "cd public_html/$LEAGUE^M"
+screen 6
+stuff "svn st -q^M svn log -vr BASE:HEAD^M"
+screen 7
+stuff "# svn mkdir file:///home/drbean/.svk/local/cl/$LEAGUE -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭^M"
+stuff "# cd ~/031/^M"
+stuff "# svn co file:///home/drbean/.svk/local/cl/$LEAGUE^M"
+stuff "# cp ../../022/$LEAGUE/league.yaml ./league.yaml^M"
+stuff "# svn mkdir session^M"
+stuff "# school_data.pl -s 031 -l $LEAGUE | sponge league.yaml^M"
+stuff "# re.pl --rcfile ../rc/import_memberdata.rc^M"
 
 screen 0
-stuff "v league.yaml session/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml groups.yaml grades.txt session/$NEXTROUND/groups.yaml"
+stuff "v league.yaml groups.yaml session/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml grades.txt session/$NEXTROUND/groups.yaml"

@@ -382,16 +382,12 @@ function ex () {
 function gr () {
     local arg league round topic n
     case $1 in
-	2040) league=$1;;
-	3024) league=$1;;
-	GL00019) league=$1;;
+	GL00015) league=$1;;
+	GL00016) league=$1;;
+	FLA0027) league=$1;;
 	2L1) league=$1;;
 	MB1) league=$1;;
 	3K0) league=$1;;
-	B32) league=$1;;
-	FLA0018) league=$1;;
-	FLA0021) league=$1;;
-	FLA0027) league=$1;;
 	*) return 1 # illegal league
     esac
     OPTIND=2

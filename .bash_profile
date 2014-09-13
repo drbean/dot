@@ -10,7 +10,7 @@ fi
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 #greg
-export PATH=$PATH:$HOME/.cabal/bin
+export PATH=$HOME/.cabal/bin:$PATH
 export HISTSIZE=50000
 
 export EDITOR=v

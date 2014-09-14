@@ -1,5 +1,7 @@
 screen ssh freeshell.org
 screen 1 lftp sftp://drbean@freeshell.org
+screen 3 
+stuff "# FTP_PASSWORD=6y6t6y6t duplicity /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_2014_08_28"
 screen 4 su -
 screen 5 ssh -X mai@pl625.nas921.nara.nttpc.ne.jp
 screen 9

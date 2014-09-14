@@ -10,7 +10,8 @@ fi
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 #greg
-export PATH=$HOME/.cabal/bin:$PATH
+# export PATH=$HOME/.cabal/bin:$PATH
+# /etc/profile.d/cabalinstall.sh does it for me
 export HISTSIZE=50000
 
 export EDITOR=v

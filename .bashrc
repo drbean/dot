@@ -413,6 +413,35 @@ function gr () {
     cd -
 }
 
+function new () {
+    local arg league n
+    case $1 in
+	GL00015) league=$1;;
+	GL00016) league=$1;;
+	FLA0027) league=$1;;
+	2L1) league=$1;;
+	MB1) league=$1;;
+	3K0) league=$1;;
+	*) return 1 # illegal league
+    esac
+    OPTIND=2
+    while getopts 'r:t:n:' arg
+    do
+        case ${arg} in
+            n) n=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    if [[ -z "$n" ]]
+	then n=3
+    fi
+    cd ~/031/
+    LEAGUE=$league \
+    N=$n \
+    screen -c /home/drbean/dot/.screen/setup.rc -dR s_$league
+    cd -
+}
+
 alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/drbean/dot/.screen/course.rc -dR literature; cd -"
 

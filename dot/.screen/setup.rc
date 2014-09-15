@@ -1,0 +1,18 @@
+screen 1
+stuff "# svn mkdir file:///home/drbean/.svk/local/cl/$LEAGUE -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭^M"
+stuff "# cd ~/031/^M"
+stuff "# svn co file:///home/drbean/.svk/local/cl/$LEAGUE^M"
+stuff "# cd ~/031/$LEAGUE/^M"
+stuff "# cp ../../022/$LEAGUE/league.yaml ./league.yaml^M"
+stuff "# svn mkdir session^M"
+stuff "# school_data.pl -s 031 -l $LEAGUE | sponge league.yaml^M"
+stuff "# re.pl --rcfile ../rc/import_memberdata.rc^M"
+
+screen 2
+stuff "cd ~/admin/031/must/^M"
+stuff "cp 031${LEAGUE}.txt ${LEAGUE}.txt^M"
+stuff "v 031${LEAGUE}.txt ${LEAGUE}.txt"
+
+screen 0
+stuff "cd ~/031/$LEAGUE^M"
+stuff "v league.yaml groups.yaml session/$ROUND/groups.yaml" 

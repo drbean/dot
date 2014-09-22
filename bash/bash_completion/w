@@ -8,12 +8,12 @@ function _w () {
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	opts="-t -l"
-	league="2L1 MB1 3K0 GL00019 FLA0018 FLA0021 FLA0027 2040 3024"
-	league_re="2L1|MB1|3K0|GL00019|FLA0018|FLA0021|FLA0027|2040|3024"
+	league="2L1 MB1 3K0 GL00015 GL00016 FLA0017 FLA0027"
+	league_re="2L1|MB1|3K0|GL00015|GL00016|FLA0017|FLA0027"
 	letter_opt="-l"
 	letter="A B C X"
-	week_opt="-w"
 	week="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18"
+	week_re="0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
 	topic_opt="-t"
 	topic="work careers"
 	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
@@ -31,9 +31,6 @@ function _w () {
 	COMPREPLY=( $(compgen -W "${league}" -- ${cur}) )
 	return 0
 	elif [[ ${prev} =~ ${league_re} ]] ; then
-	COMPREPLY=( $(compgen -W "${week_opt}" -- ${cur}) )
-	return 0
-	elif [[ ${prev} =~ ${week_opt} ]] ; then
 	COMPREPLY=( $(compgen -W "${week}" -- ${cur}) )
 	return 0
 	elif [[ ${prev} =~ ${letter_opt} ]] ; then

@@ -1,4 +1,4 @@
-# Last Edit: 2014 Sep 14, 03:03:45 PM
+# Last Edit: 2014 Sep 25, 04:19:14 PM
 #
 # The ultimate Mutt settings
 #
@@ -212,7 +212,7 @@ set sendmail="/usr/sbin/sendmail -oem -oi"
 # set sendmail="/usr/sbin/exim -oem -oi"
 # not from roland
 # set smtp_url="smtp://greg@mail.nuu.edu.tw"
-# set smtp_pass="6y6t6y6t"
+# set smtp_pass=""
 reset shell		# Take shell from /etc/passwd 
 # set signature='~/.signature'	# Signature (See send-hook!)
 set signature='fortune ~/.mutt/fortunes|'	# Signature (See send-hook!)

@@ -171,10 +171,10 @@ alias forms="cd ~/class/forms; screen -dR forms; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/drbean/dot/.screen/utility.rc -dR tmpl; cd -"
 alias rc="cd ~/031/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
 
-function topics () {
+function speaking () {
     OPTIND=1
-    local arg course=topics topic
-    while getopts 'c:v:t:s:f:' arg
+    local arg course=speaking topic story
+    while getopts 't:s:' arg
     do
         case ${arg} in
             t) topic=${OPTARG};;
@@ -182,7 +182,7 @@ function topics () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
+	cd ~/class/curriculum/speaking/impact
 	COURSE=$course \
 	VIEW=$course \
 	TOPIC=$topic \
@@ -418,6 +418,7 @@ function new () {
     case $1 in
 	GL00015) league=$1;;
 	GL00016) league=$1;;
+	FLA0016) league=$1;;
 	FLA0027) league=$1;;
 	2L1) league=$1;;
 	MB1) league=$1;;
@@ -447,7 +448,6 @@ alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood
 
 alias grammar="cd ~/class/curriculum/grammar; screen -dR grammar; cd -"
 alias writing="cd ~/class/curriculum/writingreading; screen -dR writing; cd -"
-alias speaking="cd ~/class/curriculum/speaking; screen -dR speaking; cd -"
 alias reading="cd ~/class/curriculum/reading; screen -dR reading; cd -"
 alias friends="cd ~/class/friends; screen -dR friends; cd -"
 alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
@@ -613,15 +613,12 @@ function tables () {
 function w () {
     local arg league session week letter topic tables
     case $1 in
-	2040) league=$1;;
-	3024) league=$1;;
-	GL00019) league=$1;;
+	GL00015) league=$1;;
+	GL00016) league=$1;;
 	2L1) league=$1;;
-	2MB1) league=$1;;
+	MB1) league=$1;;
 	3K0) league=$1;;
-	B32) league=$1;;
-	FLA0018) league=$1;;
-	FLA0021) league=$1;;
+	FLA0016) league=$1;;
 	FLA0027) league=$1;;
 	*) return 1 # illegal league
     esac

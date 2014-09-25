@@ -7,6 +7,7 @@ stuff "# cp ../../022/$LEAGUE/league.yaml ./league.yaml^M"
 stuff "# svn mkdir session^M"
 stuff "# school_data.pl -s 031 -l $LEAGUE | sponge league.yaml^M"
 stuff "# re.pl --rcfile ../rc/import_memberdata.rc^M"
+stuff "# svn mkdir classwork^M"
 
 screen 2
 stuff "cd ~/admin/031/must/^M"

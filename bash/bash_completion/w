@@ -15,7 +15,7 @@ function _w () {
 	week="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18"
 	week_re="0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
 	topic_opt="-t"
-	topic="work careers"
+	topic="work careers attitudes"
 	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
 	diropts="--cache-dir"
 

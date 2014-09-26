@@ -9,7 +9,7 @@ stuff "# svn add session/$NEXTROUND/groups.yaml^M"
 stuff "# mv groups.yaml session/$NEXTROUND/groups.yaml^M"
 stuff "# svn mkdir session/$NEXTROUND^M"
 stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls session/^M"
-stuff "# sudo cp teamseat.pdf /media/drbean^M"
+stuff "# cp teamseat.pdf ~/media/teamseat_$LEAGUE.pdf^M"
 stuff "# svn ci -m $TOPIC comp/$ROUND exam/$ROUND^M"
 screen 2
 stuff "cd ~/031/$LEAGUE/comp^M"

@@ -135,12 +135,12 @@ fu! Oneword()
 endf
 ino <LocalLeader>1 <Esc>:call Oneword()<CR>o
 
-fu! Populate_pn(word, module)
-	call append(line('.'), "\t" . down_name . "\t= mk" . category . "( mk" . super_cat . " masculine (mk" . super_cat ." \"" . a:word . "\") );")
+fu! Populate_pn(word, down_name, category, super_cat)
+	call append(line('.'), "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " masculine (mk" . a:super_cat ." \"" . a:word . "\") );")
 endf
 
-fu! Populate_ap_like(word, module, category, super_cat)
-	call append(line('.'), "\t" . down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\");")
+fu! Populate_ap_like(word, down_name, category, super_cat)
+	call append(line('.'), "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\");")
 endf
 
 fu! Populate(module)
@@ -178,11 +178,11 @@ fu! Populate(module)
 	call cursor(last_line, 1)
 	call search(category, "bc")
 	if category == "PN"
-		call Populate_pn(word, a:module, "PN", "N") 
+		call Populate_pn(word, down_name, "PN", "N") 
 	elseif category == "A"
-		call Populate_ap_like(word, a:module, "AP", "A") 
+		call Populate_ap_like(word, down_name, "AP", "A") 
 	elseif category == "CN"
-		call Populate_ap_like(word, a:module, "CN", "N") 
+		call Populate_ap_like(word, down_name, "CN", "N") 
 	else 
 		call append(line('.'), "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif
@@ -191,7 +191,7 @@ fu! Populate(module)
 	call setpos('.', save_cursor)
 
 endf
-nn <LocalLeader>p <Esc>:call Populate("Candidate")<CR>j
+nn <LocalLeader>p <Esc>:call Populate("Jackson")<CR>j
 
 " put words in DicksonI.gf, LexDickson.gf, LexDicksonEng.gf
 

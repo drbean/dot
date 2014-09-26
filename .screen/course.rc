@@ -8,7 +8,7 @@ stuff "# lpr bingo_${STORY}_0.pdf -P kyocera^M"
 screen 2
 stuff "# perl ../cclass/cards.pl ./$TOPIC && xelatex ./\$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf^M"
 stuff "# perl ../cclass/cards.pl ./$TOPIC && xelatex ./\$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf^M"
-stuff "# mount -t vfat /dev/sdb1 ~/media/^M"
+stuff "# mount ~/media/^M"
 stuff "# cp jigsaw_${STORY}_$FORM.pdf quiz_${STORY}_$FORM.pdf ~/media/^M"
 stuff "# umount ~/media/^M"
 screen 3 ghci -i../csfp/:./:./$TOPIC:./$TOPIC/$STORY/

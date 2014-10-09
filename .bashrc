@@ -182,7 +182,7 @@ function speaking () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/curriculum/speaking/impact
+	cd ~/class/speaking
 	COURSE=$course \
 	VIEW=$course \
 	TOPIC=$topic \
@@ -384,6 +384,7 @@ function gr () {
     case $1 in
 	GL00015) league=$1;;
 	GL00016) league=$1;;
+	FLA0016) league=$1;;
 	FLA0027) league=$1;;
 	2L1) league=$1;;
 	MB1) league=$1;;
@@ -461,21 +462,21 @@ function session () {
     league=$1
     week=$2
     case ${league} in
-	2040)
+	1040)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	3024)
+	GL00016)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	GL00019)
+	GL00015)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -503,7 +504,14 @@ function session () {
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0021)
+	FLA0027)
+	    if (($week <= 5)); then session=1
+	    elif (($week <= 9)); then session=2
+	    elif (($week <= 13)); then session=3
+	    elif (($week <= 18)); then session=4
+	    else return 1 # illegal week
+	    fi;;
+	FLA0016)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -520,7 +528,7 @@ function tables () {
     letter=$2
     case ${league} in
 		# 16 groups
-	2040)
+	1040)
 	    case ${letter} in
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
 		B) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
@@ -565,19 +573,7 @@ function tables () {
 		X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 		*) return 1 # illegal letter
 	    esac;;
-	3024)
-	    case ${letter} in
-		# A) tables="Black::Blue,Charcoal::Green,Orange::Pink,Purple::Chocolate,Yellow::White";;
-		# B) tables="Black::Blue,Charcoal::Green,Orange::Pink,Purple::Chocolate,Yellow::White";;
-		# C) tables="Black::Blue,Charcoal::Green,Orange::Pink,Purple::Chocolate,Yellow::White";;
-		A) tables="Green::Black,Charcoal::Blue,White::Orange,Yellow::Pink,Purple::Chocolate,Silver::Brown";;
-		B) tables="Green::Black,Charcoal::Blue,White::Orange,Yellow::Pink,Purple::Chocolate,Silver::Brown";;
-		C) tables="Green::Black,Charcoal::Blue,White::Orange,Yellow::Pink,Purple::Chocolate,Silver::Brown";;
-		# C) tables="Black::Blue,Brown::Chocolate,Charcoal::Green,Orange::Pink,Purple::Silver,Yellow::White";;
-		X) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Orange::White,Pink::Yellow,Purple::Silver";;
-		*) return 1 # illegal option
-	    esac;;
-	GL00019)
+	GL00016)
 	    case ${letter} in
 		A) tables="2-1::2-2,3-1::3-2";;
 		B) tables="2-1::3-2,2-2::3-1";;
@@ -585,15 +581,28 @@ function tables () {
 		X) tables="2-1::3-1,2-2::3-2";;
 		*) return 1 # illegal option
 	    esac;;
-	AFB1J0)
+	GL00015)
 	    case ${letter} in
-		A) tables="2-1::2-2,3-1::3-2,4-1::,";;
-		B) tables="2-1::2-2,3-1::3-2,4-1::,";;
-		C) tables="2-1::2-2,3-1::3-2,4-1::,";;
-		X) tables="Black::Blue,Charcoal::Green,Orange::Pink,White::Yellow";;
+		A) tables="2-1::2-2,3-1::3-2";;
+		B) tables="2-1::3-2,2-2::3-1";;
+		C) tables="2-1::2-2,3-1::3-2";;
+		X) tables="2-1::3-1,2-2::3-2";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0018)
+	FLA0027)
+	    case ${letter} in
+		# A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
+		A) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
+		B) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
+		C) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
+		# A) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
+		# B) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
+		# C) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
+		# C) tables="Black::Blue,Brown::Purple,Pink::Orange";;
+		X) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
+		*) return 1 # illegal option
+	    esac;;
+	FLA0016)
 	    case ${letter} in
 		# A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
 		A) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
@@ -620,6 +629,7 @@ function w () {
 	3K0) league=$1;;
 	FLA0016) league=$1;;
 	FLA0027) league=$1;;
+	1040) league=$1;;
 	*) return 1 # illegal league
     esac
     week=$2
@@ -646,9 +656,9 @@ function w () {
     cd -
 }
 
-function yd2040 () {
+function yd1040 () {
     OPTIND=1
-    local arg league=2040 session week letter topic tables
+    local arg league=1040 session week letter topic tables
     while getopts 'w:l:t:' arg
     do
         case ${arg} in
@@ -658,19 +668,8 @@ function yd2040 () {
             *) return 1 # illegal option
         esac
     done
-    if (($week <= 5)); then session=1
-    elif (($week <= 9)); then session=2
-    elif (($week <= 13)); then session=3
-    elif (($week <= 18)); then session=4
-    else session=NONE
-    fi
-    case ${letter} in
-	A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-	B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
-	C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-	X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
-	*) return 1 # illegal option
-    esac
+    session $league $week
+    tables $league $letter
     cd ~/031/$league
     SESSION=$session \
     WEEK=$week \

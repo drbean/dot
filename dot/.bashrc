@@ -424,6 +424,7 @@ function new () {
 	2L1) league=$1;;
 	MB1) league=$1;;
 	3K0) league=$1;;
+	1040) league=$1;
 	*) return 1 # illegal league
     esac
     OPTIND=2

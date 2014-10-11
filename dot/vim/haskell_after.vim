@@ -153,6 +153,13 @@ fu! Populate(module)
 	let key = input("Cat: '(A)', '(U)N', '(C)N', '(P)N', '(V)*', a(D)v, p(R)ep ")
 	call inputrestore()
 	let category = get( {'a': 'A', 'u': 'N', 'c': 'CN', 'p': 'PN', 'v': 'V', 'd': "Adv", 'r': "Prep"}, key )
+	if category == 'V'
+		call inputsave()
+		let v_key = input("Cat: 'V( )', 'V(2)', 'V(V)', 'V2V(J)', 'V(S)', 'V(A)' ")
+		call inputrestore()
+		let v_category = get( {' ': 'V', '2': 'V2', 'v': 'VV', 'j': 'V2V', 's': 'VS', 'a': 'VA' }, v_key )
+		let category = v_category
+	endif
 	call setline('.', word . "\t: " . category . ";")
 	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
@@ -183,6 +190,12 @@ fu! Populate(module)
 		call Populate_ap_like(word, down_name, "AP", "A") 
 	elseif category == "CN"
 		call Populate_ap_like(word, down_name, "CN", "N") 
+	elseif category == "VV"
+		call Populate_ap_like(word, down_name, "VV", "V") 
+	elseif category == "VS"
+		call Populate_ap_like(word, down_name, "VS", "V") 
+	elseif category == "VA"
+		call Populate_ap_like(word, down_name, "VA", "V") 
 	else 
 		call append(line('.'), "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif

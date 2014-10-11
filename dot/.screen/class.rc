@@ -8,6 +8,8 @@ stuff '$g->grades'
 
 screen 5 lftp web.nuu.edu.tw
 stuff "cd public_html/$LEAGUE^M"
+stuff "# put classwork/$LASTWEEK.yaml -o classwork.yaml^M"
+stuff "# put homework/$LASTWEEK.yaml -o homework.yaml^M"
 
 screen 3
 stuff "ls homework classwork exam/*^M"

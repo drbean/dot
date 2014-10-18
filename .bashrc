@@ -357,6 +357,8 @@ function ex () {
     local arg course round topic story form
     case $1 in
 	conversation) course=$1;;
+	speaking) course=$1;;
+	media) course=$1;;
 	business) course=$1;;
 	*) return 1 # illegal league
     esac
@@ -372,6 +374,7 @@ function ex () {
     done
     cd ~/class/$course
     COURSE=$course \
+    VIEW=${topic:-$course} \
     TOPIC=$topic \
     STORY=$story \
     FORM=$form \
@@ -389,6 +392,7 @@ function gr () {
 	2L1) league=$1;;
 	MB1) league=$1;;
 	3K0) league=$1;;
+	1040) league=$1;;
 	*) return 1 # illegal league
     esac
     OPTIND=2

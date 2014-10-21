@@ -11,6 +11,7 @@ stuff "# svn add league.yaml^M"
 stuff "# svn mkdir classwork^M"
 stuff "# svn mkdir homework^M"
 stuff "# svn mkdir comp^M"
+stuff "# svn mkdir exam^M"
 stuff "# chcon -t public_content_rw_t ./comp/ -R^M"
 stuff "# su -c 'chown drbean:swiss ./comp/ -R'^M"
 

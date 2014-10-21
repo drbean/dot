@@ -1,4 +1,6 @@
-screen v -S Session.vim
+screen
+stuff "v^M"
+stuff ":e "
 screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 screen 4 sudo su - postgres

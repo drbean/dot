@@ -360,6 +360,7 @@ function ex () {
 	speaking) course=$1;;
 	media) course=$1;;
 	business) course=$1;;
+	college) course=$1;;
 	*) return 1 # illegal league
     esac
     OPTIND=2

@@ -32,7 +32,7 @@ stuff "# score_jigsaw.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml^M"
 stuff "# grade_jigsaw.pl -l $LEAGUE -r $ROUND -n $N > $ROUND/g1.yaml^M"
 stuff "# xelatex report.tex && evince report.pdf^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf && put $ROUND/g1.yaml'^M"
-stuff "# svn add $ROUND^M"
+stuff "# svn mkdir $ROUND^M"
 stuff "# svn add $ROUND/{round,response,scores,g1}.yaml^M"
 screen 4
 stuff "re.pl --rcfile ../rc/g.rc^M"

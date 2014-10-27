@@ -11,4 +11,5 @@ screen
 screen ghci -i./:../business/:../business/marketing/:../business/marketing/shoes/
 stuff ":load Tests^M":
 screen 0
-stuff "v LogicalForm.hs Parsing.hs Cats.hs Interpretation.hs"
+# stuff "v LogicalForm.hs Parsing.hs Cats.hs Interpretation.hs"
+stuff "v -O pdrt-sandbox/tutorials/DRSTutorial.hs pdrt-sandbox/tutorials/PDRSTutorial.hs^M"

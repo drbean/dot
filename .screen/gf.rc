@@ -33,8 +33,8 @@ screen 0
 # stuff "v -O gf-contrib/drbean/{$COURSE/$TOPIC/$STORY/$MOD,Representation,Interpretation,Evaluation,Transfer}.hs"
 # stuff "v -O $(< ~/dot/gf_files.txt)"
 # stuff "v -O gf-contrib/drbean/Representation.hs gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
-# stuff "v -O gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
+stuff "v -O gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
 # stuff "v -O ~/class/$COURSE/$TOPIC/dic.yaml gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
-stuff "v -O gf-contrib/drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
+# stuff "v -O gf-contrib/drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"
 # stuff "v -O gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf gf-contrib/drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs"
 

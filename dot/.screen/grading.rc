@@ -15,7 +15,7 @@ screen 2
 stuff "cd ~/031/$LEAGUE/comp^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put ../exam/$ROUND/g2.yaml && put $ROUND/scores.yaml'^M"
 stuff "# perl ../../../swiss/web/script/update_db.pl -l $LEAGUE -r $ROUND^M"
-stuff "# svn add ../exam/$ROUND/{g,g2}.yaml $ROUND/{round,scores}.yaml^M"
+stuff "# svn add ../exam/$ROUND/{g,g2}.yaml $ROUND/{round,response,scores}.yaml^M"
 stuff "# sum_g1_g2.pl -l $LEAGUE -r $ROUND > ../exam/$ROUND/g.yaml^M"
 stuff "# perl ../../../comp/paper/script_files/score_comp.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml^M"
 stuff "# perl ~/comp/web/script_files/comptron.pl -l $LEAGUE -r $ROUND -x 1 > $ROUND/response.yaml^M"

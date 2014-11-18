@@ -54,4 +54,4 @@ stuff "# school_data.pl -s 031 -l $LEAGUE | sponge league.yaml^M"
 stuff "# re.pl --rcfile ../rc/import_memberdata.rc^M"
 
 screen 0
-stuff "v league.yaml session/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml exam/$ROUND/g1.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml grades.txt session/$NEXTROUND/groups.yaml"
+stuff "v league.yaml session/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml exam/$ROUND/g1.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml exam/$ROUND/g2.yaml exam/$ROUND/g.yaml grades.txt groups.yaml session/$NEXTROUND/groups.yaml"

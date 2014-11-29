@@ -14,8 +14,8 @@ function _gr () {
 	round="0 1 2 3 4"
 	round_re="0|1|2|3|4"
 	topic_opt="-t"
-	topic="work careers"
-	topic_re="work|careers"
+	topic="parents online"
+	topic_re="parents|online"
 	n_opt="-n"
 	n="2 3"
 

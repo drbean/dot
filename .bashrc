@@ -159,7 +159,7 @@ function sound () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/soundfiles
+    cd ~/下載/soundfiles
     COURSE=$course \
     DIRECTORY=$directory \
     screen -c /home/drbean/dot/.screen/soundfiles.rc -dR sound_$course

@@ -11,4 +11,4 @@ stuff "ls $COURSE^M"
 screen 0
 stuff "v ~/.netrc"
 screen
-stuff "cd /home/drbean/Webcam/^Mls"
+stuff "cd /home/drbean/圖片/Webcam/^Mls"

@@ -388,6 +388,7 @@ function gr () {
     case $1 in
 	GL00015) league=$1;;
 	GL00016) league=$1;;
+	FLA0007) league=$1;;
 	FLA0016) league=$1;;
 	FLA0027) league=$1;;
 	2L1) league=$1;;
@@ -424,6 +425,7 @@ function new () {
     case $1 in
 	GL00015) league=$1;;
 	GL00016) league=$1;;
+	FLA0007) league=$1;;
 	FLA0016) league=$1;;
 	FLA0027) league=$1;;
 	2L1) league=$1;;

@@ -1,5 +1,5 @@
 screen 1
-stuff "# svn mkdir file:///home/drbean/.svk/local/cl/$LEAGUE -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭^M"
+stuff "# svn mkdir file:///home/drbean/.svk/local/cl/$LEAGUE -m 031$LEAGUE      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭^M"
 stuff "# cd ~/031/^M"
 stuff "# svn co file:///home/drbean/.svk/local/cl/$LEAGUE^M"
 stuff "cd ~/031/$LEAGUE/^M"

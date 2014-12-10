@@ -1,5 +1,5 @@
 screen
-stuff "v ./$TOPIC/cards.yaml"
+stuff "v ./$TOPIC/cards.yaml ./jigsaw.tex"
 screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "# cp jigsaw_\${STORY}_\$FORM.pdf ~/media/^M"

@@ -13,7 +13,7 @@ stuff "# cp teamseat.pdf ~/media/teamseat_$LEAGUE.pdf^M"
 stuff "# svn ci -m $TOPIC comp/$ROUND exam/$ROUND^M"
 screen 2
 stuff "cd ~/031/$LEAGUE/comp^M"
-stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put ../exam/$ROUND/g2.yaml && put ../exam/$ROUND/g.yaml && put $ROUND/scores.yaml'^M"
+stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put ../exam/$ROUND/g2.yaml && put ../exam/$ROUND/g.yaml && put $ROUND/scores.yaml && put $ROUND/response.yaml'^M"
 stuff "# perl ../../../swiss/web/script/update_db.pl -l $LEAGUE -r $ROUND^M"
 stuff "# svn add ../exam/$ROUND/{g,g2}.yaml $ROUND/{round,response,scores}.yaml^M"
 stuff "# sum_g1_g2.pl -l $LEAGUE -r $ROUND > ../exam/$ROUND/g.yaml^M"
@@ -36,6 +36,7 @@ stuff "# xelatex report.tex && evince report.pdf^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf && put $ROUND/g1.yaml'^M"
 stuff "# svn mkdir $ROUND^M"
 stuff "# svn add $ROUND/{round,response,scores,g1}.yaml^M"
+stuff " ls^M"
 screen 4
 stuff "re.pl --rcfile ../rc/g.rc^M"
 stuff '$g->grades'

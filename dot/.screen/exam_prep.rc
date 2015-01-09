@@ -7,11 +7,11 @@ stuff "# lpr jigsaw_\${STORY}_\$FORM.pdf^M"
 stuff "# cp jigsaw_\${STORY}_\$FORM.tex ./jigsaw.tex^M"
 stuff "# cp quiz_\${STORY}_\$FORM.tex ./quiz.tex^M"
 stuff "# xelatex jigsaw.tex && evince jigsaw.pdf^M"
-stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl ./\$TOPIC && xelatex ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && evince jigsaw_\${STORY}_\$FORM.pdf"
+stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && evince jigsaw_\${STORY}_\$FORM.pdf"
 screen
 stuff "# cp quiz_\${STORY}_\$FORM.pdf ~/media/^M"
 stuff "# lpr quiz_\${STORY}_\$FORM.pdf -#1^M"
-stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl ./\$TOPIC && xelatex ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince quiz_\${STORY}_\$FORM.pdf"
+stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince quiz_\${STORY}_\$FORM.pdf"
 screen lftp web.nuu.edu.tw
 stuff "cd public_html/$VIEW^M"
 stuff "# put jigsaw_${STORY}_$FORM.pdf^M"

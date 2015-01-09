@@ -7,8 +7,8 @@ stuff "# ~/class/ttb/cards/bingo/bingo.pl -n 15 -s $STORY -f 0 ./$TOPIC && xelat
 stuff "# cp bingo_${STORY}_0.pdf ~/media/^M"
 stuff "# lpr bingo_${STORY}_0.pdf -P kyocera^M"
 screen 2
-stuff "# perl ../cclass/cards.pl ./$TOPIC && xelatex ./\$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf^M"
-stuff "# perl ../cclass/cards.pl ./$TOPIC && xelatex ./\$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf^M"
+stuff "# perl ../cclass/cards.pl -t ./$TOPIC && xelatex ./\$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf^M"
+stuff "# perl ../cclass/cards.pl -t ./$TOPIC && xelatex ./\$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf^M"
 stuff "# mount ~/media/^M"
 stuff "# cp jigsaw_${STORY}_$FORM.pdf quiz_${STORY}_$FORM.pdf ~/media/^M"
 stuff "# umount ~/media/^M"

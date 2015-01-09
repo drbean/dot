@@ -25,7 +25,7 @@ function edit () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/edit/$source
+    cd ~/ed/$source
     SOURCE=$source screen -c /home/drbean/dot/.screen/edit.rc -dR edit
     cd -
 }

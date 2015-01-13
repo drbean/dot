@@ -1,4 +1,4 @@
-" Last Edit: 2014  9月 11, 10時38分43秒
+" Last Edit: 2015  1月 13, 19時35分30秒
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -510,6 +510,14 @@ au!
 
 "au BufUnload,BufHidden * if &filetype == "help" | bdel | endif
 "au BufUnload * if &filetype == "help" | bdel | endif
+
+augroup END
+
+augroup slides
+au!
+
+" pandoc link list
+au BufEnter slides.txt nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
 
 augroup END
 

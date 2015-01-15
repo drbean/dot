@@ -1,4 +1,4 @@
-screen
+screen 3
 stuff "svn st^Msvn log -vr BASE:HEAD^M"
 stuff "# ln -s ../business/newbusiness/people/Model.hs ./Model.hs^M"
 stuff "# ln -s ../business/newbusiness/people/Story_Interpretation.hs ./Story_Interpretation.hs^M"
@@ -7,9 +7,12 @@ stuff "# ln -s ../business/newbusiness/people/Tests.hs ./Tests.hs^M"
 stuff "# ln -s ../business/Topic_Cats.hs ./Topic_Cats.hs^M"
 stuff "# ln -s ../business/Topic_Interpretation.hs ./Topic_Interpretation.hs^M"
 
-screen
-screen ghci -i./:../business/:../business/marketing/:../business/marketing/shoes/
-stuff ":load Tests^M":
+screen 2
+screen 1
+stuff "cd pdrt-sandbox"
+stuff "ghci^M"
+stuff ":load tutorials/DRSTutorial.hs^M":
+
 screen 0
 # stuff "v LogicalForm.hs Parsing.hs Cats.hs Interpretation.hs"
 stuff "v -O pdrt-sandbox/tutorials/DRSTutorial.hs pdrt-sandbox/tutorials/PDRSTutorial.hs^M"

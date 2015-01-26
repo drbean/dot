@@ -7,6 +7,9 @@ fi
 
 # User specific aliases and functions
 
+# ingydotnet/git-hub
+source ~/dot/git/git-hub/init
+
 alias web="cd; screen -c /home/drbean/dot/.screen/web.rc -dR web; cd -"
 alias surf="cd ~/sr; screen -dR surfraw; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"

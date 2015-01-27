@@ -2,4 +2,4 @@ screen v -S Session.vim
 screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 screen
-stuff "lftp freeshell.org^M ls "
+stuff "lftp drbean@freeshell.org^M ls "

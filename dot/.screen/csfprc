@@ -9,7 +9,7 @@ stuff "# ln -s ../business/Topic_Interpretation.hs ./Topic_Interpretation.hs^M"
 
 screen 2
 screen 1
-stuff "cd pdrt-sandbox"
+stuff "cd pdrt-sandbox^M"
 stuff "ghci^M"
 stuff ":load tutorials/DRSTutorial.hs^M":
 

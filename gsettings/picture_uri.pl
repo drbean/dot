@@ -6,8 +6,8 @@ use warnings;
 use IO::All;
 use List::Util "shuffle";
 
-my $unseen = io('/home/drbean/unseen_pics.txt');
-my $seen = io('/home/drbean/seen_pics.txt');
+my $unseen = io('/home/mai/unseen_pics.txt');
+my $seen = io('/home/mai/seen_pics.txt');
 
 my @raw_unseen = $unseen->slurp;
 my @seen = $seen->slurp;
@@ -20,4 +20,4 @@ $seen->print(@seen, $pic);
 
 chomp $pic;
 
-system("dbus-launch gsettings set org.mate.background picture-filename /home/drbean/Pictures/$pic");
+system("dbus-launch gsettings set org.gnome.desktop.background picture-uri file:///home/mai/Pictures/$pic");

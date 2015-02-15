@@ -394,9 +394,9 @@ function gr () {
 	FLA0007) league=$1;;
 	FLA0016) league=$1;;
 	FLA0027) league=$1;;
-	2L1) league=$1;;
-	MB1) league=$1;;
-	3K0) league=$1;;
+	1J0) league=$1;;
+	2L2) league=$1;;
+	MB2) league=$1;;
 	1040) league=$1;;
 	*) return 1 # illegal league
     esac
@@ -417,6 +417,7 @@ function gr () {
     LEAGUE=$league \
     ROUND=$round \
     NEXTROUND=$(($round+1)) \
+    PREVROUND=$(($round-1)) \
     TOPIC=$topic \
     N=$n \
     screen -c /home/drbean/dot/.screen/grading.rc -dR s_$league
@@ -431,9 +432,9 @@ function new () {
 	FLA0007) league=$1;;
 	FLA0016) league=$1;;
 	FLA0027) league=$1;;
-	2L1) league=$1;;
-	MB1) league=$1;;
-	3K0) league=$1;;
+	1J0) league=$1;;
+	2L2) league=$1;;
+	MB2) league=$1;;
 	1040) league=$1;;
 	*) return 1 # illegal league
     esac
@@ -494,21 +495,22 @@ function session () {
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	2L1)
+	1J0)
+	    if (($week <= 5)); then session=1
+	    elif (($week <= 9)); then session=2
+	    elif (($week <= 12)); then session=3
+	    elif (($week <= 13)); then session=4
+	    elif (($week <= 18)); then session=5
+	    else return 1 # illegal week
+	    fi;;
+	2L2)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	MB1)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	3K0)
+	MB2)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -556,7 +558,7 @@ function tables () {
 		*) return 1 # illegal letter
 	    esac;;
 		# 19 groups
-	2L1)
+	1J0)
 	    case ${letter} in
 		# A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
 		# B) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
@@ -570,7 +572,7 @@ function tables () {
 		Z) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
 		*) return 1 # illegal option
 	    esac;;
-	MB1)
+	2L2)
 	    case ${letter} in
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
 		B) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
@@ -580,7 +582,7 @@ function tables () {
 		X) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
 		*) return 1 # illegal option
 	    esac;;
-	3K0)
+	MB2)
 	    case ${letter} in
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 		B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
@@ -639,9 +641,9 @@ function w () {
     case $1 in
 	GL00015) league=$1;;
 	GL00016) league=$1;;
-	2L1) league=$1;;
-	MB1) league=$1;;
-	3K0) league=$1;;
+	1J0) league=$1;;
+	2L2) league=$1;;
+	MB2) league=$1;;
 	FLA0007) league=$1;;
 	FLA0016) league=$1;;
 	FLA0027) league=$1;;

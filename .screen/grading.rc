@@ -20,6 +20,7 @@ stuff "# sum_g1_g2.pl -l $LEAGUE -r $ROUND > ../exam/$ROUND/g.yaml^M"
 stuff "# perl ../../../comp/paper/script_files/score_comp.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml^M"
 stuff "# perl ~/comp/web/script_files/comptron.pl -l $LEAGUE -r $ROUND -x 1 > $ROUND/response.yaml^M"
 stuff "# perl ../../../swiss/web/script/round_table.pl -l $LEAGUE -r $ROUND ^M"
+stuff "# cp $ROUND/*.yaml $PREVROUND/^M"
 stuff "# perl ../../../swiss/web/script/create_round.pl -l $LEAGUE -r $ROUND > $ROUND/round.yaml^M"
 stuff "# svn mkdir $ROUND^M ls^M"
 screen 3

@@ -2,3 +2,5 @@ screen su -c 'v /var/lib/znc/.znc'
 screen weechat-curses -r '/iset;/script'
 screen
 stuff "su"
+screen 9
+stuff "man weechat"

@@ -4,7 +4,7 @@ stuff ":e "
 screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 screen 4 sudo su - postgres
-stuff "psql ${APP}031^M"
+stuff "psql ${APP}032^M"
 screen 7
 stuff "cd /var/www/cgi-bin/$APP^Msvn st -q^Msvn log -vr BASE:HEAD^M"
 screen 8

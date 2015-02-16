@@ -1,4 +1,4 @@
-" Last Edit: 2015  1月 13, 19時35分30秒
+" Last Edit: 2015  2月 15, 17時28分32秒
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -528,7 +528,7 @@ au!
 
 fu! Reformat ()
 	let dir = getcwd()
-	let league = substitute(dir, "/home/drbean/031/", "", "")
+	let league = substitute(dir, "/home/drbean/032/", "", "")
 	@ts = 2
 	let lnum = line('$')
 	let tables = split( getline(lnum), ',' )

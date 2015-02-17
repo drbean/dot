@@ -452,6 +452,7 @@ function new () {
     cd ~/032/
     LEAGUE=$league \
     N=$n \
+    SESSION=0 \
     screen -c /home/drbean/dot/.screen/setup.rc -dR s_$league
     cd -
 }

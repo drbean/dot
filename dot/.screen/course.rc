@@ -22,4 +22,4 @@ stuff "cd /public_html/$VIEW^M"
 stuff "# put jigsaw_${STORY}_$FORM.pdf^M"
 stuff "# put quiz_${STORY}_$FORM.pdf^M"
 screen 0
-stuff "v slides.txt ./$TOPIC/dic.yaml ./$TOPIC/cards.yaml ./$TOPIC/slides.txt ./$TOPIC/questionsA5.tex ./$TOPIC/$STORY/Model.hs ~/GF/gf-contrib/$COURSE/$TOPIC/$STORY/Model.hs  ~/GF/gf-contrib/$COURSE/$TOPIC/$STORY/Story_Interpretation.hs  ~/GF/gf-contrib/$COURSE/$TOPIC/$STORY/Tests.hs"
+stuff "v slides.txt ./$TOPIC/dic.yaml ./$TOPIC/cards.yaml ./$TOPIC/slides.txt ./$TOPIC/questionsA5.tex ./$TOPIC/$STORY/Model.hs ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Model.hs  ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Story_Interpretation.hs  ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/Tests.hs"

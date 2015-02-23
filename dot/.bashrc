@@ -626,7 +626,6 @@ function w () {
 	FLA0007) league=$1;;
 	FLA0016) league=$1;;
 	FLA0027) league=$1;;
-	1040) league=$1;;
 	*) return 1 # illegal league
     esac
     week=$2
@@ -650,32 +649,6 @@ function w () {
     LETTER=$letter \
     TABLES=$tables \
     screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
-    cd -
-}
-
-function yd1040 () {
-    OPTIND=1
-    local arg league=1040 session week letter topic tables
-    while getopts 'w:l:t:' arg
-    do
-        case ${arg} in
-            w) week=${OPTARG};;
-            l) letter=${OPTARG};;
-            t) topic=${OPTARG};;
-            *) return 1 # illegal option
-        esac
-    done
-    session $league $week
-    tables $league $letter
-    cd ~/032/$league
-    SESSION=$session \
-    WEEK=$week \
-    LASTWEEK=$(($week-1)) \
-    LEAGUE=$league \
-    TOPIC=$topic \
-    LETTER=$letter \
-    TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 

@@ -397,7 +397,6 @@ function gr () {
 	1J0) league=$1;;
 	2L2) league=$1;;
 	MB2) league=$1;;
-	1040) league=$1;;
 	*) return 1 # illegal league
     esac
     OPTIND=2
@@ -435,7 +434,6 @@ function new () {
 	1J0) league=$1;;
 	2L2) league=$1;;
 	MB2) league=$1;;
-	1040) league=$1;;
 	*) return 1 # illegal league
     esac
     OPTIND=2
@@ -475,13 +473,6 @@ function session () {
     league=$1
     week=$2
     case ${league} in
-	1040)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
-	    else return 1 # illegal week
-	    fi;;
 	GL00016)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
@@ -546,19 +537,6 @@ function tables () {
     letter=$2
     case ${league} in
 		# 16 groups
-	1040)
-	    case ${letter} in
-		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-		B) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-		# A) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
-		# B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
-		# C) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
-		# C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-		X) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
-		*) return 1 # illegal letter
-	    esac;;
-		# 19 groups
 	1J0)
 	    case ${letter} in
 		# A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;

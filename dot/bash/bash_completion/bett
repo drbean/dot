@@ -13,8 +13,8 @@ function _bett () {
 	story="biomom biodad emersonj factors freakout pope wallace-oreilly"
 	old_story="biomom biodad emersonj factors freakout pope wallace-oreilly"
 	round="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18"
-	league="1J0 2L2 MB2 GL00015 GL00016 FLA0027"
-	league_re="1J0|2L2|MB2|GL00015|GL00016|FLA0027"
+	league="1J0 2L2 MB2 FLA0015 FLA0017 FLA0022 FLA0026 FLA0027"
+	league_re="1J0|2L2|MB2|FLA0015|FLA0017|FLA0022|FLA0026|FLA0027"
 	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
 	diropts="--cache-dir"
 

@@ -5,7 +5,7 @@ stuff "# svn co file:///home/drbean/.svk/local/cl/$LEAGUE^M"
 stuff "cd ~/032/$LEAGUE/^M"
 stuff "# cp ../../022/$LEAGUE/league.yaml ./league.yaml^M"
 stuff "# svn mkdir session classwork homework comp exam^M"
-stuff "# svn mkdir session/$ROUND^M"
+stuff "# svn mkdir session/$SESSION^M"
 stuff "# school_data.pl -s 032 -l $LEAGUE | sponge league.yaml^M"
 stuff "# re.pl --rcfile ../rc/import_memberdata.rc^M"
 stuff "# svn add league.yaml^M"
@@ -13,11 +13,11 @@ stuff "# chcon -t public_content_rw_t ./comp/ -R^M"
 stuff "# su -c 'chown drbean:swiss ./comp/ -R'^M"
 
 screen 2
-stuff "cd ~/admin/032/must/^M"
+stuff "cd ~/admin/032/nuu/^M"
 stuff "# cp ~/media/032${LEAGUE}.* ./^M"
 stuff "cp 032${LEAGUE}.txt ${LEAGUE}.txt^M"
 stuff "v 032${LEAGUE}.txt ${LEAGUE}.txt"
 
 screen 0
 stuff "cd ~/032/$LEAGUE^M"
-stuff "v league.yaml groups.yaml session/$ROUND/groups.yaml" 
+stuff "v league.yaml groups.yaml session/$PREVSESSION/groups.yaml" 

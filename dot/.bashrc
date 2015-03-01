@@ -212,7 +212,7 @@ function speaking () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=0 \
-	screen -c /home/drbean/dot/.screen/course.rc -dR topics_$topic
+	screen -c /home/drbean/dot/.screen/course.rc -dR speaking
 	cd -
 }
 

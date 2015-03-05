@@ -2,6 +2,9 @@ screen 9
 stuff "man bash"
 screen 0
 stuff "v .bashrc .screen/ vim/ bash/bash_completion"
+screen 3
+stuff "cd git^M"
+stuff "cp ignore ~/.config/git/ignore"
 screen 2
 source vim.rc
 screen 1

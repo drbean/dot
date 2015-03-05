@@ -3,7 +3,7 @@ stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put grades.tx
 stuff "# svn ci -m create_groups_n=$N session/$NEXTROUND/groups.yaml^M"
 stuff "# print_grades.pl > grades.txt^M"
 stuff "# teamseat.pl -s $NEXTROUND -n $N ^M"
-stuff "# lpr teamseat.pdf^M"
+stuff "# lpr teamseat.pdf -#1^M"
 stuff "# teamseat.pl -s $NEXTROUND --latex -n $N && xelatex session/$NEXTROUND/teamseat.tex && evince teamseat.pdf^M"
 stuff "# svn add session/$NEXTROUND/groups.yaml^M"
 stuff "# mv groups.yaml session/$NEXTROUND/groups.yaml^M"

@@ -1,4 +1,4 @@
-" Last Edit: 2015  2月 15, 17時28分32秒
+" Last Edit: 2015 Mar 08, 12:10:34 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -884,4 +884,39 @@ fu! Rtfcolor()
 	call setline(".", newline)
 endfunction
 vno <LocalLeader>c <Esc>:call Rtfcolor()<CR>
+
+" https://gist.github.com/paradigm/432156aebca428536b7e
+nnoremap <LocalLeader>dl :call DigraphLookup()<cr>
+function! DigraphLookup()
+	" get character under cursor
+	"
+	" using redir here so we get the same representation as we do
+	" redir'ing :digraph, e.g. "^@" is one character in-buffer represented
+	" as two characters.
+	let unnamedreg = @"
+	normal! yl
+	redir => c
+	silent echo @"
+	redir END
+	let @" = unnamedreg
+	let c = c[1:]
+
+	" get digraphs
+	redir => ds
+	silent digraphs
+	redir END
+
+	" find digraph
+	for d in split(ds, '\S\+\s\S\+\s\+\d\+\zs\s\+\ze')
+		if split(d)[1] == c
+			" found digraph
+			redraw
+			echo split(d)[0]
+			return
+		endif
+	endfor
+
+	redraw
+	echo "No digraph found for \"" . c . "\""
+endfunction 
 

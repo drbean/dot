@@ -169,7 +169,7 @@ function sound () {
     cd -
 }
 
-alias class="cd ~/class; screen -dR class; cd -"
+alias class="cd ~/class; screen -c /home/drbean/dot/.screen/utility.rc -dR class; cd -"
 alias forms="cd ~/class/forms; screen -dR forms; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/drbean/dot/.screen/utility.rc -dR tmpl; cd -"
 alias rc="cd ~/032/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
@@ -198,9 +198,10 @@ function pres () {
 function speaking () {
     OPTIND=1
     local arg course=speaking topic story
-    while getopts 't:s:' arg
+    while getopts 'v:t:s:' arg
     do
         case ${arg} in
+            v) view=${OPTARG};;
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
             *) return 1 # illegal option
@@ -208,7 +209,7 @@ function speaking () {
     done
 	cd ~/class/speaking
 	COURSE=$course \
-	VIEW=$course \
+	VIEW=$view \
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=0 \
@@ -583,7 +584,7 @@ function tables () {
 		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
 		# B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
 		# C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
-		X) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,irr";;
 		*) return 1 # illegal option
 	    esac;;
 	MB2)
@@ -617,7 +618,7 @@ function tables () {
 		# B) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
 		# C) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
 		# C) tables="Black::Blue,Brown::Purple,Pink::Orange";;
-		X) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
 		*) return 1 # illegal option
 	    esac;;
 	FLA0022)

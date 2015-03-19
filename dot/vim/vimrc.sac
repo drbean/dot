@@ -1,4 +1,4 @@
-" Last Edit: 2015 Mar 12, 03:52:25 PM
+" Last Edit: 2015 Mar 13, 06:20:15 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -544,9 +544,9 @@ fu! Reformat ()
 		call append(lnum, "")
 	endfor
 	let lnum = line('$')
-	call append(lnum, ["texts:", "  - ", "answers:")
+	call append(lnum, ["texts:", "  - ", "answers:"])
 	for table in tables
-		call append(lnum, ["  " . table . ":", "    1: ")
+		call append(lnum, ["  " . table . ":", "    1: "])
 	endfor
 	let lnum = line('$')
 	call append (lnum, "report:")

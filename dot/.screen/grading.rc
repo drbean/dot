@@ -10,7 +10,7 @@ stuff "# mv groups.yaml session/$NEXTROUND/groups.yaml^M"
 stuff "# svn mkdir session/$NEXTROUND^M"
 stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls session/^M"
 stuff "# cp teamseat.pdf ~/media/teamseat_$LEAGUE.pdf^M"
-stuff "# svn ci -m $TOPIC comp/$ROUND exam/$ROUND^M"
+stuff "# svn ci comp/$ROUND exam/$ROUND -m $TOPIC^M"
 screen 2
 stuff "cd ~/032/$LEAGUE/comp^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put ../exam/$ROUND/g2.yaml && put ../exam/$ROUND/g.yaml && put $ROUND/scores.yaml && put $ROUND/response.yaml'^M"

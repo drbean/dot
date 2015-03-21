@@ -497,7 +497,7 @@ function session () {
     week=$2
     case ${league} in
 	1J0)
-	    if (($week <= 5)); then session=1
+	    if (($week <= 3)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 12)); then session=3
 	    elif (($week <= 13)); then session=4
@@ -572,7 +572,7 @@ function tables () {
 		B) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
 		C) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
 		# C) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Silver::Violet,Beige::Turquoise,Golden::Window";;
-		X),tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,5-1,5-2,6-1,6-2,7-1,7-2,8-1,8-2,9-1,9-2,10-1,10-2,11-1,11-2,12-1";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,5-1,5-2,6-1,6-2,7-1,7-2,8-1,8-2,9-1,9-2,10-1,10-2,11-1,11-2,12-1";;
 		Y) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
 		Z) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
 		*) return 1 # illegal option
@@ -592,7 +592,7 @@ function tables () {
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 		B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
 		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-		X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
 		*) return 1 # illegal letter
 	    esac;;
 	FLA0015)

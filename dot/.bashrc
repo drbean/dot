@@ -217,6 +217,25 @@ function speaking () {
 	cd -
 }
 
+function top () {
+    OPTIND=1
+    local arg course=topics view topic story form
+    while getopts 't:s:' arg
+    do
+        case ${arg} in
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	TOPIC=$topic \
+	STORY=$story \
+	screen -c /home/drbean/dot/.screen/course.rc -dR topics_$topic
+	cd -
+}
+
 function college () {
     OPTIND=1
     local arg course=college view topic story form

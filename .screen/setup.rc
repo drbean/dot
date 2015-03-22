@@ -1,7 +1,7 @@
 screen 1
 stuff "# svn mkdir file:///home/drbean/.svk/local/cl/$LEAGUE -m 032$LEAGUE      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭^M"
 stuff "# cd ~/032/^M"
-stuff "# svn co file:///home/drbean/.svk/local/cl/$LEAGUE^M"
+stuff "# svn co http://svn.openfoundry.org/class/$LEAGUE^M"
 stuff "cd ~/032/$LEAGUE/^M"
 stuff "# cp ../../022/$LEAGUE/league.yaml ./league.yaml^M"
 stuff "# svn mkdir session classwork homework comp exam^M"

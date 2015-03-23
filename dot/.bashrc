@@ -663,7 +663,7 @@ function tables () {
 		# B) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
 		# C) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
 		# C) tables="Black::Blue,Brown::Purple,Pink::Orange";;
-		X) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
 		*) return 1 # illegal option
 	    esac;;
 	FLA0027)

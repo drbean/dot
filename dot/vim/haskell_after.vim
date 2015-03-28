@@ -204,7 +204,7 @@ fu! Populate(module)
 	call setpos('.', save_cursor)
 
 endf
-nn <LocalLeader>p <Esc>:call Populate("Jackson")<CR>j
+nn <LocalLeader>p <Esc>:call Populate("Siar")<CR>j
 
 " put words in DicksonI.gf, LexDickson.gf, LexDicksonEng.gf
 

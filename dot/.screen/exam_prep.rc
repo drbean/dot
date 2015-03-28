@@ -1,19 +1,24 @@
 screen
-stuff "v ./$TOPIC/cards.yaml ./quiz.tex ./$TOPIC/jigsaw_${STORY}_$FORM.tex ./jigsaw.tex"
+stuff "v ./$TOPIC/cards.yaml ./quiz.tex ./$TOPIC/jigsaw_${STORY}_$FORM.tex ./jigsaw.tex ./$TOPIC/questionsA5.tex"
 screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "# cp jigsaw_\${STORY}_\$FORM.pdf ~/media/^M"
-stuff "# lpr jigsaw_\${STORY}_\$FORM.pdf^M"
+stuff "# lpr jigsaw.pdf^M"
 stuff "# cp $TOPIC/jigsaw_\${STORY}_\$FORM.tex ./jigsaw.tex^M"
 stuff "# cp $TOPIC/quiz_\${STORY}_\$FORM.tex ./quiz.tex^M"
 stuff "# xelatex jigsaw.tex && evince jigsaw.pdf^M"
-stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && evince jigsaw_\${STORY}_\$FORM.pdf"
+stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex --output-directory=./$TOPIC ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && evince jigsaw_\${STORY}_\$FORM.pdf"
 screen
 stuff "# cp quiz_\${STORY}_\$FORM.pdf ~/media/^M"
 stuff "# lpr quiz_\${STORY}_\$FORM.pdf -#1^M"
-stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince quiz_\${STORY}_\$FORM.pdf"
+stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex --output-directory=./$TOPIC ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince quiz_\${STORY}_\$FORM.pdf"
+screen
+stuff "touch ./$TOPIC/questionsA5.tex^M"
+stuff "# svn merge -r 1:HEAD svn ls http://svn.openfoundry.org/ttb/forms/compcomp/questionsA5.tex ./$TOPIC/questionsA5.tex^M"
+stuff "# xelatex --output-directory=./$TOPIC ./$TOPIC/questionsA5.tex && evince $TOPIC/questionsA5.pdf"
 screen lftp web.nuu.edu.tw
 stuff "cd public_html/$VIEW^M"
-stuff "# put jigsaw_${STORY}_$FORM.pdf^M"
-stuff "# put quiz_${STORY}_$FORM.pdf^M"
+stuff "# put $TOPIC/jigsaw_${STORY}_$FORM.pdf^M"
+stuff "# put $TOPIC/quiz_${STORY}_$FORM.pdf^M"
+stuff "# put $TOPIC/questionsA5.pdf^M"
 

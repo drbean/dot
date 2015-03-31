@@ -220,11 +220,12 @@ function speaking () {
 function top () {
     OPTIND=1
     local arg course=topics view topic story form
-    while getopts 't:s:' arg
+    while getopts 't:s:f:' arg
     do
         case ${arg} in
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
+            f) form=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
@@ -232,6 +233,7 @@ function top () {
 	COURSE=$course \
 	TOPIC=$topic \
 	STORY=$story \
+	FORM=$form \
 	screen -c /home/drbean/dot/.screen/course.rc -dR topics_$topic
 	cd -
 }

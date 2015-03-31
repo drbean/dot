@@ -26,7 +26,7 @@ do
 	sed -e "1i\\
 To: $display $addresspart\\
 
-	" < ~/job/email.txt | mutt  -e "set copy=yes" -e "my_hdr To: $display $addresspart" -e "my_hdr From: Greg Matheson <drbean@freeshell.org>" -s "Homework: Self-introductions. Do it or get zero." 
+	" < ~/job/email.txt | mutt  -e "set copy=yes" -e "my_hdr To: $display $addresspart" -e "my_hdr From: Greg Matheson <drbean@freeshell.org>" -s "Vote on choice of Internet_english or eCampus" 
 
 	error=$?;
 	echo -n $display $addresspart;

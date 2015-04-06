@@ -1,4 +1,4 @@
-" Last Edit: 2015 四月 06, 20:06:51
+" Last Edit: 2015 四月 06, 21:55:33
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -682,6 +682,28 @@ au BufEnter Indexes*.txt nn <buffer> g<Right> g$zs
 
 augroup END
 
+
+augroup latex
+	au!
+
+" creating cloze by hand using Cloze.pm, dic.tmpl formatting
+
+fu! LatexSpace()
+	let space = " \\hspace*{\\fill} "
+	"let newline = strpart(getline('.'), 0, col('.')) . space . strpart(getline 
+	exec "norm! s" . space
+endf
+fu! LatexBreak()
+	let break = expand('<cword>')
+	let rendering = "{\\Huge " . break . "} "
+	exec "norm! s" . rendering
+endf
+au BufEnter dic_*.tex ino <Space> <Esc>:call LatexSpace()<CR>A
+au BufEnter dic_*.tex ino . <Esc>:call LatexBreak()<CR>A
+au BufEnter dic_*.tex ino , <Esc>:call LatexBreak()<CR>A
+
+augroup END
+
 function! Nun()
 	nun <buffer> 0
 	nun <buffer> 1
@@ -924,4 +946,3 @@ function! DigraphLookup()
 	redraw
 	echo "No digraph found for \"" . c . "\""
 endfunction 
-

@@ -6,6 +6,6 @@ screen 5 ssh -X mai@pl818.nas921.nara.nttpc.ne.jp
 screen 9
 stuff "man httpd_selinux"
 screen 0
-stuff "ssh freeshell.org^M"
+stuff "ssh drbean@freeshell.org^M"
 stuff "password_here^M"
 stuff "./.bin/mutt^M"

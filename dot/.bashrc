@@ -10,13 +10,13 @@ fi
 # ingydotnet/git-hub
 source ~/dot/git/git-hub/init
 
-alias web="cd; screen -c /home/drbean/dot/.screen/web.rc -dR web; cd -"
+alias web="cd; screen -c /home/$USER/dot/.screen/web.rc -dR web; cd -"
 alias surf="cd ~/sr; screen -dR surfraw; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
-alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/drbean/dot/.screen/project.rc -dR beans; cd -"
-alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/drbean/dot/.screen/project.rc -dR swiss; cd -"
-alias comp="cd ~/comp; APP=comp COURSE=conversation STORY=trinka screen -c /home/drbean/dot/.screen/project.rc -dR comp; cd -"
-alias rdf="cd ~/rdf; screen -c /home/drbean/dot/.screen/rdf.rc -dR rdf; cd -"
+alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/$USER/dot/.screen/project.rc -dR beans; cd -"
+alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/.screen/project.rc -dR swiss; cd -"
+alias comp="cd ~/comp; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/.screen/project.rc -dR comp; cd -"
+alias rdf="cd ~/rdf; screen -c /home/$USER/dot/.screen/rdf.rc -dR rdf; cd -"
 
 function edit () {
     OPTIND=1
@@ -29,7 +29,7 @@ function edit () {
         esac
     done
     cd ~/ed/$source
-    SOURCE=$source screen -c /home/drbean/dot/.screen/edit.rc -dR edit
+    SOURCE=$source screen -c /home/$USER/dot/.screen/edit.rc -dR edit
     cd -
 }
 
@@ -50,7 +50,7 @@ function aca () {
         esac
     done
     cd ~/$app
-    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR aca_$course
+    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/$USER/dot/.screen/app.rc -dR aca_$course
     cd -
 }
 
@@ -71,7 +71,7 @@ function dic () {
         esac
     done
     cd ~/$app
-    APP=$app MOD=${app^} COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/drbean/dot/.screen/app.rc -dR dic_$course
+    APP=$app MOD=${app^} COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/$USER/dot/.screen/app.rc -dR dic_$course
     cd -
 }
 
@@ -99,16 +99,16 @@ function bett () {
     ROUND=$round \
     LEAGUE=$league \
     SCRIPT_ARG="-t Non-competitive -g $course -i $story -d \"$script_arg\"" \
-    screen -c /home/drbean/dot/.screen/app.rc -dR bett
+    screen -c /home/$USER/dot/.screen/app.rc -dR bett
     cd -
 }
 
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
-alias dot="cd ~/dot; screen -c /home/drbean/dot/.screen/dotrc -dR dot; cd -"
-alias irc="cd ~/znc; screen -c /home/drbean/dot/.screen/irc.rc -dR irc; cd -"
+alias dot="cd ~/dot; screen -c /home/$USER/dot/.screen/dotrc -dR dot; cd -"
+alias irc="cd ~/znc; screen -c /home/$USER/dot/.screen/irc.rc -dR irc; cd -"
 
-alias csfp="cd ~/class/csfp; screen -c /home/drbean/dot/.screen/csfprc -dR csfp; cd -"
+alias csfp="cd ~/class/csfp; screen -c /home/$USER/dot/.screen/csfprc -dR csfp; cd -"
 
 alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 
@@ -129,7 +129,7 @@ function GF () {
     TOPIC=$topic \
     STORY=$story \
     MOD=${story^} \
-    screen -c /home/drbean/dot/.screen/gf.rc -dR GF_$story
+    screen -c /home/$USER/dot/.screen/gf.rc -dR GF_$story
     cd -
 }
 
@@ -147,7 +147,7 @@ function pages () {
     cd ~/class/pagestranscripts
     COURSE=$course \
     STORY=$story \
-    screen -c /home/drbean/dot/.screen/pagestranscripts.rc -dR pages_$course
+    screen -c /home/$USER/dot/.screen/pagestranscripts.rc -dR pages_$course
     cd -
 }
 
@@ -165,14 +165,14 @@ function sound () {
     cd ~/下載/soundfiles
     COURSE=$course \
     DIRECTORY=$directory \
-    screen -c /home/drbean/dot/.screen/soundfiles.rc -dR sound_$course
+    screen -c /home/$USER/dot/.screen/soundfiles.rc -dR sound_$course
     cd -
 }
 
-alias class="cd ~/class; screen -c /home/drbean/dot/.screen/utility.rc -dR class; cd -"
+alias class="cd ~/class; screen -c /home/$USER/dot/.screen/utility.rc -dR class; cd -"
 alias forms="cd ~/class/forms; screen -dR forms; cd -"
-alias tmpl="cd ~/class/tmpl; screen -c /home/drbean/dot/.screen/utility.rc -dR tmpl; cd -"
-alias rc="cd ~/032/rc; screen -c /home/drbean/dot/.screen/utility.rc -dR rc; cd -"
+alias tmpl="cd ~/class/tmpl; screen -c /home/$USER/dot/.screen/utility.rc -dR tmpl; cd -"
+alias rc="cd ~/032/rc; screen -c /home/$USER/dot/.screen/utility.rc -dR rc; cd -"
 
 function pres () {
     OPTIND=1
@@ -191,7 +191,7 @@ function pres () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=0 \
-	screen -c /home/drbean/dot/.screen/course.rc -dR pres_$topic
+	screen -c /home/$USER/dot/.screen/course.rc -dR pres_$topic
 	cd -
 }
 
@@ -213,7 +213,7 @@ function speaking () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=0 \
-	screen -c /home/drbean/dot/.screen/course.rc -dR speaking
+	screen -c /home/$USER/dot/.screen/course.rc -dR speaking
 	cd -
 }
 
@@ -234,7 +234,7 @@ function top () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/drbean/dot/.screen/course.rc -dR topics_$topic
+	screen -c /home/$USER/dot/.screen/course.rc -dR topics_$topic
 	cd -
 }
 
@@ -257,7 +257,7 @@ function college () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	screen -c /home/$USER/dot/.screen/course.rc -dR $course
 	cd -
 }
 
@@ -280,7 +280,7 @@ function biz () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	screen -c /home/$USER/dot/.screen/course.rc -dR $course
 	cd -
 }
 
@@ -303,7 +303,7 @@ function cnv () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	screen -c /home/$USER/dot/.screen/course.rc -dR $course
 	cd -
 }
 
@@ -326,7 +326,7 @@ function intm () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	screen -c /home/$USER/dot/.screen/course.rc -dR $course
 	cd -
 }
 
@@ -349,7 +349,7 @@ function call () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	screen -c /home/$USER/dot/.screen/course.rc -dR $course
 	cd -
 }
 
@@ -372,7 +372,7 @@ function tech () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	screen -c /home/$USER/dot/.screen/course.rc -dR $course
 	cd -
 }
 
@@ -395,7 +395,7 @@ function m () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/drbean/dot/.screen/course.rc -dR $course
+	screen -c /home/$USER/dot/.screen/course.rc -dR $course
 	cd -
 }
 
@@ -425,7 +425,7 @@ function ex () {
     TOPIC=$topic \
     STORY=$story \
     FORM=$form \
-    screen -c /home/drbean/dot/.screen/exam_prep.rc -dR exam_$course
+    screen -c /home/$USER/dot/.screen/exam_prep.rc -dR exam_$course
     cd -
 }
 
@@ -462,7 +462,7 @@ function gr () {
     PREVROUND=$(($round-1)) \
     TOPIC=$topic \
     N=$n \
-    screen -c /home/drbean/dot/.screen/grading.rc -dR s_$league
+    screen -c /home/$USER/dot/.screen/grading.rc -dR s_$league
     cd -
 }
 
@@ -495,12 +495,12 @@ function new () {
     N=$n \
     SESSION=1 \
     PREVSESSION=$(($SESSION-1)) \
-    screen -c /home/drbean/dot/.screen/setup.rc -dR s_$league
+    screen -c /home/$USER/dot/.screen/setup.rc -dR s_$league
     cd -
 }
 
-alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/drbean/dot/.screen/course.rc -dR intercultural; cd -"
-alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/drbean/dot/.screen/course.rc -dR literature; cd -"
+alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/$USER/dot/.screen/course.rc -dR intercultural; cd -"
+alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/$USER/dot/.screen/course.rc -dR literature; cd -"
 
 alias grammar="cd ~/class/curriculum/grammar; screen -dR grammar; cd -"
 alias writing="cd ~/class/curriculum/writingreading; screen -dR writing; cd -"
@@ -718,7 +718,7 @@ function w () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR w_${league}_$week
+    screen -c /home/$USER/dot/.screen/class.rc -dR w_${league}_$week
     cd -
 }
 
@@ -750,7 +750,7 @@ function FLA0018 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
+    screen -c /home/$USER/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
@@ -782,7 +782,7 @@ function FLA0021 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
+    screen -c /home/$USER/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
@@ -814,7 +814,7 @@ function FLA0027 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
+    screen -c /home/$USER/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
@@ -846,13 +846,13 @@ function GL00019 () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/drbean/dot/.screen/class.rc -dR ${league}_w_$week
+    screen -c /home/$USER/dot/.screen/class.rc -dR ${league}_w_$week
     cd -
 }
 
 alias contest="cd ~/001/contest; screen -dR contest; cd -"
 
-alias job="cd ~/job; screen -c /home/drbean/dot/.screen/job.rc -dR job; cd -"
+alias job="cd ~/job; screen -c /home/$USER/dot/.screen/job.rc -dR job; cd -"
 
 alias q=exit
 

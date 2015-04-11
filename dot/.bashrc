@@ -286,7 +286,7 @@ function biz () {
 
 function cnv () {
     OPTIND=1
-    local arg course=conversation view topic story form
+    local arg course=cnv view topic story form
     while getopts 'v:t:s:f:' arg
     do
         case ${arg} in

@@ -9,8 +9,7 @@ screen 2
 source vim.rc
 screen 1
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
-stuff "cp .bashrc ~/.bashrc^M"
-stuff "cp .bash_profile ~/.bash_profile^M"
+stuff "cp .bashrc .bash_profile ~/^M"
 stuff "cp .xmonad/xmonad.hs ~/.xmonad/ && "
 stuff "xmonad --recompile && xmonad --restart^M"
 stuff "# export HISTTIMEFORMAT='%m-%d '^M"

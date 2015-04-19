@@ -7,11 +7,11 @@ stuff "# lpr jigsaw.pdf^M"
 stuff "# cp $TOPIC/jigsaw_\${STORY}_\$FORM.tex ./jigsaw.tex^M"
 stuff "# cp $TOPIC/quiz_\${STORY}_\$FORM.tex ./quiz.tex^M"
 stuff "# xelatex jigsaw.tex && evince jigsaw.pdf^M"
-stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex --output-directory=./$TOPIC ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && evince jigsaw_\${STORY}_\$FORM.pdf"
+stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex --output-directory=./$TOPIC ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && evince ./\$TOPIC/jigsaw_\${STORY}_\$FORM.pdf"
 screen
 stuff "# cp quiz_\${STORY}_\$FORM.pdf ~/media/^M"
 stuff "# lpr quiz_\${STORY}_\$FORM.pdf -#1^M"
-stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex --output-directory=./$TOPIC ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince quiz_\${STORY}_\$FORM.pdf"
+stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex --output-directory=./$TOPIC ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince ./\$TOPIC/quiz_\${STORY}_\$FORM.pdf"
 screen
 stuff "touch ./$TOPIC/questionsA5.tex^M"
 stuff "# svn merge -r 1:HEAD svn ls http://svn.openfoundry.org/ttb/forms/compcomp/questionsA5.tex ./$TOPIC/questionsA5.tex^M"

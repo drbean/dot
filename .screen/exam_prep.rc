@@ -14,7 +14,7 @@ stuff "# lpr quiz_\${STORY}_\$FORM.pdf -#1^M"
 stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex --output-directory=./$TOPIC ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince ./\$TOPIC/quiz_\${STORY}_\$FORM.pdf"
 screen
 stuff "touch ./$TOPIC/questionsA5.tex^M"
-stuff "# svn merge -r 1:HEAD svn ls http://svn.openfoundry.org/ttb/forms/compcomp/questionsA5.tex ./$TOPIC/questionsA5.tex^M"
+stuff "# svn merge -r 1:HEAD http://svn.openfoundry.org/ttb/forms/compcomp/questionsA5.tex ./$TOPIC/questionsA5.tex^M"
 stuff "# xelatex --output-directory=./$TOPIC ./$TOPIC/questionsA5.tex && evince $TOPIC/questionsA5.pdf"
 screen lftp web.nuu.edu.tw
 stuff "cd public_html/$VIEW^M"

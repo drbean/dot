@@ -16,7 +16,7 @@ screen
 stuff "touch ./$TOPIC/questionsA5.tex^M"
 stuff "# svn add ./$TOPIC/questionsA5.tex^M"
 stuff "# svn merge -r 1:HEAD http://svn.openfoundry.org/ttb/forms/compcomp/questionsA5.tex ./$TOPIC/questionsA5.tex^M"
-stuff "# xelatex --output-directory=./$TOPIC ./$TOPIC/questionsA5.tex && evince $TOPIC/questionsA5.pdf"
+stuff "# xelatex --output-directory=./$TOPIC ./$TOPIC/questionsA5.tex && evince $TOPIC/questionsA5.pdf^M"
 stuff "# svn ci ./$TOPIC/questionsA5.tex -m $TOPIC,$STORY^M"
 screen lftp web.nuu.edu.tw
 stuff "cd public_html/$VIEW^M"

@@ -630,22 +630,22 @@ dot
 d# svn ci -m marriage ~/031/MB1/homework/3.yaml
 d# svn mkdir comp
 d# xelatex report.tex && evince report.pdf
-echo 12nas | xclip -i
-echo 12nas | xclip -i -d :1
-echo 12nas | xclip -i -d :1 -s "clipboard"
-echo 12nas | xclip -i -d :1 -selection "clipboard"
-echo 12nas | xclip -i -d :1 -selection="primary"
-echo 12nas | xclip -i -d :1 -selection "primary"
-echo 12nas | xclip -i -d :1 -selection "secondary"
-echo 12nas | xclip -i -d localhost:1 -selection "clipboard"
+echo 12345 | xclip -i
+echo 12345 | xclip -i -d :1
+echo 12345 | xclip -i -d :1 -s "clipboard"
+echo 12345 | xclip -i -d :1 -selection "clipboard"
+echo 12345 | xclip -i -d :1 -selection="primary"
+echo 12345 | xclip -i -d :1 -selection "primary"
+echo 12345 | xclip -i -d :1 -selection "secondary"
+echo 12345 | xclip -i -d localhost:1 -selection "clipboard"
 echo $DISPLAY
 echo -e "---
 echo $FORM
 echo $FORM 
 echo -h
 echo --help
-echo -n "12nas" | xclip -i -d localhost:1 -selection "clipboard"
-echo -n 12nas | xclip -i -d localhost:1 -selection "clipboard"
+echo -n "12345" | xclip -i -d localhost:1 -selection "clipboard"
+echo -n 12345 | xclip -i -d localhost:1 -selection "clipboard"
 ex business -t online -s factors -f 0
 ex business -t online -s factors -f 1
 ex business -t online -s factors -f 2

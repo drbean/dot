@@ -155,9 +155,9 @@ fu! Populate(module)
 	let category = get( {'a': 'A', 'u': 'N', 'c': 'CN', 'p': 'PN', 'v': 'V', 'd': "Adv", 'r': "Prep"}, key )
 	if category == 'V'
 		call inputsave()
-		let v_key = input("Cat: 'V( )', 'V(2)', 'V(V)', 'V2V(J)', 'V(S)', 'V(A)' ")
+		let v_key = input("Cat: 'V( )', 'V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)' ")
 		call inputrestore()
-		let v_category = get( {' ': 'V', '2': 'V2', 'v': 'VV', 'j': 'V2V', 's': 'VS', 'a': 'VA' }, v_key )
+		let v_category = get( {' ': 'V', '2': 'V2', '3': 'V3', 'v': 'VV', 'j': 'V2V', 's': 'VS', 't': 'V2S', 'a': 'VA' }, v_key )
 		let category = v_category
 	endif
 	call setline('.', word . "\t: " . category . ";")
@@ -169,7 +169,7 @@ fu! Populate(module)
 	call setline((word_lnum+1), "\t, \"" . word . "\"")
 	call setpos("'" . mark, [0, (word_lnum+1), 1, 0])
 
-	let lc_name = word
+	let lc_name = tolower(word)
 	let down_name = substitute(lc_name, '\(-\| \)', "_", "g")
 
 	let ab_gf = bufnr( "/" . a:module . "\.gf")
@@ -196,6 +196,8 @@ fu! Populate(module)
 		call Populate_ap_like(word, down_name, "VS", "V") 
 	elseif category == "VA"
 		call Populate_ap_like(word, down_name, "VA", "V") 
+	elseif category == "V3"
+		call Populate_ap_like(word, down_name, "V3", "V") 
 	else 
 		call append(line('.'), "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif
@@ -204,7 +206,7 @@ fu! Populate(module)
 	call setpos('.', save_cursor)
 
 endf
-nn <LocalLeader>p <Esc>:call Populate("Siar")<CR>j
+nn <LocalLeader>p <Esc>:call Populate("Clay")<CR>j
 
 " put words in DicksonI.gf, LexDickson.gf, LexDicksonEng.gf
 

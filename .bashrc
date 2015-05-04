@@ -50,7 +50,7 @@ function aca () {
         esac
     done
     cd ~/$app
-    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/$USER/dot/.screen/app.rc -dR aca_$course
+    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/$USER/dot/.screen/$app.rc -dR ${app}_$course
     cd -
 }
 

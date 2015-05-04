@@ -1,5 +1,5 @@
 screen
-stuff "v lib/$MOD/Controller/Play.pm lib/$MOD/Controller/Game.pm lib/$MOD/Controller/Login.pm script"
+stuff "v trunk branch/base branch/report-base branch/test tags/base tags/report-base tags/test"
 screen
 stuff "cd branch/gf^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
@@ -12,6 +12,7 @@ stuff "# export HISTTIMEFORMAT=^M"
 screen
 stuff "export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# sudo systemctl stop httpd.service^M"
+stuff "# cd trunk; cd -; cd branch/base; cd -; cd branch/report-base; cd -; cd branch/test; cd -^M;"
 stuff "# perl script/grade_${APP}.pl -l $LEAGUE -q 3 -o 1 -w 2 -x $OLD_STORY > ~/032/$LEAGUE/homework.yaml^M"
 stuff "# perl script/delete_exercise.pl -i $OLD_STORY -g $COURSE^M"
 stuff "# sudo systemctl start httpd.service^M"

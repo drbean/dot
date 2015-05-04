@@ -7,8 +7,8 @@ stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 
 screen 2
 stuff "export HISTTIMEFORMAT='%m-%d '^M"
-stuff "# perl script/loadYAMLid.pl ~/class/$COURSE/$TOPIC/${APP}.yaml $STORY^M"
-stuff "# perl script/create_exercise.pl $SCRIPT_ARG $STORY^M"
+stuff "# perl script/loadYAMLid.pl ~/class/$COURSE/$TOPIC/${APP}.yaml -x $STORY -s fitness-theory,activities,weight-training^M"
+stuff "# perl script/create_exercise.pl -t $STORY -g tech -i $STORY-test -d '$SCRIPT_ARG: Test for learning of 90 $STORY words from V0041015, V0041046, V0041058'^M"
 stuff "# history -a^M"
 stuff "# export HISTTIMEFORMAT=^M"
 
@@ -25,8 +25,8 @@ stuff "links http://localhost/cgi-bin/${APP}/script/${APP}_cgi.pl/login?exercise
 screen 3
 stuff "export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# sudo systemctl stop httpd.service^M"
-stuff "# cd trunk; cd -; cd branch/base; cd -; cd branch/report-base; cd -; cd branch/test; cd -^M;"
-stuff "# perl script/grade_${APP}.pl -l $LEAGUE -x $OLD_STORY > ~/032/$LEAGUE/homework.yaml^M"
+stuff "# cd trunk; cd -; cd branch/base; cd -; cd branch/report-base; cd -; cd branch/test; cd -^M"
+stuff "# perl script/grade_${APP}.pl -l $LEAGUE -b $BASE -x $OLD_STORY > ~/032/$LEAGUE/homework.yaml^M"
 stuff "# perl script/delete_exercise.pl -i $OLD_STORY -g $COURSE^M"
 stuff "# sudo systemctl start httpd.service^M"
 stuff "# less ~/032/$LEAGUE/homework.yaml^M"

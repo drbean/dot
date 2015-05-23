@@ -1,4 +1,4 @@
-" Last Edit: 2015 Mar 13, 06:20:15 PM
+" Last Edit: 2015  5月 21, 10時38分48秒
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -546,6 +546,7 @@ fu! Reformat ()
 	let lnum = line('$')
 	call append(lnum, ["texts:", "  - ", "answers:"])
 	for table in tables
+		let lnum = line('$')
 		call append(lnum, ["  " . table . ":", "    1: "])
 	endfor
 	let lnum = line('$')
@@ -561,7 +562,7 @@ fu! Reformat ()
 			let lnum = line('$')
 			let m = -1
 			for group in groups
-				let name = system( "letter2name.pl --league " . league . " -s 1 -g " . group . " --letter " . letter )
+				let name = system( "letter2name.pl --league " . league . " -s 3 -g " . group . " --letter " . letter )
 				call append (lnum, ["      " . (2 * n + m) . ": ","        " . group . ": " . name])
 				let lnum = line('$')
 				let m = m + 1

@@ -183,7 +183,7 @@ fu! Populate(module)
 	execute "buffer" ab_eng_gf
 	let last_line = line("$")
 	call cursor(last_line, 1)
-	call search(category, "bc")
+	call search("mk" . category, "bc")
 	if category == "PN"
 		call Populate_pn(word, down_name, "PN", "N") 
 	elseif category == "A"

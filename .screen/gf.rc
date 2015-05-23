@@ -39,6 +39,8 @@ stuff "/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html^M"
 screen 10
 # stuff "/usr/bin/links http://hackage.haskell.org/package/gf-3.6/docs/^M"
 stuff "links file:///usr/share/doc/ghc/html/index.html^M"
+screen 11
+stuff "v -O gf-contrib/drbean/{$COURSE/$TOPIC/$STORY/$MOD,Representation,LogicalForm,Translate,Interpretation,Evaluation,Transfer}.hs"
 screen 0
 # stuff "v -O gf-contrib/drbean/{$COURSE/$TOPIC/$STORY/$MOD,Representation,LogicalForm,Translate,Interpretation,Evaluation,Transfer}.hs"
 # stuff "v -O $(< ~/dot/gf_files.txt)"

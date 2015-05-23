@@ -8,7 +8,7 @@ stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 screen 2
 stuff "export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# perl script/loadYAMLid.pl ~/class/$COURSE/$TOPIC/${APP}.yaml -x $STORY -s fitness-theory,activities,weight-training^M"
-stuff "# perl script/create_exercise.pl -t $STORY -g tech -i $STORY-test -d '$SCRIPT_ARG: Test for learning of 90 $STORY words from V0041015, V0041046, V0041058'^M"
+stuff "# perl script/create_exercise.pl -t $STORY -g esp -i $STORY-test -d '$SCRIPT_ARG: Test for learning of 90 $STORY words from V0041015, V0041046, V0041058'^M"
 stuff "# history -a^M"
 stuff "# export HISTTIMEFORMAT=^M"
 

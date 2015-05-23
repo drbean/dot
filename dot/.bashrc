@@ -50,7 +50,7 @@ function aca () {
         esac
     done
     cd ~/$app
-    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/$USER/dot/.screen/$app.rc -dR ${app}_$course
+    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story BASE=${old_story/-*/} ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/$USER/dot/.screen/$app.rc -dR ${app}_$course
     cd -
 }
 
@@ -286,7 +286,7 @@ function biz () {
 
 function cnv () {
     OPTIND=1
-    local arg course=cnv view topic story form
+    local arg course=conversation view topic story form
     while getopts 'v:t:s:f:' arg
     do
         case ${arg} in

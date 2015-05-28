@@ -652,7 +652,7 @@ function tables () {
 		# B) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
 		# C) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
 		# C) tables="Black::Blue,Brown::Purple,Pink::Orange";;
-		X) tables="Orange::Black,Blue::Brown,Gray::Red,Purple::Pink";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,5-1,5-2,6-1,6-2,7-1,7-2,8-1,8-2,9-1";;
 		*) return 1 # illegal option
 	    esac;;
 	FLA0026)

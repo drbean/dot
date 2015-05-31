@@ -1,4 +1,4 @@
-" Last Edit: 2015  5月 21, 10時38分48秒
+" Last Edit: 2015  5月 31, 14時53分40秒
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -518,6 +518,16 @@ au!
 
 " pandoc link list
 au BufEnter slides.txt nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
+
+function! GoogleLink()
+	let lnum = line('$')
+	let words = getline( line('.') )
+	let search = substitute(words, "\v\s+", "+", "g")
+	let string = "http://www.google.com.tw/search?q=%22" . search . "%22&num=100"
+	call setline(".", string)
+endfunction
+au BufEnter slides.txt ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+
 
 augroup END
 

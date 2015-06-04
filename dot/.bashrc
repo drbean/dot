@@ -605,7 +605,7 @@ function tables () {
 		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
 		# B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
 		# C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,irr";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,8-1";;
 		*) return 1 # illegal option
 	    esac;;
 	MB2)

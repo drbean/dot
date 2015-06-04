@@ -1,4 +1,4 @@
-" Last Edit: 2015  5月 31, 14時53分40秒
+" Last Edit: 2015  6月 02, 12時07分49秒
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -522,12 +522,13 @@ au BufEnter slides.txt nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
 function! GoogleLink()
 	let lnum = line('$')
 	let words = getline( line('.') )
-	let search = substitute(words, "\v\s+", "+", "g")
+	let search = substitute(words, '\v\s+', '+', "g")
 	let string = "http://www.google.com.tw/search?q=%22" . search . "%22&num=100"
 	call setline(".", string)
 endfunction
 au BufEnter slides.txt ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 
+au BufEnter slides.txt nm <buffer> <LocalLeader>q cW_____()<Esc>'aPO<Esc>ma''$?_____()<Esc>f(\iW
 
 augroup END
 
@@ -557,7 +558,7 @@ fu! Reformat ()
 	call append(lnum, ["texts:", "  - ", "answers:"])
 	for table in tables
 		let lnum = line('$')
-		call append(lnum, ["  " . table . ":", "    1: "])
+		call append(lnum, ["  " . table . ":"])
 	endfor
 	let lnum = line('$')
 	call append (lnum, "report:")

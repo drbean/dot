@@ -1,4 +1,4 @@
-# Last Edit: 2014 Sep 25, 04:19:14 PM
+# Last Edit: 2015  6月 06, 16時27分44秒
 #
 # The ultimate Mutt settings
 #
@@ -77,7 +77,8 @@ set resolve		# go to next undeleted message after modifying actual
 set reverse_alias	# use realname from reverse alias lookup
 unset reverse_name	# Set "From" to address, where replied mail was sent to
 unset reverse_realname	# Do not reuse realname from original message.
-unset rfc2047_parameters	# don't encode RFC2047 parameters
+# unset rfc2047_parameters	# don't encode RFC2047 parameters
+set rfc2047_parameters	# don't encode RFC2047 parameters
 unset save_address	# Use full mail adress (with domain) as default folder.
 # unset save_empty	# remove mailbox when last message is removed.
 set save_empty	# remove mailbox when last message is removed.

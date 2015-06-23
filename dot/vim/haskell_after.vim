@@ -135,12 +135,15 @@ fu! Oneword()
 endf
 ino <LocalLeader>1 <Esc>:call Oneword()<CR>o
 
-fu! Populate_pn(word, down_name, category, super_cat)
-	call append(line('.'), "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " masculine (mk" . a:super_cat ." \"" . a:word . "\") );")
+augroup gf
+au!
+
+fu! Populate_pn(lnum, word, down_name, category, super_cat)
+	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " feminine (mk" . a:super_cat ." \"" . a:word . "\") );")
 endf
 
-fu! Populate_ap_like(word, down_name, category, super_cat)
-	call append(line('.'), "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\");")
+fu! Populate_ap_like(lnum, word, down_name, category, super_cat)
+	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\");")
 endf
 
 fu! Populate(module)
@@ -163,7 +166,7 @@ fu! Populate(module)
 	call setline('.', word . "\t: " . category . ";")
 	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
-	let mark = strpart(category, 0, 1)
+	let mark = tolower( strpart(category, 0, 1) )
 	let word_lnum = line("'" . mark)
 	call append(word_lnum,'')
 	call setline((word_lnum+1), "\t, \"" . word . "\"")
@@ -174,39 +177,40 @@ fu! Populate(module)
 
 	let ab_gf = bufnr( "/" . a:module . "\.gf")
 	execute "buffer" ab_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search(category, "bc")
-	call append(line('.'), "\t" . down_name . "\t: " . category . ";")
+	let ab_lnum = line("'" . mark)
+	call append((ab_lnum), "\t" . down_name . "\t: " . category . ";")
+	call setpos("'" . mark, [0, (ab_lnum+1), 1, 0])
 
 	let ab_eng_gf = bufnr( a:module . "Eng.gf")
 	execute "buffer" ab_eng_gf
-	let last_line = line("$")
-	call cursor(last_line, 1)
-	call search("mk" . category, "bc")
+	let ab_eng_lnum = line("'" . mark)
 	if category == "PN"
-		call Populate_pn(word, down_name, "PN", "N") 
+		call Populate_pn(ab_eng_lnum, word, down_name, "PN", "N") 
 	elseif category == "A"
-		call Populate_ap_like(word, down_name, "AP", "A") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "AP", "A") 
 	elseif category == "CN"
-		call Populate_ap_like(word, down_name, "CN", "N") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N") 
 	elseif category == "VV"
-		call Populate_ap_like(word, down_name, "VV", "V") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "VV", "V") 
 	elseif category == "VS"
-		call Populate_ap_like(word, down_name, "VS", "V") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "VS", "V") 
 	elseif category == "VA"
-		call Populate_ap_like(word, down_name, "VA", "V") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "VA", "V") 
 	elseif category == "V3"
-		call Populate_ap_like(word, down_name, "V3", "V") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "V3", "V") 
 	else 
-		call append(line('.'), "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
+		call append("'" . mark, "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif
+	call setpos("'" . mark, [0, (ab_eng_lnum+1), 1, 0])
+
 
 	execute "buffer" word_buf
 	call setpos('.', save_cursor)
 
 endf
-nn <LocalLeader>p <Esc>:call Populate("Clay")<CR>j
+au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Chat")<CR>j
+
+augroup END
 
 " put words in DicksonI.gf, LexDickson.gf, LexDicksonEng.gf
 

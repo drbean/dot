@@ -856,7 +856,6 @@ alias job="cd ~/job; screen -c /home/$USER/dot/.screen/job.rc -dR job; cd -"
 
 alias q=exit
 
-# vim: set ts=8 sts=4 sw=4 noet:
 # To the extent possible under law, the author(s) have dedicated all 
 # copyright and related and neighboring rights to this software to the 
 # public domain worldwide. This software is distributed without any warranty. 
@@ -1055,3 +1054,6 @@ alias q=exit
 # }
 # 
 # alias cd=cd_func
+
+# vim: set ts=8 sts=4 sw=4 noet:
+

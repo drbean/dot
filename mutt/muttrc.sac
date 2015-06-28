@@ -1,4 +1,4 @@
-# Last Edit: 2015  6月 06, 16時27分44秒
+# Last Edit: 2015  6月 28, 15時49分09秒
 #
 # The ultimate Mutt settings
 #
@@ -192,8 +192,8 @@ set editor="v"
 #set editor="emacsclient +8 %s"	# start editor in line 8
 set folder=~/Mail	# where are the mailboxs (+ and = are shortcuts)
 #set folder="{luv}Mail"	# where are the mailboxs (+ and = are shortcuts)
-set from="counterbean@gmail.com"		# From: address (see send-hook my_hdr From)
-# set from="drbean@freeshell.org"		# From: address (see send-hook my_hdr From)
+# set from="counterbean@gmail.com"		# From: address (see send-hook my_hdr From)
+set from="drbean@freeshell.org"		# From: address (see send-hook my_hdr From)
 # set from="lang@ms.chinmin.edu.tw"		# From: address (see send-hook my_hdr From)
 # set from="greg@momotaro.chinmin.edu.tw"		# From: address (see send-hook my_hdr From)
 #reset ispell		# ispell binary (compile time default)

@@ -3,22 +3,28 @@
 screen 0
 stuff "v league.yaml session/$SESSION/groups.yaml classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml"
 
-screen 5 lftp web.nuu.edu.tw
+screen 6 lftp web.nuu.edu.tw
 stuff "cd public_html/$LEAGUE^M"
 stuff "# put classwork/$LASTWEEK.yaml -o classwork.yaml^M"
 stuff "# put homework/$LASTWEEK.yaml -o homework.yaml^M"
+
+screen 5
+stuff "ls homework classwork exam/*^M"
 
 screen 4 re.pl --rcfile ../rc/g.rc
 stuff '$g->grades'
 
 screen 3
-stuff "ls homework classwork exam/*^M"
-
-screen 2
 stuff "# lpr conversation.pdf -P kyocera^M"
 stuff "# cp conversation.pdf /run/media/drbean/DIE2GV1/^M"
 stuff "# sudo cp conversation.pdf /var/www/html^M"
 stuff "# conversation.pl -l $LEAGUE -s $SESSION -r $WEEK -x $TOPIC -p $LETTER -t $TABLES && xelatex classwork/$SESSION/conversation.tex && evince conversation.pdf^M"
+
+screen 2
+stuff "ls homework^M"
+stuff "svn ls homework^M"
+stuff "zero_homework.pl >> homework/$LASTWEEK.yaml^M"
+stuff "# svn add homework/$LASTWEEK.yaml && svn ci homework/$LASTWEEK.yaml -m ^M"
 
 screen 1
 stuff "echo -e \"---\ntopic: $TOPIC\n\n$TABLES\" >> \"classwork/$WEEK.yaml.noform\"^M"

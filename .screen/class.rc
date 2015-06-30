@@ -22,7 +22,7 @@ stuff "# conversation.pl -l $LEAGUE -s $SESSION -r $WEEK -x $TOPIC -p $LETTER -t
 
 screen 1
 stuff "echo -e \"---\ntopic: $TOPIC\n\n$TABLES\" >> \"classwork/$WEEK.yaml.noform\"^M"
-stuff "svn st | grep '\^\(A\|M\|D\)'^Msvn log -vr BASE:HEAD^Msvn up"
+stuff "svn st | grep '\^\(A\|M\|D\)'^Msvn log -vr BASE:HEAD^Msvn up^M"
 stuff "ls classwork^M"
 stuff "svn ls classwork session/$SESSION^M"
 stuff "# svn revert classwork/$SESSION/$LASTWEEK.yaml^M"

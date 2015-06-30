@@ -24,7 +24,7 @@ screen 1
 stuff "echo -e \"---\ntopic: $TOPIC\n\n$TABLES\" >> \"classwork/$WEEK.yaml.noform\"^M"
 stuff "svn st | grep '\^\(A\|M\|D\)'^Msvn log -vr BASE:HEAD^M"
 stuff "ls classwork^M"
-stuff "svn ls classwork/$SESSION^M"
+stuff "svn ls classwork session/$SESSION^M"
 stuff "# svn revert classwork/$SESSION/$LASTWEEK.yaml^M"
 stuff "# svn mv classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"
 stuff "# svn ci -m Grades/Groupwork:r1720 classwork/$SESSION/$LASTWEEK.yaml classwork/$LASTWEEK.yaml^M"

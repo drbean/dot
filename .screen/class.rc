@@ -23,7 +23,7 @@ stuff "# conversation.pl -l $LEAGUE -s $SESSION -r $WEEK -x $TOPIC -p $LETTER -t
 screen 2
 stuff "ls homework^M"
 stuff "svn ls homework^M"
-stuff "zero_homework.pl >> homework/$LASTWEEK.yaml^M"
+stuff "# zero_homework.pl >> homework/$LASTWEEK.yaml^M"
 stuff "# svn add homework/$LASTWEEK.yaml && svn ci homework/$LASTWEEK.yaml -m ^M"
 
 screen 1

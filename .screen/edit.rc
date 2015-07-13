@@ -3,3 +3,6 @@ screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 screen
 stuff "lftp drbean@freeshell.org^M ls "
+screen 9
+stuff "# man pandoc_markdown^M"
+stuff "man pandoc^M"

@@ -11,9 +11,8 @@ $endif$
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
-\usepackage{xeCJK}
-\setCJKmainfont{WenQuanYi Zen Hei}
 \ifxetex
+  \usepackage{xeCJK}
   \usepackage{fontspec,xltxtra,xunicode}
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 \else

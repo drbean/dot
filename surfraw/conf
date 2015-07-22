@@ -28,13 +28,13 @@ prefix=/usr
 
 # graphical browser? defaults to yes for meatminds. text browser users can
 # work it out how to change it.
-#Greg
 defyn   SURFRAW_graphical		no
+#Greg
 # defyn   SURFRAW_graphical		yes
 
 # name/path of text browser executable
 # e.g links, lynx, w3m
-def   SURFRAW_text_browser	links
+def   SURFRAW_text_browser	lynx
 
 # name/path of browser executable
 # e.g mozilla, netscape etc
@@ -47,9 +47,9 @@ def   SURFRAW_text_browser_args	none
 def   SURFRAW_graphical_browser_args	none
 
 # use -remote openURL for graphical browser
+defyn   SURFRAW_graphical_remote	no
 # Greg what does this do
 # defyn   SURFRAW_graphical_remote	yes
-defyn   SURFRAW_graphical_remote	no
 
 # when using the -remote, open a new window?
 defyn   SURFRAW_new_window	no
@@ -59,8 +59,8 @@ def   SURFRAW_screen		screen
 
 # If surfraw is running under screen(1), start a new screen
 # for each text browser invocation?
-#Greg
 #defyn SURFRAW_new_screen	no
+#Greg
 defyn SURFRAW_new_screen	yes
 
 # arguments for the screen command
@@ -92,3 +92,7 @@ defyn SURFRAW_dump		no
 # Should be a 2-letter iso country code
 def SURFRAW_lang     	  	""
 
+# provider for searches that use a search engine
+# with (eg) site: specifiers
+# supported: google duckduckgo
+def SURFRAW_customsearch_provider duckduckgo

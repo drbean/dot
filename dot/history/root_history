@@ -1,318 +1,234 @@
-ls /home/
-ls /home/drbean/
-ls /home/drbean/ -al
+#alternatives --install /usr/bin/links links /usr/bin/lynx 40
+#alternatives --install /usr/bin/v v /usr/bin/vim 50
+#getsebool -a | grep ftp
+$(< ~drbean/dot/sac_f19_installed.txt )
 FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_20140404 /home/drbean
-mv /home/drbean/ home/drbean.orig
-mv /home/drbean/ /home/drbean.orig
-FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_20140404 /home/drbean
+FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_2014_04_04 /home/drbean
+FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_2014_08_28 /home/drbean
+alternatives
+alternatives --config links
+alternatives --install /usr/bin/links links /usr/bin/lynx 40
+alternatives --install /usr/bin/v v /usr/bin/vim 50
+alternatives --install v /usr/bin/v  /usr/bin/vim 50
+alternatives --install v /usr/bin/vim /usr/bin/v 50
+alternatives --install vim /usr/bin/v  /usr/bin/vim 50
+ausearch -m avc -ts recent
+chown znc:znc /var/lib/znc/ -R
+chown znc:znc /var/lib/znc/.znc/ -R
+chown znc:znc /var/lib/znc/.znc/configs/ -R
+cp ~drbean/dot/lynx/lynx-site.cfg /etc/lynx-site.cfg
+cp ~drbean/dot/lynx/lynx.lss /etc/lynx.lss
+cp ~drbean/dot/screenrc /etc/screenrc
+cpan Math::Random
+date
+diff -ru /home/drbean.orig/ /home/drbean/
+dnf install duplicity
+dnf install lftp
+dnf install screen
+eciy
+exit
+exiy
+getenforce
+getsebool -a | grep bitlbee
+getsebool -a | grep ftp
+getsebool -a | grep irc
+host 172.16.3.33
+host sac.nuu.edu.tw
+hostnamectl --help
+hostnamectl set-hostname sac.nuu.edu.tw
+hostnamectl status
+htop
+ifconfig
+iw
+iw --help
+journalctl -xn
+less /etc/group
+less /etc/services
+less ~/.bash_history 
 lftp
 lftp greg@web.nuu.edu.tw
-FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_2014_04_04 /home/drbean
+locate bitlbee
+ls
+ls -al ~/.bash_history 
+ls -lZ /etc/bitlbee/
+ls .znc
+ls .znc/* -al
+ls /etc/group
 ls /home/
 ls /home/drbean
 ls /home/drbean -al
-ls ~drbean/dot
-pwd
-yum update
-yum install $(< ~drbean/dot/sac_f19_installed.txt )
-yum install $(< /home/drbean/dot/sac_f19_installed.txt )
-$(< ~drbean/dot/sac_f19_installed.txt )
-yum install $(</home/drbean/dot/sac_f19_installed.txt )
-yum install @admin-tools
-yum install @core
-yum install @cinnamon-desktop
-yum remove @cinnamon-desktop
-yum install $(</home/drbean/dot/sac_f19_installed.txt )
-man bash
-yum install " $(</home/drbean/dot/sac_f19_installed.txt )"
-yum install  $(</home/drbean/dot/sac_f19_installed.txt )
-yum install @admin-tools -authconfig-gtk -system-config-date -system-config-keyboard @cinnamon-desktop -cinnamon -gnome-screensaver -nemo -policycoreutils-gui -thunderbird @core -ppc64-utils @critical-path-gnome @dial-up @fonts -google-noto-sans-lisu-fonts -google-noto-sans-mandaic-fonts -google-noto-sans-meeteimayek-fonts -google-noto-sans-tagalog-fonts -google-noto-sans-tai-tham-fonts -google-noto-sans-tai-viet-fonts @gnome-desktop -gnome-mplayer -polkit-js-engine gstreamer-plugins-bad @guest-desktop-agents @hardware-support -ql2100-firmware -ql2200-firmware -ql23xx-firmware @input-methods -ibus-qt -im-chooser-xfce -imsettings-qt -imsettings-xfce @libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
-yum install @core -ppc64-utils @critical-path-gnome @dial-up @fonts -google-noto-sans-lisu-fonts -google-noto-sans-mandaic-fonts -google-noto-sans-meeteimayek-fonts -google-noto-sans-tagalog-fonts -google-noto-sans-tai-tham-fonts -google-noto-sans-tai-viet-fonts @gnome-desktop -gnome-mplayer -polkit-js-engine gstreamer-plugins-bad @guest-desktop-agents @hardware-support -ql2100-firmware -ql2200-firmware -ql23xx-firmware @input-methods -ibus-qt -im-chooser-xfce -imsettings-qt -imsettings-xfce @libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
-yum install @libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
-yum install '@libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace'
-yum install NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
-yum install screen weechat znc
-exit
-getsebool -a | grep ftp
-exit
-yum install xmonad
-systemctl status znc.service
-systemctl start znc.service
-systemctl start bitlbee.service
-systemctl status bitlbee.service
-systemctl status znc.service
-systemctl status znc.service -l
-znc --makeconfig
-znc --makeconf
-ls /var/lib/znc/
-ls /var/lib/znc/ -al
-ls /var/lib/znc/.znc/ -al
-ls /var/lib/znc/.znc/modules/ -al
-mv ~drbean/.znc/configs /var/lib/znc/.znc/
-ls /var/lib/znc/.znc/ -al
-mv ~drbean/.znc/moddata/ /var/lib/znc/.znc/
-mv ~drbean/.znc/users/ /var/lib/znc/.znc/
-chown znc:znc /var/lib/znc/ -R
-ls /var/lib/znc/.znc/ -al
-ls /var/lib/znc/.znc/* -al
-systemctl start znc.service
-systemctl status znc.service -l
-ls /var/lib/znc/.znc/configs/
-q
-exit
-visudo
-usermod --help
-usermod -a -G wheel
-usermod -a -G wheel drbean
-ls /etc/group
-less /etc/group
-ls -al ~/.bash_history 
-less ~/.bash_history 
+ls /home/drbean/
+ls /home/drbean/ -al
+ls /home/drbean/.svk/local/
+ls /usr/bin/*manage*
+ls /usr/bin/*window*
+ls /usr/bin/??
+ls /usr/bin/???
 ls /usr/sbin/
 ls /usr/sbin/*window*
-ls /usr/bin/*window*
-ls /usr/bin/*manage*
-yum search window
-yum install surfraw
-alternatives
-alternatives --install v /usr/bin/vim /usr/bin/v 50
-alternatives --install v /usr/bin/v  /usr/bin/vim 50
-alternatives --install vim /usr/bin/v  /usr/bin/vim 50
-alternatives
-yum install system-switch-displaymanager
-system-switch-displaymanager 
-system-switch-displaymanager lightdm
-yum install lightdm
-q
-system-switch-displaymanager 
-system-switch-displaymanager lightdm
-yum install subversion git
-yum install postgresql
-yum install postgresql-devel
-systemctl start httpd.service
-systemctl status httpd.service
-systemctl status httpd.service -l
+ls /var/lib/znc/
+ls /var/lib/znc/ -al
+ls /var/lib/znc/.* -al
+ls /var/lib/znc/.*/* -al
+ls /var/lib/znc/.znc/ -al
+ls /var/lib/znc/.znc/* -al
+ls /var/lib/znc/.znc/configs/
+ls /var/lib/znc/.znc/modules/ -al
+ls ~drbean/dot
+man bash
+man yum2dnf 
+mv .znc/configs/znc.conf /var/lib/znc/.znc/configs/
+mv .znc/znc.pem /var/lib/znc/.znc/
+mv /etc/lynx-site.cfg /etc/lynx-site.cfg.fedora
+mv /etc/lynx.lss /etc/lynx.lss.fedora 
+mv /etc/screenrc /etc/screenrc.fedora
+mv /home/drbean/ /home/drbean.orig
+mv /home/drbean/ /home/drbean.orig/
+mv /home/drbean/ home/drbean.orig
+mv ~drbean/.znc/configs /var/lib/znc/.znc/
+mv ~drbean/.znc/moddata/ /var/lib/znc/.znc/
+mv ~drbean/.znc/users/ /var/lib/znc/.znc/
 nmcli
-nmcli c
-nmcli g
-nmcli n
-nmcli r
 nmcli c
 nmcli d
-ping 203.64.184.141
-host sac.nuu.edu.tw
-ifconfig
-host 172.16.3.33
-nmcli
 nmcli g
 nmcli n
 nmcli n -a
 nmcli n help
-hostnamectl --help
-hostnamectl status
-hostnamectl set-hostname sac.nuu.edu.tw
-host sac.nuu.edu.tw
+nmcli r
+pgrep weechat
+ping 203.64.184.141
 ping sac.nuu.edu.tw
-systemctl status NetworkManager.service
-systemctl status NetworkManager.service -l
-systemctl restart NetworkManager.service -l
-systemctl status NetworkManager.service -l
-systemctl status httpd.service
-tail -F /var/log/httpd/error_log 
-yum install perl-Catalyst-Plugin-Static-Simple
-tail -F /var/log/httpd/error_log 
-yum install perl-Catalyst-Plugin-ConfigLoader
-tail -F /var/log/httpd/error_log 
-yum install perl-Catalyst-View-TT
-tail -F /var/log/httpd/error_log 
-yum install perl-IO-All
-tail -F /var/log/httpd/error_log 
-yum install perl-DBIx-Class-TimeStamp
-tail -F /var/log/httpd/error_log 
-yum install perl-Catalyst-Action-RenderView
-tail -F /var/log/httpd/error_log 
-yum install perl-DBD-Pg
-tail -F /var/log/httpd/error_log 
-yum search postgres
-yum install postgresql-server
-systemctl start postgresql.service
-systemctl status postgresql.service
-systemctl status postgresql.service -l
 postgresql-setup initdb
-systemctl enable postgresql.service 
-systemctl start postgresql.service 
-yum install perl-Devel-REPL
-yum install perl-DistZilla
-yum install perl-Distzilla
-yum install perl-Dist::Zilla
-yum search zilla
-yum install perl-Dist-Zilla
-yum install perl-CPAN
-systemctl status ibus.service 
-systemctl enable ibus.service 
-systemctl start ibus.service 
-w
-eciy
-exiy
-exit
-systemctl status httpd.service
-systemctl enable httpd.service
-systemctl start httpd.service
-systemctl status httpd.service
-yum search   xmonad
-yum install xmonad-mate
-exit
-alternatives --install /usr/bin/v v /usr/bin/vim 50
-exit
-ls .znc
-ls /var/lib/znc/ -al
-ls /var/lib/znc/.* -al
-ls /var/lib/znc/.*/* -al
-ls .znc/* -al
-mv .znc/configs/znc.conf /var/lib/znc/.znc/configs/
-chown znc:znc /var/lib/znc/.znc/configs/ -R
-mv .znc/znc.pem /var/lib/znc/.znc/
-chown znc:znc /var/lib/znc/.znc/ -R
-show-installed
-date
-show-installed
-exit
-systemctl status znc.service -l
-systemctl enable znc.service 
-systemctl start znc.service 
-systemctl status znc.service -l
-locate bitlbee
-v
-systemctl status bitlbee.service
-systemctl restart bitlbee.service
-systemctl status bitlbee.service
-systemctl status bitlbee.service -l
-systemctl restart bitlbee.service
-systemctl status bitlbee.service -l
-systemctl restart bitlbee.service
-systemctl status bitlbee.service -l
-systemctl status znc.service -l
-systemctl start znc.service 
-systemctl status znc.service -l
-systemctl start znc.service 
-systemctl status znc.service -l
-systemctl status bitlbee.service -l
-ls /usr/bin/??
-ls /usr/bin/???
-q
-tail -F /var/log/httpd/error_log 
-yum search flickr
-yum  install perl-Flickr-API
-tail -F /var/log/httpd/error_log 
-yum search random
-cpan Math::Random
-yum install ack
-yum install weechat-devel
-yum search tigervnc
-yum install tigervnc
-tail -F /var/log/httpd/error_log 
-yum install perl-Catalyst-View-Email
-exit
-yum search findbin
-pwd
-systemctl status bitlbee.service -l
-systemctl status znc.service -l
-yum search fst
-exit
-yum search time-compat
-yum install lynx
-#alternatives --install /usr/bin/v v /usr/bin/vim 50
-alternatives --install /usr/bin/links links /usr/bin/lynx 40
-alternatives --config links
-mv /etc/lynx-site.cfg /etc/lynx-site.cfg.fedora
-cp ~drbean/dot/lynx/lynx-site.cfg /etc/lynx-site.cfg
-mv /etc/lynx.lss /etc/lynx.lss.fedora 
-cp ~drbean/dot/lynx/lynx.lss /etc/lynx.lss
-wi
-iw
-iw --help
-systemctl status znc.service -l
-systemctl start znc.service 
-systemctl status znc.service -l
-systemctl start znc.service 
-systemctl restart znc.service 
-journalctl -xn
-systemctl restart znc.service 
-reboot
-systemctl status znc.service -l
-systemctl status bitlbee.service -l
-systemctl enable bitlbee.service 
-systemctl start bitlbee.service 
-systemctl status bitlbee.service -l
-systemctl start bitlbee.service 
-systemctl status bitlbee.service -l
-getsebool -a | grep bitlbee
-getsebool -a | grep irc
-#getsebool -a | grep ftp
-setsebool -P irc_use_any_tcp_ports on
-getsebool -a | grep irc
-systemctl start bitlbee.service 
-systemctl status bitlbee.service -l
-getenforce
-systemctl status znc.service -l
-systemctl restart znc.service 
-systemctl status znc.service -l
-systemctl restart znc.service 
-systemctl status znc.service -l
-systemctl status bitlbee.service -l
-systemctl start bitlbee.service 
-systemctl status bitlbee.service -l
-#getsebool -a | grep ftp
-setsebool -P irc_use_any_tcp_ports off
-ausearch -m avc -ts recent
-getenforce
-setenforce 0
-getenforce
-systemctl status bitlbee.service -l
-systemctl start bitlbee.service 
-systemctl status bitlbee.service -l
-less /etc/services
-#alternatives --install /usr/bin/links links /usr/bin/lynx 40
-q
-exit
-systemctl restart bitlbee.service
-systemctl status bitlbee.service -l
-getsebool -a | grep irc
 ps -eZ | grep bitlbee
-ls -lZ /etc/bitlbee/
 ps -eZ | grep weechat
 ps | grep weechat
-pgrep weechat
-ps -eZ | grep weechat
-semanage port -a -t ircd_port_t 6665
+pwd
+q
+reboot
 semanage port -a -t ircd_port_t -p tcp 6665
+semanage port -a -t ircd_port_t 6665
+setenforce 0
 setenforce 1
-su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora /rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
-yum repos
-yum help
-yum repolist
+setsebool -P irc_use_any_tcp_ports off
+setsebool -P irc_use_any_tcp_ports on
+show-installed
 su -c 'yum localinstall --nogpgcheck  http://download1.rpmfusion.org/nonfree/fedora /rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
 su -c 'yum localinstall --nogpgcheck  http://download1.rpmfusion.org/nonfree/fedora /rpmfusion-nonfree-release-20.noarch.rpm'
 su -c 'yum localinstall --nogpgcheck  http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-20.noarch.rpm'
-yum search 264
-yum search gstreamer
+su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora /rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+system-switch-displaymanager 
+system-switch-displaymanager lightdm
+systemctl enable bitlbee.service 
+systemctl enable httpd.service
+systemctl enable ibus.service 
+systemctl enable postgresql.service 
+systemctl enable znc.service 
+systemctl restart NetworkManager.service -l
+systemctl restart bitlbee.service
+systemctl restart znc.service 
+systemctl start bitlbee.service
+systemctl start bitlbee.service 
+systemctl start httpd.service
+systemctl start ibus.service 
+systemctl start postgresql.service
+systemctl start postgresql.service 
+systemctl start znc.service
+systemctl start znc.service 
+systemctl status NetworkManager.service
+systemctl status NetworkManager.service -l
+systemctl status bitlbee.service
+systemctl status bitlbee.service -l
+systemctl status httpd.service
+systemctl status httpd.service -l
+systemctl status ibus.service 
+systemctl status postgresql.service
+systemctl status postgresql.service -l
+systemctl status znc.service
+systemctl status znc.service -l
+tail -F /var/log/httpd/error_log 
+top
+usermod --help
+usermod -a -G wheel
+usermod -a -G wheel drbean
+v
+visudo
+w
+which duplicity
+which screen
+which weechat
+wi
+yum  install perl-Flickr-API
+yum help
+yum install  $(</home/drbean/dot/sac_f19_installed.txt )
+yum install " $(</home/drbean/dot/sac_f19_installed.txt )"
+yum install $(< /home/drbean/dot/sac_f19_installed.txt )
+yum install $(< ~drbean/dot/sac_f19_installed.txt )
+yum install $(</home/drbean/dot/sac_f19_installed.txt )
+yum install '@libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace'
+yum install @admin-tools
+yum install @admin-tools -authconfig-gtk -system-config-date -system-config-keyboard @cinnamon-desktop -cinnamon -gnome-screensaver -nemo -policycoreutils-gui -thunderbird @core -ppc64-utils @critical-path-gnome @dial-up @fonts -google-noto-sans-lisu-fonts -google-noto-sans-mandaic-fonts -google-noto-sans-meeteimayek-fonts -google-noto-sans-tagalog-fonts -google-noto-sans-tai-tham-fonts -google-noto-sans-tai-viet-fonts @gnome-desktop -gnome-mplayer -polkit-js-engine gstreamer-plugins-bad @guest-desktop-agents @hardware-support -ql2100-firmware -ql2200-firmware -ql23xx-firmware @input-methods -ibus-qt -im-chooser-xfce -imsettings-qt -imsettings-xfce @libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
+yum install @cinnamon-desktop
+yum install @core
+yum install @core -ppc64-utils @critical-path-gnome @dial-up @fonts -google-noto-sans-lisu-fonts -google-noto-sans-mandaic-fonts -google-noto-sans-meeteimayek-fonts -google-noto-sans-tagalog-fonts -google-noto-sans-tai-tham-fonts -google-noto-sans-tai-viet-fonts @gnome-desktop -gnome-mplayer -polkit-js-engine gstreamer-plugins-bad @guest-desktop-agents @hardware-support -ql2100-firmware -ql2200-firmware -ql23xx-firmware @input-methods -ibus-qt -im-chooser-xfce -imsettings-qt -imsettings-xfce @libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
+yum install @libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
+yum install NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
+yum install ack
+yum install duplicity
+yum install ffmpeg
+yum install ffmpeg-devel
 yum install gstreamer
 yum install gstreamer-plugins-bad
 yum install gstreamer-plugins-ugly
-yum search ffmpeg
-yum install ffmpeg
-yum install ffmpeg-devel
-yum search gnash
-yum update
-exit
-yum search PPI
-yum install perl-PPI
-yum search module-locate
+yum install lightdm
+yum install lynx
+yum install perl-CPAN
+yum install perl-Catalyst-Action-RenderView
+yum install perl-Catalyst-Plugin-ConfigLoader
+yum install perl-Catalyst-Plugin-Static-Simple
+yum install perl-Catalyst-View-Email
+yum install perl-Catalyst-View-TT
+yum install perl-DBD-Pg
+yum install perl-DBIx-Class-TimeStamp
+yum install perl-Devel-REPL
+yum install perl-Dist-Zilla
+yum install perl-Dist::Zilla
+yum install perl-DistZilla
+yum install perl-Distzilla
+yum install perl-IO-All
 yum install perl-Module-Locate
+yum install perl-PPI
+yum install postgresql
+yum install postgresql-devel
+yum install postgresql-server
+yum install screen weechat znc
+yum install subversion git
+yum install surfraw
+yum install system-switch-displaymanager
+yum install tigervnc
+yum install weechat-devel
+yum install xmonad
+yum install xmonad-mate
+yum remove @cinnamon-desktop
+yum repolist
+yum repos
+yum search   xmonad
+yum search 264
+yum search PPI
+yum search ffmpeg
+yum search findbin
+yum search flickr
+yum search fst
+yum search gnash
+yum search gstreamer
+yum search module-locate
+yum search postgres
+yum search random
 yum search texlive
-exit
-yum search texlive
-mv /etc/screenrc /etc/screenrc.fedora
-cp ~drbean/dot/screenrc /etc/screenrc
-yum search texlive
-exit
+yum search tigervnc
+yum search time-compat
+yum search window
+yum search zilla
+yum update
+znc --makeconf
+znc --makeconfig

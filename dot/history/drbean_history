@@ -1,2537 +1,1808 @@
-web
-irfc
-irc
-screen -ls
-screen -r w_AFB1J0_7 
-q
-cd gf-contrib/drbean////
-gf --make --output-format=haskell Eng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_ -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_ -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_ -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp .pgf /var/www/cgi-bin/bett/bin/.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s  && perl /var/www/cgi-bin/bett/script/words.pl -s 
-cd -
-./Transfer
-ghci -i./:../:../../../
-cd -
-echo $MOD
-echo $COURSE
-q
-cd gf-contrib
+ 
+ ../../class/forms/conversation.pl -l AFBB32 -s  -r 7 -x story -p A -t Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window && xelatex classwork//conversation.tex && evince conversation.pdf
+ /usr/bin/znc --version
+ /usr/local/bin/znc --version
+ Green::Black Blue::Brown Gray::Beige Turquoise::Khaki Chocolate::Charcoal White::Orange Pink::Purple Red::Golden Violet::Window Silver::Yellow " >> "classwork/7.yaml.noform"
  cd -
-git status
+ git fetch upstream
+ git merge --ff-only upstream/master 
+ git merge upstream/master
+ git merge upstream/master 
+ less ~/022/FLA0021/homework.yaml
+ ls
+ ls classwork/
+ mv ~/022/FLA0021/homework.yaml ~/022/FLA0021/homework/5.yaml
+ perl ../../class/forms/conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t ,Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && latex classwork/2/conversation.tex && evince conversation.pdf
+ perl ../../class/forms/conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t ,Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && xelatex classwork/2/conversation.tex && evince conversation.pdf
+ perl htmlexerciselist.pl -a business -l dic -s gourlay-1  > business.html && lftp -c 'open web.nuu.edu.tw; cd public_html; put business.html'
+ perl script/delete_exercise.pl -i candidate -g business
+ perl script/grade_bett.pl -l FLA0021 -q 3 -l 1 -w 2 -x cusp > ~/022/FLA0021/homework.yaml
+ perl script/grade_bett.pl -l FLA0021 -q 3 -o 1 -w 2 -x candidate > ~/022/FLA0021/homework.yaml
+ perl script/grade_bett.pl -l FLA0021 -q 3 -o 1 -w 2 -x cusp > ~/022/FLA0021/homework.yaml
+ score_jigsaw.pl -l FLA0016 -r 1 > 1/scores.yaml
+ score_jigsaw.pl -l FLA0027 -r 1 > 1/scores.yaml
+ score_jigsaw.pl -l GL00015 -r 1 > 1/scores.yaml
+ score_jigsaw.pl -l GL00016 -r 1 > 1/scores.yaml
+ score_jigsaw.pl -l MB1 -r 1 > 1/scores.yaml
+ ssh pl893.nas921.nara.nttpc.ne.jp  
+ su -c 'chown drbean:swiss ./comp/ -R'
+ su -c 'cp vim-gf/ftdetect/gf.vim /usr/share/vim/vimfiles/ftdetect/'
+ su -c 'cp vim-gf/syntax/gf.vim /usr/share/vim/vimfiles/syntax/'
+ sudo systemctl start httpd.service
+ sudo systemctl stop httpd.service
+ sum_g1_g2.pl -l 3K0 -r 1 > ./exam/1/g.yaml
+ sum_g1_g2.pl -l FLA0027 -r 1 > ../exam/1/g.yaml
+ sum_g1_g2.pl -l FLA0027 -r 1 > ./exam/1/g.yaml
+ sum_g1_g2.pl -l GL00015 -r 1 > ../exam/1/g.yaml
+ sum_g1_g2.pl -l GL00015 -r 1 > ./exam/1/g.yaml
+ sum_g1_g2.pl -l MB1 -r 1 > ../exam/1/g.yaml
+ sum_g1_g2.pl -l MB1 -r 1 > ./exam/1/g.yaml
+ svn add ../exam/1/g2.yaml
+ svn add ../exam/1/g2.yaml $ROUND/{round,scores}.yaml
+ svn add ../exam/g2.yaml
+ svn add ../exam/g2.yaml $ROUND/{round,scores}.yaml
+ svn add 1
+ svn add 1/{league,response,scores,g1}.yaml
+ svn add 1/{round,response,scores,g1,g2}.yaml
+ svn add 1/{round,response,scores,g1}.yaml
+ svn add classwork/6.yaml
+ svn add classwork/7.yaml
+ svn add classwork/9.yaml
+ svn add exam/1/{league,response,scores,g1}.yaml
+ svn add exam/1/{round,response,scores,g1,g2}.yaml
+ svn add session/2/groups.yaml
+ svn add ~/031/2L1/homework/3.yaml
+ svn add ~/031/FLA0027/homework/2.yaml
+ svn add ~/031/FLA0027/homework/4.yaml 
+ svn add ~/031/MB1/homework/3.yaml
+ svn ci -m 1-1,2-1,3-1,4-1 session/2/
+ svn ci -m 1-1,2-1,3-1,4-1 session/2/groups.yaml
+ svn ci -m 2_questions classwork/6.yaml
+ svn ci -m biodad,emersonj classwork/7.yaml
+ svn ci -m candidate ~/022/FLA0021/homework/5.yaml 
+ svn ci -m dog,kiss,potato,illegals exam/
+ svn ci -m dog,kiss,potato,illegals exam/1
+ svn ci -m kiss ~/031/FLA0027/homework/2.yaml
+ svn ci -m marriage ~/031/2L1/homework/3.yaml
+ svn ci -m marriage ~/031/MB1/homework/3.yaml
+ svn ci -m no_comp.emersonj,biodad classwork/7.yaml
+ svn ci -m rewrite_db_create.parsed=[]:first^single,lexed=my_question.TODO:Question_table_primary_keys
+ svn ci -m spano classwork/9.yaml
+ svn ci -m work comp/ exam/
+ svn ci -m work comp/1 exam/
+ svn ci -m work comp/1 exam/1
+ svn ci tags/test/3/ -m cooking
+ svn log -vr BASE:HEAD
+ svn log ~/031/FLA0027/homework/2.yaml
+ svn mkdir 1
+ svn mkdir comp
+ svn mkdir disaster
+ svn mkdir exam
+ svn mkdir exam/
+ svn mkdir exam/1
+ svn mkdir session/2
+ teamseat.pl -s 2 --latex -n 3 && xelatex session/2/teamseat.tex && evince teamseat.pdf
+ teamseat.pl -s 2 -n 3 
+ umount ~/media/
+ update_db.pl -l GL00015 -r 1
+ v script
+ web
+ xelatex --output-directory=./stress ./stress/questionsA5.tex && evince stress/questionsA5.pdf
+ xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdfd
+ xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_wallace-oreilly_$FORM.pdf
+ xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_wallace-reilly_$FORM.pdf
+ xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_wallacereilly_$FORM.pdf
+ xelatex report.tex && evince report.pdf
+# bingo.pl -n 15 -s biodad -f 0 parents && xelatex parents/bingo_biodad_0.tex && evince bingo_biodad_0.pdf
+# bingo.pl -n 15 -s cups -f 0 stress && xelatex stress/bingo_cups_0.tex && evince bingo_cups_0.pdf
+# bingo.pl -n 15 -s sport -f 0 sport && xelatex sport/bingo_sport_0.tex && evince bingo_sport_0.pdf
+# cd vim && git clone https://github.com/drbean/perl-tags-moose.git && cd vim-gf && git remote add upstream https://github.com/nothingmuch/perl-tags-moose && git fetch upstream && git merge upstream/master && cd ../..
+# cd vim && git clone https://github.com/drbean/perl-tags.git && cd vim-gf && git remote add upstream https://github.com/osfameron/perl-tags && git fetch upstream && git merge upstream/master && cd ../..
+# conversation.pl -l AFBB32 -s  -r 7 -x story -p A -t Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window && xelatex classwork//conversation.tex && evince conversation.pdf
+# conversation.pl -l AFBB32 -s  -r 7 -x story -p B -t  Green::Black Blue::Brown Gray::Beige Turquoise::Khaki Chocolate::Charcoal White::Orange Pink::Purple Red::Golden Violet::Window Silver::Yellow  && xelatex classwork//conversation.tex && evince conversation.pdf
+# conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t ,Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && xelatex classwork/2/conversation.tex && evince conversation.pdf
+# conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && xelatex classwork/2/conversation.tex && evince conversation.pdf
+# conversation.pl -l FLA0021 -s 2 -r 7 -x CUSP -p B -t Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red && xelatex classwork/2/conversation.tex && evince conversation.pdf
+# conversation.pl -l FLA0027 -s  -r 7 -x  -p X -t Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise:: && xelatex classwork//conversation.tex && evince conversation.pdf
+# conversation.pl -l FLA0027 -s  -r 7 -x fsdds -p X -t Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise:: && xelatex classwork//conversation.tex && evince conversation.pdf
+# conversation.pl -l FLA0027 -s  -r 7 -x topic -p A -t Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise:: && xelatex classwork//conversation.tex && evince conversation.pdf
+# cp ../../GL00006/exam//round.yaml /round.yaml
+# cp bingo_biodad_0.pdf /run/media/drbean/DIE2GV1/
+# cp bingo_cups_0.pdf /run/media/drbean/DIE2GV1/
+# cp bingo_sport_0.pdf /run/media/drbean/DIE2GV1/
+# cp conversation.pdf /run/media/drbean/DIE2GV1/
+# cp haskell_after.vim ~/.vim/after/ftplugin/
+# cp teamseat.pdf /run/media/drbean/DIE2GV1/
+# create_groups.pl -s 1 -n  | sponge groups.yaml
+# create_round.pl -l AFBB32 -r  -x 0 > /round.yaml
+# export HISTTIMEFORMAT=
+# export HISTTIMEFORMAT='%m-%d '
+# export HISTTIMEFORMAT='%m-%d 'q
 # git fetch upstream
 # git merge upstream/master
- git fetch upstream
- git merge upstream/master
-git log
-git diff 2e8cd2 b25f33d
-ack MassN lib/src/english/
-less lib/src/english/NounEng.gf 
-git log
-git diff f3ff77 72bf5
-cd -
-git status | less
-git push
-svn diff
-git diff
-q
+# grade_jigsaw.pl -l AFBB32 -r  -n  > /g1.yaml
+# history -a
+# less ~/022//homework.yaml
+# less ~/022/FLA0021/homework.yaml
+# less ~/022/FLA0027/homework.yaml
+# lftp -c 'open web.nuu.edu.tw && cd public_html/AFBB32 && put grades.txt && qui'
+# lftp -c 'open web.nuu.edu.tw && cd public_html/AFBB32 && put report.pdf'
+# lpr bingo_biodad_0.pdf -P kyocera
+# lpr bingo_cups_0.pdf -P kyocera
+# lpr bingo_sport_0.pdf -P kyocera
+# lpr conversation.pdf -P kyocera
+# lpr teamseat.pdf -P kyocera
+# mv classwork/6.yaml.noform classwork/6.yaml
+# mv groups.yaml classwork/1/groups.yaml
+# mv ~/022//homework.yaml ~/022//homework/.yaml
+# mv ~/022//homework.yaml ~/022//homework/6.yaml
+# mv ~/022//homework.yaml ~/022//homework/7.yaml
+# mv ~/022/FLA0021/homework.yaml ~/022/FLA0021/homework/7.yaml
+# mv ~/022/FLA0027/homework.yaml ~/022/FLA0027/homework/7.yaml
+# perl ../cclass/cards.pl ./parents && xelatex ./$TOPIC/jigsaw_biodad_0.tex && evince jigsaw_biodad_0.pdf
+# perl ../cclass/cards.pl ./parents && xelatex ./$TOPIC/quiz_biodad_0.tex && evince quiz_biodad_0.pdf
+# perl ../cclass/cards.pl ./sport && xelatex ./$TOPIC/jigsaw_sport_0.tex && evince jigsaw_sport_0.pdf
+# perl ../cclass/cards.pl ./sport && xelatex ./$TOPIC/quiz_sport_0.tex && evince quiz_sport_0.pdf
+# perl ../cclass/cards.pl ./stress && xelatex ./$TOPIC/jigsaw_cups_0.tex && evince jigsaw_cups_0.pdf
+# perl ../cclass/cards.pl ./stress && xelatex ./$TOPIC/quiz_cups_0.tex && evince quiz_cups_0.pdf
+# perl htmlexerciselist.pl -a business -l dic -s gourlay-1  > business.html && lftp -c 'open web.nuu.edu.tw; cd public_html; put business.html'
+# perl script/create_exercise.pl  
+# perl script/create_exercise.pl  biodad
+# perl script/create_exercise.pl  gourlay-2
+# perl script/create_exercise.pl  sport
+# perl script/create_exercise.pl -t Non-competitive -g  -i  -d "" 
+# perl script/create_exercise.pl -t Non-competitive -g business -i cusp -d "" cusp
+# perl script/create_exercise.pl -t Non-competitive -g business -i cusp -d "fsdds" cusp
+# perl script/create_exercise.pl -t Non-competitive -g tech -i  -d "" 
+# perl script/create_exercise.pl Ctest biodad
+# perl script/delete_exercise.pl -i  -g 
+# perl script/delete_exercise.pl -i  -g conversation
+# perl script/delete_exercise.pl -i  -g tech
+# perl script/delete_exercise.pl -i biomom -g GL00019
+# perl script/delete_exercise.pl -i biomom -g conversation
+# perl script/delete_exercise.pl -i candidate -g business
+# perl script/delete_exercise.pl -i cusp -g business
+# perl script/delete_exercise.pl -i gourlay-1 -g FLA0021
+# perl script/delete_exercise.pl -i sport -g FLA0027
+# perl script/delete_exercise.pl -i sport -g tech
+# perl script/grade_aca.pl -l  -q 3 -o 1 -w 2 -x  > ~/022//homework.yaml
+# perl script/grade_aca.pl -l  -q 3 -o 1 -w 2 -x sport > ~/022//homework.yaml
+# perl script/grade_aca.pl -l FLA0027 -x sport > ~/022/FLA0027/homework.yaml
+# perl script/grade_bett.pl -l  -q 3 -o 1 -w 2 -x  > ~/022//homework.yaml
+# perl script/grade_bett.pl -l  -q 3 -o 1 -w 2 -x candidate > ~/022//homework.yaml
+# perl script/grade_bett.pl -l FLA0021 -x cusp > ~/022/FLA0021/homework.yaml
+# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x  > ~/022//homework.yaml
+# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x biomom > ~/022//homework.yaml
+# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x gourlay-1 > ~/022//homework.yaml
+# perl script/loadYAMLid.pl ~/class///bett.yaml 
+# perl script/loadYAMLid.pl ~/class/FLA0021//dic.yaml gourlay-2
+# perl script/loadYAMLid.pl ~/class/FLA0027//aca.yaml sport
+# perl script/loadYAMLid.pl ~/class/GL00019//dic.yaml biodad
+# perl script/loadYAMLid.pl ~/class/business//bett.yaml cusp
+# perl script/loadYAMLid.pl ~/class/conversation//dic.yaml 
+# perl script/loadYAMLid.pl ~/class/conversation/parents/dic.yaml biodad
+# perl script/loadYAMLid.pl ~/class/tech//aca.yaml 
+# perl script/loadYAMLid.pl ~/class/tech//aca.yaml sport
+# perl script/loadYAMLid.pl ~/class/tech//bett.yaml 
+# perl script/words.pl -s  && perl script/characters.pl -s 
+# perl script/words.pl -s biodad && perl script/characters.pl -s biodad
+# perl script/words.pl -s cusp && perl script/characters.pl -s cusp
+# perl script/words.pl -s gourlay-2 && perl script/characters.pl -s gourlay-2
+# perl script/words.pl -s sport && perl script/characters.pl -s sport
+# perl ~/comp/web/script_files/comptron.pl -l AFBB32 -r  -x 1 > /response.yaml
+# print_grades.pl > grades.txt
+# rm 1 -rf
+# round_table.pl -l AFBB32 -r  
+# scantron.pl -l AFBB32 -r  > /response.yaml
+# score_comp.pl -l AFBB32 -r  > /scores.yaml
+# score_jigsaw.pl -l 3K0 -r 2 > 2/scores.yaml
+# score_jigsaw.pl -l AFBB32 -r  > /scores.yaml
+# score_jigsaw.pl -l FLA0016 -r 0 > 0/scores.yaml
+# score_jigsaw.pl -l FLA0016 -r 1 > 1/scores.yaml
+# score_jigsaw.pl -l FLA0016 -r 2 > 2/scores.yaml
+# score_jigsaw.pl -l FLA0022 -r 2 > 2/scores.yaml
+# score_jigsaw.pl -l FLA0026 -r 2 > 2/scores.yaml
+# score_jigsaw.pl -l FLA0027 -r 1 > 1/scores.yaml
+# score_jigsaw.pl -l GL00015 -r 1 > 1/scores.yaml
+# score_jigsaw.pl -l GL00016 -r 0 > 0/scores.yaml
+# score_jigsaw.pl -l GL00016 -r 1 > 1/scores.yaml
+# score_jigsaw.pl -l MB1 -r 1 > 1/scores.yaml
+# su -c 'chown drbean:swiss ./comp/ -R'
+# su -c 'cp perl-tags-vim/ftplugin/perl.vim /usr/share/vim/vimfiles/after/ftplugin/'
+# su -c 'cp vim-gf/ftdetect/gf.vim /usr/share/vim/vimfiles/ftdetect/'
+# su -c 'cp vim-gf/syntax/gf.vim /usr/share/vim/vimfiles/syntax/'
+# su -c 'cp vim/vimrc.sac /etc/vimrc'
+# su -c 'cp vimrc.sac /etc/vimrc'
+# sudo cp conversation.pdf /var/www/html
+# sudo systemctl start httpd.service
+# sudo systemctl stop httpd.service
+# sum_g1_g2.pl -l 1040 -r 1 > ../exam/1/g.yaml
+# sum_g1_g2.pl -l 1040 -r 2 > ../exam/2/g.yaml
+# sum_g1_g2.pl -l 1J0 -r 2 > ../exam/2/g.yaml
+# sum_g1_g2.pl -l 2L1 -r  > ../exam//g.yaml
+# sum_g1_g2.pl -l 2L1 -r 1 > ../exam/1/g.yaml
+# sum_g1_g2.pl -l 3K0 -r 1 > ./exam/1/g.yaml
+# sum_g1_g2.pl -l 3K0 -r 2 > ../exam/2/g.yaml
+# sum_g1_g2.pl -l AFBB32 -r  > ../exam//g.yaml
+# sum_g1_g2.pl -l FLA0016 -r 0 > ../exam/0/g.yaml
+# sum_g1_g2.pl -l FLA0016 -r 1 > ../exam/1/g.yaml
+# sum_g1_g2.pl -l FLA0016 -r 2 > ../exam/2/g.yaml
+# sum_g1_g2.pl -l FLA0022 -r 2 > ../exam/2/g.yaml
+# sum_g1_g2.pl -l FLA0026 -r 2 > ../exam/2/g.yaml
+# sum_g1_g2.pl -l FLA0027 -r 1 > ../exam/1/g.yaml
+# sum_g1_g2.pl -l FLA0027 -r 1 > ./exam/1/g.yaml
+# sum_g1_g2.pl -l GL00015 -r 1 > ./exam/1/g.yaml
+# sum_g1_g2.pl -l GL00016 -r 0 > ../exam/0/g.yaml
+# sum_g1_g2.pl -l GL00016 -r 1 > ../exam/1/g.yaml
+# sum_g1_g2.pl -l GL00016 -r 1 > ./exam/1/g.yaml
+# sum_g1_g2.pl -l MB1 -r 1 > ../exam/1/g.yaml
+# sum_g1_g2.pl -l MB1 -r 1 > ./exam/1/g.yaml
+# svn add ../exam/1/g2.yaml 1/{round,scores}.yaml
+# svn add ../exam/2/g2.yaml 2/{round,scores}.yaml
+# svn add ../exam/2/{g,g2}.yaml 2/{round,response,scores}.yaml
+# svn add ../exam/g2.yaml
+# svn add ../exam/g2.yaml $ROUND/{round,scores}.yaml
+# svn add ./stress/questionsA5.tex
+# svn add /{dic,cards}.yaml && svn ci /{dic,cards}.yaml -m :
+# svn add 1
+# svn add 1/{league,response,scores,g1}.yaml
+# svn add 1/{round,response,scores,g1,g2}.yaml
+# svn add 1/{round,response,scores,g1}.yaml
+# svn add 2/{round,response,scores,g1}.yaml
+# svn add classwork/5.yaml
+# svn add classwork/6.yaml
+# svn add classwork/7.yaml
+# svn add classwork/8.yaml
+# svn add classwork/9.yaml
+# svn add cooking/{dic,cards}.yaml && svn ci cooking/{dic,cards}.yaml -m cooking:cook
+# svn add exam/1
+# svn add exam/1/{league,response,scores,g1}.yaml
+# svn add league.yaml
+# svn add session/1/groups.yaml
+# svn add session/2/groups.yaml
+# svn add session/3/groups.yaml
+# svn add sports/{dic,cards}.yaml && svn ci sports/{dic,cards}.yaml -m sports:summer
+# svn add ~/022//homework/.yaml
+# svn add ~/022//homework/6.yaml
+# svn add ~/022//homework/7.yaml
+# svn add ~/022/FLA0021/homework/7.yaml
+# svn add ~/022/FLA0027/homework/7.yaml
+# svn add ~/031//homework/.yaml
+# svn add ~/031//homework/4.yaml
+# svn add ~/031//homework/5.yaml
+# svn add ~/031/2L1/homework/4.yaml
+# svn add ~/031/2L1/homework/5.yaml
+# svn add ~/031/FLA0016/homework/../../exam/1.yaml
+# svn add ~/031/FLA0016/homework/4.yaml
+# svn add ~/031/FLA0027/homework/2.yaml
+# svn add ~/031/FLA0027/homework/5.yaml
+# svn add ~/031/GL00015/homework/3.yaml
+# svn add ~/031/MB1/homework/3.yaml
+# svn ci -m  classwork/6.yaml
+# svn ci -m  ~/022//homework/.yaml
+# svn ci -m  ~/031/FLA0027/homework/5.yaml
+# svn ci -m CUSP classwork/6.yaml
+# svn ci -m Grades/Groupwork:r1720 classwork//6.yaml classwork/6.yaml
+# svn ci -m Grades/Groupwork:r1720 classwork/2/5.yaml classwork/5.yaml
+# svn ci -m Grades/Groupwork:r1720 classwork/2/6.yaml classwork/6.yaml
+# svn ci -m Grades/Groupwork:r1720 classwork/2/7.yaml classwork/7.yaml
+# svn ci -m Grades/Groupwork:r1720 classwork/2/8.yaml classwork/8.yaml
+# svn ci -m Grades/Groupwork:r1720 classwork/3/9.yaml classwork/9.yaml
+# svn ci -m abreu ~/031/GL00015/homework/3.yaml
+# svn ci -m adam ~/031//homework/5.yaml
+# svn ci -m adoption classwork/5.yaml
+# svn ci -m adoption ~/031//homework/.yaml
+# svn ci -m adoption ~/031/FLA0016/homework/4.yaml
+# svn ci -m attitudes comp/ exam/
+# svn ci -m biodad,emersonj classwork/7.yaml
+# svn ci -m biomom ~/022//homework/7.yaml
+# svn ci -m candidate ~/022//homework/7.yaml
+# svn ci -m careers comp/1 exam/1
+# svn ci -m create_groups_n= classwork/1/groups.yaml
+# svn ci -m create_groups_n=3 session/1/groups.yaml
+# svn ci -m create_groups_n=3 session/2/groups.yaml
+# svn ci -m create_groups_n=3 session/3/groups.yaml
+# svn ci -m cusp ~/022/FLA0021/homework/7.yaml
+# svn ci -m disaster classwork/5.yaml
+# svn ci -m emersonj classwork/7.yaml
+# svn ci -m freakout ~/031//homework/5.yaml
+# svn ci -m fsdds classwork/6.yaml
+# svn ci -m gourlay-1 ~/022//homework/6.yaml
+# svn ci -m health ~/031/2L1/homework/5.yaml
+# svn ci -m illegals ~/031//homework/4.yaml
+# svn ci -m jackson ~/031/FLA0016/homework/4.yaml
+# svn ci -m jackson-exam ~/031/FLA0016/homework/../../exam/1.yaml
+# svn ci -m kiss ~/031/FLA0027/homework/2.yaml
+# svn ci -m lead classwork/7.yaml
+# svn ci -m marriage comp/1 exam/1
+# svn ci -m money classwork/5.yaml
+# svn ci -m money classwork/6.yaml
+# svn ci -m money ~/031/2L1/homework/4.yaml
+# svn ci -m money ~/031/MB1/homework/3.yaml
+# svn ci -m money,health,environment comp/1 exam/1
+# svn ci -m news comp/1 exam/1
+# svn ci -m online comp/2 exam/2
+# svn ci -m parents comp/ exam/
+# svn ci -m parents comp/2 exam/2
+# svn ci -m pope ~/031/FLA0027/homework/5.yaml
+# svn ci -m questions classwork/6.yaml
+# svn ci -m rewrite_db_create.parsed=[]:first^single,parsed=my_question.TODO:Question_table_primary_keys
+# svn ci -m self-intro comp/1 exam/1
+# svn ci -m self-intro comp/2 exam/2
+# svn ci -m self-intros classwork/9.yaml
+# svn ci -m spano classwork/8.yaml
+# svn ci -m sport ~/022//homework/6.yaml
+# svn ci -m sport ~/022/FLA0027/homework/7.yaml
+# svn ci -m story classwork/6.yaml
+# svn ci -m topic classwork/6.yaml
+# svn ci -m work comp/0 exam/0
+# svn ci -m work comp/1 exam/1
+# svn ci ./stress/questionsA5.tex -m stress,adventure
+# svn ci comp/2 exam/2 -m 
+# svn co file:///home/drbean/.svk/local/cl/1040
+# svn co file:///home/drbean/.svk/local/cl/1J0
+# svn co file:///home/drbean/.svk/local/cl/2L1
+# svn co file:///home/drbean/.svk/local/cl/3K0
+# svn co file:///home/drbean/.svk/local/cl/FLA0016
+# svn co file:///home/drbean/.svk/local/cl/FLA0022
+# svn co file:///home/drbean/.svk/local/cl/FLA0026
+# svn co file:///home/drbean/.svk/local/cl/FLA0027
+# svn co file:///home/drbean/.svk/local/cl/GL00015
+# svn co file:///home/drbean/.svk/local/cl/GL00016
+# svn co file:///home/drbean/.svk/local/cl/MB1
+# svn mcd ~/032/FLA0022/exam
+# svn merge -r 1:HEAD http://svn.openfoundry.org/ttb/forms/compcomp/questionsA5.tex ./stress/questionsA5.tex
+# svn mkdir ./
+# svn mkdir ./careers
+# svn mkdir ./cooking
+# svn mkdir ./exercise
+# svn mkdir ./food
+# svn mkdir ./news
+# svn mkdir ./online
+# svn mkdir ./parents
+# svn mkdir ./sports
+# svn mkdir ./work
+# svn mkdir 1
+# svn mkdir 2
+# svn mkdir classwork
+# svn mkdir comp
+# svn mkdir exam
+# svn mkdir exam/
+# svn mkdir file:///home/drbean/.svk/local/cl/1040 -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir file:///home/drbean/.svk/local/cl/1J0 -m 032GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir file:///home/drbean/.svk/local/cl/2L1 -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir file:///home/drbean/.svk/local/cl/3K0 -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir file:///home/drbean/.svk/local/cl/FLA0016 -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir file:///home/drbean/.svk/local/cl/FLA0022 -m 032GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir file:///home/drbean/.svk/local/cl/FLA0026 -m 032GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir file:///home/drbean/.svk/local/cl/FLA0027 -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir file:///home/drbean/.svk/local/cl/GL00015 -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir file:///home/drbean/.svk/local/cl/GL00016 -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir file:///home/drbean/.svk/local/cl/MB1 -m 031GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭
+# svn mkdir homework
+# svn mkdir session
+# svn mkdir session/1
+# svn mkdir session/2
+# svn mkdir session/3
+# svn mv classwork//6.yaml classwork/6.yaml
+# svn mv classwork/2/5.yaml classwork/5.yaml
+# svn mv classwork/2/6.yaml classwork/6.yaml
+# svn mv classwork/2/7.yaml classwork/7.yaml
+# svn mv classwork/2/8.yaml classwork/8.yaml
+# svn mv classwork/3/9.yaml classwork/9.yaml
+# svn revert 
+# svn revert 0
+# svn revert 1
+# svn revert classwork//6.yaml
+# svn revert classwork/1
+# svn revert classwork/2/5.yaml
+# svn revert classwork/2/6.yaml
+# svn revert classwork/2/7.yaml
+# svn revert classwork/2/8.yaml
+# svn revert classwork/3/9.yaml
+# teamseat.pl -s 1 --latex -n  && xelatex classwork/1/teamseat.tex && evince teamseat.pdf
+# teamseat.pl -s 1 --latex -n 3 && xelatex session/1/teamseat.tex && evince teamseat.pdf
+# teamseat.pl -s 1 -n  
+# teamseat.pl -s 1 -n 3 
+# teamseat.pl -s 2 --latex -n 3 && xelatex session/2/teamseat.tex && evince teamseat.pdf
+# teamseat.pl -s 2 -n 3 
+# teamseat.pl -s 3 --latex -n 3 && xelatex session/3/teamseat.tex && evince teamseat.pdf
+# teamseat.pl -s 3 -n 3 
+# topic: 
+# topic: CUSP
+# topic: fsdds
+# topic: story
+# topic: topic
+# umount ~/media/
+# update_db.pl -l 1040 -r 1
+# update_db.pl -l 1040 -r 2
+# update_db.pl -l 2L1 -r 
+# update_db.pl -l 2L1 -r 1
+# update_db.pl -l 3K0 -r 1
+# update_db.pl -l 3K0 -r 2
+# update_db.pl -l AFBB32 -r 
+# update_db.pl -l FLA0016 -r 0
+# update_db.pl -l FLA0016 -r 1
+# update_db.pl -l FLA0016 -r 2
+# update_db.pl -l FLA0027 -r 1
+# update_db.pl -l GL00015 -r 1
+# update_db.pl -l GL00016 -r 0
+# update_db.pl -l GL00016 -r 1
+# update_db.pl -l MB1 -r 1
+# xelatex --output-directory=./stress ./stress/questionsA5.tex && evince stress/questionsA5.pdf
+# xelatex report.tex && evince report.pdf
+## svn add ../exam/g2.yaml
+#1396399433
+#1396402873
+#1396402875
+#1396402884
+#1396403935
+#1396405547
+#1396405613
+#1396409916
+#1396409922
+#1396409930
+#1396409956
+#1396409976
+#1396417910
+#1396418007
+#1396418013
+#1396418024
+#1396418837
+#1396418877
+#1396418922
+#1396418979
+#1396418992
+#1396419081
+#1396419158
+#1396422135
+#1396422143
+#1396422200
+#1396423790
+#1396423791
+#1396423914
+#1396423980
+#1396423981
+#1396424342
+#1396424360
+#1396424369
+#1396427326
+#1396427902
+#1396427917
+#1396428013
+#1396428075
+#1396428077
+#1396428981
+#1396428983
+#1396429026
+#1396429125
+#1396429145
+#1396429769
+#1396430014
+#1396430017
+#1396430055
+#1396430098
+#1396430106
+#1396430118
+#1396430892
+#1396430975
+#1396430988
+#1396430998
+#1396431009
+#1396431268
+#1396431283
+#1396431292
+#1396431318
+#1396431335
+#1396431346
+#1396431351
+#1396431369
+#1396431453
+#1396431493
+#1396482327
+#1396482346
+#1396482382
+#1396482390
+#1396482393
+#1396482444
+#1396482492
+#1396482900
+#1396482927
+#1396482963
+#1396482967
+#1396482970
+#1396483169
+#1396483182
+#1396483223
+#1396483260
+#1396486746
+#1396486749
+#1396489029
+#1396490318
+#1396490321
+#1396490641
+#1396490648
+#1396490651
+#1396490681
+#1396490689
+#1396490708
+#1396490739
+#1396490775
+#1396490793
+#1396493270
+#1396493271
+#1396504742
+#1396504743
+#1396504981
+#1396504995
+#1396505120
+#1396505121
+#1396506629
+#1396508932
+#1396509519
+#1396509526
+#1396511242
+#1396511268
+#1396511269
+#1396511872
+#1396513169
+#1396513173
+#1396513598
+#1396513613
+#1396514667
+#1396514668
+#1396518358
+#1396518747
+#1396518748
+#1396518782
+#1396528081
+#1396532793
+#1396532797
+#1396532825
+#1396589367
+#STORY=candidate; FORM=9; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+#cd /var/www/cgi-bin/aca
+#git rm drbean/business/stress/cusp/WordsCharacters.hs
+#screen -r GF_siar
+#su -c 'cp bash/bash_completion/{ex,gr,new,w,aca,bett,dic} /etc/bash_completion.d/'
+#svn ci -m 4-1^1-1:Jacky.out:5-1,6-1 session/2
+#svn ci -m YaTing league.yaml session/
+#svn ci -m careers:candidates:7-9.my_job,my_tips exam/1
+#svn ci -m classwork/
+#svn ci -m directory_above/exam.svn_add:g2,round,scores.yaml .screen/grading.rc
+#svn ci -m groupworkdirs^beancandirs:classwork^session seats/script_files/teamseat.pl
+#svn ci -m rewrite_db_create.first^single#
+#svn co file:///home/drbean/.svk/local/scratch/aca
+#svn merge -c -4545 htmlexerciselist.pl
+#svn merge -c 3660 ^/tmpl/jigsaw.tmpl tmpl/jigsaw.tmpl
+#v -O gf-contrib/drbean/conversation/work/jackson/WordsCharacters.hs gf-contrib/drbean/conversation/work/jackson/Model.hs gf-contrib/drbean/conversation/work/jackson/Tests.hs
+,Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow," >> "classwork/7.yaml.noform"
+./Transfer
+./bin/Transfer_cusp 
 /usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html
-q
 /usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html
-q
-/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html
-q
-/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html
-q
 /usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html
-q
+/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html
+/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html
+/usr/local/bin/weechat-curses -r '/iset;/script'
+022
+Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window" >> "classwork/7.yaml.noform"
+Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::" >> "classwork/7.yaml.noform"
+GF
+GF -a business -t stress -s cusp -m  Cusp
+GF -c business -t stress -s cusp -m  Cusp
+GF -c business -t stress -s cusp -m Cusp
+Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red" >> "classwork/7.yaml.noform"
+Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow," >> "classwork/7.yaml.noform"
+Q
+STORY=disaster; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=dog; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=dog; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=emersonj; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=emersonj; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=emersonj; FORM=2; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=emersonj; FORM=2; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=factors; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=factors; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=factors; FORM=1; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=factors; FORM=1; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=factors; FORM=2; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=factors; FORM=2; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=freakout; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=freakout; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=health; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=health; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=health; FORM=1; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=health; FORM=1; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=money; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=money; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=money; FORM=1; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=money; FORM=1; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+STORY=wallace-oreilly; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf
+STORY=wallace-oreilly; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdfd
+STORY=wallace-oreilly; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf
+aca -c FLA0027 -s sport -o sport -r 6 -x ''
+aca -c tech
+aca -c tech -s sport -o sport -r 7 -x '' -l FLA0027 
+ack MassN lib/src/english/
+ack bett
+ack elinks sac_f19_installed.txt 
+bett
+bett -c business -l FLA0021 -s cusp -o cusp -r 7 -x ''
+bett -c business -s cusp -o candidate -r 7 -x fsdds
+bett -c tech
+bett -v stress -t stress -s cusp -f 0
+biz -v stress -t stress -s cups -f 0
+cabal build -v
+cabal configure --verbose
+cabal copy
+cabal help configure
+cabal install FindBin
+cabal install fst
+cabal install time-compat
+cabal register
+cabal update
+cd
+cd $STORY
+cd $TOPIC
+cd -
+cd ..
+cd ../2040/
+cd ../AFB1J0/
+cd ../AFBB32/
+cd ../FLA0018/
+cd ../FLA0021/
+cd ../FLA0027/
+cd ../GL00019/
+cd ../drbean
+cd ./parents && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_html/parents && mput html/*.html && qui' && cd -
+cd ./sport && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_html/tech && mput html/*.html && qui' && cd -
+cd ./stress && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_html/stress && mput html/*.html && qui' && cd -
+cd /var/www/cgi-bin/
+cd /var/www/cgi-bin/aca
+cd /var/www/cgi-bin/bett
+cd /var/www/cgi-bin/dic
+cd 3024/
+cd beans/
+cd branch/gf
+cd class/
+cd dot
+cd forms/
+cd gf-contrib
+cd gf-contrib/
+cd gf-contrib/drbean/$COURSE
 cd gf-contrib/drbean///%STORY
- cd -
-gf -coding utf-8
-q
-complete -f '!*.txt' sample_command
-touch sample_command
+cd gf-contrib/drbean////
+cd gf-contrib/drbean/business/stress/%STORY
+cd gf-contrib/drbean/business/stress/cups/
+cd gf-contrib/drbean/business/stress/cusp/
+cd rc
+cd ultisnips/
+cd vim-gf
+cd vim/vim-gf
+cd ~/022/AFBB32/comp
+cd ~/022/AFBB32/exam
 chmod +x sample_command 
+chmod +x sampler
+class
+cnv -v parents -t parents -s biodad -f 0
 complete -f '!*.txt' sample_command
 complete -f '!*.txt' sampler
-touch sampler
-chmod +x sampler
-man complete
-q
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-q
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
+cp .bashrc ~/.bashrc
 cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-svn st | grep '^\(A\|M\|D\C\)'
-svn diff
-svn ci -m no_env_vars gf_files.txt
-svn diff
-svn ci -m GF:course,topic,story,module_options.GL00019:B_tables .bashrc
-svn diff
-svn diff .screen/gf.rc
-ls
-rm sample_command sampler
-ls
-svn diff .screen/gf.rc
-svn ci -m gf_files.txt_alternatives.screen_2,3:COURSE,TOPIC,STORY,MOD_env_vars .screen/gf.rc
-q
+cp bash_completion/w bash_completion/bett
+date
+dic -c FLA0021 -s gourlay-2 -o gourlay-1 -r 6 -x ''
+dic -c GL00019 -s biodad -o biomom -r 7 -x ''
+dic -c conversation 
+dig sac.nuu.edu.tw
 dot
-q
-cd rc
-ls
-re.pl --rcfile ./ping.rc
-q
-ping 210.153.142.56
-ping --help
-man ping
-man Net::Ping
-svn st | grep '^\(A\|M\|D\|C\)'
-svn st rc | grep '^\(A\|M\|D\|C\)'
-svn diff rc/ping.rc
-svn ci -m Net::Ping::External rc/ping.rc
-q
-v
-q
-022
-q
-v league.yaml classwork/2/groups.yaml classwork/6.yaml homework/6.yaml classwork/7.yaml
-q
-# conversation.pl -l FLA0021 -s 2 -r 7 -x CUSP -p B -t Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red && xelatex classwork/2/conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
-q
+echo $COURSE
+echo $MOD
 echo -e "---
-# topic: CUSP
-Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red" >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/2
-# svn add classwork/6.yaml
-# svn revert classwork/2/6.yaml
-# svn mv classwork/2/6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork/2/6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m CUSP classwork/6.yaml
-q
-ls homework classwork exam/*
-q
-screen -ls
-w FLA0021 7 -t CUSP -l B
-q
-cd gf-contrib
- cd -
-git status
-# git fetch upstream
-# git merge upstream/master
-git fetch upstream 
- git merge --ff-only upstream/master 
- git merge upstream/master 
-git log
-cd -
-git status | less
-git diff
-git add drbean/business/stress/cusp/LexCusp{,Eng}.gf
-git diff --staged
-git commit -m part_prep
+elinks
+ex
+exit
+export HISTTIMEFORMAT='%m-%d '
+export HISTTIMEFORMAT='%m-%d'
+find -mindepth 1 -maxdepth 1 '.*'
+find . -mindepth 1 -maxdepth 1 '.*'
+find . -mindepth 1 -maxdepth 1 -name '.*'
+gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_Cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_Cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_Cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s Cusp && perl /var/www/cgi-bin/bett/script/words.pl -s Cusp
+gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_Cusp -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_Cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_Cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s Cusp && perl /var/www/cgi-bin/bett/script/words.pl -s Cusp
+gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cups -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cups -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cups -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cups && perl /var/www/cgi-bin/bett/script/words.pl -s cups
+gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
+gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
+gf --make --output-format=haskell Eng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_ -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_ -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_ -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp .pgf /var/www/cgi-bin/bett/bin/.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s  && perl /var/www/cgi-bin/bett/script/words.pl -s 
+gf --make --output-format=haskell Eng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_ -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_ -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_ -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp .pgf /var/www/cgi-bin/bett/bin/.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s  && perl /var/www/cgi-bin/bett/script/words.pl -s 
+gf -coding utf-8
+ghci -i./:../:../../../
+git add drbean/LogicalForm.hs
+git add drbean/Transfer.hs
 git add drbean/business/stress/cusp/Cusp{,I}.gf
-git diff --staged
-git commit -m Lack_of:NP-CN.mkCN:lack_of,np.lack_of:N2.mkN2:lack_of_N,part_prep
-git diff
-git add drbean/LogicalForm.hs
-git commit -m 'transCN (GLack_of np) = \object -> transNP np ( \thing -> Rel "lacks" [object, thing])'
-git diff
-git add drbean/LogicalForm.hs
-git commit -m have,lack
-git diff
-history -a
-history -a
-git add gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-git commit -m lack
-git add gf-contrib/drbean/business/stress/cusp/Tests.hs
-git diff --staged
-history -a
-git status | less
-git reset HEAD gf-contrib/drbean/business/stress/cusp/Tests.hs
-git status | less
-cd gf-contrib/
+git add drbean/business/stress/cusp/LexCusp{,Eng}.gf
+git add drbean/business/stress/cusp/Model.hs
+git add drbean/business/stress/cusp/Story_Interpretation.hs
 git add drbean/business/stress/cusp/Tests.hs
-git commit -m in_equilibrium,quality_test,determiner_test,working_test
-git rm gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-#git rm drbean/business/stress/cusp/WordsCharacters.hs
-cd -
-git status | less
-git rm gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-git status | less
-git commit -m "wrong_repo:gf-contrib,not_gf"
-q
-screen -x GF
-q
-cd gf-contrib/
-git status | less
 git add drbean/business/stress/cusp/WordsCharacters.hs
-git status | less
+git add gf-contrib/drbean/business/stress/cusp/Tests.hs
+git add gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
+git commit -m "wrong_repo:gf-contrib,not_gf"
+git commit -m 'transCN (GLack_of np) = \object -> transNP np ( \thing -> Rel "lacks" [object, thing])'
+git commit -m Cusp,CUSP
+git commit -m Lack_of:NP-CN.mkCN:lack_of,np.lack_of:N2.mkN2:lack_of_N,part_prep
+git commit -m R:performance.pred1,pred2:have,give,stand,lack.out:schooling
+git commit -m TODO:entity_list:men,women-uncount_list:ent_ided.underscore,no_hyphen.know_V2,know_VS
+git commit -m have,lack
+git commit -m in_equilibrium,quality_test,determiner_test,working_test
+git commit -m lack
+git commit -m lack_of,stand_for,control_over
+git commit -m managers:man-E,woman-F.lack_of_control:N,support:O.manager,individual,framework,best_placed,characteristic,critically_important,stressful,male,female.knowledge,know_V2.workign,comms,giving,look_back
+git commit -m part_prep
 git commit -m removal_from_GF_removed_from gf-contrib_also
 git commit -m removal_from_GF_removed_from_gf-contrib_also
-git add drbean/business/stress/cusp/Story_Interpretation.hs
-git commit -m TODO:entity_list:men,women-uncount_list:ent_ided.underscore,no_hyphen.know_V2,know_VS
-git add drbean/business/stress/cusp/Model.hs
-git commit -m managers:man-E,woman-F.lack_of_control:N,support:O.manager,individual,framework,best_placed,characteristic,critically_important,stressful,male,female.knowledge,know_V2.workign,comms,giving,look_back
-q
-screen -x GF
-q
-screen -ls
-bett -v stress -t stress -s cusp -f 0
-q
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-v -O $(<~/dot/gf_files.txt)
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-v -O $(<~/dot/gf_files.txt)
-cd gf-contrib/drbean/business/stress/cusp/
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_Cusp -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_Cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_Cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s Cusp && perl /var/www/cgi-bin/bett/script/words.pl -s Cusp
-cd -
-./Transfer
-ghci -i./:../:../../../
-cd -
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_Cusp -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_Cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_Cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s Cusp && perl /var/www/cgi-bin/bett/script/words.pl -s Cusp
-ghci -i./:../:../../../
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_Cusp -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_Cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_Cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s Cusp && perl /var/www/cgi-bin/bett/script/words.pl -s Cusp
-ghci -i./:../:../../../
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_Cusp -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_Cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_Cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s Cusp && perl /var/www/cgi-bin/bett/script/words.pl -s Cusp
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_Cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_Cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_Cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s Cusp && perl /var/www/cgi-bin/bett/script/words.pl -s Cusp
-git add gf-contrib/drbean/business/stress/cusp/Tests.hs
-git diff --staged
-history -a
-git diff --staged
+git commit -m stands_test:upper_case,CUSP.quality_test
+git commit -m takeAnswer,yesorno
+git commit -m upper_case,CUSP
 git diff
 git diff --staged
-git diff
-ls drbean/business/stress/cusp/
-ls drbean/business/stress/cusp/Transfer.hs
-rm drbean/business/stress/cusp/Transfer.hs
-cd gf-contrib/drbean/business/stress/%STORY
- cd -
-gf -coding utf-8
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html
-/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html
-GF
-GF -c business -t stress -s cusp -m Cusp
-q
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-cd gf-contrib/drbean/business/stress/cusp/
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
-cd -
-./Transfer
-ghci -i./:../:../../../
-cd -
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html
-/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html
-cd gf-contrib/drbean/business/stress/%STORY
- cd -
-gf -coding utf-8
-cd gf-contrib
- cd -
-git status
-# git fetch upstream
-# git merge upstream/master
-cd gf-contrib/drbean/business/stress/cusp/
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
-cd -
-./Transfer
-ghci -i./:../:../../../
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html
-/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html
-cd gf-contrib/drbean/business/stress/%STORY
- cd -
-gf -coding utf-8
-cd gf-contrib
- cd -
-git status
-# git fetch upstream
-# git merge upstream/master
-bett -c business -l FLA0021 -s cusp -o cusp -r 7 -x ''
-q
-w FLA0027 7 -t '' -l X
-w FLA0027 7 -t '' -l X 
-w FLA0027 7 -t xx -l X 
-q
-w FLA0027 7 -t '' -l X
-q
-links http://localhost/cgi-bin/aca/script/aca_cgi.pl/login?exercise=sport
-q
-cd /var/www/cgi-bin/aca
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s sport && perl script/characters.pl -s sport
-q
-#1396422200
-export HISTTIMEFORMAT='%m-%d '
-#1396422200
-# sudo systemctl stop httpd.service
-#1396422200
-# perl script/grade_aca.pl -l FLA0027 -x sport > ~/022/FLA0027/homework.yaml
-#1396422200
-# perl script/delete_exercise.pl -i sport -g tech
-#1396422200
-# sudo systemctl start httpd.service
-#1396422200
-# less ~/022/FLA0027/homework.yaml
-#1396422200
-# mv ~/022/FLA0027/homework.yaml ~/022/FLA0027/homework/7.yaml
-#1396422200
-# svn add ~/022/FLA0027/homework/7.yaml
-#1396422200
-# svn ci -m sport ~/022/FLA0027/homework/7.yaml
-#1396422200
-svn st -q ~/022/FLA0027/homework
-#1396422200
-# history -a
-#1396422200
-# export HISTTIMEFORMAT=
-#1396423980
-q
-#1396422200
-export HISTTIMEFORMAT='%m-%d '
-#1396422200
-# perl script/loadYAMLid.pl ~/class/tech//aca.yaml sport
-#1396422200
-# perl script/create_exercise.pl  sport
-#1396422200
-# history -a
-#1396422200
-# export HISTTIMEFORMAT=
-#1396423981
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-q
-aca -c tech -s sport -o sport -r 7 -x '' -l FLA0027 
-q
-screen -x pages
-q
-screen -x pages
-q
-#1396423790
-svn st -q
-#1396423790
-svn log -vr BASE:HEAD
-#1396423791
-export HISTTIMEFORMAT='%m-%d'
-#1396423791
-# perl htmlexerciselist.pl -a business -l dic -s gourlay-1  > business.html && lftp -c 'open web.nuu.edu.tw; cd public_html; put business.html'
-#1396423914
-svn log htmlexerciselist.pl | less
-#1396424342
-#svn merge -c -4545 htmlexerciselist.pl
-#1396424360
-svn st | grep '^\(A\|M\|D\|C\)'
-#1396424369
-svn st
-#1396427326
-svn diff htmlexerciselist.pl
-#1396427902
-mv sdf cusp.tmpl
-#1396427917
- perl htmlexerciselist.pl -a business -l dic -s gourlay-1  > business.html && lftp -c 'open web.nuu.edu.tw; cd public_html; put business.html'
-#1396428013
-less business.html
-#1396428075
-mv cusp.tmpl gourlay-1.tmpl
-#1396428077
- perl htmlexerciselist.pl -a business -l dic -s gourlay-1  > business.html && lftp -c 'open web.nuu.edu.tw; cd public_html; put business.html'
-#1396428981
-svn st | grep '^\(A\|M\|D\|C\)'
-#1396428983
-svn diff
-#1396429026
-perldoc -f -f
-#1396429125
-svn diff
-#1396429145
-svn ci -m include_tmpl:io
-#1396429769
- perl htmlexerciselist.pl -a business -l dic -s gourlay-1  > business.html && lftp -c 'open web.nuu.edu.tw; cd public_html; put business.html'
-#1396430014
-svn st | grep '^\(A\|M\|D\|C\)'
-#1396430017
-svn diff
-#1396430055
-spir
-#1396430098
-svn ci -m include_tmpl_type:file:\$id.tmpl
-#1396430106
-svn log htmlexerciselist.pl | less
-#1396430118
-q
-pages -t business -s gourlay-1
-pages -c business -s gourlay-1
-q
-man IO::All
-q
-ls homework classwork exam/*
-q
-# conversation.pl -l FLA0027 -s  -r 7 -x  -p X -t Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise:: && xelatex classwork//conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
-q
-echo -e "---
-# topic: 
-Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::" >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/
-# svn add classwork/6.yaml
-# svn revert classwork//6.yaml
-# svn mv classwork//6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork//6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m  classwork/6.yaml
-nq
-q
-v league.yaml classwork//groups.yaml classwork/6.yaml homework/6.yaml classwork/7.yaml
-q
-w FLA0027 7 -t '' -l X
-q
-#1396419158
-export HISTTIMEFORMAT='%m-%d '
-#1396419158
-# sudo systemctl stop httpd.service
-#1396419158
-# perl script/grade_bett.pl -l FLA0021 -x cusp > ~/022/FLA0021/homework.yaml
-#1396419158
-# perl script/delete_exercise.pl -i cusp -g business
-#1396419158
-# sudo systemctl start httpd.service
-#1396419158
-# less ~/022/FLA0021/homework.yaml
-#1396419158
-# mv ~/022/FLA0021/homework.yaml ~/022/FLA0021/homework/7.yaml
-#1396419158
-# svn add ~/022/FLA0021/homework/7.yaml
-#1396419158
-# svn ci -m cusp ~/022/FLA0021/homework/7.yaml
-#1396419158
-svn st -q ~/022/FLA0021/homework
-#1396419158
-# history -a
-#1396419158
-# export HISTTIMEFORMAT=
-#1396430892
- perl script/grade_bett.pl -l FLA0021 -q 3 -l 1 -w 2 -x cusp > ~/022/FLA0021/homework.yaml
-#1396430975
- perl script/grade_bett.pl -l FLA0021 -q 3 -o 1 -w 2 -x cusp > ~/022/FLA0021/homework.yaml
-#1396430988
- less ~/022/FLA0021/homework.yaml
-#1396430998
- perl script/grade_bett.pl -l FLA0021 -q 3 -o 1 -w 2 -x candidate > ~/022/FLA0021/homework.yaml
-#1396431009
- less ~/022/FLA0021/homework.yaml
-#1396431268
- sudo systemctl stop httpd.service
-#1396431283
- perl script/grade_bett.pl -l FLA0021 -q 3 -o 1 -w 2 -x candidate > ~/022/FLA0021/homework.yaml
-#1396431292
- less ~/022/FLA0021/homework.yaml
-#1396431318
- mv ~/022/FLA0021/homework.yaml ~/022/FLA0021/homework/5.yaml
-#1396431335
- svn ci -m candidate ~/022/FLA0021/homework/5.yaml 
-#1396431346
- perl script/delete_exercise.pl -i candidate -g business
-#1396431351
- sudo systemctl start httpd.service
-#1396431369
-history 33
-#1396431453
-history -a
-screen -ls
-screen -r w_FLA0021_7 
-screen -dr w_FLA0018_7
-cd gf-contrib/drbean/business/stress/%STORY
- cd -
-gf -coding utf-8
-q
-cd gf-contrib/drbean/business/stress/cusp/
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
-ghci -i./:../:../../../
-cd -
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
-ghci -i./:../:../../../
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
-ghci -i./:../:../../../
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
-ghci -i./:../:../../../
-q
-cd gf-contrib
- cd -
-git status
-# git fetch upstream
-# git merge upstream/master
- git fetch upstream
-cd -
-git status | less
-git diff drbean/Transfer.hs
-git add drbean/Transfer.hs
-git commit -m Cusp,CUSP
-git log drbean/Transfer.hs
-git log drbean/conversation/work/dickson/Transfer.hs
 git diff -c 59ba 46b7
-git h diff 
-git help  diff 
 git diff -c 59ba HEAD
 git diff -c 59ba HEAD drbean/Transfer.hs
 git diff -c 59ba HEAD drbean/conversation/work/dickson/Transfer.hs
-git log drbean/conversation/work/dickson/Transfer.hs
 git diff -c aa55b HEAD drbean/conversation/work/dickson/Transfer.hs
 git diff -c aa55d HEAD drbean/conversation/work/dickson/Transfer.hs
-git status | less
+git diff 2e8cd2 b25f33d
 git diff drbean/Transfer.hs
-git add drbean/Transfer.hs
-git commit -m takeAnswer,yesorno
-git status | less
-git diff drbean/Transfer.hs
-git add drbean/Transfer.hs
-git commit -m upper_case,CUSP
-git diff drbean/Transfer.hs
-git status | less
-git add gf-contrib/drbean/business/stress/cusp/Tests.hs
-git add drbean/business/stress/cusp/Tests.hs
-git diff --staged
-git commit -m stands_test:upper_case,CUSP.quality_test
-git diff
-git add drbean/business/stress/cusp/Cusp{,I}.gf
-git add drbean/business/stress/cusp/LexCusp{,Eng}.gf
-git commit -m lack_of,stand_for,control_over
-git status | less
-git diff
-git add drbean/business/stress/cusp/Model.hs
-git add drbean/business/stress/cusp/Story_Interpretation.hs
-git commit -m R:performance.pred1,pred2:have,give,stand,lack.out:schooling
+git diff f3ff77 72bf5
+git fetch upstream
+git fetch upstream 
+git h diff 
+git help  diff 
+git log
+git log drbean/Transfer.hs
+git log drbean/conversation/work/dickson/Transfer.hs
+git merge upstream/master 
+git pull
 git push
-cd -
-git status | less
-git push
-q
-man bash
-man youtube-dl 
-q
-lftp drbean@sac.nuu.edu.tw
-lftp greg@web.nuu.edu.tw
-ls
-cd
-ls
-rm *.jpg
-rm lynxXXXX*
-rm lynxXXXX* -rf
-rm Screenshot\ from\ 2013-*
-ls Webcam/
-rm Webcam/*
-ls soundfiles/
-ls soundfiles/*
-rm soundfiles/*/*
-ls soundfiles/*
-ls
-ls Music/
-ls Music/*
-ls Music/*/*
-rm Music/*/*
-rm Music/*/*/*
-rm Music/*/*
-ls Music/*/*
-ls Music/*/
-rm Music/*/*
-ls Music/*/
-rm Music/*/*
-ls Music/*/
-ls Music/*/*
-ls
-ls Pictures/
-ls Pictures/docs
-ls edit
-ls edit/*
-rm edit/*/*
-ls edit/*
-rm ets.orig/ -rf
-ls eztravel/
-ls eztravel/*
-rm eztravel/*
-ls chatter/
-rm chatter/*
-rm chatter/* -rf
-ls bin
-ls fedora/
-rm fedora/*.iso
-ls
-rm conversation.html 
-ls dot
-ls firstbank/
-ls GF/
-lftp web.nuu.edu.tw
-q
-#1396399433
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-#1396402873
-ls
-#1396402875
-ls -al
-#1396402884
-svn mkdir bash_completion
-#1396403935
-su -c 'cp bash_completion/w /etc/bash_completion.d/w'
-#1396405547
-svn add bash_completion/w
-#1396405613
-svn ci -m /etc/completion.d bash_completion/
-#1396409916
-ls -al ~/.bashrc
-#1396409922
-ls -al ~/.bash_history 
-#1396409930
-less ~/.bash_history 
-#1396409956
-export HISTTIMEFORMAT='%m-%d '
-#1396409976
-history 3333 | ack create_exercise
-#1396417910
-cp bash_completion/w bash_completion/bett
-#1396418007
-svn st | grep '^\(A\|M\|D\C\)'
-#1396418013
-svn st | grep '^\(A\|M\|D\|C\)'
-#1396418024
-svn ci -m "league league_re letter_opt letter week vars"
-#1396418837
-su -c 'cp bash_completion/bett /etc/bash_completion.d/bett'
-#1396418877
-cp .bashrc ~/.bashrc
-#1396418922
-ls -al /etc/bash_completion.d/
-#1396418979
-su -c 'cp bash_completion/bett /etc/bash_completion.d/bett'
-#1396418992
-cp .bashrc ~/.bashrc
-#1396419081
-ack bett
-#1396422135
-cp .bashrc ~/.bashrc
-#1396422143
-su -c 'cp bash_completion/aca /etc/bash_completion.d/aca'
-#1396482327
-ls .*
-#1396482346
-ls ~/.*
-#1396482382
-rm -rf ~/.tw
-#1396482390
-rm -rf ~/.texlive2007
-#1396482393
-rm -rf ~/.texlive2008
-#1396482444
-rm -rf ~/.irssi/
-#1396482492
-rm -rf ~/.fontconfig/
-#1396482900
-ls -d .*
-#1396482927
-ls -d ~/.*
-#1396482963
-cd
-#1396482967
-rm .swo
-#1396482970
-rm .swp
-#1396483169
-find -mindepth 1 -maxdepth 1 '.*'
-#1396483182
-find . -mindepth 1 -maxdepth 1 '.*'
-#1396483223
-find . -mindepth 1 -maxdepth 1 -name '.*'
-#1396483260
-pwd
-#1396486746
-cd ..
-#1396486749
-su 
-#1396490318
-ls
-#1396490321
-q
-man duplicity
-man ls
-man duplicity
-man show-installed 
-q
-locate UseGetOpt.sh
-ls /etc/bash_completion.d/
-ls /etc/bash_completion.d/dzil 
-less /etc/bash_completion.d/dzil 
-less /etc/bash_completion.d/youtube-dl 
-ls /etc/bash_completion.d/
-less /etc/bash_completion.d/git
-ls /etc/bash_completion.d/
-less /etc/bash_completion.d/dzil 
-less /etc/bash_completion.d/youtube-dl 
-ls /etc/bash_completion.d/ -al
-less /etc/bash_completion.d/cabal
-q
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/.bash_profile
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-# export HISTTIMEFORMAT='%m-%d '
-svn st | grep '^\(A\|M\|D\C\)'
-svn st | grep '^\(A\|M\|D\|C\)'
-svn st bash_completion/
-svn add bash_completion/bett
-svn ci -m csorlx bash_completion/bett
-svn cp bash_completion/bett bash_completion/aca
-cp .bashrc ~/.bashrc
-svn st | grep '^\(A\|M\|D\|C\)'
-svn diff .screen/
-svn ci -m "quitter, loser, winner: grade_bett.pl -l FLA0021 -q 3 -o 1 -w 2" .screen/app.rc
-svn st | grep '^\(A\|M\|D\|C\)'
-svn diff
-svn st | grep '^\(A\|M\|D\|C\)'
-svn ci -m tech,self,sport,FLA0027 bash_completion/aca
-svn diff .bashrc
-svn ci -m FLA0027 .bashrc
-svn diff
-svn ci -m \$MOD,\$STORY
-svn st | grep '^\(A\|M\|D\|C\)'
-q
-lftp pl824.nas921.nara.nttpc.ne.jp
-lftp drbean@pl824.nas921.nara.nttpc.ne.jp
-locate netrc
-locate .netrc
-lftp pl824.nas921.nara.nttpc.ne.jp
-lftp mai@pl824.nas921.nara.nttpc.ne.jp
-q
-v
-q
-dot
-q
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-v -O $(<~/dot/gf_files.txt)
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-v -O $(<~/dot/gf_files.txt)
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-v -O $(<~/dot/gf_files.txt)
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-v -O $(<~/dot/gf_files.txt)
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-v -O $(<~/dot/gf_files.txt)
-git status | less
-cd -
-q
-/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html
-q
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html
-q
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html
-q
-/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html
-q
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html
-q
-cd gf-contrib
- cd -
+git reset HEAD gf-contrib/drbean/business/stress/cusp/Tests.hs
+git rm gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
 git status
-# git fetch upstream
-# git merge upstream/master
 git status | less
-cd -
-git status | less
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html
-/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html
-cd gf-contrib/drbean/business/stress/cusp/
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
-ghci -i./:../:../../../
-cd gf-contrib/drbean/business/stress/%STORY
- cd -
-gf -coding utf-8
-GF -c business -t stress -s cusp -m Cusp
-q
-#1396431493
+gnome-terminal
+grading -l AFBB32 -s 2 -t parents -s biodad -f 0
+grep elinks sac_f19_installed.txt 
+grep lynx sac_f19_installed.txt 
+grep perl sac_f19_installed.txt 
+history
+history -a
 history -d 12
-#1396489029
- sudo systemctl stop httpd.service
-#1396490641
-svn st rc | grep '^\(A\|M\|D\|C\)'
-#1396490648
-svn st | grep '^\(A\|M\|D\|C\)'
-#1396490651
-svn diff
-#1396490681
-svn ci -m league:-l.loser:-o
-#1396490689
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-svn st rc | grep '^\(A\|M\|D\|C\)'
-svn st | grep '^\(A\|M\|D\|C\)'
-svn diff
-svn ci -m h3_tag
-man history
 history -d 946
 history -d 947
 history 12
-man history
-q
- v script
-q
-cd /var/www/cgi-bin/bett
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s cusp && perl script/characters.pl -s cusp
-./bin/Transfer_cusp 
-svn up
-svn log -r HEAD lib/Bett/Controller/Play.pm
-svn log  lib/Bett/Controller/Play.pm | less
-./bin/Transfer_cusp 
+history 33
+history 3333 | ack create_exercise
+host cpan.mirror.choon.net
+ifconfig
+irc
+irfc
 is CUSP difficult
-./bin/Transfer_cusp 
+latex
+less .screen/app.rc
+less .xmonad/xmonad.hs
+less /etc/alternatives/links
+less /etc/bash_completion.d/cabal
+less /etc/bash_completion.d/dzil 
+less /etc/bash_completion.d/git
+less /etc/bash_completion.d/youtube-dl 
+less /etc/passwd
+less /etc/xdg/surfraw/conf 
+less /usr/share/doc/postgresql/README.rpm-dist 
+less ChangeLog 
+less UltiSnips/haskell.snippets 
 less bett.conf
-q
+less business.html
+less file:///usr/share/doc/postgresql/README.rpm-dist 
+less gf.cabal
+less league.yaml
+less lib/src/english/NounEng.gf 
+less sac_f19_installed.txt 
+less surfraw/conf 
+less ~/.bash_history 
+less ~/.bash_profile
+less ~/.bashrc
+lftp drbean@pl824.nas921.nara.nttpc.ne.jp
+lftp drbean@sac.nuu.edu.tw
+lftp greg@web.nuu.edu.tw
+lftp mai@pl824.nas921.nara.nttpc.ne.jp
+lftp pl824.nas921.nara.nttpc.ne.jp
+lftp web.nuu.edu.tw
+lftp web.nuu.edu.twq
+links
+links /usr/share/doc/postgresql/html/index.html 
+links google.com
+links http://localhost/cgi-bin/aca/script/aca_cgi.pl/login?exercise=sport
+links http://localhost/cgi-bin/bett/script/bett_cgi.pl/login?exercise=cusp
+links http://localhost/cgi-bin/dic/script/dic_cgi.pl/login?exercise=biodad
+links http://localhost/cgi-bin/dic/script/dic_cgi.pl/login?exercise=biomom
+links http://localhost/cgi-bin/dic/script/dic_cgi.pl/login?exercise=gourlay-2
+locate .netrc
+locate UseGetOpt.sh
+locate netrc
+locate xelatex
+ls
+ls 
+ls -al
+ls -al /etc/bash_completion.d/
+ls -al ~/.bash_history 
+ls -al ~/.bashrc
+ls -d .*
+ls -d ~/.*
+ls .*
+ls /etc/alternatives/
+ls /etc/alternatives/links
+ls /etc/bash_completion.d/
+ls /etc/bash_completion.d/ -al
+ls /etc/bash_completion.d/dzil 
+ls /etc/passwd
+ls /usr/share/doc/postgresql/html/index.html 
+ls /var/lib/znc/.znc
+ls GF/
+ls Music/
+ls Music/*
+ls Music/*/
+ls Music/*/*
+ls Pictures/
+ls Pictures/docs
+ls UltiSnips/haskell.snippets 
+ls Webcam/
+ls beans/
+ls bin
+ls chatter/
+ls classwork
+ls dot
+ls drbean/business/stress/cusp/
+ls drbean/business/stress/cusp/Transfer.hs
+ls edit
+ls edit/*
+ls eztravel/
+ls eztravel/*
+ls fedora/
+ls firstbank/
+ls homework classwork exam/*
+ls soundfiles/
+ls soundfiles/*
+ls surfraw
+ls surfraw/conf 
+ls vim
+ls ~/.*
+ls ~/.svk
+ls ~/.svk/local
+ls ~/.znc
+ls ~/.znc/configs/ -al
+ls ~/.znc/modules/
+ls ~/.znc/modules/ -al
+lynx
+man IO::All
+man Net::Ping
+man alternatives
+man bash
+man bitlbee_selinux
+man complete
+man duplicity
 man history
-history
+man httpd-selinux
+man httpd_selinux
+man irc_selinux
+man iw
+man ls
+man perlfaq
+man ping
+man show-installed 
+man youtube-dl 
+man yum
+mate-terminal
+mate_erminal
+mkdir sr
+mv cusp.tmpl gourlay-1.tmpl
+mv sdf cusp.tmpl
+nq
+pages -c business -s gourlay-1
+pages -t business -s gourlay-1
+perl ../../class/forms/conversation.pl -l AFBB32 -s  -r 7 -x story -p A -t Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window && xelatex classwork//conversation.tex && evince conversation.pdf
+perl ../../class/forms/conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && xelatex classwork/2/conversation.tex && evince conversation.pdf
+perl script/update_players.pl FLA0027 -r 6
+perldoc -f -f
+ping --help
+ping 210.153.142.56
+pwd
 q
-#1396419158
-export HISTTIMEFORMAT='%m-%d '
-#1396419158
-# perl script/loadYAMLid.pl ~/class/business//bett.yaml cusp
-#1396419158
-# perl script/create_exercise.pl -t Non-competitive -g business -i cusp -d "" cusp
-#1396419158
-# history -a
-#1396419158
-# export HISTTIMEFORMAT=
-#1396490708
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-svn st | grep '^\(A\|M\|D\|C\)'
-svn diff
-q
-cd /var/www/cgi-bin/dic
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s  && perl script/characters.pl -s 
-#1396490739
-export HISTTIMEFORMAT='%m-%d '
-#1396490739
-# sudo systemctl stop httpd.service
-#1396490739
-# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x  > ~/022//homework.yaml
-#1396490739
-# perl script/delete_exercise.pl -i  -g conversation
-#1396490739
-# sudo systemctl start httpd.service
-#1396490739
-# less ~/022//homework.yaml
-#1396490739
-# mv ~/022//homework.yaml ~/022//homework/.yaml
-#1396490739
-# svn add ~/022//homework/.yaml
-#1396490739
-# svn ci -m  ~/022//homework/.yaml
-#1396490739
-svn st -q ~/022//homework
-#1396490739
-# history -a
-#1396490739
-# export HISTTIMEFORMAT=
-#1396490739
-export HISTTIMEFORMAT='%m-%d '
-#1396490739
-# perl script/loadYAMLid.pl ~/class/conversation//dic.yaml 
-#1396490739
-# perl script/create_exercise.pl  
-#1396490739
-# history -a
-#1396490739
-# export HISTTIMEFORMAT=
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-svn st | grep '^\(A\|M\|D\|C\)'
-cd /var/www/cgi-bin/bett
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s  && perl script/characters.pl -s 
-#1396490775
-export HISTTIMEFORMAT='%m-%d '
-#1396490775
-# sudo systemctl stop httpd.service
-#1396490775
-# perl script/grade_bett.pl -l  -q 3 -o 1 -w 2 -x  > ~/022//homework.yaml
-#1396490775
-# perl script/delete_exercise.pl -i  -g tech
-#1396490775
-# sudo systemctl start httpd.service
-#1396490775
-# less ~/022//homework.yaml
-#1396490775
-# mv ~/022//homework.yaml ~/022//homework/.yaml
-#1396490775
-# svn add ~/022//homework/.yaml
-#1396490775
-# svn ci -m  ~/022//homework/.yaml
-#1396490775
-svn st -q ~/022//homework
-#1396490775
-# history -a
-#1396490775
-# export HISTTIMEFORMAT=
-#1396490775
-export HISTTIMEFORMAT='%m-%d '
-#1396490775
-# perl script/loadYAMLid.pl ~/class/tech//bett.yaml 
-#1396490775
-# perl script/create_exercise.pl -t Non-competitive -g tech -i  -d "" 
-#1396490775
-# history -a
-#1396490775
-# export HISTTIMEFORMAT=
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-svn st | grep '^\(A\|M\|D\|C\)'
-cd /var/www/cgi-bin/aca
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s  && perl script/characters.pl -s 
-#1396490793
-export HISTTIMEFORMAT='%m-%d '
-#1396490793
-# sudo systemctl stop httpd.service
-#1396490793
-# perl script/grade_aca.pl -l  -q 3 -o 1 -w 2 -x  > ~/022//homework.yaml
-#1396490793
-# perl script/delete_exercise.pl -i  -g tech
-#1396490793
-# sudo systemctl start httpd.service
-#1396490793
-# less ~/022//homework.yaml
-#1396490793
-# mv ~/022//homework.yaml ~/022//homework/.yaml
-#1396490793
-# svn add ~/022//homework/.yaml
-#1396490793
-# svn ci -m  ~/022//homework/.yaml
-#1396490793
-svn st -q ~/022//homework
-#1396490793
-# history -a
-#1396490793
-# export HISTTIMEFORMAT=
-#1396490793
-export HISTTIMEFORMAT='%m-%d '
-#1396490793
-# perl script/loadYAMLid.pl ~/class/tech//aca.yaml 
-#1396490793
-# perl script/create_exercise.pl  
-#1396490793
-# history -a
-#1396490793
-# export HISTTIMEFORMAT=
+re.pl --rcfile ../rc/g.rc
+re.pl --rcfile ./ping.rc
+rm *.jpg
+rm -rf ~/.fontconfig/
+rm -rf ~/.irssi/
+rm -rf ~/.texlive2007
+rm -rf ~/.texlive2008
+rm -rf ~/.tw
+rm .swo
+rm .swp
+rm Music/*/*
+rm Music/*/*/*
+rm Screenshot\ from\ 2013-*
+rm Webcam/*
+rm chatter/*
+rm chatter/* -rf
+rm conversation.html 
+rm drbean/business/stress/cusp/Transfer.hs
+rm edit/*/*
+rm ets.orig/ -rf
+rm eztravel/*
+rm fedora/*.iso
+rm lynxXXXX*
+rm lynxXXXX* -rf
+rm sample_command sampler
+rm soundfiles/*/*
+screen
+screen  -ls
+screen -GF_jackson
+screen -c media -s pope -t news -l FLA0027 -r 5 -c Ctest
+screen -dr GF_jackson
+screen -dr GF_jackson 
+screen -dr GF_siar
+screen -dr bett
+screen -dr conversation
+screen -dr dic_call
+screen -dr media
+screen -dr speaking 
+screen -dr swiss
+screen -dr w_FLA0018_7
 screen -ls
+screen -r GF
+screen -r GF_jackson
+screen -r GF_jackson 
+screen -r GF_javckson
+screen -r GF_siar
+screen -r GF_siar 
+screen -r aca_FLA0027 
+screen -r beans 
+screen -r bett
 screen -r bett 
-dic -c conversation 
-bett -c tech
-aca -c tech
-q
-svn st -q
- svn log -vr BASE:HEAD
-cd ./parents && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_html/parents && mput html/*.html && qui' && cd -
-# bingo.pl -n 15 -s biodad -f 0 parents && xelatex parents/bingo_biodad_0.tex && evince bingo_biodad_0.pdf
-# cp bingo_biodad_0.pdf /run/media/drbean/DIE2GV1/
-# lpr bingo_biodad_0.pdf -P kyocera
-svn st | grep '^\(A\|M\|D\|C\)'
-# perl ../cclass/cards.pl ./parents && xelatex ./$TOPIC/jigsaw_biodad_0.tex && evince jigsaw_biodad_0.pdf
-# perl ../cclass/cards.pl ./parents && xelatex ./$TOPIC/quiz_biodad_0.tex && evince quiz_biodad_0.pdf
-svn st -q
- svn log -vr BASE:HEAD
-cd ./stress && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_html/stress && mput html/*.html && qui' && cd -
-# bingo.pl -n 15 -s cups -f 0 stress && xelatex stress/bingo_cups_0.tex && evince bingo_cups_0.pdf
-# cp bingo_cups_0.pdf /run/media/drbean/DIE2GV1/
-# lpr bingo_cups_0.pdf -P kyocera
-svn st | grep '^\(A\|M\|D\|C\)'
-svn diff
+screen -r business 
+screen -r class 
+screen -r college 
+screen -r comp
+screen -r conversation 
+screen -r csfp
+screen -r csfp 
+screen -r dic_call 
+screen -r dic_conversation 
+screen -r dic_media 
+screen -r dic_speaking 
+screen -r dot
+screen -r dot 
+screen -r exam_business 
+screen -r exam_media 
+screen -r gf
+screen -r irc
+screen -r media
+screen -r media 
+screen -r pages_conversation 
+screen -r pages_media 
+screen -r pages_speaking 
+screen -r rc
+screen -r s_1J0 
+screen -r s_2L1 
+screen -r s_3K0 
+screen -r s_FLA0016 
+screen -r s_FLA0027 
+screen -r s_GL00015
+screen -r s_GL00015 
+screen -r s_GL00016
+screen -r s_GL00016 
+screen -r sound_conversation
+screen -r sound_conversation 
+screen -r sound_media 
+screen -r sound_speaking 
+screen -r speaking 
+screen -r swiss
+screen -r tech
+screen -r topics_ 
+screen -r topics_attitudes 
+screen -r w_
+screen -r w_1040_6 
+screen -r w_2L1_6 
+screen -r w_AFB1J0_7 
+screen -r w_FLA0021_7 
+screen -r w_FLA0027_8 
+screen -r w_GL00016_6 
+screen -r web
+screen -rc
+screen -x GF
+screen -x pages
+seats
+sound -c 1040 -d speaking
+sound -c conversation -d conversation
+sound -c conversation -d storycorps
+sound -c media -d media
+sound -c self-intro -d self-intro
+sound -c speaking -d speaking
+sound -d conversation -c conversation
+speaking -s '' -t ''
+speaking -t '' -s ''
+speaking -t attitudes -s ''
+speaking -v ''
+speaking -v '' -t health 
+spir
+sr W 
+sr W file:///usr/share/doc/ghc/html/libraries/haskeline-0.7.0.3/src/System-Console-Haskeline-Prefs.html
+sr W file:///usr/share/doc/postgresql-9.2.6/html/index.html 
+sr W file:///usr/share/doc/postgresql/README.rpm-dist 
+sr W file:///usr/share/doc/postgresql/html/index.html 
+sr W google.com
+sr W grammaticalframework.org/irc/
+sr W haskell.org/hoogle
+sr W hayoo.fh-wedel.de
+sr W hayoo.weidel-u.de
+sr W hayoo.wiedel-u.de
+sr W hayoo.wiedel.de
+sr W hbrouwer.github.io/pdrt-sandbox
+sr W http://hbrouwer.github.io/pdrt-sandbox/
+sr W http://localhost:6667
+sr W http://pl818.nas921.nara.nttpc.ne.jp
+sr W http://ww.w.ksby.com/news/
+sr W http://www.bbc.com/autos/story/20141030-to-honk-or-not-to-honk
+sr W impactseries.com
+sr W lambda-the-ultimate
+sr W localhost:6665
+sr W localhost:6666
+sr W localhost:6667
+sr W pl824.nas921.nara.nttpc.ne.jp
+sr W sql insert
+sr W znc.in
+sr archive http://ww.w.ksby.com/news/slo-high-teacher-speaks-to-ksby-from-jail-says-he-never-intended-to-hurt-anyone/
+sr google  アトピー性アレルギー 秋
+sr google "5 dollars are"
+sr google "5 dollars is"
+sr google "This Pope knows a lot of languages, but I don't think  +HTML is one of them."
+sr google "a take"
+sr google "at the circus" kenny baker florence rice
+sr google "bill o'reilly" freak out
+sr google "brian miller" san luis obispo
+sr google "clip under the ear"
+sr google "connection refused" firewall
+sr google "deborah dimasi"
+sr google "foster parents"
+sr google "georg kreisel"
+sr google "getting back to nature"
+sr google "health care" thailand
+sr google "larry wall" "past masters"
+sr google "link grammar" framenet
+sr google "neil lebovits"
+sr google "neural network" nlp
+sr google "next Thursday" meaning
+sr google "older I get" wise parents
+sr google "online commerce" questions
+sr google "peter nelson" korea
+sr google "peter nelson" korea "chungang university" "sydney university"
+sr google "play us out"
+sr google "show-installed"
+sr google "sue adam"
+sr google "vertical market" definition
+sr google "vertical marketplace"
+sr google "william kendall"
+sr google -i "at the circus" marx brothers
+sr google -i 9-21 earthquake
+sr google -i teleprompter
+sr google 101 error net::ERR_CONNECTION_RESET
+sr google adoption questions
+sr google america cup 2013
+sr google america cup 2014
+sr google at the circus
+sr google atopi allergy
+sr google audacity snap
+sr google australia free medical care 1970s
+sr google baseball canada
+sr google bash regex
+sr google bash tab completion
+sr google ben ainslie
+sr google beouf
+sr google bill o\'reilly
+sr google biomom podcast
+sr google bitlbee port bouncer
+sr google boeuf
+sr google canada
+sr google canada bell.ca
+sr google carbon tax
+sr google chinese auto honk
+sr google cil selinux
+sr google clonezilla
+sr google cricket canada
+sr google day richard "you teach this unit, it's a good idea to keep in mind that not everyone"
+sr google dentist "strong arm"
+sr google dentist arm
+sr google dentist strength
+sr google dog deafness
+sr google earthquake training 
+sr google ebay taiwan competitors
+sr google efnet servers
+sr google esl exercise questions
+sr google esl question parenting
+sr google etckeeper
+sr google etckeeper svn
+sr google extinct animals taiwan
+sr google fall
+sr google fall autumn allergy
+sr google fedora change window manager
+sr google flying man uk pilots
+sr google framenet
+sr google framenet theme "semantic role"
+sr google freenode servers
+sr google freenode servers ssl port
+sr google gamergate
+sr google gas tax
+sr google haskell cabal 
+sr google haskell one-tuple
+sr google haskell record syntax
+sr google haskell tuple
+sr google haskell viewpatterns
+sr google haskell where-clause
+sr google hayoo
+sr google herman woman name
+sr google hermione pronunciation
+sr google holocene
+sr google hotmail
+sr google http://www.fosterpodcast.com
+sr google hypernym
+sr google infinite type haskell
+sr google install alternatives
+sr google job interview questions
+sr google kickstart fedora
+sr google kreisel "william howard"
+sr google kreisel howard
+sr google kriesel howard
+sr google ksby "brian miller"
+sr google ksby news
+sr google kyoto protocol
+sr google latex list description item line
+sr google levin verb classes
+sr google massey university
+sr google moose mop load_class deprecated
+sr google motorcycle sales websites
+sr google natural disaster questions esl
+sr google obamacare
+sr google older get parents wiser
+sr google older get parents wiser were
+sr google online operation questions
+sr google online site factor success
+sr google onthemedia.org
+sr google optind function bash options
+sr google pdrt-sandbox
+sr google perceptrons minsky papert
+sr google pin pen confusion percentage
+sr google pin pen merger percentage americans
+sr google pin pen percentage
+sr google pope twitter
+sr google poset
+sr google proposition crime
+sr google propositioning crime
+sr google propositioning prostitution
+sr google publicly publically
+sr google raw module znc
+sr google sal dimasi
+sr google salt "hair growth"
+sr google setsebool persist reboot
+sr google shia labeouf
+sr google show-installed
+sr google site:archive.org 'http://ww.w.ksby.com/news/slo-high-teacher-speaks-to-ksby-from-jail-says-he-never-intended-to-hurt-anyone/'
+sr google site:archive.org http://ww.w.ksby.com/news/slo-high-teacher-speaks-to-ksby-from-jail-says-he-never-intended-to-hurt-anyone/
+sr google site:bugzilla.org alternatives drbean
+sr google site:bugzilla.org alternatives fedora
+sr google site:cbsnews.com 60 minutes
+sr google site:fedoraproject.org domain name set
+sr google site:fedoraproject.org domainname
+sr google site:fedoraproject.org setting ip address
+sr google site:fosterpodcast.com birth mother
+sr google site:fosterpodcast.com her
+sr google site:fosterpodcast.com herm
+sr google site:fosterpodcast.com herman
+sr google site:fosterpodcast.com hermine
+sr google site:impactseries.com "death penalty"
+sr google site:impactseries.com "environment"
+sr google site:impactseries.com health
+sr google site:jp atopy allergy
+sr google site:npr.org storycorps
+sr google sourcesafe
+sr google sql insert
+sr google steinbeck banned library
+sr google systemd runlevel
+sr google thematic roles 
+sr google thematic roles  framenet
+sr google thematic roles  verbnet
+sr google torvalds vcs linux git
+sr google twitter beancounterbean
+sr google unix signals sigkill sigquit sigterm
+sr google utf-8 018e
+sr google utf-8 2203
+sr google utf-8 2227
+sr google vertical market motorcycle
+sr google vim match cr nl
+sr google wallace o\'reilly 60 minutes
+sr google wayback machine http://ww.w.ksby.com/news/slo-high-teacher-speaks-to-ksby-from-jail-says-he-never-intended-to-hurt-anyone/
+sr google ways improve career "business wire" lebovits ajilon
+sr google wingsuit
+sr google world tallest dog
+sr google zack brown potato salad
+sr google 脊柱の腰椎
+sr wikipedia Discourse Representation Theory
+sr wikipedia at the circus
+sr wikipedia confucius teaching fish day
+sr wikipedia douglas adams fish
+sr wikipedia kriesel
+sr wikipedia lambda calculus 
+sr wikipedia medical insurance system
+sr wikipedia of mice and men
+sr wikipedia peter geach
+sr wikipedia thomas alva edison
+sr wikipedia us medicare
+sr wikipedia william howard
+sr youtube  o\'reilly 60 minutes
+sr youtube "brian miller"
+sr youtube "brian miller" san luis obispo
+sr youtube "dr bean"
+sr youtube "dr bean" self-introduction
+sr youtube "neil lebovits"
+sr youtube beancounterbean
+sr youtube counterbean
+sr youtube counterbean self-introduction
+sr youtube hills alive sound music
+sr youtube oliver pan self-introduction
+sr youtube oliver self-introduction
+sr youtube wallace o\'reilly 60 minutes
+ssh  mai@pl818.nas921.nara.nttpc.ne.jp
+ssh drbean@210.60.168.195
+ssh drbean@pl824.nas921.nara.nttpc.ne.jp
+ssh drbean@pl827.nas921.nara.nttpc.ne.jp
+ssh drbean@sac.nuu.edu.tw
+ssh freeshell.org
+su
+su 
+su -
+su - postgres
+su - znc
+su -c "find /var/lib/znc -name '*.pem'"
+su -c 'chown drbean:drbean znc'
+su -c 'chown drbean:swiss ./comp/ -R'
+su -c 'cp bash_completion/aca /etc/bash_completion.d/aca'
+su -c 'cp bash_completion/bett /etc/bash_completion.d/bett'
+su -c 'cp bash_completion/w /etc/bash_completion.d/w'
+su -c 'cp surfraw/conf /etc/xdg/surfraw/conf'
+su -c 'find /var/lib/znc -name \'*.pem\''
+su -c 'make install'
+su -c reboot
+su chown drbean:drbean
+su chown drbean:drbean .
+su chown drbean:drbean znc
+su chown root:root .
+sudo ./Build install
+sudo cd /var/www/cgi-bin/
+sudo chown -R drbean
+sudo chown drbean:drbean .
+sudo chown root:root .
+sudo dzil install
+sudo dzil install 
+sudo dzil test
+sudo git install
+sudo su - postgres
+surf
+surf 
+surff
+svn add ./1/{round,scores}.yaml
+svn add 1/g.yaml 
+svn add 1/round.yaml
+svn add bash_completion/bett
+svn add bash_completion/w
+svn add classwork/3.yaml
+svn add disaster/slides.txt
+svn add exercise/
+svn add exercise/slides.txt
+svn add online/slides.txt
+svn ann lib/Grades.pm | less
+svn cat parents/slides.vroom -r 967
+svn ci -m 
+svn ci -m \$MOD,\$STORY
+svn ci -m  2010.use_paper/script_files/score_comp.pl script_files/score_comp.pl 
 svn ci -m "3 questions about CUSP and X at NTU"
-q
-# perl ../cclass/cards.pl ./stress && xelatex ./$TOPIC/jigsaw_cups_0.tex && evince jigsaw_cups_0.pdf
-# perl ../cclass/cards.pl ./stress && xelatex ./$TOPIC/quiz_cups_0.tex && evince quiz_cups_0.pdf
+svn ci -m "league league_re letter_opt letter week vars"
+svn ci -m "open v;:e ^D"
+svn ci -m "quitter, loser, winner: grade_bett.pl -l FLA0021 -q 3 -o 1 -w 2" .screen/app.rc
+svn ci -m /etc/completion.d bash_completion/
+svn ci -m 022 rc/score_news.rc
+svn ci -m 022,Lingua::Han::PinYin.encode_ename,char rc/school_data.rc
+svn ci -m 022,session:1 rc
+svn ci -m 022,split_on_space_newline_unsupported_in_bashrc
+svn ci -m 022/LEAGUE/exam
+svn ci -m 031
+svn ci -m 031 paper/script_files/score_comp.pl
+svn ci -m 031 web/compcomp.conf
+svn ci -m 031 web/lib/CompComp/Model/SwissDB.pm
+svn ci -m 031,work,motivation,trinka,bruno
+svn ci -m 1-2,4-2,6-1 session/
+svn ci -m 100405442:absent 3024
+svn ci -m 1040
+svn ci -m 19_groups,incl.Turquoise FLA0027/classwork/2/groups.yaml 
+svn ci -m 20_groups:Turquoise,Window AFBB32/classwork/2/groups.yaml 
+svn ci -m 2L1
+svn ci -m 4-1^1-1:Jacky.out:5-1,6-1 session/2
+svn ci -m 5-2,6-2.Cindy,Sharon,Una,Lucy,Ada session/2
+svn ci -m 9-21_interview,roleplay
+svn ci -m Ching^Lisa
+svn ci -m Config::General^YAML web/script/updateplayers.pl
+svn ci -m Easy_Listening:Unit_3 exercise/
+svn ci -m Emma:Window-Beige AFBB32/
+svn ci -m FLA0027 .bashrc
+svn ci -m GF:course,topic,story,module_options.GL00019:B_tables .bashrc
+svn ci -m LogicalForm^Representation .screen/
+svn ci -m Louanna league.yaml session/
+svn ci -m Louanna:week_2,3,perhaps.Sherry^YanJing.Winnie^Winny league.yaml session/
+svn ci -m MyAbstract,etc .screen/gf.rc
+svn ci -m Net::Ping::External rc/ping.rc
+svn ci -m Rita:absent AFBB32/exam/1/g.yaml
+svn ci -m TODO:VIEW=topic:-course .screen/exam_prep.rc
+svn ci -m Turquoise FLA0027/classwork/3.yaml
+svn ci -m Winny league.yaml session/
+svn ci -m YaTing league.yaml session/
+svn ci -m abreu classwork/
+svn ci -m abreu,dickson:no_week_2:all_3 AFBB32/classwork/3.yaml
+svn ci -m add^mkdir .screen/
+svn ci -m adoption storycorps
+svn ci -m ambiguous:session^groupwork lib/Grades/Groupwork.pm
+svn ci -m back_out_r1996.classwork:scores.session:beancans
+svn ci -m back_out_r1997:wrpm script_files/sum_g1_g2.pl 
+svn ci -m biodad_by_drbean parents/
+svn ci -m biodad_by_drbean storycorps/content.yaml
+svn ci -m candidate_7:reformat,simplify
+svn ci -m candidate_7:who_does_what:A,B_know,tell_C careers/cards.yaml
+svn ci -m candidate_8:who_does_what:A,B_know,tell_C careers/cards.yaml
+svn ci -m candidate_9 careers/cards.yaml
+svn ci -m careers:candidates:7-9.my_job,my_tips exam/
+svn ci -m careers:candidates:7-9.my_job,my_tips exam/1
+svn ci -m cd_LEAGUE.chcon_public_content_rw_t_comp.chown_drbean:swiss_comp
+svn ci -m classMax:4^3 classwork/
+svn ci -m classwork^session:groups .screen/class.rc
+svn ci -m comment_out:D_identifier,role_card_spoiling_blank tmpl/jigsaw.tmpl
+svn ci -m comp:mkdir,chcon:public_content_rw_t
+svn ci -m csorlx bash_completion/bett
+svn ci -m dickson:champions,front classwork/1.yaml
+svn ci -m directory_above/exam.svn_add:g2,round,scores.yaml .screen/grading.rc
+svn ci -m dog,kiss,potato cards.yaml
+svn ci -m douglas 2040/classwork/4.yaml
+svn ci -m ex:courses,TODO:VIEW=topic:-course.gr:1040 .bashrc
+svn ci -m exam:attitudes.money,health
+svn ci -m exam_prep:college .bashrc
+svn ci -m for_cloze_formatting,etc,port_slides.vroom,add_market_place_qns online/slides.txt
+svn ci -m freakout dic.yaml
+svn ci -m freakout media/content.yaml
+svn ci -m gf_files.txt_alternatives.screen_2,3:COURSE,TOPIC,STORY,MOD_env_vars .screen/gf.rc
+svn ci -m good/bad:leads,headlines,time_references.lead_in/definite_articles.news_items.o_reilly_cloze:slides.vroom slides.txt
+svn ci -m group,groupwork.out:4_names league.yaml
+svn ci -m group,groupwork.out:Betty,Elvira,Lucia,Samantha,Mira league.yaml
+svn ci -m group:session,groupwork:classwork t/emile
+svn ci -m group_Martin:3 3024/classwork/3.yaml
+svn ci -m groupworkdirs:classwork^session lib/Grades.pm
+svn ci -m groupworkdirs^beancandirs:classwork^session seats/script_files/teamseat.pl
+svn ci -m h3_tag
+svn ci -m illegals ~/031/FLA0027/homework/4.yaml
+svn ci -m include_tmpl:io
+svn ci -m include_tmpl_type:file:\$id.tmpl
+svn ci -m indent_grades:valid_yaml homework/1.yaml
+svn ci -m international_marriage,my_character  exam/
+svn ci -m international_marriage,my_character  exam/1
+svn ci -m iteslj:adoption_questions parents/
+svn ci -m iteslj_parenting_questions parents/slides.txt
+svn ci -m jackson:all_3 AFBB32/classwork/4.yaml
+svn ci -m lead_paragraph_examples,trustworthy_media_from_vroom.exam_1_news slides.txt
+svn ci -m league:-l.loser:-o
+svn ci -m made_in_america:champions,front classwork/2.yaml
+svn ci -m marketplace_questions online/
+svn ci -m marriage:0,1,2,3:akane,lucas.tomoko,carlos.drbean,yoko.whoopi,ted cards.yaml
+svn ci -m marriage:week_6  exam/1
+svn ci -m merits_calculation=sum_questions,answers classwork/{1,2}.yaml
+svn ci -m mkdir_TOPIC .screen/course.rc
+svn ci -m money:plus_cleaned-up_version dic.yaml
+svn ci -m newpage:separate:ABC_page,exam:printing,web_classwork tmpl/jigsaw.tmpl
+svn ci -m no_env_vars gf_files.txt
+svn ci -m not_directory_above .screen/
+svn ci -m oldquestion
+svn ci -m oliver_dictation:all_3q 2040/
+svn ci -m out:3-2 classwork/2.yaml
+svn ci -m out:Rick league.yaml
+svn ci -m out:杜珮瑜 FLA0027/league.yaml
+svn ci -m out:鍾尚軒 AFBB32/league.yaml
+svn ci -m out:陳弘翊 2040/league.yaml
+svn ci -m out_5 league
+svn ci -m out_5 league.yaml
+svn ci -m pdrt-sandbox_tutorials .screen/csfprc
+svn ci -m perhaps:4-2+8-1.Han session/2/
+svn ci -m perhaps:4-2+8-1.Han session/2/groups.yaml 
+svn ci -m perhaps_week_3,ie,4 session/
+svn ci -m pope:twitter
+svn ci -m print_use_jigsaw_cards:top_3rd_page_avoids_bottom_A4_printer_cut_off jigsaw.tmpl
+svn ci -m published session/2
+svn ci -m questions,texts,merits classwork/1.yaml
+svn ci -m ranking:debbie+nikola careers/dic.yaml
+svn ci -m ranking:debbie,nikola
+svn ci -m revert^mkdir
+svn ci -m rework_r1997:wrong_commit_message.Iff_exercise=comp_write_g2.yaml script_files/sum_g1_g2.pl 
+svn ci -m session:2:6 AFB1J0/league.yaml
+svn ci -m stories:drbean.essays:work,tip_beliefs.candidate_7:who_does_what:A,B_know,tell_C careers/slides.vroom
+svn ci -m stuff_v.cp_~/media.TODO:TOPIC:-COURSE .screen/exam_prep.rc
+svn ci -m svn_add_ROUND,yaml_files .screen/
+svn ci -m svn_mkdir_exam .screen/setup.rc
+svn ci -m tech,self,sport,FLA0027 bash_completion/aca
+svn ci -m twitter  AFB1J0/homework/5.yaml
+svn ci -m twitter_people_questions AFB1J0/classwork/6.yaml
+svn ci -m twitter_retweet:Peggy,Sherry,Betty_mistakes AFB1J0/homework/6.yaml
+svn ci -m typo:likes_telling careers/
+svn ci -m ungrouped:out FLA0027/classwork/1.yaml
+svn ci -m web.nuu .screen/dotrc
+svn ci -m work exam/
+svn ci -m work exam/1
+svn ci -m writing_leads,pope,week_6_questions,7,8_news slides.txt
+svn ci -m yachting FLA0027/classwork/6.yaml
+svn ci .screen/course.rc -m lpr_total_dictation:TOPIC/dic_STORY.pdf
+svn ci .screen/exam_prep.rc -m lpr_TOPIC/quiz_STORY_FORM.pdf.lpr_TOPIC/questionsA5.pdf
+svn ci web/root/src/assistants.tt2 -m Absentees^Assistants
+svn co file:///home/drbean/.svk/local/scratch/aca
+svn co file:///home/drbean/.svk/local/scratch/speaking/ self-intros
+svn co http://svn.openfoundry.org/bett/trunk bett/
+svn co http://svn.openfoundry.org/dic/trunk dic
+svn cp bash_completion/bett bash_completion/aca
+svn cp branch/test/ tags/test/3
+svn create_groups.pl -s 2 -n 3 | sponge groups.yaml
+svn diff
+svn diff 
+svn diff -c 1997 script_files/sum_g1_g2.pl | less
+svn diff -c 3660 tmpl/jigsaw.tmpl
+svn diff -r 451
+svn diff -r 451:HEAD
+svn diff .bashrc
+svn diff .screen/
+svn diff .screen/class.rc
+svn diff .screen/course.rc
+svn diff .screen/csfprc
+svn diff .screen/exam_prep.rc
+svn diff .screen/gf.rc
+svn diff .screen/grading.rc
+svn diff 2040/
+svn diff 2040/league.yaml
+svn diff 3024
+svn diff AFB1J0/
+svn diff AFBB32/
+svn diff AFBB32/league.yaml
+svn diff FLA0027/classwork/
+svn diff FLA0027/classwork/1.yaml
+svn diff FLA0027/classwork/3.yaml
+svn diff FLA0027/league.yaml
+svn diff cards.yaml
+svn diff careers/
+svn diff careers/cards.yaml
+svn diff careers/dic.yaml
+svn diff classwork/
+svn diff classwork/2.yaml
+svn diff classwork/{1,2}.yaml
+svn diff dic.yaml
+svn diff homework/1.yaml
+svn diff htmlexerciselist.pl
+svn diff league
+svn diff league.yaml
+svn diff league.yaml session/
+svn diff lib/
+svn diff lib/Grades/Groupwork.pm
+svn diff online/
+svn diff paper/script_files/score_comp.pl
+svn diff parents/
+svn diff parents/slides.vroom -c 4025
+svn diff parents/slides.vroom -c 4573
+svn diff parents/slides.vroom -c 4633
+svn diff parents/slides.vroom -c 4656
+svn diff parents/slides.vroom -c 967
+svn diff parents/slides.vroom -r 4025
+svn diff questionsA5.tex -c 1683
+svn diff questionsA5.tex -c 1684
+svn diff questionsA5.tex -c 1685
+svn diff rc
+svn diff rc/ping.rc
+svn diff script_files/score_comp.pl 
+svn diff seats/script_files/
+svn diff seats/script_files/teamseat.pl
+svn diff session/
+svn diff slides.txt
+svn diff storycorps
+svn diff tmpl/
+svn diff tmpl/jigsaw.tmpl
+svn diff tmpl/jigsaw.tmpl  -c 5085
+svn diff web/lib/CompComp/Model/SwissDB.pm
+svn diff web/root/src/assistants.tt2
+svn diff web/script/
+svn diff web/script/updateplayers.pl
+svn h upgrade
+svn info
+svn info .haskeline
+svn info 1/g.yaml 
+svn info disaster/
+svn info disaster/*
+svn info paper/script_files/score_comp.pl
+svn info script_files/score_comp.pl
+svn info tmpl/
+svn log  lib/Bett/Controller/Play.pm | less
+svn log -r HEAD lib/Bett/Controller/Play.pm
+svn log -vr BASE:HEAD
+svn log branch/test
+svn log branch/test | less
+svn log htmlexerciselist.pl | less
+svn log lib/Grades.pm | less
+svn log paper/script_files/score_comp.pl | less
+svn log parents/slides.vroom | less
+svn log questionsA5.tex | less
+svn log script_files/score_comp.pl | less
+svn log script_files/sum_g1_g2.pl | less
+svn log slides.vroom | less
+svn log tags/test
+svn log tmpl/ | less
+svn log tmpl/jigsaw | less
+svn log tmpl/jigsaw.tmpl
+svn log tmpl/jigsaw.tmpl | less
+svn log tmpl/namequestionsB5.tmpl | less
+svn ls classwork/
+svn ls classwork/2
+svn ls classwork/3
+svn ls disaster/*
+svn ls file:///home/drbean/.svk/local/scratch
+svn ls file:///home/drbean/.svk/local/scratch/aca
+svn merge -c -3660 ^/tmpl/jigsaw.tmpl tmpl/jigsaw.tmpl
+svn merge -c 3660 ^/tmpl/jigsaw.tmpl tmpl/jigsaw.tmpl
+svn mkdir bash_completion
+svn mkdir exercise
+svn mkdir t/emile/session
+svn mv t/emile/classwork/{1,2,3,4} t/emile/session
+svn revert .bashrc
+svn revert seats/script_files/teamseat.pl
+svn revert tmpl/jigsaw.tmpl
+svn revert web/lib/Swiss/Controller/Tournaments.pm
+svn revert web/script/populate.pl
+svn rm script_files/score_comp.pl
+svn rm script_files/score_comp.pl --force
+svn st
+svn st * | grep '^\(A\|M\|D\|C\)'
 svn st -q
- svn log -vr BASE:HEAD
-cd ./sport && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_html/tech && mput html/*.html && qui' && cd -
-# bingo.pl -n 15 -s sport -f 0 sport && xelatex sport/bingo_sport_0.tex && evince bingo_sport_0.pdf
-# cp bingo_sport_0.pdf /run/media/drbean/DIE2GV1/
-# lpr bingo_sport_0.pdf -P kyocera
+svn st -q ~/022//homework
+svn st -q ~/022/FLA0021/homework
+svn st -q ~/022/FLA0027/homework
+svn st -q ~/031//homework
+svn st -q ~/031/2L1/homework
+svn st -q ~/031/FLA0016/homework
+svn st -q ~/031/FLA0027/homework
+svn st -q ~/031/GL00015/homework
+svn st -q ~/031/MB1/homework
+svn st -q ~/032/FLA0026/homework
+svn st -v   | grep '^\(A\|M\|D\|C\)'
+svn st -v  disaster/ | grep '^\(A\|M\|D\|C\)' 
+svn st -v  seats | grep '^\(A\|M\|D\|C\)'
+svn st -v  | grep '^\(A\|M\|D\|C\)'
+svn st -v seats   | grep '^\(A\|M\|D\|C\)'
+svn st -v tmpl   | grep '^\(A\|M\|D\|C\)'
+svn st -v tmpl/  | grep '^\(A\|M\|D\|C\)'
+svn st -v | grep '^\(A\|M\|D\|C\)'
+svn st FLA0027/classwork/
+svn st bash_completion/
+svn st rc | grep '^\(A\|M\|D\|C\)'
+svn st | grep '^\(A\|M\|D\)'
+svn st | grep '^\(A\|M\|D\C\)'
 svn st | grep '^\(A\|M\|D\|C\)'
-# perl ../cclass/cards.pl ./sport && xelatex ./$TOPIC/jigsaw_sport_0.tex && evince jigsaw_sport_0.pdf
-# perl ../cclass/cards.pl ./sport && xelatex ./$TOPIC/quiz_sport_0.tex && evince quiz_sport_0.pdf
+svn svn_mkdir_exam .screen/setup.rc
+svn sw file:///home/drbean/.svk/local/scratch/aca/tags/test/3 v league.yaml session/2/groups.yaml exam/2/round.yaml exam/2/response.yaml exam/2/scores.yaml exam/2/g1.yaml comp/2/round.yaml comp/2/response.yaml comp/2/scores.yaml exam/2/g2.yaml exam/2/g.yaml grades.txt groups.yaml session/3/groups.yaml
+svn twitter  AFB1J0/homework/5.yaml
+svn up
+svn up  -r 1427
+svn up slides.vroom 
+svn up slides.vroom -r 1427
+svn up slides.vroom -r 1458
+svn up tmpl/jigsaw.tmpl
+svn up tmpl/namequestionsB5.tmpl -r 5082
+svn upgrade
+swiss
+tech -v tech -t sport -s sport -f 0
+telnet chat.freenode.net 6697
+telnet irc.gimp.org 6667
+telnet localhost 113
+telnet localhost 21
+telnet localhost 22
+telnet localhost 23
+telnet localhost 3000
+telnet localhost 6666
+telnet localhost 80
+telnet sac.nuu.edu.tw 6665
+telnet sac.nuu.edu.tw 6666
+telnet sac.nuu.edu.tw 6667
+tmpl
+top
+topic: adoption
+topic: biodad,emersonj
+topic: disaster
+topic: emersonj
+topic: lead
+topic: money
+topic: questions
+topic: self-intros
+topic: spano
+touch ./stress/questionsA5.tex
+touch sample_command
+touch sampler
 tw
 tw --help
 tw -s
 tw gt.en-zh hello
-svn st | grep '^\(A\|M\|D\|C\)'
-cnv -v parents -t parents -s biodad -f 0
-biz -v stress -t stress -s cups -f 0
-screen -r tech
-tech -v tech -t sport -s sport -f 0
-q
-svn st * | grep '^\(A\|M\|D\|C\)'
-svn diff rc
-svn ci -m 022 rc/score_news.rc
-svn ci -m 022,Lingua::Han::PinYin.encode_ename,char rc/school_data.rc
-svn diff rc
-svn ci -m 022,session:1 rc
-svn st * | grep '^\(A\|M\|D\|C\)'
-svn diff FLA0027/league.yaml
-svn ci -m out:杜珮瑜 FLA0027/league.yaml
-svn diff FLA0027/classwork/
-svn st FLA0027/classwork/
-svn ci -m yachting FLA0027/classwork/6.yaml
-svn diff FLA0027/classwork/
-svn diff FLA0027/classwork/3.yaml
-svn ci -m Turquoise FLA0027/classwork/3.yaml
-svn diff FLA0027/classwork/
-svn ci -m 19_groups,incl.Turquoise FLA0027/classwork/2/groups.yaml 
-svn st * | grep '^\(A\|M\|D\|C\)'
-svn diff FLA0027/classwork/
-svn diff FLA0027/classwork/1.yaml
-svn ci -m ungrouped:out FLA0027/classwork/1.yaml
-svn diff AFBB32/league.yaml
-svn ci -m out:鍾尚軒 AFBB32/league.yaml
-svn diff AFBB32/
-svn ci -m Rita:absent AFBB32/exam/1/g.yaml
-svn diff AFBB32/
-svn ci -m jackson:all_3 AFBB32/classwork/4.yaml
-svn diff AFBB32/
-svn ci -m abreu,dickson:no_week_2:all_3 AFBB32/classwork/3.yaml
-svn diff AFBB32/
-svn ci -m 20_groups:Turquoise,Window AFBB32/classwork/2/groups.yaml 
-svn diff AFBB32/
-svn ci -m Emma:Window-Beige AFBB32/
-svn st * | grep '^\(A\|M\|D\|C\)'
-svn diff AFB1J0/
-svn ci -m session:2:6 AFB1J0/league.yaml
-svn diff AFB1J0/
-svn ci -m twitter_retweet:Peggy,Sherry,Betty_mistakes AFB1J0/homework/6.yaml
-svn diff AFB1J0/
-svn twitter  AFB1J0/homework/5.yaml
-svn ci -m twitter  AFB1J0/homework/5.yaml
-svn diff AFB1J0/
-svn ci -m twitter_people_questions AFB1J0/classwork/6.yaml
-svn st * | grep '^\(A\|M\|D\|C\)'
-svn diff 3024
-svn ci -m group_Martin:3 3024/classwork/3.yaml
-svn diff 3024
-svn ci -m 100405442:absent 3024
-svn st * | grep '^\(A\|M\|D\|C\)'
-svn diff 2040/league.yaml
-svn ci -m out:陳弘翊 2040/league.yaml
-svn diff 2040/
-svn ci -m douglas 2040/classwork/4.yaml
-svn diff 2040/
-svn ci -m oliver_dictation:all_3q 2040/
-svn st * | grep '^\(A\|M\|D\|C\)'
-cd 3024/
-svn st * | grep '^\(A\|M\|D\|C\)'
-cd ../2040/
-svn st | grep '^\(A\|M\|D\|C\)'
-cd ../AFBB32/
-svn st | grep '^\(A\|M\|D\|C\)'
-cd ../AFB1J0/
-svn st | grep '^\(A\|M\|D\|C\)'
-cd ../FLA0018/
-svn st | grep '^\(A\|M\|D\|C\)'
-cd ../FLA0021/
-svn st | grep '^\(A\|M\|D\|C\)'
-cd ../FLA0027/
-svn st | grep '^\(A\|M\|D\|C\)'
-cd ../GL00019/
-svn st | grep '^\(A\|M\|D\|C\)'
-q
-w FLA0021 7 -t cusp -l B
-w FLA0018 7 -t biodad -l B
-022
-q
-sr google bash regex
-sr google etckeeper
-sr google etckeeper svn
-sr google clonezilla
-sr google show-installed
-sr google "show-installed"
-sr google kickstart fedora
-sr google optind function bash options
-sr google 101 error net::ERR_CONNECTION_RESET
-sr google dog deafness
-sr W pl824.nas921.nara.nttpc.ne.jp
-sr google unix signals sigkill sigquit sigterm
-q
-sr google dentist "strong arm"
-sr google dentist strength
-sr google dentist arm
-sr google bash tab completion
-surf
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-svn st | grep '^\(A\|M\|D\|C\)'
-svn diff
-q
-cd /var/www/cgi-bin/dic
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s  && perl script/characters.pl -s 
-#1396493271
-export HISTTIMEFORMAT='%m-%d '
-#1396493271
-# sudo systemctl stop httpd.service
-#1396493271
-# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x  > ~/022//homework.yaml
-#1396493271
-# perl script/delete_exercise.pl -i  -g conversation
-#1396493271
-# sudo systemctl start httpd.service
-#1396493271
-# less ~/022//homework.yaml
-#1396493271
-# mv ~/022//homework.yaml ~/022//homework/.yaml
-#1396493271
-# svn add ~/022//homework/.yaml
-#1396493271
-# svn ci -m  ~/022//homework/.yaml
-#1396493271
-svn st -q ~/022//homework
-#1396493271
-# history -a
-#1396493271
-# export HISTTIMEFORMAT=
-#1396493270
-export HISTTIMEFORMAT='%m-%d '
-#1396493270
-# perl script/loadYAMLid.pl ~/class/conversation//dic.yaml 
-#1396493271
-# perl script/create_exercise.pl  
-#1396493271
-# history -a
-#1396493271
-# export HISTTIMEFORMAT=
-dic -c conversation 
-q
-sr W file:///usr/share/doc/postgresql-9.2.6/html/index.html 
-q
-surf
-q
-screen
-su -
-q
-exit
-cd ../drbean
-cd dot
-ls
-less sac_f19_installed.txt 
-lftp web.nuu.edu.tw
-date
-ls
-ack elinks sac_f19_installed.txt 
-grep elinks sac_f19_installed.txt 
-grep lynx sac_f19_installed.txt 
-grep perl sac_f19_installed.txt 
-man yum
-less sac_f19_installed.txt 
-q
-cd ../drbean
-lftp mai@pl824.nas921.nara.nttpc.ne.jp
-q
-cd ../GL00019/
-cd ../drbean
-less ~/.bashrc
-less ~/.bash_profile
-less ~/.bash_history 
-date
-su -
-q
-man duplicity
-lftp drbean@pl824.nas921.nara.nttpc.ne.jp
-man httpd_selinux
-man httpd-selinux
-lynx
-elinks
-q
-exit
-cd ../drbean
-ls
-lftp mai@pl824.nas921.nara.nttpc.ne.jp
-ssh drbean@pl827.nas921.nara.nttpc.ne.jp
-ssh drbean@pl824.nas921.nara.nttpc.ne.jp
-~.
-ssh drbean@pl824.nas921.nara.nttpc.ne.jp
-lftp mai@pl824.nas921.nara.nttpc.ne.jp
-ssh drbean@pl824.nas921.nara.nttpc.ne.jp
-~.
-q
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/.bash_profile
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-q
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-q
-dot
-q
-su - znc
-ls /var/lib/znc/.znc
-ls ~/.znc
-ls ~/.znc/modules/
-ls ~/.znc/modules/ -al
-ls ~/.znc/configs/ -al
-znc --makeconf
-q
-irc
-q
-man perlfaq
-q
-screen
-web
-q
-irc
-q
-cd /var/www/cgi-bin/aca
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s sport && perl script/characters.pl -s sport
-pwd
-ls
-sudo cd /var/www/cgi-bin/
-q
-#1396504742
-export HISTTIMEFORMAT='%m-%d '
-#1396504742
-# sudo systemctl stop httpd.service
-#1396504743
-# perl script/grade_aca.pl -l  -q 3 -o 1 -w 2 -x sport > ~/022//homework.yaml
-#1396504743
-# perl script/delete_exercise.pl -i sport -g FLA0027
-#1396504743
-# sudo systemctl start httpd.service
-#1396504743
-# less ~/022//homework.yaml
-#1396504743
-# mv ~/022//homework.yaml ~/022//homework/6.yaml
-#1396504743
-# svn add ~/022//homework/6.yaml
-#1396504743
-# svn ci -m sport ~/022//homework/6.yaml
-#1396504743
-svn st -q ~/022//homework
-#1396504743
-# history -a
-#1396504743
-# export HISTTIMEFORMAT=
-#1396504981
-q
-#1396504742
-export HISTTIMEFORMAT='%m-%d '
-#1396504742
-# perl script/loadYAMLid.pl ~/class/FLA0027//aca.yaml sport
-#1396504742
-# perl script/create_exercise.pl  sport
-#1396504742
-# history -a
-#1396504742
-# export HISTTIMEFORMAT=
-#1396504981
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-q
-aca -c FLA0027 -s sport -o sport -r 6 -x ''
-q
-cd /var/www/cgi-bin/aca
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s sport && perl script/characters.pl -s sport
-cd /var/www/cgi-bin/
-sudo chown -R drbean
-q
-#1396504995
-export HISTTIMEFORMAT='%m-%d '
-#1396504995
-# sudo systemctl stop httpd.service
-#1396504995
-# perl script/grade_aca.pl -l  -q 3 -o 1 -w 2 -x sport > ~/022//homework.yaml
-#1396504995
-# perl script/delete_exercise.pl -i sport -g FLA0027
-#1396504995
-# sudo systemctl start httpd.service
-#1396504995
-# less ~/022//homework.yaml
-#1396504995
-# mv ~/022//homework.yaml ~/022//homework/6.yaml
-#1396504995
-# svn add ~/022//homework/6.yaml
-#1396504995
-# svn ci -m sport ~/022//homework/6.yaml
-#1396504995
-svn st -q ~/022//homework
-#1396504995
-# history -a
-#1396504995
-# export HISTTIMEFORMAT=
-#1396505120
-q
-#1396504995
-export HISTTIMEFORMAT='%m-%d '
-#1396504995
-# perl script/loadYAMLid.pl ~/class/FLA0027//aca.yaml sport
-#1396504995
-# perl script/create_exercise.pl  sport
-#1396504995
-# history -a
-#1396504995
-# export HISTTIMEFORMAT=
-#1396505121
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-q
-aca -c FLA0027 -s sport -o sport -r 6 -x ''
-q
-svn st -q
-svn log -vr BASE:HEAD
-# cp haskell_after.vim ~/.vim/after/ftplugin/
-# su -c 'cp vimrc.sac /etc/vimrc'
-# su -c 'cp vim-gf/ftdetect/gf.vim /usr/share/vim/vimfiles/ftdetect/'
-# su -c 'cp vim-gf/syntax/gf.vim /usr/share/vim/vimfiles/syntax/'
-# cd vim && git clone https://github.com/drbean/perl-tags.git && cd vim-gf && git remote add upstream https://github.com/osfameron/perl-tags && git fetch upstream && git merge upstream/master && cd ../..
-# cd vim && git clone https://github.com/drbean/perl-tags-moose.git && cd vim-gf && git remote add upstream https://github.com/nothingmuch/perl-tags-moose && git fetch upstream && git merge upstream/master && cd ../..
-vim
-q
-vim
-q
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-q
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/.bash_profile
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-# export HISTTIMEFORMAT='%m-%d '
-q
-surf
-web
-dot
-web
-man alternatives
-ls /etc/alternatives/
-ls /etc/alternatives/links
-less /etc/alternatives/links
-links
-sr google fedora change window manager
-sr W google.com
-links google.com
-vi
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/.bash_profile
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-screen -ls
-web
-lftp drbean@sac.nuu.edu.tw
-q
-surf
-q
-sr google site:fedoraproject.org domain name set
-sr google site:fedoraproject.org domainname
-ifconfig
-sr google site:fedoraproject.org domainname
-sr google site:fedoraproject.org setting ip address
-dig sac.nuu.edu.tw
-q
-surf
-q
-su - postgres
-ls /etc/passwd
-less /etc/passwd
-ls /usr/share/doc/postgresql/html/index.html 
-links /usr/share/doc/postgresql/html/index.html 
-q
-cd /var/www/cgi-bin/aca
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s sport && perl script/characters.pl -s sport
-pwd
-cd /var/www/cgi-bin/
-su chown drbean:drbean
-su chown drbean:drbean .
-sudo chown drbean:drbean .
-ls
-ls -al
-svn ls file:///home/drbean/.svk/local/scratch/aca
-svn co file:///home/drbean/.svk/local/scratch/aca
-q
-#1396506629
-export HISTTIMEFORMAT='%m-%d '
-#1396506629
-# sudo systemctl stop httpd.service
-#1396506629
-# perl script/grade_aca.pl -l  -q 3 -o 1 -w 2 -x sport > ~/022//homework.yaml
-#1396506629
-# perl script/delete_exercise.pl -i sport -g FLA0027
-#1396506629
-# sudo systemctl start httpd.service
-#1396506629
-# less ~/022//homework.yaml
-#1396506629
-# mv ~/022//homework.yaml ~/022//homework/6.yaml
-#1396506629
-# svn add ~/022//homework/6.yaml
-#1396506629
-# svn ci -m sport ~/022//homework/6.yaml
-#1396506629
-svn st -q ~/022//homework
-#1396506629
-# history -a
-#1396506629
-# export HISTTIMEFORMAT=
-#1396508932
-q
-q
-#1396506629
-export HISTTIMEFORMAT='%m-%d '
-#1396506629
-# perl script/loadYAMLid.pl ~/class/FLA0027//aca.yaml sport
-#1396506629
-# perl script/create_exercise.pl  sport
-#1396506629
-# history -a
-#1396506629
-# export HISTTIMEFORMAT=
-#1396509519
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-q
-q
-cd /var/www/cgi-bin/dic
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s gourlay-2 && perl script/characters.pl -s gourlay-2
-q
-#1396511242
-export HISTTIMEFORMAT='%m-%d '
-#1396511242
-# sudo systemctl stop httpd.service
-#1396511242
-# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x gourlay-1 > ~/022//homework.yaml
-#1396511242
-# perl script/delete_exercise.pl -i gourlay-1 -g FLA0021
-#1396511242
-# sudo systemctl start httpd.service
-#1396511242
-# less ~/022//homework.yaml
-#1396511242
-# mv ~/022//homework.yaml ~/022//homework/6.yaml
-#1396511242
-# svn add ~/022//homework/6.yaml
-#1396511242
-# svn ci -m gourlay-1 ~/022//homework/6.yaml
-#1396511242
-svn st -q ~/022//homework
-#1396511242
-# history -a
-#1396511242
-# export HISTTIMEFORMAT=
-#1396511268
-q
-#1396511242
-export HISTTIMEFORMAT='%m-%d '
-#1396511242
-# perl script/loadYAMLid.pl ~/class/FLA0021//dic.yaml gourlay-2
-#1396511242
-# perl script/create_exercise.pl  gourlay-2
-#1396511242
-# history -a
-#1396511242
-# export HISTTIMEFORMAT=
-#1396511269
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-q
-ssh drbean@pl824.nas921.nara.nttpc.ne.jp
-q
-ssh freeshell.org
-q
-man perlfaq
-q
-web
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-perl script/update_players.pl FLA0027 -r 6
-q
-#1396511872
-export HISTTIMEFORMAT='%m-%d '
-#1396511872
-# perl script/loadYAMLid.pl ~/class/FLA0021//dic.yaml gourlay-2
-#1396511872
-# perl script/create_exercise.pl  gourlay-2
-#1396511872
-# history -a
-#1396511872
-# export HISTTIMEFORMAT=
-#1396513169
-q
-cd /var/www/cgi-bin/dic
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s gourlay-2 && perl script/characters.pl -s gourlay-2
-q
-#1396511872
-export HISTTIMEFORMAT='%m-%d '
-#1396511872
-# sudo systemctl stop httpd.service
-#1396511872
-# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x gourlay-1 > ~/022//homework.yaml
-#1396511872
-# perl script/delete_exercise.pl -i gourlay-1 -g FLA0021
-#1396511872
-# sudo systemctl start httpd.service
-#1396511872
-# less ~/022//homework.yaml
-#1396511872
-# mv ~/022//homework.yaml ~/022//homework/6.yaml
-#1396511872
-# svn add ~/022//homework/6.yaml
-#1396511872
-# svn ci -m gourlay-1 ~/022//homework/6.yaml
-#1396511872
-svn st -q ~/022//homework
-#1396511872
-# history -a
-#1396511872
-# export HISTTIMEFORMAT=
-#1396513173
-q
-aca -c FLA0027 -s sport -o sport -r 6 -x ''
-dic -c FLA0021 -s gourlay-2 -o gourlay-1 -r 6 -x ''
-aca -c FLA0027 -s sport -o sport -r 6 -x ''
-dic -c FLA0021 -s gourlay-2 -o gourlay-1 -r 6 -x ''
-q
-sr W file:///usr/share/doc/postgresql/html/index.html 
-sr W file:///usr/share/doc/postgresql/README.rpm-dist 
-less file:///usr/share/doc/postgresql/README.rpm-dist 
-less /usr/share/doc/postgresql/README.rpm-dist 
-sr W file:///usr/share/doc/postgresql/html/index.html 
-host cpan.mirror.choon.net
-whois cpan.mirror.choon.net
-sr W sql insert
-sr google sql insert
-q
-surf
-q
-cd class/
-ls
-ls beans/
-sudo dzil install 
-cd beans/
-sudo dzil install 
-q
-echo -e "---
-# topic: fsdds
-Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::" >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/
-# svn add classwork/6.yaml
-# svn revert classwork//6.yaml
-# svn mv classwork//6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork//6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m fsdds classwork/6.yaml
-less league.yaml
-q
-v league.yaml classwork//groups.yaml classwork/6.yaml homework/6.yaml classwork/7.yaml
-q
-# conversation.pl -l FLA0027 -s  -r 7 -x fsdds -p X -t Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise:: && xelatex classwork//conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
-q
-ls homework classwork exam/*
-q
-w FLA0027 7 -l X -t fsdds
-q
-ls -al /etc/bash_completion.d/
-q
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/.bash_profile
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-# export HISTTIMEFORMAT='%m-%d '
-ls
-ls surfraw
-ls surfraw/conf 
-less surfraw/conf 
-su -c 'cp surfraw/conf /etc/xdg/surfraw/conf'
-less /etc/xdg/surfraw/conf 
-ls
-less .screen/app.rc
-su -c 'cp bash_completion/aca /etc/bash_completion.d/aca'
-q
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-pwd
-ls ~/.svk
-ls ~/.svk/local
-svn ls file:///home/drbean/.svk/local/scratch
-svn ls file:///home/drbean/.svk/local/scratch/aca
-q
-dot
-q
-top
-su -c reboot
-cd /var/www/cgi-bin/aca
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s sport && perl script/characters.pl -s sport
-cd ..
-#cd /var/www/cgi-bin/aca
-#svn co file:///home/drbean/.svk/local/scratch/aca
-svn co http://svn.openfoundry.org/dic/trunk dic
-sudo su - postgres
-#1396509526
-export HISTTIMEFORMAT='%m-%d '
-#1396509526
-# sudo systemctl stop httpd.service
-#1396509526
-# perl script/grade_aca.pl -l  -q 3 -o 1 -w 2 -x sport > ~/022//homework.yaml
-#1396509526
-# perl script/delete_exercise.pl -i sport -g FLA0027
-#1396509526
-# sudo systemctl start httpd.service
-#1396509526
-# less ~/022//homework.yaml
-#1396509526
-# mv ~/022//homework.yaml ~/022//homework/6.yaml
-#1396509526
-# svn add ~/022//homework/6.yaml
-#1396509526
-# svn ci -m sport ~/022//homework/6.yaml
-#1396509526
-svn st -q ~/022//homework
-#1396509526
-# history -a
-#1396509526
-# export HISTTIMEFORMAT=
-#1396509526
-export HISTTIMEFORMAT='%m-%d '
-#1396509526
-# perl script/loadYAMLid.pl ~/class/FLA0027//aca.yaml sport
-#1396509526
-# perl script/create_exercise.pl  sport
-#1396509526
-# history -a
-#1396509526
-# export HISTTIMEFORMAT=
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/.bash_profile
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-q
-q
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-q
-dot
-q
-cd /var/www/cgi-bin/dic
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s gourlay-2 && perl script/characters.pl -s gourlay-2
-#1396513598
-export HISTTIMEFORMAT='%m-%d '
-#1396513598
-# sudo systemctl stop httpd.service
-#1396513598
-# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x gourlay-1 > ~/022//homework.yaml
-#1396513598
-# perl script/delete_exercise.pl -i gourlay-1 -g FLA0021
-#1396513598
-# sudo systemctl start httpd.service
-#1396513598
-# less ~/022//homework.yaml
-#1396513598
-# mv ~/022//homework.yaml ~/022//homework/6.yaml
-#1396513598
-# svn add ~/022//homework/6.yaml
-#1396513598
-# svn ci -m gourlay-1 ~/022//homework/6.yaml
-#1396513598
-svn st -q ~/022//homework
-#1396513598
-# history -a
-#1396513598
-# export HISTTIMEFORMAT=
-#1396513598
-export HISTTIMEFORMAT='%m-%d '
-#1396513598
-# perl script/loadYAMLid.pl ~/class/FLA0021//dic.yaml gourlay-2
-#1396513598
-# perl script/create_exercise.pl  gourlay-2
-#1396513598
-# history -a
-#1396513598
-# export HISTTIMEFORMAT=
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-ssh drbean@pl824.nas921.nara.nttpc.ne.jp
-screen -ls
-q
-q
-links http://localhost/cgi-bin/aca/script/aca_cgi.pl/login?exercise=sport
-q
-cd /var/www/cgi-bin/aca
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s sport && perl script/characters.pl -s sport
-q
-#1396513613
-export HISTTIMEFORMAT='%m-%d '
-#1396513613
-# sudo systemctl stop httpd.service
-#1396513613
-# perl script/grade_aca.pl -l  -q 3 -o 1 -w 2 -x sport > ~/022//homework.yaml
-#1396513613
-# perl script/delete_exercise.pl -i sport -g FLA0027
-#1396513613
-# sudo systemctl start httpd.service
-#1396513613
-# less ~/022//homework.yaml
-#1396513613
-# mv ~/022//homework.yaml ~/022//homework/6.yaml
-#1396513613
-# svn add ~/022//homework/6.yaml
-#1396513613
-# svn ci -m sport ~/022//homework/6.yaml
-#1396513613
-svn st -q ~/022//homework
-#1396513613
-# history -a
-#1396513613
-# export HISTTIMEFORMAT=
-#1396514667
-q
-#1396513613
-export HISTTIMEFORMAT='%m-%d '
-#1396513613
-# perl script/loadYAMLid.pl ~/class/FLA0027//aca.yaml sport
-#1396513613
-# perl script/create_exercise.pl  sport
-#1396513613
-# history -a
-#1396513613
-# export HISTTIMEFORMAT=
-#1396514668
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-q
-q
-dic -c FLA0021 -s gourlay-2 -o gourlay-1 -r 6 -x ''
-aca -c FLA0027 -s sport -o sport -r 6 -x ''
-web
-aca -c FLA0027 -s sport -o sport -r 6 -x ''
-web
-screen -r aca_FLA0027 
-su -c reboot
-less .xmonad/xmonad.hs
-q
 v
-q
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-q
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/.bash_profile
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-# export HISTTIMEFORMAT='%m-%d '
-q
-web
-q
-man perlfaq
-q
-web
-q
-sr google site:bugzilla.org alternatives fedora
-sr google install alternatives
-q
-dot
-screen -ls
-sr google site:bugzilla.org alternatives drbean
-surf
-su -c reboot
-q
-wep
-q
-web
-q
-irc
-q
-links http://localhost/cgi-bin/dic/script/dic_cgi.pl/login?exercise=gourlay-2
-q
-cd /var/www/cgi-bin/dic
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s gourlay-2 && perl script/characters.pl -s gourlay-2
-pwd
-ls
-q
-#1396518358
-export HISTTIMEFORMAT='%m-%d '
-#1396518358
-# sudo systemctl stop httpd.service
-#1396518358
-# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x gourlay-1 > ~/022//homework.yaml
-#1396518358
-# perl script/delete_exercise.pl -i gourlay-1 -g FLA0021
-#1396518358
-# sudo systemctl start httpd.service
-#1396518358
-# less ~/022//homework.yaml
-#1396518358
-# mv ~/022//homework.yaml ~/022//homework/6.yaml
-#1396518358
-# svn add ~/022//homework/6.yaml
-#1396518358
-# svn ci -m gourlay-1 ~/022//homework/6.yaml
-#1396518358
-svn st -q ~/022//homework
-#1396518358
-# history -a
-#1396518358
-# export HISTTIMEFORMAT=
-#1396518747
-q
-#1396518358
-export HISTTIMEFORMAT='%m-%d '
-#1396518358
-# perl script/loadYAMLid.pl ~/class/FLA0021//dic.yaml gourlay-2
-#1396518358
-# perl script/create_exercise.pl  gourlay-2
-#1396518358
-# history -a
-#1396518358
-# export HISTTIMEFORMAT=
-#1396518748
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-q
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-q
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/.bash_profile
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-gnome-terminal
-svn h upgrade
-svn st
-svn upgrade
-svn st
-svn diff 
-svn ci -m web.nuu .screen/dotrc
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-q
-lftp web.nuu.edu.twq
-q
-dot
-q
-lftp web.nuu.edu.twq
-q
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-q
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/.bash_profile
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-# export HISTTIMEFORMAT='%m-%d 'q
-q
-dot
-q
-su
-mate-terminal
-mate_erminal
-q
-ssh drbean@pl824.nas921.nara.nttpc.ne.jp
-date
-ssh drbean@pl824.nas921.nara.nttpc.ne.jp
-q
-ssh freeshell.org
-q
-man perlfaq
-q
-web
-ex
-q
-web
-q
-dot
-q
-lftp web.nuu.edu.tw
-q
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-q
-svn st -q
-svn log -vr BASE:HEAD
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/.bash_profile
-cp .xmonad/xmonad.hs ~/.xmonad/ && xmonad --recompile && xmonad --restart
-# export HISTTIMEFORMAT='%m-%d '
-q
-dot
-q
-cd gf-contrib/drbean////
-gf --make --output-format=haskell Eng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_ -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_ -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_ -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp .pgf /var/www/cgi-bin/bett/bin/.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s  && perl /var/www/cgi-bin/bett/script/words.pl -s 
-ghci -i./:../:../../../
-gf --make --output-format=haskell Eng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_ -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_ -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_ -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp .pgf /var/www/cgi-bin/bett/bin/.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s  && perl /var/www/cgi-bin/bett/script/words.pl -s 
-q
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
 v -O $(< gf_files.txt)
-ls
 v -O $(< ~/dot/gf_files.txt)
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
-v -O $(< ~/dot/gf_files.txt)
-q
-cd gf-contrib
- cd -
-git status
-# git fetch upstream
-# git merge upstream/master
-cd -
-git status | less
-git diff
-q
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html
-q
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html
-q
-/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html
-q
-/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html
-q
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html
-q
-cd gf-contrib/drbean///%STORY
- cd -
-gf -coding utf-8
-q
-links http://localhost/cgi-bin/bett/script/bett_cgi.pl/login?exercise=cusp
-q
-cd /var/www/cgi-bin/bett
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s cusp && perl script/characters.pl -s cusp
-pwd
-cd /var/www/cgi-bin/
-svn co http://svn.openfoundry.org/bett/trunk bett/
-su chown root:root .
-sudo chown root:root .
-q
-#1396528081
-export HISTTIMEFORMAT='%m-%d '
-#1396528081
-# sudo systemctl stop httpd.service
-#1396528081
-# perl script/grade_bett.pl -l  -q 3 -o 1 -w 2 -x candidate > ~/022//homework.yaml
-#1396528081
-# perl script/delete_exercise.pl -i candidate -g business
-#1396528081
-# sudo systemctl start httpd.service
-#1396528081
-# less ~/022//homework.yaml
-#1396528081
-# mv ~/022//homework.yaml ~/022//homework/7.yaml
-#1396528081
-# svn add ~/022//homework/7.yaml
-#1396528081
-# svn ci -m candidate ~/022//homework/7.yaml
-#1396528081
-svn st -q ~/022//homework
-#1396528081
-# history -a
-#1396528081
-# export HISTTIMEFORMAT=
-#1396532793
-q
-#1396528081
-export HISTTIMEFORMAT='%m-%d '
-#1396528081
-# perl script/loadYAMLid.pl ~/class/business//bett.yaml cusp
-#1396528081
-# perl script/create_exercise.pl -t Non-competitive -g business -i cusp -d "fsdds" cusp
-#1396528081
-# history -a
-#1396528081
-# export HISTTIMEFORMAT=
-#1396532797
-q
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-q
-bett -c business -s cusp -o candidate -r 7 -x fsdds
-q
-sr google freenode servers
-sr google freenode servers ssl port
-sr google bitlbee port bouncer
-sr google efnet servers
-sr W localhost:6667
-sr W http://localhost:6667
-q
-surf
-q
-dic -c FLA0021 -s gourlay-2 -o gourlay-1 -r 6 -x ''
-web
-dic -c FLA0021 -s gourlay-2 -o gourlay-1 -r 6 -x ''
-web
-dic -c FLA0021 -s gourlay-2 -o gourlay-1 -r 6 -x ''
-dic -c GL00019 -s biodad -o biomom -r 7 -x ''
-irc
-w FLA0027 7 -l A -t topic
-dot
-surf
-mkdir sr
-surf
-GF
-GF -a business -t stress -s cusp -m  Cusp
-GF -c business -t stress -s cusp -m  Cusp
-GF -a business -t stress -s cusp -m  Cusp
-GF -c business -t stress -s cusp -m  Cusp
-web
-bett
-sr W haskell.org/hoogle
-sr google moose mop load_class deprecated
-Q
-sr google moose mop load_class deprecated
-sr W localhost:6667
-sr W localhost:6666
-# su -c 'cp vim/vimrc.sac /etc/vimrc'
-ls vim
-cd vim-gf
-cd vim/vim-gf
-ls
-git fetch upstream
- su -c 'cp vim-gf/ftdetect/gf.vim /usr/share/vim/vimfiles/ftdetect/'
-cd ..
- su -c 'cp vim-gf/ftdetect/gf.vim /usr/share/vim/vimfiles/ftdetect/'
- su -c 'cp vim-gf/syntax/gf.vim /usr/share/vim/vimfiles/syntax/'
-cd ultisnips/
-git fetch upstream
-ls
-less ChangeLog 
-ls
-ls UltiSnips/haskell.snippets 
-less UltiSnips/haskell.snippets 
-git pull
-git push
-cd /var/www/cgi-bin/bett
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s  && perl script/characters.pl -s 
-ls
-ls bin
-./bin/Transfer_cusp 
-v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
 v -O $(<~/dot/gf_files.txt)
+v -O gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/call/intros/siar/Siar.gf gf-contrib/drbean/call/intros/siar/SiarEng.gf gf-contrib/drbean/call/intros/siar/Model.hs gf-contrib/drbean/call/intros/siar/WordsCharacters.hs gf-contrib/drbean/call/intros/siar/Tests.hs
+v -O gf-contrib/drbean/MyAbstract.gf gf-contrib/drbean/MyConcrete.gf gf-contrib/drbean/conversation/work/jackson/Jackson.gf gf-contrib/drbean/conversation/work/jackson/JacksonEng.gf gf-contrib/drbean/conversation/work/jackson/Model.hs gf-contrib/drbean/conversation/work/jackson/WordsCharacters.hs gf-contrib/drbean/conversation/work/jackson/Tests.hs
 v -O gf-contrib/drbean/business/stress/cusp/Cusp.gf gf-contrib/drbean/business/stress/cusp/CuspI.gf gf-contrib/drbean/business/stress/cusp/LexCusp.gf gf-contrib/drbean/business/stress/cusp/LexCuspEng.gf gf-contrib/drbean/business/stress/cusp/WordsCharacters.hs
+v -O gf-contrib/drbean/conversation/work/jackson/WordsCharacters.hs gf-contrib/drbean/conversation/work/jackson/Model.hs gf-contrib/drbean/conversation/work/jackson/Tests.hs
+v -O gf-contrib/drbean/{call/intros/oliver/{Model,Tests},Representation,LogicalForm,Translate,Transfer}.hs
+v -O gf-contrib/drbean/{call/intros/siar/{Model,Tests},Representation,LogicalForm,Translate,Transfer}.hs
+v -O gf-contrib/drbean/{conversation/work/jackson/Jackson,LogicalForm,Interpretation,Evaluation,Transfer}.hs
+v -O gf-contrib/drbean/{conversation/work/jackson/Jackson,Representation,Interpretation,Evaluation,Transfer}.hs
+v -O pdrt-sandbox/tutorials/DRSTutorial.hs pdrt-sandbox/tutorials/PDRSTutorial.hs
+v -O ~/class/csfp/pdrt-sandbox/tutorials/*
+v -O ~/class/csfp/pdrt-sandbox/tutorials/*.hs
+v ./cards.yaml
+v ./stress/cards.yaml ./quiz.tex ./stress/jigsaw_adventure_8.tex ./jigsaw.tex ./stress/questionsA5.tex
+v .bashrc .screen/ vim/ bash/bash_completion
+v .bashrc .screen/exam_prep.rc vim/ bash/bash_completion
+v .bashrc .screen/irc.rc 
+v .bashrc .screen/setup.rc
+v .bashrc .screen/web.rc
+v /cards.yaml
+v LogicalForm.hs Parsing.hs Cats.hs Interpretation.hs pdrt-sandbox/
+v LogicalForm.hs Parsing.hs Cats.hs Interpretation.hs pdrt-sandbox/tutorials/DRSTutorial.hs 
+v LogicalForm.hs Parsing.hs Cats.hs Interpretation.hs pdrt-sandbox/tutorials/DRSTutorial.hs pdrt-sandbox/tutorials/PDRSTutorial.hs 
+v call/slides.txt
+v impact/content.yaml
 v league.yaml classwork//groups.yaml classwork/6.yaml homework/6.yaml classwork/7.yaml
-znc --help
-znc --makeconf
-ls
-less gf.cabal
-cabal help configure
-cabal install time-compat
-cabal configure --verbose
-cabal build -v
-cabal copy
-cabal register
-cabal install FindBin
-cd gf-contrib/drbean/business/stress/cusp/
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
-ghci -i./:../:../../../
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cusp -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cusp -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cusp -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cusp && perl /var/www/cgi-bin/bett/script/words.pl -s cusp
-ghci -i./:../:../../../
-cd gf-contrib/drbean/business/stress/%STORY
- cd -
-gf -coding utf-8
-# conversation.pl -l FLA0027 -s  -r 7 -x topic -p A -t Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise:: && xelatex classwork//conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
-#1396532825
-export HISTTIMEFORMAT='%m-%d '
-#1396532825
-# sudo systemctl stop httpd.service
-#1396532825
-# perl script/grade_bett.pl -l  -q 3 -o 1 -w 2 -x  > ~/022//homework.yaml
-#1396532825
-# perl script/delete_exercise.pl -i  -g 
-#1396532825
-# sudo systemctl start httpd.service
-#1396532825
-# less ~/022//homework.yaml
-#1396532825
-# mv ~/022//homework.yaml ~/022//homework/.yaml
-#1396532825
-# svn add ~/022//homework/.yaml
-#1396532825
-# svn ci -m  ~/022//homework/.yaml
-#1396532825
-svn st -q ~/022//homework
-#1396532825
-# history -a
-#1396532825
-# export HISTTIMEFORMAT=
-man iw
-ssh freeshell.org
-#1396532825
-export HISTTIMEFORMAT='%m-%d '
-#1396532825
-# perl script/loadYAMLid.pl ~/class///bett.yaml 
-#1396532825
-# perl script/create_exercise.pl -t Non-competitive -g  -i  -d "" 
-#1396532825
-# history -a
-#1396532825
-# export HISTTIMEFORMAT=
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-links http://localhost/cgi-bin/dic/script/dic_cgi.pl/login?exercise=biodad
-echo -e "---
-# topic: topic
-Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::" >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/
-# svn add classwork/6.yaml
-# svn revert classwork//6.yaml
-# svn mv classwork//6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork//6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m topic classwork/6.yaml
-cd /var/www/cgi-bin/dic
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s biodad && perl script/characters.pl -s biodad
-#1396518782
-export HISTTIMEFORMAT='%m-%d '
-#1396518782
-# sudo systemctl stop httpd.service
-#1396518782
-# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x biomom > ~/022//homework.yaml
-#1396518782
-# perl script/delete_exercise.pl -i biomom -g GL00019
-#1396518782
-# sudo systemctl start httpd.service
-#1396518782
-# less ~/022//homework.yaml
-#1396518782
-# mv ~/022//homework.yaml ~/022//homework/7.yaml
-#1396518782
-# svn add ~/022//homework/7.yaml
-#1396518782
-# svn ci -m biomom ~/022//homework/7.yaml
-#1396518782
-svn st -q ~/022//homework
-#1396518782
-# history -a
-#1396518782
-# export HISTTIMEFORMAT=
-#1396518782
-export HISTTIMEFORMAT='%m-%d '
-#1396518782
-# perl script/loadYAMLid.pl ~/class/GL00019//dic.yaml biodad
-#1396518782
-# perl script/create_exercise.pl  biodad
-#1396518782
-# history -a
-#1396518782
-# export HISTTIMEFORMAT=
-su -
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
-ls homework classwork exam/*
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html
-cd gf-contrib
- cd -
-git status
-# git fetch upstream
-# git merge upstream/master
-less gf.cabal
-git fetch upstream
-git merge upstream/master 
-git log
-cabal configure --verbose
-cabal update
-cabal install fst
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html
-/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html
-q
-man bitlbee_selinux
-man httpd_selinux
-q
-q
-irc
-q
-irc
-q
-web
-q
-man bitlbee_selinux
-q
-web
-q
-web
-surf
-dot
-q
-web
-surf 
-irc
-dot
-cd gf-contrib/drbean/business/stress/cups/
-gf --make --output-format=haskell CuspEng.gf && ghc -o /var/www/cgi-bin/bett/bin/Transfer_cups -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_cups -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_cups -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp Cusp.pgf /var/www/cgi-bin/bett/bin/Cusp.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s cups && perl /var/www/cgi-bin/bett/script/words.pl -s cups
-ghci -i./:../:../../../
-cd -
-cd gf-contrib/drbean/$COURSE
-cd $TOPIC
-cd $STORY
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-developers.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-reference.html
-/usr/bin/links file://localhost/home/drbean/GF/lib/doc/synopsis.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html
-/usr/bin/links file://localhost/home/drbean/GF/doc/gf-refman.html
-cd gf-contrib/drbean/business/stress/%STORY
- cd -
-gf -coding utf-8
-cd gf-contrib
- cd -
-git status
-# git fetch upstream
-# git merge upstream/master
-q
-# lftp -c 'open web.nuu.edu.tw && cd public_html/AFBB32 && put grades.txt && qui'
-# svn ci -m create_groups_n= classwork/1/groups.yaml
-# print_grades.pl > grades.txt
-# teamseat.pl -s 1 -n  
-# lpr teamseat.pdf -P kyocera
-# teamseat.pl -s 1 --latex -n  && xelatex classwork/1/teamseat.tex && evince teamseat.pdf
-# mv groups.yaml classwork/1/groups.yaml
-# svn revert classwork/1
-# create_groups.pl -s 1 -n  | sponge groups.yaml
- ls classwork/
-# cp teamseat.pdf /run/media/drbean/DIE2GV1/
-# svn ci -m parents comp/ exam/
-q
 v league.yaml classwork//groups.yaml exam//round.yaml exam//response.yaml exam//scores.yaml comp//round.yaml comp//response.yaml comp//scores.yaml groups.yaml grades.txt classwork/1/groups.yaml
-q
-lftp web.nuu.edu.tw
-q
-re.pl --rcfile ../rc/g.rc
-q
-svn st -q
- svn log -vr BASE:HEAD
-svn upgrade
- svn log -vr BASE:HEAD
-q
-cd ~/022/AFBB32/exam
-ls 
-# rm 1 -rf
-# svn revert 
-# cp ../../GL00006/exam//round.yaml /round.yaml
-# scantron.pl -l AFBB32 -r  > /response.yaml
-# score_jigsaw.pl -l AFBB32 -r  > /scores.yaml
-# grade_jigsaw.pl -l AFBB32 -r  -n  > /g1.yaml
-# xelatex report.tex && evince report.pdf
-# lftp -c 'open web.nuu.edu.tw && cd public_html/AFBB32 && put report.pdf'
-q
-cd ~/022/AFBB32/comp
-# update_db.pl -l AFBB32 -r 
-# sum_g1_g2.pl -l AFBB32 -r  > ../exam//g.yaml
-# score_comp.pl -l AFBB32 -r  > /scores.yaml
-# perl ~/comp/web/script_files/comptron.pl -l AFBB32 -r  -x 1 > /response.yaml
-# round_table.pl -l AFBB32 -r  
-# create_round.pl -l AFBB32 -r  -x 0 > /round.yaml
-# svn revert 
- ls
-q
+v league.yaml classwork/2/groups.yaml classwork/6.yaml homework/6.yaml classwork/7.yaml
+v league.yaml classwork/2/groups.yaml classwork/6.yaml homework/6.yaml classwork/7.yamlq
+v league.yaml groups.yaml session//groups.yaml
+v league.yaml groups.yaml session/0/groups.yaml exam/0/round.yaml exam/0/response.yaml exam/0/scores.yaml comp/0/round.yaml comp/0/response.yaml comp/0/scores.yaml grades.txt session/1/groups.yaml
+v league.yaml groups.yaml session/1/groups.yaml exam/1/round.yaml exam/1/response.yaml exam/1/scores.yaml comp/1/round.yaml comp/1/response.yaml comp/1/scores.yaml grades.txt session/2/groups.yaml
+v league.yaml groups.yaml session/2/groups.yaml exam/2/round.yaml exam/2/response.yaml exam/2/scores.yaml comp/2/round.yaml comp/2/response.yaml comp/2/scores.yaml grades.txt session/3/groups.yaml
+v league.yaml session/2/groups.yaml classwork/5.yaml homework/5.yaml classwork/6.yaml
+v league.yaml session/2/groups.yaml classwork/5.yaml homework/5.yaml classwork/6.yamlq
+v league.yaml session/2/groups.yaml classwork/6.yaml homework/6.yaml classwork/7.yaml
+v league.yaml session/2/groups.yaml classwork/7.yaml homework/7.yaml classwork/8.yaml
+v league.yaml session/2/groups.yaml classwork/8.yaml homework/8.yaml classwork/9.yaml
+v league.yaml session/2/groups.yaml exam/2/round.yaml exam/2/response.yaml exam/2/scores.yaml exam/2/g1.yaml comp/2/round.yaml comp/2/response.yaml comp/2/scores.yaml exam/2/g2.yaml exam/2/g.yaml grades.txt groups.yaml session/3/groups.yaml
+v league.yaml session/3/groups.yaml classwork/9.yaml homework/9.yaml classwork/10.yamlq
+v lib//Controller/Play.pm lib//Controller/Game.pm lib//Controller/Login.pm script
+v lib/Bett/Controller/Play.pm lib/Bett/Controller/Game.pm lib/Bett/Controller/Login.pm script
+v lib/Bett/Controller/Play.pm lib/Bett/Controller/Game.pm lib/Bett/Controller/Login.pm script/grade_bett.pl
+v lib/Dic/Controller/Play.pm lib/Dic/Controller/Game.pm lib/Dic/Controller/Login.pm script
+v multimedia/slides.vroom
+v online/cards.yaml
+v parents/cards.yaml
+v pdrs-sandbox/tutorial/*.hs
+v pdrt-sandbox/src/Data/DRS.hs pdrt-sandbox/src/Data/DRS/* pdrt-sandbox/src/Data/DRS/*/*
+v pdrt-sandbox/src/Data/DRS.hs pdrt-sandbox/src/Data/DRS/*/*
+v pdrt-sandbox/tutorial/*.hs
+v pdrt-sandbox/tutorials/.hs
+v pdrt-sandbox/tutorials/DRSTutorial.hs pdrt-sandbox/tutorials/PDRSTutorial.hs
+v slides.txt .//dic.yaml .//cards.yaml .//slides.txt .//questionsA5.tex .///Model.hs ~/GF/gf-contrib/business///Model.hs  ~/GF/gf-contrib/business///Story_Interpretation.hs  ~/GF/gf-contrib/business///Tests.hs
+v slides.txt .//dic.yaml .//cards.yaml .//slides.txt .//questionsA5.tex .///Model.hs ~/GF/gf-contrib/college///Model.hs  ~/GF/gf-contrib/college///Story_Interpretation.hs  ~/GF/gf-contrib/college///Tests.hs
+v slides.txt .//dic.yaml .//cards.yaml .//slides.txt .//questionsA5.tex .///Model.hs ~/GF/gf-contrib/drbean/presentation///Model.hs  ~/GF/gf-contrib/drbean/presentation///Story_Interpretation.hs  ~/GF/gf-contrib/drbean/presentation///Tests.hs
+v slides.txt .//dic.yaml .//cards.yaml .//slides.txt .//questionsA5.tex .///Model.hs ~/GF/gf-contrib/media///Model.hs  ~/GF/gf-contrib/media///Story_Interpretation.hs  ~/GF/gf-contrib/media///Tests.hs
+v slides.txt .//dic.yaml .//cards.yaml .//slides.txt .//questionsA5.tex .///Model.hs ~/GF/gf-contrib/speaking///Model.hs  ~/GF/gf-contrib/speaking///Story_Interpretation.hs  ~/GF/gf-contrib/speaking///Tests.hs
+v slides.txt ./attitudes/dic.yaml ./attitudes/cards.yaml ./attitudes/slides.txt ./attitudes/questionsA5.tex ./attitudes//Model.hs ~/GF/gf-contrib/speaking/attitudes//Model.hs  ~/GF/gf-contrib/speaking/attitudes//Story_Interpretation.hs  ~/GF/gf-contrib/speaking/attitudes//Tests.hs
+v slides.txt ./careers/dic.yaml ./careers/cards.yaml ./careers/slides.txt ./careers/questionsA5.tex ./careers//Model.hs ~/GF/gf-contrib/business/careers//Model.hs  ~/GF/gf-contrib/business/careers//Story_Interpretation.hs  ~/GF/gf-contrib/business/careers//Tests.hs
+v slides.txt ./careers/dic.yaml ./careers/cards.yaml ./careers/slides.txt ./careers/questionsA5.tex ./careers/candidate/Model.hs ~/GF/gf-contrib/business/careers/candidate/Model.hs  ~/GF/gf-contrib/business/careers/candidate/Story_Interpretation.hs  ~/GF/gf-contrib/business/careers/candidate/Tests.hs
+v slides.txt ./cooking/dic.yaml ./cooking/cards.yaml ./cooking/slides.txt ./cooking/questionsA5.tex ./cooking/cook/Model.hs ~/GF/gf-contrib/drbean/tech/cooking/cook/Model.hs  ~/GF/gf-contrib/drbean/tech/cooking/cook/Story_Interpretation.hs  ~/GF/gf-contrib/drbean/tech/cooking/cook/Tests.hs
+v slides.txt ./disaster/dic.yaml ./disaster/cards.yaml ./disaster/slides.txt ./disaster/questionsA5.tex ./disaster//Model.hs ~/GF/gf-contrib/college/disaster//Model.hs  ~/GF/gf-contrib/college/disaster//Story_Interpretation.hs  ~/GF/gf-contrib/college/disaster//Tests.hs
+v slides.txt ./exercise/dic.yaml ./exercise/cards.yaml ./exercise/slides.txt ./exercise/questionsA5.tex ./exercise//Model.hs ~/GF/gf-contrib/college/exercise//Model.hs  ~/GF/gf-contrib/college/exercise//Story_Interpretation.hs  ~/GF/gf-contrib/college/exercise//Tests.hs
+v slides.txt ./food/dic.yaml ./food/cards.yaml ./food/slides.txt ./food/questionsA5.tex ./food/douglas/Model.hs ~/GF/gf-contrib/conversation/food/douglas/Model.hs  ~/GF/gf-contrib/conversation/food/douglas/Story_Interpretation.hs  ~/GF/gf-contrib/conversation/food/douglas/Tests.hs
+v slides.txt ./news/dic.yaml ./news/cards.yaml ./news/slides.txt ./news/questionsA5.tex ./news//Model.hs ~/GF/gf-contrib/media/news//Model.hs  ~/GF/gf-contrib/media/news//Story_Interpretation.hs  ~/GF/gf-contrib/media/news//Tests.hs
+v slides.txt ./online/dic.yaml ./online/cards.yaml ./online/slides.txt ./online/questionsA5.tex ./online//Model.hs ~/GF/gf-contrib/business/online//Model.hs  ~/GF/gf-contrib/business/online//Story_Interpretation.hs  ~/GF/gf-contrib/business/online//Tests.hs
+v slides.txt ./online/dic.yaml ./online/cards.yaml ./online/slides.txt ./online/questionsA5.tex ./online/argos-2/Model.hs ~/GF/gf-contrib/business/online/argos-2/Model.hs  ~/GF/gf-contrib/business/online/argos-2/Story_Interpretation.hs  ~/GF/gf-contrib/business/online/argos-2/Tests.hs
+v slides.txt ./online/dic.yaml ./online/cards.yaml ./online/slides.txt ./online/questionsA5.tex ./online/factors/Model.hs ~/GF/gf-contrib/business/online/factors/Model.hs  ~/GF/gf-contrib/business/online/factors/Story_Interpretation.hs  ~/GF/gf-contrib/business/online/factors/Tests.hs
+v slides.txt ./parents/dic.yaml ./parents/cards.yaml ./parents/slides.txt ./parents/questionsA5.tex ./parents/adam/Model.hs ~/GF/gf-contrib/conversation/parents/adam/Model.hs  ~/GF/gf-contrib/conversation/parents/adam/Story_Interpretation.hs  ~/GF/gf-contrib/conversation/parents/adam/Tests.hs
+v slides.txt ./parents/dic.yaml ./parents/cards.yaml ./parents/slides.txt ./parents/questionsA5.tex ./parents/adoption/Model.hs ~/GF/gf-contrib/conversation/parents/adoption/Model.hs  ~/GF/gf-contrib/conversation/parents/adoption/Story_Interpretation.hs  ~/GF/gf-contrib/conversation/parents/adoption/Tests.hs
+v slides.txt ./parents/dic.yaml ./parents/cards.yaml ./parents/slides.txt ./parents/questionsA5.tex ./parents/biodad/Model.hs ~/GF/gf-contrib/conversation/parents/biodad/Model.hs  ~/GF/gf-contrib/conversation/parents/biodad/Story_Interpretation.hs  ~/GF/gf-contrib/conversation/parents/biodad/Tests.hs
+v slides.txt ./parents/dic.yaml ./parents/cards.yaml ./parents/slides.txt ./parents/questionsA5.tex ./parents/emersonj/Model.hs ~/GF/gf-contrib/conversation/parents/emersonj/Model.hs  ~/GF/gf-contrib/conversation/parents/emersonj/Story_Interpretation.hs  ~/GF/gf-contrib/conversation/parents/emersonj/Tests.hs
+v slides.txt ./parents/dic.yaml ./parents/cards.yaml ./parents/slides.txt ./parents/questionsA5.tex ./parents/shepard/Model.hs ~/GF/gf-contrib/conversation/parents/shepard/Model.hs  ~/GF/gf-contrib/conversation/parents/shepard/Story_Interpretation.hs  ~/GF/gf-contrib/conversation/parents/shepard/Tests.hs
+v slides.txt ./work/dic.yaml ./work/cards.yaml ./work/slides.txt ./work/questionsA5.tex ./work/abreu/Model.hs ~/GF/gf-contrib/conversation/work/abreu/Model.hs  ~/GF/gf-contrib/conversation/work/abreu/Story_Interpretation.hs  ~/GF/gf-contrib/conversation/work/abreu/Tests.hs
+v slides.vroom 
+v ~/cards.yaml
+vi
+vim
+vimdiff cards.yaml cards.yaml.orig
+vimdiff drbean/Representation.hs.89e drbean/Representation.hs
+vimdiff drbean/Representation.hs.fa2 drbean/Representation.hs
+vnc -kill :1
+vncserver
+vncserver 
+vncserver -h
+vncserver -kill
+vncserver -kill :1
+vncserver -kill :2
+vncserver -list
+vroom -html ./ && lftp -c 'open web.nuu.edu.tw && cd public_html/presentation && mput .//html/*.html && qui'
+vroom -html ./cooking && lftp -c 'open web.nuu.edu.tw && cd public_html/ && mput ./cooking/html/*.html && qui'
+vroom -html ./sports && lftp -c 'open web.nuu.edu.tw && cd public_html/ && mput ./sports/html/*.html && qui'
+w 1040 10 -l X -t self-intros
+w 1040 6 -t disaster -l X
+w 2L1 6 -t money -l X
+w 3K0 8 -l X -t selling_online
 w AFBB32 7 -l A -t biodad
-grading -l AFBB32 -s 2 -t parents -s biodad -f 0
-w AFBB32 7 -l A -t biodad
-q
-exit
-echo -e "---
-# topic: story
-Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window" >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/
-# svn add classwork/6.yaml
-# svn revert classwork//6.yaml
-# svn mv classwork//6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork//6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m story classwork/6.yaml
-# conversation.pl -l AFBB32 -s  -r 7 -x story -p A -t Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window && xelatex classwork//conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
- ../../class/forms/conversation.pl -l AFBB32 -s  -r 7 -x story -p A -t Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window && xelatex classwork//conversation.tex && evince conversation.pdf
-perl ../../class/forms/conversation.pl -l AFBB32 -s  -r 7 -x story -p A -t Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window && xelatex classwork//conversation.tex && evince conversation.pdf
-ls homework classwork exam/*
-# conversation.pl -l AFBB32 -s  -r 7 -x story -p A -t Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window && xelatex classwork//conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
-echo -e "---
-# topic: story
-Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window" >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/
-# svn add classwork/6.yaml
-# svn revert classwork//6.yaml
-# svn mv classwork//6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork//6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m story classwork/6.yaml
-v league.yaml classwork//groups.yaml classwork/6.yaml homework/6.yaml classwork/7.yaml
-# conversation.pl -l AFBB32 -s  -r 7 -x story -p B -t  Green::Black Blue::Brown Gray::Beige Turquoise::Khaki Chocolate::Charcoal White::Orange Pink::Purple Red::Golden Violet::Window Silver::Yellow  && xelatex classwork//conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
-echo -e "---
-# topic: story
- Green::Black Blue::Brown Gray::Beige Turquoise::Khaki Chocolate::Charcoal White::Orange Pink::Purple Red::Golden Violet::Window Silver::Yellow " >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/
-# svn add classwork/6.yaml
-# svn revert classwork//6.yaml
-# svn mv classwork//6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork//6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m story classwork/6.yaml
-ls homework classwork exam/*
-# conversation.pl -l AFBB32 -s  -r 7 -x story -p B -t  Green::Black Blue::Brown Gray::Beige Turquoise::Khaki Chocolate::Charcoal White::Orange Pink::Purple Red::Golden Violet::Window Silver::Yellow  && xelatex classwork//conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
-echo -e "---
-# topic: story
- Green::Black Blue::Brown Gray::Beige Turquoise::Khaki Chocolate::Charcoal White::Orange Pink::Purple Red::Golden Violet::Window Silver::Yellow " >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/
-# svn add classwork/6.yaml
-# svn revert classwork//6.yaml
-# svn mv classwork//6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork//6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m story classwork/6.yaml
-# conversation.pl -l AFBB32 -s  -r 7 -x story -p B -t  Green::Black Blue::Brown Gray::Beige Turquoise::Khaki Chocolate::Charcoal White::Orange Pink::Purple Red::Golden Violet::Window Silver::Yellow  && xelatex classwork//conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
-echo -e "---
-# topic: story
- Green::Black Blue::Brown Gray::Beige Turquoise::Khaki Chocolate::Charcoal White::Orange Pink::Purple Red::Golden Violet::Window Silver::Yellow " >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/
-# svn add classwork/6.yaml
-# svn revert classwork//6.yaml
-# svn mv classwork//6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork//6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m story classwork/6.yaml
-ls homework classwork exam/*
 w AFBB32 7 -l A -t story
 w AFBB32 7 -l B -t story
-q
-su -
-q
-ssh freeshell.org
-q
-man bitlbee_selinux
-man irc_selinux
-q
+w FLA0018 7 -t biodad -l B
+w FLA0021 7 -t CUSP -l B
+w FLA0021 7 -t cusp -l B
+w FLA0027 7 -l A -t topic
+w FLA0027 7 -l X -t fsdds
+w FLA0027 7 -t '' -l X
+w FLA0027 7 -t '' -l X 
+w FLA0027 7 -t questions -l X
+w FLA0027 7 -t xx -l X 
+w FLA0027 8 -t lead -l X
+w GL00015 8 -l X -t biodad,emersonj
+w GL00015 9 -t spano -l X
+w GL00016 6 -l X -t adoption
+w GL00016 8 -l X -t emersonj
+w MB1 7 -l X -t money
 web
-q
-web
-q
-# conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t ,Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && xelatex classwork/2/conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
- perl ../../class/forms/conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t ,Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && xelatex classwork/2/conversation.tex && evince conversation.pdf
+weechat-curses --version
+weechat-curses -r '/iset;/script'
+wen
+wep
 whereis xelatex
+which ex
+which prove -t lib t/emile.t
+which weechat
 which xelatex
-locate xelatex
- 
-latex
+which znc
+whois cpan.mirror.choon.net
+xclip -h
+xclip -o
+xclip -o -d :1
+xclip -o -d :1 -s "clipboard"
+xclip -o -d :1 -selection "clipboard"
+xcopy --help
+xdg-open 330.gif 
+xdg-open 437572970.606867.mp4 
+xdg-open Errow.png 
+xdg-open VID_20141113_164916.3gp 
+xdg-open conversation/118-ChangingYourMindAboutOpenAdoption.mp3 
+xdg-open conversation/Johnathan-Emerson-and-Brian-Miller.mp3 
+xdg-open iss2_u12.pdf 
+xdg-open iss2_u13.pdf 
+xdg-open media/Reporter\ turns\ ghetto\ in\ 3\ seconds-BUS6nKpddec.webm 
+xdg-open media/firstbank_form.doc 
+xdg-open 下載/soundfiles/issues/3_3.mov 
 xelatex
- perl ../../class/forms/conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t ,Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && latex classwork/2/conversation.tex && evince conversation.pdf
- perl ../../class/forms/conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t ,Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && xelatex classwork/2/conversation.tex && evince conversation.pdf
-q
-echo -e "---
-# topic: story
-,Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow," >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/2
-# svn add classwork/6.yaml
-# svn revert classwork/2/6.yaml
-# svn mv classwork/2/6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork/2/6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m story classwork/6.yaml
-q
-ls homework classwork exam/*
-q
-v league.yaml classwork/2/groups.yaml classwork/6.yaml homework/6.yaml classwork/7.yamlq
-q
-w AFBB32 7 -l B -t story
-q
-# conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && xelatex classwork/2/conversation.tex && evince conversation.pdf
-# lpr conversation.pdf -P kyocera
-# cp conversation.pdf /run/media/drbean/DIE2GV1/
-# sudo cp conversation.pdf /var/www/html
-perl ../../class/forms/conversation.pl -l AFBB32 -s 2 -r 7 -x story -p B -t Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow, && xelatex classwork/2/conversation.tex && evince conversation.pdf
-q
-echo -e "---
-# topic: story
-Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow," >> "classwork/7.yaml.noform"
-svn st | grep '^\(A\|M\|D\)'
-svn log -vr BASE:HEAD
-ls classwork
-svn ls classwork/2
-# svn add classwork/6.yaml
-# svn revert classwork/2/6.yaml
-# svn mv classwork/2/6.yaml classwork/6.yaml
-# svn ci -m Grades/Groupwork:r1720 classwork/2/6.yaml classwork/6.yaml
-# mv classwork/6.yaml.noform classwork/6.yaml
-# svn ci -m story classwork/6.yaml
-ls homework classwork exam/*
-w AFBB32 7 -l B -t story
-q
-cd forms/
-svn st | grep '^\(A\|M\|D\|C\)'
-svn upgrade
-svn st | grep '^\(A\|M\|D\|C\)'
-svn diff
-svn ci -m 022,split_on_space_newline_unsupported_in_bashrc
-q
-v
-q
-class
-q
-links http://localhost/cgi-bin/dic/script/dic_cgi.pl/login?exercise=biodad
-links http://localhost/cgi-bin/dic/script/dic_cgi.pl/login?exercise=biomom
-links http://localhost/cgi-bin/dic/script/dic_cgi.pl/login?exercise=biodad
-cd /var/www/cgi-bin/dic
-svn st -q
-svn log -vr BASE:HEAD
-# perl script/words.pl -s biodad && perl script/characters.pl -s biodad
-#1396589367
-export HISTTIMEFORMAT='%m-%d '
-#1396589367
-# sudo systemctl stop httpd.service
-#1396589367
-# perl script/grade_dic.pl -l  -q 3 -o 1 -w 2 -x biomom > ~/022//homework.yaml
-#1396589367
-# perl script/delete_exercise.pl -i biomom -g conversation
-#1396589367
-# sudo systemctl start httpd.service
-#1396589367
-# less ~/022//homework.yaml
-#1396589367
-# mv ~/022//homework.yaml ~/022//homework/7.yaml
-#1396589367
-# svn add ~/022//homework/7.yaml
-#1396589367
-# svn ci -m biomom ~/022//homework/7.yaml
-#1396589367
-svn st -q ~/022//homework
-#1396589367
-# history -a
-#1396589367
-# export HISTTIMEFORMAT=
-#1396589367
-export HISTTIMEFORMAT='%m-%d '
-#1396589367
-# perl script/loadYAMLid.pl ~/class/conversation/parents/dic.yaml biodad
-#1396589367
-# perl script/create_exercise.pl Ctest biodad
-#1396589367
-# history -a
-#1396589367
-# export HISTTIMEFORMAT=
-cd branch/gf
-svn st -q
-svn log -vr BASE:HEAD
+xelatex parents/compcomp_biodad_1.tex 
+xelatex parents/compcomp_biodad_2.tex 
+xsel -h
+youtube-dl 
+youtube-dl  http://www.youtube.com/watch?v=-qnKw8fPpmI
+youtube-dl  http://www.youtube.com/watch?v=TT4XO3Hjp7M
+youtube-dl http://www.youtube.com/watch?v=BUS6nKpddec
+youtube-dl http://www.youtube.com/watch?v=GpVuxgSxFF
+youtube-dl http://www.youtube.com/watch?v=GpVuxgSxFFE
+youtube-dl https://www.youtube.com/watch?v=Qy-Y3HJNU_s
+youtube-dl https://www.youtube.com/watch?v=c5tVxi6iCXM
+znc --help
+znc --makeconf
+~.

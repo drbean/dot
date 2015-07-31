@@ -5,6 +5,12 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
+# fedora22 ~/.bashrc
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
 # User specific environment and startup programs
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
@@ -21,3 +27,4 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
 # export DESKTOP_SESSION=xmonad-gnome
+# .bashrc

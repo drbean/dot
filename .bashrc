@@ -28,7 +28,7 @@ function edit () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/ed/$source
+    cd ~/edit/$source
     SOURCE=$source screen -c /home/$USER/dot/.screen/edit.rc -dR edit
     cd -
 }

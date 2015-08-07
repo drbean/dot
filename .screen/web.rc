@@ -1,6 +1,6 @@
 screen 1 lftp sftp://drbean@freeshell.org
 screen 3 
-stuff "# FTP_PASSWORD='' duplicity --exclude /home/drbean/soundfiles --exclude /home/drbean/下載 /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_2014_08_28"
+stuff "# FTP_PASSWORD='' duplicity --exclude /home/drbean/soundfiles --exclude /home/drbean/下載 /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora22"
 screen 4 su -
 screen 5 ssh -X mai@pl818.nas921.nara.nttpc.ne.jp
 screen 9

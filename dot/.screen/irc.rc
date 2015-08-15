@@ -1,6 +1,8 @@
-screen su -c 'v /var/lib/znc/.znc'
-screen weechat-curses -r '/iset;/script'
-screen
+screen 0 su -c 'v /var/lib/znc/.znc'
+screen 2
 stuff "su"
+screen 3
+stuff "links http://sac.nuu.edu.tw:6666"
 screen 9
 stuff "man weechat"
+screen 1 weechat-curses -r '/iset;/script'

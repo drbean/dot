@@ -399,6 +399,29 @@ function m () {
 	cd -
 }
 
+function tour () {
+    OPTIND=1
+    local arg course=tour view topic story form
+    while getopts 'v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/class/$course
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
+	screen -c /home/$USER/dot/.screen/course.rc -dR $course
+	cd -
+}
+
 function ex () {
     local arg course round topic story form
     case $1 in

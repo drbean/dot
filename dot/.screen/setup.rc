@@ -3,6 +3,7 @@ stuff "# svn mkdir file:///home/drbean/.svk/local/cl/$LEAGUE -m 041$LEAGUE      
 stuff "# cd ~/041/^M"
 stuff "# svn co http://svn.openfoundry.org/class/$LEAGUE^M"
 stuff "cd ~/041/$LEAGUE/^M"
+stuff "# ack field ../../031^M"
 stuff "# cp ../../031/$LEAGUE/league.yaml ./league.yaml^M"
 stuff "# svn mkdir session classwork homework comp flash exam^M"
 stuff "# svn mkdir session/$SESSION^M"

@@ -459,9 +459,9 @@ function gr () {
 	FLA0008) league=$1;;
 	FLA0011) league=$1;;
 	FLA0024) league=$1;;
-	1J0) league=$1;;
-	2L2) league=$1;;
-	MB2) league=$1;;
+	2L1) league=$1;;
+	KB1) league=$1;;
+	MB1) league=$1;;
 	*) return 1 # illegal league
     esac
     OPTIND=2
@@ -495,9 +495,9 @@ function new () {
 	FLA0008) league=$1;;
 	FLA0011) league=$1;;
 	FLA0024) league=$1;;
-	1J0) league=$1;;
-	2L2) league=$1;;
-	MB2) league=$1;;
+	2L1) league=$1;;
+	KB1) league=$1;;
+	MB1) league=$1;;
 	*) return 1 # illegal league
     esac
     OPTIND=2
@@ -538,7 +538,7 @@ function session () {
     league=$1
     week=$2
     case ${league} in
-	1J0)
+	2L1)
 	    if (($week <= 3)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 12)); then session=3
@@ -546,14 +546,14 @@ function session () {
 	    elif (($week <= 18)); then session=5
 	    else return 1 # illegal week
 	    fi;;
-	2L2)
+	KB1)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	MB2)
+	MB1)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -598,7 +598,7 @@ function tables () {
     letter=$2
     case ${league} in
 		# 16 groups
-	1J0)
+	2L1)
 	    case ${letter} in
 		# A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
 		# B) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
@@ -612,7 +612,7 @@ function tables () {
 		Z) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
 		*) return 1 # illegal option
 	    esac;;
-	2L2)
+	KB1)
 	    case ${letter} in
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
 		B) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
@@ -622,7 +622,7 @@ function tables () {
 		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,8-1";;
 		*) return 1 # illegal option
 	    esac;;
-	MB2)
+	MB1)
 	    case ${letter} in
 		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 		B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
@@ -693,9 +693,9 @@ function w () {
 	FLA0008) league=$1;;
 	FLA0011) league=$1;;
 	FLA0024) league=$1;;
-	1J0) league=$1;;
-	2L2) league=$1;;
-	MB2) league=$1;;
+	2L1) league=$1;;
+	KB1) league=$1;;
+	MB1) league=$1;;
 	*) return 1 # illegal league
     esac
     week=$2

@@ -1,15 +1,15 @@
-# file: gr
+# file: new
 # grading parameter completion
-# copied from w
+# copied from gr
 
-function _gr () {
+function _new () {
 	local cur prev opts league league_re round_opt round topic_opt topic
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	opts="-r -t"
-	league="1J0 2L2 MB2 FLA0015 FLA0017 FLA0022 FLA0026 FLA0027 "
-	league_re="1J0|2L2|MB2|FLA0015|FLA0017|FLA0022|FLA0026|FLA0027"
+	league="1J0 2L2 MB2 FLA0003 FLA0008 FLA0011 FLA0024 "
+	league_re="1J0|2L2|MB2|FLA0003|FLA0008|FLA0011|FLA0024"
 	round_opt="-r"
 	round="0 1 2 3 4"
 	round_re="0|1|2|3|4"
@@ -19,7 +19,7 @@ function _gr () {
 	n_opt="-n"
 	n="2 3"
 
-	if [[ ${prev} == gr ]]; then
+	if [[ ${prev} == new ]]; then
 	COMPREPLY=( $(compgen -W "${league}" -- ${cur}) )
 	return 0
 	elif [[ ${prev} =~ ${league_re} ]] ; then
@@ -46,4 +46,4 @@ function _gr () {
 	fi
 }
 
-complete -F _gr gr
+complete -F _new new

@@ -1,5 +1,5 @@
 screen 1
-stuff "# svn mkdir file:///home/drbean/.svk/local/cl/$LEAGUE -m 041$LEAGUE      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭^M"
+stuff "# svn mkdir http://svn.openfoundry.org/class/$LEAGUE -m 041$LEAGUE      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭^M"
 stuff "# cd ~/041/^M"
 stuff "# svn co http://svn.openfoundry.org/class/$LEAGUE^M"
 stuff "cd ~/041/$LEAGUE/^M"

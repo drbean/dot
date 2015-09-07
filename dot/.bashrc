@@ -455,11 +455,10 @@ function ex () {
 function gr () {
     local arg league round topic n
     case $1 in
-	FLA0015) league=$1;;
-	FLA0017) league=$1;;
-	FLA0022) league=$1;;
-	FLA0026) league=$1;;
-	FLA0027) league=$1;;
+	FLA0003) league=$1;;
+	FLA0008) league=$1;;
+	FLA0011) league=$1;;
+	FLA0024) league=$1;;
 	1J0) league=$1;;
 	2L2) league=$1;;
 	MB2) league=$1;;
@@ -492,11 +491,10 @@ function gr () {
 function new () {
     local arg league n
     case $1 in
-	FLA0015) league=$1;;
-	FLA0017) league=$1;;
-	FLA0022) league=$1;;
-	FLA0026) league=$1;;
-	FLA0027) league=$1;;
+	FLA0003) league=$1;;
+	FLA0008) league=$1;;
+	FLA0011) league=$1;;
+	FLA0024) league=$1;;
 	1J0) league=$1;;
 	2L2) league=$1;;
 	MB2) league=$1;;
@@ -562,35 +560,28 @@ function session () {
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0015)
+	FLA0003)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0017)
+	FLA0008)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0022)
+	FLA0011)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0026)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	FLA0027)
+	FLA0024)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -639,7 +630,7 @@ function tables () {
 		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
 		*) return 1 # illegal letter
 	    esac;;
-	FLA0015)
+	FLA0003)
 	    case ${letter} in
 		# A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
 		A) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
@@ -652,7 +643,7 @@ function tables () {
 		X) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0017)
+	FLA0008)
 	    case ${letter} in
 		# A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
 		A) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
@@ -665,7 +656,7 @@ function tables () {
 		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,5-1,5-2,6-1,6-2,7-1,7-2,8-1";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0022)
+	FLA0011)
 	    case ${letter} in
 		# A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
 		A) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
@@ -678,7 +669,7 @@ function tables () {
 		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,5-1,5-2,6-1,6-2,7-1,7-2,8-1,8-2,9-1";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0026)
+	FLA0024)
 	    case ${letter} in
 		# A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
 		A) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
@@ -691,19 +682,6 @@ function tables () {
 		X) tables="1-1,1-2,2-1,2-2,3-1,3-2";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0027)
-	    case ${letter} in
-		# A) tables="Black::Blue,Brown::Purple,Pink::Orange";;
-		A) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
-		B) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
-		C) tables="1-1::1-2,2-1::2-2,3-1::3-2,4-1::4-2";;
-		# A) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
-		# B) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
-		# C) tables="2-1::1-1,1-2::2-2,4-1::3-1,3-2::4-2";;
-		# C) tables="Black::Blue,Brown::Purple,Pink::Orange";;
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
-		*) return 1 # illegal option
-	    esac;;
 	*) return 1 # illegal league
     esac
 }
@@ -711,11 +689,10 @@ function tables () {
 function w () {
     local arg league session week letter topic tables
     case $1 in
-	FLA0015) league=$1;;
-	FLA0017) league=$1;;
-	FLA0022) league=$1;;
-	FLA0026) league=$1;;
-	FLA0027) league=$1;;
+	FLA0003) league=$1;;
+	FLA0008) league=$1;;
+	FLA0011) league=$1;;
+	FLA0024) league=$1;;
 	1J0) league=$1;;
 	2L2) league=$1;;
 	MB2) league=$1;;
@@ -745,9 +722,9 @@ function w () {
     cd -
 }
 
-function FLA0018 () {
+function FLA0003 () {
     OPTIND=1
-    local arg league=FLA0018 session week letter topic tables
+    local arg league=FLA0003 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in
@@ -777,9 +754,9 @@ function FLA0018 () {
     cd -
 }
 
-function FLA0021 () {
+function FLA0008 () {
     OPTIND=1
-    local arg league=FLA0021 session week letter topic tables
+    local arg league=FLA0008 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in
@@ -809,9 +786,41 @@ function FLA0021 () {
     cd -
 }
 
-function FLA0027 () {
+function FLA0011 () {
     OPTIND=1
-    local arg league=FLA0027 session week letter topic tables
+    local arg league=FLA0011 session week letter topic tables
+    while getopts 's:w:l:t:' arg
+    do
+        case ${arg} in
+            s) session=${OPTARG};;
+            w) week=${OPTARG};;
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    case ${letter} in
+	A) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
+	B) tables="Orange::,Black::Blue,Brown::Red,Purple::Pink";;
+	C) tables="Black::,Blue::Brown,Red::Purple,Orange::Pink";;
+	X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
+	*) return 1 # illegal option
+    esac
+    cd ~/032/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/$USER/dot/.screen/class.rc -dR ${league}_w_$week
+    cd -
+}
+
+function FLA0024 () {
+    OPTIND=1
+    local arg league=FLA0024 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in

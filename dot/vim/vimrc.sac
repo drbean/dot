@@ -1,4 +1,4 @@
-" Last Edit: 2015  6月 08, 15時34分37秒
+" Last Edit: 2015 Sep 12, 12:23:41
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -513,20 +513,22 @@ au!
 
 augroup END
 
-augroup slides
+augroup pages
 au!
 
 " pandoc link list
 au BufEnter slides.txt nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
 
 function! WikipediaLink()
-	let lnum = line('$')
-	let words = getline( line('.') )
-	let search = substitute(words, '\v\s+', '+', "g")
-	let string = "http://en.wikipedia.or/wiki/%22" . search . "%22&num=100"
+	let words = getreg("0")
+	let search = substitute(words, '\v^\s+', '', "")
+	let search = substitute(words, '\v\s+$, '', "")
+	let search = substitute(words, '\v\s+', '_', "g")
+	let string = "http://en.wikipedia.org/wiki/" . search
 	call setline(".", string)
 endfunction
-au BufEnter slides.txt ino <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
+au BufEnter slides.txt no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
+au BufEnter content.yaml no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
 
 function! GoogleLink()
 	let lnum = line('$')
@@ -535,7 +537,8 @@ function! GoogleLink()
 	let string = "http://www.google.com.tw/search?q=%22" . search . "%22&num=100"
 	call setline(".", string)
 endfunction
-au BufEnter slides.txt ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+au BufEnter slides.txt no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+au BufEnter content.yaml no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 
 au BufEnter slides.txt nm <buffer> <LocalLeader>q cW_____()<Esc>'aPO<Esc>ma''$?_____()<Esc>f(\iW
 

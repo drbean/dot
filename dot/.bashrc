@@ -231,6 +231,7 @@ function top () {
     done
 	cd ~/class/$course
 	COURSE=$course \
+	VIEW="topics" \
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \

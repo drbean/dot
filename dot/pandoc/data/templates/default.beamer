@@ -15,6 +15,11 @@ $endif$
   \usepackage{xeCJK}
   \usepackage{fontspec,xltxtra,xunicode}
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  $if(CJKmainfont)$
+      \setCJKmainfont[$CJKoptions$]{$CJKmainfont$}
+      \setCJKmonofont[$CJKoptions$]{$CJKmonofont$}
+      \CJKfamily{$CJKfamily$}
+  $endif$
 \else
   \ifluatex
     \usepackage{fontspec}

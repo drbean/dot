@@ -402,7 +402,7 @@ function m () {
 
 function tour () {
     OPTIND=1
-    local arg course=tour view topic story form
+    local arg course=tourism view topic story form
     while getopts 'v:t:s:f:' arg
     do
         case ${arg} in

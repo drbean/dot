@@ -1,4 +1,4 @@
-" Last Edit: 2015 Sep 12, 12:23:41
+" Last Edit: 2015 Sep 16, 11:56:25
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -522,7 +522,7 @@ au BufEnter slides.txt nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
 function! WikipediaLink()
 	let words = getreg("0")
 	let search = substitute(words, '\v^\s+', '', "")
-	let search = substitute(words, '\v\s+$, '', "")
+	let search = substitute(words, '\v\s+$', '', "")
 	let search = substitute(words, '\v\s+', '_', "g")
 	let string = "http://en.wikipedia.org/wiki/" . search
 	call setline(".", string)

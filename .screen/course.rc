@@ -1,7 +1,7 @@
 screen 1
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "# svn mkdir ./$TOPIC^m"
-stuff "pandoc -t beamer --latex-engine=xelatex --variable=CJKmainfont:'WenQuanYi Zen Hei' ./$TOPIC/slides.txt -o ./$TOPIC/slides.pdf && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./$TOPIC/slides.pdf && qui'^M"
+stuff "pandoc -s -t beamer --latex-engine=xelatex --variable=CJKmainfont:'WenQuanYi Zen Hei' ./$TOPIC/slides.txt -o ./$TOPIC/slides.pdf && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./$TOPIC/slides.pdf && qui'^M"
 stuff "vroom -html ./$TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && mput ./$TOPIC/html/*.html && qui'^M"
 stuff "# cat ./$TOPIC/bingo_${STORY}_$FORM.tex >> bingo.tex^M"
 stuff "# ~/class/ttb/cards/bingo/bingo.pl -n 15 -s $STORY -f $FORM ./$TOPIC && xelatex --output-directory=./$TOPIC ./$TOPIC/bingo_${STORY}_$FORM.tex && evince ./$TOPIC/bingo_${STORY}_$FORM.pdf^M"

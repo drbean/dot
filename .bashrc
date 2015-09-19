@@ -601,34 +601,17 @@ function tables () {
 		# 16 groups
 	2L1)
 	    case ${letter} in
-		# A) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
-		# B) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
-		# C) tables="Black::Blue,Brown::Gray,Green::Charcoal,Chocolate::Khaki,Orange::Pink,Purple::Red,White::Yellow,Silver::Violet,Beige::Golden,Turquoise::Window";;
-		A) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
-		B) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
-		C) tables="Green::Black,Blue::Brown,Gray::Beige,Turquoise::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Golden,Violet::Window,Silver::Yellow,";;
-		# C) tables="Black::Charcoal,Green::Blue,Brown::Khaki,Chocolate::Gray,Orange::Red,Pink::Purple,White::Yellow,Silver::Violet,Beige::Turquoise,Golden::Window";;
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,5-1,5-2,6-1,6-2,7-1,7-2,8-1,8-2,9-1,9-2,10-1,10-2,11-1,11-2,12-1";;
-		Y) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,White::Orange,Pink::Purple,Red::Yellow";;
-		Z) tables="Green::Black,Charcoal::Blue,Chocolate::Brown,Khaki::Gray,Orange::Purple,Pink::Red,White::Yellow";;
+		X) tables="1-2,2-1,2-2,3-1,3-2,4-1,4-2,5-1,5-2";;
 		*) return 1 # illegal option
 	    esac;;
 	KB1)
 	    case ${letter} in
-		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
-		B) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
-		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
-		# B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
-		# C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden";;
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,8-1";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-2";;
 		*) return 1 # illegal option
 	    esac;;
 	MB1)
 	    case ${letter} in
-		A) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
-		B) tables="Green::Black,Blue::Brown,Gray::Khaki,Chocolate::Charcoal,White::Orange,Pink::Purple,Red::Violet,Silver::Yellow";;
-		C) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White";;
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
 		*) return 1 # illegal letter
 	    esac;;
 	FLA0003)

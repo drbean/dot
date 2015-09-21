@@ -10,6 +10,9 @@ stuff "# put homework/$LASTWEEK.yaml -o homework.yaml^M"
 
 screen 5
 stuff "ls homework classwork exam/*^M"
+stuff "ghci^M"
+stuff ":set -XOverloadedStrings^M"
+stuff "import Turtle^M"
 
 screen 4 re.pl --rcfile ../rc/g.rc
 stuff '$g->grades'

@@ -1,4 +1,4 @@
-" Last Edit: 2015 Sep 16, 11:56:25
+" Last Edit: 2015 Sep 19, 12:39:34
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -551,7 +551,10 @@ au!
 
 fu! Reformat ()
 	let dir = getcwd()
-	let league = substitute(dir, "/home/drbean/032/", "", "")
+	let league = substitute(dir, "/home/drbean/041/", "", "")
+	let sessionlist = glob( "dir" . "/session/*", 1, 1)
+	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/041/session/", "", "")' )
+	let session = max( sessions )
 	@ts = 2
 	let lnum = line('$')
 	let tables = split( getline(lnum), ',' )
@@ -585,7 +588,7 @@ fu! Reformat ()
 			let lnum = line('$')
 			let m = -1
 			for group in groups
-				let name = system( "letter2name.pl --league " . league . " -s 3 -g " . group . " --letter " . letter )
+				let name = system( "letter2name.pl --league " . league . " -s " . session . " -g " . group . " --letter " . letter )
 				call append (lnum, ["      " . (2 * n + m) . ": ","        " . group . ": " . name])
 				let lnum = line('$')
 				let m = m + 1

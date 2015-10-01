@@ -621,12 +621,12 @@ function tables () {
 	    esac;;
 	FLA0008)
 	    case ${letter} in
-		X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,2-5";;
+		X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-5,2-6,3-1,3-2,3-3,3-4";;
 		*) return 1 # illegal option
 	    esac;;
 	FLA0011)
 	    case ${letter} in
-		X) tables="1-1,1-2,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4";;
+		X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-4,3-1,3-2";;
 		*) return 1 # illegal option
 	    esac;;
 	FLA0024)

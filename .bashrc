@@ -606,12 +606,12 @@ function tables () {
 	    esac;;
 	KB1)
 	    case ${letter} in
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-2";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
 		*) return 1 # illegal option
 	    esac;;
 	MB1)
 	    case ${letter} in
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
 		*) return 1 # illegal letter
 	    esac;;
 	FLA0003)
@@ -631,7 +631,7 @@ function tables () {
 	    esac;;
 	FLA0024)
 	    case ${letter} in
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,1-3,2-3,2-4,3-3";;
+		X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,4-1,4-2,4-3";;
 		*) return 1 # illegal option
 	    esac;;
 	*) return 1 # illegal league

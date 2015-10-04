@@ -10,7 +10,7 @@ stuff "# svn mkdir session classwork homework comp exam flash^M"
 stuff "# school_data.pl -s 041 -l $LEAGUE | sponge league.yaml^M"
 stuff "# re.pl --rcfile ../rc/import_memberdata.rc^M"
 stuff "# svn add league.yaml^M"
-stuff "# chcon -t -R public_content_rw_t ./comp/ ./flash/^M"
+stuff "# chcon -R -t public_content_rw_t ./comp/ ./flash/^M"
 stuff "# su -c -R 'chown drbean:swiss ./comp/ ./flash/'^M"
 
 screen 2

@@ -626,6 +626,7 @@ function tables () {
 	    esac;;
 	FLA0011)
 	    case ${letter} in
+		A) tables="1-1,1-2::1-3,1-4::2-1,2-2::2-3,2-4::3-1,3-2";;
 		X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-4,3-1,3-2";;
 		*) return 1 # illegal option
 	    esac;;

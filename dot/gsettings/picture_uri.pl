@@ -19,5 +19,6 @@ $unseen->print(@unseen[1..$#unseen]);
 $seen->print(@seen, $pic);
 
 chomp $pic;
+$pic =~ s/ /\\ /g;
 
 system("dbus-launch gsettings set org.gnome.desktop.background picture-uri file:///home/mai/Pictures/$pic");

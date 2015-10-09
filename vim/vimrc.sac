@@ -1,4 +1,4 @@
-" Last Edit: 2015 Oct 07, 11:03:23
+" Last Edit: 2015 Oct 09, 12:49:09
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -563,14 +563,14 @@ fu! Reformat ()
 		let lnum = line('$')
 		let groups = split( table, '::' )
 		for group in groups
-			call append (lnum, [group . ":",  "  tardy:", "  absent:", "  merits: ~", "  p: ~", "  rs:", "    - ~", "    - ~", "    - ~"])
+			call append (lnum, [group . ":", "  rs:", "    - ~", "    - ~", "    - ~"])
 			let lnum = line('$')
 		endfor
 		let lnum = line('$')
 		call append(lnum, "")
 	endfor
 	let lnum = line('$')
-	call append(lnum, ["qz:", "  q: ~", "  o:", "    - ~", "    - ~", "    - ~", "  a: ~"])
+	call append(lnum, ["qz:", "  -", "    q: ~", "    o:", "      - ~", "      - ~", "      - ~", "    a: ~"])
 	for table in tables
 		let lnum = line('$')
 		call append(lnum, ["  " . table . ":"])

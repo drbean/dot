@@ -34,6 +34,7 @@ stuff "echo -e \"---\ntopic: $TOPIC\n\n$TABLES\" >> \"classwork/$WEEK.yaml.nofor
 stuff "svn st | grep '\^\(A\|M\|D\)'^Msvn log -vr BASE:HEAD^Msvn up^M"
 stuff "ls classwork^M"
 stuff "svn ls classwork session/$SESSION^M"
+stuff "# touch classwork/no_week_$LASTWEEK && svn add classwork/no_week_$LASTWEEK && svn ci classwork/no_week_$LASTWEEK -m ^M"
 stuff "# svn add classwork/$LASTWEEK.yaml && svn ci classwork/$LASTWEEK.yaml -m $TOPIC^M"
 stuff "# champs2front.hs -l $LEAGUE -r $LASTWEEK^M"
 stuff "# mv classwork/$LASTWEEK.yaml.noform classwork/$LASTWEEK.yaml^M" 

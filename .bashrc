@@ -601,7 +601,7 @@ function tables () {
 		# 16 groups
 	2L1)
 	    case ${letter} in
-		X) tables="1-2,2-1,2-2,3-1,3-2,4-1,4-2,5-1,5-2";;
+		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,5-1,5-2";;
 		*) return 1 # illegal option
 	    esac;;
 	KB1)

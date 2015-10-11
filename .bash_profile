@@ -26,5 +26,15 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
+export 
+
+
+#greg
+# screen needs 700 on socketdir?
+if [ "$(uname)" == "CYGWIN_NT-6.1" ]; then
+	export SCREENDIR=/cygdrive/c/temp
+fi
+
+
 # export DESKTOP_SESSION=xmonad-gnome
 # .bashrc

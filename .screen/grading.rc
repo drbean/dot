@@ -1,5 +1,6 @@
 screen 1
-stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put grades.txt && qui'^M"
+stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put grades.txt && put id2names_groups.txt && qui'^M"
+stuff "# id2names.pl -l $LEAGUE^M"
 stuff "# print_grades.pl > grades.txt^M"
 stuff "# teamseat.pl -s $NEXTROUND --latex -n $N && xelatex session/$NEXTROUND/teamseat.tex && evince teamseat.pdf && lpr teamseat.pdf -#1 && teamseat.pl -s $NEXTROUND -n $N ^M"
 stuff "# svn mkdir session/$NEXTROUND && mv groups.yaml session/$NEXTROUND/groups.yaml && svn add session/$NEXTROUND/groups.yaml && svn ci session/$NEXTROUND -m ^M"

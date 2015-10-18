@@ -33,6 +33,10 @@ export
 # screen needs 700 on socketdir?
 if [ "$(uname)" == "CYGWIN_NT-6.1" ]; then
 	export SCREENDIR=/cygdrive/c/temp
+	if [ ! -d $SCREENDIR ]; then
+		mkdir $SCREENDIR
+	fi
+	chmod 700 $SCREENDIR
 fi
 
 

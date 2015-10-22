@@ -1,4 +1,4 @@
-" Last Edit: 2015 Oct 22, 12:36:16
+" Last Edit: 2015 Oct 22, 12:37:23
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -572,29 +572,6 @@ fu! Reformat ()
 	let lnum = line('$')
 	call append(lnum, ["qz:", "  -", "    q: ~", "    o:", "      - ~", "      - ~", "      - ~", "    a: ~"])
 	endfor
-	"let lnum = line('$')
-	"call append (lnum, "report:")
-	"let lnum = line('$')
-	"let n = 1
-	"for table in tables
-	"	call append(lnum, "  Table " . n . ":")
-	"	let lnum = line('$')
-	"	let groups = split( table, '::' )
-	"	for letter in ["A", "B", "C"]
-	"		call append (lnum, "    " . letter . ":")
-	"		let lnum = line('$')
-	"		let m = -1
-	"		for group in groups
-	"			let name = system( "letter2name.pl --league " . league . " -s " . session . " -g " . group . " --letter " . letter )
-	"			call append (lnum, ["      " . (2 * n + m) . ": ","        " . group . ": " . name])
-	"			let lnum = line('$')
-	"			let m = m + 1
-	"		endfor
-	"		call append (lnum, "      winner: ~")
-	"		let lnum = line('$')
-	"	endfor
-	"	let n = n + 1
-	"endfor
 endf
 
 au BufEnter classwork/*.yaml.table nn <LocalLeader>r <Esc>:call Reformat()<CR>j

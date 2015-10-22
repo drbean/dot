@@ -1,4 +1,5 @@
 screen 1
+stuff "# lftp -c 'open freeshell.org && cd html/$LEAGUE && put grades.txt && put id2names_groups.txt && qui'^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put grades.txt && put id2names_groups.txt && qui'^M"
 stuff "# id2names.pl -l $LEAGUE^M"
 stuff "# print_grades.pl > grades.txt^M"

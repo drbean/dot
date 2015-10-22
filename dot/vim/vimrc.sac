@@ -1,4 +1,4 @@
-" Last Edit: 2015 Oct 10, 21:22:45
+" Last Edit: 2015 Oct 22, 12:36:16
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -534,7 +534,7 @@ function! GoogleLink()
 	let lnum = line('$')
 	let words = getline( line('.') )
 	let search = substitute(words, '\v\s+', '+', "g")
-	let string = "http://www.google.com.tw/search?q=%22" . search . "%22&num=100"
+	let string = "http://www.google.com.tw/search?q=%22" . search . "%22&num=100&gws_rd=ssl&tbm=isch&tbo=u&source=univ&sa=X"
 	call setline(".", string)
 endfunction
 au BufEnter slides.txt no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I

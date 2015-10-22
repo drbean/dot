@@ -1,4 +1,4 @@
-" Last Edit: 2015 Oct 22, 12:37:23
+" Last Edit: 2015 Oct 22, 12:39:49
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -549,7 +549,7 @@ au!
 
 " scoring classwork/$week.yaml files
 
-fu! Reformat ()
+fu! Reformat_champ ()
 	let dir = getcwd()
 	let league = substitute(dir, "/home/drbean/041/", "", "")
 	let sessionlist = glob( "dir" . "/session/*", 1, 1)
@@ -574,7 +574,7 @@ fu! Reformat ()
 	endfor
 endf
 
-au BufEnter classwork/*.yaml.table nn <LocalLeader>r <Esc>:call Reformat()<CR>j
+au BufEnter classwork/*.yaml.table nn <LocalLeader>r <Esc>:call Reformat_champ()<CR>j
 au BufEnter classwork/*.yaml nn <LocalLeader>r <Esc>:call Reformat()<CR>j
 au BufEnter classwork/*.yaml nn <LocalLeader>f :if !empty(getline('.')) <Bar>
 	\ call search('^$', 'bW') <Bar>

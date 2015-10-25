@@ -1,4 +1,4 @@
-" Last Edit: 2015 Oct 22, 12:39:49
+" Last Edit: 2015 Oct 22, 13:30:46
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -574,8 +574,28 @@ fu! Reformat_champ ()
 	endfor
 endf
 
+fu! Reformat_prescore ()
+	let dir = getcwd()
+	let league = substitute(dir, "/home/drbean/041/", "", "")
+	let sessionlist = glob( "dir" . "/session/*", 1, 1)
+	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/041/session/", "", "")' )
+	let session = max( sessions )
+	@ts = 2
+	let lnum = line('$')
+	let tables = split( getline(lnum), ',' )
+	call setline(lnum, "")
+	for table in tables
+		let lnum = line('$')
+		let groups = split( table, '::' )
+		for group in groups
+			call append (lnum, [group . ":",  "  tardy:", "  absent:", "  merits: ~", "  p: ~"])
+			let lnum = line('$')
+		endfor
+	endfor
+endf
+
 au BufEnter classwork/*.yaml.table nn <LocalLeader>r <Esc>:call Reformat_champ()<CR>j
-au BufEnter classwork/*.yaml nn <LocalLeader>r <Esc>:call Reformat()<CR>j
+au BufEnter classwork/*.yaml nn <LocalLeader>r <Esc>:call Reformat_prescore()<CR>j
 au BufEnter classwork/*.yaml nn <LocalLeader>f :if !empty(getline('.')) <Bar>
 	\ call search('^$', 'bW') <Bar>
 	\ endif <Bar>

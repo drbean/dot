@@ -28,7 +28,7 @@ screen 2
 stuff "ls homework^M"
 stuff "svn ls homework^M"
 stuff "# zero_homework.pl -x $TOPIC >> homework/$LASTWEEK.yaml^M"
-stuff "# svn add homework/$LASTWEEK.yaml && svn ci homework/$LASTWEEK.yaml -m $TOPIC ^M"
+stuff "# svn add homework/$LASTWEEK.yaml && svn ci homework/$LASTWEEK.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put homework/$LASTWEEK.yaml -o homework.yaml && qui'^M"
 
 screen 1
 stuff "echo -e \"---\ntopic: $TOPIC\n\n$TABLES\" >> \"classwork/$LASTWEEK.yaml.table\"^M"
@@ -36,7 +36,7 @@ stuff "svn st | grep '\^\(A\|M\|D\)'^Msvn log -vr BASE:HEAD^Msvn up^M"
 stuff "ls classwork^M"
 stuff "svn ls classwork session/$SESSION^M"
 stuff "# touch classwork/no_week_$LASTWEEK && svn add classwork/no_week_$LASTWEEK && svn ci classwork/no_week_$LASTWEEK -m ^M"
-stuff "# svn add classwork/$LASTWEEK.yaml && svn ci classwork/$LASTWEEK.yaml -m $TOPIC^M"
+stuff "# svn add classwork/$LASTWEEK.yaml && svn ci classwork/$LASTWEEK.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put classwork/$LASTWEEK.yaml -o classwork.yaml && qui'^M"
 stuff "# champs_$LEAGUE.hs -l $LEAGUE -r $LASTWEEK > classwork/$LASTWEEK.yaml^M"
 stuff "# mv classwork/$LASTWEEK.yaml.table classwork/$LASTWEEK.yaml^M" 
 stuff "# cp classwork/$WEEK.yaml.table classwork/$LASTWEEK.yaml^M" 

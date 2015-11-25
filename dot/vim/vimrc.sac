@@ -1,4 +1,4 @@
-" Last Edit: 2015 Nov 05, 12:55:27
+" Last Edit: 2015 Nov 22, 21:40:14
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -542,6 +542,16 @@ endfunction
 au BufEnter slides.txt no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 au BufEnter slides.txt ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 au BufEnter content.yaml no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+
+function! HTMLLink()
+	let url = expand( "<cWORD>" )
+	let line = getline(line ('.'))
+	let string = "<a href=\"" . url . "\">" . url . "</a>"
+	let newline = substitute(line, url, string, "g")
+	call setline(".", newline)
+endfunction
+au BufEnter content.yaml no <buffer> <LocalLeader>a <Esc>:call HTMLLink()<CR>A
+au BufEnter content.yaml ino <buffer> <LocalLeader>a <Esc>:call HTMLLink()<CR>A
 
 au BufEnter slides.txt nm <buffer> <LocalLeader>q cW_____()<Esc>'aPO<Esc>ma''$?_____()<Esc>f(\iW
 

@@ -540,25 +540,24 @@ function session () {
     week=$2
     case ${league} in
 	2L1)
-	    if (($week <= 3)); then session=1
-	    elif (($week <= 9)); then session=2
+	    if (($week <= 4)); then session=1
+	    elif (($week <= 8)); then session=2
 	    elif (($week <= 12)); then session=3
-	    elif (($week <= 13)); then session=4
-	    elif (($week <= 18)); then session=5
+	    elif (($week <= 17)); then session=4
 	    else return 1 # illegal week
 	    fi;;
 	KB1)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
+	    if (($week <= 4)); then session=1
+	    elif (($week <= 8)); then session=2
+	    elif (($week <= 12)); then session=3
+	    elif (($week <= 17)); then session=4
 	    else return 1 # illegal week
 	    fi;;
 	MB1)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
+	    if (($week <= 4)); then session=1
+	    elif (($week <= 8)); then session=2
+	    elif (($week <= 12)); then session=3
+	    elif (($week <= 17)); then session=4
 	    else return 1 # illegal week
 	    fi;;
 	FLA0003)

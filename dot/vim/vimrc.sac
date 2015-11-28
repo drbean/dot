@@ -1,4 +1,4 @@
-" Last Edit: 2015 Nov 22, 21:40:14
+" Last Edit: 2015 Nov 28, 11:21:59
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -239,6 +239,10 @@ endif
 highlight MatchParen ctermbg=gray
 
 " Command and other mappings
+
+" TODO. https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
+" nnoremap "*p <ESC>:r !xclip -selection primary -out<CR>
+" nnoremap "+p <ESC>:r !xclip -selection clipboard -out<CR>
 
 " Make CTRL-^ rebound to the *column* in the previous file
   noremap <C-^> <C-^>`"

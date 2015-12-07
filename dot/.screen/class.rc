@@ -3,29 +3,17 @@
 screen 0
 stuff "v league.yaml session/$SESSION/groups.yaml classwork/$LASTWEEK.yaml.table classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml"
 
-screen 6 lftp web.nuu.edu.tw
+screen 5 lftp web.nuu.edu.tw
 stuff "cd public_html/$LEAGUE^M"
 stuff "# put classwork/$LASTWEEK.yaml -o classwork.yaml^M"
 stuff "# put homework/$LASTWEEK.yaml -o homework.yaml^M"
 
 
-screen 5
-stuff "ls homework classwork exam/*^M"
-stuff "ghci^M"
-stuff ":set -XOverloadedStrings^M"
-stuff "import Turtle^M":
-
 screen 4 re.pl --rcfile ../rc/g.rc
 stuff '$g->grades'
 
-screen 3
-stuff "# lpr conversation.pdf -P kyocera^M"
-stuff "# cp conversation.pdf /run/media/drbean/DIE2GV1/^M"
-stuff "# sudo cp conversation.pdf /var/www/html^M"
-stuff "# conversation.pl -l $LEAGUE -s $SESSION -r $WEEK -x $TOPIC -p $LETTER -t $TABLES && xelatex classwork/$SESSION/conversation.tex && evince conversation.pdf^M"
-
 screen 2
-stuff "ls homework^M"
+stuff "ls homework classwork exam/*^M"
 stuff "svn ls homework^M"
 stuff "# zero_homework.pl -x $TOPIC >> homework/$LASTWEEK.yaml^M"
 stuff "# svn add homework/$LASTWEEK.yaml && svn ci homework/$LASTWEEK.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put homework/$LASTWEEK.yaml -o homework.yaml && qui'^M"

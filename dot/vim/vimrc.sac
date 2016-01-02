@@ -1,4 +1,4 @@
-" Last Edit: 2015 Nov 28, 11:21:59
+" Last Edit: 2016 Jan 02, 11:33:28
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -572,6 +572,14 @@ fu! Reformat_champ ()
 	let sessionlist = glob( "dir" . "/session/*", 1, 1)
 	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/041/session/", "", "")' )
 	let session = max( sessions )
+	call inputsave()
+	let item_key = input("Items: '(1)', '(2)', '(3)', '(4)', '(5)', '(6)', '(7)', '(8)', '(9)', '(10)', '(11)', '(12)', '(13)', '(14)' ")
+	call inputrestore()
+	let item_n = get( {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '11': 11, '12': 12, '13': 13, '14': 14}, item_key )
+	call inputsave()
+	let distractor_key = input("Distractors: '(T)rue/False', '(2)', '(3)', '(4)', '(5)', '(6)'  ")
+	call inputrestore()
+	let distractor = get( {'t': 't', '2': 2, '3': 3, '4': 4, '5': 5, '6': 6}, distractor_key )
 	@ts = 2
 	let lnum = line('$')
 	let tables = split( getline(lnum), ',' )
@@ -580,14 +588,24 @@ fu! Reformat_champ ()
 		let lnum = line('$')
 		let groups = split( table, '::' )
 		for group in groups
-			call append (lnum, [group . ":", "  rs:", "    - ~", "    - ~", "    - ~"])
+			let items = repeat([ "    - ~" ], item_n)
+			let lines = extend([group . ":", "  rs:"], items)
+			call append (lnum, lines)
 			let lnum = line('$')
 		endfor
 		let lnum = line('$')
 		call append(lnum, "")
 	endfor
 	let lnum = line('$')
-	call append(lnum, ["qz:", "  -", "    q: ~", "    o:", "      - ~", "      - ~", "      - ~", "    a: ~"])
+	if distractor == "t"
+		let distractor_lines = [ "      - \"True\"",  "      - \"False\"" ]
+	else 
+		let distractor_lines = repeat([ "      - ~" ], distractor)
+	endif
+	let item = ( ["  -", "    q: ~", "    o:"] + distractor_lines ) + ["    a: ~"]
+	let lines = repeat( item, item_n)
+	let quiz = insert( lines, "qz:" )
+	call append(lnum, quiz)
 	endfor
 endf
 

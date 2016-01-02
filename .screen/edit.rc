@@ -1,7 +1,9 @@
 screen v -S Session.vim
-screen
+screen 3
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
-screen
+screen 4
+stuff "./textbook.sh && xelatex textbook.tex && lftp -c 'open web.nuu.edu.tw && cd public_html && put textbook.pdf'^M"
+screen 5
 stuff "lftp drbean@freeshell.org^M ls "
 screen 9
 stuff "# man pandoc_markdown^M"

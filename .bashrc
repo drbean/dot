@@ -402,11 +402,10 @@ function m () {
 
 function tour () {
     OPTIND=1
-    local arg course=tourism view topic story form
-    while getopts 'v:t:s:f:' arg
+    local arg course=tourism topic story form
+    while getopts 't:s:f:' arg
     do
         case ${arg} in
-            v) view=${OPTARG};;
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
             f) form=${OPTARG};;
@@ -415,7 +414,7 @@ function tour () {
     done
 	cd ~/class/$course
 	COURSE=$course \
-	VIEW=$view \
+	VIEW=$topic \
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
@@ -670,7 +669,7 @@ function w () {
     TOPIC=$topic \
     LETTER=$letter \
     TABLES=$tables \
-    screen -c /home/$USER/dot/.screen/class.rc -dR w_${league}_$week
+    screen -c /home/$USER/dot/.screen/class.rc -dR ${league}_$week
     cd -
 }
 

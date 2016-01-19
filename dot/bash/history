@@ -8795,7 +8795,6 @@ svn st
 svn st ~/041/FLA0003/homework/6.yaml 
 svn st cclass/
 svn st classwork/
-svn st | grep '^\(A\|M\|D\)'
 svn st -q
 svn st -q ~/031/2L1/homework
 svn st -q ~/031/FLA0016/homework

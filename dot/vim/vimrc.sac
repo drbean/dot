@@ -1,4 +1,4 @@
-" Last Edit: 2016 Jan 02, 11:33:28
+" Last Edit: 2016 Jan 21, 10:26:45
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -589,7 +589,7 @@ fu! Reformat_champ ()
 		let groups = split( table, '::' )
 		for group in groups
 			let items = repeat([ "    - ~" ], item_n)
-			let lines = extend([group . ":", "  rs:"], items)
+			let lines = extend([group . ":", "  p:", "    - ~", "  rs:"], items)
 			call append (lnum, lines)
 			let lnum = line('$')
 		endfor

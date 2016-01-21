@@ -1,4 +1,4 @@
-" Last Edit: 2016 Jan 21, 10:26:45
+" Last Edit: 2016 Jan 21, 10:30:26
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -19,6 +19,7 @@
 "if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
 "   set fileencodings=utf-8,latin1
 "endif
+set printencoding=utf-8
 
 "set verbose=9		"for testing autocommands
 set nocompatible	" Use Vim defaults (much better!)

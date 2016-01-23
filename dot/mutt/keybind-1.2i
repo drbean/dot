@@ -78,10 +78,10 @@ macro	index	h	"<change-folder>?<tab>"	"back up to next level"
 #macro	index	h	exit
 bind	index	H	display-toggle-weed
 #macro	index	H	":unset weed\n<display-message>"	"Display message with complete header"
-bind	index	i	limit
+#bind	index	i	limit
 bind	index	J	next-entry
-bind	index	l	display-message
-#bind	index	l	limit	#default
+#bind	index	l	display-message
+bind	index	l	limit	#default
 bind	index	K	previous-entry
 macro	index	\em	"<shell-escape>$HOME/mailboxer.pl\n"	"in .boxenhooks"
 #bind	index	n	next-entry

@@ -9,6 +9,8 @@ fi
 
 # ingydotnet/git-hub
 source ~/dot/git/git-hub/init
+# ingydotnet/git-subrepo
+source ~/dot/git/git-subrepo/.rc
 
 alias web="cd; screen -c /home/$USER/dot/.screen/web.rc -dR web; cd -"
 alias surf="cd ~/sr; screen -dR surfraw; cd -"

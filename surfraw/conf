@@ -28,12 +28,14 @@ prefix=/usr
 
 # graphical browser? defaults to yes for meatminds. text browser users can
 # work it out how to change it.
-defyn   SURFRAW_graphical		no
-#Greg
+# Greg
 # defyn   SURFRAW_graphical		yes
+defyn   SURFRAW_graphical		no
 
 # name/path of text browser executable
 # e.g links, lynx, w3m
+# Greg
+# def   SURFRAW_text_browser	elinks
 def   SURFRAW_text_browser	lynx
 
 # name/path of browser executable
@@ -47,9 +49,9 @@ def   SURFRAW_text_browser_args	none
 def   SURFRAW_graphical_browser_args	none
 
 # use -remote openURL for graphical browser
-defyn   SURFRAW_graphical_remote	no
 # Greg what does this do
-# defyn   SURFRAW_graphical_remote	yes
+# defyn   SURFRAW_graphical_remote	no
+defyn   SURFRAW_graphical_remote	yes
 
 # when using the -remote, open a new window?
 defyn   SURFRAW_new_window	no
@@ -59,8 +61,8 @@ def   SURFRAW_screen		screen
 
 # If surfraw is running under screen(1), start a new screen
 # for each text browser invocation?
-#defyn SURFRAW_new_screen	no
-#Greg
+# Greg
+# defyn SURFRAW_new_screen	no
 defyn SURFRAW_new_screen	yes
 
 # arguments for the screen command
@@ -76,6 +78,8 @@ defyn SURFRAW_quote_args	no
 defyn SURFRAW_quote_ifs    yes
 
 # default number of results to return
+# Greg
+# def   SURFRAW_results		29
 def   SURFRAW_results		100
 
 # escape [% "@$%&+,/:;<=>?@@[\^{|}~'] characters in command line arguments

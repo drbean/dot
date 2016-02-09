@@ -1,0 +1,9 @@
+[Unit]
+Description=Set org.gnome.desktop.background picture_uri
+
+[Service]
+Type=simple
+Nice=19
+IOSchedulingClass=2
+IOSchedulingPriority=7
+ExecStart=/home/mai/picture_uri.pl

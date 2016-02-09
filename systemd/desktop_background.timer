@@ -1,0 +1,8 @@
+[Unit]
+Description=Set org.gnome.desktop.background picture_uri
+
+[Timer]
+OnBootSec=15 min
+
+[Install]
+WantedBy=timers.target

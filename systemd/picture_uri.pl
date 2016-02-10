@@ -21,4 +21,11 @@ $seen->print(@seen, $pic);
 chomp $pic;
 $pic =~ s/ /\\ /g;
 
-system("dbus-launch gsettings set org.gnome.desktop.background picture-uri file:///home/mai/画像/$pic");
+my $directory = "/home/mai/画像";
+
+unless ( $pic ) {
+	$directory = "/usr/share/backgrounds/f23/default";
+	$pic = "f23.xml";
+}
+
+system("dbus-launch gsettings set org.gnome.desktop.background picture-uri file://$directory/$pic");

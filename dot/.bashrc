@@ -464,9 +464,9 @@ function gr () {
 	FLA0008) league=$1;;
 	FLA0011) league=$1;;
 	FLA0024) league=$1;;
-	2L1) league=$1;;
-	KB1) league=$1;;
-	MB1) league=$1;;
+	2L2) league=$1;;
+	KA2) league=$1;;
+	MB2) league=$1;;
 	*) return 1 # illegal league
     esac
     OPTIND=2
@@ -500,9 +500,9 @@ function new () {
 	FLA0008) league=$1;;
 	FLA0011) league=$1;;
 	FLA0024) league=$1;;
-	2L1) league=$1;;
-	KB1) league=$1;;
-	MB1) league=$1;;
+	2L2) league=$1;;
+	KA2) league=$1;;
+	MB2) league=$1;;
 	*) return 1 # illegal league
     esac
     OPTIND=2
@@ -543,21 +543,21 @@ function session () {
     league=$1
     week=$2
     case ${league} in
-	2L1)
+	2L2)
 	    if (($week <= 4)); then session=1
 	    elif (($week <= 8)); then session=2
 	    elif (($week <= 12)); then session=3
 	    elif (($week <= 17)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	KB1)
+	KA2)
 	    if (($week <= 4)); then session=1
 	    elif (($week <= 8)); then session=2
 	    elif (($week <= 12)); then session=3
 	    elif (($week <= 17)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	MB1)
+	MB2)
 	    if (($week <= 4)); then session=1
 	    elif (($week <= 8)); then session=2
 	    elif (($week <= 12)); then session=3
@@ -602,17 +602,17 @@ function tables () {
     letter=$2
     case ${league} in
 		# 16 groups
-	2L1)
+	2L2)
 	    case ${letter} in
 		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2,5-1,5-2";;
 		*) return 1 # illegal option
 	    esac;;
-	KB1)
+	KA2)
 	    case ${letter} in
 		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
 		*) return 1 # illegal option
 	    esac;;
-	MB1)
+	MB2)
 	    case ${letter} in
 		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
 		*) return 1 # illegal letter
@@ -649,9 +649,9 @@ function w () {
 	FLA0008) league=$1;;
 	FLA0011) league=$1;;
 	FLA0024) league=$1;;
-	2L1) league=$1;;
-	KB1) league=$1;;
-	MB1) league=$1;;
+	2L2) league=$1;;
+	KA2) league=$1;;
+	MB2) league=$1;;
 	*) return 1 # illegal league
     esac
     week=$2

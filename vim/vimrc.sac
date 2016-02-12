@@ -1,4 +1,4 @@
-" Last Edit: 2016 Jan 21, 10:30:26
+" Last Edit: 2016 Feb 12, 12:33:16 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -569,9 +569,9 @@ au!
 
 fu! Reformat_champ ()
 	let dir = getcwd()
-	let league = substitute(dir, "/home/drbean/041/", "", "")
+	let league = substitute(dir, "/home/drbean/042/", "", "")
 	let sessionlist = glob( "dir" . "/session/*", 1, 1)
-	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/041/session/", "", "")' )
+	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/042/session/", "", "")' )
 	let session = max( sessions )
 	call inputsave()
 	let item_key = input("Items: '(1)', '(2)', '(3)', '(4)', '(5)', '(6)', '(7)', '(8)', '(9)', '(10)', '(11)', '(12)', '(13)', '(14)' ")
@@ -612,9 +612,9 @@ endf
 
 fu! Reformat_prescore ()
 	let dir = getcwd()
-	let league = substitute(dir, "/home/drbean/041/", "", "")
+	let league = substitute(dir, "/home/drbean/042/", "", "")
 	let sessionlist = glob( "dir" . "/session/*", 1, 1)
-	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/041/session/", "", "")' )
+	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/042/session/", "", "")' )
 	let session = max( sessions )
 	@ts = 2
 	let lnum = line('$')

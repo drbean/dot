@@ -177,7 +177,7 @@ function sound () {
 alias class="cd ~/class; screen -c /home/$USER/dot/.screen/utility.rc -dR class; cd -"
 alias forms="cd ~/class/forms; screen -dR forms; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/$USER/dot/.screen/utility.rc -dR tmpl; cd -"
-alias rc="cd ~/041/rc; screen -c /home/$USER/dot/.screen/utility.rc -dR rc; cd -"
+alias rc="cd ~/042/rc; screen -c /home/$USER/dot/.screen/utility.rc -dR rc; cd -"
 
 function pres () {
     OPTIND=1
@@ -482,7 +482,7 @@ function gr () {
     if [[ -z "$n" ]]
 	then n=3
     fi
-    cd ~/041/$league
+    cd ~/042/$league
     LEAGUE=$league \
     ROUND=$round \
     NEXTROUND=$(($round+1)) \
@@ -698,7 +698,7 @@ function FLA0003 () {
 	X) tables="Green::Black,Blue::Charcoal,Chocolate::Purple,White::Orange,Pink::Yellow";;
 	*) return 1 # illegal option
     esac
-    cd ~/041/$league
+    cd ~/042/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -730,7 +730,7 @@ function FLA0008 () {
 	B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
 	*) return 1 # illegal option
     esac
-    cd ~/041/$league
+    cd ~/042/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -762,7 +762,7 @@ function FLA0011 () {
 	X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 	*) return 1 # illegal option
     esac
-    cd ~/041/$league
+    cd ~/042/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -794,7 +794,7 @@ function FLA0024 () {
 	X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 	*) return 1 # illegal option
     esac
-    cd ~/041/$league
+    cd ~/042/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -826,7 +826,7 @@ function GL00019 () {
 	X) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
 	*) return 1 # illegal option
     esac
-    cd ~/041/$league
+    cd ~/042/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \

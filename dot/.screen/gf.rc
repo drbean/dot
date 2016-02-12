@@ -1,11 +1,14 @@
 screen 1
+stuff "cd ~/gf-3.7.1/^M cd -^M"
 stuff "cd gf-contrib^M cd -^M"
+stuff "cd ~/dickson/^M cd -^M"
 stuff "git status^M"
 stuff "# git fetch upstream^M"
 stuff "# git merge upstream/master^M"
 screen 2
 stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/$STORY^M cd -^M"
-stuff "gf -coding utf-8^M import gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf^M "
+stuff "~/gf-3.7.1/.stack-work/install/i386-linux/lts-5.2/7.10.3/bin/gf --coding=utf8^M"
+stuff "import gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf^M "
 screen 3
 stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/$STORY/^M"
 stuff "# gf --make --output-format=haskell ${MOD}Eng.gf^M"

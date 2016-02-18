@@ -1,0 +1,322 @@
+
+ack econd /etc/httpd/
+ack Timeout /etc/httpd/
+ack timeout -i /etc/httpd/
+apache --version
+ausearch -m AVC -ts recent | audit2why
+ausearch -m AVC -ts recent  | audit2why
+ausearch -m AVC -ts today  | audit2why
+certwatch -h
+certwatch --help
+copr help
+cpan Catalyst::Restarter
+cpanm App::Nopaste::Service::Shadowcat
+cpanm Dist::Zilla::Plugin::MetaJSON
+cpan Vroom
+cp /tmp/-bash-RAoS5.log/SHOW-INSTALLED2_20160207.txt ~drbean/fedora/
+cp /tmp/-bash-RAoS5.log/SHOW-INSTALLED2_20160207.txt ~drbean/fedora22/
+date
+#dd if /home/drbean/Fedora-Live-Workstation-i686-23-10.iso of=/dev/sdb bs=8M
+dd if=/home/drbean/Fedora-Live-Workstation-i686-23-10.iso of=/dev/sdb bs=8M
+Description=Perform system backup
+df
+df ~drbean/Fedora-Live-Workstation-i686-23-10.iso 
+df ~drbean/media/
+df --help
+dmesg
+dmesg |ack sd
+dnf copr enable heliocastro/hack-fonts
+dnf help
+dnf help copr
+dnf help enable
+dnf info ghc-contravariant
+dnf info ghc-mwc-random-devel
+dnf info ghc-optparse-applicative
+dnf info ghc-system-fileio
+dnf info ghc-system-filepath
+dnf info ghc-temporary
+dnf info system-fileio
+dnf install adobe-source-code-pro-fonts
+dnf install anka-coder-norm-fonts-1.100-0.3.20130409hg4348cf4ec395.fc22.noarch 
+dnf install crypto-utils
+dnf install dejavu-sans-mono-fonts
+dnf install exim
+dnf install ghc-contravariant
+dnf install ghc-contravariant-devel
+dnf install ghc-mwc-random-devel
+dnf install ghc-optparse-applicative
+dnf install ghc-optparse-applicative-devel
+dnf install ghc-system-fileio-devel
+dnf install ghc-temporary-devel
+dnf install ghc-yaml
+dnf install ghc-yaml-devel
+dnf install google-droid-sans-mono-fonts
+dnf install hack-fonts
+dnf install imsettings-mate
+dnf install levien-inconsolata-fonts
+dnf install lynx elinks
+dnf install mozilla-fira-mono-fonts
+dnf install msimonson-anonymouspro-fonts-1.002.001-8.fc22.noarch 
+dnf install perl-Catalyst-Authentication-Store-DBIx-Class
+dnf install perl-Catalyst-Devel
+dnf install perl-Catalyst-Plugin-Authentication
+dnf install perl-Catalyst-Plugin-Authentication-Store-DBIx-Class
+dnf install perl-Catalyst-Plugin-Authorization-Roles
+dnf install perl-Catalyst-Plugin-Session
+dnf install perl-Catalyst-Plugin-Session-State-Cookie
+dnf install perl-Catalyst-Plugin-Session-Store
+dnf install perl-Catalyst-Plugin-Session-Store-DBIC
+dnf install perl-MooseX-Params-Validate
+dnf install perl-MooseX-SemiAffordanceAccessor
+dnf install perl-Net-Ping-External
+dnf install perl-Net-Telnet
+dnf install x264
+dnf install x264-libs
+dnf provides pulseaudit
+dnf remove mod_nss
+dnf repolist
+dnf repos
+dnf search anka
+dnf search anonymous
+dnf search augeas
+dnf search authentication
+dnf search authentication | ack Catalyst
+dnf search authorization
+dnf search clock
+dnf search contravariant
+dnf search distzilla
+dnf search dist-zilla
+dnf search droid-sans-mono
+dnf search fantasque
+dnf search fira-mono
+dnf search foldl
+dnf search google-droid-sans-mono-fonts
+dnf search gstreamer
+dnf search h264
+dnf search hack
+dnf search hostname
+dnf search inconsolata
+dnf search letsencrypt
+dnf search managed
+dnf search mate
+dnf search MetaJSON
+dnf search monaco
+dnf search mono
+dnf search mozilla-fira-mono-fonts
+dnf search mwc
+dnf search optional-args
+dnf search optparse-applicative
+dnf search ping
+dnf search plugin-session
+dnf search profunctors
+dnf search pt
+dnf search pulseaudit
+dnf search Restarter
+dnf search roman
+dnf search semiaffordance
+dnf search shadowcat
+dnf search shelly
+dnf search source-code-pro
+dnf search StateVar
+dnf search system-fileio
+dnf search telnet
+dnf search temporary
+dnf search times
+dnf search turtle
+dnf search ubuntu
+dnf search void
+dnf search vroom
+dnf search yaml
+dnf update
+du -sk ~drbean/media/
+du -sk ~drbean/media/cygwin/
+echo KmZz1QSXlGVKLbd0IhSlZ7lDarY4o7falznpc3R3x9c.G8m9_u4bXeb3U7X8tSFouc5vmmM3TolzVzTI2f0FYLU > /var/www/html/.well-known/acme-challenge/KmZz1QSXlGVKLbd0IhSlZ7lDarY4o7falznpc3R3x9c
+echo "M8AunOzlXLiET3VVN38Qnk8YxenqA3-Oj5Oqi4dC1uM.G8m9_u4bXeb3U7X8tSFouc5vmmM3TolzVzTI2f0FYLU" > /var/www/html/.well-known/acme-challenge/M8AunOzlXLiET3VVN38Qnk8YxenqA3-Oj5Oqi4dC1uM
+   /etc/systemd/system/system-backup.service:
+exit
+firewall-cmd --add-service=http
+firewall-cmd --add-service=http --permanent
+firewall-cmd --add-service=https
+firewall-cmd --add-service=https --permanent
+firewall-cmd --add-service=smtp 
+firewall-cmd --add-service=smtp --permanent
+firewall-cmd -h
+firewall-cmd --help
+firewall-cmd --list-ports
+firewall-cmd --list-services
+firewall-cmd --remove-service=https --permanent
+genkey
+genkey sac.nuu.edu.tw
+#getsebool -a | ack http
+getsebool -a | ack http
+groupadd swiss
+gsettings get org.gnome.software download-updates 
+hostnamectl status
+hostnamectl --transient status
+htop
+httpd -v
+httpd --version
+#http://sac.nuu.edu.tw/.well-known/acme-challenge/M8AunOzlXLiET3VVN38Qnk8YxenqA3-Oj5Oqi4dC1uM
+ifconfig
+[Install]
+IOSchedulingClass=2
+IOSchedulingPriority=7
+journalctl -xb
+journalctl -xe
+kill -SIGQUIT 1032
+kill -SIGQUIT 27858
+kill -SIGTERM 1032
+kill -SIGTERM 27858
+less /etc/aliases 
+less /etc/fedora-release 
+less /etc/fstab
+less /etc/fstab 
+less /etc/group
+less /etc/hostname 
+less /etc/hosts
+less /etc/httpd/alias/cert8.db 
+less /etc/httpd/alias/install.log 
+less /etc/httpd/alias/key3.db 
+less /etc/httpd/alias/secmod.db 
+less /etc/httpd/conf.d/ssl.conf 
+less /etc/passwd
+less /etc/pki/tls/certs/localhost.crt 
+less /etc/pki/tls/private/localhost.key 
+less /etc/services
+less /etc/services 
+less /tmp/-bash-RAoS5.log/SHOW-EXTERNAL_20160207.txt 
+less /tmp/-bash-RAoS5.log/SHOW-INSTALLED2_20160207.txt 
+less /var/log/exim/main.log 
+less /var/log/httpd/error_log 
+locate rpm
+locate rpm_save.sh
+locate server.cert
+locate server.crt
+ls
+ls /
+ls -al ~drbean/media/
+ls --block-size=1G ~drbean/Fedora-Live-Workstation-i686-23-10.iso  -l
+ls --block-size=1M ~drbean/Fedora-Live-Workstation-i686-23-10.iso 
+ls --block-size=1M ~drbean/Fedora-Live-Workstation-i686-23-10.iso  -al
+ls --block-size=1M ~drbean/Fedora-Live-Workstation-i686-23-10.iso  -l
+ls --block-size=1M ~drbean/Fedora-Workstation-netinst-i386-23.iso 
+ls --block-size=1M ~drbean/Fedora-Workstation-netinst-i386-23.iso  -l
+ls /etc/fedora-release 
+ls /etc/httpd/alias/
+ls /etc/httpd/alias/cert8.db 
+ls /etc/httpd/conf.d/
+ls /etc/httpd/conf.d/ssl.conf 
+ls /etc/logs/
+ls /etc/pki
+ls /etc/pki/CA/certs/
+ls /etc/pki/CA/private/
+ls /etc/pki/ca-trust/
+ls /etc/pki/tls
+ls /etc/pki/tls/
+ls /etc/pki/tls/cert
+ls /etc/pki/tls/certs
+ls /etc/pki/tls/certs -al
+ls /etc/pki/tls/private/
+ls /etc/pki/tls/private -al
+ls /etc/pki/tls/private/ -al
+lsfs --help
+ls /tmp/-bash-RAoS5.log/
+ls /tmp/-bash-RAoS5.log/SHOW-EXTERNAL_20160207.txt 
+lsusb
+ls /var/log/exim/main.log 
+ls /var/www/html/.well-known/acme-challenge/
+lynx
+mkdir -p /var/www/html/.well-known/acme-challenge/M8AunOzlXLiET3VVN38Qnk8YxenqA3-Oj5Oqi4dC1uM
+mount /dev/sdb1 ~drbean/media
+mount DIE2GV1 ~drbean/media
+mount DIEGV1 ~drbean/media
+mount -h
+mount LABEL=DIE2GV1 ~drbean/media
+mv /etc/httpd/conf.d/mod_dnssd.conf /etc/httpd/conf.d/mod_dnssd.conf.save
+mv /etc/pki/tls/private/sac.nuu.edu.tw.key /etc/pki/tls/private/sac.nuu.edu.tw.key.2015-10
+mv /etc/pki/tls/private/sac.nuu.edu.tw.key /etc/pki/tls/private/sac.nuu.edu.tw.key.2015-12
+mv /etc/pki/tls/private/sac.nuu.edu.tw.key /etc/pki/tls/private/sac.nuu.edu.tw.key.2016-1
+mv /rpm-verify.sh /root/
+Nice=19
+O0
+OnCalendar=daily
+pgrep firefox
+pgrep libre
+pgrep libre-office
+pkill firefox
+pkill firefox 
+pkill firefox pkill firefox 
+poweroff
+poweroff 
+pwd
+q
+reboot
+reboot 
+restorecon -R -v /home
+rmdir /var/www/html/.well-known/acme-challenge/M8AunOzlXLiET3VVN38Qnk8YxenqA3-Oj5Oqi4dC1uM
+rm /var/www/html/.well-known -rf
+/root/rpm-verify.sh
+. /root/rpm-verify.sh
+semanage fcontext -a -t httpd_user_content_t '/home/*/league.yaml'
+[Service]
+setsebool httpd_can_network_connect 1
+setsebool  httpd_enable_homedirs 1
+setsebool httpd_read_user_content 1
+setsebool httpd_sys_script_anon_write 1
+setsebool -P httpd_can_network_connect 1
+setsebool -P httpd_enable_homedirs 1
+setsebool -P httpd_read_user_content 1
+setsebool -P httpd_sys_script_anon_write 1
+#setsebool -P irc_use_any_tcp_ports off
+ss -tlnp
+ss -tlnp | fpaste
+su - postgres
+su - postgres 
+sync
+systemctl enable bitlbee.service 
+systemctl enable exim.service
+systemctl enable httpd.service 
+systemctl enable ibus.service
+systemctl enable ibus.service 
+systemctl enable shutdown.target 
+systemctl enable znc.service 
+systemctl list-units
+systemctl list-units --all
+systemctl reboot
+systemctl restart exim.service
+systemctl restart httpd.service
+systemctl restart httpd.service 
+systemctl restart ibus.service
+systemctl start exim.service
+systemctl start httpd.service 
+systemctl start shutdown.target 
+systemctl status bitlbee.service 
+systemctl status exim.service
+systemctl status httpd.service 
+systemctl status httpd.service -l
+systemctl status ibus.service
+systemctl status shutdown.target 
+systemctl status znc.service
+systemctl status znc.service 
+systemctl status z.service
+tail -F /var/log/exim/main.log 
+#tail -F /var/log/httpd/error_log 
+tail -F /var/log/httpd/error_log 
+[Timer]
+Type=simple
+umount ~drbean/media
+uname
+uname -a
+[Unit]
+usermod -a -G swiss apache
+usermod -a -G swiss drbean
+v
+# /var/log/exim/main.log 
+v /etc/fstab 
+v /etc/httpd/conf/httpd.conf
+v /usr/local/share/perl5/Grades/Groupwork.pm 
+WantedBy=timers.target
+whereis pulseaudit
+which certwatch
+which pulseaudit
+which  which

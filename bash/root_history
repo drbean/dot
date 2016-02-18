@@ -2,17 +2,30 @@
 ack econd /etc/httpd/
 ack Timeout /etc/httpd/
 ack timeout -i /etc/httpd/
+alternatives --install /usr/bin/v v /usr/bin/vim 50
 apache --version
+ausearch -m avc -ts recent
 ausearch -m AVC -ts recent | audit2why
 ausearch -m AVC -ts recent  | audit2why
+ausearch -m avc -ts today
 ausearch -m AVC -ts today  | audit2why
+cat ~drbean.fedora/sac_f??_packages.txt > installed.txt
+cat ~drbean/sac_f??_packages.txt > installed.txt
+cat /home/drbean/fedora22/SHOW-INSTALLED2_20160207.txt >> installed.txt 
+cat /home/drbean.fedora/sac_f??_packages.txt > installed.txt
 certwatch -h
 certwatch --help
+chmod 777 -R ~drbean/media/
+chown 777 -R ~drbean/media/
+chown drbean:drbean ~drbean/media/*
+chown drbean -R ~drbean/media
+chown znc:znc -R /var/lib/znc/.znc/
 copr help
 cpan Catalyst::Restarter
 cpanm App::Nopaste::Service::Shadowcat
 cpanm Dist::Zilla::Plugin::MetaJSON
 cpan Vroom
+cp ~drbean/dot/surfraw/conf /etc/xdg/surfraw/conf
 cp /tmp/-bash-RAoS5.log/SHOW-INSTALLED2_20160207.txt ~drbean/fedora/
 cp /tmp/-bash-RAoS5.log/SHOW-INSTALLED2_20160207.txt ~drbean/fedora22/
 date
@@ -26,6 +39,7 @@ df --help
 dmesg
 dmesg |ack sd
 dnf copr enable heliocastro/hack-fonts
+dnf copr enable petersen/stack
 dnf help
 dnf help copr
 dnf help enable
@@ -36,11 +50,18 @@ dnf info ghc-system-fileio
 dnf info ghc-system-filepath
 dnf info ghc-temporary
 dnf info system-fileio
+dnf install ack
+[dnf install ack @admin-tools adobe-release-i386 adwaita-qt4 aisleriot alsa-plugins-pulseaudio anaconda anki aspell-en audacity -authconfig-gtk baobab @base-x bijiben biosdevname bitlbee brasero-nautilus btparser cabal-dev cheese -cinnamon -cinnamon-control-center @cinnamon-desktop -cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cjs @core crash @critical-path-gnome crypto-utils cups-devel dbus-devel deja-dup desktop-backgrounds-basic devassistant @dial-up dracut-config-rescue empathy eog evince-browser-plugin evince-nautilus evolution-ews evolution-help exim -fedora-icon-theme fedora-productimg-workstation fedora-release-workstation fedora-user-agent-chrome ffmpeg ffmpeg-devel file-roller-nautilus @firefox firewall-config flash-plugin @fonts fros-gnome gcc-c++ gedit ghc-cereal-devel ghc-contravariant-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-json-devel ghc-lifted-base-devel ghc-monad-control-devel ghc-MonadRandom-devel ghc-mwc-random-devel ghc-optparse-applicative-devel ghc-pandoc-types-devel ghc-safe-devel ghc-system-fileio-devel ghc-temporary-devel ghc-unordered-containers-devel ghc-yaml-devel -ghostscript-cups gimp gnash gnome-backgrounds gnome-boxes gnome-calculator gnome-classic-session gnome-clocks gnome-color-manager gnome-contacts @gnome-desktop gnome-dictionary gnome-documents gnome-epub-thumbnailer gnome-font-viewer gnome-getting-started-docs gnome-initial-setup gnome-maps -gnome-mplayer gnome-photos gnome-python2-gconf gnome-python2-gnome -gnome-screensaver gnome-screenshot gnome-shell-extension-background-logo gnome-system-log gnome-system-monitor gnome-themes gnome-user-share gnome-weather gnutls-devel google-android-emoji-fonts -google-noto-sans-lisu-fonts google-noto-sans-lisu-fonts -google-noto-sans-mandaic-fonts google-noto-sans-mandaic-fonts -google-noto-sans-meeteimayek-fonts -google-noto-sans-tagalog-fonts google-noto-sans-tagalog-fonts -google-noto-sans-tai-tham-fonts google-noto-sans-tai-tham-fonts -google-noto-sans-tai-viet-fonts google-noto-sans-tai-viet-fonts grub2 grubby gstreamer1-plugins-bad-freeworld gstreamer-ffmpeg gstreamer-plugin-crystalhd gstreamer-plugins-bad gstreamer-plugins-bad-nonfree gtk2-immodule-xim gtk3-immodule-xim gtk+-devel gucharmap @guest-desktop-agents guvcview gvfs-afp gvfs-archive gvfs-gphoto2 gvfs-mtp gvfs-smb @hardware-support haskell-platform hplip-gui htop ibus-chewing ibus-devel ibus-hangul ibus-kkc ibus-libpinyin ibus-m17n -ibus-qt ibus-qt ibus-rawcode -ibus-sayura ibus-table-latin ibus-typing-booster icedtea-web -im-chooser-xfce -imsettings-cinnamon -imsettings-mate -imsettings-qt -imsettings-xfce -initial-setup @input-methods -iok @java kernel-PAE kernel-PAE-modules-extra leveldb libetonyek libproxy-mozjs @libreoffice libreoffice-emailmerge libreoffice-langpack-en libreoffice-langpack-zh-Hant libreswan libtool lklug-fonts lohit-assamese-fonts lohit-bengali-fonts lohit-gujarati-fonts lohit-gurmukhi-fonts lohit-kannada-fonts lohit-odia-fonts lohit-tamil-fonts lohit-telugu-fonts @manipuri-support marco @mate-desktop mate-desktop mate-media mesa-libGLES mesa-libwayland-egl -metacity mnemosyne mod_dav_svn mod_fcgid mod_nss mod_ssl moreutils mosh mousetweaks mplayer muffin @multimedia mutt nautilus-sendto naver-nanum-gothic-fonts -nemo -nemo-fileroller -nemo-preview net-snmp-devel -network-manager-applet NetworkManager-bluetooth -NetworkManager-l2tp NetworkManager-openconnect NetworkManager-openvpn-gnome NetworkManager-pptp-gnome NetworkManager-vpnc-gnome
+dnf install ack @admin-tools adobe-release-i386 adwaita-qt4 aisleriot alsa-plugins-pulseaudio anaconda anki aspell-en audacity -authconfig-gtk baobab @base-x bijiben biosdevname bitlbee brasero-nautilus btparser cabal-dev cheese -cinnamon -cinnamon-control-center @cinnamon-desktop -cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cjs @core crash @critical-path-gnome crypto-utils cups-devel dbus-devel deja-dup desktop-backgrounds-basic devassistant @dial-up dracut-config-rescue empathy eog evince-browser-plugin evince-nautilus evolution-ews evolution-help exim -fedora-icon-theme fedora-productimg-workstation fedora-release-workstation fedora-user-agent-chrome ffmpeg ffmpeg-devel file-roller-nautilus @firefox firewall-config flash-plugin @fonts fros-gnome gcc-c++ gedit ghc-cereal-devel ghc-contravariant-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-json-devel ghc-lifted-base-devel ghc-monad-control-devel ghc-MonadRandom-devel ghc-mwc-random-devel ghc-optparse-applicative-devel ghc-pandoc-types-devel ghc-safe-devel ghc-system-fileio-devel ghc-temporary-devel ghc-unordered-containers-devel ghc-yaml-devel -ghostscript-cups gimp gnash gnome-backgrounds gnome-boxes gnome-calculator gnome-classic-session gnome-clocks gnome-color-manager gnome-contacts @gnome-desktop gnome-dictionary gnome-documents gnome-epub-thumbnailer gnome-font-viewer gnome-getting-started-docs gnome-initial-setup gnome-maps -gnome-mplayer gnome-photos gnome-python2-gconf gnome-python2-gnome -gnome-screensaver gnome-screenshot gnome-shell-extension-background-logo gnome-system-log gnome-system-monitor gnome-themes gnome-user-share gnome-weather gnutls-devel google-android-emoji-fonts -google-noto-sans-lisu-fonts google-noto-sans-lisu-fonts -google-noto-sans-mandaic-fonts google-noto-sans-mandaic-fonts -google-noto-sans-meeteimayek-fonts -google-noto-sans-tagalog-fonts google-noto-sans-tagalog-fonts -google-noto-sans-tai-tham-fonts google-noto-sans-tai-tham-fonts -google-noto-sans-tai-viet-fonts google-noto-sans-tai-viet-fonts grub2 grubby gstreamer1-plugins-bad-freeworld gstreamer-ffmpeg gstreamer-plugin-crystalhd gstreamer-plugins-bad gstreamer-plugins-bad-nonfree gtk2-immodule-xim gtk3-immodule-xim gtk+-devel gucharmap @guest-desktop-agents guvcview gvfs-afp gvfs-archive gvfs-gphoto2 gvfs-mtp gvfs-smb @hardware-support haskell-platform hplip-gui htop ibus-chewing ibus-devel ibus-hangul ibus-kkc ibus-libpinyin ibus-m17n -ibus-qt ibus-qt ibus-rawcode -ibus-sayura ibus-table-latin ibus-typing-booster icedtea-web -im-chooser-xfce -imsettings-cinnamon -imsettings-mate -imsettings-qt -imsettings-xfce -initial-setup @input-methods -iok @java kernel-PAE kernel-PAE-modules-extra leveldb libetonyek libproxy-mozjs @libreoffice libreoffice-emailmerge libreoffice-langpack-en libreoffice-langpack-zh-Hant libreswan libtool lklug-fonts lohit-assamese-fonts lohit-bengali-fonts lohit-gujarati-fonts lohit-gurmukhi-fonts lohit-kannada-fonts lohit-odia-fonts lohit-tamil-fonts lohit-telugu-fonts @manipuri-support marco @mate-desktop mate-desktop mate-media mesa-libGLES mesa-libwayland-egl -metacity mnemosyne mod_dav_svn mod_fcgid mod_nss mod_ssl moreutils mosh mousetweaks mplayer muffin @multimedia mutt nautilus-sendto naver-nanum-gothic-fonts -nemo -nemo-fileroller -nemo-preview net-snmp-devel -network-manager-applet NetworkManager-bluetooth -NetworkManager-l2tp NetworkManager-openconnect NetworkManager-openvpn-gnome NetworkManager-pptp-gnome NetworkManager-vpnc-gnome
+dnf install @admin-tools @critical-path-gnome @dial-up @firefox @guest-desktop-agents @hardware-support @java @printing @standard NetworkManager-bluetooth NetworkManager-openconnect NetworkManager-openvpn-gnome NetworkManager-pptp-gnome NetworkManager-vpnc-gnome PackageKit-cached-metadata PackageKit-command-not-found PackageKit-gstreamer-plugin PackageKit-gtk3-module PyPAM ack adobe-release-i386 adwaita-qt4 aisleriot alsa-plugins-pulseaudio anaconda anki aspell-en audacity baobab bijiben biosdevname bitlbee brasero-nautilus cheese cinnamon-session cinnamon-settings-daemon cjs crash crypto-utils cups-devel deja-dup desktop-backgrounds-basic devassistant dracut-config-rescue empathy eog evince-browser-plugin evince-nautilus evolution-ews evolution-help
 dnf install adobe-source-code-pro-fonts
 dnf install anka-coder-norm-fonts-1.100-0.3.20130409hg4348cf4ec395.fc22.noarch 
+dnf install bitlbee
 dnf install crypto-utils
 dnf install dejavu-sans-mono-fonts
+dnf install duplicity
 dnf install exim
+dnf install exim fedora-productimg-workstation fedora-release-workstation fedora-user-agent-chrome ffmpeg file-roller-nautilus firewall-config flash-plugin fros-gnome gcc-c++ gedit ghc-MonadRandom-devel ghc-cereal-devel ghc-contravariant-devel ghc-cpphs-devel ghc-haskell-src-exts ghc-json-devel ghc-mwc-random-devel ghc-optparse-applicative-devel ghc-pandoc-types-devel ghc-safe-devel ghc-system-fileio-devel ghc-temporary-devel ghc-yaml-devel gimp gnash gnome-backgrounds gnome-boxes gnome-calculator gnome-classic-session gnome-clocks gnome-color-manager gnome-contacts gnome-dictionary gnome-documents gnome-epub-thumbnailer gnome-font-viewer gnome-getting-started-docs gnome-initial-setup gnome-maps gnome-photos gnome-python2-gconf gnome-python2-gnome gnome-screenshot gnome-shell-extension-background-logo gnome-system-log gnome-system-monitor gnome-themes gnome-user-share gnome-weather
 dnf install ghc-contravariant
 dnf install ghc-contravariant-devel
 dnf install ghc-mwc-random-devel
@@ -48,15 +69,25 @@ dnf install ghc-optparse-applicative
 dnf install ghc-optparse-applicative-devel
 dnf install ghc-system-fileio-devel
 dnf install ghc-temporary-devel
+dnf install ghc-xmonad-contrib
+dnf install ghc-xmonad-contrib-devel
+dnf install ghc-xmonad-log-ap
 dnf install ghc-yaml
 dnf install ghc-yaml-devel
+dnf install google-android-emoji-fonts google-noto-sans-lisu-fonts google-noto-sans-mandaic-fonts google-noto-sans-tagalog-fonts google-noto-sans-tai-tham-fonts google-noto-sans-tai-viet-fonts grub2 grubby gstreamer-ffmpeg gstreamer-plugin-crystalhd gstreamer-plugins-bad gstreamer1-plugins-bad-freeworld gtk+-devel gtk2-immodule-xim gtk3-immodule-xim gucharmap guvcview gvfs-afp gvfs-archive gvfs-gphoto2 gvfs-mtp gvfs-smb haskell-platform hplip-gui htop ibus-chewing ibus-devel ibus-hangul ibus-kkc ibus-libpinyin ibus-m17n ibus-qt ibus-rawcode ibus-table-latin ibus-typing-booster kernel-PAE kernel-PAE-modules-extra leveldb libproxy-mozjs libreoffice-emailmerge libreoffice-langpack-en libreoffice-langpack-zh-Hant libreswan lklug-fonts lohit-assamese-fonts lohit-bengali-fonts lohit-gujarati-fonts lohit-gurmukhi-fonts lohit-kannada-fonts lohit-odia-fonts lohit-tamil-fonts lohit-telugu-fonts marco mate-desktop mate-media mesa-libGLES mnemosyne mod_dav_svn mod_fcgid mod_ssl moreutils mosh mousetweaks mplayer muffin mutt nautilus-sendto naver-nanum-gothic-fonts net-snmp-devel notify-python nspluginwrapper oidentd opencv-python openrdate openssh-server orca pandoc-pdf
 dnf install google-droid-sans-mono-fonts
 dnf install hack-fonts
+dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 
+dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf install http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm
+dnf install http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
 dnf install imsettings-mate
 dnf install levien-inconsolata-fonts
+dnf install lftp
 dnf install lynx elinks
 dnf install mozilla-fira-mono-fonts
 dnf install msimonson-anonymouspro-fonts-1.002.001-8.fc22.noarch 
+dnf install perl-App-cpanminus perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Email perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace perl-Catalyst-View-Email perl-Catalyst-View-TT perl-Config-GitLike perl-DBD-Pg perl-DBIx-Class-TimeStamp perl-Devel-CheckBin perl-Devel-REPL perl-Dist-Zilla perl-Encode-devel perl-ExtUtils-Embed perl-Flickr-API perl-IO-All perl-List-AllUtils perl-Module-Build-Tiny perl-Moose-Autobox perl-MooseX-Declare perl-MouseX-Getopt perl-Net-Ping-External perl-Net-Telnet perl-Perl-PrereqScanner perl-SVK perl-Sort-Versions perl-Term-ReadLine-Gnu perl-Term-ReadLine-Perl perl-Test-Class perl-Test-CleanNamespaces perl-Test-Fatal perl-Test-File perl-Test-MockObject perl-Test-Output perl-Test-Warnings plymouth-system-theme postgresql-devel postgresql-server python-backports-ssl_match_hostname python-devel python-di python-pexpect qt-mobility remmina-devel remmina-plugins-gnome remmina-plugins-nx remmina-plugins-rdp remmina-plugins-vnc remmina-plugins-xdmcp rhythmbox rootfiles rpmdevtools rpmfusion-nonfree-release sane-backends-drivers-scanners scl-utils
 dnf install perl-Catalyst-Authentication-Store-DBIx-Class
 dnf install perl-Catalyst-Devel
 dnf install perl-Catalyst-Plugin-Authentication
@@ -70,8 +101,20 @@ dnf install perl-MooseX-Params-Validate
 dnf install perl-MooseX-SemiAffordanceAccessor
 dnf install perl-Net-Ping-External
 dnf install perl-Net-Telnet
+dnf install perl-Pod-Select
+dnf install perl-POD-Select
+dnf install screen
+dnf install screen seahorse selinux-policy-targeted setools shotwell sil-nuosu-fonts sil-padauk-fonts simple-scan smc-meera-fonts socat sound-juicer stack surfraw sushi swaks swig system-config-printer system-switch-displaymanager tabish-eeyek-fonts texlive texlive-collection-xetex texlive-fandol texlive-fontspec-doc texlive-installfont texlive-installfont-doc texlive-libertine texlive-libertine-doc texlive-memoir-doc texlive-natbib-doc texlive-sudoku texlive-sudoku-doc texlive-sudokubundle texlive-sudokubundle-doc texlive-texdraw tigervnc tigervnc-server totem-nautilus transmission-gtk tw uboot-tools udisks unoconv vim-perl-support vinagre vsftpd weechat-devel wxGTK x264 xmonad xmonad-mate xorg-x11-drv-geode xorg-x11-drv-libinput xorg-x11-drv-openchrome xorg-x11-drv-vmmouse xorg-x11-drv-vmware xorg-x11-drv-wacom xorg-x11-twm xorg-x11-utils youtube-dl znc zukitwo-gtk2-theme zukitwo-gtk3-theme
+dnf install stack
+dnf install surfraw
+dnf install tigervnc-server
+dnf install vim
 dnf install x264
 dnf install x264-libs
+dnf install xmonad-contrib
+dnf install xmonad-core
+dnf install xmonad-mate
+dnf install znc weechat
 dnf provides pulseaudit
 dnf remove mod_nss
 dnf repolist
@@ -126,8 +169,13 @@ dnf search turtle
 dnf search ubuntu
 dnf search void
 dnf search vroom
+dnf search xmonad
 dnf search yaml
+dnf updaet
 dnf update
+duplicity ftp://greg@web.nuu.edu.tw/duplicity/fedora_sac_drbean /home/drbean
+duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora22 /home/drbean
+duplicity sftp://greg@web.nuu.edu.tw/duplicity/fedora_sac_drbean /home/drbean
 du -sk ~drbean/media/
 du -sk ~drbean/media/cygwin/
 echo KmZz1QSXlGVKLbd0IhSlZ7lDarY4o7falznpc3R3x9c.G8m9_u4bXeb3U7X8tSFouc5vmmM3TolzVzTI2f0FYLU > /var/www/html/.well-known/acme-challenge/KmZz1QSXlGVKLbd0IhSlZ7lDarY4o7falznpc3R3x9c
@@ -147,10 +195,14 @@ firewall-cmd --list-services
 firewall-cmd --remove-service=https --permanent
 genkey
 genkey sac.nuu.edu.tw
+getenforce 
 #getsebool -a | ack http
 getsebool -a | ack http
+ghc installed xmonad-mate
+ghc install xmonad-mate
 groupadd swiss
 gsettings get org.gnome.software download-updates 
+history >> ~drbean/dot/bash/root_history 
 hostnamectl status
 hostnamectl --transient status
 htop
@@ -184,6 +236,7 @@ less /etc/pki/tls/certs/localhost.crt
 less /etc/pki/tls/private/localhost.key 
 less /etc/services
 less /etc/services 
+less installed.txt 
 less /tmp/-bash-RAoS5.log/SHOW-EXTERNAL_20160207.txt 
 less /tmp/-bash-RAoS5.log/SHOW-INSTALLED2_20160207.txt 
 less /var/log/exim/main.log 
@@ -195,12 +248,17 @@ locate server.crt
 ls
 ls /
 ls -al ~drbean/media/
+ls -al /home/drbean
 ls --block-size=1G ~drbean/Fedora-Live-Workstation-i686-23-10.iso  -l
 ls --block-size=1M ~drbean/Fedora-Live-Workstation-i686-23-10.iso 
 ls --block-size=1M ~drbean/Fedora-Live-Workstation-i686-23-10.iso  -al
 ls --block-size=1M ~drbean/Fedora-Live-Workstation-i686-23-10.iso  -l
 ls --block-size=1M ~drbean/Fedora-Workstation-netinst-i386-23.iso 
 ls --block-size=1M ~drbean/Fedora-Workstation-netinst-i386-23.iso  -l
+ls /dev/sdb
+ls ~drbean/
+ls ~drbean/ -al
+ls ~drbean/media/
 ls /etc/fedora-release 
 ls /etc/httpd/alias/
 ls /etc/httpd/alias/cert8.db 
@@ -220,22 +278,35 @@ ls /etc/pki/tls/private/
 ls /etc/pki/tls/private -al
 ls /etc/pki/tls/private/ -al
 lsfs --help
+ls /home/drbean
+ls /home/drbean/.bashrc -al
+ls /home/drbean/dot
+ls /home/drbean/dot/fedora/
+ls /home/drbean/fedora22/
+lsof
 ls /tmp/-bash-RAoS5.log/
 ls /tmp/-bash-RAoS5.log/SHOW-EXTERNAL_20160207.txt 
 lsusb
+ls /var/lib/znc/
 ls /var/log/exim/main.log 
 ls /var/www/html/.well-known/acme-challenge/
 lynx
 mkdir -p /var/www/html/.well-known/acme-challenge/M8AunOzlXLiET3VVN38Qnk8YxenqA3-Oj5Oqi4dC1uM
+mount
 mount /dev/sdb1 ~drbean/media
+mount /dev/sdb ~drbean/media
 mount DIE2GV1 ~drbean/media
 mount DIEGV1 ~drbean/media
 mount -h
+mount LABEL:BEAN_STICK ~drbean/media/
 mount LABEL=DIE2GV1 ~drbean/media
+mv ~drbean/dot/znc/ /var/lib/znc/.znc
 mv /etc/httpd/conf.d/mod_dnssd.conf /etc/httpd/conf.d/mod_dnssd.conf.save
 mv /etc/pki/tls/private/sac.nuu.edu.tw.key /etc/pki/tls/private/sac.nuu.edu.tw.key.2015-10
 mv /etc/pki/tls/private/sac.nuu.edu.tw.key /etc/pki/tls/private/sac.nuu.edu.tw.key.2015-12
 mv /etc/pki/tls/private/sac.nuu.edu.tw.key /etc/pki/tls/private/sac.nuu.edu.tw.key.2016-1
+mv /etc/xdg/surfraw/conf /etc/xdg/surfraw/conf.fedora
+mv /home/drbean/ /home/drbean.fedora/
 mv /rpm-verify.sh /root/
 Nice=19
 O0
@@ -272,6 +343,7 @@ ss -tlnp
 ss -tlnp | fpaste
 su - postgres
 su - postgres 
+su - znc
 sync
 systemctl enable bitlbee.service 
 systemctl enable exim.service
@@ -279,6 +351,9 @@ systemctl enable httpd.service
 systemctl enable ibus.service
 systemctl enable ibus.service 
 systemctl enable shutdown.target 
+systemctl enable sshd.service 
+systemctl enable znc
+systemctl enable znc.service
 systemctl enable znc.service 
 systemctl list-units
 systemctl list-units --all
@@ -290,14 +365,21 @@ systemctl restart ibus.service
 systemctl start exim.service
 systemctl start httpd.service 
 systemctl start shutdown.target 
+systemctl start sshd.service 
+systemctl start znc
+systemctl start znc.service
 systemctl status bitlbee.service 
 systemctl status exim.service
 systemctl status httpd.service 
 systemctl status httpd.service -l
 systemctl status ibus.service
 systemctl status shutdown.target 
+systemctl status sshd.service 
+systemctl status weechat.service
+systemctl status znc
 systemctl status znc.service
 systemctl status znc.service 
+systemctl status znc.service -l  
 systemctl status z.service
 tail -F /var/log/exim/main.log 
 #tail -F /var/log/httpd/error_log 
@@ -314,9 +396,17 @@ v
 # /var/log/exim/main.log 
 v /etc/fstab 
 v /etc/httpd/conf/httpd.conf
+v /etc/xdg/surfraw/conf 
+vi /etc/fstab 
+vi /etc/xdg/surfraw/conf 
 v /usr/local/share/perl5/Grades/Groupwork.pm 
 WantedBy=timers.target
 whereis pulseaudit
+whereis znc
 which certwatch
+which elinks
+which lynx
 which pulseaudit
+which weechat
 which  which
+which znc

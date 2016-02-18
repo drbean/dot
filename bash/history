@@ -1334,6 +1334,9 @@ aa
 ack 022 ./
 ack 032 *
 ack 032 * -l | xargs less
+ack 041
+ack 041 .screen/
+ack 041 .screen/ -l
 ack 1001 032
 ack 1001 032/*/league.yaml
 ack 1001 032/*/league.yaml -l
@@ -1558,6 +1561,8 @@ alias my='drbean/conversation/work/dickson/My{Abstract,Concrete}.gf'
 alias my='drbean/conversation/work/dickson/My*.gf'
 alias rep=drbean/conversation/work/dickson/engine/Representation.hs
 alias rep=drbean/conversation/work/dickson/Representation.hs
+alternatives --config v
+alternatives config v
 apropos BIx::Clas
 apropos session
 ate
@@ -1676,6 +1681,7 @@ cat ./animal/bingo_bird_6.tex > bingo.tex
 # cat ./art/bingo_art_3.tex >> bingo.tex
  cat ./art/bingo_art_4.tex >> bingo.tex
 # cat ./art/bingo_art_4.tex >> bingo.tex
+cat ./art/bingo_art_4.tex >> bingo.tex
 # cat ./art/bingo_art_6.tex >> bingo.tex
  cat ./art/bingo_drum_0.tex >> bingo.tex
 # cat ./art/bingo_drum_0.tex >> bingo.tex
@@ -1750,6 +1756,7 @@ cat education/jigsaw_education_3.tex >> jigsaw.tex
 # cat ./festivals/bingo_holiday_4.tex >> bingo.tex
  cat ./festivals/bingo_newyear_0.tex > bingo.tex
 # cat ./festivals/bingo_newyear_0.tex >> bingo.tex
+cat ./festivals/bingo_newyear_0.tex > bingo.tex
  cat ./festivals/bingo_tomato_1.tex > bingo.tex
 # cat ./festivals/bingo_tomato_1.tex >> bingo.tex
  cat ./festivals/bingo_tomato_2.tex >> bingo.tex
@@ -1816,6 +1823,7 @@ cat ./jigsaw_${STORY}_$FORM.tex > ./jigsaw.tex
 # cat ./nature/bingo_weather_3.tex >> bingo.tex
  cat ./nature/bingo_weather_4.tex >> bingo.tex
 # cat ./nature/bingo_weather_4.tex >> bingo.tex
+cat ./nature/bingo_weather_4.tex >> bingo.tex
  cat ./nature/dic_ant-0.tex > bingo.tex
  cat ./nature/dic_ant-1.tex > bingo.tex
 # cat ./newyork/bingo_newyork_.tex >> bingo.tex
@@ -2000,9 +2008,11 @@ cd ~/041/KB1/exam
 cd ~/041/MB1/comp
 cd ~/041/MB1/exam
 cd 042
+cd ../042
 cd admin/
 cd ~/admin/031/must/
 cd ~/admin/041/nuu/
+cd ~/admin/042/must/
 cd ./attitudes && pandoc -t beamer --latex-engine=xelatex --variable mainfont='WenQuanYi Zen Hei' slides.txt -o slides.pdf && lftp -c 'open web.nuu.edu.tw && cd public_html/speaking && put slides.pdf && qui' && cd -
 cd ./attitudes && vroom -html && lftp -c 'open web.nuu.edu.tw && cd public_html/speaking && mput html/*.html && qui' && cd -
 cd branch/gf
@@ -2064,12 +2074,16 @@ cd git-subrepo/
 cd gsettings/
 cd haskell/
 cd Haskell-Turtle-Library/
+cd /home/drbean
+cd /home/drbean/
+cd /home/drbean.fedora
 cd /home/drbean/Webcam/
 cd /home/drbean/圖片/Webcam/
 cd ../intercultural/customs/
 cd jackson/
 cd kroenke/
 cd media
+cd ~/media/
 cd ../media
 cd media/
 cd mosg
@@ -2287,6 +2301,7 @@ classs
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s art -f 2 ./art && xelatex --output-directory=./art ./art/bingo_art_2.tex && evince ./art/bingo_art_2.pdf
  ~/class/ttb/cards/bingo/bingo.pl -n 15 -s art -f 3 ./art && xelatex --output-directory=./art ./art/bingo_art_3.tex && evince ./art/bingo_art_3.pdf
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s art -f 3 ./art && xelatex --output-directory=./art ./art/bingo_art_3.tex && evince ./art/bingo_art_3.pdf
+~/class/ttb/cards/bingo/bingo.pl -n 15 -s art -f 4 ./art && xelatex --output-directory=./art ./art/bingo_art_4.tex && evince ./art/bingo_art_4.pdf
  ~/class/ttb/cards/bingo/bingo.pl -n 15 -s art -f 4 ./art && xelatex --output-directory=./art ./art/bingo_art_4.tex && evince ./art/bingo_art_4.pdf
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s art -f 4 ./art && xelatex --output-directory=./art ./art/bingo_art_4.tex && evince ./art/bingo_art_4.pdf
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s art -f 6 ./art && xelatex --output-directory=./art ./art/bingo_art_6.tex && evince ./art/bingo_art_6.pdf
@@ -2424,6 +2439,7 @@ classs
  ~/class/ttb/cards/bingo/bingo.pl -n 15 -s music -f 5 ./art && xelatex --output-directory=./art ./art/bingo_music_5.tex && evince ./art/bingo_music_5.pdf
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s music -f 5 ./art && xelatex --output-directory=./art ./art/bingo_music_5.tex && evince ./art/bingo_music_5.pdf
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s must -f 0 ./education && xelatex --output-directory=./education ./education/bingo_must_0.tex && evince ./education/bingo_must_0.pdf
+~/class/ttb/cards/bingo/bingo.pl -n 15 -s newyear -f 0 ./festivals && xelatex --output-directory=./festivals ./festivals/bingo_newyear_0.tex && evince ./festivals/bingo_newyear_0.pdf
  ~/class/ttb/cards/bingo/bingo.pl -n 15 -s newyear -f 0 ./festivals && xelatex --output-directory=./festivals ./festivals/bingo_newyear_0.tex && evince ./festivals/bingo_newyear_0.pdf
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s newyear -f 0 ./festivals && xelatex --output-directory=./festivals ./festivals/bingo_newyear_0.tex && evince ./festivals/bingo_newyear_0.pdf
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s newyork -f  ./newyork && xelatex --output-directory=./newyork ./newyork/bingo_newyork_.tex && evince ./newyork/bingo_newyork_.pdf
@@ -2505,6 +2521,7 @@ classs
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s weather -f 2 ./nature && xelatex --output-directory=./nature ./nature/bingo_weather_2.tex && evince ./nature/bingo_weather_2.pdf
  ~/class/ttb/cards/bingo/bingo.pl -n 15 -s weather -f 3 ./nature && xelatex --output-directory=./nature ./nature/bingo_weather_3.tex && evince ./nature/bingo_weather_3.pdf
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s weather -f 3 ./nature && xelatex --output-directory=./nature ./nature/bingo_weather_3.tex && evince ./nature/bingo_weather_3.pdf
+~/class/ttb/cards/bingo/bingo.pl -n 15 -s weather -f 4 ./nature && xelatex --output-directory=./nature ./nature/bingo_weather_4.tex && evince ./nature/bingo_weather_4.pdf
  ~/class/ttb/cards/bingo/bingo.pl -n 15 -s weather -f 4 ./nature && xelatex --output-directory=./nature ./nature/bingo_weather_4.tex && evince ./nature/bingo_weather_4.pdf
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s weather -f 4 ./nature && xelatex --output-directory=./nature ./nature/bingo_weather_4.tex && evince ./nature/bingo_weather_4.pdf
 # ~/class/ttb/cards/bingo/bingo.pl -n 15 -s week13 -f  ./session3 && xelatex --output-directory=./session3 ./session3/bingo_week13_.tex && evince ./session3/bingo_week13_.pdf
@@ -3164,6 +3181,7 @@ cp leisure/flash_amusementpark_1.pdf flash.pdf
 # cp ~/media/041FLA0008.* ./
 # cp ~/media/041FLA0011.* ./
 # cp ~/media/041KB1.* ./
+cp ~/media/042*.txt ~/admin/042/nuu/
 cp media/blair.txt 
 cp media/cards.yaml curmedia/cards.yaml 
 cp media/content.yaml media/content.yaml.orig
@@ -3463,9 +3481,13 @@ diff 3/newsresponse.yaml 3/response.yaml
 diff 3/newsscores.yaml 3/g2.yaml 
 diff classwork/4.yaml.{table,new}
 diff classwork/4.yaml.{table,orig}
+diff ~/.config/git/ignore ignore 
 diff drbean/call/dialog/chat/Tests.hs drbean/conversation/work/dickson/Tests.hs 
 diff drbean/call/dialog/chat/Tests.hs drbean/conversation/work/dickson/Tests.hs  -u
 diff drbean/MyConcrete.gf drbean/conversation/work/dickson/engine/MyConcrete.gf
+diff /etc/screenrc /etc/screenrc.fedora
+diff /etc/screenrc screenrc 
+diff /etc/screenrc screenrc  -u
 diff FLA0008/homework/1.yaml*
 diff FLA0008/homework/1.yaml* -u
 diff FLA0008/homework/5.yaml* -u
@@ -3490,6 +3512,9 @@ diff -ru edit/zhang/ zhang/
 diff -ru GF GF.old/
 diff -ru Haskell-Turtle-Library/ turtle-1.2.2/
 diff -ru znc zncdot/
+diff .screen/app.rc.edited .screen/app.rc
+diff .screen/grading.rc .screen/grading.rc.edited 
+diff .screen/setup.rc .screen/setup.rc.edited 
 diff script/comp_test.pl.new  script/comp_test.pl 
 diff script/comp_test.pl script/comp_test.pl.new 
 diff script_files/champs_KB1.hs script_files/champs_KB1.hs.orig
@@ -3550,6 +3575,10 @@ DISPLAY=:1 gnome-session-quit
 DISPLAY=:1 gnome-session-quit --logout
 DISPLAY=:1 mate-session-save --logout
 dnf history userinstalled
+dnf install ack @admin-tools adobe-release-i386 adwaita-qt4 aisleriot alsa-plugins-pulseaudio anaconda anki aspell-en audacity -authconfig-gtk baobab @base-x bijiben biosdevname bitlbee brasero-nautilus btparser cabal-dev cheese -cinnamon -cinnamon-control-center @cinnamon-desktop -cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cjs @core crash @critical-path-gnome crypto-utils cups-devel dbus-devel deja-dup desktop-backgrounds-basic devassistant @dial-up dracut-config-rescue empathy eog evince-browser-plugin evince-nautilus evolution-ews evolution-help 
+dnf install ack @admin-tools adobe-release-i386 adwaita-qt4 aisleriot alsa-plugins-pulseaudio anaconda anki aspell-en audacity -authconfig-gtk baobab @base-x bijiben biosdevname bitlbee brasero-nautilus btparser cabal-dev cheese -cinnamon -cinnamon-control-center @cinnamon-desktop -cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cjs @core crash @critical-path-gnome crypto-utils cups-devel dbus-devel deja-dup desktop-backgrounds-basic devassistant @dial-up dracut-config-rescue empathy eog evince-browser-plugin evince-nautilus evolution-ews evolution-help exim -fedora-icon-theme fedora-productimg-workstation fedora-release-workstation fedora-user-agent-chrome ffmpeg ffmpeg-devel file-roller-nautilus @firefox firewall-config flash-plugin @fonts fros-gnome gcc-c++ gedit ghc-cereal-devel ghc-contravariant-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-json-devel ghc-lifted-base-devel ghc-monad-control-devel ghc-MonadRandom-devel ghc-mwc-random-devel ghc-optparse-applicative-devel ghc-pandoc-types-devel ghc-safe-devel ghc-system-fileio-devel ghc-temporary-devel ghc-unordered-containers-devel ghc-yaml-devel -ghostscript-cups gimp gnash gnome-backgrounds gnome-boxes gnome-calculator gnome-classic-session gnome-clocks gnome-color-manager gnome-contacts @gnome-desktop gnome-dictionary gnome-documents gnome-epub-thumbnailer gnome-font-viewer gnome-getting-started-docs gnome-initial-setup gnome-maps -gnome-mplayer gnome-photos gnome-python2-gconf gnome-python2-gnome -gnome-screensaver gnome-screenshot gnome-shell-extension-background-logo gnome-system-log gnome-system-monitor gnome-themes gnome-user-share gnome-weather gnutls-devel google-android-emoji-fonts -google-noto-sans-lisu-fonts google-noto-sans-lisu-fonts -google-noto-sans-mandaic-fonts google-noto-sans-mandaic-fonts -google-noto-sans-meeteimayek-fonts -google-noto-sans-tagalog-fonts google-noto-sans-tagalog-fonts -google-noto-sans-tai-tham-fonts google-noto-sans-tai-tham-fonts -google-noto-sans-tai-viet-fonts google-noto-sans-tai-viet-fonts grub2 grubby gstreamer1-plugins-bad-freeworld gstreamer-ffmpeg gstreamer-plugin-crystalhd gstreamer-plugins-bad gstreamer-plugins-bad-nonfree gtk2-immodule-xim gtk3-immodule-xim gtk+-devel gucharmap @guest-desktop-agents guvcview gvfs-afp gvfs-archive gvfs-gphoto2 gvfs-mtp gvfs-smb @hardware-support haskell-platform hplip-gui htop ibus-chewing ibus-devel ibus-hangul ibus-kkc ibus-libpinyin ibus-m17n -ibus-qt ibus-qt ibus-rawcode -ibus-sayura ibus-table-latin ibus-typing-booster icedtea-web -im-chooser-xfce -imsettings-cinnamon -imsettings-mate -imsettings-qt -imsettings-xfce -initial-setup @input-methods -iok @java kernel-PAE kernel-PAE-modules-extra leveldb libetonyek libproxy-mozjs @libreoffice libreoffice-emailmerge libreoffice-langpack-en libreoffice-langpack-zh-Hant libreswan libtool lklug-fonts lohit-assamese-fonts lohit-bengali-fonts lohit-gujarati-fonts lohit-gurmukhi-fonts lohit-kannada-fonts lohit-odia-fonts lohit-tamil-fonts lohit-telugu-fonts @manipuri-support marco @mate-desktop mate-desktop mate-media mesa-libGLES mesa-libwayland-egl -metacity mnemosyne mod_dav_svn mod_fcgid mod_nss mod_ssl moreutils mosh mousetweaks mplayer muffin @multimedia mutt nautilus-sendto naver-nanum-gothic-fonts -nemo -nemo-fileroller -nemo-preview net-snmp-devel -network-manager-applet NetworkManager-bluetooth -NetworkManager-l2tp NetworkManager-openconnect NetworkManager-openvpn-gnome NetworkManager-pptp-gnome NetworkManager-vpnc-gnome
+dnf install ack @admin-tools adobe-release-i386 adwaita-qt4 aisleriot alsa-plugins-pulseaudio anaconda anki aspell-en audacity -authconfig-gtk baobab @base-x bijiben biosdevname bitlbee brasero-nautilus btparser cabal-dev cheese -cinnamon -cinnamon-control-center @cinnamon-desktop cinnamon-session cinnamon-settings-daemon cjs @core crash @critical-path-gnome crypto-utils cups-devel dbus-devel deja-dup desktop-backgrounds-basic devassistant @dial-up dracut-config-rescue empathy eog evince-browser-plugin evince-nautilus evolution-ews evolution-help 
+dnf install @admin-tools @critical-path-gnome @dial-up @firefox @guest-desktop-agents @hardware-support @java @printing @standard NetworkManager-bluetooth NetworkManager-openconnect NetworkManager-openvpn-gnome NetworkManager-pptp-gnome NetworkManager-vpnc-gnome PackageKit-cached-metadata PackageKit-command-not-found PackageKit-gstreamer-plugin PackageKit-gtk3-module PyPAM ack adobe-release-i386 adwaita-qt4 aisleriot alsa-plugins-pulseaudio anaconda anki aspell-en audacity baobab bijiben biosdevname bitlbee brasero-nautilus cheese cinnamon-session cinnamon-settings-daemon cjs crash crypto-utils cups-devel deja-dup desktop-backgrounds-basic devassistant dracut-config-rescue empathy eog evince-browser-plugin evince-nautilus evolution-ews evolution-help
 dot
 dot "dsfds"
 d# perl script/delete_exercise.pl -i twitter -g media
@@ -3561,6 +3590,7 @@ dte
  duplicity --exclude /home/drbean/soundfiles --exclude /home/drbean/下載 --exclude '/home/drbean/Fedora-*' /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora22
  duplicity --exclude /home/drbean/soundfiles --exclude /home/drbean/下載 -exclude ' /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora22
  duplicity --exclude /home/drbean/soundfiles --exclude /home/drbean/下載 /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora22
+duplicity --exclude /home/drbean/soundfiles --exclude /home/drbean/下載 /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora22
 d# xelatex report.tex && evince report.pdf
 dzil build
 dzil help
@@ -3818,6 +3848,7 @@ gf -coding utf-8 --tags gf-contrib/drbean/call/dialog/chat/ChatEng.gf
 # gf --make --output-format=haskell ChatEng.gf
  gf --make --output-format=haskell DicksonEng.gf
 # gf --make --output-format=haskell DicksonEng.gf
+gf --make --output-format=haskell DicksonEng.gf
 # gf --make --output-format=haskell Eng.gf
  gf --make --output-format=haskell JacksonEng.gf
 # gf --make --output-format=haskell JacksonEng.gf
@@ -4639,6 +4670,7 @@ gr MB1 -r 4
 gr -t '.' -s marriage -v marriage -f 3
 gst-inspect | grep 264
 his
+history
 history 2222
 history 22222 | less
 history 2222 | less
@@ -4650,6 +4682,7 @@ history 55 | grep grade_dic.pl
 history 66 | ack delete
 # history -a
 history -a
+history >> bash/history
 history | less
 host 119.245.10.1
 host 119.245.10.139
@@ -4830,6 +4863,7 @@ less 6144
 less adjust_exam_grade.rc 
 less ~/admin/031/ydu/1040.txt 
 less -al drbean/conversation/work/dickson/.gitrepo 
+less alternatives.txt 
 less ~/.bash_history 
 less basis.md
 less bingo.tex
@@ -4873,6 +4907,7 @@ less /etc/mailcap
 less /etc/screenrc 
 less exam/1/newsresponse.yaml 
 less ../exam/2/g2.yaml 
+less ~/fedora22/SHOW-INSTALLED2_20160207.txt 
 less fedora/rpm-verify.sh 
 less Fedora-Workstation-23-i386-CHECKSUM 
 less FLA0011/homework/2.yaml 
@@ -4948,6 +4983,7 @@ less questionsA4.tmpl
 less questionsA5.tex 
 less README 
 less ReadMe.pod 
+less .screen/*.rc.edited
 less session3/prompts.txt
 less  slides.txt
 less slides.txt
@@ -5159,6 +5195,7 @@ lftp -c 'open web.nuu.edu.tw && cd public_html/session4 && put ./session4/slides
 lftp drbean@freeshell.org
 lftp elearning.nuu.edu.tw
 lftp ftp://ftp.yzu.edu.tw/Linux/Fedora/linux/releases/23/Workstation/i386/iso/
+lftp greg@web.nuu.edu.tw
 lftp web.nuu.edu.tw
 links 
 links file:///usr/share/doc/ghc/html/index.html
@@ -5673,8 +5710,10 @@ ls 2/g2.yaml
 ls 2.體驗空間-中.日.英文稿彙總表-1110.docx 
 ls 3
 ls 4
+ls ~/admin/
 ls ~/admin/031/
 ls ~/admin/031/ydu/
+ls ~/admin/042
 ls -al
 ls -al 1/round.yaml
 ls -al ~/.cabal/packages/hackage.haskell.org/
@@ -5702,7 +5741,10 @@ ls -al .git/
 ls -al .git/branches/
 ls -al .git/info
 ls -al Haskell-Turtle-Library/ turtle-1.2.2/
+ls -al /home
+ls -al /home/drbean
 ls -al /home/drbean/031/2L1/exam/1/round.yaml
+ls -al /home/drbean.fedora/
 ls -al ../homework/
 ls -al ../homework/1.yaml
 ls -al lib
@@ -5844,6 +5886,10 @@ ls git-subrepo/ -al
 ls guide
 ls Haskell-Turtle-Library/
 ls --help
+ls /home
+ls /home/drbean
+ls /home/drbean/dot
+ls /home/drbean.fedora/
 ls homework
 ls ../homework/
 ls homework/
@@ -5900,6 +5946,7 @@ ls media
 ls ~/media
 ls ~/media/
 ls media/
+ls  ~/media/042BMA0009_\?\?\?\?\?\?\?\?\(\?\)_\?\?\?\?\?_\?\?\?.txt ~/media/042BMA0009.txt
 ls ~/media/ -al
 ls ~/media/jigsaw*
 ls ~/media/quiz_*
@@ -5939,6 +5986,7 @@ ls q
 ls -R
 ls /run/media
 ls .screen/.class.rc.swp
+ls .screen/*.edited
 ls script/
 ls script_files/
 ls script_files/champs
@@ -5959,10 +6007,12 @@ ls speaking
 ls speaking/
 ls src
 ls src/
+ls surfraw/
 ls ~/.svk/
 ls .svk
 ls ~/.svk/bett
 ls ~/.svk/local/
+ls ~/.svk/local/cl
 ls .svn
 ls .svn -al
 ls ../swiss/web/lib/Swiss/Controller/
@@ -6129,11 +6179,20 @@ mkdir 下載/soundfiles/media
 mkdir ~/下載/soundfiles/media
 mkdir 下載/soundfiles/speaking
 mod
+mount
+mount | ack BEAN
+mount | ack media
+mount | ack sdb
+mount | ack tmp
+mount /dev/sdb
 mount /dev/sdb1 ~drbean/media
+mount /home/drbean/media
  mount ~/media/
 # mount ~/media/
 mount ~/media
+mount ~/media/
 mount sdb ~/media
+mount -t vfat /dev/sdb /home/drbean/media
 m -s '' -t ''
 m -s '' t ''
 m -t health -v health -s roleplay
@@ -6189,6 +6248,7 @@ mv  ~/031/FLA0027/homework.yaml ~/031/FLA0027/homework/2.yaml
 # mv ~/032/FLA0026/homework.yaml ~/032/FLA0026/homework/2.yaml && svn add ~/032/FLA0026/homework/2.yaml && svn ci -m cooking ~/032/FLA0026/homework/2.yaml
 # mv ~/032//homework.yaml ~/032//homework/.yaml && svn addate
 mv ~/041/FLA0008/test.hs script_files/champs_to_front.hs
+mv 042BMA0009_\?\?\?\?\?\?\?\?\(\?\)_\?\?\?\?\?_\?\?\?.txt 042BMA0009.txt 
 mv 1e.mp3 moma_rousseau_dream.mp3
 mv 1/g1.yaml 1/g.yaml
 mv 1.專頁文字稿-中.日.英文稿彙總表-1029.docx zhang/
@@ -6201,6 +6261,8 @@ mv 4.包裝設計-中.日.英文稿彙總表-日校_1041109客.docx zhang/
 #mv 5-26-15-claire_fixed.mp3 下載/soundfiles/
 mv ~/868seg5a.mp3 conversation/
 mv ~/A-0339.mp3 ./
+mv AFN2KA2.txt 042AFN2KA2.txt 
+mv AFN2MB2.txt 042AFN2MB2.txt 
 mv Angry\ Anchor-GpVuxgSxFFE.webm media/
 mv arc_2015_front.pdf Pictures/docs/arc_2015_front.pdf 
 mv arc_2015_*.pdf Pictures/docs/
@@ -6298,6 +6360,10 @@ mv homework/16.yaml homework/15.yaml
 mv ../homework/1.yaml ../homework/0.yaml
 mv ../homework/1.yaml ../homework/1.yaml.orig
 mv last\ time\ -\ 73d0_旁白音稿_英語對譯_130408\ -\ 全部修正.doc zhang/
+mv ~/media/042BMA0009_\?\?\?\?\?\?\?\?\(\?\)_\?\?\?\?\?_\?\?\?.txt ~/media/042BMA0009.txt
+mv ~/media/042FLA0013_\?\?\?\?\(\?\)_\?\?\?\?\?_\?\?\?.txt ~/media/042FLA0013.txt
+mv ~/media/042FLA0021_\?\?\?\?_\?\?\?\?\?_\?\?\?.txt ~/media/042FLA0021.txt
+mv ~/media/042FLA0021_\?\?\?\?\(\?\)_\?\?\?\?\?_\?\?\?.txt ~/media/042FLA0021.txt
 mv media/slides.txt.orig curmedia/slides.txt
 m -v 'media' -t '' -s ''
 m -v media -t '' -s ''
@@ -8447,9 +8513,12 @@ rm -rf zhang/
 rm -rf zncdot/
 rm -rf 下載/soundfiles/
 rm -rf 下載/soundfiles/*
+rm .screen/app.rc.edited 
 rm .screen/.class.rc.swp
+rm .screen/grading.rc.edited 
 rm .screen/.grading.rc.swp
 rm .screen/.pagestranscripts.rc.swp
+rm .screen/setup.rc.edited 
 rm script_files/champs_KB1.hs.orig 
 rm session/1/.groups.yaml.swp
 rm sharp@nuu.edu.tw_20151005_175222.pdf 
@@ -8658,6 +8727,7 @@ school_data.pl -s 031 -l 1040 | sponge league.yaml
 # score_jigsaw.pl -l MB1 -r 3 > 3/scores.yaml
  score_jigsaw.pl -l MB1 -r 4 > 4/scores.yaml
 # score_jigsaw.pl -l MB1 -r 4 > 4/scores.yaml
+screen 
 screen -c media -s pope -t news -l FLA0027 -r 5 -c Ctest
 screen diff league.yaml
 screen -dr 2L1_17
@@ -8839,6 +8909,7 @@ screen -r w_MB1_10
 screen -r w_MB1_2 
 screen -r w_MB1_3 
 screen -r w_MB1_8 
+screen -S dnf
 screen -S robin
 screen -X writebuf
 screne -dr pages_impact
@@ -10293,6 +10364,8 @@ STORY=wallace-oreilly; FORM=0; perl ../cclass/cards.pl ./$TOPIC && xelatex ./$TO
 su -
 su -c  'chown drbean:apache ./comp/'
 su -c 'chown drbean:apache comp/draw.html'
+su -c 'chown drbean:drbean ~drbean/media -r'
+su -c 'chown drbean:drbean ~drbean/media -R'
 su -c 'chown drbean:drbean /var/www/cgi-bin/'
 su -c 'chown drbean:drbean znc'
  su -c 'chown drbean:swiss ./comp/ '
@@ -10300,11 +10373,13 @@ su -c 'chown drbean:drbean znc'
 # su -c 'chown drbean:swiss ./comp/ -R'
 su -c 'chown drbean:swiss ./comp/ -R'
  su -c  'chown -R drbean:apache ./comp/'
+su -c 'chown -R drbean:drbean ~drbean/media'
 su -c 'chown root:root /var/www/cgi-bin/'
 #su -c 'cp bash/bash_completion/{ex,gr,new,w,aca,bett,dic} /etc/bash_completion.d/'
 # su -c 'cp perl-tags-vim/ftplugin/perl.vim /usr/share/vim/vimfiles/after/ftplugin/'
  su -c 'cp screenrc /etc/screenrc'
 # su -c 'cp screenrc /etc/screenrc'
+su -c 'cp screenrc /etc/screenrc'
  su -c 'cp vim-gf/ftdetect/gf.vim /usr/share/vim/vimfiles/ftdetect/'
 # su -c 'cp vim-gf/ftdetect/gf.vim /usr/share/vim/vimfiles/ftdetect/'
  su -c 'cp vim-gf/syntax/gf.vim /usr/share/vim/vimfiles/syntax/'
@@ -10312,10 +10387,13 @@ su -c 'chown root:root /var/www/cgi-bin/'
  su -c 'cp vimrc.sac /etc/vimrc'
 # su -c 'cp vimrc.sac /etc/vimrc'
 su -c "dd if=/home/drbean/Fedora-Live-Workstation-i686-23-10.iso of=/dev/sdb bs=8M" && sync
+su -c 'dnf install lynx elinks'
 su -c 'find /var/lib/znc -name \'*.pem\''
 su -c "find /var/lib/znc -name '*.pem'"
 su chown drbean:drbean znc
 su -c 'make install'
+#su -c 'mv /etc/screenrc /etc/screenrc.fedora'
+su -c 'mv /etc/screenrc /etc/screenrc.fedora'
 su -c 'pkill firefox'
  su -c -R 'chgrp apache ./comp/ 
  su -c -R 'chown drbean:apache ./comp/ 
@@ -10468,6 +10546,7 @@ surf
 surf 
 surff
 surf "harm brouwer"
+su - znc
 svk diff ttb/cards/bingo/bingo.pl
 svn
  svn add ~/031/2L1/homework/3.yaml
@@ -11964,6 +12043,7 @@ svn ci .screen/grading.rc -m pipe_score_comp,sum_g1_g2,svn_add_exam,comp,update_
 svn ci .screen/grading.rc -m screen_3,exam:pipe_score_jigsaw,grade_jigsaw,xelatex,evince_report,svn_add.lftp
 svn ci .screen/grading.rc -m script_files^script
 svn ci .screen/grading.rc -m script^script_files.score_comp:paper,not_web
+svn ci .screen/ -m screen.041^042
 svn ci .screen/pagestranscripts.rc -m Contents.html_last
 svn ci .screen/setup.rc -m wrong_order:-R,-t_public_content_rw_t
 svn ci script/comp_*.pl -m "catalyst.pl  -scripts comp"
@@ -12496,6 +12576,7 @@ svn diff science/dic.yaml
 svn diff score_classwork.rc
 svn diff score_news.rc
 svn diff .screen/
+svn diff .screen/aca.rc
 svn diff .screen/app.rc
 svn diff .screen/class.rc
 svn diff .screen/class.rc champs2front.hs
@@ -12636,6 +12717,7 @@ svn diff web/script/updatescores.pl
  svn diff ~/.weechat/
 svn diff ~/.weechat/
  svn diff ~/.weechat/.svn/pristine/
+svn diff ~/.weechat/.svn/pristine/
 svn diff work/cards.yaml
 svn diff work/dic.yaml
 svn diff work/slides.txt
@@ -12646,6 +12728,7 @@ svn dif storycorps/
 svn Eddie classwork/
 svn h
 svn help merge
+svn help revert 
 svn h propdel
 svn h propedit
 svn h propget
@@ -12724,6 +12807,8 @@ svn info session/3/groups.yaml
 svn info session3/prompts.txt
 svn info seven_bean.tex
 svn info slides.txt
+svn info ~/.svk/cl
+svn info ~/.svk/local/cl
 svn info ^/tags
 svn info tmpl/
 svn info t/pairingtable.t.orig t/pairingtable.t.failing 
@@ -12735,9 +12820,12 @@ svn info ttb/cards/opinion_survey_question.pl
 svn info ttb/opinion_survey_question.pl
 svn info web/compcomp_local.yaml
 svn info ~/.weechat/
+svn info weechat/
 svn info work/questionsA5.tex 
 svn info zhang
 svn info zhang/
+svn info znc
+svn info znc/
 svn info ~/圖片/one_bean.png 
 svn less classwork/6.yaml
 svn log
@@ -12914,6 +13002,12 @@ svn ls play/
 svn ls postgres/
 svn ls script_files/id2names.pl
 svn ls script_files/id2names.pl | xargs less
+svn ls ~/.svk/local/cl
+svn ls ~/.svk/local/scratch/
+svn ls ~/.svk/local/scratch/class
+svn ls ~/.svk/local/scratch/conv
+svn ls ~/.svk/local/scratch/znc
+svn ls ~/.svk/local/vim
 svn ls ^/tags
 svn ls ^/tags/v0.18
 svn ls ttb
@@ -13205,6 +13299,7 @@ svn revert lib/Grades/Groupwork.pm
 svn revert marriage/
 svn revert media/content.yaml
 svn revert play/cards.yaml
+svn  revert -R znc
 svn revert .screen/setup.rc
 svn revert script/deploy.pl
 svn revert script_files/
@@ -13329,6 +13424,11 @@ svn up -r 1342
 svn up  -r 1427
 svn up -r HEAD
 svn up -r lib/CompComp.pm -r 1691
+svn up .screen/aca.rc
+svn up .screen/app.rc
+svn up .screen/grading.rc
+svn up .screen/project.rc
+svn up .screen/setup.rc
 svn up script_files/champs2front.hs
 svn up script_files/champs2front.hs  -r 2065
 svn up script_files/champs2front.hs  -r 2066
@@ -13350,7 +13450,9 @@ svn up ttb/
 svn up ttb/cards/flash.pl
 svn up vimrc.sac -r 5599
 svn up vimrc.sac -r HEAD
+svn up .xmonad/
 svn up zhang
+svn up znc
 swiss
 ../../swiss/script_files/pairingtable 4
 sync --help
@@ -13773,6 +13875,7 @@ tru  && svn ci work/{dic,cards}.yaml -m work:firefighter:1
 # umount ~/media/
 umount media
 umount ~/media
+umount ~/media/
 umount media/
 unalias add
 unalias ddd
@@ -13843,6 +13946,8 @@ v ./education/cards.yaml ./quiz.tex ./education/jigsaw_affirmative_0.tex ./jigsa
 v ./education/questionsA5.tex
 v ./food/cards.yaml ./quiz.tex ./food/jigsaw_spano_0.tex ./jigsaw.tex ./food/questionsA5.tex
 v ./health/cards.yaml ./quiz.tex ./health/jigsaw_health_0.tex ./jigsaw.tex ./health/questionsA5.tex
+vi 042AFB2L2.txt
+vi 042AFB2L2.txt 
 vimdiff cards.yaml cards.yaml.orig
 vimdiff drbean/call/dialog/chat/Tests.hs drbean/conversation/work/dickson/Tests.hs  
 vimdiff drbean/call/dialog/chat/Tests.hs drbean/conversation/work/dickson/Tests.hs  -u
@@ -14319,17 +14424,22 @@ w GL00015 9 -t spano -l X
 w GL00016 6 -l X -t adoption
 w GL00016 8 -l X -t emersonj
 whereis dot
+whereis elinks
+whereis v
 which champs2front.hs 
 which conversation.pl
 which curl
 which dot
+which duplicity
 which ex
 `which ghc
 which ghc
+which lynx
 which mod
 which my
 which pairingtable 
 which prove -t lib t/emile.t
+which v
 which weechat
 which xclip
 which xcopy

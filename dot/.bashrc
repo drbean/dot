@@ -516,7 +516,7 @@ function new () {
     if [[ -z "$n" ]]
 	then n=3
     fi
-    cd ~/041/
+    cd ~/042/
     LEAGUE=$league \
     N=$n \
     SESSION=1 \
@@ -536,7 +536,7 @@ alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
 alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
 alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
 
-alias 041="cd ~/041; screen -dR s041; cd -"
+alias 042="cd ~/042; screen -dR s042; cd -"
 
 function session () {
     local league week
@@ -666,7 +666,7 @@ function w () {
     done
     session $league $week
     tables $league $letter
-    cd ~/041/$league
+    cd ~/042/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \

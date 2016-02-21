@@ -460,10 +460,10 @@ function ex () {
 function gr () {
     local arg league round topic n
     case $1 in
-	FLA0003) league=$1;;
-	FLA0008) league=$1;;
-	FLA0011) league=$1;;
-	FLA0024) league=$1;;
+	BMA0009) league=$1;;
+	FLA0013) league=$1;;
+	FLA0019) league=$1;;
+	FLA0021) league=$1;;
 	2L2) league=$1;;
 	KA2) league=$1;;
 	MB2) league=$1;;
@@ -496,10 +496,10 @@ function gr () {
 function new () {
     local arg league n
     case $1 in
-	FLA0003) league=$1;;
-	FLA0008) league=$1;;
-	FLA0011) league=$1;;
-	FLA0024) league=$1;;
+	BMA0009) league=$1;;
+	FLA0013) league=$1;;
+	FLA0019) league=$1;;
+	FLA0021) league=$1;;
 	2L2) league=$1;;
 	KA2) league=$1;;
 	MB2) league=$1;;
@@ -564,28 +564,28 @@ function session () {
 	    elif (($week <= 17)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0003)
+	BMA0009)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0008)
+	FLA0013)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0011)
+	FLA0019)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0024)
+	FLA0021)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -617,23 +617,23 @@ function tables () {
 		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
 		*) return 1 # illegal letter
 	    esac;;
-	FLA0003)
+	BMA0009)
 	    case ${letter} in
 		X) tables="1-1,1-2,1-3,1-4,1-5,2-1,2-2,2-3,2-4,2-5,3-1,3-2,3-3,3-4,3-5,4-1,4-2,4-3,4-4,4-5";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0008)
+	FLA0013)
 	    case ${letter} in
 		X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0011)
+	FLA0019)
 	    case ${letter} in
 		A) tables="1-1,1-2::1-3,1-4::2-1,2-2::2-3,2-4::3-1,3-2";;
 		X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-4,3-1,3-2";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0024)
+	FLA0021)
 	    case ${letter} in
 		X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,4-1,4-2,4-3";;
 		*) return 1 # illegal option
@@ -645,10 +645,10 @@ function tables () {
 function w () {
     local arg league session week letter topic tables
     case $1 in
-	FLA0003) league=$1;;
-	FLA0008) league=$1;;
-	FLA0011) league=$1;;
-	FLA0024) league=$1;;
+	BMA0009) league=$1;;
+	FLA0013) league=$1;;
+	FLA0019) league=$1;;
+	FLA0021) league=$1;;
 	2L2) league=$1;;
 	KA2) league=$1;;
 	MB2) league=$1;;
@@ -678,9 +678,9 @@ function w () {
     cd -
 }
 
-function FLA0003 () {
+function BMA0006 () {
     OPTIND=1
-    local arg league=FLA0003 session week letter topic tables
+    local arg league=BMA0006 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in
@@ -710,9 +710,9 @@ function FLA0003 () {
     cd -
 }
 
-function FLA0008 () {
+function FLA0013 () {
     OPTIND=1
-    local arg league=FLA0008 session week letter topic tables
+    local arg league=FLA0013 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in
@@ -742,9 +742,9 @@ function FLA0008 () {
     cd -
 }
 
-function FLA0011 () {
+function FLA0019 () {
     OPTIND=1
-    local arg league=FLA0011 session week letter topic tables
+    local arg league=FLA0019 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in
@@ -774,9 +774,9 @@ function FLA0011 () {
     cd -
 }
 
-function FLA0024 () {
+function FLA0021 () {
     OPTIND=1
-    local arg league=FLA0024 session week letter topic tables
+    local arg league=FLA0021 session week letter topic tables
     while getopts 's:w:l:t:' arg
     do
         case ${arg} in

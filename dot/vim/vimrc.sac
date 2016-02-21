@@ -521,6 +521,9 @@ augroup END
 augroup pages
 au!
 
+" TODO. Create vocabulary list (or flash cards) with translations
+"eyy'ai## ee. . .''18yy''PjjOma''19k
+
 " pandoc link list
 au BufEnter slides.txt nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
 au BufEnter slides.txt ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o

@@ -12,6 +12,7 @@ stuff "# svn add league.yaml^M"
 stuff "# chcon -R -t public_content_rw_t ./comp/ ./flash/^M"
 stuff "# su -c -R 'chown drbean:swiss ./comp/ ./flash/'^M"
 stuff "# svn ci league.yaml -m 'anterior: 032FLA0026, names from: 041.FLA00024'^M"
+stuff "# svn ci session classwork homework comp exam flash -m bare_dirs^M"
 
 screen 2
 stuff "cd ~/admin/042/nuu/^M"

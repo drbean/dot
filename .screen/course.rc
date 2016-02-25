@@ -25,6 +25,7 @@ screen 4
 stuff "# gf --make --output-format=haskell ${MOD}Eng.gf^M"
 stuff "ghc -o /var/www/cgi-bin/bett/bin/Transfer_$STORY -i./:../:../../../ ../../../Transfer.hs && ghc -o /var/www/cgi-bin/bett/bin/Characters_$STORY -i./:../:./../../ ~/bett/script/Characters.hs && ghc -o /var/www/cgi-bin/bett/bin/Words_$STORY -i./:../:./../../ /var/www/cgi-bin/bett/script/ShowWords.hs && cp ${MOD}.pgf /var/www/cgi-bin/bett/bin/${MOD}.pgf && perl /var/www/cgi-bin/bett/script/characters.pl -s $STORY && perl /var/www/cgi-bin/bett/script/words.pl -s $STORY^M"
 screen 5 lftp greg@web.nuu.edu.tw
+stuff "# mkdir /public_html/$VIEW^M"
 stuff "cd /public_html/$VIEW^M"
 stuff "# put $TOPIC/dic_${STORY}_$FORM.pdf^M"
 stuff "# put $TOPIC/bingo_${STORY}_$FORM.pdf^M"

@@ -497,6 +497,7 @@ function new () {
     local arg league n
     case $1 in
 	BMA0009) league=$1;;
+	FLA0003) league=$1;;
 	FLA0013) league=$1;;
 	FLA0019) league=$1;;
 	FLA0021) league=$1;;

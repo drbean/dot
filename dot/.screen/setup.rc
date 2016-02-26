@@ -16,11 +16,10 @@ stuff "# svn ci session classwork homework comp exam flash -m bare_dirs^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && mkdir public_html/$LEAGUE && quit'^M"
 
 screen 2
-stuff "cd ~/admin/042/nuu/^M"
+stuff "cd ~/admin/042/must/^M"
 stuff "# cp ~/media/042${LEAGUE}.* ./^M"
 stuff "cp 042${LEAGUE}.txt ${LEAGUE}.txt^M"
 stuff "v 042${LEAGUE}.txt ${LEAGUE}.txt"
 
 screen 0
-stuff "cd ~/042/$LEAGUE^M"
-stuff "v league.yaml groups.yaml session/$PREVSESSION/groups.yaml" 
+stuff "cd ~/042/$LEAGUE && v league.yaml groups.yaml session/$PREVSESSION/groups.yaml" 

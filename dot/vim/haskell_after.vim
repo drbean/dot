@@ -151,6 +151,7 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = expand('<cWORD>')
 	endif
+	let marklist = {'A': 'a', 'N': 'u', 'CN': 'c', 'PN': 'p', 'V': 'v', 'Adv': "d", 'Prep': "r"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
 	let key = input("Cat: '(A)', '(U)N', '(C)N', '(P)N', '(V)*', a(D)v, p(R)ep ")
@@ -166,7 +167,7 @@ fu! Populate(module)
 	call setline('.', word . "\t: " . category . ";")
 	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
-	let mark = tolower( strpart(category, 0, 1) )
+	let mark = marklist[category]
 	let word_lnum = line("'" . mark)
 	call append(word_lnum,'')
 	call setline((word_lnum+1), "\t, \"" . word . "\"")
@@ -208,7 +209,7 @@ fu! Populate(module)
 	call setpos('.', save_cursor)
 
 endf
-au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Chat")<CR>j
+au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Murder")<CR>j
 
 augroup END
 

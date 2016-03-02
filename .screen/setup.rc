@@ -13,7 +13,7 @@ stuff "# chcon -R -t public_content_rw_t ./comp/ ./flash/^M"
 stuff "# su -c 'chown -R drbean:swiss ./comp/ ./flash/'^M"
 stuff "# svn ci league.yaml -m 'anterior: 032FLA0026, names from: 041.FLA00024'^M"
 stuff "# svn ci session classwork homework comp exam flash -m bare_dirs^M"
-stuff "# lftp -c 'open web.nuu.edu.tw && mkdir public_html/$LEAGUE && quit'^M"
+stuff "# lftp -c 'open web.nuu.edu.tw && mkdir public_html/$LEAGUE && open freeshell.org && mkdir html/$LEAGUE && quit'^M"
 
 screen 2
 stuff "cd ~/admin/042/must/^M"

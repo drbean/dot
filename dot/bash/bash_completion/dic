@@ -13,8 +13,8 @@ function _dic () {
 	story="lerman seixas spano biomom biodad emersonj factors freakout pope wallace-oreilly"
 	old_story="lerman seixas spano biomom biodad emersonj factors freakout pope wallace-oreilly"
 	round="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18"
-	league="2L2 MA2 KB2 BMA0009 FLA0013 FLA0019 FLA0021 "
-	league_re="2L2|KA2|MB2|BMA0019|FLA0013|FLA0019|FLA0021"
+	league="2L2 MA2 KB2 BMA0009 FLA0003 FLA0013 FLA0019 FLA0021 "
+	league_re="2L2|KA2|MB2|BMA0019|FLA0003|FLA0013|FLA0019|FLA0021"
 	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
 	diropts="--cache-dir"
 

@@ -12,8 +12,8 @@ function _aca () {
 	story="base self test sport"
 	old_story="base self test sport"
 	round="7 8 9 10 11 12 13 14 15 16 17 18"
-	league="BMA0009 FLA0013 FLA0019 FLA0021"
-	league_re="BMA0009|FLA0013|FLA0019|FLA0021"
+	league="BMA0009 FLA0003 FLA0013 FLA0019 FLA0021"
+	league_re="BMA0009|FLA0003|FLA0013|FLA0019|FLA0021"
 	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
 	diropts="--cache-dir"
 

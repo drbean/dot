@@ -18,8 +18,8 @@ stuff "# git merge upstream/master^M"
 screen 2
 stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/$STORY^M cd -^M"
 stuff "gf --coding=utf8^M"
-stuff "import /home/drbean/$STORY/src/${MOD}Eng.gf^M"
 stuff "import gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf^M"
+stuff "import /home/drbean/$STORY/src/${MOD}Eng.gf^M"
 screen 3
 stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/$STORY/^M"
 stuff "# gf --make --output-format=haskell ${MOD}Eng.gf^M"

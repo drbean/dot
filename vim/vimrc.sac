@@ -1,4 +1,4 @@
-" Last Edit: 2016 Feb 12, 12:33:16 PM
+" Last Edit: 2016 Mar 10, 08:29:04 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -727,8 +727,6 @@ au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 0 $r0j$
 au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 1 $r1j$
 au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 2 $r2j$
 au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 3 $r3j$
-au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 4 $r4j$
-au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 5 $r5j$
 
 augroup END
 

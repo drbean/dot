@@ -1,0 +1,59 @@
+# file: GF
+# GF parameter completion
+# copied from dic
+
+function _GF () {
+	local cur prev opts course topic story old_story round league league_re script_arg fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	opts="-c -t -s -o -r -l -x"
+	course="business conversation speaking"
+	topic="careers work crime"
+	story="candidate dickson abreu smallwood jackson murder drunk_driving"
+	old_story="candidate dickson abreu smallwood jackson murder drunk_driving"
+	round="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18"
+	league="2L2 MA2 KB2 BMA0009 FLA0003 FLA0013 FLA0019 FLA0021 "
+	league_re="2L2|KA2|MB2|BMA0019|FLA0003|FLA0013|FLA0019|FLA0021"
+	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
+	diropts="--cache-dir"
+
+	if [[ ${prev} =~ ${fileopts} ]]; then
+	COMPREPLY=( $(compgen -f -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${diropts} ]]; then
+	COMPREPLY=( $(compgen -d -- ${cur}) )
+	return 0
+	fi
+
+	if [[ ${prev} == dic ]]; then
+	COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -c ]] ; then
+	COMPREPLY=( $(compgen -W "${course}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -t ]] ; then
+	COMPREPLY=( $(compgen -W "${topic}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -s ]] ; then
+	COMPREPLY=( $(compgen -W "${story}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -o ]] ; then
+	COMPREPLY=( $(compgen -W "${old_story}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -r ]] ; then
+	COMPREPLY=( $(compgen -W "${round}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -l ]] ; then
+	COMPREPLY=( $(compgen -W "${league}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -x ]] ; then
+	COMPREPLY=( $(compgen -W "${league}" -- ${cur}) )
+	return 0
+	elif [[ ${cur} == * ]] ; then
+	COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+	return 0
+	fi
+}
+
+complete -F _GF GF

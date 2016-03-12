@@ -2,6 +2,7 @@ screen 1
 stuff "cd ~/gf-3.7.1/^M cd -^M"
 stuff "cd ~/$STORY/ && mkdir -p src/engine/^M cd -^M"
 stuff "cd ~/GF/gf-contrib && mkdir -p drbean/$COURSE/$TOPIC/$STORY/engine^M cd -^M"
+stuff "# cp ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/{{Model,Tests,WordsCharacters}.hs,$MOD{,Eng}.gf} ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/^M"
 stuff "# ln -s ~/GF/gf-contrib/drbean/{Interpretation,Translate,LogicalForm,Evaluation}.hs ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/engine/^M"
 stuff "# cp ~/GF/gf-contrib/drbean/My{Abstract,Concrete}.gf ~/GF/gf-contrib/drbean/{Representation,Transfer}.hs ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/engine/^M"
 stuff "# vimdiff ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/engine/Representation.hs ~/GF/gf-contrib/drbean/Representation.hs^M"

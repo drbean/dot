@@ -120,12 +120,13 @@ alias nlp="cd ~/nlp; screen -dR nlp; cd -"
 function GF () {
     OPTIND=1
     local module
-    while getopts 'c:t:s:' arg
+    while getopts 'c:t:s:p:' arg
     do
         case ${arg} in
 	    c) course=${OPTARG};;
 	    t) topic=${OPTARG};;
 	    s) story=${OPTARG};;
+	    p) prevstory=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
@@ -134,6 +135,8 @@ function GF () {
     TOPIC=$topic \
     STORY=$story \
     MOD=${story^} \
+    PREVSTORY=${prevstory:-$story} \
+    PREVMOD=${prevstory^:-$story^} \
     screen -c /home/$USER/dot/.screen/gf.rc -dR GF_$story
     cd -
 }

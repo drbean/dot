@@ -1,4 +1,4 @@
-" Last Edit: 2016 Mar 10, 08:29:04 PM
+" Last Edit: 2016 Mar 13, 12:11:05 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -707,16 +707,6 @@ au BufEnter exam/*/*response.yaml nn <buffer> f $s  F<Esc>j$
 au BufEnter exam/*/*response.yaml nn <buffer> p $sPresent<Esc>j$
 au BufEnter exam/*/*response.yaml nn <buffer> a $sAbsent<Esc>j$
 au BufEnter exam/*/*response.yaml nn <buffer> o $sOther<Esc>j$
-
-augroup END
-
-augroup classify
-au!
-
-au User *Eng.gf nn <buffer> a dd'aP''
-au User *Eng.gf nn <buffer> d dd'dP''
-au User *Eng.gf nn <buffer> n dd'nP''
-au User *Eng.gf nn <buffer> v dd'vP''
 
 augroup END
 

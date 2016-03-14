@@ -30,7 +30,7 @@ stuff "# perl script/grade_${APP}.pl -l $LEAGUE -b $BASE -x $OLD_STORY > ~/042/$
 stuff "# perl script/delete_exercise.pl -b $BASE -i $OLD_STORY -g $COURSE^M"
 stuff "# sudo systemctl start httpd.service^M"
 stuff "# less ~/042/$LEAGUE/homework.yaml^M"
-stuff "# mv ~/042/$LEAGUE/homework.yaml ~/042/$LEAGUE/homework/$ROUND.yaml && svn add ~/042/$LEAGUE/homework/$ROUND.yaml && svn ci -m $OLD_STORY ~/042/$LEAGUE/homework/$ROUND.yaml^M"
+stuff "# mv ~/042/$LEAGUE/homework.yaml ~/042/$LEAGUE/homework/$ROUND.yaml && svn add ~/042/$LEAGUE/homework/$ROUND.yaml && svn ci -m $OLD_STORY ~/042/$LEAGUE/homework/$ROUND.yaml && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put homework/$LASTWEEK.yaml -o homework.yaml && qui'^M"
 stuff "svn st -q ~/042/$LEAGUE/homework^M"
 stuff "# history -a^M"
 stuff "# export HISTTIMEFORMAT=^M"

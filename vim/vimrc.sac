@@ -1,4 +1,4 @@
-" Last Edit: 2016 Mar 13, 12:11:05 PM
+" Last Edit: 2016 Mar 13, 12:30:11 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -338,7 +338,8 @@ imap gqap <C-O>gqap
 "words=changes. u undoes. do \h first.
 map \wc :%s/[^ <Tab>]\+/&/g<CR>``
 
-
+" cp line for editing with nopaste set
+map \ed "eyyoS"epoS-r 
 " dic.yaml question creator
 nn <buffer> <Leader>answers y14y"0P"0P"0P14j3j27.jrB7k.1347.jrC7k.1367.jrD7k.27-wC
 

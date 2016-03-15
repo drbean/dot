@@ -16,7 +16,7 @@ screen 4 sudo su - postgres
 stuff "psql ${APP}042^M"
 
 screen 5
-stuff "# lftp -c 'open web.nuu.edu.tw/~greg/public_html && mkdir -p tech/flash && qui'^M"
+stuff "# lftp -c 'open greg@web.nuu.edu.tw && cd public_html && mkdir -p tech/flash && qui'^M"
 
 screen 7
 stuff "cd /var/www/cgi-bin/$APP^Msvn st -q^Msvn log -vr BASE:HEAD^M"

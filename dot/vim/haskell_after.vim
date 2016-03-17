@@ -210,7 +210,7 @@ fu! Populate(module)
 	call setpos('.', save_cursor)
 
 endf
-au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Drunk_driving")<CR>j
+au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Smallwood")<CR>j
 
 augroup END
 

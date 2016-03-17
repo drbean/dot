@@ -17,6 +17,8 @@ stuff "# ln -s ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/engine/*.{gf,hs} ~/$
 stuff "git status^M"
 stuff "# git fetch upstream^M"
 stuff "# git merge upstream/master^M"
+stuff "cd -^M"
+
 screen 2
 stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/$STORY^M cd -^M"
 stuff "gf --coding=utf8^M"

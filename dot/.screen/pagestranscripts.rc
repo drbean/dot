@@ -1,4 +1,4 @@
-screen v Contents.html $COURSE/content.yaml
+screen v $COURSE/content.yaml Contents.html
 screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "export HISTTIMEFORMAT='%m-%d'^M"

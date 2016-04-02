@@ -104,7 +104,7 @@ function bett () {
     ROUND=$round \
     LEAGUE=$league \
     SCRIPT_ARG="-t Non-competitive -g $course -i $story -d \"$script_arg\"" \
-    screen -c /home/$USER/dot/.screen/app.rc -dR bett
+    screen -c /home/$USER/dot/.screen/bett.rc -dR bett
     cd -
 }
 

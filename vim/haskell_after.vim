@@ -142,6 +142,10 @@ fu! Populate_pn(lnum, word, down_name, category, super_cat)
 	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " feminine (mk" . a:super_cat ." \"" . a:word . "\") );")
 endf
 
+fu! Populate_partv(lnum, word, down_name, category, super_cat)
+	call append(a:lnum, "\t" . a:down_name . "\t= part" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\");")
+endf
+
 fu! Populate_ap_like(lnum, word, down_name, category, super_cat)
 	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\");")
 endf
@@ -152,7 +156,7 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'A': 'a', 'N': 'u', 'CN': 'c', 'PN': 'p', 'V': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r"}
+	let marklist = {'A': 'a', 'N': 'u', 'CN': 'c', 'PN': 'p', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
 	let key = input("Cat: '(A)', '(U)N', '(C)N', '(P)N', '(V)*', a(D)v, p(R)ep ")
@@ -160,9 +164,9 @@ fu! Populate(module)
 	let category = get( {'a': 'A', 'u': 'N', 'c': 'CN', 'p': 'PN', 'v': 'V', 'd': "Adv", 'r': "Prep"}, key )
 	if category == 'V'
 		call inputsave()
-		let v_key = input("Cat: 'V( )', 'V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)' ")
+		let v_key = input("Cat: 'V( )', '(P)articiple','V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)' ")
 		call inputrestore()
-		let v_category = get( {' ': 'V', '2': 'V2', '3': 'V3', 'v': 'VV', 'j': 'V2V', 's': 'VS', 't': 'V2S', 'a': 'VA' }, v_key )
+		let v_category = get( {' ': 'V', 'p': 'Particle', '2': 'V2', '3': 'V3', 'v': 'VV', 'j': 'V2V', 's': 'VS', 't': 'V2S', 'a': 'VA' }, v_key )
 		let category = v_category
 	endif
 	call setline('.', word . "\t: " . category . ";")
@@ -180,7 +184,11 @@ fu! Populate(module)
 	let ab_gf = bufnr( "/" . a:module . "\.gf")
 	execute "buffer" ab_gf
 	let ab_lnum = line("'" . mark)
-	call append((ab_lnum), "\t" . down_name . "\t: " . category . ";")
+	if category == "Particle"
+		call append ((ab_lnum), "\t" . down_name . "\t: V;")
+	else
+		call append((ab_lnum), "\t" . down_name . "\t: " . category . ";")
+	endif
 	call setpos("'" . mark, [0, (ab_lnum+1), 1, 0])
 
 	let ab_eng_gf = bufnr( a:module . "Eng.gf")
@@ -188,6 +196,8 @@ fu! Populate(module)
 	let ab_eng_lnum = line("'" . mark)
 	if category == "PN"
 		call Populate_pn(ab_eng_lnum, word, down_name, "PN", "N") 
+	elseif category == "Particle"
+		call Populate_partv(ab_eng_lnum, word, down_name, "V", "V") 
 	elseif category == "A"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "AP", "A") 
 	elseif category == "CN"

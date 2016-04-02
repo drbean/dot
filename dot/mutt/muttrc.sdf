@@ -1,4 +1,4 @@
-# Last Edit: 2015 Nov 23, 07:46:06
+# Last Edit: 2016 Apr 01, 11:39:13 AM
 #
 # The ultimate Mutt settings
 #
@@ -77,7 +77,8 @@ set resolve		# go to next undeleted message after modifying actual
 set reverse_alias	# use realname from reverse alias lookup
 unset reverse_name	# Set "From" to address, where replied mail was sent to
 unset reverse_realname	# Do not reuse realname from original message.
-unset rfc2047_parameters	# don't encode RFC2047 parameters
+# unset rfc2047_parameters	# don't encode RFC2047 parameters
+set rfc2047_parameters	# don't encode RFC2047 parameters
 unset save_address	# Use full mail adress (with domain) as default folder.
 # unset save_empty	# remove mailbox when last message is removed.
 set save_empty	# remove mailbox when last message is removed.
@@ -768,11 +769,11 @@ folder-hook =v 'macro index S <change-folder>~/Mail/z/l<enter><search>vim<enter>
 #
 set default_hook="~t %s"
 
-# not in Rosenfeld, send-hooks not working when reply
-reply-hook . 'unmy_hdr cc'
-reply-hook 'ets' 'my_hdr Cc: ets.k888@gmail.com'
-reply-hook 'ets.k888\@gmail.com' 'my_hdr Cc: ets.k888@msa.hinet.net'
-send-hook 'ets.k888' 'my_hdr Cc: ets.k888@gmail.com'
+# # not in Rosenfeld, send-hooks not working when reply
+# reply-hook . 'unmy_hdr cc'
+# reply-hook 'ets' 'my_hdr Cc: ets.k888@gmail.com'
+# reply-hook 'ets.k888\@gmail.com' 'my_hdr Cc: ets.k888@msa.hinet.net'
+# send-hook 'ets.k888' 'my_hdr Cc: ets.k888@gmail.com'
 
 # First send-hook
 send-hook . "set attribution='On %{%a, %d %b %Y}, %n wrote:\n' indent_string='> '"
@@ -1095,11 +1096,11 @@ source ~/.mutt/keybind-1.2i			# my ultimative key bindings
 # (called in ~/.muttrc to load them only once)
 #
 
-# set alias_file=~/.mutt/aliases		# add the Aliases here
-# source ~/.mutt/aliases			# and include all existing aliases
-set alias_file=~/job/institutes		# add the Aliases here
-source ~/job/ust
-source ~/job/institutes
+set alias_file=~/.mutt/aliases		# add the Aliases here
 source ~/.mutt/aliases			# and include all existing aliases
+# set alias_file=~/job/institutes		# add the Aliases here
+# source ~/job/ust
+# source ~/job/institutes
+# source ~/.mutt/aliases			# and include all existing aliases
 
 ######################## end of file ######################################

@@ -202,6 +202,8 @@ fu! Populate(module)
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "AP", "A") 
 	elseif category == "CN"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N") 
+	elseif category == "V2"
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "V2", "V") 
 	elseif category == "VV"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "VV", "V") 
 	elseif category == "VS"
@@ -220,7 +222,7 @@ fu! Populate(module)
 	call setpos('.', save_cursor)
 
 endf
-au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Smallwood")<CR>j
+au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Cusp")<CR>j
 
 augroup END
 

@@ -26,7 +26,7 @@ main = do
 	xmonad foundconfig
 		{ modMask = mod4Mask
 		-- , terminal="gnome-terminal --hide-menubar"
-		, terminal="gnome-terminal --hide-menubar --profile=momotaro"
+		, terminal="gnome-terminal --hide-menubar --profile=sac"
 		-- , terminal="mate-terminal --hide-menubar --profile=momotaro"
 		-- , terminal="mate-terminal --show-menubar"
 		-- , terminal = "/usr/bin/urxvt"

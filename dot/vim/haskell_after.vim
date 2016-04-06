@@ -143,7 +143,8 @@ fu! Populate_pn(lnum, word, down_name, category, super_cat)
 endf
 
 fu! Populate_partv(lnum, word, down_name, category, super_cat)
-	call append(a:lnum, "\t" . a:down_name . "\t= part" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\");")
+	let [verb, particle] = split(a:word)
+	call append(a:lnum, "\t" . a:down_name . "\t= part" . a:category . "( mk" . a:super_cat . " \"" . verb . "\") \"" . particle . "\";")
 endf
 
 fu! Populate_ap_like(lnum, word, down_name, category, super_cat)
@@ -169,7 +170,11 @@ fu! Populate(module)
 		let v_category = get( {' ': 'V', 'p': 'Particle', '2': 'V2', '3': 'V3', 'v': 'VV', 'j': 'V2V', 's': 'VS', 't': 'V2S', 'a': 'VA' }, v_key )
 		let category = v_category
 	endif
-	call setline('.', word . "\t: " . category . ";")
+	if category == "Particle"
+		call setline('.', word . "\t: V;")
+	else
+		call setline('.', word . "\t: " . category . ";")
+	endif
 	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
 	let mark = marklist[category]
@@ -202,8 +207,6 @@ fu! Populate(module)
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "AP", "A") 
 	elseif category == "CN"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N") 
-	elseif category == "V2"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "V2", "V") 
 	elseif category == "VV"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "VV", "V") 
 	elseif category == "VS"

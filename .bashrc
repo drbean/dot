@@ -11,7 +11,7 @@ fi
 # User specific aliases and functions
 
 # ingydotnet/git-hub
-source ~/dot/git/git-hub/init
+source ~/dot/git/git-hub/.rc
 # ingydotnet/git-subrepo
 source ~/dot/git/git-subrepo/.rc
 

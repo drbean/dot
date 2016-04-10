@@ -6,8 +6,8 @@ use warnings;
 use IO::All;
 use List::Util "shuffle";
 
-my $unseen = io('/home/mai/unseen_pics.txt');
-my $seen = io('/home/mai/seen_pics.txt');
+my $unseen = io("/home/$ENV{USER}/unseen_pics.txt");
+my $seen = io("/home/$ENV{USER}/seen_pics.txt");
 
 my @raw_unseen = $unseen->slurp;
 my @seen = $seen->slurp;
@@ -21,7 +21,7 @@ $seen->print(@seen, $pic);
 chomp $pic;
 $pic =~ s/ /\\ /g;
 
-my $directory = "/home/mai/画像";
+my $directory = "/home/$ENV{USER}/画像";
 
 unless ( $pic ) {
 	$directory = "/usr/share/backgrounds/f23/default";

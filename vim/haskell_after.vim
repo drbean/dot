@@ -157,12 +157,12 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'A': 'a', 'N': 'u', 'CN': 'c', 'PN': 'p', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r"}
+	let marklist = {'A': 'a', 'N': 'u', 'CN': 'c', 'PN': 'p', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
-	let key = input("Cat: '(A)', '(U)N', '(C)N', '(P)N', '(V)*', a(D)v, p(R)ep ")
+	let key = input("Cat: '(A)', '(U)N', '(C)N', '(P)N', '(V)*', a(D)v, p(R)ep, de(T) ")
 	call inputrestore()
-	let category = get( {'a': 'A', 'u': 'N', 'c': 'CN', 'p': 'PN', 'v': 'V', 'd': "Adv", 'r': "Prep"}, key )
+	let category = get( {'a': 'A', 'u': 'N', 'c': 'CN', 'p': 'PN', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det"}, key )
 	if category == 'V'
 		call inputsave()
 		let v_key = input("Cat: 'V( )', '(P)articiple','V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)' ")
@@ -225,7 +225,7 @@ fu! Populate(module)
 	call setpos('.', save_cursor)
 
 endf
-au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Cusp")<CR>j
+au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Motivating")<CR>j
 
 augroup END
 

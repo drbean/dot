@@ -6,7 +6,7 @@ stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 screen 3
 stuff "export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# sudo systemctl stop httpd.service^M"
-stuff "# perl script/question_grade_${APP}.pl -l $LEAGUE -x $OLD_STORY -q 1 -o 2 -w 2 > ~/042/$LEAGUE/homework.yaml && less ~/042/$LEAGUE/homework.yaml && mv ~/042/$LEAGUE/homework.yaml ~/042/$LEAGUE/homework/$ROUND.yaml && svn add ~/042/$LEAGUE/homework/$ROUND.yaml && svn ci -m $OLD_STORY ~/042/$LEAGUE/homework/$ROUND.yaml^M"
+stuff "# perl script/question_grade_${APP}.pl -l $LEAGUE -x $OLD_STORY -q 1 -o 2 -w 2 > ~/042/$LEAGUE/homework.yaml && less ~/042/$LEAGUE/homework.yaml && mv ~/042/$LEAGUE/homework.yaml ~/042/$LEAGUE/homework/$ROUND.yaml && svn add ~/042/$LEAGUE/homework/$ROUND.yaml && svn ci -m $OLD_STORY ~/042/$LEAGUE/homework/$ROUND.yaml && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put homework/$ROUND.yaml -o homework.yaml && qui'^M"
 stuff "# perl script/delete_exercise.pl -i $OLD_STORY -g $COURSE^M"
 stuff "# sudo systemctl start httpd.service^M"
 stuff "# ls ~/042/$LEAGUE/homework/^M"

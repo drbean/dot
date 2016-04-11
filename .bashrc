@@ -136,7 +136,7 @@ function GF () {
     STORY=$story \
     MOD=${story^} \
     PREVSTORY=${prevstory:-$story} \
-    PREVMOD=${prevstory^:-${story^}} \
+    PREVMOD=${PREVSTORY^} \
     screen -c /home/$USER/dot/.screen/gf.rc -dR GF_$story
     cd -
 }

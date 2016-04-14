@@ -225,7 +225,7 @@ fu! Populate(module)
 	call setpos('.', save_cursor)
 
 endf
-au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Motivating")<CR>j
+au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Piggott")<CR>j
 
 augroup END
 

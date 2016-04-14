@@ -1,4 +1,4 @@
-" Last Edit: 2016 Mar 13, 12:30:11 PM
+" Last Edit: 2016 Apr 14, 09:20:30 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -133,6 +133,7 @@ se ruler		" show column, line
 " 980527 I often reformat a paragraph to fit some textwidth -
 " and I use the following mapping to adjust it to the
 " current position of the cursor:
+" ghc-mod conflict!!
   map <LocalLeader>tw :set textwidth=<C-R>=col(".")<C-M>
 
 "abbreviations for typos
@@ -175,9 +176,13 @@ noremap + I<CR><Esc>
 " let myfiletypefile = "/usr/home/lang/share/vim/myfiletypes.vim"
 let myfiletypefile = "$VIMRUNTIME/myfiletype.vim"
 
+" pathogen first
+execute pathogen#infect()
+
 " from :h vimrc-filetype
 filetype plugin indent on
 " filetype on
+
 
 " Luc Hermitte's bracketing macros for html are in ftplugin, macro & plugin.
 " http://hermitte.free.fr/vim
@@ -367,6 +372,65 @@ map <silent> <LocalLeader>snip <Esc>:call ResetSnippets() \| call GetSnippets(g:
 
 
 "autocmds
+
+augroup haskell
+au!
+
+" syntastic
+
+map <Leader>s :SyntasticToggleMode<CR>
+
+" set statusline=%<%f\ %h%m%r%=%-5.(%l,%c%V%)\ %P
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+map <silent> <LocalLeader>ti :GhcModTypeInsert<CR>
+map <silent> <LocalLeader>ts :GhcModSplitFunCase<CR>
+map <silent> <LocalLeader>tq :GhcModType<CR>
+map <silent> <LocalLeader>te :GhcModTypeClear<CR>
+
+" supertab
+
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
+if has("gui_running")
+  imap <c-space> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
+  endif
+endif
+
+" necoghc
+
+let g:haskellmode_completion_ghc = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+" nerdtree
+
+map <Leader>tr :NERDTreeToggle<CR>
+
+" tabularize haskell tabs
+
+let g:haskell_tabular = 1
+
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
+
+" Ctrl-P fuzzy file search
+
+map <silent> <Leader>t :CtrlP()<CR>
+noremap <leader>b<space> :CtrlPBuffer<cr>
+let g:ctrlp_custom_ignore = '\v[\/]dist$'
+
+augroup END 
 
 augroup mutt
 au!

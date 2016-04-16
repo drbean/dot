@@ -1,4 +1,4 @@
-" Last Edit: 2016 Apr 14, 09:20:30 PM
+" Last Edit: 2016 Apr 15, 10:57:37 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -176,13 +176,9 @@ noremap + I<CR><Esc>
 " let myfiletypefile = "/usr/home/lang/share/vim/myfiletypes.vim"
 let myfiletypefile = "$VIMRUNTIME/myfiletype.vim"
 
-" pathogen first
-execute pathogen#infect()
-
 " from :h vimrc-filetype
 filetype plugin indent on
 " filetype on
-
 
 " Luc Hermitte's bracketing macros for html are in ftplugin, macro & plugin.
 " http://hermitte.free.fr/vim
@@ -380,7 +376,7 @@ au!
 
 map <Leader>s :SyntasticToggleMode<CR>
 
-" set statusline=%<%f\ %h%m%r%=%-5.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%=%-5.(%l,%c%V%)\ %P
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -1041,4 +1037,8 @@ function! DigraphLookup()
 	redraw
 	echo "No digraph found for \"" . c . "\""
 endfunction 
+
+" pathogen first
+execute pathogen#infect()
+
 

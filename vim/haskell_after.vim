@@ -138,6 +138,47 @@ ino <LocalLeader>1 <Esc>:call Oneword()<CR>o
 augroup gf
 au!
 
+fu! Word_mark()
+	let adj_line = search('a = [')
+	call setpos("'a", [0, (adj_line+1), 1, 0])
+	let adv_line = search('adv = [')
+	call setpos("'d", [0, (adv_line+1), 1, 0])
+	let det_line = search('det = [')
+	call setpos("'t", [0, (det_line+1), 1, 0])
+	let n_line = search('n = [')
+	call setpos("'u", [0, (n_line+1), 1, 0])
+	let cn_line = search('n = [')
+	call setpos("'c", [0, (cn_line+1), 1, 0])
+	let pn_line = search('pn = [')
+	call setpos("'p", [0, (pn_line+1), 1, 0])
+	let prep_line = search('prep = [')
+	call setpos("'r", [0, (prep_line+1), 1, 0])
+	let v_line = search('v = [')
+	call setpos("'v", [0, (v_line+1), 1, 0])
+endf
+
+fu! Mod_mark()
+	let adj_line = search('-- AP')
+	call setpos("'a", [0, (adj_line+1), 1, 0])
+	let adv_line = search('-- Adv')
+	call setpos("'d", [0, (adv_line+1), 1, 0])
+	let det_line = search('-- Det')
+	call setpos("'t", [0, (det_line+1), 1, 0])
+	let n_line = search('-- N')
+	call setpos("'u", [0, (n_line+1), 1, 0])
+	let cn_line = search('-- N')
+	call setpos("'c", [0, (cn_line+1), 1, 0])
+	let pn_line = search('-- PN')
+	call setpos("'p", [0, (pn_line+1), 1, 0])
+	let prep_line = search('-- Prep')
+	call setpos("'r", [0, (prep_line+1), 1, 0])
+	let v_line = search('-- V')
+	call setpos("'v", [0, (v_line+1), 1, 0])
+endf
+
+au BufRead Piggott*.gf call Mod_mark()
+au BufRead WordsCharacters.hs call Word_mark()
+
 fu! Populate_pn(lnum, word, down_name, category, super_cat)
 	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " feminine (mk" . a:super_cat ." \"" . a:word . "\") );")
 endf
@@ -225,7 +266,14 @@ fu! Populate(module)
 	call setpos('.', save_cursor)
 
 endf
-au BufEnter WordsCharacters.hs nn <buffer> <LocalLeader>p <Esc>:call Populate("Piggott")<CR>j
+
+fun Next_line()
+	exe "normal j"
+endf
+
+au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate("Piggott") <Bar>
+	\ :call Next_line() <Bar>
+	\ :call Next_line() <CR>
 
 augroup END
 

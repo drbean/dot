@@ -184,7 +184,8 @@ fu! Populate_pn(lnum, word, down_name, category, super_cat)
 endf
 
 fu! Populate_partv(lnum, word, down_name, category, super_cat)
-	let [verb, particle] = split(a:word)
+	let [verb; remainder] = split(a:word)
+	let particle = join(remainder)
 	call append(a:lnum, "\t" . a:down_name . "\t= part" . a:category . "( mk" . a:super_cat . " \"" . verb . "\") \"" . particle . "\";")
 endf
 
@@ -271,9 +272,7 @@ fun Next_line()
 	exe "normal j"
 endf
 
-au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate("Piggott") <Bar>
-	\ :call Next_line() <Bar>
-	\ :call Next_line() <CR>
+au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate("Piggott") <CR> 2j
 
 augroup END
 

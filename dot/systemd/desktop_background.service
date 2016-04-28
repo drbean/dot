@@ -6,4 +6,4 @@ Type=simple
 Nice=19
 IOSchedulingClass=2
 IOSchedulingPriority=7
-ExecStart=/home/mai/picture_uri.pl
+ExecStart=/home/drbean/picture_uri.pl

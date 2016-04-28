@@ -29,3 +29,4 @@ unless ( $pic ) {
 }
 
 system("dbus-launch gsettings set org.gnome.desktop.background picture-uri file://$directory/$pic");
+system("dbus-launch gsettings set org.mate.background picture-filename $directory/$pic");

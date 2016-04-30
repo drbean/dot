@@ -178,7 +178,7 @@ fu! Mod_mark()
 	call setpos("'v", [0, (v_line+1), 1, 0])
 endf
 
-au BufRead Piggott*.gf call Mod_mark()
+au BufRead Indie*.gf call Mod_mark()
 au BufRead WordsCharacters.hs call Word_mark()
 
 fu! Populate_pn(lnum, word, down_name, category, super_cat)
@@ -274,7 +274,7 @@ fun Next_line()
 	exe "normal j"
 endf
 
-au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate("Piggott") <CR> 2j
+au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate("Indie") <CR> 2j
 
 augroup END
 

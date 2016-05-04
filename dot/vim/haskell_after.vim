@@ -178,9 +178,6 @@ fu! Mod_mark()
 	call setpos("'v", [0, (v_line+1), 1, 0])
 endf
 
-au BufRead Indie*.gf call Mod_mark()
-au BufRead WordsCharacters.hs call Word_mark()
-
 fu! Populate_pn(lnum, word, down_name, category, super_cat)
 	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " feminine (mk" . a:super_cat ." \"" . a:word . "\") );")
 endf
@@ -201,12 +198,19 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'A': 'a', 'N': 'u', 'CN': 'c', 'PN': 'p', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t"}
+	let marklist = {'A': 'a', 'N': 'u', 'N2': 'u', 'CN': 'c', 'PN': 'p', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
-	let key = input("Cat: '(A)', '(U)N', '(C)N', '(P)N', '(V)*', a(D)v, p(R)ep, de(T) ")
+	let key = input("Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T) ")
 	call inputrestore()
-	let category = get( {'a': 'A', 'u': 'N', 'c': 'CN', 'p': 'PN', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det"}, key )
+	let category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det"}, key )
+	if category == 'N'
+		call inputsave()
+		let n_key = input("Cat: 'N( )', '(P)N', 'N(2)', '(C)N' ")
+		call inputrestore()
+		let n_category = get( {' ': 'N', 'p': 'PN', '2': 'N2', 'c': 'CN' }, n_key )
+		let category = n_category
+	endif
 	if category == 'V'
 		call inputsave()
 		let v_key = input("Cat: 'V( )', '(P)articiple','V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)' ")
@@ -251,10 +255,16 @@ fu! Populate(module)
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "AP", "A") 
 	elseif category == "CN"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N") 
+	elseif category == "N2"
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "N2", "N") 
 	elseif category == "VV"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "VV", "V") 
 	elseif category == "VS"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "VS", "V") 
+	elseif category == "V2S"
+		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "V") 
+	elseif category == "V2V"
+		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "V") 
 	elseif category == "VA"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "VA", "V") 
 	elseif category == "V3"
@@ -274,7 +284,10 @@ fun Next_line()
 	exe "normal j"
 endf
 
-au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate("Indie") <CR> 2j
+au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate("Culture") <CR> 2j
+au BufRead Culture*.gf call Mod_mark()
+au BufRead WordsCharacters.hs call Word_mark()
+
 
 augroup END
 

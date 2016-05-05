@@ -2,7 +2,8 @@
 Description=Set org.gnome.desktop.background picture_uri, org.mate.background picture_filename
 
 [Timer]
-OnBootSec=4min
+OnCalendar=daily
+Persistent=True
 
 [Install]
 WantedBy=timers.target

@@ -206,7 +206,7 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'A': 'a', 'N': 'n', 'N2': 'u', 'CN': 'n', 'PN': 'p', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
+	let marklist = {'A': 'a', 'N': 'n', 'N2': 'u', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
 	let key = input("Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), (C)onj, (S)ubj")
@@ -214,9 +214,9 @@ fu! Populate(module)
 	let category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det", 'c': "Conj", 's': "Subj"}, key )
 	if category == 'N'
 		call inputsave()
-		let n_key = input("Cat: 'N( )', '(P)N', 'N(2)', '(C)N' ")
+		let n_key = input("Cat: 'N( )', '(P)N', 'N(2)', '(C)N', 'P(l)aceNoun' ")
 		call inputrestore()
-		let n_category = get( {' ': 'N', 'p': 'PN', '2': 'N2', 'c': 'CN' }, n_key )
+		let n_category = get( {' ': 'N', 'p': 'PN', '2': 'N2', 'c': 'CN', 'l': 'PlaceNoun' }, n_key )
 		let category = n_category
 	endif
 	if category == 'V'
@@ -265,6 +265,8 @@ fu! Populate(module)
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
 	elseif category == "N2"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "N2", "N", "") 
+	elseif category == "PlaceNoun"
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
 	elseif category == "V2"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "V2", "V", "noPrep") 
 	elseif category == "VV"

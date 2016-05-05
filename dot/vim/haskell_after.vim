@@ -143,14 +143,18 @@ fu! Word_mark()
 	call setpos("'a", [0, (adj_line+1), 1, 0])
 	let adv_line = search('adv = [')
 	call setpos("'d", [0, (adv_line+1), 1, 0])
+	let conj_line = search('conj = [')
+	call setpos("'c", [0, (conj_line+1), 1, 0])
+	let subj_line = search('conj = [')
+	call setpos("'s", [0, (subj_line+1), 1, 0])
 	let det_line = search('det = [')
 	call setpos("'t", [0, (det_line+1), 1, 0])
 	call cursor(1,1)
 	let cn_line = search('^n = [', "w")
-	call setpos("'c", [0, (cn_line+1), 1, 0])
+	call setpos("'n", [0, (cn_line+1), 1, 0])
 	call cursor(1,1)
 	let n_line = search('^n = [', "w")
-	call setpos("'u", [0, (n_line+1), 1, 0])
+	call setpos("'n", [0, (n_line+1), 1, 0])
 	let pn_line = search('pn = [')
 	call setpos("'p", [0, (pn_line+1), 1, 0])
 	let prep_line = search('prep = [')
@@ -164,12 +168,16 @@ fu! Mod_mark()
 	call setpos("'a", [0, (adj_line+1), 1, 0])
 	let adv_line = search('-- Adv')
 	call setpos("'d", [0, (adv_line+1), 1, 0])
+	let conj_line = search('-- Conj')
+	call setpos("'c", [0, (conj_line+1), 1, 0])
+	let subj_line = search('-- Subj')
+	call setpos("'s", [0, (subj_line+1), 1, 0])
 	let det_line = search('-- Det')
 	call setpos("'t", [0, (det_line+1), 1, 0])
 	let n_line = search('-- N')
-	call setpos("'u", [0, (n_line+1), 1, 0])
+	call setpos("'n", [0, (n_line+1), 1, 0])
 	let cn_line = search('-- N')
-	call setpos("'c", [0, (cn_line+1), 1, 0])
+	call setpos("'n", [0, (cn_line+1), 1, 0])
 	let pn_line = search('-- PN')
 	call setpos("'p", [0, (pn_line+1), 1, 0])
 	let prep_line = search('-- Prep')
@@ -188,8 +196,8 @@ fu! Populate_partv(lnum, word, down_name, category, super_cat)
 	call append(a:lnum, "\t" . a:down_name . "\t= part" . a:category . "( mk" . a:super_cat . " \"" . verb . "\") \"" . particle . "\";")
 endf
 
-fu! Populate_ap_like(lnum, word, down_name, category, super_cat)
-	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\");")
+fu! Populate_ap_like(lnum, word, down_name, category, super_cat, arg)
+	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\") " . a:arg .";")
 endf
 
 fu! Populate(module)
@@ -198,12 +206,12 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'A': 'a', 'N': 'u', 'N2': 'u', 'CN': 'c', 'PN': 'p', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t"}
+	let marklist = {'A': 'a', 'N': 'n', 'N2': 'u', 'CN': 'n', 'PN': 'p', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
-	let key = input("Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T) ")
+	let key = input("Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), (C)onj, (S)ubj")
 	call inputrestore()
-	let category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det"}, key )
+	let category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det", 'c': "Conj", 's': "Subj"}, key )
 	if category == 'N'
 		call inputsave()
 		let n_key = input("Cat: 'N( )', '(P)N', 'N(2)', '(C)N' ")
@@ -252,23 +260,25 @@ fu! Populate(module)
 	elseif category == "Particle"
 		call Populate_partv(ab_eng_lnum, word, down_name, "V", "V") 
 	elseif category == "A"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "AP", "A") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "AP", "A", "") 
 	elseif category == "CN"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
 	elseif category == "N2"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "N2", "N") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "N2", "N", "") 
+	elseif category == "V2"
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "V2", "V", "noPrep") 
 	elseif category == "VV"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "VV", "V") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "VV", "V", "") 
 	elseif category == "VS"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "VS", "V") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "VS", "V", "") 
 	elseif category == "V2S"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "V") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "V", "") 
 	elseif category == "V2V"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "V") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "V", "") 
 	elseif category == "VA"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "VA", "V") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "VA", "V", "") 
 	elseif category == "V3"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "V3", "V") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "V3", "V", "") 
 	else 
 		call append("'" . mark, "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif
@@ -285,8 +295,10 @@ fun Next_line()
 endf
 
 au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate("Culture") <CR> 2j
-au BufRead Culture*.gf call Mod_mark()
-au BufRead WordsCharacters.hs call Word_mark()
+au BufEnter Culture*.gf set tags=gf-contrib/drbean/business/managing/culture/gf_tags,gf-contrib/drbean/business/managing/culture/haskell_tags
+au BufEnter Culture*.gf call Mod_mark()
+au BufEnter WordsCharacters.hs call Word_mark()
+
 
 
 augroup END

@@ -108,6 +108,30 @@ function bett () {
     cd -
 }
 
+function question_grade_bett () {
+    local arg app=bett old_story round league
+    while getopts 'o:r:l:' arg
+    do
+        case ${arg} in
+            o) old_story=${OPTARG};;
+	    r) round=${OPTARG};;
+            l) league=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/$app
+    svn update bett.yaml -r 508 &&
+    perl script/question_grade_${app}.pl -l $league -x $old_story -q 1 -o 2 -w 2 > ~/042/$league/homework.yaml && 
+    svn update bett.yaml -r 509 &&
+    less ~/042/$league/homework.yaml &&
+    mv ~/042/$league/homework.yaml ~/042/$league/homework/$round.yaml &&
+    svn add ~/042/$league/homework/$round.yaml &&
+    svn ci -m $old_story ~/042/$league/homework/$round.yaml &&
+    lftp -c "open web.nuu.edu.tw &&
+	cd public_html/$league &&
+	put ~/042/$league/homework/$round.yaml -o homework.yaml &&
+	qui"
+}
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
 alias dot="cd ~/dot; screen -c /home/$USER/dot/.screen/dotrc -dR dot; cd -"

@@ -297,7 +297,7 @@ fun Next_line()
 endf
 
 au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate("Culture") <CR> 2j
-au BufEnter Culture*.gf set tags=gf-contrib/drbean/business/managing/culture/gf_tags,gf-contrib/drbean/business/managing/culture/haskell_tags
+au BufEnter My*gf,Culture*.gf set tags=gf-contrib/drbean/$COURSE/$TOPIC/$STORY/gf_tags,gf-contrib/drbean/$COURSE/$TOPIC/$STORY/haskell_tags
 au BufEnter Culture*.gf call Mod_mark()
 au BufEnter WordsCharacters.hs call Word_mark()
 

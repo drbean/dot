@@ -296,9 +296,9 @@ fun Next_line()
 	exe "normal j"
 endf
 
-au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate("Culture") <CR> 2j
-au BufEnter My*gf,Culture*.gf set tags=gf-contrib/drbean/$COURSE/$TOPIC/$STORY/gf_tags,gf-contrib/drbean/$COURSE/$TOPIC/$STORY/haskell_tags
-au BufEnter Culture*.gf call Mod_mark()
+au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate($MOD) <CR> 2j
+au BufEnter My*gf,$MOD*.gf set tags=gf-contrib/drbean/$COURSE/$TOPIC/$STORY/gf_tags,gf-contrib/drbean/$COURSE/$TOPIC/$STORY/haskell_tags
+au BufEnter $MOD*.gf call Mod_mark()
 au BufEnter WordsCharacters.hs call Word_mark()
 
 

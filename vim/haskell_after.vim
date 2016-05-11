@@ -218,6 +218,10 @@ fu! Populate(module)
 	execute "buffer" test_buf
 	let test_line = search(word)
 	call matchaddpos("Search", [test_line])
+	call inputsave()
+	let action_key = input("(C)ontinue, (A)bort.")
+	call inputrestore()
+	let action = get( {'a': 'Abort', 'c': "Continue"}, action_key )
 	exe "buffer" word_buf
 	call setpos('.', save_cursor)
 	call inputsave()

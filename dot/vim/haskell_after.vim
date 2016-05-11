@@ -159,7 +159,9 @@ fu! Word_mark()
 	call setpos("'p", [0, (pn_line+1), 1, 0])
 	let prep_line = search('prep = [')
 	call setpos("'r", [0, (prep_line+1), 1, 0])
-	let v_line = search('v = [')
+	let pron_line = search('pron = [')
+	call setpos("'o", [0, (pron_line+1), 1, 0])
+	let v_line = search('^v = [')
 	call setpos("'v", [0, (v_line+1), 1, 0])
 endf
 
@@ -182,6 +184,8 @@ fu! Mod_mark()
 	call setpos("'p", [0, (pn_line+1), 1, 0])
 	let prep_line = search('-- Prep')
 	call setpos("'r", [0, (prep_line+1), 1, 0])
+	let pron_line = search('-- Pron')
+	call setpos("'o", [0, (pron_line+1), 1, 0])
 	let v_line = search('-- V')
 	call setpos("'v", [0, (v_line+1), 1, 0])
 endf
@@ -206,12 +210,20 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'A': 'a', 'N': 'n', 'N2': 'u', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
+	let marklist = {'A': 'a', 'N': 'n', 'N2': 'u', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
 	let word = substitute( quoted_word, "\"", "", "g")
+	let word_buf = bufnr("%")
+	let save_cursor = getpos(".")
+	let test_buf = bufnr("/Tests.hs")
+	execute "buffer" test_buf
+	let test_line = search(word)
+	call matchaddpos("Search", [test_line])
+	exe "buffer" word_buf
+	call setpos('.', save_cursor)
 	call inputsave()
-	let key = input("Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), (C)onj, (S)ubj")
+	let key = input("Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), Pr(O)noun, (C)onj, (S)ubj")
 	call inputrestore()
-	let category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det", 'c': "Conj", 's': "Subj"}, key )
+	let category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det", 'o': "Pron", 'c': "Conj", 's': "Subj"}, key )
 	if category == 'N'
 		call inputsave()
 		let n_key = input("Cat: 'N( )', '(P)N', 'N(2)', '(C)N', 'P(l)aceNoun' ")
@@ -231,8 +243,6 @@ fu! Populate(module)
 	else
 		call setline('.', word . "\t: " . category . ";")
 	endif
-	let word_buf = bufnr("%")
-	let save_cursor = getpos(".")
 	let mark = marklist[category]
 	let word_lnum = line("'" . mark)
 	call append(word_lnum,'')

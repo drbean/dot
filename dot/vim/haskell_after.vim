@@ -214,16 +214,6 @@ fu! Populate(module)
 	let word = substitute( quoted_word, "\"", "", "g")
 	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
-	let test_buf = bufnr("/Tests.hs")
-	execute "buffer" test_buf
-	let test_line = search(word)
-	call matchaddpos("Search", [test_line])
-	call inputsave()
-	let action_key = input("(C)ontinue, (A)bort.")
-	call inputrestore()
-	let action = get( {'a': 'Abort', 'c': "Continue"}, action_key )
-	exe "buffer" word_buf
-	call setpos('.', save_cursor)
 	call inputsave()
 	let key = input("Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), Pr(O)noun, (C)onj, (S)ubj")
 	call inputrestore()
@@ -300,6 +290,14 @@ fu! Populate(module)
 	endif
 	call setpos("'" . mark, [0, (ab_eng_lnum+1), 1, 0])
 
+	let test_buf = bufnr("/Tests.hs")
+	execute "buffer" test_buf
+	let test_line = search(word)
+	call matchaddpos("Search", [test_line])
+	call inputsave()
+	let action_key = input("(C)ontinue, (A)bort.")
+	call inputrestore()
+	let action = get( {'a': 'Abort', 'c': "Continue"}, action_key )
 
 	execute "buffer" word_buf
 	call setpos('.', save_cursor)

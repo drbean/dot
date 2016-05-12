@@ -139,6 +139,7 @@ augroup gf
 au!
 
 fu! Word_mark()
+	let save_cursor = getpos(".\"")
 	let adj_line = search('a = [')
 	call setpos("'a", [0, (adj_line+1), 1, 0])
 	let adv_line = search('adv = [')
@@ -163,9 +164,11 @@ fu! Word_mark()
 	call setpos("'o", [0, (pron_line+1), 1, 0])
 	let v_line = search('^v = [')
 	call setpos("'v", [0, (v_line+1), 1, 0])
+	call setpos('.', save_cursor)
 endf
 
 fu! Mod_mark()
+	let save_cursor = getpos(".\"")
 	let adj_line = search('-- AP')
 	call setpos("'a", [0, (adj_line+1), 1, 0])
 	let adv_line = search('-- Adv')
@@ -188,6 +191,7 @@ fu! Mod_mark()
 	call setpos("'o", [0, (pron_line+1), 1, 0])
 	let v_line = search('-- V')
 	call setpos("'v", [0, (v_line+1), 1, 0])
+	call setpos('.', save_cursor)
 endf
 
 fu! Populate_pn(lnum, word, down_name, category, super_cat)
@@ -205,6 +209,8 @@ fu! Populate_ap_like(lnum, word, down_name, category, super_cat, arg)
 endf
 
 fu! Populate(module)
+	let word_buf = bufnr( "/WordsCharacters.hs")
+	execute "buffer" word_buf
 	let line = getline('.')
 	let quoted_word = matchstr( getline('.'), "\".*\"")
 	if quoted_word == ""
@@ -212,7 +218,6 @@ fu! Populate(module)
 	endif
 	let marklist = {'A': 'a', 'N': 'n', 'N2': 'u', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
 	let word = substitute( quoted_word, "\"", "", "g")
-	let word_buf = bufnr("%")
 	let save_cursor = getpos(".")
 	call inputsave()
 	let key = input("Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), Pr(O)noun, (C)onj, (S)ubj")
@@ -294,24 +299,33 @@ fu! Populate(module)
 	execute "buffer" test_buf
 	let test_line = search(word)
 	call matchaddpos("Search", [test_line])
-	call inputsave()
-	let action_key = input("(C)ontinue, (A)bort.")
-	call inputrestore()
-	let action = get( {'a': 'Abort', 'c': "Continue"}, action_key )
-
 	execute "buffer" word_buf
 	call setpos('.', save_cursor)
 
+endf
+
+fun Test_check()
+	let quoted_word = matchstr( getline('.'), "\".*\"")
+	if quoted_word == ""
+		let quoted_word = getline('.')
+	endif
+	let word = substitute( quoted_word, "\"", "", "g")
+	let test_buf = bufnr("/Tests.hs")
+	execute "buffer" test_buf
+	call clearmatches()
+	call matchadd("Search", word)
 endf
 
 fun Next_line()
 	exe "normal j"
 endf
 
-au BufEnter WordsCharacters.hs nn <LocalLeader>p :call Populate($MOD) <CR> 2j
-au BufEnter My*gf,$MOD*.gf set tags=gf-contrib/drbean/$COURSE/$TOPIC/$STORY/gf_tags,gf-contrib/drbean/$COURSE/$TOPIC/$STORY/haskell_tags
-au BufEnter $MOD*.gf call Mod_mark()
-au BufEnter WordsCharacters.hs call Word_mark()
+au BufReadPost Tests.hs nn <LocalLeader>p :call Populate($MOD) <CR> 2j
+au BufEnter WordsCharacters.hs nn <LocalLeader>o :call Test_check() <CR>
+au BufReadPost My*gf,$MOD*.gf set tags=gf-contrib/drbean/$COURSE/$TOPIC/$STORY/gf_tags,gf-contrib/drbean/$COURSE/$TOPIC/$STORY/haskell_tags
+au BufReadPost $MOD*.gf call Mod_mark()
+au BufReadPost WordsCharacters.hs call Word_mark()
+au BufEnter WordsCharacters.hs if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 
 

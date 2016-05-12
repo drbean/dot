@@ -216,7 +216,7 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'A': 'a', 'N': 'n', 'N2': 'u', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
+	let marklist = {'A': 'a', 'N': 'n', 'N2': 'n', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	let save_cursor = getpos(".")
 	call inputsave()

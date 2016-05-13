@@ -165,6 +165,28 @@ function GF () {
     cd -
 }
 
+function gftags2ctags () {
+    while getopts 'c:t:s:' arg
+    do
+        case ${arg} in
+	    c) course=${OPTARG};;
+	    t) topic=${OPTARG};;
+	    s) story=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    mod=${story^}
+    gf --tags drbean/$course/$topic/$story/${mod}Eng.gf 2>/dev/null |
+    sed '\@/home/drbean/@!d' |
+    sed 's@^.*\(/home/drbean/.*$\)@\1@' |
+    xargs cat |
+    sed '\@/home/drbean/@!d' |
+    sed '\@indir@d' |
+    sed 's@^\([a-zA-Z0-9_]*\)\t\([a-z-]*\)\t\(/.*\.gf\):\([0-9]*\)[-0-9]*[ \t]*\(.*\)$@\1\t\3\t\4;"\t\2\ttype:\5@' |
+    LC_ALL=C sort |
+    uniq
+}
+
 function pages () {
     OPTIND=1
     local arg course story

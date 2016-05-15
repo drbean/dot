@@ -22,7 +22,7 @@ stuff "cd -^M"
 screen 2
 stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/$STORY^M"
 stuff "gf --coding=utf8^M"
-stuff "import ${MOD}Eng.gf^M"
+stuff "import --retain ${MOD}Eng.gf^M"
 
 screen 3
 stuff "cd gf-contrib/drbean/$COURSE/$TOPIC/$STORY/^M"

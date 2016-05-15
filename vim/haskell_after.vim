@@ -204,6 +204,10 @@ fu! Populate_partv(lnum, word, down_name, category, super_cat)
 	call append(a:lnum, "\t" . a:down_name . "\t= part" . a:category . "( mk" . a:super_cat . " \"" . verb . "\") \"" . particle . "\";")
 endf
 
+fu! Populate_cat_args(lnum, word, down_name, category, arg)
+	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . " \"" . a:word . "\" " . a:arg . ";")
+endf
+
 fu! Populate_ap_like(lnum, word, down_name, category, super_cat, arg)
 	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\") " . a:arg .";")
 endf
@@ -276,6 +280,8 @@ fu! Populate(module)
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "N2", "N", "") 
 	elseif category == "PlaceNoun"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
+	elseif category == "N"
+		call Populate_cat_args(ab_eng_lnum, word, down_name, category, "NonExist") 
 	elseif category == "V2"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "V2", "V", "noPrep") 
 	elseif category == "VV"

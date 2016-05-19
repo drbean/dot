@@ -2,6 +2,7 @@
 *.gf~
 *.hs.swp
 *.gf.swp
+*.gfo
 Interpretation.hs
 Evaluation.hs
 LogicalForm.hs

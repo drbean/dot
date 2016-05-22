@@ -176,7 +176,7 @@ function gftags2ctags () {
         esac
     done
     mod=${story^}
-    gf --tags drbean/$course/$topic/$story/${mod}Eng.gf 2>/dev/null |
+    gf --tags /home/drbean/GF/gf-contrib/drbean/$course/$topic/$story/${mod}Eng.gf 2>/dev/null |
     sed '\@/home/drbean/@!d' |
     sed 's@^.*\(/home/drbean/.*$\)@\1@' |
     xargs cat |

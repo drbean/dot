@@ -3,6 +3,7 @@
 *.hs.swp
 *.gf.swp
 *.gfo
+*.gf-tags
 Interpretation.hs
 Evaluation.hs
 LogicalForm.hs

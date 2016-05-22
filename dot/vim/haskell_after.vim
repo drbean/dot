@@ -281,7 +281,7 @@ fu! Populate(module)
 	elseif category == "PlaceNoun"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
 	elseif category == "N"
-		call Populate_cat_args(ab_eng_lnum, word, down_name, category, "NonExist") 
+		call Populate_cat_args(ab_eng_lnum, word, down_name, category, "nonExist") 
 	elseif category == "V2"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "V2", "V", "noPrep") 
 	elseif category == "VV"
@@ -327,7 +327,7 @@ fun Next_line()
 endf
 
 au BufReadPost Tests.hs nn <LocalLeader>p :call Populate($MOD) <CR> 2j
-au BufEnter WordsCharacters.hs nn <LocalLeader>o :call Test_check() <CR>
+au BufEnter WordsCharacters.hs nn <LocalLeader>a :call Test_check() <CR>
 au BufReadPost My*gf,$MOD*.gf set tags=gf-contrib/drbean/$COURSE/$TOPIC/$STORY/gf_tags,gf-contrib/drbean/$COURSE/$TOPIC/$STORY/haskell_tags
 au BufReadPost $MOD*.gf call Mod_mark()
 au BufReadPost WordsCharacters.hs call Word_mark()

@@ -36,7 +36,7 @@ defyn   SURFRAW_graphical		no
 # e.g links, lynx, w3m
 # Greg
 # def   SURFRAW_text_browser	elinks
-def   SURFRAW_text_browser	lynx
+def   SURFRAW_text_browser	links
 
 # name/path of browser executable
 # e.g mozilla, netscape etc

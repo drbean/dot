@@ -214,29 +214,30 @@ endf
 
 fu! Populate(module)
 	let word_buf = bufnr( "/WordsCharacters.hs")
-	execute "buffer" word_buf
-	let line = getline('.')
+	let word_win = bufwinnr( "/WordsCharacters.hs")
+	let win_id = win_getid( word_win )
+	call win_gotoid( win_id )
+	let line = line('.')
 	let quoted_word = matchstr( getline('.'), "\".*\"")
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
 	let marklist = {'A': 'a', 'N': 'n', 'N2': 'n', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
 	let word = substitute( quoted_word, "\"", "", "g")
-	let save_cursor = getpos(".")
 	call inputsave()
-	let key = input("Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), Pr(O)noun, (C)onj, (S)ubj")
+	let key = input("Word: " . word . ", Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), Pr(O)noun, (C)onj, (S)ubj")
 	call inputrestore()
 	let category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det", 'o': "Pron", 'c': "Conj", 's': "Subj"}, key )
 	if category == 'N'
 		call inputsave()
-		let n_key = input("Cat: 'N( )', '(P)N', 'N(2)', '(C)N', 'P(l)aceNoun' ")
+		let n_key = input("Word: " . word . ", Cat: 'N( )', '(P)N', 'N(2)', '(C)N', 'P(l)aceNoun' ")
 		call inputrestore()
 		let n_category = get( {' ': 'N', 'p': 'PN', '2': 'N2', 'c': 'CN', 'l': 'PlaceNoun' }, n_key )
 		let category = n_category
 	endif
 	if category == 'V'
 		call inputsave()
-		let v_key = input("Cat: 'V( )', '(P)articiple','V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)' ")
+		let v_key = input("Word: " . word . ", Cat: 'V( )', '(P)articiple','V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)' ")
 		call inputrestore()
 		let v_category = get( {' ': 'V', 'p': 'Particle', '2': 'V2', '3': 'V3', 'v': 'VV', 'j': 'V2V', 's': 'VS', 't': 'V2S', 'a': 'VA' }, v_key )
 		let category = v_category
@@ -301,12 +302,8 @@ fu! Populate(module)
 	endif
 	call setpos("'" . mark, [0, (ab_eng_lnum+1), 1, 0])
 
-	let test_buf = bufnr("/Tests.hs")
-	execute "buffer" test_buf
-	let test_line = search(word)
-	call matchaddpos("Search", [test_line])
 	execute "buffer" word_buf
-	call setpos('.', save_cursor)
+	call setpos('.', [ 0, (line+2), 1, 0] )
 
 endf
 
@@ -327,12 +324,12 @@ fun Next_line()
 	exe "normal j"
 endf
 
-au BufReadPost Tests.hs nn <LocalLeader>p :call Populate($MOD) <CR> 2j
+au BufReadPost Tests.hs nn <LocalLeader>p :call Populate($MOD) <CR>
 au BufEnter WordsCharacters.hs nn <LocalLeader>a :call Test_check() <CR>
 au BufReadPost My*gf,$MOD*.gf set tags=gf-contrib/drbean/$COURSE/$TOPIC/$STORY/gf_tags,gf-contrib/drbean/$COURSE/$TOPIC/$STORY/haskell_tags
 au BufReadPost $MOD*.gf call Mod_mark()
 au BufReadPost WordsCharacters.hs call Word_mark()
-au BufEnter WordsCharacters.hs if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+" au BufEnter WordsCharacters.hs if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 
 

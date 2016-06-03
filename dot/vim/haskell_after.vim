@@ -316,8 +316,9 @@ fun Test_check()
 		let quoted_word = getline('.')
 	endif
 	let word = substitute( quoted_word, "\"", "", "g")
-	let test_buf = bufnr("/Tests.hs")
-	execute "buffer" test_buf
+	let test_win = bufwinnr("/Tests.hs")
+	let win_id = win_getid( test_win )
+	call win_gotoid( win_id )
 	call clearmatches()
 	call matchadd("Search", word)
 endf

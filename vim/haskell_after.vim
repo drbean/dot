@@ -227,7 +227,7 @@ fu! Populate(module)
 	call inputsave()
 	let key = input("Word: " . word . ", Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), Pr(O)noun, (C)onj, (S)ubj")
 	call inputrestore()
-	let category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det", 'o': "Pron", 'c': "Conj", 's': "Subj"}, key )
+	let category = get( {'a': 'AP', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det", 'o': "Pron", 'c': "Conj", 's': "Subj"}, key )
 	if category == 'N'
 		call inputsave()
 		let n_key = input("Word: " . word . ", Cat: 'N( )', '(P)N', 'N(2)', '(C)N', 'P(l)aceNoun' ")

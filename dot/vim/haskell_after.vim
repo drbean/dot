@@ -234,6 +234,12 @@ fu! Populate(module)
 		let n_key = input("Word: " . word . ", Cat: 'N( )', '(P)N', 'N(2)', '(C)N', 'P(l)aceNoun' ")
 		call inputrestore()
 		let n_category = get( {' ': 'N', 'p': 'PN', '2': 'N2', 'c': 'CN', 'l': 'PlaceNoun' }, n_key )
+		if n_category == "N2"
+			call inputsave()
+			let arg = input("Word: " . word . ", Prep: eg, in_prep, of_prep, part_prep: ", "of_prep")
+			call inputrestore()
+		else
+		endif
 		let category = n_category
 	elseif key_category == 'V'
 		call inputsave()
@@ -298,7 +304,7 @@ fu! Populate(module)
 	elseif category == "CN"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
 	elseif category == "N2"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "N2", "N", "in_prep") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "N2", "N",arg) 
 	elseif category == "PlaceNoun"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
 	elseif category == "N"

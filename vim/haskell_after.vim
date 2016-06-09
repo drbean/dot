@@ -222,25 +222,31 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'A': 'a', 'N': 'n', 'N2': 'n', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
+	let marklist = {'AP': 'a', 'A2': 'a', 'N': 'n', 'N2': 'n', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
 	let key = input("Word: " . word . ", Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), Pr(O)noun, (C)onj, (S)ubj")
 	call inputrestore()
-	let category = get( {'a': 'AP', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det", 'o': "Pron", 'c': "Conj", 's': "Subj"}, key )
+	let category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "Adv", 'r': "Prep", 't': "Det", 'o': "Pron", 'c': "Conj", 's': "Subj"}, key )
 	if category == 'N'
 		call inputsave()
 		let n_key = input("Word: " . word . ", Cat: 'N( )', '(P)N', 'N(2)', '(C)N', 'P(l)aceNoun' ")
 		call inputrestore()
 		let n_category = get( {' ': 'N', 'p': 'PN', '2': 'N2', 'c': 'CN', 'l': 'PlaceNoun' }, n_key )
 		let category = n_category
-	endif
-	if category == 'V'
+	elseif category == 'V'
 		call inputsave()
 		let v_key = input("Word: " . word . ", Cat: 'V( )', '(P)articiple','V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)' ")
 		call inputrestore()
 		let v_category = get( {' ': 'V', 'p': 'Particle', '2': 'V2', '3': 'V3', 'v': 'VV', 'j': 'V2V', 's': 'VS', 't': 'V2S', 'a': 'VA' }, v_key )
 		let category = v_category
+	elseif category == 'A'
+		call inputsave()
+		let a_key = input("Word: " . word . ", Cat: '(A)P', 'A(2)' ")
+		call inputrestore()
+		let a_category = get( {'A': 'AP', '2': 'A2'}, a_key )
+		let category = a_category
+	else
 	endif
 	if category == "Particle"
 		call setline('.', word . "\t: V;")
@@ -273,12 +279,14 @@ fu! Populate(module)
 		call Populate_pn(ab_eng_lnum, word, down_name, "PN", "N") 
 	elseif category == "Particle"
 		call Populate_partv(ab_eng_lnum, word, down_name, "V", "V") 
-	elseif category == "A"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "AP", "A", "") 
+	elseif category == "AP"
+		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "A", "") 
+	elseif category == "A2"
+		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "A", "about") 
 	elseif category == "CN"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
 	elseif category == "N2"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "N2", "N", "") 
+		call Populate_ap_like(ab_eng_lnum, word, down_name, "N2", "N", "in_prep") 
 	elseif category == "PlaceNoun"
 		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
 	elseif category == "N"

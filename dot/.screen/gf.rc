@@ -36,7 +36,7 @@ stuff "let gr = readPGF \"${MOD}.pgf\"^M":
 # stuff "./Transfer_$STORY^M"
 # stuff "cd -^M"
 
-screen 5
+screen 4
 stuff "sr W file://localhost/home/drbean/GF/doc/gf-refman.html^M"
 stuff "sr W file://localhost/home/drbean/GF/doc/tutorial/gf-tutorial.html^M"
 stuff "sr W file://localhost/home/drbean/GF/lib/doc/synopsis.html^M"

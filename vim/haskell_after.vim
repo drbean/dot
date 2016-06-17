@@ -271,6 +271,7 @@ fu! Populate(module)
 	else
 		call setline('.', word . "\t: " . category . ";")
 	endif
+	let mark = marklist[category]
 
 	let lc_name = tolower(word)
 	let down_name = substitute(lc_name, '\(-\| \)', "_", "g")

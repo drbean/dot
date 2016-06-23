@@ -40,5 +40,5 @@ if [ "$(uname)" == "CYGWIN_NT-6.1" ]; then
 fi
 
 
-# export DESKTOP_SESSION=xmonad-gnome
+export DESKTOP_SESSION=xmonad-mate
 # .bashrc

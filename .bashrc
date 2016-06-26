@@ -59,27 +59,6 @@ function aca () {
     cd -
 }
 
-function dic () {
-    OPTIND=1
-    local arg app=dic course topic story old_story round league script_arg
-    while getopts 'c:t:s:o:r:l:x:' arg
-    do
-        case ${arg} in
-            c) course=${OPTARG};;
-            t) topic=${OPTARG};;
-            s) story=${OPTARG};;
-            o) old_story=${OPTARG};;
-	    r) round=${OPTARG};;
-            l) league=${OPTARG};;
-            x) script_arg=${OPTARG};;
-            *) return 1 # illegal option
-        esac
-    done
-    cd ~/$app
-    APP=$app MOD=${app^} COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/$USER/dot/.screen/app.rc -dR dic_$course
-    cd -
-}
-
 function bett () {
     OPTIND=1
     local arg app=bett course topic story old_story round league script_arg

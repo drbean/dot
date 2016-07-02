@@ -1,8 +1,5 @@
 # screen 8 links http://sac.nuu.edu.tw/grades/?league=$LEAGUE
 
-screen 0
-stuff "v league.yaml session/$SESSION/groups.yaml classwork/$LASTWEEK.yaml.table classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml"
-
 screen 5 lftp web.nuu.edu.tw
 stuff "cd public_html/$LEAGUE^M"
 stuff "# put classwork/$LASTWEEK.yaml -o classwork.yaml^M"
@@ -28,3 +25,6 @@ stuff "# svn add classwork/$LASTWEEK.yaml && svn ci classwork/$LASTWEEK.yaml -m 
 stuff "# stack --stack-yaml /home/drbean/class/beans/script_files/champs/stack.yaml runghc -- ~/class/beans/script_files/champs/champs2front.hs -l $LEAGUE -r $LASTWEEK > classwork/$LASTWEEK.yaml^M"
 stuff "# mv classwork/$LASTWEEK.yaml.table classwork/$LASTWEEK.yaml^M" 
 stuff "# cp classwork/$WEEK.yaml.table classwork/$LASTWEEK.yaml^M" 
+
+screen 0
+stuff "v league.yaml session/$SESSION/groups.yaml classwork/$LASTWEEK.yaml.table classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml"

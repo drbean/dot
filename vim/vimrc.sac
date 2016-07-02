@@ -1,4 +1,4 @@
-" Last Edit: 2016 Jun 19, 02:24:38 PM
+" Last Edit: 2016 Jul 01, 08:56:53 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -649,6 +649,18 @@ fu! Reformat_champ ()
 	let lnum = line('$')
 	let tables = split( getline(lnum), ',' )
 	call setline(lnum, "")
+	let lnum = line('$')
+	if distractor == "t"
+		let distractor_lines = [ "      - \"True\"",  "      - \"False\"" ]
+	else 
+		let distractor_lines = repeat([ "      - ~" ], distractor)
+	endif
+	let item = ( ["  -", "    q: ~", "    o:"] + distractor_lines ) + ["    a: ~"]
+	let lines = repeat( item, item_n)
+	let quiz = insert( lines, "qz:" )
+	call append(lnum, quiz)
+	let lnum = line('$')
+	call append(lnum, "")
 	for table in tables
 		let lnum = line('$')
 		let groups = split( table, '::' )
@@ -660,17 +672,6 @@ fu! Reformat_champ ()
 		endfor
 		let lnum = line('$')
 		call append(lnum, "")
-	endfor
-	let lnum = line('$')
-	if distractor == "t"
-		let distractor_lines = [ "      - \"True\"",  "      - \"False\"" ]
-	else 
-		let distractor_lines = repeat([ "      - ~" ], distractor)
-	endif
-	let item = ( ["  -", "    q: ~", "    o:"] + distractor_lines ) + ["    a: ~"]
-	let lines = repeat( item, item_n)
-	let quiz = insert( lines, "qz:" )
-	call append(lnum, quiz)
 	endfor
 endf
 

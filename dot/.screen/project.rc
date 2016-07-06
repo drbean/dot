@@ -8,4 +8,4 @@ stuff "psql ${APP}042^M"
 screen 7
 stuff "cd /var/www/cgi-bin/$APP^Msvn st -q^Msvn log -vr BASE:HEAD^M"
 screen 8
-stuff "links http://sac.nuu.edu.tw/cgi-bin/${APP}/script/${APP}_cgi.pl/login?exercise=$STORY"
+stuff "links http://sac.nuu.edu.tw/cgi-bin/${APP}/script/${APP}_cgi.pl/login"

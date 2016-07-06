@@ -9,12 +9,6 @@ stuff "# put homework/$LASTWEEK.yaml -o homework.yaml^M"
 screen 4 re.pl --rcfile ../rc/g.rc
 stuff '$g->grades'
 
-screen 2
-stuff "ls homework classwork exam/*^M"
-stuff "svn ls homework^M"
-stuff "# zero_homework.pl -x $TOPIC >> homework/$LASTWEEK.yaml^M"
-stuff "# svn add homework/$LASTWEEK.yaml && svn ci homework/$LASTWEEK.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put homework/$LASTWEEK.yaml -o homework.yaml && qui'^M"
-
 screen 1
 stuff "echo -e \"---\ntopic: $TOPIC\n\n$TABLES\" >> \"classwork/$LASTWEEK.yaml.table\"^M"
 stuff "svn st | grep '\^\(A\|M\|D\)'^Msvn log -vr BASE:HEAD^Msvn up^M"
@@ -28,3 +22,10 @@ stuff "# cp classwork/$WEEK.yaml.table classwork/$LASTWEEK.yaml^M"
 
 screen 0
 stuff "v league.yaml session/$SESSION/groups.yaml classwork/$LASTWEEK.yaml.table classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml"
+
+screen 2
+stuff "ls homework classwork exam/*^M"
+stuff "svn ls homework^M"
+stuff "# zero_homework.pl -x $TOPIC >> homework/$LASTWEEK.yaml^M"
+stuff "# svn add homework/$LASTWEEK.yaml && svn ci homework/$LASTWEEK.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put homework/$LASTWEEK.yaml -o homework.yaml && qui'^M"
+

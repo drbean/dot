@@ -1,4 +1,4 @@
-" Last Edit: 2016 Jul 01, 08:56:53 AM
+" Last Edit: 2016 Jul 03, 01:39:53 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -642,9 +642,9 @@ fu! Reformat_champ ()
 	call inputrestore()
 	let item_n = get( {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '11': 11, '12': 12, '13': 13, '14': 14}, item_key )
 	call inputsave()
-	let distractor_key = input("Distractors: '(T)rue/False', '(2)', '(3)', '(4)', '(5)', '(6)'  ")
+	let distractor_key = input("Distractors: '(T)rue/False', '(Y)es/No', (2)', '(3)', '(4)', '(5)', '(6)'  ")
 	call inputrestore()
-	let distractor = get( {'t': 't', '2': 2, '3': 3, '4': 4, '5': 5, '6': 6}, distractor_key )
+	let distractor = get( {'t': 't', 'y': 'y', '2': 2, '3': 3, '4': 4, '5': 5, '6': 6}, distractor_key )
 	@ts = 2
 	let lnum = line('$')
 	let tables = split( getline(lnum), ',' )
@@ -652,6 +652,8 @@ fu! Reformat_champ ()
 	let lnum = line('$')
 	if distractor == "t"
 		let distractor_lines = [ "      - \"True\"",  "      - \"False\"" ]
+	elseif distractor == "y"
+		let distractor_lines = [ "      - \"Yes\"",  "      - \"No\"" ]
 	else 
 		let distractor_lines = repeat([ "      - ~" ], distractor)
 	endif
@@ -779,6 +781,8 @@ au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 0 $r0j$
 au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 1 $r1j$
 au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 2 $r2j$
 au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 3 $r3j$
+" au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 4 $r4j$
+" au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 5 $r5j$
 
 augroup END
 

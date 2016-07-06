@@ -20,6 +20,7 @@ alias surf="cd ~/sr; screen -dR surfraw; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/class/beans; APP=beans COURSE= screen -c /home/$USER/dot/.screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/.screen/project.rc -dR swiss; cd -"
+alias moodle="cd ~/moodle; APP=moodle COURSE= screen -c /home/$USER/dot/.screen/project.rc -dR swiss; cd -"
 alias comp="cd ~/comp; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/.screen/project.rc -dR comp; cd -"
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/.screen/rdf.rc -dR rdf; cd -"
 
@@ -111,6 +112,7 @@ function question_grade_bett () {
 	put ~/042/$league/homework/$round.yaml -o homework.yaml &&
 	qui"
 }
+
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
 alias dot="cd ~/dot; screen -c /home/$USER/dot/.screen/dotrc -dR dot; cd -"

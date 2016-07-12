@@ -7,6 +7,7 @@ fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
+export SEMESTER=051
 
 # User specific aliases and functions
 
@@ -101,15 +102,15 @@ function question_grade_bett () {
     done
     cd ~/$app
     svn update bett.yaml -r 508 &&
-    perl script/question_grade_${app}.pl -l $league -x $old_story -q 1 -o 2 -w 2 > ~/042/$league/homework.yaml && 
+    perl script/question_grade_${app}.pl -l $league -x $old_story -q 1 -o 2 -w 2 > ~/$SEMESTER/$league/homework.yaml && 
     svn update bett.yaml -r 509 &&
-    less ~/042/$league/homework.yaml &&
-    mv ~/042/$league/homework.yaml ~/042/$league/homework/$round.yaml &&
-    svn add ~/042/$league/homework/$round.yaml &&
-    svn ci -m $old_story ~/042/$league/homework/$round.yaml &&
+    less ~/$SEMESTER/$league/homework.yaml &&
+    mv ~/$SEMESTER/$league/homework.yaml ~/$SEMESTER/$league/homework/$round.yaml &&
+    svn add ~/$SEMESTER/$league/homework/$round.yaml &&
+    svn ci -m $old_story ~/$SEMESTER/$league/homework/$round.yaml &&
     lftp -c "open web.nuu.edu.tw &&
 	cd public_html/$league &&
-	put ~/042/$league/homework/$round.yaml -o homework.yaml &&
+	put ~/$SEMESTER/$league/homework/$round.yaml -o homework.yaml &&
 	qui"
 }
 
@@ -207,7 +208,7 @@ function sound () {
 alias class="cd ~/class; screen -c /home/$USER/dot/.screen/utility.rc -dR class; cd -"
 alias forms="cd ~/class/forms; screen -dR forms; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/$USER/dot/.screen/utility.rc -dR tmpl; cd -"
-alias rc="cd ~/042/rc; screen -c /home/$USER/dot/.screen/utility.rc -dR rc; cd -"
+alias rc="cd ~/$SEMESTER/rc; screen -c /home/$USER/dot/.screen/utility.rc -dR rc; cd -"
 
 function pres () {
     OPTIND=1
@@ -513,7 +514,7 @@ function gr () {
     if [[ -z "$n" ]]
 	then n=3
     fi
-    cd ~/042/$league
+    cd ~/$SEMESTER/$league
     LEAGUE=$league \
     ROUND=$round \
     NEXTROUND=$(($round+1)) \
@@ -548,7 +549,7 @@ function new () {
     if [[ -z "$n" ]]
 	then n=3
     fi
-    cd ~/042/
+    cd ~/$SEMESTER/
     LEAGUE=$league \
     N=$n \
     SESSION=1 \
@@ -568,7 +569,7 @@ alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
 alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
 alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
 
-alias 042="cd ~/042; screen -dR s042; cd -"
+alias $SEMESTER="cd ~/$SEMESTER; screen -dR s$SEMESTER; cd -"
 
 function session () {
     local league week
@@ -712,7 +713,7 @@ function w () {
     done
     session $league $week
     tables $league $letter
-    cd ~/042/$league
+    cd ~/$SEMESTER/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -744,7 +745,7 @@ function BMA0006 () {
 	X) tables="Green::Black,Blue::Charcoal,Chocolate::Purple,White::Orange,Pink::Yellow";;
 	*) return 1 # illegal option
     esac
-    cd ~/042/$league
+    cd ~/$SEMESTER/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -776,7 +777,7 @@ function FLA0013 () {
 	B) tables="Green::Black,Blue::Brown,Gray::Beige,Charcoal::Chocolate,White::Orange,Pink::Purple,Golden::Violet,Silver::Yellow,Khaki::Red";;
 	*) return 1 # illegal option
     esac
-    cd ~/042/$league
+    cd ~/$SEMESTER/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -808,7 +809,7 @@ function FLA0019 () {
 	X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 	*) return 1 # illegal option
     esac
-    cd ~/042/$league
+    cd ~/$SEMESTER/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -840,7 +841,7 @@ function FLA0021 () {
 	X) tables="Black::Blue,Brown::Gray,Khaki::Chocolate,Charcoal::Green,Orange::Pink,Purple::Red,Violet::Silver,Yellow::White,Beige::Golden,Turquoise::";;
 	*) return 1 # illegal option
     esac
-    cd ~/042/$league
+    cd ~/$SEMESTER/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \
@@ -872,7 +873,7 @@ function GL00019 () {
 	X) tables="Black::Blue,Yellow::Green,Orange::Brown,Gray::";;
 	*) return 1 # illegal option
     esac
-    cd ~/042/$league
+    cd ~/$SEMESTER/$league
     SESSION=$session \
     WEEK=$week \
     LASTWEEK=$(($week-1)) \

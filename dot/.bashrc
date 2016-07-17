@@ -491,9 +491,10 @@ function ex () {
 function gr () {
     local arg league round topic n
     case $1 in
-	BMA0009) league=$1;;
+	BMA0045) league=$1;;
+	MIA0009) league=$1;;
 	FLA0003) league=$1;;
-	FLA0013) league=$1;;
+	FLA0015) league=$1;;
 	FLA0019) league=$1;;
 	FLA0021) league=$1;;
 	2L2) league=$1;;
@@ -528,9 +529,10 @@ function gr () {
 function new () {
     local arg league n
     case $1 in
-	BMA0009) league=$1;;
+	BMA0045) league=$1;;
+	MIA0009) league=$1;;
 	FLA0003) league=$1;;
-	FLA0013) league=$1;;
+	FLA0015) league=$1;;
 	FLA0019) league=$1;;
 	FLA0021) league=$1;;
 	2L2) league=$1;;
@@ -597,7 +599,14 @@ function session () {
 	    elif (($week <= 17)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	BMA0009)
+	BMA0045)
+	    if (($week <= 5)); then session=1
+	    elif (($week <= 9)); then session=2
+	    elif (($week <= 13)); then session=3
+	    elif (($week <= 18)); then session=4
+	    else return 1 # illegal week
+	    fi;;
+	MIA0009)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -611,7 +620,7 @@ function session () {
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	FLA0013)
+	FLA0015)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
@@ -657,7 +666,13 @@ function tables () {
 		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
 		*) return 1 # illegal letter
 	    esac;;
-	BMA0009)
+	BMA0045)
+	    case ${letter} in
+		X) tables="1-1,1-2,1-3,1-4,1-5,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,4-1,4-2,4-3,4-4";;
+		Y) tables="Black Blue Brown Gray Green BlackBlack BlueBlue GreenGreen Orange Pink Purple Red White Yellow OrangeOrange PinkPink PurplePurple";;
+		*) return 1 # illegal option
+	    esac;;
+	MIA0009)
 	    case ${letter} in
 		X) tables="1-1,1-2,1-3,1-4,1-5,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,4-1,4-2,4-3,4-4";;
 		Y) tables="Black Blue Brown Gray Green BlackBlack BlueBlue GreenGreen Orange Pink Purple Red White Yellow OrangeOrange PinkPink PurplePurple";;
@@ -668,7 +683,7 @@ function tables () {
 		X) tables="1-1,2-1,2-2,3-1,4-1";;
 		*) return 1 # illegal option
 	    esac;;
-	FLA0013)
+	FLA0015)
 	    case ${letter} in
 		X) tables="1-1,1-2,2-1,2-2,2-3,2-4,3-1,3-2";;
 		*) return 1 # illegal option
@@ -691,9 +706,11 @@ function tables () {
 function w () {
     local arg league session week letter topic tables
     case $1 in
+	BMA0045) league=$1;;
 	BMA0009) league=$1;;
+	MIA0009) league=$1;;
 	FLA0003) league=$1;;
-	FLA0013) league=$1;;
+	FLA0015) league=$1;;
 	FLA0019) league=$1;;
 	FLA0021) league=$1;;
 	2L2) league=$1;;

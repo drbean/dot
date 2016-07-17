@@ -541,9 +541,10 @@ function new () {
 	*) return 1 # illegal league
     esac
     OPTIND=2
-    while getopts 'r:t:n:' arg
+    while getopts 's:n:' arg
     do
         case ${arg} in
+            s) school=${OPTARG};;
             n) n=${OPTARG};;
             *) return 1 # illegal option
         esac
@@ -552,6 +553,7 @@ function new () {
 	then n=3
     fi
     cd ~/$SEMESTER/
+    SCHOOL=$school \
     LEAGUE=$league \
     N=$n \
     SESSION=1 \

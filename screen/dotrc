@@ -1,7 +1,7 @@
 screen 9
 stuff "man bash"
 screen 0
-stuff "v .bashrc .screen/ vim/ bash/bash_completion"
+stuff "v bash/bashrc screen/dotrc vim/ bash/bash_completion"
 screen 3
 stuff "cd git^M"
 stuff "cp ignore ~/.config/git/ignore"
@@ -9,9 +9,9 @@ screen 2
 source vim.rc
 screen 1
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
-stuff "cp .bashrc .bash_profile ~/^M"
+stuff "for ext in rc _profile; do cp bash/bash\$ext ~/.bash\$ext; done^M"
 stuff "# #careful cp bash/history ~/.bash_history^M"
-stuff "cp .xmonad/xmonad.hs ~/.xmonad/ && "
+stuff "cp xmonad/xmonad.hs ~/.xmonad/ && "
 stuff "cp bash/inputrc ~/.inputrc^M"
 stuff "xmonad --recompile && xmonad --restart^M"
 stuff "# export HISTTIMEFORMAT='%m-%d '^M"

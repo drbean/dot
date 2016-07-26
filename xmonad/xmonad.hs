@@ -24,7 +24,7 @@ main = do
 	-- xmonad  defaultConfig
 	let foundconfig = maybe desktopConfig desktop session
 	xmonad foundconfig
-		{ modMask = mod4Mask
+		{ modMask = mod3Mask
 		-- , terminal="gnome-terminal --hide-menubar"
 		, terminal="gnome-terminal --hide-menubar --profile=sac"
 		-- , terminal="mate-terminal --hide-menubar --profile=momotaro"

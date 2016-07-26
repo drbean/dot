@@ -28,5 +28,6 @@ unless ( $pic ) {
 	$pic = "f24.xml";
 }
 
-system("dbus-launch gsettings set org.gnome.desktop.background picture-uri file://$directory/$pic");
-system("dbus-launch gsettings set org.mate.background picture-filename $directory/$pic");
+# my $uid = system("id -u");
+system("DBUS_SESSION_BUS_ADDRESS=\"unix:path=/run/user/1001/bus\" gsettings set org.gnome.desktop.background picture-uri file://$directory/$pic");
+system("DBUS_SESSION_BUS_ADDRESS=\"unix:path=/run/user/1000/bus\" gsettings set org.mate.background picture-filename $directory/$pic");

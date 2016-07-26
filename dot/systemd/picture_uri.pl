@@ -24,8 +24,8 @@ $pic =~ s/ /\\ /g;
 my $directory = "/home/$ENV{USER}/画像";
 
 unless ( $pic ) {
-	$directory = "/usr/share/backgrounds/f23/default";
-	$pic = "f23.xml";
+	$directory = "/usr/share/backgrounds/f24/default";
+	$pic = "f24.xml";
 }
 
 system("dbus-launch gsettings set org.gnome.desktop.background picture-uri file://$directory/$pic");

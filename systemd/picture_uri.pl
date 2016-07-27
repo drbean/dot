@@ -27,6 +27,9 @@ my $directory = "/home/$ENV{USER}/画像";
 # my $BUS_ADDRESS=system("/usr/bin/grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-");
 
 unless ( $pic ) {
+	my @next_round = glob "$directory/*";
+	s/^$directory\/(.*)$/$1/ for @next_round;
+	$"="\n"; $unseen->print("@next_round");
 	$directory = "/usr/share/backgrounds/f24/default";
 	$pic = "f24.xml";
 }

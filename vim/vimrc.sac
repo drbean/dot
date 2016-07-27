@@ -1,4 +1,4 @@
-" Last Edit: 2016 Jul 03, 01:39:53 PM
+" Last Edit: 2016  7月 27, 17時10分08秒
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -799,10 +799,12 @@ augroup END
 
   " Uses autocmd to give more lines to the window moved into
   " or editing superlong 1 line in vimdiff
-augroup widewin
+augroup edit
   au!	
-  " Remove all widewin autocommands (looks like comment can't be on same line)
+ " Remove all edit autocommands (looks like comment can't be on same line)
 
+au FileType text let b:delimitMate_quotes = "\" ' ` *"
+" au BufEnter ~/edit/*/*.txt let b:delimitMate_quotes = "\" ' ` *"
   " autocmd WinEnter *  resize  +6
 au BufEnter ~/edit/.svn/*.svn-base nn <buffer> g<Left> g^ze
 au BufEnter Indexes*.txt nn <buffer> g<Left> g^ze

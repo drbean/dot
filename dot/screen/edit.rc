@@ -1,3 +1,5 @@
+source $USER/.screenrc
+
 screen v -S Session.vim
 screen 3
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"

@@ -2,8 +2,12 @@
 Description=Set org.gnome.desktop.background picture_uri
 
 [Service]
-Type=simple
+Type=oneshot
 Nice=19
+Environment=DISPLAY=:0
 IOSchedulingClass=2
 IOSchedulingPriority=7
-ExecStart=/home/drbean/picture_uri.pl
+ExecStart=/home/drbean/dot/systemd/picture_uri.pl
+
+[Install]
+WantedBy=basic.target

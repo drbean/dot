@@ -2,8 +2,9 @@
 Description=Set org.gnome.desktop.background picture_uri, org.mate.background picture_filename
 
 [Timer]
-OnCalendar=daily
+OnCalendar=*:0/5
 Persistent=True
+Unit=desktop_background.service
 
 [Install]
-WantedBy=timers.target
+WantedBy=desktop_background.service

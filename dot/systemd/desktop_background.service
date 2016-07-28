@@ -10,4 +10,4 @@ IOSchedulingPriority=7
 ExecStart=/home/drbean/dot/systemd/picture_uri.pl
 
 [Install]
-WantedBy=basic.target
+WantedBy=graphical.target

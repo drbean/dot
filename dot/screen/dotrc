@@ -1,7 +1,5 @@
 screen 9
 stuff "man bash"
-screen 4
-stuff "cd systemd^M"
 screen 3
 stuff "cd git^M"
 stuff "# cp ignore ~/.config/git/ignore"

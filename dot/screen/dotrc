@@ -1,10 +1,10 @@
 screen 9
 stuff "man bash"
-screen 0
-stuff "v bash/bashrc screen/dotrc vim/ bash/bash_completion"
+screen 4
+stuff "cd systemd^M"
 screen 3
 stuff "cd git^M"
-stuff "cp ignore ~/.config/git/ignore"
+stuff "# cp ignore ~/.config/git/ignore"
 screen 2
 source vim.rc
 screen 1
@@ -18,3 +18,5 @@ stuff "# export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# su -c 'cp screen/screen.rc /etc/screenrc'^M"
 stuff "# cp screen/screen.rc ~/.screenrc'^M"
 stuff "su -c 'cp bash/bash_completion/{GF,ex,gr,new,w,aca,bett,dic} /etc/bash_completion.d/'"
+screen 0
+stuff "v bash/bashrc screen/dotrc vim/ bash/bash_completion"

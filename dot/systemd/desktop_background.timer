@@ -7,4 +7,4 @@ Persistent=True
 Unit=desktop_background.service
 
 [Install]
-WantedBy=desktop_background.service
+WantedBy=timers.target

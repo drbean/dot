@@ -125,7 +125,7 @@ pow_detach_msg "Screen session of $LOGNAME $:cr:$:nl:ended."
 
 # drbean
 # defscrollback 1000
-defscrollback 500000
+defscrollback 5000
 # scrollback 1000000
 
 # don't kill window after the process died

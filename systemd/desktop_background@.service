@@ -7,7 +7,8 @@ Nice=19
 Environment=DISPLAY=:0
 IOSchedulingClass=2
 IOSchedulingPriority=7
-ExecStart=/home/drbean/dot/systemd/picture_uri.pl
+Environment=USER=%i
+ExecStart=/usr/local/bin/picture_uri.pl
 
 [Install]
 WantedBy=graphical.target

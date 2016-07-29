@@ -4,7 +4,7 @@ Description=Set org.gnome.desktop.background picture_uri, org.mate.background pi
 [Timer]
 OnCalendar=*:0/5
 Persistent=True
-Unit=desktop_background.service
+Unit=desktop_background@%i.service
 
 [Install]
 WantedBy=timers.target

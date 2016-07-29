@@ -1,5 +1,13 @@
 screen 9
 stuff "man bash"
+screen 4
+stuff "# ln dot/systemd/desktop_background@.service ~/.config/systemd/user/^M"
+stuff "# ln dot/systemd/desktop_background@.timer ~/.config/systemd/user/^M"
+stuff "# systemctl --user daemon-reload^M"
+stuff "# systemctl --user enable desktop_background@mai.timer^M"
+stuff "# systemctl --user start desktop_background@mai.timer^M"
+stuff "# systemctl --user start desktop_background@mai.service^M"
+stuff "# systemctl list-timers --user --all^M"
 screen 3
 stuff "cd git^M"
 stuff "# cp ignore ~/.config/git/ignore"

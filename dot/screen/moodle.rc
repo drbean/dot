@@ -8,6 +8,6 @@ stuff "git status^M"
 screen 3
 stuff "ls -lZ"
 screen 4
-stuff "psql port=5433 mood^M"
+stuff "su -c 'runuser -u postgres \\'psql port=5433 -U postgres mood\\''^M"
 screen 8
 stuff "links http://sac.nuu.edu.tw/cgi-bin/moodle"

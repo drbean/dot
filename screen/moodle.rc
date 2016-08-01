@@ -1,0 +1,13 @@
+screen 0
+stuff "cd /var/www/cgi-bin/moodle^M"
+stuff "v^M"
+stuff ":e "
+screen 1
+stuff "cd /var/www/cgi-bin/moodle^M"
+stuff "git status^M"
+screen 3
+stuff "ls -lZ"
+screen 4
+stuff "psql port=5433 mood^M"
+screen 8
+stuff "links http://sac.nuu.edu.tw/cgi-bin/moodle"

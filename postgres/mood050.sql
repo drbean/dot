@@ -20018,7 +20018,7 @@ COPY mdl_block (id, name, cron, lastcron, visible) FROM stdin;
 40	tag_flickr	0	0	1
 41	tag_youtube	0	0	0
 42	tags	0	0	1
-33	rss_client	300	1469776922	1
+33	rss_client	300	1470626287	1
 \.
 
 
@@ -20232,7 +20232,7 @@ COPY mdl_cache_flags (id, flagtype, name, timemodified, value, expiry) FROM stdi
 -- Name: mdl_cache_flags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: apache
 --
 
-SELECT pg_catalog.setval('mdl_cache_flags_id_seq', 173, true);
+SELECT pg_catalog.setval('mdl_cache_flags_id_seq', 177, true);
 
 
 --
@@ -21808,14 +21808,14 @@ COPY mdl_config (id, name, value) FROM stdin;
 462	messageinbound_hostuser	
 463	messageinbound_hostpass	
 259	calendar_exportsalt	pyBg11JOjX9MhvxS4qE1og6bHRodKksBCCNcuyVRYAGICu0ltEXuSyX4iGKP
+465	fileslastcleanup	1470622505
+464	scorm_updatetimelast	1470622507
 468	updatecronoffset	11148
 245	customusermenuitems	grades,grades|/grade/report/mygrades.php|grades\r\nmessages,message|/message/index.php|message\r\npreferences,moodle|/user/preferences.php|preferences
 373	allversionshash	d2e0b424cea78888fce54bedf6e05962af3e6586
 151	langrev	1469589325
-465	fileslastcleanup	1469685301
-467	forum_lastreadclean	1469713382
-466	digestmailtimelast	1469721603
-464	scorm_updatetimelast	1469746802
+466	digestmailtimelast	1470499203
+467	forum_lastreadclean	1470577922
 \.
 
 
@@ -24067,21 +24067,22 @@ COPY mdl_config_plugins (id, plugin, name, value) FROM stdin;
 160	mod_assign	version	2016070402
 1282	enrol_imsenterprise	imsupdateusers	0
 1283	enrol_imsenterprise	updatecourses	0
+1257	enrol_manual	expirynotifylast	1470546006
 1287	gradingform_checklist	version	2016012600
-1263	workshopallocation_scheduled	lastcron	1469776922
-1264	repository_dropbox	lastcron	1469776922
+1260	enrol_self	lastcron	1470626462
+1259	enrol_self	expirynotifylast	1470546006
 1284	enrol_imsenterprise	nestedcategories	0
 1285	enrol_imsenterprise	categoryidnumber	0
-1265	repository_filesystem	lastcron	1469776922
-1261	enrol_cohort	lastcron	1469776561
+1261	enrol_cohort	lastcron	1470626163
 1286	enrol_imsenterprise	categoryseparator	
 653	tool_monitor	version	2016052305
 1268	core_search	core_user_user_enabled	1
-1262	quiz_statistics	lastcron	1469759521
-1258	enrol_manual	lastcron	1469776742
+1263	workshopallocation_scheduled	lastcron	1470626582
+1264	repository_dropbox	lastcron	1470626582
+1265	repository_filesystem	lastcron	1470626582
+1262	quiz_statistics	lastcron	1470622508
 1269	report_search	version	2016052300
 1270	block_activity_results	config_showbest	3
-1266	core_plugin	recentfetch	1469775609
 1271	block_activity_results	config_showbest_locked	
 1272	block_activity_results	config_showworst	0
 1273	block_activity_results	config_showworst_locked	
@@ -24092,10 +24093,9 @@ COPY mdl_config_plugins (id, plugin, name, value) FROM stdin;
 1278	block_activity_results	config_gradeformat	1
 1279	block_activity_results	config_gradeformat_locked	
 1280	block_activity_results	config_decimalpoints	2
-1267	core_plugin	recentresponse	{"status":"OK","provider":"https:\\/\\/download.moodle.org\\/api\\/1.3\\/updates.php","apiver":"1.3","timegenerated":1469775608,"ticket":"JUM5JTkxNSVGNyUzQiVENyUyQy4lRTAlQzElREUlRDclRTgxJTE0JUIzRSU5MyU5OCVBOCUwMm4lQzFxeiVCOSVBRE9qJUFGJTJCJTA4JUQ4JTE0JTFCJTg1JTdCJThDJUZBTCU4Nw==","forbranch":"3.2","forversion":"2016072100","updates":{"core":[{"version":2016072800,"release":"3.2dev (Build: 20160728)","branch":"3.2","maturity":50,"url":"https:\\/\\/download.moodle.org","download":"https:\\/\\/download.moodle.org\\/download.php\\/direct\\/moodle\\/moodle-latest.zip"}]}}
-1260	enrol_self	lastcron	1469776742
-1257	enrol_manual	expirynotifylast	1469769001
-1259	enrol_self	expirynotifylast	1469769001
+1266	core_plugin	recentfetch	1470546006
+1267	core_plugin	recentresponse	{"status":"OK","provider":"https:\\/\\/download.moodle.org\\/api\\/1.3\\/updates.php","apiver":"1.3","timegenerated":1470546006,"ticket":"JUM5JTkxNSVGNyUzQiVENyUyQy4lRTAlQzElREUlRDclRTgxJTE0JUIzRSU5MyU5OCVBOCUwMm4lQzFxeiVCOSVBRE9qJUFGJTJCJTA4JUQ4JTE0JTFCJTg1JTdCJThEJUY4TCU4Nw==","forbranch":"3.2","forversion":"2016072100","updates":{"core":[{"version":2016080400,"release":"3.2dev (Build: 20160804)","branch":"3.2","maturity":50,"url":"https:\\/\\/download.moodle.org","download":"https:\\/\\/download.moodle.org\\/download.php\\/direct\\/moodle\\/moodle-latest.zip"}]}}
+1258	enrol_manual	lastcron	1470626462
 \.
 
 
@@ -24729,8 +24729,16 @@ COPY mdl_event (id, name, description, format, courseid, groupid, userid, repeat
 20	Week19		1	1	0	2	0	0	0	site	1484438440	0	1		1	1467983715	\N
 21	Week20		1	1	0	2	0	0	0	site	1485043240	0	1		1	1467983715	\N
 25	中秋節		1	1	0	2	0	0	0	site	1473915600	86400	1		1	1468218857	\N
+37	Week 26		1	1	0	2	0	0	0	site	1471175100	0	1		1	1470570575	\N
+38	Week 27		1	1	0	2	0	0	0	site	1471734000	0	1		1	1470570640	\N
+39	Week 28		1	1	0	2	0	0	0	site	1472338800	0	1		1	1470570709	\N
 27	Repeated event repeateditthis 		1	0	0	2	27	0	0	user	1468981500	0	1		1	1468460984	\N
 28	Repeated event repeateditthis 		1	0	0	2	27	0	0	user	1469586300	0	1		1	1468460984	\N
+29	Week 18		1	0	0	2	0	0	0	user	1469783100	0	1		1	1469783385	\N
+30	Week 19		1	0	0	2	0	0	0	user	1464735600	0	1		1	1469783475	\N
+31	Week 20		1	0	0	2	0	0	0	user	1467673200	0	1		1	1469783601	\N
+32	Week 20		1	0	0	2	0	0	0	user	1467500400	0	1		1	1469783664	\N
+33	Week 25		1	1	0	2	0	0	0	site	1470557400	0	1		1	1470557584	\N
 \.
 
 
@@ -24738,7 +24746,7 @@ COPY mdl_event (id, name, description, format, courseid, groupid, userid, repeat
 -- Name: mdl_event_id_seq; Type: SEQUENCE SET; Schema: public; Owner: apache
 --
 
-SELECT pg_catalog.setval('mdl_event_id_seq', 28, true);
+SELECT pg_catalog.setval('mdl_event_id_seq', 39, true);
 
 
 --
@@ -28785,6 +28793,948 @@ COPY mdl_logstore_standard_log (id, eventname, component, action, target, object
 2015	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469768400	web	66.249.71.189	\N
 2016	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469768702	web	66.249.71.177	\N
 2017	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469774961	web	61.197.61.68	\N
+2018	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469778951	web	66.249.71.177	\N
+2019	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469779405	web	66.249.71.183	\N
+2020	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469779632	web	66.249.71.189	\N
+2021	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469779859	web	66.249.71.189	\N
+2022	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469780131	web	66.249.71.183	\N
+2023	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469780767	web	66.249.71.183	\N
+2024	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469781449	web	66.249.71.177	\N
+2025	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469781902	web	66.249.71.183	\N
+2026	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469782356	web	66.249.79.156	\N
+2027	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469782829	web	66.249.71.177	\N
+2028	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469782870	web	61.197.61.68	\N
+2029	\\core\\event\\user_loggedin	core	loggedin	user	user	2	r	0	1	10	0	2	0	\N	0	a:1:{s:8:"username";s:5:"admin";}	1469782957	web	61.197.61.68	\N
+2030	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	45	50	3	2	3	\N	0	N;	1469782963	web	61.197.61.68	\N
+2031	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469783265	web	66.249.71.183	\N
+2032	\\core\\event\\calendar_event_created	core	created	calendar_event	event	29	c	0	5	30	2	2	0	2	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1469783100;s:4:"name";s:7:"Week 18";}	1469783385	web	61.197.61.68	\N
+2033	\\core\\event\\calendar_event_created	core	created	calendar_event	event	30	c	0	5	30	2	2	0	2	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1464735600;s:4:"name";s:7:"Week 19";}	1469783475	web	61.197.61.68	\N
+2034	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469783492	web	66.249.71.189	\N
+2035	\\core\\event\\calendar_event_created	core	created	calendar_event	event	31	c	0	5	30	2	2	0	2	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1467673200;s:4:"name";s:7:"Week 20";}	1469783601	web	61.197.61.68	\N
+2036	\\core\\event\\calendar_event_created	core	created	calendar_event	event	32	c	0	5	30	2	2	0	2	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1467500400;s:4:"name";s:7:"Week 20";}	1469783664	web	61.197.61.68	\N
+2037	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469783719	web	66.249.71.177	\N
+2038	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469784174	web	66.249.71.189	\N
+2039	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469784400	web	66.249.71.183	\N
+2040	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469784854	web	66.249.71.177	\N
+2041	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469785081	web	66.249.71.183	\N
+2042	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469785308	web	66.249.71.183	\N
+2043	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469785535	web	66.249.71.177	\N
+2044	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469785990	web	66.249.71.189	\N
+2045	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469786216	web	66.249.71.183	\N
+2046	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469786670	web	66.249.71.177	\N
+2047	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469786902	web	66.249.79.160	\N
+2048	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469787351	web	66.249.71.177	\N
+2049	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469787806	web	66.249.71.183	\N
+2050	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469788032	web	66.249.71.177	\N
+2051	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469788303	web	66.249.71.189	\N
+2052	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469788714	web	66.249.71.183	\N
+2053	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469788941	web	66.249.71.177	\N
+2054	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469789321	web	66.249.71.189	\N
+2055	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469789455	web	66.249.71.177	\N
+2056	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469789850	web	66.249.71.183	\N
+2057	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469790123	web	66.249.71.177	\N
+2058	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469790531	web	66.249.71.183	\N
+2059	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469790986	web	66.249.71.177	\N
+2060	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469791212	web	66.249.71.183	\N
+2061	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469791666	web	66.249.71.183	\N
+2062	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469791893	web	66.249.79.156	\N
+2063	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469792120	web	66.249.71.189	\N
+2064	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469792575	web	66.249.71.183	\N
+2065	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469793045	web	66.249.71.183	\N
+2066	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469793350	web	66.249.71.177	\N
+2067	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469793710	web	66.249.71.177	\N
+2068	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469793937	web	66.249.71.177	\N
+2069	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469794392	web	66.249.71.189	\N
+2070	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469794618	web	66.249.71.183	\N
+2071	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469794845	web	66.249.71.189	\N
+2072	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469795299	web	66.249.79.160	\N
+2073	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469795526	web	66.249.71.177	\N
+2074	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469795753	web	66.249.71.183	\N
+2075	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469796434	web	66.249.71.183	\N
+2076	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469796661	web	66.249.71.177	\N
+2077	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469797116	web	66.249.71.177	\N
+2078	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469797342	web	66.249.79.160	\N
+2079	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469797569	web	66.249.71.183	\N
+2080	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469798024	web	66.249.71.189	\N
+2081	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469798250	web	66.249.71.183	\N
+2082	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469798477	web	66.249.71.189	\N
+2083	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469798931	web	66.249.71.183	\N
+2084	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469799158	web	66.249.71.177	\N
+2085	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469799385	web	66.249.71.177	\N
+2086	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469799613	web	66.249.71.189	\N
+2087	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469799849	web	61.197.61.68	\N
+2088	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469800067	web	66.249.71.177	\N
+2089	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469800293	web	66.249.71.189	\N
+2090	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469800520	web	66.249.71.189	\N
+2091	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469800974	web	66.249.71.177	\N
+2092	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469801201	web	66.249.71.183	\N
+2093	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469801428	web	66.249.71.183	\N
+2094	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469801882	web	66.249.71.189	\N
+2095	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469802109	web	66.249.79.164	\N
+2096	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469802564	web	66.249.71.183	\N
+2097	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469802790	web	66.249.71.177	\N
+2098	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469803017	web	66.249.79.164	\N
+2099	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469803471	web	66.249.71.177	\N
+2100	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469803698	web	66.249.71.177	\N
+2101	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469803925	web	66.249.71.177	\N
+2102	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469804397	web	66.249.71.183	\N
+2103	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469804607	web	66.249.79.156	\N
+2104	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469805062	web	66.249.71.189	\N
+2105	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469805288	web	66.249.71.189	\N
+2106	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469805743	web	66.249.71.189	\N
+2107	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469806196	web	66.249.71.189	\N
+2108	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469806877	web	66.249.71.183	\N
+2109	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469807104	web	66.249.71.189	\N
+2110	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469807559	web	66.249.71.177	\N
+2111	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469807785	web	66.249.71.189	\N
+2112	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469808012	web	66.249.71.189	\N
+2113	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469808467	web	66.249.71.183	\N
+2114	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469808693	web	66.249.79.160	\N
+2115	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469808920	web	66.249.71.189	\N
+2116	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469809374	web	66.249.71.177	\N
+2117	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469809601	web	66.249.71.183	\N
+2118	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469810056	web	66.249.71.189	\N
+2119	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469810282	web	66.249.71.189	\N
+2120	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469810509	web	66.249.71.189	\N
+2121	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469810963	web	66.249.71.189	\N
+2122	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469811190	web	66.249.71.183	\N
+2123	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469811417	web	66.249.71.177	\N
+2124	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469811872	web	66.249.79.160	\N
+2125	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469812098	web	66.249.79.160	\N
+2126	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469812325	web	66.249.71.183	\N
+2127	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469812552	web	66.249.71.183	\N
+2128	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469813006	web	66.249.71.177	\N
+2129	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469813233	web	66.249.71.177	\N
+2130	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469813460	web	66.249.71.177	\N
+2131	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469813915	web	66.249.71.177	\N
+2132	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469814141	web	66.249.71.183	\N
+2133	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469814368	web	66.249.71.183	\N
+2134	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469814823	web	66.249.79.160	\N
+2135	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469815049	web	66.249.79.160	\N
+2136	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469815277	web	66.249.71.189	\N
+2137	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469815730	web	66.249.71.183	\N
+2138	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469815957	web	66.249.71.189	\N
+2139	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469816411	web	66.249.71.177	\N
+2140	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469816638	web	66.249.71.183	\N
+2141	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469816912	web	66.249.71.177	\N
+2142	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469817093	web	66.249.71.183	\N
+2143	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469817547	web	66.249.79.160	\N
+2144	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469817773	web	66.249.71.183	\N
+2145	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469818000	web	66.249.71.177	\N
+2146	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469818227	web	66.249.71.177	\N
+2147	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469818682	web	66.249.71.177	\N
+2148	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469818908	web	66.249.71.183	\N
+2149	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469819367	web	66.249.71.177	\N
+2150	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469819817	web	66.249.71.189	\N
+2151	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469820049	web	66.249.79.156	\N
+2152	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469820299	web	66.249.71.183	\N
+2153	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469820793	web	66.249.71.183	\N
+2154	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469821180	web	66.249.71.183	\N
+2155	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469821683	web	66.249.71.177	\N
+2156	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469821862	web	66.249.71.183	\N
+2157	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469822122	web	66.249.79.160	\N
+2158	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469822673	web	66.249.71.189	\N
+2159	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469822771	web	66.249.71.189	\N
+2160	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469823001	web	66.249.71.177	\N
+2161	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469823452	web	66.249.71.183	\N
+2162	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469823679	web	66.249.71.183	\N
+2163	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469823906	web	66.249.71.183	\N
+2164	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469824361	web	66.249.71.189	\N
+2165	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469824587	web	66.249.71.177	\N
+2166	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469824814	web	66.249.71.183	\N
+2167	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469825268	web	66.249.71.177	\N
+2168	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469825495	web	66.249.71.177	\N
+2169	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469825722	web	66.249.71.177	\N
+2170	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469826177	web	66.249.71.183	\N
+2171	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469826403	web	66.249.71.189	\N
+2172	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469826630	web	66.249.71.183	\N
+2173	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469827084	web	66.249.71.183	\N
+2174	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469827311	web	66.249.71.189	\N
+2175	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469827538	web	66.249.71.177	\N
+2176	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469827993	web	66.249.71.177	\N
+2177	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469828219	web	66.249.71.177	\N
+2178	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469828446	web	66.249.79.156	\N
+2179	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469828901	web	66.249.71.183	\N
+2180	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469829127	web	66.249.71.189	\N
+2181	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469829679	web	66.249.71.177	\N
+2182	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469829809	web	66.249.71.177	\N
+2183	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469830264	web	66.249.71.189	\N
+2184	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469830490	web	66.249.71.177	\N
+2185	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469830945	web	66.249.71.177	\N
+2186	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469831171	web	66.249.71.189	\N
+2187	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469831399	web	66.249.71.177	\N
+2188	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469831852	web	66.249.71.189	\N
+2189	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469832079	web	66.249.71.177	\N
+2190	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469832306	web	66.249.71.177	\N
+2191	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469832760	web	66.249.71.177	\N
+2192	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469832987	web	66.249.71.183	\N
+2193	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469833214	web	66.249.71.183	\N
+2194	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469833669	web	66.249.71.183	\N
+2195	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469833895	web	66.249.71.183	\N
+2196	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469834122	web	66.249.71.177	\N
+2197	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469834576	web	66.249.71.177	\N
+2198	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469834803	web	66.249.71.183	\N
+2199	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469835030	web	66.249.71.183	\N
+2200	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469835301	web	66.249.71.189	\N
+2201	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469835712	web	66.249.71.177	\N
+2202	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469835939	web	66.249.71.183	\N
+2203	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469836393	web	66.249.71.177	\N
+2204	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469836620	web	66.249.71.177	\N
+2205	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469836847	web	66.249.71.189	\N
+2206	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469837301	web	66.249.71.177	\N
+2207	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469837547	web	66.249.71.189	\N
+2208	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469837756	web	66.249.71.189	\N
+2209	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469838209	web	66.249.71.177	\N
+2210	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469838436	web	66.249.71.189	\N
+2211	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469838663	web	66.249.71.183	\N
+2212	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469839118	web	66.249.71.183	\N
+2213	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469839344	web	66.249.79.164	\N
+2214	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469839571	web	66.249.71.177	\N
+2215	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469839800	web	66.249.71.177	\N
+2216	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469840101	web	66.249.71.183	\N
+2217	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469840480	web	66.249.71.183	\N
+2218	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469840707	web	66.249.79.156	\N
+2219	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469841161	web	66.249.71.183	\N
+2220	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469841388	web	66.249.71.183	\N
+2221	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469841634	web	66.249.71.183	\N
+2222	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469842069	web	66.249.79.164	\N
+2223	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469842296	web	66.249.71.177	\N
+2224	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469842611	web	66.249.71.189	\N
+2225	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469842978	web	66.249.71.183	\N
+2226	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469843205	web	66.249.71.189	\N
+2227	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469843432	web	66.249.71.177	\N
+2228	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469843886	web	66.249.71.183	\N
+2229	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469844113	web	66.249.79.164	\N
+2230	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469844340	web	66.249.71.177	\N
+2231	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469844794	web	66.249.79.164	\N
+2232	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469845021	web	66.249.71.183	\N
+2233	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469845248	web	66.249.71.189	\N
+2234	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469845702	web	66.249.71.183	\N
+2235	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469845929	web	66.249.71.183	\N
+2236	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469846156	web	66.249.71.183	\N
+2237	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469846611	web	66.249.71.183	\N
+2238	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469846837	web	66.249.79.156	\N
+2239	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469847064	web	66.249.71.189	\N
+2240	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469847519	web	66.249.71.177	\N
+2241	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469847745	web	66.249.71.177	\N
+2242	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469848019	web	66.249.79.160	\N
+2243	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469848426	web	66.249.71.189	\N
+2244	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469848653	web	66.249.71.183	\N
+2245	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469848880	web	66.249.75.67	\N
+2246	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469849334	web	66.249.69.131	\N
+2247	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469849561	web	66.249.75.67	\N
+2248	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469849788	web	66.249.69.190	\N
+2249	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469850243	web	66.249.75.67	\N
+2250	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469850696	web	66.249.75.67	\N
+2251	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469850923	web	66.249.69.190	\N
+2252	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469851150	web	66.249.69.128	\N
+2253	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469851605	web	66.249.69.190	\N
+2254	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469851831	web	66.249.69.131	\N
+2255	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469852286	web	66.249.75.74	\N
+2256	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469852512	web	66.249.69.131	\N
+2257	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469852966	web	66.249.69.128	\N
+2258	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469853193	web	66.249.75.74	\N
+2259	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469853420	web	66.249.75.74	\N
+2260	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469853647	web	66.249.69.128	\N
+2261	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469854101	web	66.249.75.74	\N
+2262	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469854328	web	66.249.69.131	\N
+2263	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469854632	web	66.249.69.128	\N
+2264	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469855010	web	66.249.69.128	\N
+2265	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469855237	web	66.249.75.74	\N
+2266	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469855464	web	66.249.69.190	\N
+2267	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469856122	web	66.249.69.190	\N
+2268	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469856601	web	66.249.69.131	\N
+2269	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469856827	web	66.249.69.128	\N
+2270	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469857055	web	66.249.69.131	\N
+2271	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469857651	web	66.249.69.190	\N
+2272	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469857963	web	66.249.69.190	\N
+2273	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469858190	web	66.249.69.128	\N
+2274	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469858436	web	66.249.69.128	\N
+2275	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469858872	web	66.249.69.128	\N
+2276	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469859099	web	66.249.69.131	\N
+2277	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469859326	web	66.249.69.131	\N
+2278	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469859780	web	66.249.69.190	\N
+2279	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469860045	web	66.249.69.131	\N
+2280	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469860462	web	66.249.69.128	\N
+2281	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469860689	web	66.249.69.131	\N
+2282	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469860916	web	66.249.69.128	\N
+2283	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469861144	web	66.249.69.128	\N
+2284	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469861597	web	66.249.69.190	\N
+2285	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469861824	web	66.249.69.128	\N
+2286	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469862051	web	66.249.69.128	\N
+2287	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469862505	web	66.249.69.190	\N
+2288	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469862732	web	66.249.69.131	\N
+2289	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469862959	web	66.249.69.128	\N
+2290	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469863413	web	66.249.69.128	\N
+2291	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469863640	web	66.249.69.190	\N
+2292	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469863867	web	66.249.69.190	\N
+2293	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469864355	web	66.249.69.131	\N
+2294	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469864776	web	66.249.69.131	\N
+2295	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469865230	web	66.249.69.190	\N
+2296	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469865457	web	66.249.69.190	\N
+2297	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469865684	web	66.249.69.131	\N
+2298	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469866139	web	66.249.69.190	\N
+2299	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469866365	web	66.249.69.190	\N
+2300	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469866819	web	66.249.69.128	\N
+2301	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469867274	web	66.249.69.128	\N
+2302	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469867727	web	66.249.69.128	\N
+2303	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469868182	web	66.249.69.128	\N
+2304	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469868408	web	66.249.69.131	\N
+2305	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469868635	web	66.249.69.128	\N
+2306	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469869089	web	66.249.69.190	\N
+2307	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469869316	web	66.249.69.131	\N
+2308	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469869692	web	66.249.69.131	\N
+2309	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469870002	web	66.249.69.190	\N
+2310	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469870225	web	66.249.69.128	\N
+2311	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469870452	web	66.249.69.190	\N
+2312	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469870907	web	66.249.69.190	\N
+2313	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469871133	web	66.249.69.131	\N
+2314	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469871360	web	66.249.69.131	\N
+2315	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469871814	web	66.249.69.131	\N
+2316	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469872268	web	66.249.69.190	\N
+2317	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469872495	web	66.249.69.190	\N
+2318	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469872950	web	66.249.69.128	\N
+2319	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469873176	web	66.249.69.128	\N
+2320	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469873403	web	66.249.69.190	\N
+2321	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469873857	web	66.249.69.131	\N
+2322	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469874084	web	66.249.69.190	\N
+2323	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469874311	web	66.249.69.128	\N
+2324	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469874765	web	66.249.69.190	\N
+2325	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469874992	web	66.249.69.190	\N
+2326	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469875219	web	66.249.69.131	\N
+2327	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469875673	web	66.249.69.190	\N
+2328	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469875900	web	66.249.69.128	\N
+2329	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469876355	web	66.249.69.131	\N
+2330	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469876581	web	66.249.69.190	\N
+2331	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469876808	web	66.249.69.128	\N
+2332	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469877262	web	66.249.69.190	\N
+2333	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469877489	web	66.249.69.128	\N
+2334	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469877716	web	66.249.69.128	\N
+2335	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469878170	web	66.249.69.190	\N
+2336	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469878397	web	66.249.69.128	\N
+2337	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469878673	web	66.249.69.128	\N
+2338	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469878852	web	66.249.69.190	\N
+2339	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469879305	web	66.249.69.190	\N
+2340	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469879532	web	66.249.69.131	\N
+2341	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469879759	web	66.249.69.190	\N
+2342	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469880214	web	66.249.69.190	\N
+2343	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469880440	web	66.249.69.190	\N
+2344	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469880668	web	66.249.69.190	\N
+2345	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469881121	web	66.249.69.190	\N
+2346	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469881348	web	66.249.69.128	\N
+2347	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469881575	web	66.249.69.131	\N
+2348	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469882080	web	66.249.69.128	\N
+2349	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469882484	web	66.249.69.190	\N
+2350	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469882938	web	66.249.69.128	\N
+2351	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469883165	web	66.249.75.81	\N
+2352	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469883619	web	66.249.75.74	\N
+2353	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469884300	web	66.249.69.190	\N
+2354	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469884754	web	66.249.75.81	\N
+2355	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469885208	web	66.249.69.128	\N
+2356	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469885662	web	66.249.69.190	\N
+2357	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469885889	web	66.249.69.128	\N
+2358	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469886343	web	66.249.69.131	\N
+2359	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469886798	web	66.249.69.190	\N
+2360	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469887252	web	66.249.75.74	\N
+2361	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469887705	web	66.249.75.67	\N
+2362	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469888159	web	66.249.69.190	\N
+2363	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469888614	web	66.249.69.128	\N
+2364	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469888840	web	66.249.69.190	\N
+2365	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469889067	web	66.249.69.190	\N
+2366	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469889521	web	66.249.69.131	\N
+2367	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469889748	web	66.249.69.190	\N
+2368	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469889975	web	66.249.69.128	\N
+2369	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469890430	web	66.249.69.190	\N
+2370	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469890657	web	66.249.69.190	\N
+2371	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469890883	web	66.249.69.190	\N
+2372	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469891365	web	66.249.69.190	\N
+2373	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469891792	web	66.249.69.190	\N
+2374	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469892019	web	66.249.75.74	\N
+2375	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469892473	web	66.249.69.128	\N
+2376	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469892700	web	66.249.69.190	\N
+2377	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469892927	web	66.249.69.131	\N
+2378	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469893382	web	66.249.69.190	\N
+2379	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469893609	web	66.249.69.190	\N
+2380	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469893835	web	66.249.69.190	\N
+2381	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469894290	web	66.249.75.67	\N
+2382	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469894516	web	66.249.69.190	\N
+2383	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469894743	web	66.249.75.81	\N
+2384	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469895197	web	66.249.69.190	\N
+2385	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469895424	web	66.249.69.190	\N
+2386	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469895878	web	66.249.75.81	\N
+2387	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469896105	web	66.249.69.190	\N
+2388	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469896332	web	66.249.69.190	\N
+2389	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469896559	web	66.249.69.190	\N
+2390	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469897014	web	66.249.69.128	\N
+2391	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469897240	web	66.249.75.67	\N
+2392	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469897468	web	66.249.69.190	\N
+2393	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469897798	web	66.249.75.67	\N
+2394	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469898149	web	66.249.69.190	\N
+2395	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469898376	web	66.249.69.190	\N
+2396	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469898831	web	66.249.69.190	\N
+2397	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469899057	web	66.249.69.190	\N
+2398	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469899284	web	66.249.69.190	\N
+2399	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469899739	web	66.249.69.128	\N
+2400	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469899965	web	66.249.69.128	\N
+2401	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469900192	web	66.249.69.128	\N
+2402	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469900646	web	66.249.69.190	\N
+2403	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469900873	web	66.249.69.128	\N
+2404	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469901100	web	66.249.69.190	\N
+2405	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469901327	web	66.249.69.131	\N
+2406	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469901781	web	66.249.75.81	\N
+2407	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469902008	web	66.249.69.190	\N
+2408	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469902235	web	66.249.69.190	\N
+2409	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469902689	web	66.249.69.128	\N
+2410	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469902916	web	66.249.69.190	\N
+2411	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469903195	web	66.249.69.128	\N
+2412	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469903415	web	66.249.69.131	\N
+2413	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469903825	web	66.249.69.190	\N
+2414	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469904052	web	66.249.69.190	\N
+2415	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469905011	web	66.249.75.67	\N
+2416	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469905415	web	66.249.69.190	\N
+2417	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469905642	web	66.249.75.67	\N
+2418	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469905869	web	66.249.69.131	\N
+2419	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469906323	web	66.249.69.190	\N
+2420	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469906550	web	66.249.69.190	\N
+2421	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469906777	web	66.249.69.190	\N
+2422	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469907232	web	66.249.69.190	\N
+2423	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469907458	web	66.249.69.128	\N
+2424	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469907685	web	66.249.69.190	\N
+2425	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469908139	web	66.249.69.190	\N
+2426	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469908366	web	66.249.69.128	\N
+2427	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469908530	web	66.249.69.190	\N
+2428	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469908593	web	66.249.69.190	\N
+2429	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469908828	web	66.249.75.67	\N
+2430	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469909099	web	66.249.69.128	\N
+2431	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469909502	web	66.249.69.190	\N
+2432	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469909729	web	66.249.69.128	\N
+2433	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469910183	web	66.249.69.190	\N
+2434	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469910410	web	66.249.69.190	\N
+2435	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469910865	web	66.249.69.190	\N
+2436	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469911091	web	66.249.69.128	\N
+2437	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469911772	web	66.249.71.177	\N
+2438	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469911999	web	66.249.71.177	\N
+2439	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469912226	web	66.249.71.177	\N
+2440	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469912453	web	66.249.71.177	\N
+2441	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469912907	web	66.249.71.189	\N
+2442	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469913137	web	66.249.71.177	\N
+2443	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469913588	web	66.249.71.183	\N
+2444	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469914042	web	66.249.71.177	\N
+2445	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469914269	web	66.249.71.189	\N
+2446	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469915072	web	66.249.71.189	\N
+2447	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469915406	web	66.249.71.177	\N
+2448	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469915859	web	66.249.71.177	\N
+2449	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469916086	web	66.249.71.177	\N
+2450	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469916540	web	66.249.71.177	\N
+2451	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469916767	web	66.249.71.177	\N
+2452	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469916994	web	66.249.71.177	\N
+2453	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469917448	web	66.249.71.177	\N
+2454	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469917675	web	66.249.71.177	\N
+2455	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469917902	web	66.249.71.177	\N
+2456	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469918129	web	66.249.71.177	\N
+2457	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469918583	web	66.249.71.183	\N
+2458	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469918810	web	66.249.71.183	\N
+2459	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469919037	web	66.249.71.183	\N
+2460	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469919492	web	66.249.71.177	\N
+2461	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469919718	web	66.249.71.189	\N
+2462	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469919945	web	66.249.71.189	\N
+2463	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469920400	web	66.249.71.189	\N
+2464	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469920854	web	66.249.71.177	\N
+2465	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469921307	web	66.249.71.177	\N
+2466	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469921762	web	66.249.71.177	\N
+2467	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469922210	web	66.249.71.177	\N
+2468	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469922215	web	66.249.71.177	\N
+2469	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469922442	web	66.249.71.177	\N
+2470	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469922679	web	66.249.71.177	\N
+2471	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469923124	web	66.249.71.189	\N
+2472	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469923351	web	66.249.71.177	\N
+2473	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469923578	web	66.249.71.177	\N
+2474	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469923816	web	66.249.71.177	\N
+2475	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469924260	web	66.249.71.183	\N
+2476	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469924487	web	66.249.71.189	\N
+2477	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469924992	web	66.249.71.177	\N
+2478	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469925283	web	66.249.71.183	\N
+2479	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469925851	web	66.249.71.183	\N
+2480	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469926077	web	66.249.71.183	\N
+2481	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469926304	web	66.249.71.177	\N
+2482	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469926758	web	66.249.71.183	\N
+2483	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469926985	web	66.249.71.177	\N
+2484	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469927212	web	66.249.71.189	\N
+2485	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469927439	web	66.249.71.189	\N
+2486	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469927893	web	66.249.71.177	\N
+2487	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469928120	web	66.249.71.177	\N
+2488	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469928347	web	66.249.71.183	\N
+2489	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469928801	web	66.249.71.177	\N
+2490	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469929028	web	66.249.71.183	\N
+2491	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469929391	web	66.249.71.189	\N
+2492	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469929710	web	66.249.71.177	\N
+2493	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469929937	web	66.249.71.189	\N
+2494	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469930164	web	66.249.71.177	\N
+2495	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469930619	web	66.249.71.177	\N
+2496	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469930845	web	66.249.71.189	\N
+2497	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469931072	web	66.249.71.183	\N
+2498	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469931527	web	66.249.71.183	\N
+2499	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469931753	web	66.249.71.189	\N
+2500	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469931980	web	66.249.71.177	\N
+2501	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469932207	web	66.249.71.177	\N
+2502	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469932661	web	66.249.71.183	\N
+2503	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469932888	web	66.249.71.177	\N
+2504	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469933115	web	66.249.71.177	\N
+2505	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469933570	web	66.249.71.177	\N
+2506	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469933796	web	66.249.71.177	\N
+2507	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469934023	web	66.249.71.183	\N
+2508	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469934478	web	66.249.71.183	\N
+2509	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469934704	web	66.249.71.177	\N
+2510	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469934931	web	66.249.71.183	\N
+2511	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469935385	web	66.249.71.183	\N
+2512	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469935612	web	66.249.71.183	\N
+2513	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469936096	web	66.249.71.177	\N
+2514	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469936349	web	66.249.71.177	\N
+2515	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469936521	web	66.249.71.177	\N
+2516	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469936748	web	66.249.71.183	\N
+2517	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469937203	web	66.249.71.183	\N
+2518	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469937429	web	66.249.71.189	\N
+2519	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469937656	web	66.249.71.189	\N
+2520	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469937930	web	66.249.71.183	\N
+2521	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469938338	web	66.249.71.189	\N
+2522	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469951025	web	66.249.71.189	\N
+2523	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1469993597	web	66.249.71.177	\N
+2524	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470007195	web	66.249.71.189	\N
+2525	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470007501	web	66.249.71.189	\N
+2526	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470007802	web	66.249.79.164	\N
+2527	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470008116	web	66.249.71.177	\N
+2528	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470008464	web	66.249.71.189	\N
+2529	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470008767	web	66.249.71.183	\N
+2530	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470009040	web	66.249.71.189	\N
+2531	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470009370	web	66.249.71.189	\N
+2532	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470009599	web	66.249.71.189	\N
+2533	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470009898	web	66.249.71.189	\N
+2534	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470010200	web	66.249.71.177	\N
+2535	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470010499	web	66.249.71.183	\N
+2536	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470010803	web	66.249.71.183	\N
+2537	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470011102	web	66.249.71.189	\N
+2538	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470011401	web	66.249.71.177	\N
+2539	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470011700	web	66.249.71.189	\N
+2540	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470012001	web	66.249.71.189	\N
+2541	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470012299	web	66.249.71.183	\N
+2542	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470012602	web	66.249.71.183	\N
+2543	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470012902	web	66.249.71.189	\N
+2544	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470013199	web	66.249.71.177	\N
+2545	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470013500	web	66.249.71.183	\N
+2546	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470013801	web	66.249.71.177	\N
+2547	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470014100	web	66.249.71.189	\N
+2548	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470014417	web	66.249.71.189	\N
+2549	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470014938	web	66.249.71.189	\N
+2550	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470015001	web	66.249.71.177	\N
+2551	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470015300	web	66.249.71.189	\N
+2552	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470015872	web	66.249.71.189	\N
+2553	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470015911	web	66.249.71.177	\N
+2554	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470016201	web	66.249.71.177	\N
+2555	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470016500	web	66.249.71.177	\N
+2556	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470016799	web	66.249.71.177	\N
+2557	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470017103	web	66.249.71.183	\N
+2558	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470017399	web	66.249.71.177	\N
+2559	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470017701	web	66.249.71.183	\N
+2560	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470018002	web	66.249.71.177	\N
+2561	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470018300	web	66.249.71.177	\N
+2562	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470018600	web	66.249.71.183	\N
+2563	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470018902	web	66.249.71.183	\N
+2564	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470019203	web	66.249.71.189	\N
+2565	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470019500	web	66.249.71.183	\N
+2566	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470019800	web	66.249.71.183	\N
+2567	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470020101	web	66.249.71.183	\N
+2568	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470020645	web	66.249.71.189	\N
+2569	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470079485	web	66.249.71.189	\N
+2570	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470079802	web	66.249.71.183	\N
+2571	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470080333	web	66.249.71.177	\N
+2572	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470080675	web	66.249.71.183	\N
+2573	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470081016	web	66.249.71.183	\N
+2574	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470081316	web	66.249.71.183	\N
+2575	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470081616	web	66.249.71.183	\N
+2576	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470081916	web	66.249.71.177	\N
+2577	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470082199	web	66.249.71.189	\N
+2578	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470082498	web	66.249.71.183	\N
+2579	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470082799	web	66.249.71.177	\N
+2580	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470083101	web	66.249.71.189	\N
+2581	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470083400	web	66.249.71.177	\N
+2582	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470083700	web	66.249.71.189	\N
+2583	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470083999	web	66.249.71.189	\N
+2584	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470084306	web	66.249.71.177	\N
+2585	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470084616	web	66.249.71.183	\N
+2586	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470084917	web	66.249.71.189	\N
+2587	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470085201	web	66.249.71.177	\N
+2588	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470085500	web	66.249.71.183	\N
+2589	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470085801	web	66.249.71.189	\N
+2590	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470086121	web	66.249.71.189	\N
+2591	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470086446	web	66.249.71.183	\N
+2592	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470086700	web	66.249.79.160	\N
+2593	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470086999	web	66.249.71.177	\N
+2594	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470087316	web	66.249.71.189	\N
+2595	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470087600	web	66.249.71.189	\N
+2596	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470087928	web	66.249.79.156	\N
+2597	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470088202	web	66.249.79.156	\N
+2598	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470088521	web	66.249.71.183	\N
+2599	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470088833	web	66.249.71.177	\N
+2600	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470089103	web	66.249.71.177	\N
+2601	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470089441	web	66.249.71.183	\N
+2602	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470089802	web	66.249.71.189	\N
+2603	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470089998	web	66.249.71.177	\N
+2604	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470090357	web	66.249.71.177	\N
+2605	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470090599	web	66.249.71.177	\N
+2606	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470090917	web	66.249.71.189	\N
+2607	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470091235	web	66.249.71.183	\N
+2608	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470091500	web	66.249.71.183	\N
+2609	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470091801	web	66.249.71.189	\N
+2610	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470092119	web	66.249.71.183	\N
+2611	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470092433	web	66.249.71.189	\N
+2612	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470092749	web	66.249.71.189	\N
+2613	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470093001	web	66.249.71.183	\N
+2614	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470093335	web	66.249.71.183	\N
+2615	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470093647	web	66.249.71.189	\N
+2616	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470093936	web	66.249.71.177	\N
+2617	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470094292	web	66.249.71.183	\N
+2618	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470094545	web	66.249.71.177	\N
+2619	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470094923	web	66.249.71.177	\N
+2620	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470095186	web	66.249.71.183	\N
+2621	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470095435	web	66.249.71.189	\N
+2622	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470095718	web	66.249.71.189	\N
+2623	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470096036	web	66.249.71.177	\N
+2624	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470096349	web	66.249.71.189	\N
+2625	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470096606	web	66.249.71.189	\N
+2626	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470096903	web	66.249.71.189	\N
+2627	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470097218	web	66.249.71.189	\N
+2628	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470097535	web	66.249.71.177	\N
+2629	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470098006	web	66.249.71.189	\N
+2630	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470098175	web	66.249.71.177	\N
+2631	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470098565	web	66.249.71.177	\N
+2632	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470098896	web	66.249.71.189	\N
+2633	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470099250	web	66.249.71.183	\N
+2634	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470099596	web	66.249.71.183	\N
+2635	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470099887	web	66.249.71.189	\N
+2636	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470100203	web	66.249.71.177	\N
+2637	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470100502	web	66.249.71.183	\N
+2638	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470100800	web	66.249.71.177	\N
+2639	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470101184	web	66.249.71.177	\N
+2640	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470101422	web	66.249.71.177	\N
+2641	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470101718	web	66.249.71.177	\N
+2642	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470102015	web	66.249.71.189	\N
+2643	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470102378	web	66.249.71.183	\N
+2644	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470102600	web	66.249.71.183	\N
+2645	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470102904	web	66.249.71.177	\N
+2646	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470103200	web	66.249.71.183	\N
+2647	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470103500	web	66.249.71.189	\N
+2648	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470103799	web	66.249.71.189	\N
+2649	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470104098	web	66.249.71.183	\N
+2650	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470104403	web	66.249.71.177	\N
+2651	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470104858	web	66.249.71.177	\N
+2652	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470105194	web	66.249.71.177	\N
+2653	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470105520	web	66.249.71.189	\N
+2654	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470105847	web	66.249.71.183	\N
+2655	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470106178	web	66.249.71.189	\N
+2656	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470106507	web	66.249.71.189	\N
+2657	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470107610	web	66.249.71.177	\N
+2658	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470107963	web	66.249.71.189	\N
+2659	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470108291	web	66.249.71.177	\N
+2660	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470108674	web	66.249.71.189	\N
+2661	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470108901	web	66.249.71.183	\N
+2662	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470109200	web	66.249.71.177	\N
+2663	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470109500	web	66.249.71.189	\N
+2664	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470109800	web	66.249.71.183	\N
+2665	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470110100	web	66.249.71.183	\N
+2666	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470110399	web	66.249.71.177	\N
+2667	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470110743	web	66.249.71.183	\N
+2668	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470111015	web	66.249.79.164	\N
+2669	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470111300	web	66.249.71.177	\N
+2670	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470111757	web	66.249.71.189	\N
+2671	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470112068	web	66.249.71.183	\N
+2672	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470112397	web	66.249.71.183	\N
+2673	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470112728	web	66.249.71.183	\N
+2674	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470113059	web	66.249.71.177	\N
+2675	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470113407	web	66.249.71.183	\N
+2676	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470113716	web	66.249.71.177	\N
+2677	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470114042	web	66.249.71.183	\N
+2678	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470114392	web	66.249.71.189	\N
+2679	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470114622	web	66.249.71.183	\N
+2680	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470114903	web	66.249.71.183	\N
+2681	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470115199	web	66.249.71.177	\N
+2682	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470115516	web	66.249.71.189	\N
+2683	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470115821	web	66.249.71.177	\N
+2684	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470116283	web	66.249.71.183	\N
+2685	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470116443	web	66.249.71.189	\N
+2686	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470116717	web	66.249.71.189	\N
+2687	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470116999	web	66.249.71.177	\N
+2688	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470117299	web	66.249.71.177	\N
+2689	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470117599	web	66.249.71.183	\N
+2690	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470117899	web	66.249.71.177	\N
+2691	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470118214	web	66.249.71.183	\N
+2692	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470118502	web	66.249.71.183	\N
+2693	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470118803	web	66.249.71.183	\N
+2694	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470119102	web	66.249.71.177	\N
+2695	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470119400	web	66.249.71.189	\N
+2696	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470119888	web	66.249.71.177	\N
+2697	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470120086	web	66.249.71.189	\N
+2698	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470120299	web	66.249.71.183	\N
+2699	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470120602	web	66.249.71.177	\N
+2700	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470120899	web	66.249.71.183	\N
+2701	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470121200	web	66.249.71.183	\N
+2702	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470121213	web	61.197.7.71	\N
+2703	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470121540	web	66.249.71.183	\N
+2704	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470121815	web	66.249.71.177	\N
+2705	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470122101	web	66.249.71.177	\N
+2706	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470122401	web	66.249.71.177	\N
+2707	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470122720	web	66.249.71.189	\N
+2708	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470123034	web	66.249.71.189	\N
+2709	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470123310	web	66.249.71.189	\N
+2710	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470123749	web	66.249.71.183	\N
+2711	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470123979	web	66.249.71.189	\N
+2712	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470124063	web	210.60.168.195	\N
+2713	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470124253	web	66.249.71.177	\N
+2714	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470124450	web	61.197.7.71	\N
+2715	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470124519	web	66.249.71.189	\N
+2716	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470124835	web	66.249.71.189	\N
+2717	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470125189	web	66.249.71.189	\N
+2718	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470125475	web	66.249.71.177	\N
+2719	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470125746	web	66.249.71.189	\N
+2720	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470126034	web	66.249.71.177	\N
+2721	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470126320	web	66.249.71.189	\N
+2722	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470153983	web	66.249.71.183	\N
+2723	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470154214	web	66.249.71.189	\N
+2724	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470154500	web	66.249.71.183	\N
+2725	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470154800	web	66.249.71.177	\N
+2726	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470155113	web	66.249.71.183	\N
+2727	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470155399	web	66.249.71.177	\N
+2728	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470155702	web	66.249.71.183	\N
+2729	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470156000	web	66.249.71.177	\N
+2730	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470156339	web	66.249.71.183	\N
+2731	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470156615	web	66.249.71.189	\N
+2732	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470156903	web	66.249.71.183	\N
+2733	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470157217	web	66.249.71.177	\N
+2734	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470157521	web	66.249.71.189	\N
+2735	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470157799	web	66.249.71.189	\N
+2736	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470158112	web	66.249.71.177	\N
+2737	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470158404	web	66.249.71.189	\N
+2738	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470158698	web	66.249.71.177	\N
+2739	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470159032	web	66.249.71.177	\N
+2740	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470159302	web	66.249.71.189	\N
+2741	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470159599	web	66.249.71.183	\N
+2742	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470159898	web	66.249.71.183	\N
+2743	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470160198	web	66.249.71.183	\N
+2744	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470160517	web	66.249.71.183	\N
+2745	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470161154	web	66.249.71.183	\N
+2746	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470161429	web	66.249.71.183	\N
+2747	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470161699	web	66.249.71.189	\N
+2748	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470162005	web	66.249.71.189	\N
+2749	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470162341	web	66.249.71.189	\N
+2750	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470162611	web	66.249.79.164	\N
+2751	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470162902	web	66.249.71.177	\N
+2752	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470163199	web	66.249.71.183	\N
+2753	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470163508	web	66.249.71.183	\N
+2754	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470163816	web	66.249.71.189	\N
+2755	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470164415	web	66.249.71.177	\N
+2756	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470164702	web	66.249.71.183	\N
+2757	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470165001	web	66.249.71.183	\N
+2758	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470167283	web	66.249.71.177	\N
+2759	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470167976	web	66.249.71.183	\N
+2760	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470168218	web	66.249.71.177	\N
+2761	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470168383	web	66.249.71.177	\N
+2762	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470168600	web	66.249.71.189	\N
+2763	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470168902	web	66.249.71.177	\N
+2764	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470169263	web	66.249.71.177	\N
+2765	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470169565	web	66.249.71.189	\N
+2766	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470169800	web	66.249.71.177	\N
+2767	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470170099	web	66.249.71.177	\N
+2768	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470170400	web	66.249.71.177	\N
+2769	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470170701	web	66.249.71.183	\N
+2770	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470171000	web	66.249.71.189	\N
+2771	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470171302	web	66.249.71.183	\N
+2772	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470171598	web	66.249.71.183	\N
+2773	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470171899	web	66.249.71.177	\N
+2774	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470172238	web	66.249.71.183	\N
+2775	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470172601	web	66.249.71.183	\N
+2776	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470172827	web	66.249.71.183	\N
+2777	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470173282	web	66.249.71.189	\N
+2778	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470173508	web	66.249.71.177	\N
+2779	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470173735	web	66.249.71.189	\N
+2780	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470174022	web	66.249.71.177	\N
+2781	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470174300	web	66.249.71.177	\N
+2782	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470174600	web	66.249.71.177	\N
+2783	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470174938	web	66.249.71.177	\N
+2784	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470175201	web	66.249.71.183	\N
+2785	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470175500	web	66.249.71.183	\N
+2786	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470175825	web	66.249.71.189	\N
+2787	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470176119	web	66.249.71.177	\N
+2788	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470176416	web	66.249.71.177	\N
+2789	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470176722	web	66.249.71.177	\N
+2790	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470177014	web	66.249.71.183	\N
+2791	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470177318	web	66.249.71.177	\N
+2792	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470177617	web	66.249.71.177	\N
+2793	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470178062	web	66.249.71.189	\N
+2794	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470178448	web	66.249.71.183	\N
+2795	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470178555	web	66.249.71.189	\N
+2796	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470178857	web	66.249.71.177	\N
+2797	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470179100	web	66.249.71.183	\N
+2798	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470179399	web	66.249.71.189	\N
+2799	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470179718	web	66.249.79.156	\N
+2800	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470180022	web	66.249.71.183	\N
+2801	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470180303	web	66.249.71.183	\N
+2802	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470180714	web	66.249.71.177	\N
+2803	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470180985	web	66.249.71.183	\N
+2804	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470181216	web	66.249.71.177	\N
+2805	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470181500	web	66.249.71.183	\N
+2806	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470181864	web	66.249.71.177	\N
+2807	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470182164	web	66.249.71.177	\N
+2808	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470182433	web	66.249.71.183	\N
+2809	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470182702	web	66.249.71.183	\N
+2810	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470183116	web	66.249.71.183	\N
+2811	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470183404	web	66.249.71.189	\N
+2812	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470183671	web	66.249.71.177	\N
+2813	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470183941	web	66.249.71.177	\N
+2814	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470184324	web	66.249.71.189	\N
+2815	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470184499	web	66.249.71.177	\N
+2816	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470184799	web	66.249.71.183	\N
+2817	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470185103	web	66.249.71.177	\N
+2818	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470185400	web	66.249.71.177	\N
+2819	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470185701	web	66.249.71.189	\N
+2820	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470186040	web	66.249.71.177	\N
+2821	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470186315	web	66.249.71.189	\N
+2822	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470186602	web	66.249.71.183	\N
+2823	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470186900	web	66.249.71.183	\N
+2824	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470187200	web	66.249.71.183	\N
+2825	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470187502	web	66.249.71.189	\N
+2826	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470187801	web	66.249.71.183	\N
+2827	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470188163	web	66.249.71.183	\N
+2828	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470188401	web	66.249.71.177	\N
+2829	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470188703	web	66.249.71.189	\N
+2830	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470189003	web	66.249.71.183	\N
+2831	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470189301	web	66.249.71.183	\N
+2832	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470189600	web	66.249.71.177	\N
+2833	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470189903	web	66.249.71.183	\N
+2834	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470190226	web	66.249.71.183	\N
+2835	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470190541	web	66.249.71.177	\N
+2836	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470190808	web	66.249.71.177	\N
+2837	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470191099	web	66.249.71.177	\N
+2838	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470191411	web	66.249.71.183	\N
+2839	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470191905	web	66.249.71.177	\N
+2840	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470192233	web	66.249.71.177	\N
+2841	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470192564	web	66.249.71.177	\N
+2842	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470192893	web	66.249.71.177	\N
+2843	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470193199	web	66.249.71.177	\N
+2844	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470193506	web	66.249.71.177	\N
+2845	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470193800	web	66.249.71.177	\N
+2846	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470194197	web	66.249.71.177	\N
+2847	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470194424	web	66.249.71.177	\N
+2848	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470194878	web	66.249.71.177	\N
+2849	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470195105	web	66.249.71.177	\N
+2850	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470195332	web	66.249.71.177	\N
+2851	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470195786	web	66.249.71.177	\N
+2852	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470196013	web	66.249.71.183	\N
+2853	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470196518	web	66.249.71.177	\N
+2854	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470196817	web	66.249.71.189	\N
+2855	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470197099	web	66.249.71.177	\N
+2856	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470197401	web	66.249.71.183	\N
+2857	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470197830	web	66.249.71.183	\N
+2858	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470198057	web	66.249.71.177	\N
+2859	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470198512	web	66.249.71.177	\N
+2860	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470198738	web	66.249.71.189	\N
+2861	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470198965	web	66.249.71.189	\N
+2862	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470199228	web	66.249.71.177	\N
+2863	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470199666	web	66.249.71.177	\N
+2864	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470199874	web	66.249.71.177	\N
+2865	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470200101	web	66.249.71.189	\N
+2866	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470200556	web	66.249.79.156	\N
+2867	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470200782	web	66.249.71.189	\N
+2868	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470201009	web	66.249.71.189	\N
+2869	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470201463	web	66.249.71.177	\N
+2870	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470201690	web	66.249.71.177	\N
+2871	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470201917	web	66.249.71.189	\N
+2872	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470202371	web	66.249.71.177	\N
+2873	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470202598	web	66.249.71.177	\N
+2874	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470202825	web	66.249.71.183	\N
+2875	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470203279	web	66.249.71.177	\N
+2876	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470203506	web	66.249.71.177	\N
+2877	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470203733	web	66.249.71.183	\N
+2878	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470204234	web	66.249.71.177	\N
+2879	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470204642	web	66.249.71.183	\N
+2880	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470204915	web	66.249.71.189	\N
+2881	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470213328	web	61.197.7.71	\N
+2882	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470267001	web	66.249.71.183	\N
+2883	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470267319	web	66.249.71.177	\N
+2884	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470312287	web	66.249.71.177	\N
+2885	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470312602	web	66.249.71.183	\N
+2886	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470312915	web	66.249.79.160	\N
+2887	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470313216	web	66.249.71.177	\N
+2888	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470313505	web	66.249.71.177	\N
+2889	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470313801	web	66.249.71.177	\N
+2890	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470314102	web	66.249.71.183	\N
+2891	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470314399	web	66.249.71.189	\N
+2892	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470314699	web	66.249.71.183	\N
+2893	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470315001	web	66.249.71.177	\N
+2894	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470315299	web	66.249.71.177	\N
+2895	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470315599	web	66.249.71.183	\N
+2896	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470315901	web	66.249.71.177	\N
+2897	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470316199	web	66.249.71.177	\N
+2898	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470316500	web	66.249.71.183	\N
+2899	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470316800	web	66.249.71.189	\N
+2900	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470317099	web	66.249.71.189	\N
+2901	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470317399	web	66.249.71.177	\N
+2902	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470317699	web	66.249.71.183	\N
+2903	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470317999	web	66.249.71.177	\N
+2904	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470318301	web	66.249.71.177	\N
+2905	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470318607	web	66.249.71.183	\N
+2906	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470318900	web	66.249.71.189	\N
+2907	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470319204	web	66.249.71.177	\N
+2908	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470319507	web	66.249.71.183	\N
+2909	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470319799	web	66.249.71.177	\N
+2910	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470320101	web	66.249.71.183	\N
+2911	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470320404	web	66.249.71.189	\N
+2912	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470320755	web	66.249.71.177	\N
+2913	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470321130	web	66.249.71.183	\N
+2914	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470321322	web	66.249.71.183	\N
+2915	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470321631	web	66.249.71.177	\N
+2916	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470321904	web	66.249.71.177	\N
+2917	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470322200	web	66.249.71.189	\N
+2918	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470322516	web	66.249.71.177	\N
+2919	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470322805	web	66.249.71.183	\N
+2920	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470323127	web	66.249.71.189	\N
+2921	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470323419	web	66.249.71.189	\N
+2922	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470323699	web	66.249.79.160	\N
+2923	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470324005	web	66.249.71.177	\N
+2924	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470324302	web	66.249.71.177	\N
+2925	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470324618	web	66.249.71.177	\N
+2926	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470324991	web	66.249.71.183	\N
+2927	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470325236	web	66.249.71.189	\N
+2928	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470325616	web	66.249.71.189	\N
+2929	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470325871	web	66.249.71.183	\N
+2930	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470326156	web	66.249.71.183	\N
+2931	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470326450	web	66.249.71.183	\N
+2932	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470326729	web	66.249.71.183	\N
+2933	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470327026	web	66.249.71.189	\N
+2934	\\core\\event\\user_loggedin	core	loggedin	user	user	2	r	0	1	10	0	2	0	\N	0	a:1:{s:8:"username";s:5:"admin";}	1470557130	web	210.60.168.195	\N
+2935	\\core\\event\\calendar_event_created	core	created	calendar_event	event	33	c	0	2	50	1	2	1	\N	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1470557400;s:4:"name";s:7:"Week 25";}	1470557584	web	210.60.168.195	\N
+2936	\\core\\event\\calendar_event_created	core	created	calendar_event	event	34	c	0	2	50	1	2	1	\N	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1470524400;s:4:"name";s:7:"Week 26";}	1470557629	web	210.60.168.195	\N
+2937	\\core\\event\\calendar_event_created	core	created	calendar_event	event	35	c	0	2	50	1	2	1	\N	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1470524400;s:4:"name";s:7:"Week 27";}	1470557660	web	210.60.168.195	\N
+2938	\\core\\event\\calendar_event_created	core	created	calendar_event	event	36	c	0	2	50	1	2	1	\N	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1470524400;s:4:"name";s:7:"Week 27";}	1470557705	web	210.60.168.195	\N
+2939	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470557741	web	210.60.169.32	\N
+2940	\\core\\event\\calendar_event_deleted	core	deleted	calendar_event	event	36	d	0	2	50	1	2	1	\N	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";s:10:"1470524400";s:4:"name";s:7:"Week 27";}	1470557836	web	210.60.168.195	\N
+2941	\\core\\event\\calendar_event_deleted	core	deleted	calendar_event	event	34	d	0	2	50	1	2	1	\N	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";s:10:"1470524400";s:4:"name";s:7:"Week 26";}	1470557851	web	210.60.168.195	\N
+2942	\\core\\event\\calendar_event_deleted	core	deleted	calendar_event	event	35	d	0	2	50	1	2	1	\N	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";s:10:"1470524400";s:4:"name";s:7:"Week 27";}	1470557865	web	210.60.168.195	\N
+2943	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470570455	web	210.60.168.195	\N
+2944	\\core\\event\\user_loggedin	core	loggedin	user	user	2	r	0	1	10	0	2	0	\N	0	a:1:{s:8:"username";s:5:"admin";}	1470570474	web	210.60.168.195	\N
+2945	\\core\\event\\calendar_event_created	core	created	calendar_event	event	37	c	0	2	50	1	2	1	\N	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1471175100;s:4:"name";s:7:"Week 26";}	1470570576	web	210.60.168.195	\N
+2946	\\core\\event\\calendar_event_created	core	created	calendar_event	event	38	c	0	2	50	1	2	1	\N	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1471734000;s:4:"name";s:7:"Week 27";}	1470570640	web	210.60.168.195	\N
+2947	\\core\\event\\calendar_event_created	core	created	calendar_event	event	39	c	0	2	50	1	2	1	\N	0	a:3:{s:8:"repeatid";i:0;s:9:"timestart";i:1472338800;s:4:"name";s:7:"Week 28";}	1470570709	web	210.60.168.195	\N
+2948	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470570764	web	210.60.169.35	\N
+2949	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470570782	web	210.60.169.35	\N
+2950	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470570796	web	210.60.169.35	\N
+2951	\\core\\event\\user_loggedin	core	loggedin	user	user	3	r	0	1	10	0	3	0	\N	0	a:1:{s:8:"username";s:6:"drbean";}	1470571335	web	210.60.169.35	\N
+2952	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	45	50	3	3	3	\N	0	N;	1470571338	web	210.60.169.35	\N
+2953	\\core\\event\\user_loggedout	core	loggedout	user	user	3	r	0	1	10	0	3	0	\N	0	a:1:{s:9:"sessionid";s:26:"f58fel1sdjmp1gf2laahg1iee3";}	1470571513	web	210.60.169.35	\N
+2954	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470571514	web	210.60.169.35	\N
+2955	\\core\\event\\user_loggedin	core	loggedin	user	user	3	r	0	1	10	0	3	0	\N	0	a:1:{s:8:"username";s:6:"drbean";}	1470571529	web	210.60.169.35	\N
+2956	\\core\\event\\user_loggedout	core	loggedout	user	user	2	r	0	1	10	0	2	0	\N	0	a:1:{s:9:"sessionid";s:26:"obkhcs9e45ot7c7bum0m9mde94";}	1470571573	web	210.60.168.195	\N
+2957	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470571575	web	210.60.168.195	\N
+2958	\\core\\event\\user_loggedin	core	loggedin	user	user	2	r	0	1	10	0	2	0	\N	0	a:1:{s:8:"username";s:5:"admin";}	1470571589	web	210.60.168.195	\N
+2959	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	2	50	1	0	1	\N	0	N;	1470622452	web	210.60.168.195	\N
 \.
 
 
@@ -28792,7 +29742,7 @@ COPY mdl_logstore_standard_log (id, eventname, component, action, target, object
 -- Name: mdl_logstore_standard_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: apache
 --
 
-SELECT pg_catalog.setval('mdl_logstore_standard_log_id_seq', 2017, true);
+SELECT pg_catalog.setval('mdl_logstore_standard_log_id_seq', 2959, true);
 
 
 --
@@ -29361,11 +30311,11 @@ COPY mdl_modules (id, name, cron, lastcron, search, visible) FROM stdin;
 19	survey	0	0		1
 20	url	0	0		1
 21	wiki	0	0		1
-4	chat	300	1469776922		1
-18	scorm	300	1469776922		1
-1	assign	60	1469776922		1
-16	quiz	60	1469776922		1
-22	workshop	60	1469776922		1
+4	chat	300	1470626287		1
+18	scorm	300	1470626287		1
+1	assign	60	1470626582		1
+16	quiz	60	1470626582		1
+22	workshop	60	1470626582		1
 \.
 
 
@@ -32122,39 +33072,7 @@ SELECT pg_catalog.setval('mdl_scorm_seq_ruleconds_id_seq', 1, false);
 --
 
 COPY mdl_sessions (id, state, sid, userid, sessdata, timecreated, timemodified, firstip, lastip) FROM stdin;
-5701	0	h83fgl4nu9ca54h3q6fekep060	0	\N	1469766302	1469770090	66.249.71.177	66.249.71.183
-5832	0	5jisqbs3f4civcqn5et3ujvj32	0	\N	1469775999	1469776031	66.249.71.183	66.249.71.183
-5754	0	fn9kb2gbvhctjijf8rnlts49t2	0	\N	1469770093	1469770109	66.249.71.183	66.249.71.183
-5796	0	vr8vbjsjeetr8cmp6ctgg8lej7	0	\N	1469773273	1469773281	66.249.71.189	66.249.71.183
-5755	0	j9qfgs1a597hm16fo89h42g601	0	\N	1469770320	1469770335	66.249.79.156	66.249.71.177
-5836	0	c7ijfd3vioes0cl0q0ea2urni3	0	\N	1469776226	1469776379	66.249.71.177	66.249.71.189
-5756	0	o7jm230jpffi90bsojujiu7vt1	0	\N	1469770547	1469770565	66.249.71.189	66.249.79.160
-5837	0	h7ndrl0jifp0noka7vjbmt0p36	0	\N	1469776471	1469776537	66.249.71.177	66.249.71.183
-5801	0	cik5r31rqq0dc5g58l4l6k67q3	0	\N	1469773538	1469773546	66.249.71.183	66.249.79.156
-5840	0	ltrfavpa6cqjtmtn2nuho14sa3	0	\N	1469776768	1469776865	66.249.71.177	66.249.71.189
-5803	0	0t9ksumo55se0hsku9guki9fv7	0	\N	1469773800	1469773810	66.249.71.183	66.249.79.156
-5759	0	kum233932ce825cvfve70peiq1	0	\N	1469770774	1469770860	66.249.71.189	66.249.71.189
-5841	0	ekpsgraqsbfhc2rio0nabbu877	0	\N	1469776908	1469776908	66.249.79.156	66.249.79.156
-5762	0	qul9v7tnvfrijud0nq4kvt8p12	0	\N	1469771001	1469771021	66.249.71.177	66.249.71.177
-5804	0	5kpi18m9kml72105usf0qjou83	0	\N	1469773963	1469774151	66.249.71.189	66.249.71.177
-5764	0	c0qb3b92q59un6cj3tfnignho6	0	\N	1469771228	1469771244	66.249.71.183	66.249.71.177
-5808	0	4k0n7frvhuhlapeuk4usbgjap3	0	\N	1469774182	1469774282	66.249.71.189	66.249.71.177
-5767	0	smjtq86eeo84vc3v93nan29m01	0	\N	1469771455	1469771475	66.249.71.177	66.249.71.183
-5811	0	1phojja6deqri1l45d0rum8p81	0	\N	1469774413	1469774527	66.249.71.183	66.249.71.177
-5702	0	1jad7d20sfhp3tna34dqh057h1	0	\N	1469766303	1469771654	66.249.79.160	66.249.79.164
-5769	0	c1e0ckrnjcg03dm9fu73rti8s6	0	\N	1469771713	1469771737	66.249.79.160	66.249.71.183
-5773	0	rs1nlk2g7nvguh49u317gnk4j2	0	\N	1469772009	1469772021	66.249.79.160	66.249.71.177
-5777	0	fm5sq2mlk38forgaj4e8p7q3i2	0	\N	1469772137	1469772194	66.249.79.156	66.249.71.177
-5822	0	jkvg7frtq7rp4di7m80s15ei20	0	\N	1469775133	1469775219	66.249.79.164	66.249.71.177
-5707	0	lhatdfc7pv8ifjtcevvev9em25	0	\N	1469766880	1469772249	66.249.71.183	66.249.71.183
-5779	0	an29p52eo88omf5g09bautp4e0	0	\N	1469772392	1469772397	66.249.71.177	66.249.64.50
-5825	0	4e2rh160l1bqe422shbc65gpj4	0	\N	1469775433	1469775519	66.249.71.183	66.249.71.177
-5782	0	i3ro3n05n1hbrs809jp7jr2uc3	0	\N	1469772635	1469772656	66.249.71.189	66.249.71.177
-5828	0	6to67rlr7t754us9jnvoeblcf6	0	\N	1469775545	1469775780	66.249.79.160	66.249.71.189
-5831	0	dnr7fqht9vq1igakuf1g0ejjr0	0	\N	1469775772	1469775798	66.249.71.177	66.249.71.177
-5787	0	v5knfe8ckk631sjob3givd26o6	0	\N	1469772878	1469772914	66.249.71.177	66.249.71.177
-5791	0	hgfenrh1983nt6kvr9me8mhek6	0	\N	1469773046	1469773055	66.249.79.164	66.249.71.183
-5751	0	7kqtaopelvoevk4h8neog0rfn7	0	\N	1469769866	1469769948	66.249.71.177	66.249.71.177
+10125	0	r7v00iel0ahjndglvknv2pt3v3	0	\N	1470622451	1470622608	210.60.168.195	210.60.168.195
 \.
 
 
@@ -32162,7 +33080,7 @@ COPY mdl_sessions (id, state, sid, userid, sessdata, timecreated, timemodified, 
 -- Name: mdl_sessions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: apache
 --
 
-SELECT pg_catalog.setval('mdl_sessions_id_seq', 5841, true);
+SELECT pg_catalog.setval('mdl_sessions_id_seq', 10125, true);
 
 
 --
@@ -32502,53 +33420,53 @@ COPY mdl_task_scheduled (id, component, classname, lastruntime, nextruntime, blo
 40	enrol_lti	\\enrol_lti\\task\\sync_grades	0	1467883800	0	*/30	*	*	*	*	0	0	0
 41	enrol_lti	\\enrol_lti\\task\\sync_members	0	1467883800	0	*/30	*	*	*	*	0	0	0
 51	logstore_legacy	\\logstore_legacy\\task\\cleanup_task	0	1467951540	0	19	5	*	*	*	0	0	0
-24	moodle	\\core\\task\\cache_cron_task	1469775001	1469778600	0	50	*	*	*	*	0	0	0
-52	logstore_standard	\\logstore_standard\\task\\cleanup_task	1469761381	1469847780	0	3	4	*	*	*	0	0	0
-50	assignfeedback_editpdf	\\assignfeedback_editpdf\\task\\convert_submissions	1469776501	1469777400	0	*/15	*	*	*	*	0	0	0
-1	moodle	\\core\\task\\session_cleanup_task	1469776921	1469776980	0	*	*	*	*	*	0	0	0
-22	moodle	\\core\\task\\registration_cron_task	1469715601	1470320400	0	20	15	*	*	4	0	0	0
-14	moodle	\\core\\task\\events_cron_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-30	moodle	\\core\\task\\search_optimize_task	1469747701	1469790900	0	15	*/12	*	*	*	0	0	0
-21	moodle	\\core\\task\\question_cron_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-25	moodle	\\core\\task\\automated_backup_task	1469775001	1469778600	0	50	*	*	*	*	0	0	0
-6	moodle	\\core\\task\\context_cleanup_task	1469773501	1469777100	0	25	*	*	*	*	0	0	0
-15	moodle	\\core\\task\\completion_regular_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-53	tool_monitor	\\tool_monitor\\task\\check_subscriptions	1469707621	1469794020	0	7	13	*	*	*	0	0	0
-23	moodle	\\core\\task\\check_for_updates_task	1469775609	1469782800	0	0	*/2	*	*	*	0	0	0
-8	moodle	\\core\\task\\messaging_cleanup_task	1469774101	1469777700	0	35	*	*	*	*	0	0	0
-11	moodle	\\core\\task\\create_contexts_task	1469746801	1469833200	1	0	0	*	*	*	0	0	0
-32	moodle	\\core\\task\\password_reset_cleanup_task	1469768401	1469790000	0	0	*/6	*	*	*	0	0	0
-9	moodle	\\core\\task\\send_new_user_passwords_task	1469776921	1469776980	0	*	*	*	*	*	0	0	0
-10	moodle	\\core\\task\\send_failed_login_notifications_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-16	moodle	\\core\\task\\completion_daily_task	1469726042	1469812440	0	14	18	*	*	*	0	0	0
-12	moodle	\\core\\task\\legacy_plugin_cron_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-4	moodle	\\core\\task\\backup_cleanup_task	1469776201	1469779800	0	10	*	*	*	*	0	0	0
-17	moodle	\\core\\task\\portfolio_cron_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-27	moodle	\\core\\task\\file_temp_cleanup_task	1469771701	1469793300	0	55	*/6	*	*	*	0	0	0
-46	tool_messageinbound	\\tool_messageinbound\\task\\cleanup_task	1469753701	1469840100	0	55	1	*	*	*	0	0	0
-28	moodle	\\core\\task\\file_trash_cleanup_task	1469771701	1469793300	0	55	*/6	*	*	*	0	0	0
-34	moodle	\\core\\task\\sync_plans_from_template_cohorts_task	1469776862	1469780460	0	21	*	*	*	*	0	0	0
-18	moodle	\\core\\task\\plagiarism_cron_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-35	mod_forum	\\mod_forum\\task\\cron_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-19	moodle	\\core\\task\\calendar_cron_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
+9	moodle	\\core\\task\\send_new_user_passwords_task	1470626582	1470626640	0	*	*	*	*	*	0	0	0
+24	moodle	\\core\\task\\cache_cron_task	1470624601	1470628200	0	50	*	*	*	*	0	0	0
+26	moodle	\\core\\task\\badges_cron_task	1470626401	1470626700	0	*/5	*	*	*	*	0	0	0
+29	moodle	\\core\\task\\search_index_task	1470625202	1470627000	0	*/30	*	*	*	*	0	0	0
+52	logstore_standard	\\logstore_standard\\task\\cleanup_task	1470625382	1470711780	0	3	4	*	*	*	0	0	0
+45	tool_messageinbound	\\tool_messageinbound\\task\\pickup_task	1470626583	1470626640	0	*	*	*	*	*	0	0	0
+22	moodle	\\core\\task\\registration_cron_task	1470320401	1470925200	0	20	15	*	*	4	0	0	0
+17	moodle	\\core\\task\\portfolio_cron_task	1470626583	1470626640	0	*	*	*	*	*	0	0	0
+25	moodle	\\core\\task\\automated_backup_task	1470624601	1470628200	0	50	*	*	*	*	0	0	0
+6	moodle	\\core\\task\\context_cleanup_task	1470623101	1470626700	0	25	*	*	*	*	0	0	0
+47	tool_monitor	\\tool_monitor\\task\\clean_events	1470626583	1470626640	0	*	*	*	*	*	0	0	0
+10	moodle	\\core\\task\\send_failed_login_notifications_task	1470626582	1470626640	0	*	*	*	*	*	0	0	0
+53	tool_monitor	\\tool_monitor\\task\\check_subscriptions	1470571622	1470658020	0	7	13	*	*	*	0	0	0
+5	moodle	\\core\\task\\tag_cron_task	1470622505	1470708360	0	6	3	*	*	*	0	0	0
+16	moodle	\\core\\task\\completion_daily_task	1470622504	1470676440	0	14	18	*	*	*	0	0	0
+8	moodle	\\core\\task\\messaging_cleanup_task	1470623701	1470627300	0	35	*	*	*	*	0	0	0
+2	moodle	\\core\\task\\delete_unconfirmed_users_task	1470625202	1470628800	0	0	*	*	*	*	0	0	0
+12	moodle	\\core\\task\\legacy_plugin_cron_task	1470626582	1470626640	0	*	*	*	*	*	0	0	0
+48	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_course_bin	1470625202	1470627000	0	*/30	*	*	*	*	0	0	0
+32	moodle	\\core\\task\\password_reset_cleanup_task	1470622505	1470632400	0	0	*/6	*	*	*	0	0	0
+50	assignfeedback_editpdf	\\assignfeedback_editpdf\\task\\convert_submissions	1470626101	1470627000	0	*/15	*	*	*	*	0	0	0
+13	moodle	\\core\\task\\grade_cron_task	1470626582	1470626640	0	*	*	*	*	*	0	0	0
+44	tool_langimport	\\tool_langimport\\task\\update_langpacks_task	1470625805	1470712200	0	10	4	*	*	*	0	0	0
+30	moodle	\\core\\task\\search_optimize_task	1470622505	1470654900	0	15	*/12	*	*	*	0	0	0
+18	moodle	\\core\\task\\plagiarism_cron_task	1470626583	1470626640	0	*	*	*	*	*	0	0	0
+49	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_category_bin	1470625202	1470627000	0	*/30	*	*	*	*	0	0	0
+4	moodle	\\core\\task\\backup_cleanup_task	1470625805	1470629400	0	10	*	*	*	*	0	0	0
+23	moodle	\\core\\task\\check_for_updates_task	1470625202	1470632400	0	0	*/2	*	*	*	0	0	0
+19	moodle	\\core\\task\\calendar_cron_task	1470626583	1470626640	0	*	*	*	*	*	0	0	0
+31	moodle	\\core\\task\\stats_cron_task	1470625202	1470628800	0	0	*	*	*	*	0	0	0
 39	enrol_imsenterprise	\\enrol_imsenterprise\\task\\cron_task	0	1469157000	0	10	*	*	*	*	0	0	0
-44	tool_langimport	\\tool_langimport\\task\\update_langpacks_task	1469761804	1469848200	0	10	4	*	*	*	0	0	0
-29	moodle	\\core\\task\\search_index_task	1469775609	1469777400	0	*/30	*	*	*	*	0	0	0
-48	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_course_bin	1469775609	1469777400	0	*/30	*	*	*	*	0	0	0
-49	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_category_bin	1469775609	1469777400	0	*/30	*	*	*	*	0	0	0
-2	moodle	\\core\\task\\delete_unconfirmed_users_task	1469775609	1469779200	0	0	*	*	*	*	0	0	0
-26	moodle	\\core\\task\\badges_cron_task	1469776802	1469777100	0	*/5	*	*	*	*	0	0	0
-45	tool_messageinbound	\\tool_messageinbound\\task\\pickup_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-5	moodle	\\core\\task\\tag_cron_task	1469757961	1469844360	0	6	3	*	*	*	0	0	0
-43	tool_cohortroles	\\tool_cohortroles\\task\\cohort_role_sync	1469776921	1469780520	0	22	*	*	*	*	0	0	0
-31	moodle	\\core\\task\\stats_cron_task	1469775609	1469779200	0	0	*	*	*	*	0	0	0
-7	moodle	\\core\\task\\cache_cleanup_task	1469773801	1469777400	0	30	*	*	*	*	0	0	0
-3	moodle	\\core\\task\\delete_incomplete_users_task	1469775902	1469779500	0	5	*	*	*	*	0	0	0
-13	moodle	\\core\\task\\grade_cron_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-47	tool_monitor	\\tool_monitor\\task\\clean_events	1469776922	1469776980	0	*	*	*	*	*	0	0	0
-33	moodle	\\core\\task\\complete_plans_task	1469775842	1469779440	0	4	*	*	*	*	0	0	0
-42	editor_atto	\\editor_atto\\task\\autosave_cleanup_task	1469739962	1470344760	0	6	22	*	*	4	0	0	0
-20	moodle	\\core\\task\\blog_cron_task	1469776922	1469776980	0	*	*	*	*	*	0	0	0
+11	moodle	\\core\\task\\create_contexts_task	1470622504	1470697200	1	0	0	*	*	*	0	0	0
+14	moodle	\\core\\task\\events_cron_task	1470626582	1470626640	0	*	*	*	*	*	0	0	0
+46	tool_messageinbound	\\tool_messageinbound\\task\\cleanup_task	1470622504	1470704100	0	55	1	*	*	*	0	0	0
+7	moodle	\\core\\task\\cache_cleanup_task	1470623401	1470627000	0	30	*	*	*	*	0	0	0
+27	moodle	\\core\\task\\file_temp_cleanup_task	1470622505	1470635700	0	55	*/6	*	*	*	0	0	0
+43	tool_cohortroles	\\tool_cohortroles\\task\\cohort_role_sync	1470626522	1470630120	0	22	*	*	*	*	0	0	0
+20	moodle	\\core\\task\\blog_cron_task	1470626583	1470626640	0	*	*	*	*	*	0	0	0
+21	moodle	\\core\\task\\question_cron_task	1470626583	1470626640	0	*	*	*	*	*	0	0	0
+1	moodle	\\core\\task\\session_cleanup_task	1470626582	1470626640	0	*	*	*	*	*	0	0	0
+28	moodle	\\core\\task\\file_trash_cleanup_task	1470622505	1470635700	0	55	*/6	*	*	*	0	0	0
+3	moodle	\\core\\task\\delete_incomplete_users_task	1470625501	1470629100	0	5	*	*	*	*	0	0	0
+35	mod_forum	\\mod_forum\\task\\cron_task	1470626583	1470626640	0	*	*	*	*	*	0	0	0
+15	moodle	\\core\\task\\completion_regular_task	1470626583	1470626640	0	*	*	*	*	*	0	0	0
+42	editor_atto	\\editor_atto\\task\\autosave_cleanup_task	1470344761	1470949560	0	6	22	*	*	4	0	0	0
+33	moodle	\\core\\task\\complete_plans_task	1470625441	1470629040	0	4	*	*	*	*	0	0	0
+34	moodle	\\core\\task\\sync_plans_from_template_cohorts_task	1470626462	1470630060	0	21	*	*	*	*	0	0	0
 \.
 
 
@@ -33915,8 +34833,8 @@ SELECT pg_catalog.setval('mdl_url_id_seq', 1, false);
 
 COPY mdl_user (id, auth, confirmed, policyagreed, deleted, suspended, mnethostid, username, password, idnumber, firstname, lastname, email, emailstop, icq, skype, yahoo, aim, msn, phone1, phone2, institution, department, address, city, country, lang, calendartype, theme, timezone, firstaccess, lastaccess, lastlogin, currentlogin, lastip, secret, picture, url, description, descriptionformat, mailformat, maildigest, maildisplay, autosubscribe, trackforums, timecreated, timemodified, trustbitmask, imagealt, lastnamephonetic, firstnamephonetic, middlename, alternatename) FROM stdin;
 1	manual	1	0	0	0	1	guest	$2y$10$a4oUhuzDO.1G.TxZ4LneQe8i9nAbnEw3696E5qc7vq6TYVnMEmGWi		Guest user	 	root@localhost	0													en	gregorian		99	0	0	0	0			0		This user is a special user that allows read-only access to some courses.	1	1	0	2	1	0	0	1467882587	0	\N	\N	\N	\N	\N
+3	manual	1	0	0	0	1	drbean	$2y$10$r2bRssveHJ/nItymxq7Iweuyqp68/eWah92qpVXMa0E8HbFbytSwK		Dr	Bean	drbean@freeshell.org	0													en	gregorian		99	1468139944	1470571529	1470571335	1470571529	210.60.169.35		59			1	1	0	0	1	0	1468134812	1468739549	0	professorial 				
 4	manual	1	0	0	0	1	hfcheng	$2y$10$j6hO7JT8BISLWdRQtmULAe9sMV0FCRL.L.nWn1ei8VRZ8ZCI9GJh.		Tracy	Cheng	hfcheng@nuu.edu.tw	0												TW	en	gregorian		Asia/Taipei	0	0	0	0			0			1	1	0	2	1	0	1468288758	1468288758	0					
-3	manual	1	0	0	0	1	drbean	$2y$10$r2bRssveHJ/nItymxq7Iweuyqp68/eWah92qpVXMa0E8HbFbytSwK		Dr	Bean	drbean@freeshell.org	0													en	gregorian		99	1468139944	1468890308	1468833033	1468889574	210.60.168.195		59			1	1	0	0	1	0	1468134812	1468739549	0	professorial 				
 5	manual	1	0	0	0	1	u0331101	$2y$04$Fpx176ZT5K7XRLUnlQ/Mp.Ah/oEo9wcanFYOxyMPpx1Fj351EVjLm		威杰	黃	u0331101@smail.nuu.edu.tw	0													en	gregorian		99	0	0	0	0			0			1	1	0	2	1	0	1469072362	1469072362	0	\N	\N	\N	\N	\N
 6	manual	1	0	0	0	1	u0331105	$2y$04$v9/UwEgK8sRi/QkPiDLJ1.edMsiQ9Y3pQmdBR04yxCupDhdJ75oIy		傑	鄭	u0331105@smail.nuu.edu.tw	0													en	gregorian		99	0	0	0	0			0			1	1	0	2	1	0	1469072363	1469072363	0	\N	\N	\N	\N	\N
 7	manual	1	0	0	0	1	u0331106	$2y$04$igMKp5jJdfQF0W1i.POSSu8ertjKK1yjoMGBGhmjyv7Nm02eET0FK		思樺	余	u0331106@smail.nuu.edu.tw	0													en	gregorian		99	0	0	0	0			0			1	1	0	2	1	0	1469072363	1469072363	0	\N	\N	\N	\N	\N
@@ -34028,7 +34946,7 @@ COPY mdl_user (id, auth, confirmed, policyagreed, deleted, suspended, mnethostid
 113	manual	1	0	0	0	1	v0241064	$2y$04$0rIhazbqbjhtWg.K87vztucEZpU8wI4myotQgRV7lyuJJLPQ7GcOa		黃俊豪	黃俊豪	v0241064@smail.nuu.edu.tw	0													en	gregorian		99	0	0	0	0			0			1	1	0	2	1	0	1469159518	1469159518	0	\N	\N	\N	\N	\N
 114	manual	1	0	0	0	1	v0241066	$2y$04$F47Ztp7c1y6jzlMzGFtVqe7IHgLaCPKE0qDNqOOY/oLpXK2qlId.a		Tina	郭姿婷	v0241066@smail.nuu.edu.tw	0													en	gregorian		99	0	0	0	0			0			1	1	0	2	1	0	1469159518	1469159518	0	\N	\N	\N	\N	\N
 115	manual	1	0	0	0	1	v0241067	$2y$04$AzvYdD67dZ7qrSRU/MrxUu9dudyMXPxfpradM3jIRQTFZQd55/rg2		Jason	劉威昇	v0241067@smail.nuu.edu.tw	0													en	gregorian		99	0	0	0	0			0			1	1	0	2	1	0	1469159518	1469159518	0	\N	\N	\N	\N	\N
-2	manual	1	0	0	0	1	admin	$2y$10$u7Goy7LB1VFE81XGsSEtLeRjOGGp2odZgla7ztVagwbq2vTgmiTPy		Admin	User	drbean@sac.nuu.edu.tw	0													en	gregorian		99	1467882835	1469594210	1469310800	1469586134	61.197.61.68		0			1	0	0	0	1	0	0	1468134750	0					
+2	manual	1	0	0	0	1	admin	$2y$10$u7Goy7LB1VFE81XGsSEtLeRjOGGp2odZgla7ztVagwbq2vTgmiTPy		Admin	User	drbean@sac.nuu.edu.tw	0													en	gregorian		99	1467882835	1470571589	1470570474	1470571589	210.60.168.195		0			1	0	0	0	1	0	0	1468134750	0					
 \.
 
 
@@ -34218,8 +35136,8 @@ COPY mdl_user_lastaccess (id, userid, courseid, timeaccess) FROM stdin;
 1	3	2	1468890049
 2	2	2	1469157473
 5	2	4	1469159183
-3	2	3	1469311190
-4	3	3	1468649439
+3	2	3	1469782962
+4	3	3	1470571336
 \.
 
 

@@ -4,7 +4,7 @@ Description=Scrape IP address, update DNS record
 [Service]
 Type=oneshot
 Nice=19
-ExecStart=/home/drbean/dot/git/ntt_scrape/script/ntt_scrape adsl -u user -p momoyuhi -r 'http://ntt.setup/cgi-bin/main.cgi?mbg_webname=status' -d ADSL\\x{A0}IP -i http://ipv4.mydns.jp/directip.html -m mydns997075 -w 2wh4jDBCPjd
+ExecStart=/home/drbean/dot/git/ntt_scrape/script/ntt_scrape adsl -u user -p momoyuhi -r 'http://ntt.setup/cgi-bin/main.cgi?mbg_webname=status' -d $' ADSL\xA0IP' -i http://ipv4.mydns.jp/directip.html -m mydns997075 -w 2wh4jDBCPjd
 
 [Install]
 WantedBy=multi-user.target

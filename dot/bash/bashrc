@@ -40,8 +40,7 @@ function edit () {
 }
 
 function moodle () {
-    sudo su - moodle
-    screen -c /home/$USER/dot/screen/moodle.rc -dR moodle
+    sudo -u  moodle screen -c /home/$USER/dot/screen/moodle.rc -dR moodle
 }
 
 function aca () {

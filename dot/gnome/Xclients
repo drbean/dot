@@ -23,6 +23,7 @@ if [ -f /etc/sysconfig/desktop ]; then
 	PREFERRED="$GSESSION"
     elif [ "$DESKTOP" = "MATE" ]; then
 	PREFERRED="$MSESSION"
+#greg
     elif [ "$DESKTOP" = "XMONAD-MATE" ]; then
 	PREFERRED="$XMSESSION"
 	ARG="mate-session"
@@ -34,14 +35,13 @@ if [ -f /etc/sysconfig/desktop ]; then
 fi
 
 if [ -n "$PREFERRED" ]; then
+#greg
     exec "$PREFERRED" "$ARG"
     # exec "xmonad-start" "mate-session"
 fi
 
 # now if we can reach here, either no desktop file was present,
 # or the desktop requested is not installed.
-
-#greg
 
 if [ -n "$GSESSION" ]; then
     # by default, we run GNOME.

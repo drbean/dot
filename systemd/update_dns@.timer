@@ -2,7 +2,7 @@
 Description=Scrape IP address, update DNS record on boot
 
 [Timer]
-OnBootSec=100
+OnCalendar=00/6:00
 Unit=update_dns@%i.service
 
 [Install]

@@ -325,7 +325,7 @@ fu! Populate(module)
 	call setpos("'" . mark, [0, (ab_eng_lnum+1), 1, 0])
 
 	execute "buffer" word_buf
-	call setpos('.', [ 0, (line+2), 1, 0] )
+	call setpos('.', [ 0, (line+1), 1, 0] )
 
 endf
 

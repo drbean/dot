@@ -236,7 +236,7 @@ fu! Populate(module)
 		let n_category = get( {' ': 'N', 'p': 'PN', '2': 'N2', 'c': 'CN', 'l': 'PlaceNoun' }, n_key )
 		if n_category == "N2"
 			call inputsave()
-			let arg = input("Word: " . word . ", Prep: eg, in_prep, of_prep, part_prep: ", "of_prep")
+			let arg = input("Word: " . word . ", Prep: eg, in_PREP, of_PREP, part_prep: ", "of_PREP")
 			call inputrestore()
 		else
 		endif
@@ -248,7 +248,7 @@ fu! Populate(module)
 		let v_category = get( {' ': 'V', 'p': 'Particle', '2': 'V2', '3': 'V3', 'v': 'VV', 'j': 'V2V', 's': 'VS', 't': 'V2S', 'a': 'VA' }, v_key )
 		if v_category == "V2"
 			call inputsave()
-			let arg = input("Word: " . word . ", Prep: eg, in_prep, for, noPrep: ", "noPrep")
+			let arg = input("Word: " . word . ", Prep: eg, in_PREP, for, noPrep: ", "noPrep")
 			call inputrestore()
 		elseif v_category == "V3"
 			call inputsave()

@@ -1,5 +1,10 @@
 screen 9
 stuff "man bash"
+screen 5
+stuff "cd /etc^M"
+stuff "# su -^M"
+stuff "chmod 700 -R .^M"
+stuff "git status^M"
 screen 4
 stuff "# ln dot/systemd/desktop_background@.service ~/.config/systemd/user/^M"
 stuff "# ln dot/systemd/desktop_background@.timer ~/.config/systemd/user/^M"

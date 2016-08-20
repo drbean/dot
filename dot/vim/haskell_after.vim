@@ -243,7 +243,7 @@ fu! Populate(module)
 		let category = n_category
 	elseif key_category == 'V'
 		call inputsave()
-		let v_key = input("Word: " . word . ", Cat: 'V( )', '(P)articiple','V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)' ")
+		let v_key = input("Word: " . word . ", Cat: 'V( )', '(P)article','V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)' ")
 		call inputrestore()
 		let v_category = get( {' ': 'V', 'p': 'Particle', '2': 'V2', '3': 'V3', 'v': 'VV', 'j': 'V2V', 's': 'VS', 't': 'V2S', 'a': 'VA' }, v_key )
 		if v_category == "V2"

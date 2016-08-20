@@ -35,7 +35,7 @@ main = do
 		}
 	where
 		myKeys (XConfig {modMask = modm}) = M.fromList $
-			[ ((modm, xK_f), spawn "firefox -P default")
+			[ ((modm, xK_x), spawn "firefox -P default")
 			, ((modm, xK_o), spawn "libreoffice --writer")
 			]
 

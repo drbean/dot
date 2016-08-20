@@ -4,7 +4,7 @@ stuff "git status^M"
 screen 2
 stuff "cd /var/www/cgi-bin/moodle^M"
 screen 3
-stuff "ls -lZ"
+stuff "cd /var/lib/moodle^M"
 screen 4
 stuff "sudo su - postgres^M"
 screen 8

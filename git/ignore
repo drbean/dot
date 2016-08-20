@@ -8,3 +8,6 @@ Interpretation.hs
 Evaluation.hs
 LogicalForm.hs
 Translate.hs
+gf_tags
+haskell_tags
+tags

@@ -1,10 +1,11 @@
 [Unit]
 Description=Scrape IP address, update DNS record
+OnFailure=status-email-drbean@%n.service
 
 [Service]
 Type=oneshot
 Nice=19
-ExecStart=/bin/bash -c "/usr/local/bin/ntt_scrape adsl -u user -p momoyuhihi -r 'http://momo.mydns.jp/cgi-bin/main.cgi?mbg_webname=status' -d $' ADSL\xA0IP' -i http://ipv4.mydns.jp/directip.html -m mydns997075 -w 2wh4jDBCPjd"
+ExecStart=/bin/bash -c "/usr/local/bin/ntt_scrape adsl -u user -p password -r 'http://momo.mydns.jp/cgi-bin/main.cgi?mbg_webname=status' -d $' ADSL\xA0IP' -i http://ipv4.mydns.jp/directip.html -m mydns997075 -w 2wh4jDBCPjd"
 
 [Install]
 WantedBy=multi-user.target

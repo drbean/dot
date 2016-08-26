@@ -34,13 +34,20 @@ unless ( $pic ) {
 	$pic = "f24.xml";
 }
 
+warn "pic: $pic\t";
 my $uid = qx'id -u';
-if ( $ENV{USER} eq 'mai' ) {
-	system("DBUS_SESSION_BUS_ADDRESS=\"unix:path=/run/user/1001/bus\" gsettings set org.gnome.desktop.background picture-uri file://$directory/$pic");
-}
-elsif ( $ENV{USER} eq 'drbean' ) {
-	system("DBUS_SESSION_BUS_ADDRESS='unix:path=/run/user/1000/bus' gsettings set org.mate.background picture-filename $directory/$pic");
-}
-else {
-	warn "$uid: ??";
+my @desktops = ( qw/gnome mate/ );
+my ( %schema, %key, %value );
+@schema{@desktops} = qw/org.gnome.desktop.background org.mate.background/; 
+@key{@desktops} = qw/picture-uri picture-filename/;
+@value{@desktops} = ( "file://$directory/$pic", "$directory/$pic");
+for my $desktop ( qw/gnome mate/ ) {
+	my $pid_list = qx/pgrep -u $ENV{USER} $desktop-session/;
+	my @pids = split "\n", $pid_list;
+	for my $pid (@pids) {
+		warn "desktop: $desktop, pid: $pid, ";
+		my $dbus_session_bus_address = qx(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$pid/environ | cut -d= -f2-);
+		warn "dbus_session_bus_address: $dbus_session_bus_address\n";
+		system("DBUS_SESSION_BUS_ADDRESS=$dbus_session_bus_address gsettings set $schema{$desktop} $key{$desktop} $value{$desktop}");
+	}
 }

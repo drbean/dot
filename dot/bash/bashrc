@@ -713,7 +713,6 @@ function w () {
     local arg league session week letter topic tables
     case $1 in
 	BMA0045) league=$1;;
-	BMA0009) league=$1;;
 	MIA0009) league=$1;;
 	FLA0003) league=$1;;
 	FLA0015) league=$1;;

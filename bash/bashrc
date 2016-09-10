@@ -518,7 +518,7 @@ function gr () {
         esac
     done
     if [[ -z "$n" ]]
-	then n=3
+	then n=2
     fi
     cd ~/$SEMESTER/$league
     LEAGUE=$league \

@@ -210,6 +210,7 @@ function sound () {
 }
 
 alias class="cd ~/class; screen -c /home/$USER/dot/screen/utility.rc -dR class; cd -"
+alias $SEMESTER="cd ~/$SEMESTER; screen -c /home/$USER/dot/screen/utility.rc -dR s$SEMESTER; cd -"
 alias forms="cd ~/class/forms; screen -dR forms; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/$USER/dot/screen/utility.rc -dR tmpl; cd -"
 alias rc="cd ~/$SEMESTER/rc; screen -c /home/$USER/dot/screen/utility.rc -dR rc; cd -"
@@ -576,8 +577,6 @@ alias friends="cd ~/class/friends; screen -dR friends; cd -"
 alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
 alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
 alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
-
-alias $SEMESTER="cd ~/$SEMESTER; screen -dR s$SEMESTER; cd -"
 
 function session () {
     local league week

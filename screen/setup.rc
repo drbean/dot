@@ -1,4 +1,5 @@
 screen 1
+stuff "# svn rm http://svn.openfoundry.org/class/$LEAGUE -m make_way_for_$SEMESTER$LEAGUE^M"
 stuff "# svn mkdir http://svn.openfoundry.org/class/$LEAGUE -m $SEMESTER$LEAGUE      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭^M"
 stuff "# cd ~/$SEMESTER/^M"
 stuff "# svn co http://svn.openfoundry.org/class/$LEAGUE^M"

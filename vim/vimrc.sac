@@ -1,4 +1,4 @@
-" Last Edit: 2016 Sep 03, 03:50:50 PM
+" Last Edit: 2016 Sep 12, 08:01:40 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -586,8 +586,8 @@ au!
 "eyy'ai## ee. . .''18yy''PjjOma''19k
 
 " pandoc link list
-au BufEnter slides.txt nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
-au BufEnter slides.txt ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
+au BufEnter slides.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
+au BufEnter slides.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
 
 function! WikipediaLink()
 	let words = getreg("0")
@@ -597,7 +597,7 @@ function! WikipediaLink()
 	let string = "http://en.wikipedia.org/wiki/" . search
 	call setline(".", string)
 endfunction
-au BufEnter slides.txt no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
+au BufEnter slides.md no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
 au BufEnter content.yaml no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
 
 function! GoogleLink()
@@ -608,8 +608,8 @@ function! GoogleLink()
 	let string = "http://www.google.com.tw/search?q=%22" . search_quote . "%22&num=100&gws_rd=ssl&tbm=isch&tbo=u&source=univ&sa=X"
 	call setline(".", string)
 endfunction
-au BufEnter slides.txt no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
-au BufEnter slides.txt ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+au BufEnter slides.md no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+au BufEnter slides.md ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 au BufEnter content.yaml no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 
 function! HTMLLink()
@@ -622,7 +622,7 @@ endfunction
 au BufEnter content.yaml no <buffer> <LocalLeader>a <Esc>:call HTMLLink()<CR>A
 au BufEnter content.yaml ino <buffer> <LocalLeader>a <Esc>:call HTMLLink()<CR>A
 
-au BufEnter slides.txt nm <buffer> <LocalLeader>q cW_____()<Esc>'aPO<Esc>ma''$?_____()<Esc>f(\iW
+au BufEnter slides.md nm <buffer> <LocalLeader>q cW_____()<Esc>'aPO<Esc>ma''$?_____()<Esc>f(\iW
 
 augroup END
 

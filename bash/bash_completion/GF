@@ -10,6 +10,7 @@ function _GF () {
 	opts="-c -t -s -o -r -l -x"
 	course="conversation news"
 	topic="volunteer animal people"
+	topic_re="volunteer|animal|people"
 	story="fire zeus kiss"
 	old_story="candidate tip cusp motivating dickson abreu smallwood jackson murder drunk_driving piggott"
 	round="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18"

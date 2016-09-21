@@ -362,7 +362,7 @@ function cnv () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
+	cd ~/class/curriculum/$course
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \

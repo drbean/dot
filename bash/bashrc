@@ -270,7 +270,7 @@ function top () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
+	cd ~/curriculum/$course
 	COURSE=$course \
 	VIEW="topics" \
 	TOPIC=$topic \
@@ -339,7 +339,7 @@ function corr () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
+	cd ~/curriculum/$course
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \
@@ -362,7 +362,7 @@ function cnv () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/curriculum/$course
+	cd ~/curriculum/$course
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \
@@ -454,7 +454,7 @@ function n () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
+	cd ~/curriculum/$course
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \
@@ -506,7 +506,7 @@ function ex () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/class/$course
+    cd ~/curriculum/$course
     COURSE=$course \
     VIEW=${topic:-$course} \
     TOPIC=$topic \
@@ -593,8 +593,8 @@ function new () {
 alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen -c /home/$USER/dot/screen/course.rc -dR intercultural; cd -"
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/$USER/dot/screen/course.rc -dR literature; cd -"
 
-alias grammar="cd ~/class/curriculum/grammar; screen -dR grammar; cd -"
-alias writing="cd ~/class/curriculum/writingreading; screen -dR writing; cd -"
+alias grammar="cd ~/curriculum/grammar; screen -dR grammar; cd -"
+alias writing="cd ~/curriculum/writingreading; screen -dR writing; cd -"
 alias reading="cd ~/class/curriculum/reading; screen -dR reading; cd -"
 alias friends="cd ~/class/friends; screen -dR friends; cd -"
 alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"

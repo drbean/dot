@@ -141,56 +141,56 @@ au!
 fu! Word_mark()
 	let save_cursor = getpos(".\"")
 	let adj_line = search('a = [')
-	call setpos("'a", [0, (adj_line+1), 1, 0])
+	call setpos("'a", [0, (adj_line), 1, 0])
 	let adv_line = search('adv = [')
-	call setpos("'d", [0, (adv_line+1), 1, 0])
+	call setpos("'d", [0, (adv_line), 1, 0])
 	let conj_line = search('conj = [')
-	call setpos("'c", [0, (conj_line+1), 1, 0])
+	call setpos("'c", [0, (conj_line), 1, 0])
 	let subj_line = search('conj = [')
-	call setpos("'s", [0, (subj_line+1), 1, 0])
+	call setpos("'s", [0, (subj_line), 1, 0])
 	let det_line = search('det = [')
-	call setpos("'t", [0, (det_line+1), 1, 0])
+	call setpos("'t", [0, (det_line), 1, 0])
 	call cursor(1,1)
 	let cn_line = search('^n = [', "w")
-	call setpos("'n", [0, (cn_line+1), 1, 0])
+	call setpos("'n", [0, (cn_line), 1, 0])
 	call cursor(1,1)
 	let n_line = search('^n = [', "w")
-	call setpos("'n", [0, (n_line+1), 1, 0])
+	call setpos("'n", [0, (n_line), 1, 0])
 	let pn_line = search('pn = [')
-	call setpos("'p", [0, (pn_line+1), 1, 0])
+	call setpos("'p", [0, (pn_line), 1, 0])
 	let prep_line = search('prep = [')
-	call setpos("'r", [0, (prep_line+1), 1, 0])
+	call setpos("'r", [0, (prep_line), 1, 0])
 	let pron_line = search('pron = [')
-	call setpos("'o", [0, (pron_line+1), 1, 0])
+	call setpos("'o", [0, (pron_line), 1, 0])
 	let v_line = search('^v = [')
-	call setpos("'v", [0, (v_line+1), 1, 0])
+	call setpos("'v", [0, (v_line), 1, 0])
 	call setpos('.', save_cursor)
 endf
 
 fu! Mod_mark()
 	let save_cursor = getpos(".\"")
 	let adj_line = search('-- AP')
-	call setpos("'a", [0, (adj_line+1), 1, 0])
+	call setpos("'a", [0, (adj_line), 1, 0])
 	let adv_line = search('-- Adv')
-	call setpos("'d", [0, (adv_line+1), 1, 0])
+	call setpos("'d", [0, (adv_line), 1, 0])
 	let conj_line = search('-- Conj')
-	call setpos("'c", [0, (conj_line+1), 1, 0])
+	call setpos("'c", [0, (conj_line), 1, 0])
 	let subj_line = search('-- Subj')
-	call setpos("'s", [0, (subj_line+1), 1, 0])
+	call setpos("'s", [0, (subj_line), 1, 0])
 	let det_line = search('-- Det')
-	call setpos("'t", [0, (det_line+1), 1, 0])
+	call setpos("'t", [0, (det_line), 1, 0])
 	let n_line = search('-- N')
-	call setpos("'n", [0, (n_line+1), 1, 0])
+	call setpos("'n", [0, (n_line), 1, 0])
 	let cn_line = search('-- N')
-	call setpos("'n", [0, (cn_line+1), 1, 0])
+	call setpos("'n", [0, (cn_line), 1, 0])
 	let pn_line = search('-- PN')
-	call setpos("'p", [0, (pn_line+1), 1, 0])
+	call setpos("'p", [0, (pn_line), 1, 0])
 	let prep_line = search('-- Prep')
-	call setpos("'r", [0, (prep_line+1), 1, 0])
+	call setpos("'r", [0, (prep_line), 1, 0])
 	let pron_line = search('-- Pron')
-	call setpos("'o", [0, (pron_line+1), 1, 0])
+	call setpos("'o", [0, (pron_line), 1, 0])
 	let v_line = search('-- V')
-	call setpos("'v", [0, (v_line+1), 1, 0])
+	call setpos("'v", [0, (v_line), 1, 0])
 	call setpos('.', save_cursor)
 endf
 
@@ -280,49 +280,47 @@ fu! Populate(module)
 	execute "buffer" ab_gf
 	let ab_lnum = line("'" . mark)
 	if category == "Particle"
-		call append ((ab_lnum), "\t" . down_name . "\t: V;")
+		call append ((ab_lnum+1), "\t" . down_name . "\t: V;")
 	else
-		call append((ab_lnum), "\t" . down_name . "\t: " . category . ";")
+		call append((ab_lnum+1), "\t" . down_name . "\t: " . category . ";")
 	endif
-	call setpos("'" . mark, [0, (ab_lnum+1), 1, 0])
 
 	let ab_eng_gf = bufnr( a:module . "Eng.gf")
 	execute "buffer" ab_eng_gf
 	let ab_eng_lnum = line("'" . mark)
 	if category == "PN"
-		call Populate_pn(ab_eng_lnum, word, down_name, "PN", "N") 
+		call Populate_pn((ab_eng_lnum+1), word, down_name, "PN", "N") 
 	elseif category == "Particle"
-		call Populate_partv(ab_eng_lnum, word, down_name, "V", "V") 
+		call Populate_partv((ab_eng_lnum+1), word, down_name, "V", "V") 
 	elseif category == "AP"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "A", "") 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "A", "") 
 	elseif category == "A2"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "A", "about") 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "A", "about") 
 	elseif category == "CN"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "CN", "N", "") 
 	elseif category == "N2"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "N2", "N",arg) 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "N2", "N",arg) 
 	elseif category == "PlaceNoun"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "CN", "N", "") 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "CN", "N", "") 
 	elseif category == "N"
-		call Populate_cat_args(ab_eng_lnum, word, down_name, category, "nonExist") 
+		call Populate_cat_args((ab_eng_lnum+1), word, down_name, category, "nonExist") 
 	elseif category == "V2"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "V2", "V", arg) 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "V2", "V", arg) 
 	elseif category == "VV"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "VV", "V", arg) 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "VV", "V", arg) 
 	elseif category == "VS"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "VS", "V", arg) 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "VS", "V", arg) 
 	elseif category == "V2S"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "V", arg) 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "V", arg) 
 	elseif category == "V2V"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, category, "V", arg) 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "V", arg) 
 	elseif category == "VA"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "VA", "V", arg) 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "VA", "V", arg) 
 	elseif category == "V3"
-		call Populate_ap_like(ab_eng_lnum, word, down_name, "V3", "V", arg) 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "V3", "V", arg) 
 	else 
-		call append("'" . mark, "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
+		call append((ab_eng_lnum+1), "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif
-	call setpos("'" . mark, [0, (ab_eng_lnum+1), 1, 0])
 
 	execute "buffer" word_buf
 	call setpos('.', [ 0, (line+1), 1, 0] )

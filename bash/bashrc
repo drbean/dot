@@ -454,7 +454,7 @@ function n () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course
+	cd ~/class/$course
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \

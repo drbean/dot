@@ -596,7 +596,7 @@ alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen 
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/$USER/dot/screen/course.rc -dR literature; cd -"
 
 alias grammar="cd ~/curriculum/grammar; screen -dR grammar; cd -"
-alias writing="cd ~/curriculum/writingreading; screen -dR writing; cd -"
+alias writing="cd ~/curriculum/writing; screen -dR writing; cd -"
 alias reading="cd ~/class/curriculum/reading; screen -dR reading; cd -"
 alias friends="cd ~/class/friends; screen -dR friends; cd -"
 alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"

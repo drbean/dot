@@ -16,6 +16,7 @@ stuff "# perl ../ttb/dictation/script/dic ctest -s $STORY -f $(($FORM+1)) -t $TO
 stuff "# perl ../ttb/dictation/script/dic ctest -s $STORY -f $FORM -t $TOPIC && xelatex --output-directory=/home/drbean/curriculum/topics/$TOPIC ./$TOPIC/dic_${STORY}_${FORM}.tex && evince ./$TOPIC/dic_${STORY}_${FORM}.pdf^M"
 stuff "# perl ../ttb/competitions/parallelforms/dic.pl -s $STORY -f $FORM ./$TOPIC $STORY && xelatex --output-directory=/home/drbean/curriculum/$COURSE/$TOPIC ./$TOPIC/dic_${STORY}_${FORM}.tex && evince ./$TOPIC/dic_${STORY}_${FORM}.pdf^M" 
 stuff "# lpr $TOPIC/dic_${STORY}.pdf^M"
+stuff "# yaml2gift encode -c $COURSE -t $TOPIC -s $STORY -f $FORM^M"
 screen 2
 stuff "# perl ../cclass/cards.pl -t ./$TOPIC && xelatex ./\$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf^M"
 stuff "# perl ../cclass/cards.pl -t ./$TOPIC && xelatex ./\$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf^M"

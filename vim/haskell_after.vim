@@ -262,6 +262,10 @@ fu! Populate(module)
 			call inputsave()
 			let arg = input("Word: " . word . ", Prep: eg, noPrep to: ", "noPrep noPrep")
 			call inputrestore()
+		elseif v_category == "V2S"
+			call inputsave()
+			let arg = input("Word: " . word . ", Prep: eg, noPrep, to: ", "noPrep")
+			call inputrestore()
 		else
 		endif
 		let category = v_category

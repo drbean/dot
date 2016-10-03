@@ -2,6 +2,7 @@ screen 1
 stuff "cd ~/gf-3.7.1/^M cd -^M"
 stuff "cd ~/GF/gf-contrib && mkdir -p drbean/$COURSE/$TOPIC/$STORY/engine^M cd -^M"
 stuff "# gftags2ctags -c $COURSE -t $TOPIC -s $STORY > drbean/$COURSE/$TOPIC/$STORY/gf_tags^M"
+stuff "# ln -s ~/GF/gf-contrib/drbean/ghci ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/.ghci^M"
 stuff "# cp ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$PREVSTORY/{Model,Tests}.hs ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/^M"
 stuff "# cp ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$PREVSTORY/$PREVMOD.gf ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/$MOD.gf^M"
 stuff "# cp ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$PREVSTORY/${PREVMOD}Eng.gf ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf^M"

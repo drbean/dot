@@ -14,8 +14,8 @@ function _GF () {
 	story="fire zeus kiss"
 	old_story="candidate tip cusp motivating dickson abreu smallwood jackson murder drunk_driving piggott"
 	round="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18"
-	league="241 KB1 MA1 BMA0045 MIA0009 FLA0015 FLA0003"
-	league_re="241|KB1|MA1|BMA0045|MIA0009|FLA0015|FLA0003"
+	league="241 KB1 MA1 BMA0045 MIA0009 FLA0015 FLA0003 GL00043"
+	league_re="241|KB1|MA1|BMA0045|MIA0009|FLA0015|FLA0003|GL00043"
 	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
 	diropts="--cache-dir"
 

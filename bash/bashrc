@@ -530,7 +530,7 @@ function ex () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/curriculum/$course
+    cd ~/class/$course
     COURSE=$course \
     VIEW=${topic:-$course} \
     TOPIC=$topic \

@@ -13,8 +13,8 @@ stuff "# ls ~/$SEMESTER/$LEAGUE/homework/^M"
 stuff "svn st -q ~/$SEMESTER/$LEAGUE/homework^M"
 stuff "# history -a^M"
 stuff "# export HISTTIMEFORMAT=^M"
-screen 4 sudo su - postgres
-stuff "psql ${APP}$SEMESTER^M"
+screen 4
+stuff "sudo -u postgres psql ${APP}$SEMESTER^M"
 screen 7
 stuff "cd /var/www/cgi-bin/$APP^Msvn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "# perl script/words.pl -s $STORY && perl script/characters.pl -s $STORY^M"

@@ -11,7 +11,7 @@ stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex
 screen
 stuff "# cp quiz_\${STORY}_\$FORM.pdf ~/news/^M"
 stuff "# lpr ./$TOPIC/quiz_\${STORY}_\$FORM.pdf -#1^M"
-stuff "STORY=$STORY; FORM=$FORM; perl ../cclass/cards.pl -t ./\$TOPIC && xelatex --output-directory=./$TOPIC ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince ./\$TOPIC/quiz_\${STORY}_\$FORM.pdf"
+stuff "STORY=$STORY; FORM=$FORM; perl ~/methodology/comp/cards.pl -t ./\$TOPIC && xelatex --output-directory=./$TOPIC ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && evince ./\$TOPIC/quiz_\${STORY}_\$FORM.pdf"
 screen
 stuff "touch ./$TOPIC/questionsA5.tex^M"
 stuff "# svn add ./$TOPIC/questionsA5.tex^M"

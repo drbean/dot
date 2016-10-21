@@ -208,6 +208,10 @@ fu! Populate_cat_args(lnum, word, down_name, category, arg)
 	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . " \"" . a:word . "\" " . a:arg . ";")
 endf
 
+fu! Populate_adv(lnum, word, down_name, category, arg)
+	call append(a:lnum, "\t" . a:down_name . "\t= ParadigmsEng.mk" . a:category . " \"" . a:word . "\" " . a:arg . ";")
+endf
+
 fu! Populate_ap_like(lnum, word, down_name, category, super_cat, arg)
 	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " \"" . a:word . "\") " . a:arg .";")
 endf
@@ -274,6 +278,12 @@ fu! Populate(module)
 		let a_key = input("Word: " . word . ", Cat: '(A)P', 'A(2)' ")
 		call inputrestore()
 		let a_category = get( {'a': 'AP', '2': 'A2'}, a_key )
+		if a_category == "A2"
+			call inputsave()
+			let arg = input("Word: " . word . ", Prep: eg, noPrep, to, in_PREP, for, about: ", "to")
+			call inputrestore()
+		else
+		endif
 		let category = a_category
 	else
 		let category = key_category
@@ -304,10 +314,12 @@ fu! Populate(module)
 		call Populate_pn((ab_eng_lnum+1), word, down_name, "PN", "N") 
 	elseif category == "Particle"
 		call Populate_partv((ab_eng_lnum+1), word, down_name, "V", "V") 
+	elseif category == "Adv"
+		call Populate_adv((ab_eng_lnum+1), word, down_name, category, "") 
 	elseif category == "AP"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "A", "") 
 	elseif category == "A2"
-		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "A", "about") 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "A", arg) 
 	elseif category == "CN"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "CN", "N", "") 
 	elseif category == "N2"

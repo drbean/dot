@@ -260,7 +260,7 @@ fu! Populate(module)
 			call inputrestore()
 		elseif v_category == "VV"
 			call inputsave()
-			let arg = input("Word: " . word . ", Prep: eg, noPrep, to: ", "noPrep")
+			let arg = input("Word: " . word . ", Prep: eg, noPrep, to: ", "")
 			call inputrestore()
 		elseif v_category == "V3"
 			call inputsave()
@@ -273,6 +273,10 @@ fu! Populate(module)
 		elseif v_category == "V2S"
 			call inputsave()
 			let arg = input("Word: " . word . ", Prep: eg, noPrep, to: ", "noPrep")
+			call inputrestore()
+		elseif v_category == "V2A"
+			call inputsave()
+			let arg = input("Word: " . word . ", Prep: eg, noPrep: ", "noPrep")
 			call inputrestore()
 		else
 		endif

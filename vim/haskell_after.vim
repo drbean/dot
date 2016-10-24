@@ -372,11 +372,11 @@ fun Next_line()
 	exe "normal j"
 endf
 
-au BufReadPost Tests.hs nn <LocalLeader>p :call Populate($MOD) <CR>
+au BufRead Tests.hs nn <LocalLeader>p :call Populate($MOD) <CR>
 au BufEnter WordsCharacters.hs nn <LocalLeader>a :call Test_check() <CR>
-au BufReadPost My*gf,$MOD*.gf set tags=gf-contrib/drbean/$COURSE/$TOPIC/$STORY/gf_tags,gf-contrib/drbean/$COURSE/$TOPIC/$STORY/haskell_tags
-au BufReadPost $MOD*.gf call Mod_mark()
-au BufReadPost WordsCharacters.hs call Word_mark()
+au BufRead My*gf,$MOD*.gf set tags=gf-contrib/drbean/$COURSE/$TOPIC/$STORY/gf_tags,gf-contrib/drbean/$COURSE/$TOPIC/$STORY/haskell_tags
+au BufReadPre $MOD*.gf call Mod_mark()
+au BufReadPre WordsCharacters.hs call Word_mark()
 " au BufEnter WordsCharacters.hs if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 

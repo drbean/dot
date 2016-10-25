@@ -258,10 +258,10 @@ fu! Populate(module)
 			call inputsave()
 			let arg = input("Word: " . word . ", Prep: eg, in_PREP, for, noPrep: ", "noPrep")
 			call inputrestore()
-		elseif v_category == "VV"
-			call inputsave()
-			let arg = input("Word: " . word . ", Prep: eg, noPrep, to: ", "")
-			call inputrestore()
+		"elseif v_category == "VV"
+		"	call inputsave()
+		"	let arg = input("Word: " . word . ", Prep: eg, noPrep, to: ", "")
+		"	call inputrestore()
 		elseif v_category == "V3"
 			call inputsave()
 			let arg = input("Word: " . word . ", Prep: eg, noPrep to: ", "noPrep noPrep")
@@ -328,7 +328,7 @@ fu! Populate(module)
 		call Populate_pn((ab_eng_lnum+1), word, down_name, category, "N", arg) 
 	elseif category == "Particle"
 		call Populate_partv((ab_eng_lnum+1), word, down_name, "V", "V") 
-	elseif category == "Adv"
+	elseif category == "Adv" || category == "AdV" || category == "AdA"
 		call Populate_adv((ab_eng_lnum+1), word, down_name, category, "") 
 	elseif category == "AP"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "A", "") 
@@ -345,7 +345,7 @@ fu! Populate(module)
 	elseif category == "V2"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "V2", "V", arg) 
 	elseif category == "VV"
-		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "VV", "V", arg) 
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "VV", "V", "") 
 	elseif category == "VS"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "VS", "V", arg) 
 	elseif category == "V2S"

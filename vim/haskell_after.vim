@@ -226,7 +226,7 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'AP': 'a', 'A2': 'a', 'N': 'n', 'N2': 'n', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'V2A': 'v', 'Adv': "d", 'AdV': "d", 'AdA': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
+	let marklist = {'AP': 'a', 'A2': 'a', 'N': 'n', 'N2': 'n', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'V2A': 'v', 'VQ': 'v', 'V2Q': 'v', 'Adv': "d", 'AdV': "d", 'AdA': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
 	let key = input("Word: " . word . ", Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), Pr(O)noun, (C)onj, (S)ubj ")
@@ -251,9 +251,9 @@ fu! Populate(module)
 		let category = n_category
 	elseif key_category == 'V'
 		call inputsave()
-		let v_key = input("Word: " . word . ", Cat: 'V( )', '(P)article','V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)', 'V(2a)' ")
+		let v_key = input("Word: " . word . ", Cat: 'V( )', '(P)article','V(2)', 'V(3)', 'V(V)', 'V2V(J)', 'V(S)', 'V2S(T)', 'V(A)', 'V2A(2a)', 'V(Q)', 'V2Q(2q)' ")
 		call inputrestore()
-		let v_category = get( {' ': 'V', 'p': 'Particle', '2': 'V2', '3': 'V3', 'v': 'VV', 'j': 'V2V', 's': 'VS', 't': 'V2S', 'a': 'VA', '2a': 'V2A' }, v_key )
+		let v_category = get( {' ': 'V', 'p': 'Particle', '2': 'V2', '3': 'V3', 'v': 'VV', 'j': 'V2V', 's': 'VS', 't': 'V2S', 'a': 'VA', '2a': 'V2A', 'q': 'VQ', '2q': 'V2Q' }, v_key )
 		if v_category == "V2"
 			call inputsave()
 			let arg = input("Word: " . word . ", Prep: eg, in_PREP, for, noPrep: ", "noPrep")
@@ -275,6 +275,10 @@ fu! Populate(module)
 			let arg = input("Word: " . word . ", Prep: eg, noPrep, to: ", "noPrep")
 			call inputrestore()
 		elseif v_category == "V2A"
+			call inputsave()
+			let arg = input("Word: " . word . ", Prep: eg, noPrep: ", "noPrep")
+			call inputrestore()
+		elseif v_category == "V2Q"
 			call inputsave()
 			let arg = input("Word: " . word . ", Prep: eg, noPrep: ", "noPrep")
 			call inputrestore()
@@ -355,6 +359,10 @@ fu! Populate(module)
 	elseif category == "VA"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "VA", "V", arg) 
 	elseif category == "V2A"
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "V", arg) 
+	elseif category == "VQ"
+		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "V", arg) 
+	elseif category == "V2Q"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "V", arg) 
 	elseif category == "V3"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "V3", "V", arg) 

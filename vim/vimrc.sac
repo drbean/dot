@@ -1,4 +1,4 @@
-" Last Edit: 2016 Oct 22, 08:50:39 PM
+" Last Edit: 2016 Nov 03, 12:19:39 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -363,7 +363,7 @@ endf
 
 map <LocalLeader>i :call Insert_increment()<CR>
 
-map <silent> <LocalLeader>snip <Esc>:call ResetSnippets() \| call GetSnippets(g:snippets_dir, "_") \| call GetSnippets(g:snippets_dir, &ft)<CR><Esc>:echo "Snippets for format \"" . &ft . "\" updated."<CR>
+" map <silent> <LocalLeader>snip <Esc>:call ResetSnippets() \| call GetSnippets(g:snippets_dir, "_") \| call GetSnippets(g:snippets_dir, &ft)<CR><Esc>:echo "Snippets for format \"" . &ft . "\" updated."<CR>
 
 
 

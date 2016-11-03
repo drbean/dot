@@ -212,7 +212,7 @@ function sound () {
 alias curr="cd ~/curriculum; screen -c /home/$USER/dot/screen/utility.rc -dR curriculum; cd -"
 alias ttb="cd ~/ttb; screen -c /home/$USER/dot/screen/utility.rc -dR ttb; cd -"
 alias $SEMESTER="cd ~/$SEMESTER; screen -c /home/$USER/dot/screen/utility.rc -dR s$SEMESTER; cd -"
-alias forms="cd ~/class/forms; screen -dR forms; cd -"
+alias meth="cd ~/methodology/; screen -c /home/$USER/dot/screen/utility.rc -dR tmpl; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/$USER/dot/screen/utility.rc -dR tmpl; cd -"
 alias rc="cd ~/$SEMESTER/rc; screen -c /home/$USER/dot/screen/utility.rc -dR rc; cd -"
 
@@ -530,7 +530,7 @@ function ex () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/class/$course
+    cd ~/curriculum/$course
     COURSE=$course \
     VIEW=${topic:-$course} \
     TOPIC=$topic \

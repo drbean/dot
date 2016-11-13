@@ -303,6 +303,12 @@ fu! Populate(module)
 		call inputrestore()
 		let d_category = get( {'v': 'Adv', 'V': 'AdV', 'a': 'AdA'}, d_key )
 		let category = d_category
+	elseif key_category == 'Det'
+		call inputsave()
+		let det_key = input("Word: " . word . ", Det type: '(u)nit', '(s)ingular', '(p)lural' ")
+		call inputrestore()
+		let det_category = get( {'u': 'Det', 's': 'Det', 'p': 'Det'}, det_key )
+		let category = det_category
 	else
 		let category = key_category
 	endif
@@ -366,6 +372,10 @@ fu! Populate(module)
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "V", arg) 
 	elseif category == "V3"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "V3", "V", arg) 
+	elseif det_key == "u"
+		call append(ab_eng_lnum+1, "\t" . down_name . "\t= mkDet( mkCard (mkNumeral n" . down_name . "_Unit));")
+	elseif det_key == "p"
+		call append(ab_eng_lnum+1, "\t" . down_name . "\t= mkDet( ParadigmsEng.mkQuant nonExist \"" . word . "\") pluralNum;")
 	else 
 		call append((ab_eng_lnum+1), "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif

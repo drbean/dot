@@ -194,7 +194,7 @@ fu! Mod_mark()
 	call setpos('.', save_cursor)
 endf
 
-fu! Populate_pn(lnum, word, down_name, category, super_cat, arg)
+fu! Populate_pn_like(lnum, word, down_name, category, super_cat, arg)
 	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " " . a:arg . " (mk" . a:super_cat . " \"" . a:word . "\") );")
 endf
 
@@ -241,6 +241,10 @@ fu! Populate(module)
 		if n_category == "N2"
 			call inputsave()
 			let arg = input("Word: " . word . ", Prep: eg, in_PREP, of_PREP, part_prep: ", "of_PREP")
+			call inputrestore()
+		elseif n_category == "CN"
+			call inputsave()
+			let arg = input("Word: " . word . ", Gender: human, nonhuman: ", "nonhuman")
 			call inputrestore()
 		elseif n_category == "PN"
 			call inputsave()
@@ -335,7 +339,7 @@ fu! Populate(module)
 	execute "buffer" ab_eng_gf
 	let ab_eng_lnum = line("'" . mark)
 	if category == "PN"
-		call Populate_pn((ab_eng_lnum+1), word, down_name, category, "N", arg) 
+		call Populate_pn_like((ab_eng_lnum+1), word, down_name, category, "N", arg) 
 	elseif category == "Particle"
 		call Populate_partv((ab_eng_lnum+1), word, down_name, "V", "V") 
 	elseif category == "Adv" || category == "AdV" || category == "AdA"
@@ -345,7 +349,7 @@ fu! Populate(module)
 	elseif category == "A2"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "A", arg) 
 	elseif category == "CN"
-		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "CN", "N", "") 
+		call Populate_pn_like((ab_eng_lnum+1), word, down_name, "CN", "N", arg) 
 	elseif category == "N2"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "N2", "N",arg) 
 	elseif category == "PlaceNoun"

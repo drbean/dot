@@ -2,6 +2,7 @@ screen 1
 stuff "cd ~/gf-3.7.1/^M cd -^M"
 stuff "cd ~/GF/gf-contrib && mkdir -p drbean/$COURSE/$TOPIC/$STORY/engine && chmod 755 drbean/$COURSE/$TOPIC/$STORY^M cd -^M"
 stuff "# gftags2ctags -c $COURSE -t $TOPIC -s $STORY > drbean/$COURSE/$TOPIC/$STORY/gf_tags^M"
+stuff "# sed -i -e 's/business\/conflict\/communication\/Communication/$COURSE\/$TOPIC\/$STORY\/$MOD/g' drbean/$COURSE/$TOPIC/$STORY/WordsCharacters.hs^M"
 stuff "# sed -i -e 's/Communication/$MOD/g' drbean/$COURSE/$TOPIC/$STORY/{,engine}/*.{hs,gf}^M"
 stuff "# ack mkQuant drbean/*/*/*/*Eng.gf^M"
 stuff "# cp ~/GF/gf-contrib/drbean/ghci ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/.ghci && chmod 644 ~/GF/gf-contrib/drbean/$COURSE/$TOPIC/$STORY/.ghci^M"

@@ -233,6 +233,7 @@ fu! Populate(module)
 	call inputrestore()
 	let key_category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "D", 'r': "Prep", 't': "Det", 'o': "Pron", 'c': "Conj", 's': "Subj"}, key )
 	let arg = ""
+	let det_key = "s"
 	if key_category == 'N'
 		call inputsave()
 		let n_key = input("Word: " . word . ", Cat: 'N( )', '(P)N', 'N(2)', '(C)N', 'P(l)aceNoun' ")
@@ -378,6 +379,8 @@ fu! Populate(module)
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "V3", "V", arg) 
 	elseif det_key == "u"
 		call append(ab_eng_lnum+1, "\t" . down_name . "\t= mkDet( mkCard (mkNumeral n" . down_name . "_Unit));")
+	elseif det_key == "s"
+		call append(ab_eng_lnum+1, "\t" . down_name . "\t= mkDet( ParadigmsEng.mkQuant \"" . word . "\" nonExist) singularNum;")
 	elseif det_key == "p"
 		call append(ab_eng_lnum+1, "\t" . down_name . "\t= mkDet( ParadigmsEng.mkQuant nonExist \"" . word . "\") pluralNum;")
 	else 

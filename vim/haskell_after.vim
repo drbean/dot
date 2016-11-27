@@ -198,6 +198,10 @@ fu! Populate_pn_like(lnum, word, down_name, category, super_cat, arg)
 	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " " . a:arg . " (mk" . a:super_cat . " \"" . a:word . "\") );")
 endf
 
+fu! Populate_n2_like(lnum, word, down_name, category, super_cat, arg1, arg2)
+	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . "( mk" . a:super_cat . " " . a:arg1 . " (mk" . a:super_cat . " \"" . a:word . "\") ) " . a:arg2 .";")
+endf
+
 fu! Populate_partv(lnum, word, down_name, category, super_cat)
 	let [verb; remainder] = split(a:word)
 	let particle = join(remainder)
@@ -233,6 +237,8 @@ fu! Populate(module)
 	call inputrestore()
 	let key_category = get( {'a': 'A', 'n': 'N', 'v': 'V', 'd': "D", 'r': "Prep", 't': "Det", 'o': "Pron", 'c': "Conj", 's': "Subj"}, key )
 	let arg = ""
+	let arg1 = ""
+	let arg2 = ""
 	let det_key = "s"
 	if key_category == 'N'
 		call inputsave()
@@ -241,7 +247,10 @@ fu! Populate(module)
 		let n_category = get( {' ': 'N', 'p': 'PN', '2': 'N2', 'c': 'CN', 'l': 'PlaceNoun' }, n_key )
 		if n_category == "N2"
 			call inputsave()
-			let arg = input("Word: " . word . ", Prep: eg, in_PREP, of_PREP, part_prep: ", "of_PREP")
+			let arg1 = input("Word: " . word . ", Gender: human, nonhuman: ", "nonhuman")
+			call inputrestore()
+			call inputsave()
+			let arg2 = input("Word: " . word . ", Prep: eg, in_PREP, of_PREP, part_prep: ", "of_PREP")
 			call inputrestore()
 		elseif n_category == "CN"
 			call inputsave()
@@ -352,7 +361,7 @@ fu! Populate(module)
 	elseif category == "CN"
 		call Populate_pn_like((ab_eng_lnum+1), word, down_name, "CN", "N", arg) 
 	elseif category == "N2"
-		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "N2", "N",arg) 
+		call Populate_n2_like((ab_eng_lnum+1), word, down_name, "N2", "N", arg1, arg2) 
 	elseif category == "PlaceNoun"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, "CN", "N", "") 
 	elseif category == "N"

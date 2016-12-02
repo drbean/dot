@@ -5,7 +5,7 @@ stuff "pandoc -s -t beamer -V theme:Szeged -V colortheme:beaver --latex-engine=x
 stuff "# pandoc -s -t html --self-contained --variable=CJKmainfont:'WenQuanYi Zen Hei' --variable=CJKmonofont:'WenQuanYi Zen Hei Mono' ./$TOPIC/$STORY.md -o ./$TOPIC/$STORY.html && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./$TOPIC/$STORY.html && qui'^M"
 stuff "# vroom -html ./$TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && mput ./$TOPIC/html/*.html && qui'^M"
 stuff "# xelatex bingo.tex && evince bingo.pdf^M"
-stuff "# cat ./$TOPIC/{dic,bingo}_${STORY}_$FORM.tex ./$TOPIC/dic_${STORY}_$(($FORM+1)).tex >> bingo.tex^M"
+stuff "# cat ./$TOPIC/dic_${STORY}_$FORM.tex ./$TOPIC/dic_${STORY}_$(($FORM+1)).tex ./$TOPIC/bingo_${STORY}_$FORM.tex >> bingo.tex^M"
 stuff "# ~/ttb/cards/bingo/bingo.pl -n 15 -s $STORY -f $FORM ./$TOPIC && xelatex --output-directory=./$TOPIC ./$TOPIC/bingo_${STORY}_$FORM.tex && evince ./$TOPIC/bingo_${STORY}_$FORM.pdf^M"
 stuff "# cp $TOPIC/bingo_${STORY}_$FORM.pdf ~/media/^M"
 stuff "# ~/ttb/cards/flash.pl -n 8 -s $STORY -f $FORM ./$TOPIC && xelatex --output-directory=./$TOPIC ./$TOPIC/flash_${STORY}_$FORM.tex && evince ./$TOPIC/flash_${STORY}_$FORM.pdf^M"

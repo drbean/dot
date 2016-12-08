@@ -376,12 +376,13 @@ function wr () {
 function cnv () {
     OPTIND=1
     local arg course=conversation view topic story form
-    while getopts 'v:t:s:f:' arg
+    while getopts 'v:t:s:q:f:' arg
     do
         case ${arg} in
             v) view=${OPTARG};;
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
+            q) quiz=${OPTARG};;
             f) form=${OPTARG};;
             *) return 1 # illegal option
         esac
@@ -391,6 +392,7 @@ function cnv () {
 	VIEW=$view \
 	TOPIC=$topic \
 	STORY=$story \
+	QUIZ=${quiz:-"jigsaw"} \
 	FORM=$form \
 	screen -c /home/$USER/dot/screen/course.rc -dR $topic
 	cd -

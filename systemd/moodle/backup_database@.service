@@ -1,0 +1,11 @@
+[Unit]
+Description="Dump moodSEMESTER,backup at duplicity/sac_mood0SEMESTER_fedora2?"
+OnFailure=status-email-drbean@%n.service
+
+[Service]
+Type=oneshot
+Nice=19
+ExecStart=/bin/bash -c "/usr/local/bin/backup_database.sh PGPASSWORD DATABASE FTP_PASSWORD PASSPHRASE"
+
+[Install]
+WantedBy=multi-user.target

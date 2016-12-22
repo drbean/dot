@@ -31,4 +31,4 @@ stuff "# put bingo.pdf^M"
 stuff "# put jigsaw_${STORY}_$FORM.pdf^M"
 stuff "# put quiz_${STORY}_$FORM.pdf^M"
 screen 0
-stuff "v ./$TOPIC/dic.yaml ./$TOPIC/cards.yaml ./$TOPIC/slides.md ./$TOPIC/$STORY.md"
+stuff "v ./$TOPIC/dic.yaml ./$TOPIC/cards.yaml ./$TOPIC/slides.md ./$TOPIC/$STORY.md ./$TOPIC/quiz_${TOPIC}_${STORY}_$FORM.gift"

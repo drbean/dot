@@ -1,7 +1,7 @@
 screen 1
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "# svn mkdir ./$TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/ && mkdir $VIEW && qui'^M"
-stuff "pandoc -s -t beamer -V theme:Szeged -V colortheme:beaver --latex-engine=xelatex --variable=CJKmainfont:'WenQuanYi Zen Hei' --variable=CJKmonofont:'WenQuanYi Zen Hei Mono' ./$TOPIC/$STORY/slides.md -o ./$TOPIC/$STORY/slides.pdf && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./$TOPIC/$STORY/slides.pdf && qui'^M"
+stuff "pandoc -s -t beamer -V theme:Szeged -V colortheme:beaver --latex-engine=xelatex --variable=CJKmainfont:'WenQuanYi Zen Hei' --variable=CJKmonofont:'WenQuanYi Zen Hei Mono' ./$TOPIC/slides.md -o ./$TOPIC/slides.pdf && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./$TOPIC/slides.pdf && qui'^M"
 stuff "# pandoc -s -t html --self-contained --variable=CJKmainfont:'WenQuanYi Zen Hei' --variable=CJKmonofont:'WenQuanYi Zen Hei Mono' ./$TOPIC/$STORY.md -o ./$TOPIC/$STORY.html && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./$TOPIC/$STORY.html && qui'^M"
 stuff "# vroom -html ./$TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && mput ./$TOPIC/html/*.html && qui'^M"
 stuff "# xelatex bingo.tex && evince bingo.pdf^M"
@@ -25,6 +25,7 @@ stuff "# umount ~/media/^M"
 screen 5 lftp greg@web.nuu.edu.tw
 stuff "# mkdir /public_html/$VIEW^M"
 stuff "cd /public_html/$VIEW^M"
+stuff "# put $TOPIC/${STORY}.html^M"
 stuff "# put $TOPIC/dic_${STORY}_$FORM.pdf^M"
 stuff "# put $TOPIC/bingo_${STORY}_$FORM.pdf^M"
 stuff "# put jigsaw_${STORY}_$FORM.pdf^M"

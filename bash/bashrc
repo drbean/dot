@@ -16,6 +16,7 @@ source ~/dot/git/git-hub/.rc
 # ingydotnet/git-subrepo
 source ~/dot/git/git-subrepo/.rc
 
+alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./"
 alias web="cd; screen -c /home/$USER/dot/screen/web.rc -dR web; cd -"
 alias surf="cd ~/sr; screen -dR surfraw; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"

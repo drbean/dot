@@ -22,6 +22,8 @@ stuff "# score_jigsaw.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml && grade_jigs
 stuff "# scantron.pl -l $LEAGUE -r $ROUND > $ROUND/response.yaml^M"
 stuff "# cp ../../../051/$LEAGUE/exam/$PREVROUND/round.yaml $ROUND/round.yaml^M"
 stuff "# cp ../../../051/FLA0003/exam/$ROUND/round.yaml $ROUND/round.yaml^M"
+stuff "# cp $ROUND/$LEAGUE\ Grades-201701*-comma_separated.csv $ROUND/g.yaml^M"
+stuff "# mogr # move moodle grade alias"
 stuff "# svn mkdir $ROUND^M"
 stuff " ls^M"
 screen 4

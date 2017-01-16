@@ -16,7 +16,7 @@ source ~/dot/git/git-hub/.rc
 # ingydotnet/git-subrepo
 source ~/dot/git/git-subrepo/.rc
 
-alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./"
+alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./\$ROUND"
 alias web="cd; screen -c /home/$USER/dot/screen/web.rc -dR web; cd -"
 alias surf="cd ~/sr; screen -dR surfraw; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
@@ -579,6 +579,45 @@ function gr () {
     TOPIC=$topic \
     N=$n \
     screen -c /home/$USER/dot/screen/grading.rc -dR s_$league
+    cd -
+}
+
+function gr_ex () {
+    local arg league round topic n
+    case $1 in
+	BMA0045) league=$1;;
+	MIA0009) league=$1;;
+	GL00043) league=$1;;
+	FLA0003) league=$1;;
+	FLA0015) league=$1;;
+	FLA0019) league=$1;;
+	FLA0021) league=$1;;
+	241) league=$1;;
+	KB1) league=$1;;
+	MA1) league=$1;;
+	*) return 1 # illegal league
+    esac
+    OPTIND=2
+    while getopts 'r:t:n:' arg
+    do
+        case ${arg} in
+            r) round=${OPTARG};;
+            t) topic=${OPTARG};;
+            n) n=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    if [[ -z "$n" ]]
+	then n=2
+    fi
+    cd ~/$SEMESTER/$league
+    LEAGUE=$league \
+    ROUND=$round \
+    NEXTROUND=$(($round+1)) \
+    PREVROUND=$(($round-1)) \
+    TOPIC=$topic \
+    N=$n \
+    screen -c /home/$USER/dot/screen/grading_exam.rc -dR gr_ex_$league
     cd -
 }
 

@@ -1,3 +1,5 @@
+source grading_vim.rc
+
 screen 1
 stuff "# id2names.pl -l $LEAGUE && print_grades.pl > grades.txt && lftp -c 'open freeshell.org && cd html/$LEAGUE && put grades.txt && put id2names_groups.txt && open web.nuu.edu.tw && cd public_html/$LEAGUE && put grades.txt && put id2names_groups.txt && qui'^M"
 stuff "# id2names.pl -l $LEAGUE && lftp -c 'open freeshell.org && cd html/$LEAGUE && put id2names_groups.txt && open web.nuu.edu.tw && cd public_html/$LEAGUE && put id2names_groups.txt && qui'^M"
@@ -14,18 +16,9 @@ stuff "# perl ../../../swiss/web/script/round_table.pl -l $LEAGUE -r $ROUND ^M"
 stuff "# cp $ROUND/*.yaml $PREVROUND/^M"
 stuff "# perl ../../../swiss/web/script/create_round.pl -l $LEAGUE -r $ROUND > $ROUND/round.yaml^M"
 stuff "# svn mkdir $ROUND^M ls^M"
-screen 3
-stuff "cd ~/051/$LEAGUE/exam^M"
-stuff "ls ^M"
-stuff "# rm $NEXTROUND -rf^M"
-stuff "# score_jigsaw.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml && grade_jigsaw.pl -l $LEAGUE -r $ROUND -n $N > $ROUND/g1.yaml && xelatex report.tex && evince report.pdf && svn add $ROUND/{round,response,scores,g1}.yaml && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put report.pdf && put $ROUND/g1.yaml'^M"
-stuff "# scantron.pl -l $LEAGUE -r $ROUND > $ROUND/response.yaml^M"
-stuff "# cp ../../../051/$LEAGUE/exam/$PREVROUND/round.yaml $ROUND/round.yaml^M"
-stuff "# cp ../../../051/FLA0003/exam/$ROUND/round.yaml $ROUND/round.yaml^M"
-stuff "# cp $ROUND/$LEAGUE\ Grades-201701*-comma_separated.csv $ROUND/g.yaml^M"
-stuff "# mogr # move moodle grade alias"
-stuff "# svn mkdir $ROUND^M"
-stuff " ls^M"
+
+source grading_exam.rc
+
 screen 4
 stuff "re.pl --rcfile ../rc/g.rc^M"
 stuff '$g->grades'
@@ -42,6 +35,3 @@ stuff "# cp ../../031/$LEAGUE/league.yaml ./league.yaml^M"
 stuff "# svn mkdir session^M"
 stuff "# school_data.pl -s 051 -l $LEAGUE | sponge league.yaml^M"
 stuff "# re.pl --rcfile ../rc/import_memberdata.rc^M"
-
-screen 0
-stuff "v league.yaml session/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml exam/$ROUND/g1.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml exam/$ROUND/g2.yaml exam/$ROUND/g.yaml grades.txt groups.yaml session/$NEXTROUND/groups.yaml cohort.txt"

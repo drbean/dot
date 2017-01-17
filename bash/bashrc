@@ -849,6 +849,45 @@ function w () {
     cd -
 }
 
+function cw () {
+    local arg league session week letter topic tables
+    case $1 in
+	BMA0045) league=$1;;
+	MIA0009) league=$1;;
+	GL00043) league=$1;;
+	FLA0003) league=$1;;
+	FLA0015) league=$1;;
+	FLA0019) league=$1;;
+	FLA0021) league=$1;;
+	241) league=$1;;
+	KB1) league=$1;;
+	MA1) league=$1;;
+	*) return 1 # illegal league
+    esac
+    week=$2
+    OPTIND=3
+    while getopts 'w:l:t:' arg
+    do
+        case ${arg} in
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    session $league $week
+    tables $league $letter
+    cd ~/$SEMESTER/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/$USER/dot/screen/classwork.rc -dR ${league}_$week
+    cd -
+}
+
 alias contest="cd ~/001/contest; screen -dR contest; cd -"
 
 alias job="cd ~/job; screen -c /home/$USER/dot/screen/job.rc -dR job; cd -"

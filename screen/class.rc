@@ -1,3 +1,8 @@
+screen 0
+stuff "v league.yaml session/$SESSION/groups.yaml classwork/$LASTWEEK.yaml.table classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml"
+
+source classwork.rc
+
 # screen 8 links http://sac.nuu.edu.tw/grades/?league=$LEAGUE
 
 screen 5 lftp web.nuu.edu.tw
@@ -8,9 +13,6 @@ stuff "# put homework/$LASTWEEK.yaml -o homework.yaml^M"
 
 screen 4 re.pl --rcfile ../rc/g.rc
 stuff '$g->grades'
-
-screen 0
-stuff "v league.yaml session/$SESSION/groups.yaml classwork/$LASTWEEK.yaml.table classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml"
 
 screen 2
 stuff "ls homework classwork exam/*^M"

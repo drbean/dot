@@ -9,17 +9,6 @@ stuff "# put homework/$LASTWEEK.yaml -o homework.yaml^M"
 screen 4 re.pl --rcfile ../rc/g.rc
 stuff '$g->grades'
 
-screen 1
-stuff "echo -e \"---\ntopic: $TOPIC\n\n$TABLES\" >> \"classwork/$LASTWEEK.yaml.table\"^M"
-stuff "svn st | grep '\^\(A\|M\|D\)'^Msvn log -vr BASE:HEAD^Msvn up^M"
-stuff "ls classwork^M"
-stuff "svn ls classwork session/$SESSION^M"
-stuff "# touch classwork/no_week_$LASTWEEK && svn add classwork/no_week_$LASTWEEK && svn ci classwork/no_week_$LASTWEEK -m ^M"
-stuff "# svn add classwork/$LASTWEEK.yaml && svn ci classwork/$LASTWEEK.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put classwork/$LASTWEEK.yaml -o classwork.yaml && qui'^M"
-stuff "# stack --stack-yaml /home/drbean/class/beans/script_files/champs/stack.yaml runghc -- ~/class/beans/script_files/champs/champs2front.hs -l $LEAGUE -r $LASTWEEK > classwork/$LASTWEEK.yaml^M"
-stuff "# mv classwork/$LASTWEEK.yaml.table classwork/$LASTWEEK.yaml^M" 
-stuff "# cp classwork/$WEEK.yaml.table classwork/$LASTWEEK.yaml^M" 
-
 screen 0
 stuff "v league.yaml session/$SESSION/groups.yaml classwork/$LASTWEEK.yaml.table classwork/$LASTWEEK.yaml homework/$LASTWEEK.yaml classwork/$WEEK.yaml"
 

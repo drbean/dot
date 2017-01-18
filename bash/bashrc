@@ -621,6 +621,42 @@ function gr_ex () {
     cd -
 }
 
+function jigsaw () {
+    local arg league round topic n
+    case $1 in
+	BMA0045) league=$1;;
+	MIA0009) league=$1;;
+	GL00043) league=$1;;
+	FLA0003) league=$1;;
+	FLA0015) league=$1;;
+	FLA0019) league=$1;;
+	FLA0021) league=$1;;
+	241) league=$1;;
+	KB1) league=$1;;
+	MA1) league=$1;;
+	*) return 1 # illegal league
+    esac
+    OPTIND=2
+    while getopts 'r:t:n:' arg
+    do
+        case ${arg} in
+            r) round=${OPTARG};;
+            t) topic=${OPTARG};;
+            n) n=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/$SEMESTER/$league
+    LEAGUE=$league \
+    ROUND=$round \
+    NEXTROUND=$(($round+1)) \
+    PREVROUND=$(($round-1)) \
+    TOPIC=$topic \
+    N=${n:-3} \
+    screen -c /home/$USER/dot/screen/jigsaw.rc -dR jigsaw_$league
+    cd -
+}
+
 function gr_comp () {
     local arg league round topic n
     case $1 in

@@ -106,9 +106,9 @@ function question_grade_bett () {
         esac
     done
     cd ~/$app
-    svn update bett.yaml -r 508 &&
+    # svn update bett.yaml -r 508 &&
     perl script/question_grade_${app}.pl -l $league -x $old_story -q 1 -o 2 -w 2 > ~/$SEMESTER/$league/homework.yaml && 
-    svn update bett.yaml -r 509 &&
+    # svn update bett.yaml -r 509 &&
     less ~/$SEMESTER/$league/homework.yaml &&
     mv ~/$SEMESTER/$league/homework.yaml ~/$SEMESTER/$league/homework/$round.yaml &&
     svn add ~/$SEMESTER/$league/homework/$round.yaml &&

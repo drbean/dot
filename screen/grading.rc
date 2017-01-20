@@ -10,7 +10,7 @@ stuff "# cp teamseat.pdf ~/media/teamseat_$LEAGUE.pdf^M"
 stuff "# svn ci comp/$ROUND exam/$ROUND -m $TOPIC^M"
 
 source comp.rc
-source grading_exam.rc
+source jigsaw.rc
 
 screen 4
 stuff "re.pl --rcfile ../rc/g.rc^M"

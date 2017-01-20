@@ -1,4 +1,7 @@
 screen
+stuff "v classwork/$LASTWEEK.yaml^M"
+
+screen
 stuff "ls classwork && svn up classwork^M"
 stuff "svn ls classwork session/$SESSION^M"
 stuff "# svn add classwork/$LASTWEEK.yaml && svn ci classwork/$LASTWEEK.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put classwork/$LASTWEEK.yaml -o classwork.yaml && qui'^M"

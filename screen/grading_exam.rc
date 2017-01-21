@@ -1,0 +1,3 @@
+screen v league.yaml exam/$ROUND/{round,response,scores}.yaml
+
+source jigsaw.rc

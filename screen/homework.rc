@@ -1,0 +1,8 @@
+screen
+stuff "svn up homework && svn ls homework^M"
+stuff "# zero_homework.pl -x $TOPIC >> homework/$LASTWEEK.yaml^M"
+stuff " mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./homework/$LASTWEEK.csv && cp homework/$LASTWEEK.csv homework/$LASTWEEK.yaml^M"
+stuff "# svn add homework/$LASTWEEK.yaml && svn ci homework/$LASTWEEK.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put homework/$LASTWEEK.yaml -o homework.yaml && qui'^M"
+
+screen
+stuff "v homework/$LASTWEEK.yaml "

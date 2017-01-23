@@ -1,4 +1,4 @@
-" Last Edit: 2017 Jan 22, 02:02:04 PM
+" Last Edit: 2017 Jan 22, 07:53:41 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -631,7 +631,7 @@ augroup END
 augroup classwork
 au!
 
-au BufEnter *.yaml no <Leader>tot S---<C-C><C-C>:%s/\v^.*,([uU]\d*),.*,.*,.*,.*,(.*),\d+$/\1: \2/i<CR>:2,$s/-$/0/<CR>Gdd
+au BufEnter *.yaml no <Leader>tot S---<C-C><C-C>:%s/\v^.*,([BN]\d*),.*,.*,.*,.*,(.*),\d+$/\1: \2/i<CR>:2,$s/-$/0/<CR>Gdd
 
 " scoring classwork/$week.yaml files
 

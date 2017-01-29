@@ -16,6 +16,7 @@ stuff "# systemctl list-timers --user --all^M"
 screen 3
 stuff "cd git^M"
 stuff "# cp ignore ~/.config/git/ignore"
+stuff '# for repo in git-hub git-subrepo ; do git clone https://github.com/drbean/$repo.git && cd $repo && git remote add upstream https://github.com/ingydotnet/$repo.git && git fetch upstream && git merge upstream/master && cd .. ; done^M'
 screen 2
 source vim.rc
 screen 1

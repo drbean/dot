@@ -1,6 +1,6 @@
 [Unit]
 Description=Scrape IP address, update DNS record
-OnFailure=status-email-drbean@%n.service
+OnFailure=status-email-drbean@%p.service
 
 [Service]
 Type=oneshot

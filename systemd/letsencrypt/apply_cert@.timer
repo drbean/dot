@@ -1,9 +1,9 @@
 [Unit]
-Description=Scrape IP address, update DNS record on boot/every 6 hrs
+Description=Run certbot certonly --webroot, get cert for momo.mydns.jp
 
 [Timer]
-OnBootSec=180
-Unit=update_dns@%i.service
+OnCalendar=*:3/12
+Unit=apply_cert.service
 
 [Install]
 WantedBy=timers.target

@@ -1,11 +1,11 @@
 [Unit]
-Description=Scrape IP address, update DNS record
-OnFailure=status-email-drbean@%n.service
+Description=Run certbot certonly --webroot, get cert for momo.mydns.jp
+OnFailure=status-email-drbean@%p.service
 
 [Service]
 Type=oneshot
 Nice=19
-ExecStart=/bin/bash -c "/usr/local/bin/ntt_scrape adsl -u user -p password -r 'http://momo.mydns.jp/cgi-bin/main.cgi?mbg_webname=status' -d $' ADSL\xA0IP' -i http://ipv4.mydns.jp/directip.html -m mydns997075 -w 2wh4jDBCPjd"
+ExecStart=/usr/bin/certbot certonly --webroot -d momo.mydns.jp -w /var/www/html
 
 [Install]
 WantedBy=multi-user.target

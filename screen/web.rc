@@ -1,8 +1,9 @@
 screen 1 lftp sftp://drbean@freeshell.org
+screen 2 mutt
 screen 3 
-stuff "# FTP_PASSWORD='' duplicity --exclude /home/drbean/soundfiles --exclude /home/drbean/下載 /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora22"
+stuff "# FTP_PASSWORD='' duplicity --exclude /home/drbean/soundfiles --exclude /home/drbean/下載 /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora24"
 screen 4 su -
-screen 5 ssh -X mai@pl818.nas921.nara.nttpc.ne.jp
+screen 5 ssh -L 5901:localhost:5901 drbean@sac.nuu.edu.tw
 screen 9
 stuff "man httpd_selinux"
 screen 0

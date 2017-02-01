@@ -3,7 +3,7 @@ Description=status email for %I to drbean
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/unit-error-email.sh "drbean@freeshell.org" %i
+ExecStart=/usr/local/bin/unit-error-email.sh "drbean@localhost" %i
 User=nobody
 Group=systemd-journal
 

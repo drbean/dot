@@ -34,20 +34,26 @@ unless ( $pic ) {
 	$pic = "f24.xml";
 }
 
-warn "pic: $pic\t";
+warn "next pic: $pic";
 my $uid = qx'id -u';
 my @desktops = ( qw/gnome mate/ );
 my ( %schema, %key, %value );
 @schema{@desktops} = qw/org.gnome.desktop.background org.mate.background/; 
 @key{@desktops} = qw/picture-uri picture-filename/;
 @value{@desktops} = ( "file://$directory/$pic", "$directory/$pic");
-for my $desktop ( qw/gnome mate/ ) {
+for my $desktop ( @desktops ) {
+	my %gsettings;
+	$gsettings{before} = qx/gsettings get $schema{$desktop} $key{$desktop}/;
+	chomp $gsettings{before};
 	my $pid_list = qx/pgrep -u $ENV{USER} $desktop-session/;
 	my @pids = split "\n", $pid_list;
 	for my $pid (@pids) {
-		warn "desktop: $desktop, pid: $pid, ";
 		my $dbus_session_bus_address = qx(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$pid/environ | cut -d= -f2-);
-		warn "dbus_session_bus_address: $dbus_session_bus_address\n";
-		system("DBUS_SESSION_BUS_ADDRESS=$dbus_session_bus_address gsettings set $schema{$desktop} $key{$desktop} $value{$desktop}");
+		chomp $dbus_session_bus_address;
+		system("gsettings set $schema{$desktop} $key{$desktop} '$value{$desktop}'");
+		$gsettings{after} = qx/gsettings get $schema{$desktop} $key{$desktop}/;
+		warn "gsettings: $gsettings{before} -> $gsettings{after}";
+		warn "desktop: $desktop, pid: $pid, ";
+		warn "dbus_session_bus_address: '$dbus_session_bus_address'";
 	}
 }

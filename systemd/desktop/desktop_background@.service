@@ -1,5 +1,5 @@
 [Unit]
-Description=Set org.gnome.desktop.background picture_uri
+Description=Set gnome, mate background picture
 
 [Service]
 Type=oneshot

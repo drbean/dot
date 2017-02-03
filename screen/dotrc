@@ -13,7 +13,8 @@ stuff "# systemctl --user enable desktop_background@$USER.timer^M"
 stuff "# systemctl --user restart desktop_background@$USER.timer^M"
 stuff "# systemctl --user start desktop_background@$USER.service^M"
 stuff "# systemctl list-timers --user --all^M"
-stuff '# for type in service timer ; do sudo cp systemd/dns/update_dns@.$type /etc/systemd/system/update_dns.$type; done'
+stuff "# for service in dns/update_dns ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}.\$type; done; done^M"
+stuff "# for service in desktop/desktop_background ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}@.\$type; done; done^M"
 screen 3
 stuff "cd git^M"
 stuff "# cp ignore ~/.config/git/ignore"
@@ -30,6 +31,6 @@ stuff "xmonad --recompile && xmonad --restart^M"
 stuff "# export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# su -c 'cp screen/screen.rc /etc/screenrc'^M"
 stuff "# cp screen/screen.rc ~/.screenrc'^M"
-stuff "su -c 'cp bash/bash_completion/*[\^~] /etc/bash_completion.d/'"
+stuff "# su -c 'cp bash/bash_completion/*[\^~] /etc/bash_completion.d/'^M"
 screen 0
-stuff "v bash/bashrc screen/dotrc vim/ bash/bash_completion"
+stuff "v bash/bashrc bash/bash_completion screen/ vim/ git/ systemd/"

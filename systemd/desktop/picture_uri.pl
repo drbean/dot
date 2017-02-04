@@ -43,8 +43,7 @@ my ( %schema, %key, %value );
 my $machineid = io("/var/lib/dbus/machine-id")->slurp;
 chomp $machineid;
 my $display = substr $ENV{DISPLAY}, -1;
-my $dbusfile = io("/home/$ENV{USER}/.dbus/session-bus/$machineid-$display");
-$dbusfile->perms('666');
+my $dbusfile = "/home/$ENV{USER}/.dbus/session-bus/$machineid-$display";
 @value{@desktops} = ( "file://$directory/$pic", "$directory/$pic");
 for my $desktop ( @desktops ) {
 	my %gsettings;
@@ -57,7 +56,7 @@ for my $desktop ( @desktops ) {
 		chomp $dbus_session_bus_address;
 		my $dbusinfo = "# by picture_uri.pl for gsettings\nDBUS_SESSION_BUS_ADDRESS=$dbus_session_bus_address\n" .
 			"DBUS_SESSION_BUS_PID=$pid\n";
-		$dbusfile->print($dbusinfo);
+		io($dbusfile)->perms('666')->print($dbusinfo);
 		system("dbus-launch gsettings set $schema{$desktop} $key{$desktop} '$value{$desktop}'");
 		$gsettings{after} = qx/dbus-launch gsettings get $schema{$desktop} $key{$desktop}/;
 		warn "gsettings: $gsettings{before} -> $gsettings{after}";

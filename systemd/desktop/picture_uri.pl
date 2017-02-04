@@ -40,6 +40,11 @@ my @desktops = ( qw/gnome mate/ );
 my ( %schema, %key, %value );
 @schema{@desktops} = qw/org.gnome.desktop.background org.mate.background/; 
 @key{@desktops} = qw/picture-uri picture-filename/;
+my $machineid = io("/var/lib/dbus/machine-id")->slurp;
+chomp $machineid;
+my $display = substr $ENV{DISPLAY}, -1;
+my $dbusfile = io("/home/$ENV{USER}/.dbus/session-bus/$machineid-$display");
+$dbusfile->perms('666');
 @value{@desktops} = ( "file://$directory/$pic", "$directory/$pic");
 for my $desktop ( @desktops ) {
 	my %gsettings;
@@ -50,7 +55,10 @@ for my $desktop ( @desktops ) {
 	for my $pid (@pids) {
 		my $dbus_session_bus_address = qx(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$pid/environ | cut -d= -f2-);
 		chomp $dbus_session_bus_address;
-		system("gsettings set $schema{$desktop} $key{$desktop} '$value{$desktop}'");
+		my $dbusinfo = "DBUS_SESSION_BUS_ADDRESS=$dbus_session_bus_address\n" .
+			"DBUS_SESSION_BUS_ID=$pid\n";
+		$dbusfile->print($dbusinfo);
+		system("dbus-launch gsettings set $schema{$desktop} $key{$desktop} '$value{$desktop}'");
 		$gsettings{after} = qx/gsettings get $schema{$desktop} $key{$desktop}/;
 		warn "gsettings: $gsettings{before} -> $gsettings{after}";
 		warn "desktop: $desktop, pid: $pid, ";

@@ -55,11 +55,11 @@ for my $desktop ( @desktops ) {
 	for my $pid (@pids) {
 		my $dbus_session_bus_address = qx(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$pid/environ | cut -d= -f2-);
 		chomp $dbus_session_bus_address;
-		my $dbusinfo = "DBUS_SESSION_BUS_ADDRESS=$dbus_session_bus_address\n" .
-			"DBUS_SESSION_BUS_ID=$pid\n";
+		my $dbusinfo = "# by picture_uri.pl for gsettings\nDBUS_SESSION_BUS_ADDRESS=$dbus_session_bus_address\n" .
+			"DBUS_SESSION_BUS_PID=$pid\n";
 		$dbusfile->print($dbusinfo);
 		system("dbus-launch gsettings set $schema{$desktop} $key{$desktop} '$value{$desktop}'");
-		$gsettings{after} = qx/gsettings get $schema{$desktop} $key{$desktop}/;
+		$gsettings{after} = qx/dbus-launch gsettings get $schema{$desktop} $key{$desktop}/;
 		warn "gsettings: $gsettings{before} -> $gsettings{after}";
 		warn "desktop: $desktop, pid: $pid, ";
 		warn "dbus_session_bus_address: '$dbus_session_bus_address'";

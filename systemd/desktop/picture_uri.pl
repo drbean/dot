@@ -46,7 +46,9 @@ chomp $machineid;
 my $display = substr $ENV{DISPLAY}, -1;
 my $dbusfile = "/home/$ENV{USER}/.dbus/session-bus/$machineid-$display";
 @value{@desktops} = ( "file://$directory/$pic", "$directory/$pic");
-my $dbus_session_bus_address = "unix:path=$ENV{XDG_RUNTIME_DIR}/bus";
+my $id = qx/id --user $ENV{USER}/;
+chomp $id;
+my $dbus_session_bus_address = "unix:path=/run/$id/bus";
 my $dbusinfo = "# by picture_uri.pl for gsettings\nDBUS_SESSION_BUS_ADDRESS=$dbus_session_bus_address\n";
 for my $desktop ( @desktops ) {
 	my %gsettings;

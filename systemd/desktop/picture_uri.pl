@@ -61,7 +61,7 @@ for my $desktop ( @desktops ) {
 		io($dbusfile)->perms('666')->print($dbusinfo);
 	}
 	system("dbus-launch", "gsettings", "set", "$schema{$desktop}", "$key{$desktop}", "'$value{$desktop}'");
-	$gsettings{after} = qx/gsettings get $schema{$desktop} $key{$desktop}/;
+	$gsettings{after} = qx/dbus-launch gsettings get $schema{$desktop} $key{$desktop}/;
 	my $warning = "gsettings: $gsettings{before} -> $gsettings{after}\n";
 	$warning .= "desktop: $desktop,\tdbus_session_bus_address: '$dbus_session_bus_address'\n";
 	$warn->{$desktop} = $warning;

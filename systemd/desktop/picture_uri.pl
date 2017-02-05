@@ -40,11 +40,14 @@ my @desktops = ( qw/gnome mate/ );
 my ( %schema, %key, %value );
 @schema{@desktops} = qw/org.gnome.desktop.background org.mate.background/; 
 @key{@desktops} = qw/picture-uri picture-filename/;
+my $warn;
 my $machineid = io("/var/lib/dbus/machine-id")->slurp;
 chomp $machineid;
 my $display = substr $ENV{DISPLAY}, -1;
 my $dbusfile = "/home/$ENV{USER}/.dbus/session-bus/$machineid-$display";
 @value{@desktops} = ( "file://$directory/$pic", "$directory/$pic");
+my $dbus_session_bus_address = "unix:path=$ENV{XDG_RUNTIME_DIR}/bus";
+my $dbusinfo = "# by picture_uri.pl for gsettings\nDBUS_SESSION_BUS_ADDRESS=$dbus_session_bus_address\n";
 for my $desktop ( @desktops ) {
 	my %gsettings;
 	$gsettings{before} = qx/gsettings get $schema{$desktop} $key{$desktop}/;
@@ -52,15 +55,16 @@ for my $desktop ( @desktops ) {
 	my $pid_list = qx/pgrep -u $ENV{USER} $desktop-session/;
 	my @pids = split "\n", $pid_list;
 	for my $pid (@pids) {
-		my $dbus_session_bus_address = qx(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$pid/environ | cut -d= -f2-);
-		chomp $dbus_session_bus_address;
-		my $dbusinfo = "# by picture_uri.pl for gsettings\nDBUS_SESSION_BUS_ADDRESS=$dbus_session_bus_address\n" .
-			"DBUS_SESSION_BUS_PID=$pid\n";
+		$dbusinfo .= "DBUS_SESSION_BUS_PID=$pid\n";
 		io($dbusfile)->perms('666')->print($dbusinfo);
-		system("dbus-launch gsettings set $schema{$desktop} $key{$desktop} '$value{$desktop}'");
-		$gsettings{after} = qx/dbus-launch gsettings get $schema{$desktop} $key{$desktop}/;
-		warn "gsettings: $gsettings{before} -> $gsettings{after}";
-		warn "desktop: $desktop, pid: $pid, ";
-		warn "dbus_session_bus_address: '$dbus_session_bus_address'";
 	}
+	system("dbus-launch", "gsettings", "set", "$schema{$desktop}", "$key{$desktop}", "'$value{$desktop}'");
+	$gsettings{after} = qx/gsettings get $schema{$desktop} $key{$desktop}/;
+	my $warning = "gsettings: $gsettings{before} -> $gsettings{after}\n";
+	$warning .= "desktop: $desktop,\tdbus_session_bus_address: '$dbus_session_bus_address'\n";
+	$warn->{$desktop} = $warning;
+}
+for my $desktop ( keys %$warn ) {
+	io('=')->print( "desktop: $desktop:\n" );
+	io("=")->print( "\t\t$warn->{$desktop}" );
 }

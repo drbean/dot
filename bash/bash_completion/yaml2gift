@@ -1,0 +1,40 @@
+# file: yaml2gift
+# dic parameter completion
+# copied from m
+
+function _yaml2gift () {
+	local cur prev opts course topic story form
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	opts="encode -c -t -s -f"
+	course="conversation correspondence news"
+	view="volunteer trend"
+	topic="volunteer trend audience" 
+	topic_re="volunteer|trend|audience"
+	story="fire movement freakout pope wallace-oreilly interest knowledge point_of_view relationship_with_writer purpose style"
+	story_re="fire|movement|freakout|pope|wallace-oreilly|interest|knowledge|point_of_view|relationship_with_writer|purpose|style"
+	form="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18"
+
+	if [[ ${prev} == yaml2gift ]]; then
+	COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -c ]] ; then
+	COMPREPLY=( $(compgen -W "${course}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -t ]] ; then
+	COMPREPLY=( $(compgen -W "${topic}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -s ]] ; then
+	COMPREPLY=( $(compgen -W "${story}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} == -f ]] ; then
+	COMPREPLY=( $(compgen -W "${form}" -- ${cur}) )
+	return 0
+	elif [[ ${cur} == * ]] ; then
+	COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+	return 0
+	fi
+}
+
+complete -F _yaml2gift yaml2gift

@@ -9,4 +9,5 @@ screen 3
 stuff "links http://sac.nuu.edu.tw:6666"
 screen 9
 stuff "man weechat"
-screen 1 weechat-curses -r '/iset;/script'
+screen 1
+stuff "weechat-curses -r '/iset;/script'^M"

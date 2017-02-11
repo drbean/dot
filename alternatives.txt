@@ -1,2 +1,2 @@
-alternatives --install /usr/bin/v v /usr/bin/vim 50
+alternatives --install /usr/bin/v v /usr/bin/vim 50 --slave /usr/share/man/man1/v.1.gz v-man /usr/share/man/man1/vim.1.gz
 

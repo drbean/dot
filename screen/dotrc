@@ -1,9 +1,13 @@
 screen 9
 stuff "man bash"
+screen 6
+stuff "cd moosh^M"
+stuff "# php composer-setup.php && php composer.phar install"
+stuff "# su -c 'cp bash_completion /etc/bash_completion.d/moosh'"
 screen 5
-stuff "cd /etc^M"
+stuff "cd drbean_etc^M"
 stuff "# su -^M"
-stuff "chmod 700 -R .^M"
+stuff "# chmod 700 -R .^M"
 stuff "git status^M"
 screen 4
 stuff "# ln systemd/desktop/desktop_background@.service ~/.config/systemd/user/^M"

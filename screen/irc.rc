@@ -7,6 +7,8 @@ stuff "# sudo touch include/znc/IRCNetwork.h && cmake . && make && sudo make ins
 
 screen 3
 stuff "links http://sac.nuu.edu.tw:6666"
+screen 4
+stuff "su -^M"
 screen 9
 stuff "man weechat"
 screen 1

@@ -2,13 +2,19 @@ screen 1
 stuff "cd /var/www/cgi-bin/moodle^M"
 stuff "git status^M"
 screen 2
-stuff "cd /var/www/cgi-bin/moodle^M"
+stuff "cd ~/dot/git/moosh^M"
+stuff "v^M"
+stuff ":e "
 screen 3
-stuff "cd /var/lib/moodle^M"
+stuff "cd ~/dot/git/moosh^M"
+stuff "# php composer-setup.php && php composer.phar install^M"
+stuff "# su -c 'cp bash_completion /etc/bash_completion.d/moosh'"
 screen 4
 stuff "sudo -u postgres psql -p 5433 mood^M"
 screen 8
 stuff "links http://sac.nuu.edu.tw/cgi-bin/moodle"
+screen 8
+stuff "links file:///home/drbean/dot/git/moosh/www/"
 screen 0
 stuff "cd /var/www/cgi-bin/moodle^M"
 stuff "v^M"

@@ -8,7 +8,8 @@ stuff ":e "
 screen 3
 stuff "cd ~/dot/git/moosh^M"
 stuff "# php composer-setup.php && php composer.phar install^M"
-stuff "# su -c 'cp bash_completion /etc/bash_completion.d/moosh'"
+stuff "# su -c 'cp bash_completion /etc/bash_completion.d/moosh'^M"
+stuff "cd /var/www/cgi-bin/moodle^M"
 screen 4
 stuff "sudo -u postgres psql -p 5433 mood^M"
 screen 8

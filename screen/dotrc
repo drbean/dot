@@ -13,6 +13,8 @@ stuff "# systemctl --user enable desktop_background@$USER.timer^M"
 stuff "# systemctl --user restart desktop_background@$USER.timer^M"
 stuff "# systemctl --user start desktop_background@$USER.service^M"
 stuff "# systemctl list-timers --user --all^M"
+stuff "# for type in service timer ; do cp ~/dot/systemd/dns/update_dns.\$type ~/.config/systemd/user/update_dns.\$type ; chmod 600 ~/.config/systemd/user/update_dns.\$type ; done^M"
+stuff "# ln -s ~/dot/systemd/email/status-email-drbean@.service ~/.config/systemd/user/status-email-drbean@.service^M"
 stuff "# for service in dns/update_dns ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}.\$type; done; done^M"
 stuff "# for service in desktop/desktop_background ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}@.\$type; done; done^M"
 screen 3

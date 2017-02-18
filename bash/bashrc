@@ -7,7 +7,7 @@ fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
-export SEMESTER=051
+export SEMESTER=052
 
 # User specific aliases and functions
 
@@ -545,23 +545,11 @@ function ex () {
 
 function gr () {
     local arg league round topic n
-    case $1 in
-	BMA0045) league=$1;;
-	MIA0009) league=$1;;
-	GL00043) league=$1;;
-	FLA0003) league=$1;;
-	FLA0015) league=$1;;
-	FLA0019) league=$1;;
-	FLA0021) league=$1;;
-	241) league=$1;;
-	KB1) league=$1;;
-	MA1) league=$1;;
-	*) return 1 # illegal league
-    esac
-    OPTIND=2
-    while getopts 'r:t:n:' arg
+    OPTIND=1
+    while getopts 'l:r:t:n:' arg
     do
         case ${arg} in
+            l) league=${OPTARG};;
             r) round=${OPTARG};;
             t) topic=${OPTARG};;
             n) n=${OPTARG};;
@@ -584,23 +572,11 @@ function gr () {
 
 function gr_ex () {
     local arg league round topic n
-    case $1 in
-	BMA0045) league=$1;;
-	MIA0009) league=$1;;
-	GL00043) league=$1;;
-	FLA0003) league=$1;;
-	FLA0015) league=$1;;
-	FLA0019) league=$1;;
-	FLA0021) league=$1;;
-	241) league=$1;;
-	KB1) league=$1;;
-	MA1) league=$1;;
-	*) return 1 # illegal league
-    esac
-    OPTIND=2
-    while getopts 'r:t:n:' arg
+    OPTIND=1
+    while getopts 'l:r:t:n:' arg
     do
         case ${arg} in
+            l) league=${OPTARG};;
             r) round=${OPTARG};;
             t) topic=${OPTARG};;
             n) n=${OPTARG};;
@@ -623,23 +599,11 @@ function gr_ex () {
 
 function jigsaw () {
     local arg league round topic n
-    case $1 in
-	BMA0045) league=$1;;
-	MIA0009) league=$1;;
-	GL00043) league=$1;;
-	FLA0003) league=$1;;
-	FLA0015) league=$1;;
-	FLA0019) league=$1;;
-	FLA0021) league=$1;;
-	241) league=$1;;
-	KB1) league=$1;;
-	MA1) league=$1;;
-	*) return 1 # illegal league
-    esac
-    OPTIND=2
-    while getopts 'r:t:n:' arg
+    OPTIND=1
+    while getopts 'l:r:t:n:' arg
     do
         case ${arg} in
+            l) league=${OPTARG};;
             r) round=${OPTARG};;
             t) topic=${OPTARG};;
             n) n=${OPTARG};;
@@ -659,23 +623,11 @@ function jigsaw () {
 
 function gr_comp () {
     local arg league round topic n
-    case $1 in
-	BMA0045) league=$1;;
-	MIA0009) league=$1;;
-	GL00043) league=$1;;
-	FLA0003) league=$1;;
-	FLA0015) league=$1;;
-	FLA0019) league=$1;;
-	FLA0021) league=$1;;
-	241) league=$1;;
-	KB1) league=$1;;
-	MA1) league=$1;;
-	*) return 1 # illegal league
-    esac
-    OPTIND=2
-    while getopts 'r:t:n:' arg
+    OPTIND=1
+    while getopts 'l:r:t:n:' arg
     do
         case ${arg} in
+            l) league=${OPTARG};;
             r) round=${OPTARG};;
             t) topic=${OPTARG};;
             n) n=${OPTARG};;
@@ -697,31 +649,19 @@ function gr_comp () {
 }
 
 function new () {
-    local arg league n
-    case $1 in
-	BMA0045) league=$1;;
-	MIA0009) league=$1;;
-	GL00043) league=$1;;
-	FLA0003) league=$1;;
-	FLA0015) league=$1;;
-	FLA0019) league=$1;;
-	FLA0021) league=$1;;
-	241) league=$1;;
-	KB1) league=$1;;
-	MA1) league=$1;;
-	*) return 1 # illegal league
-    esac
-    OPTIND=2
-    while getopts 's:n:' arg
+    local arg league school n
+    OPTIND=1
+    while getopts 'l:s:n:' arg
     do
         case ${arg} in
+            l) league=${OPTARG};;
             s) school=${OPTARG};;
             n) n=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     if [[ -z "$n" ]]
-	then n=3
+	then n=2
     fi
     cd ~/$SEMESTER/
     SCHOOL=$school \
@@ -748,77 +688,13 @@ function session () {
     league=$1
     week=$2
     case ${league} in
-	241)
-	    if (($week <= 4)); then session=1
-	    elif (($week <= 8)); then session=2
-	    elif (($week <= 12)); then session=3
-	    elif (($week <= 17)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	KB1)
-	    if (($week <= 4)); then session=1
-	    elif (($week <= 8)); then session=2
-	    elif (($week <= 12)); then session=3
-	    elif (($week <= 17)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	MA1)
-	    if (($week <= 4)); then session=1
-	    elif (($week <= 8)); then session=2
-	    elif (($week <= 12)); then session=3
-	    elif (($week <= 17)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	BMA0045)
+	*)
 	    if (($week <= 5)); then session=1
 	    elif (($week <= 9)); then session=2
 	    elif (($week <= 13)); then session=3
 	    elif (($week <= 18)); then session=4
 	    else return 1 # illegal week
 	    fi;;
-	MIA0009)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	GL00043)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	FLA0003)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	FLA0015)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	FLA0019)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	FLA0021)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
-	    else return 1 # illegal week
-	    fi;;
-	*) return 1 # illegal league
     esac
 }
 
@@ -887,19 +763,7 @@ function tables () {
 
 function w () {
     local arg league session week letter topic tables
-    case $1 in
-	BMA0045) league=$1;;
-	MIA0009) league=$1;;
-	GL00043) league=$1;;
-	FLA0003) league=$1;;
-	FLA0015) league=$1;;
-	FLA0019) league=$1;;
-	FLA0021) league=$1;;
-	241) league=$1;;
-	KB1) league=$1;;
-	MA1) league=$1;;
-	*) return 1 # illegal league
-    esac
+    league=$1
     week=$2
     OPTIND=3
     while getopts 'w:l:t:' arg
@@ -926,19 +790,7 @@ function w () {
 
 function cw () {
     local arg league session week letter topic tables
-    case $1 in
-	BMA0045) league=$1;;
-	MIA0009) league=$1;;
-	GL00043) league=$1;;
-	FLA0003) league=$1;;
-	FLA0015) league=$1;;
-	FLA0019) league=$1;;
-	FLA0021) league=$1;;
-	241) league=$1;;
-	KB1) league=$1;;
-	MA1) league=$1;;
-	*) return 1 # illegal league
-    esac
+    league=$1
     week=$2
     OPTIND=3
     while getopts 'w:l:t:' arg
@@ -965,19 +817,7 @@ function cw () {
 
 function hw () {
     local arg league session week letter topic tables
-    case $1 in
-	BMA0045) league=$1;;
-	MIA0009) league=$1;;
-	GL00043) league=$1;;
-	FLA0003) league=$1;;
-	FLA0015) league=$1;;
-	FLA0019) league=$1;;
-	FLA0021) league=$1;;
-	241) league=$1;;
-	KB1) league=$1;;
-	MA1) league=$1;;
-	*) return 1 # illegal league
-    esac
+    league=$1
     week=$2
     OPTIND=3
     while getopts 'w:l:t:' arg

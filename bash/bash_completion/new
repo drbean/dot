@@ -7,9 +7,10 @@ function _new () {
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
-	opts="-r -t"
-	league="2L2 KA2 MB2 BMA0009 FLA0003 FLA0013 FLA0019 FLA0021 GL00043"
-	league_re="2L2|KA2|MB2|BMA0009|FLA0003|FLA0013|FLA0019|FLA0021|GL00043"
+	opts="-l -r -t"
+	league=$LEAGUE
+	league_re=$LEAGUE_RE
+	league_opt="-l"
 	round_opt="-r"
 	round="0 1 2 3 4"
 	round_re="0|1|2|3|4"
@@ -20,6 +21,9 @@ function _new () {
 	n="2 3"
 
 	if [[ ${prev} == new ]]; then
+	COMPREPLY=( $(compgen -W "${league_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${league_opt} ]] ; then
 	COMPREPLY=( $(compgen -W "${league}" -- ${cur}) )
 	return 0
 	elif [[ ${prev} =~ ${league_re} ]] ; then

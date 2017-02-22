@@ -187,7 +187,7 @@ function pages () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/class/pagestranscripts
+    cd ~/curriculum/pages
     COURSE=$course \
     STORY=$story \
     screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$course

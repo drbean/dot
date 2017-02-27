@@ -2,7 +2,7 @@
 Description=Run certbot certonly --webroot, get cert for momo.mydns.jp
 
 [Timer]
-OnCalendar=*:3/12
+OnCalendar=daily
 Unit=apply_cert.service
 
 [Install]

@@ -18,13 +18,3 @@ stuff '$g->grades'
 screen 5
 stuff "lftp web.nuu.edu.tw^M"
 stuff "cd public_html/$LEAGUE^M"
-screen 6
-stuff "svn st -q^M svn log -vr BASE:HEAD^M"
-screen 7
-stuff "# svn mkdir file:///home/drbean/.svk/local/cl/$LEAGUE -m 041GL00016      中級英文聽說訓練        日語文共同學制虛擬班二丙        高來圭^M"
-stuff "# cd ~/051/^M"
-stuff "# svn co file:///home/drbean/.svk/local/cl/$LEAGUE^M"
-stuff "# cp ../../031/$LEAGUE/league.yaml ./league.yaml^M"
-stuff "# svn mkdir session^M"
-stuff "# school_data.pl -s 051 -l $LEAGUE | sponge league.yaml^M"
-stuff "# re.pl --rcfile ../rc/import_memberdata.rc^M"

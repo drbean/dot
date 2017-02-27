@@ -671,7 +671,7 @@ function new () {
     N=$n \
     SESSION=1 \
     PREVSESSION=$(($SESSION-1)) \
-    screen -c /home/$USER/dot/screen/setup.rc -dR s_$league
+    screen -c /home/$USER/dot/screen/setup.rc -dR n_$league
     cd -
 }
 

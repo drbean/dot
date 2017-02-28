@@ -41,7 +41,7 @@ Environment=HOME=/home/%i
 
 # Clean any existing files in /tmp/.X11-unix environment
 ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill :2 > /dev/null 2>&1 || :'
-ExecStart=/usr/bin/vncserver :2 -geometry 1440x900 -alwaysshared -localhost -fg
+ExecStart=/usr/bin/vncserver :1 -geometry 1024x768 -alwaysshared -localhost -fg
 ExecStop=/usr/bin/vncserver -kill :2
 
 [Install]

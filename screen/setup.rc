@@ -23,4 +23,4 @@ stuff "cp $SEMESTER${LEAGUE}.txt ${LEAGUE}.txt^M"
 stuff "v $SEMESTER${LEAGUE}.txt ${LEAGUE}.txt ${LEAGUE}_cohort.txt"
 
 screen 0
-stuff "cd ~/$SEMESTER/$LEAGUE && v league.yaml groups.yaml session/$PREVSESSION/groups.yaml" 
+stuff "cd ~/$SEMESTER/$LEAGUE && v league.yaml groups.yaml session/$PREVSESSION/groups.yaml email.yaml" 

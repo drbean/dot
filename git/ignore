@@ -1,7 +1,7 @@
 *.hs~
 *.gf~
-*.hs.swp
-*.gf.swp
+*.hs.sw?
+*.gf.sw?
 *.gfo
 *.gf-tags
 Interpretation.hs
@@ -11,3 +11,4 @@ Translate.hs
 gf_tags
 haskell_tags
 tags
+.ghci

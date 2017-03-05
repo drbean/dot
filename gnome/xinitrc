@@ -1,0 +1,10 @@
+/usr/bin/xmodmap -e "clear Super_R"
+
+# # https://wiki.archlinux.org/index.php/IBus
+# 
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+# 
+# ibus-daemon -dr --desktop=xmonad-mate
+

@@ -460,7 +460,7 @@ function tech () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
+	cd ~/curriculum/$course
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \

@@ -230,7 +230,7 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'AP': 'a', 'A2': 'a', 'N': 'n', 'N2': 'n', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'V2A': 'v', 'VQ': 'v', 'V2Q': 'v', 'Adv': "d", 'AdV': "d", 'AdA': "d", 'Prep': "r", 'Det': "t", 'Conj': "c", 'Subj': "s"}
+	let marklist = {'AP': 'a', 'A2': 'a', 'N': 'n', 'N2': 'n', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'V2A': 'v', 'VQ': 'v', 'V2Q': 'v', 'Adv': "d", 'AdV': "d", 'AdA': "d", 'Prep': "r", 'Det': "t", 'Predet': "t", 'Conj': "c", 'Subj': "s"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
 	let key = input("Word: " . word . ", Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), Pr(O)noun, (C)onj, (S)ubj ")
@@ -319,9 +319,9 @@ fu! Populate(module)
 		let category = d_category
 	elseif key_category == 'Det'
 		call inputsave()
-		let det_key = input("Word: " . word . ", Det type: '(u)nit', '(s)ingular', '(p)lural' ")
+		let det_key = input("Word: " . word . ", Det type: '(u)nit', '(s)ingular', '(p)lural', 'P(r)edet' ")
 		call inputrestore()
-		let det_category = get( {'u': 'Det', 's': 'Det', 'p': 'Det'}, det_key )
+		let det_category = get( {'u': 'Det', 's': 'Det', 'p': 'Det', 'r': 'Predet'}, det_key )
 		let category = det_category
 	else
 		let category = key_category
@@ -394,6 +394,8 @@ fu! Populate(module)
 		elseif det_key == "p"
 			call append(ab_eng_lnum+1, "\t" . down_name . "\t= mkDet( ParadigmsEng.mkQuant nonExist \"" . word . "\") pluralNum;")
 		endif
+	elseif category == "Predet"
+		call append(ab_eng_lnum+1, "\t" . down_name . "\t= ss \"" . word . "\";")
 	else 
 		call append((ab_eng_lnum+1), "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif

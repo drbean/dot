@@ -14,7 +14,7 @@ stuff "# svn mkdir session classwork homework comp exam flash^M"
 stuff "# chcon -R -t public_content_rw_t ./comp/ ./flash/^M"
 stuff "# su -c 'chown -R drbean:swiss ./comp/ ./flash/'^M"
 stuff "# svn ci session classwork homework comp exam flash -m bare_dirs^M"
-stuff "# lftp -c 'open web.nuu.edu.tw && mkdir public_html/$LEAGUE && cd public_html/$LEAGUE && put ~/class/pagestranscripts/Exam.html && open freeshell.org && mkdir html/$LEAGUE && cd html/$LEAGUE && put ~/class/pagestranscripts/Exam.html && quit'^M"
+stuff "# lftp -c 'open web.nuu.edu.tw && mkdir public_html/$LEAGUE && cd public_html/$LEAGUE && put ~/curriculum/pages/Exam.html && open freeshell.org && mkdir html/$LEAGUE && cd html/$LEAGUE && put ~/curriculum/pages/Exam.html && quit'^M"
 
 screen 2
 stuff "cd ~/admin/$SEMESTER/$SCHOOL/^M"

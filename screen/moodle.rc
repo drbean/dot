@@ -14,6 +14,9 @@ screen 4
 stuff "sudo -u postgres psql -p 5433 mood052^M"
 screen 5
 stuff "cd ~/moodle/db^M"
+stuff "cd ~/moodle/moosh^M"
+stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/$page/.\/$page\/index.html/\" www/_site/*.html; ; done^M"
+stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/$page/..\/$page\/index.html/\" www/_site/*/*.html; done^M"
 screen 8
 stuff "links https://sac.nuu.edu.tw/cgi-bin/moodle"
 screen 9

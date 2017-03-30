@@ -1,4 +1,4 @@
-" Last Edit: 2017 Jan 22, 07:53:41 PM
+" Last Edit: 2017 Mar 30, 08:24:15 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -637,9 +637,9 @@ au BufEnter *.yaml no <Leader>tot S---<C-C><C-C>:%s/\v^.*,([BN]\d*),.*,.*,.*,.*,
 
 fu! Reformat_champ ()
 	let dir = getcwd()
-	let league = substitute(dir, "/home/drbean/051/", "", "")
+	let league = substitute(dir, "/home/drbean/$SEMESTER/", "", "")
 	let sessionlist = glob( "dir" . "/session/*", 1, 1)
-	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/051/session/", "", "")' )
+	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/$SEMESTER/session/", "", "")' )
 	let session = max( sessions )
 	call inputsave()
 	let item_key = input("Items: '(1)', '(2)', '(3)', '(4)', '(5)', '(6)', '(7)', '(8)', '(9)', '(10)', '(11)', '(12)', '(13)', '(14)' ")
@@ -683,9 +683,9 @@ endf
 
 fu! Reformat_prescore ()
 	let dir = getcwd()
-	let league = substitute(dir, "/home/drbean/051/", "", "")
+	let league = substitute(dir, "/home/drbean/$SEMESTER/", "", "")
 	let sessionlist = glob( "dir" . "/session/*", 1, 1)
-	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/051/session/", "", "")' )
+	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/$SEMESTER/session/", "", "")' )
 	let session = max( sessions )
 	@ts = 2
 	let lnum = line('$')

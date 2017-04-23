@@ -764,8 +764,9 @@ function tables () {
 }
 
 function csv2yaml ( ) {
-    MOODLEGRADE=$1
-    cat classwork/$MOODLEGRADE.csv | sed \
+    WORK=$1
+    MOODLEGRADE=$2
+    cat ${WORK}/$MOODLEGRADE.csv | sed \
     -e '1i ---' \
     -e '/First name/d' \
     -e 's/^\w*,\([UN][[:digit:]]*\),,,,\w*@[^,]*,"\([[:digit:]]*\).*$/\1: \2/' \

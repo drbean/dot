@@ -8,8 +8,8 @@ function _gr_comp () {
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	opts="-r -t"
-	league="241 KB1 MA1 BMA0045 MIA0009 FLA0015 FLA0003 GL00043"
-	league_re="241|KB1|MA1|BMA0045|MIA0009|FLA0015|FLA0003|GL00043"
+	league=$LEAGUES
+	league_re=$LEAGUES_RE
 	round_opt="-r"
 	round="0 1 2 3 4"
 	round_re="0|1|2|3|4"

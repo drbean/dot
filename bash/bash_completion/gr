@@ -8,8 +8,8 @@ function _gr () {
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	opts="-l -r -t"
-	league=$LEAGUE
-	league_re=$LEAGUE_RE
+	league=$LEAGUES
+	league_re=$LEAGUES_RE
 	league_opt="-l"
 	round_opt="-r"
 	round="0 1 2 3 4"

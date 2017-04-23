@@ -9,8 +9,8 @@ function _new () {
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	opts="-l -r -t"
 	league_opt="-l"
-	league=$LEAGUE
-	league_re=$LEAGUE_RE
+	league=$LEAGUES
+	league_re=$LEAGUES_RE
 	round_opt="-r"
 	round="0 1 2 3 4"
 	round_re="0|1|2|3|4"

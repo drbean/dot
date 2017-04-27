@@ -1,0 +1,5 @@
+screen
+# stuff "ls exam/$ROUND && svn up exam/$ROUND^M"
+# stuff "svn ls classwork session/$SESSION^M"
+stuff "mv ~/Downloads/$LEAGUE\ Grades-2017????_????-comma_separated.csv ./exam/$ROUND/g.csv^M"
+stuff "# csv2yaml exam $ROUND/g > exam/$ROUND/g.yaml^M"

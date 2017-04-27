@@ -1,4 +1,4 @@
 screen v league.yaml exam/$ROUND/{round,response,scores}.yaml
 
 source jigsaw.rc
-source exam.rc
+source moodle_exam.rc

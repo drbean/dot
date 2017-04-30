@@ -4,8 +4,7 @@ stuff ":e "
 screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 screen 4
-stuff "# su - && runuser -u moodleuser less /var/lib/pgsql/moodle/pg_log/postgresql-*.log^M"
-stuff '# su -c "PGPORT=5433 runuser -u moodleuser psql mood"'
+stuff "sudo -u postgres psql -p 5432 ${APP}$SEMESTER^M"
 screen 7
 stuff "cd /var/www/cgi-bin/$APP^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"

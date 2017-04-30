@@ -7,6 +7,7 @@ screen 3
 stuff "export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# sudo systemctl stop httpd.service^M"
 stuff "# perl script/question_grade_${APP}.pl -l $LEAGUE -x $OLD_STORY -q 1 -o 2 -w 2 > ~/$SEMESTER/$LEAGUE/homework.yaml && less ~/$SEMESTER/$LEAGUE/homework.yaml && mv ~/$SEMESTER/$LEAGUE/homework.yaml ~/$SEMESTER/$LEAGUE/homework/$ROUND.yaml && svn add ~/$SEMESTER/$LEAGUE/homework/$ROUND.yaml && svn ci -m $OLD_STORY ~/$SEMESTER/$LEAGUE/homework/$ROUND.yaml && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put ~/$SEMESTER/$LEAGUE/homework/$ROUND.yaml -o homework.yaml && qui'^M"
+stuff "# perl script/comp_grade_${APP}.pl -l $LEAGUE -x $OLD_STORY -t 1 -g 2 -r 0 > ~/$SEMESTER/$LEAGUE/exam.yaml && less ~/$SEMESTER/$LEAGUE/exam.yaml && mv ~/$SEMESTER/$LEAGUE/exam.yaml ~/$SEMESTER/$LEAGUE/exam/$ROUND/g3.yaml && svn add ~/$SEMESTER/$LEAGUE/exam/$ROUND/g3.yaml && svn ci -m $OLD_STORY ~/$SEMESTER/$LEAGUE/exam/$ROUND/g3.yaml && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put ~/$SEMESTER/$LEAGUE/exam/$ROUND/g3.yaml && qui'^M"
 stuff "# perl script/delete_exercise.pl -i $OLD_STORY -g $COURSE^M"
 stuff "# sudo systemctl start httpd.service^M"
 stuff "# ls ~/$SEMESTER/$LEAGUE/homework/^M"

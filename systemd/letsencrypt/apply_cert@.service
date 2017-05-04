@@ -5,7 +5,7 @@ OnFailure=status-email-drbean@%p.service
 [Service]
 Type=oneshot
 Nice=19
-ExecStart=/usr/bin/certbot certonly --apache --domains sac.nuu.edu.tw --non-interactive
+ExecStart=/usr/bin/certbot certonly --standalone --domains momo.mydns.jp --non-interactive --preferred-challenges tls-sni
 
 [Install]
 WantedBy=multi-user.target

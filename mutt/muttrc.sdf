@@ -1,4 +1,4 @@
-# Last Edit: 2016 Apr 01, 11:39:13 AM
+# Last Edit: 2017 Jun 12, 07:45:02 AM
 #
 # The ultimate Mutt settings
 #
@@ -781,7 +781,7 @@ send-hook . "set attribution='On %{%a, %d %b %Y}, %n wrote:\n' indent_string='> 
 # send-hook penpals-two 'unmy_hdr From' 
 send-hook penpals-two 'my_hdr From: lang-penpals-two@ms.chinmin.edu.tw'
 
-send-hook 'ghm2y@sikasenbey.or.jp|j27acebc4225qa@k.vodafone.ne.jp|j27acebc4225qa@i.softbank.jp' 'set send_charset=iso-8859-1:iso-2022-jp:utf-8 signature=""'
+send-hook 'ghm2y@sikasenbey.or.jp|j27acebc4225qa@k.vodafone.ne.jp|j27acebc4225qa@i.softbank.jp|shirokvmayou@gmail.com' 'set send_charset=iso-8859-1:iso-2022-jp:utf-8 signature=""'
 send-hook 'mari_kitaoka@gmx.yamaha.com|marimo-x@wonder.ocn.ne.jp' 'set send_charset=iso-8859-1:iso-2022-jp signature=""'
 send-hook 'john.m.sewell@gmail.com' 'set send_charset=iso-8859-1:utf-8 signature=""'
 send-hook '.edu.tw' 'set send_charset=utf-8 signature=""'
@@ -841,7 +841,7 @@ save-hook bug-games-tournament-swiss =sw
 
 fcc-save-hook ^(listproc|listserv|lyris|majordomo|mail2news|sympa|.*request@|.*subscribe@) =z/l
 # fcc-save-hook (akihiro1@kyoto-be.ne.jp|parker@jrchcn|Hgoos|appliedinternet|hendren|wjlund|ae$) =t
-fcc-save-hook (kk68x7|j27acebc4225qa|koara8|ghm2y) =yo
+fcc-save-hook (kk68x7|j27acebc4225qa|koara8|ghm2y|shirokvmayou) =yo
 
 #
 # pgp-hook pattern keyid

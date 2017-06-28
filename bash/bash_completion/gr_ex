@@ -7,9 +7,10 @@ function _gr_ex () {
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
-	opts="-r -t"
+	opts="-l -r -t"
 	league=$LEAGUES
 	league_re=$LEAGUES_RE
+	league_opt="-l"
 	round_opt="-r"
 	round="0 1 2 3 4"
 	round_re="0|1|2|3|4"

@@ -21,6 +21,9 @@ function _gr_ex () {
 	n="2 3"
 
 	if [[ ${prev} == gr_ex ]]; then
+	COMPREPLY=( $(compgen -W "${league_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${league_opt} ]] ; then
 	COMPREPLY=( $(compgen -W "${league}" -- ${cur}) )
 	return 0
 	elif [[ ${prev} =~ ${league_re} ]] ; then

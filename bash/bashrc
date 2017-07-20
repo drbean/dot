@@ -7,9 +7,9 @@ fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
-export SEMESTER=052
-export LEAGUES="BMA0041 MIA0015 FLA0010 MB2 KA2 GL00036"
-export LEAGUES_RE="BMA0041|MIA0015|FLA0010|MB2|KA2|GL00036"
+export SEMESTER=061
+export LEAGUES="BMA0034 MIA0016 FLA0003 MB2 KA2 GL00036"
+export LEAGUES_RE="BMA0034|MIA0016|FLA0003|MB2|KA2|GL00036"
 
 # User specific aliases and functions
 
@@ -770,8 +770,8 @@ function csv2yaml ( ) {
     cat ${WORK}/$MOODLEGRADE.csv | sed \
     -e '1i ---' \
     -e '/First name/d' \
-    -e 's/^\w*,\([UN][[:digit:]]*\),,,,\w*@[^,]*,"\([[:digit:]]*\).*$/\1: \2/' \
-    -e 's/^\w*,\([UN][[:digit:]]*\),,,,\w*@[^,]*,-.*$/\1: 0/'
+    -e 's/^\w*,\([UNV][[:digit:]]*\),,,,\w*@[^,]*,"\([[:digit:]]*\).*$/\1: \2/' \
+    -e 's/^\w*,\([UNV][[:digit:]]*\),,,,\w*@[^,]*,-.*$/\1: 0/'
 }
 
 

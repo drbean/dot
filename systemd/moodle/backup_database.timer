@@ -1,0 +1,10 @@
+[Unit]
+Description=Back up database on boot/every 6 hrs
+
+[Timer]
+OnBootSec=180
+OnCalendar=1/6:03
+Unit=backup_database.service
+
+[Install]
+WantedBy=timers.target

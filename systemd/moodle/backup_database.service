@@ -6,7 +6,7 @@ OnFailure=status-email-drbean@%n.service
 Type=oneshot
 Nice=19
 Environment=SEMESTER=061
-ExecStart=/bin/bash -c "/usr/local/bin/backup_database.sh PGPASSWORD DATABASE FTP_PASSWORD PASSPHRASE"
+ExecStart=/bin/bash -c "/usr/local/bin/backup_database.sh FTP_PASSWORD PASSPHRASE"
 
 [Install]
 WantedBy=multi-user.target

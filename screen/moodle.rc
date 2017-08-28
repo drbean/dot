@@ -10,6 +10,8 @@ stuff "cd ~/moodle/moosh^M"
 stuff "# php composer-setup.php && php composer.phar install^M"
 stuff "# su -c 'cp bash_completion /etc/bash_completion.d/Moosh'^M"
 stuff "cd /var/www/cgi-bin/moodle^M"
+stuff "# for g in {1..5} ; do Moosh group-memberadd  -g $g $((277 + $g*2 - 1))  $((277 + $g*2)) ; done^M"
+stuff "# for g in {1..5} ; do Moosh group-memberadd -g $g -c 17 media_student_$(($g*2 - 1))  media_student_$(($g*2)) ; done^M"
 screen 4
 stuff "sudo -u postgres psql -p 5433 mood052^M"
 screen 5
@@ -18,10 +20,11 @@ stuff "cd ~/moodle/moosh^M"
 stuff "cd ~/moodle/^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/$page/.\/$page\/index.html/\" www/_site/*.html; ; done^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/$page/..\/$page\/index.html/\" www/_site/*/*.html; done^M"
+stuff "# pandoc -o www/_site/commands/index_pandoc.html www/commands/index.md^M"
 screen 8
 stuff "links https://sac.nuu.edu.tw/cgi-bin/moodle"
 screen 9
-stuff "links file:///home/drbean/moodle/moosh/www/_site/commands/index.html"
+stuff "links file:///home/drbean/moodle/moosh/www/_site/commands/index_pandoc.html"
 screen 0
 stuff "cd /var/www/cgi-bin/moodle^M"
 stuff "v^M"

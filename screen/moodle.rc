@@ -10,6 +10,7 @@ stuff "cd ~/moodle/moosh^M"
 stuff "# php composer-setup.php && php composer.phar install^M"
 stuff "# su -c 'cp bash_completion /etc/bash_completion.d/Moosh'^M"
 stuff "cd /var/www/cgi-bin/moodle^M"
+stuff "# re.pl --rcfile ~/$SEMESTER/rc/user-create.rc # change the city, school, etc^M"
 stuff "# for g in {1..5} ; do Moosh group-memberadd  -g $g $((277 + $g*2 - 1))  $((277 + $g*2)) ; done^M"
 stuff "# for g in {1..5} ; do Moosh group-memberadd -g $g -c 17 media_student_$(($g*2 - 1))  media_student_$(($g*2)) ; done^M"
 screen 4

@@ -1,4 +1,4 @@
-" Last Edit: 2017 Jul 01, 01:34:56 PM
+" Last Edit: 2017 Sep 18, 05:51:38 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -14,6 +14,9 @@
 "             for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "VIM must be set within vim, because :ec $VIM still returns ~/share/vim
+
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
 
 " default handles bom. This doesn't
 "if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
@@ -55,6 +58,8 @@ se nrformats-=octal
 
 se wildchar=<Tab>	" for expansion of command line
 "se wildignore=*~,	" files not seen in command line expansion
+set wildmenu		" alternatives on command line
+
 " set formatoptions=tcroq2	"for gq formatting
 
 se timeoutlen=500	" how long to wait before default disambiguation

@@ -8,8 +8,8 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 export SEMESTER=061
-export LEAGUES="BMA0034 MIA0016 FLA0003 2L1a 2L1b 251"
-export LEAGUES_RE="BMA0034|MIA0016|FLA0003|2L1a|2L1b|251"
+export LEAGUES="BMA0034 BMA0031 MIA0016 FLA0003 2L1a 2L1b 251"
+export LEAGUES_RE="BMA0034|BMA0031|MIA0016|FLA0003|2L1a|2L1b|251"
 
 # User specific aliases and functions
 
@@ -472,7 +472,7 @@ function tech () {
 
 function n () {
     OPTIND=1
-    local arg course=news view topic story form
+    local arg course=media view topic story form
     while getopts 'c:v:t:s:f:' arg
     do
         case ${arg} in
@@ -483,7 +483,7 @@ function n () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
+	cd ~/curriculum/$course
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \

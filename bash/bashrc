@@ -252,7 +252,7 @@ function speaking () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/speaking
+	cd ~/curriculum/speaking
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \

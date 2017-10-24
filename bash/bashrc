@@ -521,7 +521,7 @@ function ex () {
 	conversation) course=$1;;
 	speaking) course=$1;;
 	tech) course=$1;;
-	news) course=$1;;
+	media) course=$1;;
 	business) course=$1;;
 	college) course=$1;;
 	*) return 1 # illegal league
@@ -770,8 +770,8 @@ function csv2yaml ( ) {
     cat ${WORK}/$MOODLEGRADE.csv | sed \
     -e '1i ---' \
     -e '/First name/d' \
-    -e 's/^\w*,\([UNV][[:digit:]]*\),,,,\w*@[^,]*,"\([[:digit:]]*\).*$/\1: \2/' \
-    -e 's/^\w*,\([UNV][[:digit:]]*\),,,,\w*@[^,]*,-.*$/\1: 0/'
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,\w*@[^,]*,"\([[:digit:]]*\).*$/\1: \2/' \
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,\w*@[^,]*,-.*$/\1: 0/'
 }
 
 

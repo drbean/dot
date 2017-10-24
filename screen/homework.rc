@@ -5,7 +5,6 @@ stuff "mv ~/$LEAGUE\ Grades-2017????_????-comma_separated.csv ./homework/$LASTWE
 stuff "# csv2yaml homework $LASTWEEK > homework/$LASTWEEK.yaml^M"
 stuff "# cp homework/$LASTWEEK.yaml homework/total.yaml^M"
 stuff "# svn add homework/total.yaml homework/$LASTWEEK.yaml && svn ci homework/{total,$LASTWEEK}.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put homework/$LASTWEEK.yaml -o homework.yaml && qui'^M"
-stuff "# svn add homework/$LASTWEEK.yaml && svn ci homework/$LASTWEEK.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put homework/$LASTWEEK.yaml -o homework.yaml && qui'^M"
 
 screen
 stuff "v homework/$LASTWEEK.yaml "

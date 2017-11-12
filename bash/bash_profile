@@ -30,8 +30,8 @@ if [ "$(uname)" == "CYGWIN_NT-6.1" ]; then
 		mkdir $SCREENDIR
 	fi
 	chmod 700 $SCREENDIR
-	export PATH=$PATH:/cygdrive/c/Users/Nuu-User/Documents/gf-3.8/bin
-	export GF_LIB_PATH=/cygdrive/c/Nuu-User/Documents/gf-3.8/gf-3.8/lib/present
+	export PATH=$PATH:/cygdrive/c/Users/owuser/Documents/gf-3.8/bin
+	export GF_LIB_PATH=/cygdrive/c/owuser/Documents/gf-3.8/gf-3.8/lib/present
 fi
 
 

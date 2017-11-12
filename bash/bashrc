@@ -333,13 +333,14 @@ function biz () {
 function corr () {
     OPTIND=1
     local arg course=correspondence view topic story form
-    while getopts 'v:t:s:f:' arg
+    while getopts 'v:t:s:f:q:' arg
     do
         case ${arg} in
             v) view=${OPTARG};;
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
             f) form=${OPTARG};;
+            q) quiz=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
@@ -349,6 +350,7 @@ function corr () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
+	QUIZ=${quiz:-"jigsaw"} \
 	screen -c /home/$USER/dot/screen/course.rc -dR $course
 	cd -
 }

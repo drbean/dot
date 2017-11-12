@@ -831,6 +831,17 @@ au BufEnter Indexes*.txt nn <buffer> g<Right> g$zs
 
 augroup END
 
+augroup cards
+au BufEnter cards.yaml no <buffer> <LocalLeader>a :call WriteAnswer()<CR>
+function! WriteAnswer()
+	let option_line = getline( line('.') )
+	let answer = substitute(option_line, '           - ', '', "")
+	let answer_line = search( "answer: ")
+	let answer_string = "          answer:" . answer
+	call setline(".", answer_string)
+endfunction
+
+augroup END
 function! Nun()
 	nun <buffer> 0
 	nun <buffer> 1

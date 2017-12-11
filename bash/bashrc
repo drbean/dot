@@ -20,7 +20,7 @@ source ~/dot/git/git-subrepo/.rc
 
 alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./\$ROUND"
 alias web="cd; screen -c /home/$USER/dot/screen/web.rc -dR web; cd -"
-alias surf="cd ~/sr; screen -dR surfraw; cd -"
+alias surf="cd; tmux attach-session; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/ttb/beans; APP=beans COURSE= screen -c /home/$USER/dot/screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/screen/project.rc -dR swiss; cd -"
@@ -400,6 +400,32 @@ function cnv () {
 	QUIZ=${quiz:-"jigsaw"} \
 	FORM=$form \
 	screen -c /home/$USER/dot/screen/course.rc -dR $topic
+	cd -
+}
+
+function pd () {
+    OPTIND=1
+    local arg course view topic story form
+    while getopts 'c:v:t:s:q:f:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            q) quiz=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/curriculum/$course
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	QUIZ=${quiz:-"jigsaw"} \
+	FORM=$form \
+	screen -c /home/$USER/dot/screen/pandoc.rc -dR pandoc_$topic
 	cd -
 }
 

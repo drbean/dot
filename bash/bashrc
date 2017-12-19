@@ -798,7 +798,7 @@ function csv2yaml ( ) {
     cat ${WORK}/$MOODLEGRADE.csv | sed \
     -e '1i ---' \
     -e '/First name/d' \
-    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,\w*@[^,]*,"\([[:digit:]]*\).*$/\1: \2/' \
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,\w*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
     -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,\w*@[^,]*,-.*$/\1: 0/'
 }
 

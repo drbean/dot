@@ -1,9 +1,9 @@
+screen 0
+stuff "v ./$TOPIC/dic.yaml ./$TOPIC/cards.yaml ./$TOPIC/slides.md ./$TOPIC/$STORY.md ./$TOPIC/quiz_${STORY}_${QUIZ}_$FORM.gift"
+
 screen 1
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "# svn mkdir ./$TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/ && mkdir $VIEW && qui'^M"
-
-source pandoc.rc
-
 stuff "# vroom -html ./$TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && mput ./$TOPIC/html/*.html && qui'^M"
 stuff "# xelatex bingo.tex && evince bingo.pdf^M"
 stuff "# cat ./$TOPIC/dic_${STORY}_$FORM.tex ./$TOPIC/dic_${STORY}_$(($FORM+1)).tex ./$TOPIC/bingo_${STORY}_$FORM.tex >> bingo.tex^M"
@@ -33,5 +33,5 @@ stuff "# put jigsaw_${STORY}_$FORM.pdf^M"
 stuff "# put quiz_${STORY}_$FORM.pdf^M"
 stuff "# open freeshell.org^M"
 stuff "# put bingo.pdf && open freeshell.org && put bingo.pdf^M"
-screen 0
-stuff "v ./$TOPIC/dic.yaml ./$TOPIC/cards.yaml ./$TOPIC/slides.md ./$TOPIC/$STORY.md ./$TOPIC/quiz_${STORY}_${QUIZ}_$FORM.gift"
+
+source pandoc.rc

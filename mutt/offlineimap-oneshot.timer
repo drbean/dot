@@ -1,0 +1,9 @@
+[Unit]
+Description=Offlineimap Query Timer
+Documentation=man:offlineimap(1) https://github.com/OfflineIMAP/offlineimap/blob/master/contrib/systemd/offlineimap-oneshot.timer
+[Timer]
+OnBootSec=1m
+OnUnitInactiveSec=15m
+[Install]
+WantedBy=default.target
+

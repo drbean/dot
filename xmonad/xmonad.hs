@@ -7,6 +7,7 @@ import qualified Data.Map as M
 import XMonad
 import XMonad.Config.Desktop
 import XMonad.Config.Gnome
+import XMonad.Config.Mate
 import XMonad.Config.Kde
 import XMonad.Config.Xfce
 
@@ -17,7 +18,7 @@ import XMonad.Layout.NoFrillsDecoration
 import XMonad.Util.Themes
 
 -- myLayout = Tiled ||| tabbed shrinkText defaultTheme ||| Accordion ||| tabbed shrinkText defaultTheme ||| simpleTabbed ||| tabbed ||| Full ||| addTabs ||| tabbed shrinkText (theme donaldTheme) ||| (Tall 1 (3/100) (1/2))
-myLayout = noFrillsDeco shrinkText defaultTheme (layoutHook defaultConfig)
+myLayout = noFrillsDeco shrinkText (theme smallClean) (layoutHook defaultConfig)
 
 main = do
 	session <- getEnv "DESKTOP_SESSION"
@@ -26,7 +27,9 @@ main = do
 	xmonad foundconfig
 		{ modMask = mod4Mask
 		-- , terminal="gnome-terminal --hide-menubar"
+		-- , terminal="gnome-terminal --hide-menubar --profile=sac"
 		, terminal="gnome-terminal --hide-menubar --profile=nuu-halls"
+		-- , terminal="gnome-terminal --hide-menubar --profile=A706"
 		-- , terminal="mate-terminal --hide-menubar --profile=momotaro"
 		-- , terminal="mate-terminal --show-menubar"
 		-- , terminal = "/usr/bin/urxvt"

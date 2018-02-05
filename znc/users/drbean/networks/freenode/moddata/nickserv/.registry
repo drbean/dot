@@ -1,5 +1,0 @@
-GhostCmd PRIVMSG%20;NickServ%20;%3a;GHOST%20;%7b;nickname%7d;%20;%7b;password%7d;
-GroupCmd PRIVMSG%20;NickServ%20;%3a;GROUP%20;%7b;nickname%7d;%20;%7b;password%7d;
-IdentifyCmd PRIVMSG%20;NickServ%20;%3a;IDENTIFY%20;%7b;password%7d;
-RecoverCmd PRIVMSG%20;NickServ%20;%3a;RECOVER%20;%7b;nickname%7d;%20;%7b;password%7d;
-ReleaseCmd PRIVMSG%20;NickServ%20;%3a;RELEASE%20;%7b;nickname%7d;%20;%7b;password%7d;

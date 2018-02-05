@@ -68,7 +68,9 @@ def   SURFRAW_screen		tmux
 defyn SURFRAW_new_screen	yes
 
 # arguments for the screen command
-def   SURFRAW_screen_args	""
+# greg
+# def   SURFRAW_screen_args	""
+def   SURFRAW_screen_args	new-window
 
 # "quote" arguments
 defyn SURFRAW_quote_args	no

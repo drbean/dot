@@ -11,7 +11,7 @@ function _new () {
 	league_opt="-l"
 	league=$LEAGUES
 	league_re=$LEAGUES_RE
-	school_opt="-r"
+	school_opt="-s"
 	school="must nuu"
 	school_re="must|nuu"
 	n_opt="-n"

@@ -7,16 +7,13 @@ function _new () {
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
-	opts="-l -r -t"
+	opts="-l -s -n"
 	league_opt="-l"
 	league=$LEAGUES
 	league_re=$LEAGUES_RE
-	round_opt="-r"
-	round="0 1 2 3 4"
-	round_re="0|1|2|3|4"
-	topic_opt="-t"
-	topic="food tew aliens,education,crime"
-	topic_re="food|tew|aliens,education,crime"
+	school_opt="-r"
+	school="must nuu"
+	school_re="must|nuu"
 	n_opt="-n"
 	n="2 3"
 
@@ -27,18 +24,12 @@ function _new () {
 	COMPREPLY=( $(compgen -W "${league}" -- ${cur}) )
 	return 0
 	elif [[ ${prev} =~ ${league_re} ]] ; then
-	COMPREPLY=( $(compgen -W "${round_opt}" -- ${cur}) )
+	COMPREPLY=( $(compgen -W "${school_opt}" -- ${cur}) )
 	return 0
-	elif [[ ${prev} =~ ${round_opt} ]] ; then
-	COMPREPLY=( $(compgen -W "${round}" -- ${cur}) )
+	elif [[ ${prev} =~ ${school_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${school}" -- ${cur}) )
 	return 0
-	elif [[ ${prev} =~ ${round_re} ]] ; then
-	COMPREPLY=( $(compgen -W "${topic_opt}" -- ${cur}) )
-	return 0
-	elif [[ ${prev} =~ ${topic_opt} ]] ; then
-	COMPREPLY=( $(compgen -W "${topic}" -- ${cur}) )
-	return 0
-	elif [[ ${prev} =~ ${topic_re} ]] ; then
+	elif [[ ${prev} =~ ${school_re} ]] ; then
 	COMPREPLY=( $(compgen -W "${n_opt}" -- ${cur}) )
 	return 0
 	elif [[ ${prev} =~ ${n_opt} ]] ; then

@@ -9,9 +9,6 @@ fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
-export SEMESTER=062
-export LEAGUES="BMA0016 BMA0029 MIA0013 FLA0003 2L2"
-export LEAGUES_RE="BMA0016|BMA0029|MIA0013|FLA0003|2L2"
 
 # User specific aliases and functions
 # User specific environment and startup programs

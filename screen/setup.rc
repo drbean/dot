@@ -1,6 +1,6 @@
 screen 1
 stuff "# svn rm https://github.com/drbean/class/trunk/$LEAGUE -m make_way_for_$SEMESTER$LEAGUE^M"
-stuff "# svn co --depth empty https://github.com/drbean/class/trunk $SEMESTER^M"
+stuff "# svn co --depth empty https://github.com/drbean/class/trunk ~/$SEMESTER^M"
 stuff "# cd ~/$SEMESTER/^M"
 stuff "mkdir ~/$SEMESTER/$LEAGUE/^M"
 stuff "cd ~/$SEMESTER/$LEAGUE/^M"

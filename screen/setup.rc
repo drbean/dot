@@ -9,7 +9,7 @@ stuff "# cp ../../$(($SEMESTER-1))/$LEAGUE/league.yaml ./league.yaml^M"
 stuff "# school_data.pl -s $SEMESTER -l $LEAGUE | sponge league.yaml^M"
 stuff "# for oldsemester in 031 032 041 042 051 052 ; do for oldleague in MA1 MB1 MB2 KA1 KA2 KB1 KB2 ; do [[ -s ../../\$oldsemester/\$oldleague/league.yaml ]] && import_memberdata.pl -l $LEAGUE -o \$oldleague -s $SEMESTER -x \$oldsemester | sponge league.yaml ; done ; done^M"
 stuff "# svn add . ^M"
-stuff "# re.pl --rcfile ../rc/email.rc^M"
+stuff "# merge_email.pl -l $LEAGUE | sponge league.yaml^M"
 stuff "# svn commit -m '$SEMESTER$LEAGUE 中級英文聽說訓練 日語文共同學制虛擬班二丙 高來圭. anterior: $(($SEMESTER-1))$LEAGUE, names from: $(($SEMESTER-1))$LEAGUE'^M"
 stuff "# svn mkdir session classwork homework comp exam flash^M"
 stuff "# chcon -R -t public_content_rw_t ./comp/ ./flash/^M"
@@ -21,7 +21,7 @@ screen 2
 stuff "cd ~/admin/$SEMESTER/$SCHOOL/^M"
 stuff "# cp ~/media/$SEMESTER${LEAGUE}.* ./^M"
 stuff "cp $SEMESTER${LEAGUE}.txt ${LEAGUE}.txt^M"
-stuff "v $SEMESTER${LEAGUE}.txt ${LEAGUE}.txt ${LEAGUE}_cohort.txt"
+stuff "v $SEMESTER${LEAGUE}.csv ${LEAGUE}.txt ${LEAGUE}_email.yaml"
 
 screen 0
-stuff "cd ~/$SEMESTER/$LEAGUE && v league.yaml groups.yaml session/$PREVSESSION/groups.yaml email.yaml" 
+stuff "cd ~/$SEMESTER/$LEAGUE && v league.yaml groups.yaml session/$PREVSESSION/groups.yaml" 

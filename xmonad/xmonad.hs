@@ -27,10 +27,8 @@ main = do
 	xmonad foundconfig
 		{ modMask = mod4Mask
 		-- , terminal="gnome-terminal --hide-menubar"
-		-- , terminal="gnome-terminal --hide-menubar --profile=sac"
-		, terminal="gnome-terminal --hide-menubar --profile=nuu-halls"
-		-- , terminal="gnome-terminal --hide-menubar --profile=A706"
-		-- , terminal="mate-terminal --hide-menubar --profile=momotaro"
+		-- , terminal="gnome-terminal --hide-menubar --profile=nuu-halls"
+		, terminal="gnome-terminal --hide-menubar --profile=momotaro"
 		-- , terminal="mate-terminal --show-menubar"
 		-- , terminal = "/usr/bin/urxvt"
 		, layoutHook = myLayout
@@ -40,6 +38,7 @@ main = do
 		myKeys (XConfig {modMask = modm}) = M.fromList $
 			[ ((modm, xK_x), spawn "firefox -P default")
 			, ((modm, xK_o), spawn "libreoffice --writer")
+			, ((modm, xK_v), spawn "vncviewer")
 			]
 
 desktop "gnome" = gnomeConfig

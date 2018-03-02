@@ -15,10 +15,14 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "VIM must be set within vim, because :ec $VIM still returns ~/share/vim
 
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
 " default handles bom. This doesn't
 "if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
 "   set fileencodings=utf-8,latin1
 "endif
+set printencoding=utf-8
 
 "set verbose=9		"for testing autocommands
 set nocompatible	" Use Vim defaults (much better!)
@@ -54,6 +58,8 @@ se nrformats-=octal
 
 se wildchar=<Tab>	" for expansion of command line
 "se wildignore=*~,	" files not seen in command line expansion
+set wildmenu		" alternatives on command line
+
 " set formatoptions=tcroq2	"for gq formatting
 
 se timeoutlen=500	" how long to wait before default disambiguation
@@ -132,6 +138,7 @@ se ruler		" show column, line
 " 980527 I often reformat a paragraph to fit some textwidth -
 " and I use the following mapping to adjust it to the
 " current position of the cursor:
+" ghc-mod conflict!!
   map <LocalLeader>tw :set textwidth=<C-R>=col(".")<C-M>
 
 "abbreviations for typos
@@ -229,7 +236,7 @@ map <LocalLeader>h :se hls!<CR> :se hls? <CR>
 set incsearch	" highlites & moves to search string in creation
 "endif
 " set grepprg=ack\ --nocolor\ --nogroup\ '$*'\ *\ /dev/null
-" set grepprg=ack
+set grepprg=ack
 if &term=="xterm"
      " set t_Co=8
      set t_Sb=^[4%dm
@@ -239,6 +246,10 @@ endif
 highlight MatchParen ctermbg=gray
 
 " Command and other mappings
+
+" TODO. https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
+" nnoremap "*p <ESC>:r !xclip -selection primary -out<CR>
+" nnoremap "+p <ESC>:r !xclip -selection clipboard -out<CR>
 
 " Make CTRL-^ rebound to the *column* in the previous file
   noremap <C-^> <C-^>`"
@@ -333,7 +344,8 @@ imap gqap <C-O>gqap
 "words=changes. u undoes. do \h first.
 map \wc :%s/[^ <Tab>]\+/&/g<CR>``
 
-
+" cp line for editing with nopaste set
+map \ed "eyyoS"epoS-r 
 " dic.yaml question creator
 nn <buffer> <Leader>answers y14y"0P"0P"0P14j3j27.jrB7k.1347.jrC7k.1367.jrD7k.27-wC
 
@@ -356,11 +368,70 @@ endf
 
 map <LocalLeader>i :call Insert_increment()<CR>
 
-map <silent> <LocalLeader>snip <Esc>:call ResetSnippets() \| call GetSnippets(g:snippets_dir, "_") \| call GetSnippets(g:snippets_dir, &ft)<CR><Esc>:echo "Snippets for format \"" . &ft . "\" updated."<CR>
+" map <silent> <LocalLeader>snip <Esc>:call ResetSnippets() \| call GetSnippets(g:snippets_dir, "_") \| call GetSnippets(g:snippets_dir, &ft)<CR><Esc>:echo "Snippets for format \"" . &ft . "\" updated."<CR>
 
 
 
 "autocmds
+
+augroup haskell
+au!
+
+" syntastic
+
+map <Leader>s :SyntasticToggleMode<CR>
+
+set statusline=%<%f\ %h%m%r%=%-5.(%l,%c%V%)\ %P
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+map <silent> <LocalLeader>ti :GhcModTypeInsert<CR>
+map <silent> <LocalLeader>ts :GhcModSplitFunCase<CR>
+map <silent> <LocalLeader>tq :GhcModType<CR>
+map <silent> <LocalLeader>te :GhcModTypeClear<CR>
+
+" supertab
+
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
+if has("gui_running")
+  imap <c-space> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
+  endif
+endif
+
+" necoghc
+
+let g:haskellmode_completion_ghc = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+" nerdtree
+
+map <Leader>tr :NERDTreeToggle<CR>
+
+" tabularize haskell tabs
+
+let g:haskell_tabular = 1
+
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
+
+" Ctrl-P fuzzy file search
+
+map <silent> <Leader>t :CtrlP()<CR>
+noremap <leader>b<space> :CtrlPBuffer<cr>
+let g:ctrlp_custom_ignore = '\v[\/]dist$'
+
+augroup END 
 
 augroup mutt
 au!
@@ -513,22 +584,114 @@ au!
 
 augroup END
 
-augroup slides
+augroup pages
 au!
 
+" TODO. Create vocabulary list (or flash cards) with translations
+"eyy'ai## ee. . .''18yy''PjjOma''19k
+
 " pandoc link list
-au BufEnter slides.txt nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
+au BufEnter slides.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
+au BufEnter $STORY.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
+au BufEnter slides.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
+au BufEnter $STORY.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
+
+function! WikipediaLink()
+	let words = getline( line('.') )
+	let search_space_space = substitute(words, '\v^\s+', '', "")
+	let search_space = substitute(search_space_space, '\v\s+$', '', "")
+	let search = substitute(search_space, '\v\s+', '_', "g")
+	let string = words . "http://en.wikipedia.org/wiki/" . search
+	call setline(".", string)
+endfunction
+au BufEnter slides.md no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
+au BufEnter content.yaml no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
+
+function! GoogleLink()
+	let lnum = line('$')
+	let words = getline( line('.') )
+	let search = substitute(words, '\v\s+', '+', "g")
+	let search_quote = substitute(search, '\v''', '%27', "g")
+	let string = "http://www.google.com.tw/search?q=%22" . search_quote . "%22&num=100&gws_rd=ssl&tbm=isch&tbo=u&source=univ&sa=X"
+	call setline(".", string)
+endfunction
+au BufEnter slides.md no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+au BufEnter slides.md ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+au BufEnter content.yaml no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+
+function! HTMLLink()
+	let url = expand( "<cWORD>" )
+	let line = getline(line ('.'))
+	let string = "<a href=\"" . url . "\">" . url . "</a>"
+	let newline = substitute(line, url, string, "g")
+	call setline(".", newline)
+endfunction
+au BufEnter content.yaml no <buffer> <LocalLeader>a <Esc>:call HTMLLink()<CR>A
+au BufEnter content.yaml ino <buffer> <LocalLeader>a <Esc>:call HTMLLink()<CR>A
+
+au BufEnter slides.md nm <buffer> <LocalLeader>q cW_____()<Esc>'aPO<Esc>ma''$?_____()<Esc>f(\iW
 
 augroup END
 
 augroup classwork
 au!
 
+au BufEnter *.yaml no <Leader>tot S---<C-C><C-C>:%s/\v^.*,([BN]\d*),.*,.*,.*,.*,(.*),\d+$/\1: \2/i<CR>:2,$s/-$/0/<CR>Gdd
+
 " scoring classwork/$week.yaml files
 
-fu! Reformat ()
+fu! Reformat_champ ()
 	let dir = getcwd()
-	let league = substitute(dir, "/home/drbean/032/", "", "")
+	let league = substitute(dir, "/home/drbean/$SEMESTER/", "", "")
+	let sessionlist = glob( "dir" . "/session/*", 1, 1)
+	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/$SEMESTER/session/", "", "")' )
+	let session = max( sessions )
+	call inputsave()
+	let item_key = input("Items: '(1)', '(2)', '(3)', '(4)', '(5)', '(6)', '(7)', '(8)', '(9)', '(10)', '(11)', '(12)', '(13)', '(14)' ")
+	call inputrestore()
+	let item_n = get( {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '11': 11, '12': 12, '13': 13, '14': 14}, item_key )
+	call inputsave()
+	let distractor_key = input("Distractors: '(T)rue/False', '(Y)es/No', (2)', '(3)', '(4)', '(5)', '(6)'  ")
+	call inputrestore()
+	let distractor = get( {'t': 't', 'y': 'y', '2': 2, '3': 3, '4': 4, '5': 5, '6': 6}, distractor_key )
+	@ts = 2
+	let lnum = line('$')
+	let tables = split( getline(lnum), ',' )
+	call setline(lnum, "")
+	let lnum = line('$')
+	if distractor == "t"
+		let distractor_lines = [ "      - \"True\"",  "      - \"False\"" ]
+	elseif distractor == "y"
+		let distractor_lines = [ "      - \"Yes\"",  "      - \"No\"" ]
+	else 
+		let distractor_lines = repeat([ "      - ~" ], distractor)
+	endif
+	let item = ( ["  -", "    q: ~", "    o:"] + distractor_lines ) + ["    a: ~"]
+	let lines = repeat( item, item_n)
+	let quiz = insert( lines, "qz:" )
+	call append(lnum, quiz)
+	let lnum = line('$')
+	call append(lnum, "")
+	for table in tables
+		let lnum = line('$')
+		let groups = split( table, '::' )
+		for group in groups
+			let items = repeat([ "    - ~" ], item_n)
+			let lines = extend([group . ":", "  p:", "    - ~", "  rs:"], items)
+			call append (lnum, lines)
+			let lnum = line('$')
+		endfor
+		let lnum = line('$')
+		call append(lnum, "")
+	endfor
+endf
+
+fu! Reformat_prescore ()
+	let dir = getcwd()
+	let league = substitute(dir, "/home/drbean/$SEMESTER/", "", "")
+	let sessionlist = glob( "dir" . "/session/*", 1, 1)
+	let sessions = map( sessionlist, 'substitute( v:val, "home/bean/$SEMESTER/session/", "", "")' )
+	let session = max( sessions )
 	@ts = 2
 	let lnum = line('$')
 	let tables = split( getline(lnum), ',' )
@@ -537,43 +700,17 @@ fu! Reformat ()
 		let lnum = line('$')
 		let groups = split( table, '::' )
 		for group in groups
-			call append (lnum, [group . ":", "  absent:", "  merits: ~"])
+			call append (lnum, [group . ":",  "  tardy:", "  absent:", "  merits: ~", "  p: ~"])
 			let lnum = line('$')
 		endfor
-		let lnum = line('$')
-		call append(lnum, "")
-	endfor
-	let lnum = line('$')
-	call append(lnum, ["texts:", "  - ", "answers:"])
-	for table in tables
-		call append(lnum, ["  " . table . ":", "    1: "])
-	endfor
-	let lnum = line('$')
-	call append (lnum, "report:")
-	let lnum = line('$')
-	let n = 1
-	for table in tables
-		call append(lnum, "  Table " . n . ":")
-		let lnum = line('$')
-		let groups = split( table, '::' )
-		for letter in ["A", "B", "C"]
-			call append (lnum, "    " . letter . ":")
-			let lnum = line('$')
-			let m = -1
-			for group in groups
-				let name = system( "letter2name.pl --league " . league . " -s 1 -g " . group . " --letter " . letter )
-				call append (lnum, ["      " . (2 * n + m) . ": ","        " . group . ": " . name])
-				let lnum = line('$')
-				let m = m + 1
-			endfor
-			call append (lnum, "      winner: ~")
-			let lnum = line('$')
-		endfor
-		let n = n + 1
 	endfor
 endf
 
-au BufEnter classwork/*.yaml nn <LocalLeader>r <Esc>:call Reformat()<CR>j
+au BufEnter classwork/*.yaml.table nn <LocalLeader>r <Esc>:call Reformat_champ()<CR>j
+au BufEnter classwork/*.yaml.table :set filetype=yaml
+au BufEnter classwork/*.yaml nn <buffer> 0 $r0yyp<C-A>$r~
+au BufEnter classwork/*.yaml nn <buffer> 1 $r1yyp<C-A>$r~
+au BufEnter classwork/*.yaml nn <LocalLeader>r <Esc>:call Reformat_prescore()<CR>j
 au BufEnter classwork/*.yaml nn <LocalLeader>f :if !empty(getline('.')) <Bar>
 	\ call search('^$', 'bW') <Bar>
 	\ endif <Bar>
@@ -646,16 +783,6 @@ au BufEnter exam/*/*response.yaml nn <buffer> o $sOther<Esc>j$
 
 augroup END
 
-augroup classify
-au!
-
-au User *Eng.gf nn <buffer> a dd'aP''
-au User *Eng.gf nn <buffer> d dd'dP''
-au User *Eng.gf nn <buffer> n dd'nP''
-au User *Eng.gf nn <buffer> v dd'vP''
-
-augroup END
-
 augroup subjective
 au!
 
@@ -668,12 +795,34 @@ au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 5 $r5j$
 
 augroup END
 
+augroup point
+au!
+
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 0 o- 0<Esc>
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 1 o- 1<Esc>
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 2 o- 2<Esc>
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 3 o- 3<Esc>
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> 4 o- 4<Esc>
+
+augroup END
+
+augroup moodle
+au!
+
+" fixing up csv2yaml, zeroHomework
+
+au User [0-9].yaml,1[0-9].yaml,g.*yaml nn <buffer> <LocalLeader>m ggddV/^---<Esc>k"exjj"ep/^\s<Esc>V/^p<Esc>kx-V4G><Esc>
+
+augroup END
+
   " Uses autocmd to give more lines to the window moved into
   " or editing superlong 1 line in vimdiff
-augroup widewin
+augroup edit
   au!	
-  " Remove all widewin autocommands (looks like comment can't be on same line)
+ " Remove all edit autocommands (looks like comment can't be on same line)
 
+au FileType text let b:delimitMate_quotes = "\" ' ` *"
+" au BufEnter ~/edit/*/*.txt let b:delimitMate_quotes = "\" ' ` *"
   " autocmd WinEnter *  resize  +6
 au BufEnter ~/edit/.svn/*.svn-base nn <buffer> g<Left> g^ze
 au BufEnter Indexes*.txt nn <buffer> g<Left> g^ze
@@ -682,28 +831,17 @@ au BufEnter Indexes*.txt nn <buffer> g<Right> g$zs
 
 augroup END
 
-
-augroup latex
-	au!
-
-" creating cloze by hand using Cloze.pm, dic.tmpl formatting
-
-fu! LatexSpace()
-	let space = " \\hspace*{\\fill} "
-	"let newline = strpart(getline('.'), 0, col('.')) . space . strpart(getline 
-	exec "norm! s" . space
-endf
-fu! LatexBreak()
-	let break = expand('<cword>')
-	let rendering = "{\\Huge " . break . "} "
-	exec "norm! s" . rendering
-endf
-au BufEnter dic_*.tex ino <Space> <Esc>:call LatexSpace()<CR>A
-au BufEnter dic_*.tex ino . <Esc>:call LatexBreak()<CR>A
-au BufEnter dic_*.tex ino , <Esc>:call LatexBreak()<CR>A
+augroup cards
+au BufEnter cards.yaml no <buffer> <LocalLeader>a :call WriteAnswer()<CR>
+function! WriteAnswer()
+	let option_line = getline( line('.') )
+	let answer = substitute(option_line, '           - ', '', "")
+	let answer_line = search( "answer: ")
+	let answer_string = "          answer:" . answer
+	call setline(".", answer_string)
+endfunction
 
 augroup END
-
 function! Nun()
 	nun <buffer> 0
 	nun <buffer> 1
@@ -946,3 +1084,8 @@ function! DigraphLookup()
 	redraw
 	echo "No digraph found for \"" . c . "\""
 endfunction 
+
+" pathogen first
+execute pathogen#infect()
+
+

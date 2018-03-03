@@ -25,7 +25,7 @@ export EDITOR=v
 #greg
 # screen needs 700 on socketdir?
 if [ "$(uname)" == "CYGWIN_NT-10.1" ]; then
-	export SCREENDIR=/cygdrive/c/temp
+	export SCREENDIR=/cygdrive/c/tmp
 	if [ ! -d $SCREENDIR ]; then
 		mkdir $SCREENDIR
 	fi

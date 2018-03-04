@@ -841,6 +841,15 @@ function! WriteAnswer()
 	call setline(".", answer_string)
 endfunction
 
+au BufEnter cards.yaml no <buffer> <LocalLeader>c :call ClozeLine()<CR>
+function! ClozeLine()
+        let line = getline( line('.') )
+        let clozed = substitute(line, '          clozed: ', '', "")
+        let item = substitute(clozed, '\s', '|', "g")
+        let item_string = "          clozed: " . item . "|End"
+        call setline(".", item_string)
+endfunction
+
 augroup END
 function! Nun()
 	nun <buffer> 0

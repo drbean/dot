@@ -16,7 +16,7 @@ stuff "# svn add $TOPIC/{dic,cards}.yaml && svn ci $TOPIC/{dic,cards}.yaml -m $T
 stuff "# perl ~/ttb/dictation/script/dic text -c ctest -s $STORY -f $(($FORM+1)) -t $TOPIC -p a7 && xelatex --output-directory=/home/drbean/curriculum/topics/$TOPIC ./$TOPIC/dic_${STORY}_$(($FORM+1)).tex && evince ./$TOPIC/dic_${STORY}_$(($FORM+1)).pdf^M"
 stuff "# perl ~/ttb/dictation/script/dic text -c ctest -s $STORY -f $FORM -t $TOPIC -p a7 && xelatex --output-directory=/home/drbean/curriculum/topics/$TOPIC ./$TOPIC/dic_${STORY}_${FORM}.tex && evince ./$TOPIC/dic_${STORY}_${FORM}.pdf^M"
 stuff "# lpr $TOPIC/dic_${STORY}.pdf^M"
-stuff "# TOPIC=$TOPIC; STORY=$STORY; QUIZ=$QUIZ; FORM=$FORM; for format in gift xml ; do yaml4moodle \$format -c $COURSE -t \$TOPIC -s \$STORY -q \$QUIZ -f \$FORM > \${TOPIC}/quiz_\${STORY}_\${QUIZ}_\${FORM}.\$format ; done^M"
+stuff "# FORM=$FORM; STORY=$STORY; QUIZ=$QUIZ; TOPIC=$TOPIC; for format in gift xml ; do yaml4moodle \$format -c $COURSE -t \$TOPIC -s \$STORY -q \$QUIZ -f \$FORM > \${TOPIC}/quiz_\${STORY}_\${QUIZ}_\${FORM}.\$format ; done^M"
 screen 2
 stuff "# perl ../cclass/cards.pl -t ./$TOPIC && xelatex ./\$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf^M"
 stuff "# perl ../cclass/cards.pl -t ./$TOPIC && xelatex ./\$TOPIC/quiz_${STORY}_$FORM.tex && evince quiz_${STORY}_$FORM.pdf^M"

@@ -1,4 +1,4 @@
-" Last Edit: 2017 Sep 18, 05:51:38 PM
+" Last Edit: 2018 Mar 12, 08:52:25 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -1093,8 +1093,3 @@ function! DigraphLookup()
 	redraw
 	echo "No digraph found for \"" . c . "\""
 endfunction 
-
-" pathogen first
-execute pathogen#infect()
-
-

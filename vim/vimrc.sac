@@ -1,4 +1,4 @@
-" Last Edit: 2018 Mar 13, 10:18:32 AM
+" Last Edit: 2018 Mar 13, 10:17:11 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -384,15 +384,6 @@ let g:syntastic_perl_checkers = ["perl", "perlcritic", "podchecker"]
 
 augroup END 
 
-augroup php
-au!
-
-" syntastic
-
-let g:syntastic_enable_php_checker = 1
-let g:syntastic_php_checkers = ["php"]
-
-augroup END 
 
 augroup haskell
 au!

@@ -12,4 +12,4 @@ stuff "su -^M"
 screen 9
 stuff "man weechat"
 screen 1
-stuff "weechat-curses -r '/iset;/script'^M"
+stuff "weechat-curses -r '/fset;/script'^M"

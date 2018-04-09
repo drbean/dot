@@ -351,7 +351,7 @@ function corr () {
 	STORY=$story \
 	FORM=$form \
 	QUIZ=${quiz:-"jigsaw"} \
-	screen -c /home/$USER/dot/screen/course.rc -dR $course
+	screen -c /home/$USER/dot/screen/course.rc -dR $topic
 	cd -
 }
 

@@ -3,3 +3,4 @@ screen
 # stuff "svn ls classwork session/$SESSION^M"
 stuff "mv ~/Downloads/$LEAGUE\ Grades-2017????_????-comma_separated.csv ./exam/$ROUND/g.csv^M"
 stuff "# csv2yaml exam $ROUND/g > exam/$ROUND/g.yaml^M"
+stuff "# for i in {1..3} ; do csv2yaml exam $ROUND/${TOPIC}_$i > exam/3/${TOPIC}_$i.yaml; done"

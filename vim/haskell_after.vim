@@ -418,11 +418,12 @@ fu! Populate(module)
 endf
 
 fun Test_check()
-	let quoted_word = matchstr( getline('.'), "\".*\"")
-	if quoted_word == ""
-		let quoted_word = getline('.')
+	let quoted_string = matchstr( getline('.'), "\".*\"")
+	if quoted_string == ""
+		let quoted_string = getline('.')
 	endif
-	let word = substitute( quoted_word, "\"", "", "g")
+	let string = substitute( quoted_string, "\"", "", "g")
+	let word = '\<' . string . '\>'
 	let test_win = bufwinnr("/Tests.hs")
 	let win_id = win_getid( test_win )
 	call win_gotoid( win_id )

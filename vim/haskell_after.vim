@@ -323,11 +323,19 @@ fu! Populate(module)
 		call inputrestore()
 		let det_category = get( {'u': 'Det', 's': 'Det', 'p': 'Det', 'r': 'Predet'}, det_key )
 		let category = det_category
+	elseif key_category == 'Prep'
+		call inputsave()
+		let prep_key = input("Word: " . word . ", Prep type: '(P)rep', '(L)ocPrep', '(T)imePrep' ")
+		call inputrestore()
+		let prep_category = get( {'p': 'Prep', 'l': 'LocPrep', 't': 'TimePrep'}, prep_key )
+		let category = key_category
 	else
 		let category = key_category
 	endif
 	if category == "Particle"
 		call setline('.', word . "\t: V;")
+	elseif category == "Prep"
+		call setline('.', word . "_" . toupper(prep_category) . "\t: " . prep_category . ";")
 	else
 		call setline('.', word . "\t: " . category . ";")
 	endif
@@ -341,6 +349,8 @@ fu! Populate(module)
 	let ab_lnum = line("'" . mark)
 	if category == "Particle"
 		call append ((ab_lnum+1), "\t" . down_name . "\t: V;")
+	elseif category == "Prep"
+		call append((ab_lnum+1), "\t" . down_name . "_" . toupper(prep_category) . "\t: " . prep_category . ";")
 	else
 		call append((ab_lnum+1), "\t" . down_name . "\t: " . category . ";")
 	endif
@@ -396,6 +406,8 @@ fu! Populate(module)
 		endif
 	elseif category == "Predet"
 		call append(ab_eng_lnum+1, "\t" . down_name . "\t= ss \"" . word . "\";")
+	elseif category == "Prep"
+		call append((ab_eng_lnum+1), "\t" . down_name . "_" . toupper(prep_category) . "\t= mk" . category . " \"" . word . "\";")
 	else 
 		call append((ab_eng_lnum+1), "\t" . down_name . "\t= mk" . category . " \"" . word . "\";")
 	endif

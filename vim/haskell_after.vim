@@ -212,8 +212,12 @@ fu! Populate_cat_args(lnum, word, down_name, category, arg)
 	call append(a:lnum, "\t" . a:down_name . "\t= mk" . a:category . " \"" . a:word . "\" " . a:arg . ";")
 endf
 
-fu! Populate_adv(lnum, word, down_name, category, arg)
-	call append(a:lnum, "\t" . a:down_name . "\t= ParadigmsEng.mk" . a:category . " \"" . a:word . "\" " . a:arg . ";")
+fu! Populate_adv(lnum, word, down_name, adv_category, category)
+	if a:adv_category == "Adv_time"
+		call append(a:lnum, "\t" . a:down_name . "\t= ParadigmsEng.mk" . a:category . " \"" . a:word . "\";")
+	else 
+		call append(a:lnum, "\t" . a:down_name . "\t= ParadigmsEng.mk" . a:adv_category . " \"" . a:word . "\";")
+	endif
 endf
 
 fu! Populate_ap_like(lnum, word, down_name, category, super_cat, arg)
@@ -230,7 +234,7 @@ fu! Populate(module)
 	if quoted_word == ""
 		let quoted_word = getline('.')
 	endif
-	let marklist = {'AP': 'a', 'A2': 'a', 'N': 'n', 'N2': 'n', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'V2A': 'v', 'VQ': 'v', 'V2Q': 'v', 'Adv': "d", 'AdV': "d", 'AdA': "d", 'Prep': "r", 'Det': "t", 'Predet': "t", 'Conj': "c", 'Subj': "s"}
+	let marklist = {'AP': 'a', 'A2': 'a', 'N': 'n', 'N2': 'n', 'CN': 'n', 'PN': 'p', 'PlaceNoun': 'n', 'Pron': 'o', 'V': 'v', 'Particle': 'v', 'V2': 'v', 'V3': 'v', 'VV': 'v', 'V2V': 'v', 'VS': 'v', 'V2S': 'v', 'VA': 'v', 'V2A': 'v', 'VQ': 'v', 'V2Q': 'v', 'Adv': "d", 'Prep': "r", 'Det': "t", 'Predet': "t", 'Conj': "c", 'Subj': "s"}
 	let word = substitute( quoted_word, "\"", "", "g")
 	call inputsave()
 	let key = input("Word: " . word . ", Cat: '(A)', '(N)', '(V)*', a(D)v, p(R)ep, de(T), Pr(O)noun, (C)onj, (S)ubj ")
@@ -313,10 +317,10 @@ fu! Populate(module)
 		let category = a_category
 	elseif key_category == 'D'
 		call inputsave()
-		let d_key = input("Word: " . word . ", Cat: 'Ad(v)', 'Ad(V)', 'Ad(a)' ")
+		let adv_key = input("Word: " . word . ", Cat: 'Ad(v)', 'Ad(V)', 'Ad(a)', 'Adv_(t)ime' ")
 		call inputrestore()
-		let d_category = get( {'v': 'Adv', 'V': 'AdV', 'a': 'AdA'}, d_key )
-		let category = d_category
+		let adv_category = get( {'v': 'Adv', 'V': 'AdV', 'a': 'AdA', 't': 'Adv_time'}, adv_key )
+		let category = 'Adv'
 	elseif key_category == 'Det'
 		call inputsave()
 		let det_key = input("Word: " . word . ", Det type: '(u)nit', '(s)ingular', '(p)lural', 'P(r)edet' ")
@@ -325,9 +329,9 @@ fu! Populate(module)
 		let category = det_category
 	elseif key_category == 'Prep'
 		call inputsave()
-		let prep_key = input("Word: " . word . ", Prep type: '(P)rep', '(L)ocPrep', '(T)imePrep' ")
+		let prep_key = input("Word: " . word . ", Prep type: '(P)rep', '(L)ocPrep', '(R)ecipientPrep', '(S)timulusPrep', 'T(h)emePrep', '(T)imePrep' ")
 		call inputrestore()
-		let prep_category = get( {'p': 'Prep', 'l': 'LocPrep', 't': 'TimePrep'}, prep_key )
+		let prep_category = get( {'p': 'Prep', 'l': 'LocPrep', 'h': 'ThemePrep', 'r': 'RecipientPrep', 's': 'StimulusPrep', 't': 'TimePrep'}, prep_key )
 		let category = key_category
 	else
 		let category = key_category
@@ -336,6 +340,8 @@ fu! Populate(module)
 		call setline('.', word . "\t: V;")
 	elseif category == "Prep"
 		call setline('.', word . "_" . toupper(prep_category) . "\t: " . prep_category . ";")
+	elseif category == "Adv"
+		call setline('.', word . "\t: " . adv_category . ";")
 	else
 		call setline('.', word . "\t: " . category . ";")
 	endif
@@ -351,6 +357,8 @@ fu! Populate(module)
 		call append ((ab_lnum+1), "\t" . down_name . "\t: V;")
 	elseif category == "Prep"
 		call append((ab_lnum+1), "\t" . down_name . "_" . toupper(prep_category) . "\t: " . prep_category . ";")
+	elseif category == "Adv"
+		call append((ab_lnum+1), "\t" . down_name . "\t: " . adv_category . ";")
 	else
 		call append((ab_lnum+1), "\t" . down_name . "\t: " . category . ";")
 	endif
@@ -362,8 +370,8 @@ fu! Populate(module)
 		call Populate_pn_like((ab_eng_lnum+1), word, down_name, category, "N", arg) 
 	elseif category == "Particle"
 		call Populate_partv((ab_eng_lnum+1), word, down_name, "V", "V") 
-	elseif category == "Adv" || category == "AdV" || category == "AdA"
-		call Populate_adv((ab_eng_lnum+1), word, down_name, category, "") 
+	elseif category == "Adv"
+		call Populate_adv((ab_eng_lnum+1), word, down_name, adv_category, category) 
 	elseif category == "AP"
 		call Populate_ap_like((ab_eng_lnum+1), word, down_name, category, "A", "") 
 	elseif category == "A2"

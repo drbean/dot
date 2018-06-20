@@ -1,4 +1,4 @@
-" Last Edit: 2018 Mar 13, 02:20:30 PM
+" Last Edit: 2018 Jun 19, 08:58:16 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -324,7 +324,7 @@ map \cG y0:.,$-5d<CR>"0Pa<CR><CR><CR><CR><Up><Up>
 " map \cG :.,$-5d<CR>i<CR>
 
 " Bram's signature-choosing mapping. Uses mark X
-map \S mX:sp ~/.mutt/fortunes<CR>ggd/^--/<CR>Gp:wq<CR>'XGA<CR><Esc>p`X
+" map \S mX:sp ~/.mutt/fortunes<CR>ggd/^--/<CR>Gp:wq<CR>'XGA<CR><Esc>p`X
 
 "      \ri = "Read in" basic lines from the email header NEEDS WORK
 "            Useful when replying to an email:
@@ -864,6 +864,15 @@ function! ClozeLine()
         let item = substitute(clozed, '\s', '|', "g")
         let item_string = "          clozed: " . item . "|End"
         call setline(".", item_string)
+endfunction
+
+au BufEnter cards.yaml no <buffer> <LocalLeader>S :call SortWords()<CR>
+function! SortWords()
+        let line = getline( line('.') )
+        let word = split(line)
+        let sortedlist = sort(word)
+        let sorted = join(word, " ")
+        call setline(".", sorted)
 endfunction
 
 augroup END

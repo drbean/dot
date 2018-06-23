@@ -1,4 +1,4 @@
-" Last Edit: 2018 Jun 19, 08:58:16 PM
+" Last Edit: 2018 Jun 23, 02:43:07 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -869,10 +869,15 @@ endfunction
 au BufEnter cards.yaml no <buffer> <LocalLeader>S :call SortWords()<CR>
 function! SortWords()
         let line = getline( line('.') )
-        let word = split(line)
+	let cursor = getcurpos()
+	let offset = get( cursor, 2 )
+	let leader = strcharpart( line, 0, offset-1 )
+	let sentence = strcharpart( line, offset-2 )
+        let word = split(sentence)
         let sortedlist = sort(word)
         let sorted = join(word, " ")
-        call setline(".", sorted)
+	let newline = leader . sorted
+        call setline(".", newline)
 endfunction
 
 augroup END

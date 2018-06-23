@@ -213,10 +213,10 @@ fu! Populate_cat_args(lnum, word, down_name, category, arg)
 endf
 
 fu! Populate_adv(lnum, word, down_name, adv_category, category)
-	if a:adv_category == "Adv_time"
-		call append(a:lnum, "\t" . a:down_name . "\t= ParadigmsEng.mk" . a:category . " \"" . a:word . "\";")
-	else 
+	if a:adv_category == "Adv" || a:adv_category == "AdV" || a:adv_category == "AdA"
 		call append(a:lnum, "\t" . a:down_name . "\t= ParadigmsEng.mk" . a:adv_category . " \"" . a:word . "\";")
+	else 
+		call append(a:lnum, "\t" . a:down_name . "\t= ParadigmsEng.mk" . a:category . " \"" . a:word . "\";")
 	endif
 endf
 
@@ -317,9 +317,9 @@ fu! Populate(module)
 		let category = a_category
 	elseif key_category == 'D'
 		call inputsave()
-		let adv_key = input("Word: " . word . ", Cat: 'Ad(v)', 'Ad(V)', 'Ad(a)', 'Adv_(t)ime' ")
+		let adv_key = input("Word: " . word . ", Cat: 'Ad(v)', 'Ad(V)', 'Ad(a)', 'Adv_coagent(ca)', 'Adv_copatient(cp)', 'Adv_(m)anner', 'Adv_location(p)', 'Adv_(t)ime' ")
 		call inputrestore()
-		let adv_category = get( {'v': 'Adv', 'V': 'AdV', 'a': 'AdA', 't': 'Adv_time'}, adv_key )
+		let adv_category = get( {'v': 'Adv', 'V': 'AdV', 'a': 'AdA', 'ca': 'Adv_coagent', 'cp': 'Adv_copatient', 'm': 'Adv_manner', 'p': 'Adv_location', 't': 'Adv_time'}, adv_key )
 		let category = 'Adv'
 	elseif key_category == 'Det'
 		call inputsave()
@@ -329,9 +329,9 @@ fu! Populate(module)
 		let category = det_category
 	elseif key_category == 'Prep'
 		call inputsave()
-		let prep_key = input("Word: " . word . ", Prep type: '(P)rep', '(L)ocPrep', '(R)ecipientPrep', '(S)timulusPrep', 'T(h)emePrep', '(T)imePrep' ")
+		let prep_key = input("Word: " . word . ", Prep type: '(P)rep', 'CoagentPrep(ca)', 'CopatientPrep(cp)', '(L)ocPrep', '(M)annerPrep', '(R)ecipientPrep', '(S)timulusPrep', 'T(h)emePrep', '(T)imePrep' ")
 		call inputrestore()
-		let prep_category = get( {'p': 'Prep', 'l': 'LocPrep', 'h': 'ThemePrep', 'r': 'RecipientPrep', 's': 'StimulusPrep', 't': 'TimePrep'}, prep_key )
+		let prep_category = get( {'p': 'Prep', 'ca': 'CoagentPrep', 'cp': 'CopatientPrep', 'l': 'LocPrep', 'm': 'MannerPrep', 'h': 'ThemePrep', 'r': 'RecipientPrep', 's': 'StimulusPrep', 't': 'TimePrep'}, prep_key )
 		let category = key_category
 	else
 		let category = key_category

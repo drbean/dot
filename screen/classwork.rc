@@ -2,6 +2,7 @@ screen 1
 # stuff "ls classwork && svn up classwork^M"
 # stuff "svn ls classwork session/$SESSION^M"
 stuff "mv ~/LEAGUE\ Grades-2018????_????-comma_separated.csv ./classwork/$LASTWEEK.csv^M"
+stuff "# cd /var/www/cgi-bin/moodle && Moosh -n gradebook-export -c $LEAGUE -i $TOPIC -g 0 -x 1 -a 1 -d 2 -p 0 -s comma -f txt > $HOME/$SEMESTER/$LEAGUE/classwork/$LASTWEEK.csv && cd -^M"
 stuff "# csv2yaml classwork $LASTWEEK >> classwork/$LASTWEEK.yaml^M"
 stuff "# cp classwork/$LASTWEEK.yaml classwork/total.yaml^M"
 stuff "# svn add classwork/total.yaml classwork/$LASTWEEK.yaml && svn ci classwork/{total,$LASTWEEK}.yaml -m $TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put classwork/$LASTWEEK.yaml -o classwork.yaml && qui'^M"

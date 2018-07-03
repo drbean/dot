@@ -1,6 +1,8 @@
 screen
 # stuff "ls exam/$ROUND && svn up exam/$ROUND^M"
 # stuff "svn ls classwork session/$SESSION^M"
-stuff "mv ~/Downloads/$LEAGUE\ Grades-2017????_????-comma_separated.csv ./exam/$ROUND/g.csv^M"
+stuff "# mv ~/Downloads/$LEAGUE\ Grades-2017????_????-comma_separated.csv ./exam/$ROUND/g.csv^M"
+stuff "Moosh -n sql-run \"SELECT id FROM mdl_grade_items WHERE itemname SIMILAR TO '%$TOPIC%'\"^M"
+stuff "# for i in {0..11}; do Moosh -n gradebook-export -c 26 -i $((2969+$i)) -g 0 -x 1 -a 1 -d 2 -p 0 -s comma -f txt > exam/$ROUND/${TOPIC}_\$i.csv ; done^M"
 stuff "# csv2yaml exam $ROUND/g > exam/$ROUND/g.yaml^M"
-stuff "# for i in {1..3} ; do csv2yaml exam $ROUND/${TOPIC}_$i > exam/3/${TOPIC}_$i.yaml; done"
+stuff "# for i in {0..11} ; do csv2yaml exam $ROUND/${TOPIC}_\$i > exam/$ROUND/${TOPIC}_\$i.yaml; done"

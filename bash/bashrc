@@ -11,6 +11,9 @@ export SEMESTER=062
 export LEAGUES="BMA0016 BMA0029 MIA0013 FLA0003 2L2"
 export LEAGUES_RE="BMA0016|BMA0029|MIA0013|FLA0003|2L2"
 
+declare -A LEAGUE_ID=( [BMA0016]=33 [MIA0013]=33 [2L2]=26 )
+export LEAGUE_ID
+
 # User specific aliases and functions
 
 # ingydotnet/git-hub

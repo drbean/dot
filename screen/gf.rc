@@ -54,6 +54,8 @@ stuff "sr W http://hackage.haskell.org/package/gf-3.7.1/docs/PGF.html^M"
 # stuff "/usr/bin/links http://hackage.haskell.org/package/gf-3.6/docs/^M"
 screen 11
 stuff "v -O gf-contrib/drbean/$COURSE/$TOPIC/$STORY/{$MOD,engine/{Representation,LogicalForm,Translate,Interpretation,Evaluation,Transfer}}.hs"
+screen 12
+stuff "v -O ~/gf-rgl/src/prelude/Prelude.gf ~/gf-rgl/src/common/CommonX.gf ~/gf-rgl/src/english/{IrregEng,ParadigmsEng,ResEng,MorphoEng,CatEng,DictEng}.gf"
 screen 0
 # stuff "v -O gf-contrib/drbean/{$COURSE/$TOPIC/$STORY/$MOD,Representation,LogicalForm,Translate,Interpretation,Evaluation,Transfer}.hs"
 # stuff "v -O $(< ~/dot/gf_files.txt)"

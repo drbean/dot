@@ -450,6 +450,7 @@ au BufEnter $MOD*.gf call Mod_mark()
 au BufReadPre WordsCharacters.hs call Word_mark()
 " au BufEnter WordsCharacters.hs if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
+" tokens from Tests.hs sentences
 au BufEnter WordsCharacters.hs nn <LocalLeader>s vip:s/\s\+/<C-V><C-M>/g<CR>gv}oo:s/^\W*//<CR>gv:s/\W*$//<CR>gv:! sort <Bar> uniq<CR>
 
 augroup END

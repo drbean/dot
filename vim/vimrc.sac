@@ -1,4 +1,4 @@
-" Last Edit: 2018 Jun 23, 02:43:07 PM
+" Last Edit: 2018 Sep 01, 09:58:02 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -607,10 +607,8 @@ au!
 "eyy'ai## ee. . .''18yy''PjjOma''19k
 
 " pandoc link list
-au BufEnter slides.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
-au BufEnter $STORY.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
-au BufEnter slides.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
-au BufEnter $STORY.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
+au BufEnter slides.md,README.md,$STORY.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
+au BufEnter slides.md,README.md,$STORY.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
 
 function! WikipediaLink()
 	let words = getline( line('.') )
@@ -631,8 +629,8 @@ function! GoogleLink()
 	let string = "http://www.google.com.tw/search?q=%22" . search_quote . "%22&num=100&gws_rd=ssl&tbm=isch&tbo=u&source=univ&sa=X"
 	call setline(".", string)
 endfunction
-au BufEnter slides.md no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
-au BufEnter slides.md ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+au BufEnter slides.md,README.md,$STORY.md no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+au BufEnter slides.md,README.md,$STORY.md ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 au BufEnter content.yaml no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 
 function! HTMLLink()

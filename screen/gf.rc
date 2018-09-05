@@ -55,7 +55,7 @@ stuff "sr W http://hackage.haskell.org/package/gf-3.7.1/docs/PGF.html^M"
 screen 11
 stuff "v -O question/$COURSE/$TOPIC/$STORY/{$MOD,engine/{Representation,LogicalForm,Translate,Interpretation,Evaluation,Transfer}}.hs"
 screen 12
-stuff "v -O gf-core/src/compiler/GF/Compile/PGFtoHaskell.hs gf-core/src/compiler/GF/Compile/Export.hs"
+stuff "v -O gf-core/src/compiler/GF/Compile/PGFtoHaskell.hs gf-core/src/compiler/GF/Compile/Export.hs question/$COURSE/$TOPIC/$STORY/${MOD}.hs"
 screen 13
 stuff "v -O ~/GF/gf-rgl/src/prelude/Prelude.gf ~/GF/gf-rgl/src/common/CommonX.gf ~/GF/gf-rgl/src/english/{IrregEng,ParadigmsEng,ResEng,MorphoEng,CatEng,DictEng}.gf"
 screen 0

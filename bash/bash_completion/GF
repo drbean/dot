@@ -3,19 +3,16 @@
 # copied from dic
 
 function _GF () {
-	local cur prev opts course topic story old_story round league league_re script_arg fileopts diropts keywords
+	local cur prev opts course topic story old_story script_arg fileopts diropts keywords
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
-	opts="-c -t -s -o -r -l -x"
+	opts="-c -t -s -o"
 	course="conversation news"
-	topic="volunteer trend animal people organ"
-	topic_re="volunteer|animal|people|organ"
-	story="fire movement zeus kiss espn"
-	old_story="candidate tip cusp motivating dickson abreu smallwood jackson murder drunk_driving piggott fire movement zeus kiss espn"
-	round="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18"
-	league="241 KB1 MA1 BMA0045 MIA0009 FLA0015 FLA0003 GL00043"
-	league_re="241|KB1|MA1|BMA0045|MIA0009|FLA0015|FLA0003|GL00043"
+	topic="volunteer trend animal people organ work identity"
+	topic_re="volunteer|animal|people|organ|work|identity"
+	story="candidate tip cusp motivating dickson abreu smallwood jackson murder drunk_driving piggott fire movement zeus kiss espn"
+	old_story=story
 	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
 	diropts="--cache-dir"
 
@@ -27,7 +24,7 @@ function _GF () {
 	return 0
 	fi
 
-	if [[ ${prev} == dic ]]; then
+	if [[ ${prev} == GF ]]; then
 	COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
 	return 0
 	elif [[ ${prev} == -c ]] ; then

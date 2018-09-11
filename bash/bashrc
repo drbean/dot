@@ -142,7 +142,7 @@ function GF () {
 	    c) course=${OPTARG};;
 	    t) topic=${OPTARG};;
 	    s) story=${OPTARG};;
-	    p) prevstory=${OPTARG};;
+	    o) oldstory=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
@@ -151,8 +151,8 @@ function GF () {
     TOPIC=$topic \
     STORY=$story \
     MOD=${story^} \
-    PREVSTORY=${prevstory:-$story} \
-    PREVMOD=${PREVSTORY^} \
+    OLDSTORY=${oldstory:-$story} \
+    OLDMOD=${OLDSTORY^} \
     screen -c /home/$USER/dot/screen/gf.rc -dR GF_$story
     cd -
 }

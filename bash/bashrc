@@ -7,11 +7,11 @@ fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
-export SEMESTER=062
-export LEAGUES="BMA0016 BMA0029 MIA0013 FLA0003 2L2"
-export LEAGUES_RE="BMA0016|BMA0029|MIA0013|FLA0003|2L2"
+export SEMESTER=071
+export LEAGUES="BMA0031 BMA0034 MIA0018 FIA0025 2L1 B91"
+export LEAGUES_RE="BMA0031|BMA0034|MIA0018|FIA0025|2L1|B91"
 
-declare -A LEAGUE_ID=( [BMA0016]=33 [MIA0013]=33 [2L2]=26 )
+declare -A LEAGUE_ID=( [BMA0031]=33 [BMA0034]=33 [MIA0018]=33 [FIA0025]=33 [2L1]=26 [B91]=26 )
 export LEAGUE_ID
 
 # User specific aliases and functions

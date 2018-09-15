@@ -22,7 +22,7 @@ screen 2
 stuff "cd ~/admin/$SEMESTER/$SCHOOL/^M"
 stuff "# for league in $LEAGUES ; do cp ~/admin/$SEMESTER/$SCHOOL/$SEMESTER\${league}.txt ~/admin/$SEMESTER/$SCHOOL/\${league}.txt; done^M"
 stuff "cp $SEMESTER${LEAGUE}.txt ${LEAGUE}.txt^M"
-stuff "v $SEMESTER${LEAGUE}.csv ${LEAGUE}.txt ${LEAGUE}_email.yaml"
+stuff "v $SEMESTER${LEAGUE}.txt ${LEAGUE}.txt ${LEAGUE}_email.yaml"
 
 screen 0
 stuff "cd ~/$SEMESTER/$LEAGUE && v league.yaml groups.yaml session/$PREVSESSION/groups.yaml" 

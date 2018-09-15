@@ -1,11 +1,12 @@
 screen 1
-stuff "# svn rm https://github.com/drbean/class/trunk/$LEAGUE -m make_way_for_$SEMESTER$LEAGUE^M"
 stuff "# svn co --depth empty https://github.com/drbean/class/trunk ~/$SEMESTER^M"
 stuff "# cd ~/$SEMESTER/^M"
 stuff "mkdir ~/$SEMESTER/$LEAGUE/^M"
 stuff "cd ~/$SEMESTER/$LEAGUE/^M"
 stuff "# ack field ../../$(($SEMESTER-1))/*/league.yaml^M"
 stuff "# cp ../../$(($SEMESTER-1))/$LEAGUE/league.yaml ./league.yaml^M"
+stuff "# svn cat https://github.com/drbean/class/trunk/$LEAGUE/league.yaml > league.yaml^M"
+stuff "# svn rm https://github.com/drbean/class/trunk/$LEAGUE -m make_way_for_$SEMESTER$LEAGUE^M"
 stuff "# school_data.pl -s $SEMESTER -l $LEAGUE | sponge league.yaml^M"
 stuff "# for oldsemester in 031 032 041 042 051 052 ; do for oldleague in MA1 MB1 MB2 KA1 KA2 KB1 KB2 ; do [[ -s ../../\$oldsemester/\$oldleague/league.yaml ]] && import_memberdata.pl -l $LEAGUE -o \$oldleague -s $SEMESTER -x \$oldsemester | sponge league.yaml ; done ; done^M"
 stuff "# svn add . ^M"

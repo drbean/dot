@@ -19,7 +19,7 @@ stuff "# lftp -c 'open web.nuu.edu.tw && mkdir public_html/$LEAGUE && cd public_
 
 screen 2
 stuff "cd ~/admin/$SEMESTER/$SCHOOL/^M"
-stuff "# for league in $LEAGUES ; do cp ~/admin/$SEMESTER/$SCHOOL/$SEMESTER\${league}.txt ~/admin/$SEMESTER/$SCHOOL/${league}.txt; done^M"
+stuff "# for league in $LEAGUES ; do cp ~/admin/$SEMESTER/$SCHOOL/$SEMESTER\${league}.txt ~/admin/$SEMESTER/$SCHOOL/\${league}.txt; done^M"
 stuff "cp $SEMESTER${LEAGUE}.txt ${LEAGUE}.txt^M"
 stuff "v $SEMESTER${LEAGUE}.csv ${LEAGUE}.txt ${LEAGUE}_email.yaml"
 

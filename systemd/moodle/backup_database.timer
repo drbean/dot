@@ -3,7 +3,9 @@ Description=Back up database on boot/every 6 hrs
 
 [Timer]
 OnBootSec=180
-OnCalendar=1/6:03
+# OnCalendar=1/6:03
+OnCalendar=Mon 12:13,18:13
+OnCalendar=Mon,Fri 15:03
 Unit=backup_database.service
 
 [Install]

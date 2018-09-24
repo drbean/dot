@@ -2,14 +2,8 @@
 Description="Dump moodSEMESTER,backup at duplicity/sac_mood0SEMESTER_fedora2? every ? hours"
 
 [Timer]
-OnCalendar=Tue 10:05
-OnCalendar=Tue 12:05
-OnCalendar=Wed 21:45
-OnCalendar=Thu 20:00
-OnCalendar=Thu 21:45
-OnCalendar=Sat 20:05
-OnCalendar=Sat 21:45
-
+OnCalendar=Mon 12:13,18:13
+OnCalendar=Mon,Fri 15:03
 Unit=backup_database@%i.service
 
 [Install]

@@ -11,7 +11,7 @@ export SEMESTER=071
 export LEAGUES="BMA0031 BMA0034 MIA0018 FIA0025 2L1 B91"
 export LEAGUES_RE="BMA0031|BMA0034|MIA0018|FIA0025|2L1|B91"
 
-declare -A LEAGUE_ID=( [BMA0031]=33 [BMA0034]=33 [MIA0018]=33 [FIA0025]=33 [2L1]=26 [B91]=26 )
+declare -A LEAGUE_ID=( [BMA0031]=34 [BMA0034]=34 [MIA0018]=34 [FIA0025]=34 [2L1]=35 [B91]=35 )
 export LEAGUE_ID
 
 # User specific aliases and functions
@@ -27,7 +27,7 @@ alias surf="cd; tmux attach-session; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/ttb/beans; APP=beans COURSE= screen -c /home/$USER/dot/screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/screen/project.rc -dR swiss; cd -"
-alias comp="cd ~/comp; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/screen/project.rc -dR comp; cd -"
+alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/screen/project.rc -dR comp; cd -"
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
 function edit () {
@@ -803,7 +803,7 @@ function csv2yaml ( ) {
     -e '/First name/d' \
     -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
     -e 's/^\w*,\([UNVB][[:digit:]]*\),"user[[:digit:]]* ",,,[A-Za-z0-9._]*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
-    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,-.*$/\1: 0/'
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,-.*$/\1: 0/' \
     -e 's/^\w*,\([UNVB][[:digit:]]*\),"user[[:digit:]]* ",,,[A-Za-z0-9._]*@[^,]*,-.*$/\1: 0/'
 }
 

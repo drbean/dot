@@ -454,6 +454,10 @@ au BufReadPre WordsCharacters.hs call Word_mark()
 " tokens from Tests.hs sentences
 au BufEnter WordsCharacters.hs nn <LocalLeader>s vip:s/\s\+/<C-V><C-M>/g<CR>gv}oo:s/^\W*//<CR>gv:s/\W*$//<CR>gv:! sort <Bar> uniq<CR>
 
+" irregular verb Concrete file munging
+au BufEnter ${MOD}Eng.gf nm <LocalLeader>irr f(ds)wdwds"iIrregEng.<Esc>ea_V<Esc>
+
+
 augroup END
 
 " put words in DicksonI.gf, LexDickson.gf, LexDicksonEng.gf

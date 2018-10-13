@@ -2,6 +2,8 @@
 # GF parameter completion
 # copied from dic
 
+# GF -c conversation -t request -s moving -o summer
+
 function _GF () {
 	local cur prev opts course topic story old_story script_arg fileopts diropts keywords
 	COMPREPLY=()
@@ -9,6 +11,7 @@ function _GF () {
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	opts="-c -t -s -o"
 	course="conversation news"
+	course_re="conversation|news"
 	topic="volunteer trend animal people organ work identity"
 	topic_re="volunteer|animal|people|organ|work|identity"
 	story="candidate tip cusp motivating dickson abreu smallwood jackson murder drunk_driving piggott fire movement zeus kiss espn"
@@ -28,6 +31,9 @@ function _GF () {
 	COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
 	return 0
 	elif [[ ${prev} == -c ]] ; then
+	COMPREPLY=( $(compgen -W "${course}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${course_re} ]] ; then
 	COMPREPLY=( $(compgen -W "${course}" -- ${cur}) )
 	return 0
 	elif [[ ${prev} == -t ]] ; then

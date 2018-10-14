@@ -19,7 +19,7 @@ stuff "# vimdiff ~/GF/question/$COURSE/$TOPIC/$STORY/engine/MyConcrete.gf ~/GF/q
 stuff "# vimdiff ~/GF/question/$COURSE/$TOPIC/$STORY/engine/MyAbstract.gf ~/GF/question/MyAbstract.gf^M"
 stuff "# cd ~/GF/question && git subrepo init $COURSE/$TOPIC/$STORY --remote=http://github.com/drbean/$STORY --branch=master && git hub repo-new $STORY && git subrepo push $COURSE/$TOPIC/$STORY^M"
 stuff "# for readme in ~/GF/question/$COURSE/$TOPIC/$STORY/README.md ; do cp ~/curriculum/$COURSE/$TOPIC/$STORY.md \$readme && git add \$readme; done^M"
-stuff "# git add ~/GF/question/$COURSE/$TOPIC/$STORY/{{Model,Tests,WordsCharacters}.hs,$MOD{,Eng}.gf} ~/GF/question/$COURSE/$TOPIC/$STORY/engine/My{Abstract,Concrete}.gf ~/GF/question/$COURSE/$TOPIC/$STORY/engine/{Representation,Transfer}.hs^M"
+stuff "# git add ~/GF/question/$COURSE/$TOPIC/$STORY/{{Model,Tests,WordsCharacters}.hs,$MOD{,Eng}.gf} ~/GF/question/$COURSE/$TOPIC/$STORY/engine/My{Abstract,Concrete}.gf ~/GF/question/$COURSE/$TOPIC/$STORY/engine/{Representation,Transfer,Utility}.hs^M"
 stuff "git status^M"
 stuff "# git fetch upstream^M"
 stuff "# git merge upstream/master^M"

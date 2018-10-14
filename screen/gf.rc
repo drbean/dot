@@ -11,7 +11,7 @@ stuff "# cp ~/GF/question/$COURSE/$TOPIC/$PREVSTORY/{Model,Tests}.hs ~/GF/questi
 stuff "# cp ~/GF/question/$COURSE/$TOPIC/$PREVSTORY/$PREVMOD.gf ~/GF/question/$COURSE/$TOPIC/$STORY/$MOD.gf^M"
 stuff "# cp ~/GF/question/$COURSE/$TOPIC/$PREVSTORY/${PREVMOD}Eng.gf ~/GF/question/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf^M"
 stuff "# ln -s ~/GF/question/{Interpretation,Translate,LogicalForm,Evaluation}.hs ~/GF/question/$COURSE/$TOPIC/$STORY/engine/^M"
-stuff "# cp ~/GF/question/My{Abstract,Concrete}.gf ~/GF/question/{Representation,Transfer}.hs ~/GF/question/$COURSE/$TOPIC/$STORY/engine/^M"
+stuff "# cp ~/GF/question/My{Abstract,Concrete}.gf ~/GF/question/{Representation,Transfer,Utility}.hs ~/GF/question/$COURSE/$TOPIC/$STORY/engine/^M"
 stuff "# cp ~/GF/question/Abstract.gf ~/GF/question/$COURSE/$TOPIC/$STORY/$MOD.gf^M"
 stuff "# cp ~/GF/question/Concrete.gf ~/GF/question/$COURSE/$TOPIC/$STORY/${MOD}Eng.gf^M"
 stuff "# cp ~/GF/question/{Tests,Model,WordsCharacters,Utility}.hs ~/GF/question/$COURSE/$TOPIC/$STORY/^M"

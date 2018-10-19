@@ -862,6 +862,35 @@ function cw () {
     cd -
 }
 
+function work () {
+    local arg work league session week letter topic tables
+    work=$1
+    league=$2
+    week=$3
+    OPTIND=4
+    while getopts 'w:l:t:' arg
+    do
+        case ${arg} in
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    session $league $week
+    tables $league $letter
+    cd ~/$SEMESTER/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    WORK=$work \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/$USER/dot/screen/work.rc -dR ${league}_$week
+    cd -
+}
+
 function hw () {
     local arg league session week letter topic tables
     league=$1

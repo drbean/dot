@@ -5,7 +5,7 @@ OnFailure=status-email-drbean@%n.service
 [Service]
 Type=oneshot
 Nice=19
-Environment=SEMESTER=062
+Environment=SEMESTER=071
 ExecStart=/bin/bash -c "/usr/local/bin/backup_database.sh FTP_PASSWORD PASSPHRASE"
 
 [Install]

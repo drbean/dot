@@ -1,0 +1,12 @@
+[Unit]
+Description=Unoconv listener for document conversions
+Documentation=https://github.com/dagwieers/unoconv
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=simple
+# Environment="UNO_PATH=/opt/libreoffice5.2/program"
+ExecStart=/usr/bin/unoconv --listener
+
+[Install]
+WantedBy=multi-user.target

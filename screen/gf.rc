@@ -44,7 +44,7 @@ stuff "let gr = readPGF \"${MOD}.pgf\"^M":
 screen 4
 stuff "sr W file://localhost/home/drbean/GF/gf-core/doc/gf-refman.html^M"
 stuff "sr W file://localhost/home/drbean/GF/gf-core/doc/tutorial/gf-tutorial.html^M"
-stuff "sr W file://localhost/home/drbean/GF/gf-rgl/lib/doc/synopsis.html^M"
+stuff "sr W file://localhost/home/drbean/GF/gf-rgl/doc/synopsis.html^M"
 stuff "sr W file://localhost/home/drbean/GF/gf-core/doc/gf-reference.html^M"
 stuff "sr W file://localhost/home/drbean/GF/gf-core/doc/gf-shell-reference.html^M"
 stuff "sr W file://localhost/home/drbean/GF/gf-core/doc/runtime-api.html^M"

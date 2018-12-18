@@ -8,11 +8,11 @@ stuff "# cp \$TOPIC/jigsaw_\${STORY}_\$FORM.tex ./jigsaw.tex^M"
 stuff "# cat \$TOPIC/jigsaw_\${STORY}_\$FORM.tex >> ./jigsaw.tex^M"
 stuff "# cp \$TOPIC/quiz_\${STORY}_\$FORM.tex ./quiz.tex^M"
 stuff "# xelatex jigsaw.tex && evince jigsaw.pdf^M"
-stuff "STORY=$STORY; FORM=$FORM; perl ~/methodology/comp/cards.pl -t ./\$TOPIC -f ../namequestionsA7 && xelatex --output-directory=./$TOPIC ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && lftp -c 'open web.nuu.edu.tw && cd public_html/\$VIEW && put ./\$TOPIC/jigsaw_\${STORY}_\$FORM.pdf && quit' # evince ./\$TOPIC/jigsaw_\${STORY}_\$FORM.pdf"
+stuff "VIEW=$TOPIC; STORY=$STORY; FORM=$FORM; perl ~/methodology/comp/cards.pl -t ./\$TOPIC -f ../namequestionsA7 && xelatex --output-directory=./$TOPIC ./\$TOPIC/jigsaw_\${STORY}_\$FORM.tex && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./\$TOPIC/jigsaw_\${STORY}_\$FORM.pdf && quit' # evince ./\$TOPIC/jigsaw_\${STORY}_\$FORM.pdf"
 screen
 stuff "# cp quiz_\${STORY}_\$FORM.pdf ~/news/^M"
 stuff "# lpr ./\$TOPIC/quiz_\${STORY}_\$FORM.pdf -#1^M"
-stuff "STORY=$STORY; FORM=$FORM; perl ~/methodology/comp/cards.pl -t ./\$TOPIC -f ../namequestionsA7 && xelatex --output-directory=./$TOPIC ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && lftp -c 'open web.nuu.edu.tw && cd public_html/\$VIEW && put ./\$TOPIC/quiz_\${STORY}_\$FORM.pdf && quit' # evince ./\$TOPIC/quiz_\${STORY}_\$FORM.pdf"
+stuff "VIEW=$TOPIC; STORY=$STORY; FORM=$FORM; perl ~/methodology/comp/cards.pl -t ./\$TOPIC -f ../namequestionsA7 && xelatex --output-directory=./$TOPIC ./\$TOPIC/quiz_\${STORY}_\$FORM.tex && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./\$TOPIC/quiz_\${STORY}_\$FORM.pdf && quit' # evince ./\$TOPIC/quiz_\${STORY}_\$FORM.pdf"
 screen
 stuff "touch ./$TOPIC/questionsA5.tex^M"
 stuff "# svn add ./$TOPIC/questionsA5.tex^M"

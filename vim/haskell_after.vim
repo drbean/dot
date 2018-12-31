@@ -329,9 +329,9 @@ fu! Populate(module)
 		let category = det_category
 	elseif key_category == 'Prep'
 		call inputsave()
-		let prep_key = input("Word: " . word . ", Prep type: '(P)rep', '(A)ttributePrep', 'CoagentPrep(ca)', 'CopatientPrep(cp)', '(L)ocPrep', '(M)annerPrep', '(B)eneficiaryPrep', '(Rec)ipientPrep', '(Res)ultPrep', '(So)urcePrep', (S)timulusPrep', 'T(h)emePrep', '(T)imePrep', '(V)aluePrep' ")
+		let prep_key = input("Word: " . word . ", Prep type: '(P)rep', '(A)ttributePrep', 'CauserPrep(ca)', 'CoagentPrep(co)', 'CopatientPrep(cp)', '(L)ocPrep', '(M)annerPrep', '(B)eneficiaryPrep', '(Rec)ipientPrep', '(Res)ultPrep', '(So)urcePrep', (S)timulusPrep', 'T(h)emePrep', '(T)imePrep', '(V)aluePrep' ")
 		call inputrestore()
-		let prep_category = get( {'p': 'Prep', 'a': 'AttributePrep', 'ca': 'CoagentPrep', 'cp': 'CopatientPrep', 'l': 'LocPrep', 'm': 'MannerPrep', 'h': 'ThemePrep', 'b': 'BeneficiaryPrep', 'rec': 'RecipientPrep', 'res': 'ResultPrep', 'so': 'SourcePrep', 's': 'StimulusPrep', 't': 'TimePrep', 'v': 'ValuePrep'}, prep_key )
+		let prep_category = get( {'p': 'Prep', 'a': 'AttributePrep', 'ca': 'CauserPrep', 'co': 'CoagentPrep', 'cp': 'CopatientPrep', 'l': 'LocPrep', 'm': 'MannerPrep', 'h': 'ThemePrep', 'b': 'BeneficiaryPrep', 'rec': 'RecipientPrep', 'res': 'ResultPrep', 'so': 'SourcePrep', 's': 'StimulusPrep', 't': 'TimePrep', 'v': 'ValuePrep'}, prep_key )
 		let category = key_category
 	else
 		let category = key_category

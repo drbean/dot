@@ -22,6 +22,11 @@ export HISTSIZE=50000
 
 export EDITOR=v
 
+# ibus
+export GTK_IM_MODULe=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULe=ibus
+
 #greg
 # screen needs 700 on socketdir?
 if [ "$(uname)" == "CYGWIN_NT-10.1" ]; then

@@ -23,9 +23,9 @@ export HISTSIZE=50000
 export EDITOR=v
 
 # ibus
-export GTK_IM_MODULe=ibus
+export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
-export QT_IM_MODULe=ibus
+export QT_IM_MODULE=ibus
 
 #greg
 # screen needs 700 on socketdir?

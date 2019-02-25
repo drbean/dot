@@ -1,5 +1,5 @@
 screen
 
-stuff "# pandoc -s -t html --self-contained --variable=CJKmainfont:'WenQuanYi Zen Hei' --variable=CJKmonofont:'WenQuanYi Zen Hei Mono' ./$TOPIC/$STORY.md -o ./$TOPIC/$STORY.html && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./$TOPIC/$STORY.html && qui'^M"
+stuff "# STORY=$STORY ; pandoc -s -t html --self-contained --variable=CJKmainfont:'WenQuanYi Zen Hei' --variable=CJKmonofont:'WenQuanYi Zen Hei Mono' ./$TOPIC/\$STORY.md -o ./$TOPIC/\$STORY.html && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./$TOPIC/\$STORY.html && qui'^M"
 stuff "# v ./$TOPIC/$STORY.html^M"
 stuff "pandoc -s -t beamer -V theme:Szeged -V colortheme:beaver --pdf-engine=xelatex --variable=CJKmainfont:'WenQuanYi Zen Hei' --variable=CJKmonofont:'WenQuanYi Zen Hei Mono' ./$TOPIC/slides.md -o ./$TOPIC/slides.pdf && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./$TOPIC/slides.pdf && qui'^M"

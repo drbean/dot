@@ -7,9 +7,9 @@ fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
-export SEMESTER=071
-export LEAGUES="BMA0031 BMA0034 MIA0018 FIA0025 2L1 B91"
-export LEAGUES_RE="BMA0031|BMA0034|MIA0018|FIA0025|2L1|B91"
+export SEMESTER=072
+export LEAGUES="BMA0034 BMA0047 MIA0014 FIA0020"
+export LEAGUES_RE="BMA0034|BMA0047|MIA0014|FIA0020"
 
 declare -A LEAGUE_ID=( [BMA0031]=34 [BMA0034]=34 [MIA0018]=34 [FIA0025]=34 [2L1]=35 [B91]=35 )
 export LEAGUE_ID
@@ -801,10 +801,10 @@ function csv2yaml ( ) {
     cat ${WORK}/$MOODLEGRADE.csv | sed \
     -e '1i ---' \
     -e '/First name/d' \
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),[UNVB][[:digit:]]*,,,[A-Za-z0-9._]*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
     -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
-    -e 's/^\w*,\([UNVB][[:digit:]]*\),"user[[:digit:]]* ",,,[A-Za-z0-9._]*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
-    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,-.*$/\1: 0/' \
-    -e 's/^\w*,\([UNVB][[:digit:]]*\),"user[[:digit:]]* ",,,[A-Za-z0-9._]*@[^,]*,-.*$/\1: 0/'
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),[UNVB][[:digit:]]*,,,[A-Za-z0-9._]*@[^,]*,"\?[-0].*$/\1: 0/' \
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,"\?[-0].*$/\1: 0/'
 }
 
 

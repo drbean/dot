@@ -9,6 +9,7 @@ stuff "# moopl group_build -l $LEAGUE^M"
 stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls session/^M"
 stuff "# cp teamseat.pdf ~/media/teamseat_$LEAGUE.pdf^M"
 stuff "# svn ci comp/$ROUND exam/$ROUND -m $TOPIC^M"
+stuff "# for exam in $(ls exam) ; do sed -i -e 's/: /,/' \$exam/\$exam/\$exam.csv"
 
 source comp.rc
 source jigsaw.rc
@@ -19,3 +20,4 @@ stuff '$g->grades'
 screen 5
 stuff "lftp web.nuu.edu.tw^M"
 stuff "cd public_html/$LEAGUE^M"
+stuff "qui"

@@ -24,6 +24,7 @@ source ~/dot/git/git-subrepo/.rc
 alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./\$ROUND"
 alias web="cd; screen -c /home/$USER/dot/screen/web.rc -dR web; cd -"
 alias surf="cd; tmux attach-session; cd -"
+alias email="cd; screen -c /home/$USER/dot/screen/email.rc" 
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/ttb/beans; APP=beans COURSE= screen -c /home/$USER/dot/screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/screen/project.rc -dR swiss; cd -"

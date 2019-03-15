@@ -1,0 +1,6 @@
+screen 0
+tmux
+stuff "# sr W http://drbean.sdf.org^M"
+
+screen 1
+stuff "# curl 'http://lctc.nuu.edu.tw/afl/webs/index.php?account=admin&id=14&mod_area=15' | xargs -0 printf '%s\\n' | sed -n -e 's/^\[^\@\]*\(\w\+@nuu.edu.tw\)/\\1\\n/g p'^M"

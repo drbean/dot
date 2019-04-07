@@ -90,7 +90,7 @@ fu! Name()
 	let feature = get( {'m': 'Masc', 'f': 'Fem', 'n': 'Neutr'}, key )
 	call setline(".", "\t, [Cat \"" . lexeme . "\"	\"NP\" [Thrd," . feature . ",Sg] []]")
 endf
-ino <LocalLeader>P <Esc>:call Name()<CR>o
+" ino <LocalLeader>P <Esc>:call Name()<CR>o
 
 fu! Object()
 	let lexeme = expand('<cword>')

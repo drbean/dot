@@ -42,7 +42,7 @@ function edit () {
         esac
     done
     cd ~/edit/$source
-    SOURCE=$source screen -c /home/$USER/dot/screen/edit.rc -dR edit
+    SOURCE=$source screen -c /home/$USER/dot/screen/edit.rc -dR $source
     cd -
 }
 
@@ -921,7 +921,7 @@ function hw () {
 
 alias contest="cd ~/001/contest; screen -dR contest; cd -"
 
-alias job="cd ~/job; screen -c /home/$USER/dot/screen/job.rc -dR job; cd -"
+alias job="cd ~/job; screen -c /home/$USER/dot/screen/utility.rc -dR job; cd -"
 
 alias q=exit
 

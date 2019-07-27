@@ -16,6 +16,9 @@ export LEAGUE_ID
 
 # User specific aliases and functions
 
+# # greg
+# ibus-daemon -drx
+
 # ingydotnet/git-hub
 source ~/dot/git/git-hub/.rc
 # ingydotnet/git-subrepo

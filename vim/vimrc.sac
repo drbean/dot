@@ -1,4 +1,4 @@
-" Last Edit: 2018 Sep 01, 09:58:02 PM
+" Last Edit: 2019 Mar 09, 12:58:03 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -847,6 +847,7 @@ augroup END
 
 augroup cards
 au BufEnter cards.yaml no <buffer> <LocalLeader>a :call WriteAnswer()<CR>
+au BufEnter cards.yaml ino <buffer> <LocalLeader>a <Esc>:call WriteAnswer()<CR>A
 function! WriteAnswer()
 	let option_line = getline( line('.') )
 	let answer = substitute(option_line, '           - ', '', "")

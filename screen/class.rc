@@ -9,6 +9,7 @@ screen 5 lftp web.nuu.edu.tw
 stuff "cd public_html/$LEAGUE^M"
 stuff "# put classwork/$LASTWEEK.yaml -o classwork.yaml^M"
 stuff "# put homework/$LASTWEEK.yaml -o homework.yaml^M"
+stuff "# qui"
 
 
 screen 4 re.pl --rcfile ../rc/g.rc

@@ -7,11 +7,11 @@ fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
-export SEMESTER=071
-export LEAGUES="BMA0031 BMA0034 MIA0018 FIA0025 2L1 B91"
-export LEAGUES_RE="BMA0031|BMA0034|MIA0018|FIA0025|2L1|B91"
+export SEMESTER=072
+export LEAGUES="BMA0034 BMA0047 MIA0014 FIA0020"
+export LEAGUES_RE="BMA0034|BMA0047|MIA0014|FIA0020"
 
-declare -A LEAGUE_ID=( [BMA0031]=34 [BMA0034]=34 [MIA0018]=34 [FIA0025]=34 [2L1]=35 [B91]=35 )
+declare -A LEAGUE_ID=( [BMA0034]=36 [BMA0047]=36 [MIA0014]=36 [FIA0020]=36 )
 export LEAGUE_ID
 
 # User specific aliases and functions
@@ -27,6 +27,7 @@ source ~/dot/git/git-subrepo/.rc
 alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./\$ROUND"
 alias web="cd; screen -c /home/$USER/dot/screen/web.rc -dR web; cd -"
 alias surf="cd; tmux attach-session; cd -"
+alias email="cd ~/edit/email; screen -c /home/$USER/dot/screen/email.rc -dR email; cd -" 
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/ttb/beans; APP=beans COURSE= screen -c /home/$USER/dot/screen/project.rc -dR beans; cd -"
 alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/screen/project.rc -dR swiss; cd -"
@@ -43,8 +44,8 @@ function edit () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/edit/$source
-    SOURCE=$source screen -c /home/$USER/dot/screen/edit.rc -dR edit
+    cd ~/edit/$source || exit 1
+    SOURCE=$source screen -c /home/$USER/dot/screen/edit.rc -dR $source
     cd -
 }
 
@@ -352,7 +353,7 @@ function corr () {
     done
 	cd ~/curriculum/$course
 	COURSE=$course \
-	VIEW=$view \
+	VIEW=${view:-$topic} \
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
@@ -804,10 +805,10 @@ function csv2yaml ( ) {
     cat ${WORK}/$MOODLEGRADE.csv | sed \
     -e '1i ---' \
     -e '/First name/d' \
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),[UNVB][[:digit:]]*,,,[A-Za-z0-9._]*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
     -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
-    -e 's/^\w*,\([UNVB][[:digit:]]*\),"user[[:digit:]]* ",,,[A-Za-z0-9._]*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
-    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,-.*$/\1: 0/' \
-    -e 's/^\w*,\([UNVB][[:digit:]]*\),"user[[:digit:]]* ",,,[A-Za-z0-9._]*@[^,]*,-.*$/\1: 0/'
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),[UNVB][[:digit:]]*,,,[A-Za-z0-9._]*@[^,]*,"\?[-0].*$/\1: 0/' \
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,"\?[-0].*$/\1: 0/'
 }
 
 
@@ -923,7 +924,7 @@ function hw () {
 
 alias contest="cd ~/001/contest; screen -dR contest; cd -"
 
-alias job="cd ~/job; screen -c /home/$USER/dot/screen/job.rc -dR job; cd -"
+alias job="cd ~/job; screen -c /home/$USER/dot/screen/utility.rc -dR job; cd -"
 
 alias q=exit
 

@@ -13,6 +13,8 @@ fi
 # User specific aliases and functions
 # User specific environment and startup programs
 
+export LANG=en_US.UTF8
+
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 #greg

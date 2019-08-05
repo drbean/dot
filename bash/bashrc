@@ -36,17 +36,17 @@ alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
 function email () {
     OPTIND=1
-    local arg school college
+    local arg school department
     while getopts 's:c:' arg
     do
         case ${arg} in
             s) school=${OPTARG};;
-            c) college=${OPTARG};;
+            c) department=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     cd ~/edit/email || exit 1
-    SCHOOL=$school COLLEGE=$college screen -c /home/$USER/dot/screen/email.rc -dR $school
+    SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR $school
     cd -
 }
 

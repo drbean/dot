@@ -37,11 +37,11 @@ alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 function email () {
     OPTIND=1
     local arg school department
-    while getopts 's:c:' arg
+    while getopts 's:d:' arg
     do
         case ${arg} in
             s) school=${OPTARG};;
-            c) department=${OPTARG};;
+            d) department=${OPTARG};;
             *) return 1 # illegal option
         esac
     done

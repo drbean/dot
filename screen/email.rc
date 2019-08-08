@@ -1,6 +1,6 @@
 screen 0
 # editing
-stuff "v $SCHOOL/sent_address.txt^M"
+stuff "# v $SCHOOL/sent_address.txt^M"
 
 screen 1
 # status 
@@ -8,12 +8,12 @@ stuff "git status"
 
 screen 2
 # download addresses
-# stuff "# curl 'http://lctc.nuu.edu.tw/afl/webs/index.php?account=admin&id=14&mod_area=15' | xargs -0 printf '%s\\n' | sed -n -e 's/^\[^\@\]*\(\w\+@nuu.edu.tw\)/\\1\\n/g p'^M"
-stuff "# for i in {1..100} ; do wget http://www.$department.$school.edu.tw ; done ^M"
+stuff "# curl 'http://lctc.nuu.edu.tw/afl/webs/index.php?account=admin&id=14&mod_area=15' | xargs -0 printf '%s\\n' | sed -n -e 's/^\[^\@\]*\(\w\+@nuu.edu.tw\)/\\1\\n/g p'^M"
+stuff "# for i in {1..100} ; do wget http://www.$department.$SCHOOL.edu.tw ; done ^M"
 
 screen 3
-# "format address file, removing dupes^M"
-# stuff "for department in $DEPARTMENT ; do while IFS= read -r address ; do ( if (ack '^$address' $school/sent_address.txt > /dev/null ) ; then printf '%s\n' "$address" >> %school/$department/new_address.txt ; done < $department_0.txt ; done ^M"
+# format address file, removing dupes
+stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if (\\! ack \"^$address$\" $SCHOOL/sent_address.txt > /dev/null ) ; then printf '%s\\n' "\$address" >> $SCHOOL/new_address.txt ; fi ; done < $SCHOOL/\${department}_0.txt ; done ^M"
 
 screen 4
 # send mails

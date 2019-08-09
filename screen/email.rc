@@ -13,7 +13,7 @@ stuff "# for i in {1..100} ; do wget http://www.$department.$SCHOOL.edu.tw ; don
 
 screen 3
 # format address file, removing dupes
-stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if ! (ack \"^\$address\$\" $SCHOOL/sent_address.txt > /dev/null ) ; then printf '%s\\n' "\$address" >> $SCHOOL/new_address.txt ; fi ; done < $SCHOOL/\${department}_0.txt ; done ^M"
+stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if ! ( ack \"\^\$address\$\" $SCHOOL/sent_address.txt > /dev/null ) ; then printf '%s\\n' \"\$address\" >> $SCHOOL/\${department}_new_address.txt ; fi ; done < $SCHOOL/\${department}_0.txt ; done ^M"
 
 screen 4
 # send mails

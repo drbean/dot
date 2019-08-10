@@ -17,3 +17,4 @@ stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if !
 
 screen 4
 # send mails
+stuff "# cd ~/edit/email/$SCHOOL && for department in $DEPARTMENT ; do printf '%b' \"\\n# \${department}_0\\n\" >> sent_address.txt && mv \${department}_new_address.txt address.txt && bash $HOME/job/spam/spam.sh < address.txt >> edit_offer_mailing.txt && cat address.txt >> sent_address.txt ; done ^M"

@@ -1,20 +1,14 @@
-screen 0
-# editing
-stuff "# v $SCHOOL/sent_address.txt^M"
-
 screen 1
 # status 
-stuff "git status"
+stuff "git status^M"
+stuff "# git add $SCHOOL/${DEPARTMENT}_0.txt && git commit -m $SCHOOL/${DEPARTMENT}_0.txt^M"
 
 screen 2
 # download addresses
 stuff "# curl 'http://lctc.nuu.edu.tw/afl/webs/index.php?account=admin&id=14&mod_area=15' | xargs -0 printf '%s\\n' | sed -n -e 's/^\[^\@\]*\(\w\+@nuu.edu.tw\)/\\1\\n/g p'^M"
 stuff "# for i in {1..100} ; do wget http://www.$department.$SCHOOL.edu.tw ; done ^M"
 
-screen 3
-# format address file, removing dupes
-stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if ! ( ack \"\^\$address\$\" $SCHOOL/sent_address.txt > /dev/null ) ; then printf '%s\\n' \"\$address\" >> $SCHOOL/\${department}_new_address.txt ; fi ; done < $SCHOOL/\${department}_0.txt ; done ^M"
-
-screen 4
-# send mails
-stuff "# cd ~/edit/email/$SCHOOL && for department in $DEPARTMENT ; do printf '%b' \"\\n# \${department}_0\\n\" >> sent_address.txt && mv \${department}_new_address.txt address.txt && bash $HOME/job/spam/spam.sh < address.txt >> edit_offer_mailing.txt && cat address.txt >> sent_address.txt ; done ^M"
+screen 0
+# editing
+stuff "v $SCHOOL/${DEPARTMENT}_0.txt^M"
+stuff "i"

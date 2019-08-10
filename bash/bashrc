@@ -33,6 +33,22 @@ alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/scr
 alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/screen/project.rc -dR comp; cd -"
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
+function scrape () {
+    OPTIND=1
+    local arg school department
+    while getopts 's:d:' arg
+    do
+        case ${arg} in
+            s) school=${OPTARG};;
+            d) department=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/edit/email || exit 1
+    SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/scrape.rc -dR scrape_$school
+    cd -
+}
+
 function email () {
     OPTIND=1
     local arg school department
@@ -45,7 +61,7 @@ function email () {
         esac
     done
     cd ~/edit/email || exit 1
-    SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR $school
+    SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR email_$school
     cd -
 }
 

@@ -1,4 +1,4 @@
-# Last Edit: 2017 Nov 27, 04:39:19 PM
+# Last Edit: 2018 Sep 22, 03:57:30 PM
 #
 # The ultimate Mutt settings
 #
@@ -212,7 +212,7 @@ set record="=z/sent"		# Don't save a copy of outgoing messages (Fcc)
 set sendmail="/usr/sbin/sendmail -oem -oi"
 # set sendmail="/usr/sbin/exim -oem -oi"
 # not from roland
-# set smtp_url="smtp://greg@mail.nuu.edu.tw"
+set smtp_url="smtp://greg@mail.nuu.edu.tw"
 # set smtp_pass=""
 reset shell		# Take shell from /etc/passwd 
 # set signature='~/.signature'	# Signature (See send-hook!)

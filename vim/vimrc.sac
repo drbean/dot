@@ -1,4 +1,4 @@
-" Last Edit: 2019 Aug 10, 08:59:22 PM
+" Last Edit: 2019 Aug 13, 09:24:47 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -607,8 +607,8 @@ au!
 "eyy'ai## ee. . .''18yy''PjjOma''19k
 
 " pandoc link list
-au BufEnter slides.md,README.md,$STORY.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
-au BufEnter slides.md,README.md,$STORY.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
+au BufEnter slides.md,README.md,$STORY.md,markdown/*.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
+au BufEnter slides.md,README.md,$STORY.md,markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
 
 function! WikipediaLink()
 	let words = getline( line('.') )
@@ -853,6 +853,10 @@ au BufEnter ~/edit/email/*.txt no <buffer> <LocalLeader>! :%! sort \| uniq<CR>
 augroup END
 
 augroup cards
+
+" permutate 3 strings separated by commas
+au BufEnter cards.yaml no <buffer> <LocalLeader>p yyPf,dt,$p<CR>yypldf,f,lPyypf,dt,$pyypldf,f,lPyypf,w,dt,$pV5k:'<,'>!sort<Esc>
+
 au BufEnter cards.yaml no <buffer> <LocalLeader>a :call WriteAnswer()<CR>
 au BufEnter cards.yaml ino <buffer> <LocalLeader>a <Esc>:call WriteAnswer()<CR>A
 function! WriteAnswer()

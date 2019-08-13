@@ -1,4 +1,4 @@
-screen bash -c "v league.yaml exam/$ROUND/{round,response,scores}.yaml"
+screen bash -c "v league.yaml exam/$ROUND/{{round,response,scores}.yaml,g.csv}"
 
 source jigsaw.rc
 source moodle_exam.rc

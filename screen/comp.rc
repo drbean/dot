@@ -1,7 +1,7 @@
 screen
 stuff "cd ~/$SEMESTER/$LEAGUE/comp^M"
-stuff "# perl ../../../comp/paper/script_files/score_comp.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml && perl ~/ttb/beans/trunk/script_files/sum_g1_g2.pl -l $LEAGUE -r $ROUND > ../exam/$ROUND/g.yaml && svn add ../exam/$ROUND/{g,g2}.yaml $ROUND/{round,response,scores}.yaml && perl ../../../swiss/web/script/update_db.pl -l $LEAGUE -r $ROUND && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put ../exam/$ROUND/g2.yaml && put ../exam/$ROUND/g.yaml && put $ROUND/scores.yaml && put $ROUND/response.yaml'^M"
-stuff "# perl ~/comp/web/script/comptron.pl -l $LEAGUE -r $ROUND -x 1 > $ROUND/response.yaml^M"
+stuff "# perl ~/ttb/competitions/quiz/trunk/web/../paper/script_files/score_comp.pl -l $LEAGUE -r $ROUND > $ROUND/scores.yaml && perl ~/ttb/beans/trunk/script_files/sum_g1_g2.pl -l $LEAGUE -r $ROUND > ../exam/$ROUND/g.yaml && svn add ../exam/$ROUND/{g,g2}.yaml $ROUND/{round,response,scores}.yaml && perl ~/swiss/web/script/update_db.pl -l $LEAGUE -r $ROUND && lftp -c 'open web.nuu.edu.tw && cd public_html/$LEAGUE && put ../exam/$ROUND/g2.yaml && put ../exam/$ROUND/g.yaml && put $ROUND/scores.yaml && put $ROUND/response.yaml'^M"
+stuff "# perl ~/ttb/competitions/quiz/trunk/web/script/comptron.pl -l $LEAGUE -r $ROUND -x 1 > $ROUND/response.yaml^M"
 stuff "# perl ../../../swiss/web/script/round_table.pl -l $LEAGUE -r $ROUND ^M"
 stuff "# cp $ROUND/*.yaml $PREVROUND/^M"
 stuff "# perl ../../../swiss/web/script/create_round.pl -l $LEAGUE -r $ROUND > $ROUND/round.yaml^M"

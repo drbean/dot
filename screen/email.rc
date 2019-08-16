@@ -14,7 +14,7 @@ stuff "for item in {63879..63883} 155338 155339 155420 {75568..75570} 75612 7561
 
 screen 3
 # format address file, removing dupes
-stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if ! ( ack \"\^\$address\$\" $SCHOOL/sent_address.txt > /dev/null ) ; then printf '%s\\n' \"\$address\" >> $SCHOOL/\${department}_new_address.txt ; fi ; done < $SCHOOL/\${department}_0.txt ; done ^M"
+stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if ! ( ack \"\^\$address\$\" $SCHOOL/sent_address.txt > /dev/null ) ; then printf '%s\\n' \"\$address\" >> $SCHOOL/\${department}_new_address.txt ; fi ; done < $SCHOOL/\${department}_0.txt && wc $SCHOOL/\${department}_0.txt $SCHOOL/\${department}_new_address.txt ; done ^M"
 
 screen 4
 # send mails

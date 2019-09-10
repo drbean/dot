@@ -278,24 +278,48 @@ function pres () {
 	cd -
 }
 
-function speaking () {
+function reading () {
     OPTIND=1
-    local arg course=speaking topic story
-    while getopts 'v:t:s:' arg
+    local arg course=reading topic story form
+    while getopts 'v:t:s:f:' arg
     do
         case ${arg} in
             v) view=${OPTARG};;
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
+            f) form=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/speaking
+	cd ~/curriculum/reading
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \
 	STORY=$story \
-	FORM=0 \
+	FORM=$form \
+	screen -c /home/$USER/dot/screen/course.rc -dR reading
+	cd -
+}
+
+function speaking () {
+    OPTIND=1
+    local arg course=speaking topic story form
+    while getopts 'v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/curriculum/speaking/test
+	COURSE=$course \
+	VIEW=$view \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
 	screen -c /home/$USER/dot/screen/course.rc -dR speaking
 	cd -
 }
@@ -406,7 +430,7 @@ function wr () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course
+	cd ~/curriculum/$course:
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \
@@ -746,7 +770,6 @@ alias intercultural="cd ~/class/intercultural; VIEW=intercultural TOPIC= screen 
 alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/$USER/dot/screen/course.rc -dR literature; cd -"
 
 alias grammar="cd ~/curriculum/grammar; screen -dR grammar; cd -"
-alias reading="cd ~/class/curriculum/reading; screen -dR reading; cd -"
 alias friends="cd ~/class/friends; screen -dR friends; cd -"
 alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
 alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"

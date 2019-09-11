@@ -1,4 +1,4 @@
-" Last Edit: 2019 Aug 13, 09:24:47 PM
+" Last Edit: 2019 Sep 11, 03:06:26 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -911,6 +911,15 @@ function! Nun()
 	nun <buffer> v
 	nun <buffer> <LocalLeader>~
 endfunction
+
+augroup name
+au!
+
+" Chinese to English names after 1st week
+au BufEnter groups.yaml,league.yaml no <buffer> <LocalLeader>w :<C-F>ilet @e=''<Esc>
+au BufEnter groups.yaml,league.yaml no <buffer> <LocalLeader>q k"fyiw/<C-R>f<Enter>ciw<C-R>e<Esc><Esc><C-W><C-W>n.<C-W><C-W>n.<C-W><C-W>
+
+augroup END
 
 " wordlist from text
 fu! Wordlist()

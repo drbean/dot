@@ -1,5 +1,5 @@
 [Unit]
-Description="Dump moodSEMESTER,backup at duplicity/sac_mood0SEMESTER_fedora2?"
+Description="Dump moodSEMESTER,backup at duplicity/sac_mood0SEMESTER_fedora30"
 OnFailure=status-email-drbean@%n.service
 
 [Service]

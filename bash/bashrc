@@ -12,7 +12,8 @@ export LEAGUES="BMA0034 BMA0047 FIA0057 CLA0026 GL00027"
 export LEAGUES_RE="BMA0034|BMA0047|FIA0057|CLA0026|GL00027"
 
 declare -A LEAGUE_ID=( [BMA0034]=36 [BMA0047]=36 [FIA0057]=36 [CLA0026]=37 [GL00027]=39 )
-export LEAGUE_ID
+declare -A COURSE_NAME=( [37]="reading" [40]="correspondence" )
+export LEAGUE_ID COURSE_NAME
 
 # User specific aliases and functions
 
@@ -430,7 +431,7 @@ function wr () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course:
+	cd ~/curriculum/$course
 	COURSE=$course \
 	VIEW=$view \
 	TOPIC=$topic \

@@ -321,7 +321,7 @@ function speaking () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR speaking
+	screen -c /home/$USER/dot/screen/course.rc -dR $topic
 	cd -
 }
 

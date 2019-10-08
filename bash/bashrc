@@ -437,7 +437,7 @@ function wr () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR $course
+	screen -c /home/$USER/dot/screen/course.rc -dR $topic
 	cd -
 }
 

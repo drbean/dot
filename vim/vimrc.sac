@@ -1,4 +1,4 @@
-" Last Edit: 2019 Sep 12, 12:27:07 PM
+" Last Edit: 2019 Oct 26, 02:11:12 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -222,8 +222,8 @@ vmap \m <Plug>MarkersMark
 
 
 "For better colors, specify background
-" set background=dark
-set background=light
+set background=dark
+" set background=light
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.

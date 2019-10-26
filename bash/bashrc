@@ -11,7 +11,7 @@ export SEMESTER=081
 export LEAGUES="BMA0034 BMA0047 FIA0057 CLA0026 GL00027"
 export LEAGUES_RE="BMA0034|BMA0047|FIA0057|CLA0026|GL00027"
 
-declare -A LEAGUE_ID=( [BMA0034]=36 [BMA0047]=36 [FIA0057]=36 [CLA0026]=37 [GL00027]=39 )
+declare -A LEAGUE_ID=( [BMA0034]=40 [BMA0047]=40 [FIA0057]=40 [CLA0026]=37 [GL00027]=39 )
 declare -A COURSE_NAME=( [37]="reading" [40]="correspondence" )
 export LEAGUE_ID COURSE_NAME
 
@@ -304,7 +304,7 @@ function reading () {
 
 function speaking () {
     OPTIND=1
-    local arg course=speaking topic story form
+    local arg course=speaking/test topic story form
     while getopts 'v:t:s:f:' arg
     do
         case ${arg} in

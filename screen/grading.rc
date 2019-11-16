@@ -4,7 +4,7 @@ screen 1
 stuff "# id2names.pl -l $LEAGUE && print_grades.pl > grades.txt && lftp -c 'open freeshell.org && cd html/$LEAGUE && put grades.txt && put id2names_groups.txt && open web.nuu.edu.tw && cd public_html/$LEAGUE && put grades.txt && put id2names_groups.txt && qui'^M"
 stuff "# id2names.pl -l $LEAGUE && lftp -c 'open freeshell.org && cd html/$LEAGUE && put id2names_groups.txt && open web.nuu.edu.tw && cd public_html/$LEAGUE && put id2names_groups.txt && qui'^M"
 stuff "# NEXTROUND=$NEXTROUND ; N=$N ; teamseat.pl -s \$NEXTROUND --latex -n \$N && xelatex session/\$NEXTROUND/teamseat.tex && lftp -c 'open web.nuu.edu.tw && cd public_html && put teamseat.pdf -o ${LEAGUE}_\$N.pdf && quit' && lpr teamseat.pdf -#1 && teamseat.pl -s \$NEXTROUND -n \$N ^M"
-stuff "#NEXTROUND=$NEXTROUND ; svn mkdir --parents session/\$NEXTROUND && mv groups.yaml session/\$NEXTROUND/groups.yaml && svn add session/\$NEXTROUND/groups.yaml && moopl group_build -l $LEAGUE -c ${LEAGUE_ID[$LEAGUE]} && svn ci session/ -m ^M"
+stuff "#NEXTROUND=$NEXTROUND ; svn mkdir --parents session/\$NEXTROUND && mv groups.yaml session/\$NEXTROUND/groups.yaml && svn add session/\$NEXTROUND/groups.yaml && moopl group_build -l $LEAGUE -c \${LEAGUE_ID[\$LEAGUE]} && svn ci session/ -m ^M"
 stuff "# moopl group_build -l $LEAGUE -c ${LEAGUE_ID[$LEAGUE]}^M"
 stuff "# create_groups.pl -s $NEXTROUND -n $N | sponge groups.yaml^M ls session/^M"
 stuff "# cp teamseat.pdf ~/media/teamseat_$LEAGUE.pdf^M"

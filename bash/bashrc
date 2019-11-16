@@ -34,6 +34,23 @@ alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/scr
 alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/screen/project.rc -dR comp; cd -"
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
+function timer () {
+    OPTIND=1
+    local arg count
+    while getopts 'c:' arg
+    do
+        case ${arg} in
+            c) count=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    for ((i=1; $count+1-$i; i++))
+    do
+        sleep 1
+        printf "%.2d:%.2d\n" $(($i/60)) $(($i%60))
+    done
+}
+
 function scrape () {
     OPTIND=1
     local arg school department

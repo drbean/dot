@@ -1,4 +1,4 @@
-" Last Edit: 2019 Oct 26, 02:11:12 PM
+" Last Edit: 2019 Oct 29, 01:34:12 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -632,6 +632,18 @@ endfunction
 au BufEnter slides.md,README.md,$STORY.md no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 au BufEnter slides.md,README.md,$STORY.md ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 au BufEnter content.yaml no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+
+function! YoutubeLink()
+	let lnum = line('$')
+	let words = getline( line('.') )
+	let search = substitute(words, '\v\s+', '+', "g")
+	let search_quote = substitute(search, '\v''', '%27', "g")
+	let string = "https://www.youtube.com/results?search_query=" . search_quote
+	call setline(".", string)
+endfunction
+au BufEnter slides.md,README.md,$STORY.md no <buffer> <LocalLeader>y <Esc>:call YoutubeLink()<CR>I
+au BufEnter slides.md,README.md,$STORY.md ino <buffer> <LocalLeader>y <Esc>:call YoutubeLink()<CR>I
+au BufEnter content.yaml no <buffer> <LocalLeader>y <Esc>:call YoutubeLink()<CR>I
 
 function! HTMLLink()
 	let url = expand( "<cWORD>" )

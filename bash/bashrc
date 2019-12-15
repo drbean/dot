@@ -12,7 +12,7 @@ export LEAGUES="BMA0034 BMA0047 FIA0057 CLA0026 GL00027"
 export LEAGUES_RE="BMA0034|BMA0047|FIA0057|CLA0026|GL00027"
 
 declare -A LEAGUE_ID=( [BMA0034]=40 [BMA0047]=40 [FIA0057]=40 [CLA0026]=37 [GL00027]=39 )
-declare -A COURSE_NAME=( [37]="reading" [40]="correspondence" )
+declare -A COURSE_NAME=( [37]="writing" [39]="speaking/test" [40]="correspondence" )
 export LEAGUE_ID COURSE_NAME
 
 # User specific aliases and functions

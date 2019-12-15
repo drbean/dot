@@ -1,0 +1,13 @@
+[Unit]
+Description=Start up znc after backing up moodle
+
+[Timer]
+OnBootSec=180
+# OnCalendar=1/6:03
+OnCalendar=Mon 12,18:30
+OnCalendar=Tue 17:20
+OnCalendar=Mon,Fri 15:20
+Unit=znc_start.service
+
+[Install]
+WantedBy=timers.target

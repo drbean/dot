@@ -1,0 +1,11 @@
+[Unit]
+Description="Stop znc by conflict on znc_start.service"
+OnFailure=status-email-drbean@%n.service
+
+[Service]
+Type=oneshot
+Nice=19
+ExecStart=/usr/bin/echo ''
+
+[Install]
+WantedBy=multi-user.target

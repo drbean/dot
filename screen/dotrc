@@ -1,10 +1,11 @@
 screen 9
 stuff "man bash"
 screen 5
-stuff "cd drbean_etc^M"
+stuff "cd et_cetera^M"
 stuff "# su -^M"
 stuff "# chmod 700 -R .^M"
 stuff "git status^M"
+stuff "# for config in lynx-site.cfg ; do sudo cp ~greg/dot/et_cetera/$config /etc/$config^M"
 screen 4
 stuff "# ln systemd/desktop/desktop_background@.service ~/.config/systemd/user/^M"
 stuff "# ln systemd/desktop/desktop_background@.timer ~/.config/systemd/user/^M"

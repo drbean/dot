@@ -1,4 +1,4 @@
-" Last Edit: 2019 Oct 29, 01:34:12 PM
+" Last Edit: 2020 Feb 17, 01:26:36 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -373,6 +373,14 @@ map <LocalLeader>i :call Insert_increment()<CR>
 
 
 "autocmds
+
+" YouCompleteMe
+
+augroup load_ycm
+  autocmd!
+  autocmd CursorHold, CursorHoldI * :packadd YouCompleteMe
+                                \ | autocmd! load_ycm
+augroup END
 
 augroup perl
 au!

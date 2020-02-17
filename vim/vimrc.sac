@@ -1,4 +1,4 @@
-" Last Edit: 2020 Feb 17, 01:26:36 PM
+" Last Edit: 2020 Feb 17, 03:43:38 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -472,7 +472,7 @@ autocmd BufRead /tmp/mutt* set tw=65
 autocmd BufRead /tmp/mutt* imap <f4> <esc>BlcW
 " \S,\M macros to make folder-hook index returners
 " replaced now with perl script
-autocmd BufRead ~/.muttrc map \S {O<CR>folder-hook . 'macro index h <lt>change-folder>?<lt>tab><lt>jump><lt>enter>0<lt>enter>'<CR><Esc>kma/^mailboxes '!'<CR>
+" autocmd BufRead ~/.muttrc map \S {O<CR>folder-hook . 'macro index h <lt>change-folder>?<lt>tab><lt>jump><lt>enter>0<lt>enter>'<CR><Esc>kma/^mailboxes '!'<CR>
 autocmd BufRead ~/.muttrc map \M f lmb"yyiW'ayypWmaciWy/\d\A`b\M
 "autocmd FileType mail source $V/bracketing.no-meta.vim
 " Sec Zehl's mappings for mail templates

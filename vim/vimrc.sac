@@ -1,4 +1,4 @@
-" Last Edit: 2020 Feb 17, 03:52:32 PM
+" Last Edit: 2020 Feb 17, 09:49:32 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -122,8 +122,8 @@ elseif has("win32")
 " cab rc <C-R>=vimrc<CR><CR>
 
 set path=.,		" path for files accessed by gf, etc
-set runtimepath+=~drbean/dot/vim/ultisnips
-let g:ycm_key_list_select_completion = ['<Down>']
+" set runtimepath+=~drbean/dot/vim/ultisnips
+" let g:ycm_key_list_select_completion = ['<Down>']
 
 " set runtimepath=~/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim63,/usr/share/vim/vimfiles/after,~/.vim/after	"fedora 3 got it wrong
 
@@ -518,9 +518,10 @@ augroup yaml
 au!
 
 autocmd FileType yaml setlocal shiftwidth=2
-" autocmd FileType yaml set runtimepath+=~/dot/vim/ultisnips
+autocmd FileType yaml setlocal runtimepath^=~/dot/vim/ultisnips
 " autocmd FileType yaml let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 " autocmd FileType yaml let g:UltiSnipsExpandTrigger="<tab>"
+let g:ycm_key_list_select_completion = ['<Down>']
 augroup END
 
 " augroup snippets

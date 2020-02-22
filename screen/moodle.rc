@@ -19,7 +19,7 @@ stuff "# Moosh cohort-enrol -c 20 2L1a # change courseid, cohortname^M"
 stuff "# for g in {1..5} ; do Moosh group-memberadd  -g $g $((277 + $g*2 - 1))  $((277 + $g*2)) ; done^M"
 stuff "# for g in {1..5} ; do Moosh group-memberadd -g $g -c 17 media_student_$(($g*2 - 1))  media_student_$(($g*2)) ; done^M"
 screen 4
-stuff "sudo -u postgres psql -p 5433 mood081^M"
+stuff "sudo -u postgres psql -p 5433 mood082^M"
 screen 5
 stuff "cd ~/moodle/db^M"
 stuff "cd ~/moodle/moosh^M"

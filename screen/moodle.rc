@@ -2,8 +2,11 @@ screen 1
 stuff "cd /var/www/cgi-bin/moodle^M"
 stuff "git status^M"
 screen 2
-stuff "cd ~/moodle/moosh^M"
-stuff "v^M"
+stuff "cd /var/www/cgi-bin/moodle^M"
+stuff "# for tag in tag_correspondence_1 ; do git hub clone moodle-quiz_tag ; done^M"
+stuff "for tag in tag_correspondence_1 ; do cd /var/www/cgi-bin/moodle/mod/quiz/report/$tag && cp lang/en/quiz_tag_correspondence_{17,1}^M"
+stuff "cd /var/www/cgi-bin/moodle/quiz/report/tag_correspondence_1^M"
+stuff "v version.php db/tag.php lang/en/tag_correspondence_1^M"
 stuff ":e "
 screen 3
 stuff "cd ~/moodle/moosh^M"

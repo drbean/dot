@@ -1,4 +1,4 @@
-" Last Edit: 2020 Feb 18, 01:05:28 PM
+" Last Edit: 2020 Feb 25, 10:44:14 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -615,7 +615,7 @@ au!
 "eyy'ai## ee. . .''18yy''PjjOma''19k
 
 " pandoc link list
-au BufEnter slides.md,README.md,$STORY.md,markdown/*.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
+au BufEnter slides.md,README.md,$STORY.md,markdown/*.md nn <buffer> <LocalLeader>l ^/https*:i](A)Bi[V<
 au BufEnter slides.md,README.md,$STORY.md,markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
 
 function! WikipediaLink()

@@ -10,5 +10,5 @@ stuff "# su -c 'cp vim-gf/ftdetect/gf.vim /usr/share/vim/vimfiles/ftdetect/'^M"
 stuff "# su -c 'cp perl-tags-vim/ftplugin/perl.vim /usr/share/vim/vimfiles/after/ftplugin/'^M"
 stuff "# for plug in vim-gf ; do mkdir -p ~/.vim/pack/native/start/\$plug && stow -t ~/.vim/pack/native/start/\$plug -S \$plug ; done^M"
 stuff "# for plug in YouCompleteMe ; do mkdir -p ~/.vim/pack/native/opt/$plug && stow -t ~/.vim/pack/native/opt/$plug -S $plug ; done^M"
-stuff "# for repo in repo ; do for dev in dev ; do git hub clone $dev/$repo && cd $repo && git remote add upstream https://github.com/$dev/$repo && git fetch upstream && git merge upstream/master && cd .. ; done ; done^M"
+stuff "# for repo in repo ; do for dev in dev ; do git hub clone \$dev/\$repo && cd \$repo && git remote add upstream https://github.com/\$dev/\$repo && git fetch upstream && git merge upstream/master && cd .. ; done ; done^M"
 

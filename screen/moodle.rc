@@ -3,9 +3,10 @@ stuff "cd /var/www/cgi-bin/moodle^M"
 stuff "git status^M"
 screen 2
 stuff "cd /var/www/cgi-bin/moodle/mod/quiz/report/^M"
-stuff "# for tag in tag_correspondence_1 ; do git hub clone moodle-quiz_tag ; done^M"
-stuff "# for tag in tag_correspondence_1 ; do cp /var/www/cgi-bin/moodle/mod/quiz/report/{tag_correspondence_17,$tag} && cp /var/www/cgi-bin/moodle/mod/quiz/report/lang/en/quiz_tag_correspondence_{17,1}; done^M"
-stuff "cd /var/www/cgi-bin/moodle/mod/quiz/report/tag_correspondence_1^M"
+stuff "# export tag=tag_correspondence_1^M"
+stuff "# for tag in tag_correspondence_1 ; do git hub clone moodle-quiz_tag \$tag; done^M"
+stuff "# tag=tag_correspondence_2 cp /var/www/cgi-bin/moodle/mod/quiz/report/tag_correspondence_17/lang/en/quiz_tag_correspondence_17.php $tag/lang/en/quiz_$tag.php^M"
+stuff "cd /var/www/cgi-bin/moodle/mod/quiz/report/\$tag^M"
 stuff "for tag in tag_correspondence_1 ; do v version.php db/tag.php lang/en/quiz_\$tag.php ; done^M"
 stuff ":e "
 screen 3

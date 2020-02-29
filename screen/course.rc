@@ -1,5 +1,5 @@
 screen 0
-stuff "v ./$TOPIC/dic.yaml ./$TOPIC/cards.yaml ./$TOPIC/slides.md ./$TOPIC/$STORY.md /var/lib/moodle/repository/$TOPIC/quiz_${STORY}_${QUIZ}_$FORM.gift fall/??.yaml"
+stuff "v ./$TOPIC/dic.yaml ./$TOPIC/cards.yaml ./$TOPIC/slides.md ./$TOPIC/$STORY.md /var/lib/moodle/repository/$TOPIC/quiz_${STORY}_${QUIZ}_$FORM.gift spring/\$WEEK.yaml"
 
 screen 1
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"

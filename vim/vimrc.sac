@@ -1,4 +1,4 @@
-" Last Edit: 2020 Feb 29, 12:27:15 PM
+" Last Edit: 2020 Mar 04, 03:02:38 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -122,7 +122,7 @@ elseif has("win32")
 " cab rc <C-R>=vimrc<CR><CR>
 
 set path=.,		" path for files accessed by gf, etc
-" set runtimepath+=~drbean/dot/vim/ultisnips
+set runtimepath^=~drbean/dot/vim/ultisnips
 " let g:ycm_key_list_select_completion = ['<Down>']
 
 se report=0		"show changes in file
@@ -375,26 +375,15 @@ map <LocalLeader>i :call Insert_increment()<CR>
 
 " supertab
 
-let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+" let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
-if has("gui_running")
-  imap <c-space> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
-else " no gui
-  if has("unix")
-    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
-  endif
-endif
-
-" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
-" https://gist.github.com/lencioni/dff45cd3d1f0e5e23fe6
-" (via http://stackoverflow.com/a/22253548/1626737)
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+"if has("gui_running")
+"  imap <c-space> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
+"else " no gui
+"  if has("unix")
+"    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
+"  endif
+"endif
 
 " YouCompleteMe
 
@@ -527,16 +516,28 @@ augroup yaml
 au!
 
 autocmd FileType yaml setlocal shiftwidth=2
-autocmd FileType yaml setlocal runtimepath^=~/dot/vim/ultisnips
+" autocmd FileType yaml setlocal runtimepath^=~/dot/vim/ultisnips
 " autocmd FileType yaml let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 " autocmd FileType yaml let g:UltiSnipsExpandTrigger="<tab>"
+"
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" https://gist.github.com/lencioni/dff45cd3d1f0e5e23fe6
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
 augroup END
 
-" augroup snippets
-" au!
-" 
-" autocmd FileType snippets setlocal runtimepath+=~/dot/vim/ultisnips
-" augroup END
+augroup snippets
+au!
+
+autocmd FileType snippets setlocal runtimepath+=~/dot/vim/ultisnips
+augroup END
 
 " augroup text
 " au!

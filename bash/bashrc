@@ -652,6 +652,7 @@ function tour () {
 function ex () {
     local arg course round topic story form
     case $1 in
+	anime) course=$1;;
 	conversation) course=$1;;
 	speaking) course=$1;;
 	tech) course=$1;;
@@ -661,21 +662,24 @@ function ex () {
 	*) return 1 # illegal league
     esac
     OPTIND=2
-    while getopts 'c:t:s:f:' arg
+    while getopts 'c:t:s:f:v:q' arg
     do
         case ${arg} in
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
             f) form=${OPTARG};;
+            v) view=${OPTARG};;
+            q) quiz=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     cd ~/curriculum/$course
     COURSE=$course \
-    VIEW=${topic:-$course} \
+    VIEW=${view:-$topic} \
     TOPIC=$topic \
     STORY=$story \
     FORM=$form \
+    QUIZ=${quiz:-"jigsaw"} \
     screen -c /home/$USER/dot/screen/exam_prep.rc -dR exam_$course
     cd -
 }

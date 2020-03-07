@@ -105,29 +105,26 @@ function moodle () {
 }
 
 function cm_id () {
-    local module activity_id module_id_string module_id_plus module_id cm_id_string cm_id
+    local module activity_id module_string sqlrun_prefix sqlrun_suffix \
+	module_string_preshrunk module_id cm_string_preshrunk
     module=$1
     activity_id=$2
     cd /var/www/cgi-bin/moodle || exit 1
-    module_id_string=$(Moosh -n sql-run "select id from {modules} where name='$module'")
-    shopt -q extglob
-    module_id_plus=${module_id_string:39}
-#    module_id_plus=${module_id_string#"
-#\\
-#Record 1 \\
-#stdClass Object\\
-#(\\
-#    [id] => "}
-    #[[ $module_id_string =~ ([:digit:]+) ]]
-    #module_id=${BASH_REMATCH[2]}
-    module_id=${module_id_plus%"
-)"}
-    # module_id=${module_id%+([:ascii])}
-    cm_id_string=$(Moosh -n sql-run "select id from {course_modules} where \
+    module_string=$(Moosh -n sql-run "select id from {modules} where name='$module'")
+    sqlrun_prefix="
+Record 1
+stdClass Object
+(
+    [id] => "
+    sqlrun_suffix="
+)"
+    module_string_preshrunk=${module_string#"$sqlrun_prefix"}
+    module_id=${module_string_preshrunk%"$sqlrun_suffix"}
+    cm_string=$(Moosh -n sql-run "select id from {course_modules} where \
 	module=$module_id and instance=$activity_id")
-    cm_id=${cm_id_string:39:8}
-    echo ${cm_id%"
-)"}
+    cm_string_preshrunk=${cm_string#"$sqlrun_prefix"}
+    echo ${cm_string_preshrunk%"$sqlrun_suffix"}
+    cd - > /dev/null 2>&1
 }
 # 5763 )
 function aca () {

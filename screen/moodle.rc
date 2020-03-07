@@ -7,7 +7,8 @@ stuff "# git hub clone moodle-quiz_tag \$tag^M"
 stuff "# cp /var/www/cgi-bin/moodle/mod/quiz/report/\$tag/lang/en/{quiz_tag_COURSE_WEEK,quiz_\$tag}.php^M"
 stuff "# cd /var/www/cgi-bin/moodle/mod/quiz/report/\$tag^M"
 stuff "# v version.php db/tag.php lang/en/quiz_\$tag.php^M"
-stuff "# export COURSE= ; export tag=tag_${COURSE}_$WEEK
+stuff "# cd ../../../../moodle && ack 'tag_anime_2' --ignore-dir=mod/quiz/report -l mod/quiz question tags | xargs sed -iBAK -e 's/tag_OLDCOURSE_$WEEK/\$tag/' && cd -^M"
+stuff "# export COURSE= ; export tag=tag_\${COURSE}_$WEEK"
 screen 3
 stuff "cd ~/moodle/moosh^M"
 stuff "# php composer-setup.php && php composer.phar install^M"
@@ -24,8 +25,8 @@ screen 5
 stuff "cd ~/moodle/db^M"
 stuff "cd ~/moodle/moosh^M"
 stuff "cd ~/moodle/^M"
-stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/$page/.\/$page\/index.html/\" www/_site/*.html; ; done^M"
-stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/$page/..\/$page\/index.html/\" www/_site/*/*.html; done^M"
+stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/.\/\$page\/index.html/\" www/_site/*.html; ; done^M"
+stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/..\/\$page\/index.html/\" www/_site/*/*.html; done^M"
 stuff "# pandoc -o www/_site/commands/index_pandoc.html www/commands/index.md^M"
 screen 8
 stuff "lynk https://sac.nuu.edu.tw/cgi-bin/moodle"

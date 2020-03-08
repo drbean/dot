@@ -8,7 +8,7 @@ stuff "# cp /var/www/cgi-bin/moodle/mod/quiz/report/\$tag/lang/en/{quiz_tag_COUR
 stuff "# cd /var/www/cgi-bin/moodle/mod/quiz/report/\$tag^M"
 stuff "# v version.php db/tag.php lang/en/quiz_\$tag.php^M"
 stuff "# cd ../../../../moodle && ack 'tag_anime_2' --ignore-dir=mod/quiz/report -l mod/quiz question tags | xargs sed -iBAK -e 's/tag_OLDCOURSE_$WEEK/\$tag/' && cd -^M"
-stuff "# export COURSE= ; export tag=tag_\${COURSE}_$WEEK"
+stuff "# export COURSE=COURSE ; export tag=tag_\${COURSE}_$WEEK"
 screen 3
 stuff "cd ~/moodle/moosh^M"
 stuff "# php composer-setup.php && php composer.phar install^M"

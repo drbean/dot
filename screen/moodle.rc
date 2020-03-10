@@ -8,6 +8,9 @@ stuff "# cp /var/www/cgi-bin/moodle/mod/quiz/report/\$tag/lang/en/{quiz_tag_COUR
 stuff "# cd /var/www/cgi-bin/moodle/mod/quiz/report/\$tag^M"
 stuff "# v version.php db/tag.php lang/en/quiz_\$tag.php^M"
 stuff "# cd ../../../../moodle && ack 'tag_anime_2' --ignore-dir=mod/quiz/report -l mod/quiz question tags | xargs sed -iBAK -e 's/tag_OLDCOURSE_$WEEK/\$tag/' && cd -^M"
+stuff "# sed -iBAK -e 's/quiz_tag_(correspondence|conversation|anime|toeic_speaking)_\d\+/quiz_\$tag/' /var/www/cgi-bin/moodle/config.php^M"
+stuff "# sed -iBAK -e 's/quiz_tag_(correspondence|conversation|anime|toeic_speaking)_\d\+/quiz_\$tag/' $HOME/moodle/moosh/Moosh/Commands/Moodle26/Question/QuestionImport.php^M"
+stuff "# sudo systemctl stop php.fpm && sudo systemctl restart httpd && sudo systemctl status {php-fpm,httpd}^M"
 stuff "# export COURSE=COURSE ; export tag=tag_\${COURSE}_$WEEK"
 screen 3
 stuff "cd ~/moodle/moosh^M"

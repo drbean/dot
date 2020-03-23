@@ -8,12 +8,12 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 export SEMESTER=082
-export WEEK=3
+export WEEK=5
 export LEAGUES="BMA0036 GL00018 GL00019 GL00020"
 export LEAGUES_RE="BMA0036|GL00018|GL00019|GL00020"
 
 declare -A LEAGUE_ID=( [BMA0036]=41 [GL00018]=44 [GL00019]=43 [GL00020]=42 )
-declare -A COURSE_NAME=( [44]="conversation" [43]="anime" [42]="toeic" [41]="correspondence" )
+declare -A COURSE_NAME=( [44]="conversation" [43]="anime" [42]="speaking/test" [41]="correspondence" )
 export LEAGUE_ID COURSE_NAME
 
 # User specific aliases and functions
@@ -358,10 +358,10 @@ function speaking () {
     done
 	cd ~/curriculum/speaking/test
 	COURSE=$course \
-	VIEW=$view \
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
+	VIEW=${view:-"toeic/$topic"} \
 	screen -c /home/$USER/dot/screen/course.rc -dR $topic
 	cd -
 }

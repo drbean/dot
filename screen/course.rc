@@ -3,7 +3,7 @@ stuff "v ./$TOPIC/dic.yaml ./$TOPIC/cards.yaml ./$TOPIC/slides.md ./$TOPIC/$STOR
 
 screen 1
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
-stuff "# yaml4moodle intro -c $COURSE -t $TOPIC -s $STORY -f $FORM > $HOME/curriculum/$COURSE/$TOPIC/intro.md^M"
+stuff "# yaml4moodle intro -c $COURSE -t $TOPIC -s $STORY -a ${TYPE:-\"description\"} -f $FORM > $HOME/curriculum/$COURSE/$TOPIC/intro.md^M"
 stuff "# svn mkdir ./$TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/ && mkdir $VIEW && qui'^M"
 stuff "# vroom -html ./$TOPIC && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && mput ./$TOPIC/html/*.html && qui'^M"
 stuff "# xelatex bingo.tex && evince bingo.pdf^M"

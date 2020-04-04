@@ -8,7 +8,7 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 export SEMESTER=082
-export WEEK=6
+export WEEK=7
 export LEAGUES="BMA0036 GL00018 GL00019 GL00020"
 export LEAGUES_RE="BMA0036|GL00018|GL00019|GL00020"
 

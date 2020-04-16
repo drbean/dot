@@ -9,4 +9,4 @@ screen 7
 stuff "cd /var/www/cgi-bin/$APP^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 screen 8
-stuff "links http://sac.nuu.edu.tw/cgi-bin/${APP}/script/${APP}_cgi.pl/login"
+stuff "lynk http://sac.nuu.edu.tw/cgi-bin/${APP}/script/${APP}_cgi.pl/login"

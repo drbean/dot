@@ -1,1 +1,2 @@
 Control-o: overwrite-mode
+set bell-style audible

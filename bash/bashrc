@@ -50,6 +50,8 @@ function timer () {
         sleep 1
         printf "%.2d:%.2d\n" $(($i/60)) $(($i%60))
     done
+    echo $'\a'
+    echo $'\a'
 }
 
 function scrape () {

@@ -22,6 +22,6 @@ screen 8
 stuff "links http://localhost/cgi-bin/${APP}/script/${APP}_cgi.pl/login?exercise=$STORY"
 screen 2
 stuff "export HISTTIMEFORMAT='%m-%d '^M"
-stuff "# perl script/loadYAMLid.pl ~/class/$COURSE/$TOPIC/${APP}.yaml $STORY && perl script/create_exercise.pl $SCRIPT_ARG $STORY^M"
+stuff "# perl script/loadYAMLid.pl ~/curriculum/$COURSE/$TOPIC/${APP}.yaml $STORY && perl script/create_exercise.pl $SCRIPT_ARG $STORY^M"
 stuff "# history -a^M"
 stuff "# export HISTTIMEFORMAT=^M"

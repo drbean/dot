@@ -4,7 +4,7 @@ screen
 stuff "# mv ~/Downloads/$LEAGUE\ Grades-2017????_????-comma_separated.csv ./exam/$ROUND/g.csv^M"
 stuff "Moosh -n sql-run \"SELECT id FROM mdl_grade_items WHERE itemname SIMILAR TO '%$TOPIC%'\"^M"
 stuff "# for i in {0..11}; do Moosh -n gradebook-export -c 26 -i $((2969+$i)) -g 0 -x 1 -a 1 -d 2 -p 0 -s comma -f txt > exam/$ROUND/${TOPIC}_\$i.csv ; done^M"
-stuff "# LEAGUE_ID=\${LEAGUE_ID[\$LEAGUE]} && cd /var/www/cgi-bin/moodle && Moosh -n gradeitem-list -i courseid=\$LEAGUE_ID AND itemname LIKE \\\'%${TOPIC}%\\\' | while IFS= read -r item ; do Moosh -n gradebook-export -c \$LEAGUE_ID -i \$item -g 0 -x 1 -a 1 -d 2 -p 0 -s comma -f txt > $HOME/$SEMESTER/$LEAGUE/exam/\$ROUND.\$item.csv ; done && cd -^M"
+stuff "# LEAGUE_ID=\${LEAGUE_ID[\$LEAGUE]} && cd /var/www/cgi-bin/moodle && Moosh -n gradeitem-list -i courseid=\$LEAGUE_ID AND itemname LIKE \\\'%${TOPIC}%\\\' | while IFS= read -r item ; do Moosh -n gradebook-export -g 0 -x 1 -a 1 -d 2 -p 0 -s comma -f txt \$item \$LEAGUE_ID > $HOME/$SEMESTER/$LEAGUE/exam/\$ROUND.\$item.csv ; done && cd -^M"
 stuff "# csv2yaml exam $ROUND/g > exam/$ROUND/g.yaml^M"
 stuff "# for i in {0..11} ; do csv2yaml exam $ROUND/${TOPIC}_\$i > exam/$ROUND/${TOPIC}_\$i.yaml; done^M"
 stuff "# mv exam/6.csv exam/$ROUND/report.csv^M"

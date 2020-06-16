@@ -41,7 +41,7 @@ stuff "# open freeshell.org^M"
 stuff "# put bingo.pdf && open freeshell.org && put bingo.pdf^M"
 
 screen 6
-stuff "#dtach -A /tmp/\$TOPIC v spring/{default,\$WEEK}.yaml ../spring/default.yaml^M"
-stuff "dtach -a /tmp/\$TOPIC^M"
+stuff "#dtach -A /tmp/\$COURSE v spring/{default,\$WEEK}.yaml ../spring/default.yaml^M"
+stuff "dtach -a /tmp/\$COURSE^M"
 
 source pandoc.rc

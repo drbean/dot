@@ -1,11 +1,11 @@
 [Unit]
-Description="Dump moodSEMESTER,backup at duplicity/sac_mood0SEMESTER_fedora29"
+Description="Dump moodSEMESTER,backup at duplicity/sac_mood0SEMESTER_fedora31"
 OnFailure=status-email-drbean@%n.service
 
 [Service]
 Type=oneshot
 Nice=19
-Environment=SEMESTER=081
+Environment=SEMESTER=082
 Environment=FTP_PASSWORD=
 Environment=PASSPHRASE=
 ExecStart=/bin/bash -c "/usr/local/bin/backup_database.sh $FTP_PASSWORD $PASSPHRASE"

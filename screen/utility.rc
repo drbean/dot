@@ -3,3 +3,7 @@ stuff "v^M"
 stuff ":e "
 screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M svn info^M"
+
+screen
+stuff "cd ~/ttb/forms/bean^M"
+stuff "# for n in one five ; do xelatex --output-directory=./build \${n}_bean.tex   && lftp -c \"open greg@web.nuu.edu.tw && cd public_html/topics && put ./build/\${n}_bean.pdf && quit\"; done^M"

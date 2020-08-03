@@ -1,71 +1,568 @@
-#alternatives --install /usr/bin/links links /usr/bin/lynx 40
-#alternatives --install /usr/bin/v v /usr/bin/vim 50
-#getsebool -a | grep ftp
+'
 $(< ~drbean/dot/sac_f19_installed.txt )
-FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_20140404 /home/drbean
-FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_2014_04_04 /home/drbean
-FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_2014_08_28 /home/drbean
 alternatives
 alternatives --config links
+alternatives --config lynk
+alternatives --config lynk.
+#alternatives --install /usr/bin/links links /usr/bin/lynx 40
 alternatives --install /usr/bin/links links /usr/bin/lynx 40
+#alternatives --install /usr/bin/v v /usr/bin/vim 50
 alternatives --install /usr/bin/v v /usr/bin/vim 50
-alternatives --install v /usr/bin/v  /usr/bin/vim 50
-alternatives --install v /usr/bin/vim /usr/bin/v 50
 alternatives --install vim /usr/bin/v  /usr/bin/vim 50
+alternatives --install v /usr/bin/vim /usr/bin/v 50
+alternatives --install v /usr/bin/v  /usr/bin/vim 50
 ausearch -m avc -ts recent
+ausearch -m avc -ts recent 
+ausearch -m avc -ts recent | audit2allo -m myexim
+ausearch -m avc -ts recent | audit2allow
+ausearch -m avc -ts recent | audit2allow -m local
+ausearch -m avc -ts recent | audit2allow -m myexim
+ausearch -m avc -ts recent | audit2allow my-moodle
+ausearch -m avc -ts recent | audit2why
+ausearch -m avc -ts today
+ausearch -m avc -ts today | audit2allow -m myexim > selinux/mypackage/myexim.te
+ausearch -m avc -ts today | audit2why
+ausearch -m avc -ts today | auditwhy
+ausearch -m avc -ts yesterday | audit2allow -m myexim
+ausearch -m avc -ts yesterday | audit2why
+BBBBBxfs_growfs -D 11000000 /
+#cat /home/root/.bash_history >> /root/.bash_hi
+#cat /home/root/.bash_history >> /root/.bash_history
+cat /home/root/.bash_history >> /root/.bash_history
+cd -
+cd /etc
+cd perl-Catalyst-Plugin-Authorization-Roles
+cd selinux/mypackage/
+cd /usr/sbin
+checkmodule -M -m -o myexim.mod myexim.te 
+checkmodule -M -m -o my-phpfpm.mod my-phpfpm.te
+chmod 555    /usr/local/bin/backup_database.sh 
+#chmod    /usr/local/bin/backup_database.sh 
+chown root:lp cups/ppd/Kyocera_FS-2100DN.ppd 
 chown znc:znc /var/lib/znc/ -R
-chown znc:znc /var/lib/znc/.znc/ -R
 chown znc:znc /var/lib/znc/.znc/configs/ -R
-cp ~drbean/dot/lynx/lynx-site.cfg /etc/lynx-site.cfg
-cp ~drbean/dot/lynx/lynx.lss /etc/lynx.lss
-cp ~drbean/dot/screenrc /etc/screenrc
+chown znc:znc /var/lib/znc/.znc/ -R
+clear
 cpan Math::Random
+cpanm Math::Random
+cpanm perl-Math-Random
+cp ~drbean/dot/lynx/lynx.lss /etc/lynx.lss
+cp ~drbean/dot/lynx/lynx-site.cfg /etc/lynx-site.cfg
+cp ~drbean/dot/screenrc /etc/screenrc
+cp ~drbean/dot/systemd/moodle/backup_database.{timer,service} systemd/system
+cp ~drbean/frankenstein/blkcntrl.sty /usr/share/texlive/texmf-dist/tex/latex/frankenstein/
+#cp ~drbean/frankenstein/dialogue.sty /usr/share/texlive/texmf-dist/tex/latex/frankenstein/
+cp ~drbean/frankenstein/dialogue.sty /usr/share/texlive/texmf-dist/tex/latex/frankenstein/
+cp exim/exim.conf{.rpmnew,}
+cp ~greg/dot/et_cetera/cups/ppd/Kyocera_FS-2100DN.ppd cups/ppd/
+cp ~greg/dot/et_cetera/lynx.lss lynx.lss 
+#cp ~greg/dot/et_cetera/lynx-site.cfg lynx-site.cfg 
+cp ~greg/dot/et_cetera/lynx-site.cfg lynx-site.cfg 
+cp ~greg/dot/et_cetera/xdg/surfraw/conf xdg/surfraw/conf 
 date
+ dd if ~drbean/ubuntu/ubuntu-16.04.6-server-amd64.iso of=/dev/sdf bs=8M status=progress oflag=direct
+ dd if=~drbean/ubuntu/ubuntu-16.04.6-server-amd64.iso of=/dev/sdf bs=8M status=progress oflag=direct
+# dd if ~drbean/ubuntu/ubuntu-16.04.6-server-amd64.iso of=/dev/sdf bs=8M status=progress oflag=direct
+# dd if=/home/drbean/download/Fedora-Workstation-Live-x86_64-31-1.9.iso of=/dev/sdf bs=8M status=progress oflag=direct
+dd --list
+declare -x LANG=C
+declare -x LANG='en_US.UTF-8'
+declare -x LANG='zh_TW.UTF-8'
+df -h
+df -h1
+dh -h
+diff ~drbean/{download/moodle081,dot/postgres/moodle081.sql} -u
+diff ~greg/dot/et_cetera/aliases aliases 
+diff ~greg/dot/et_cetera/group group
+diff ~greg/dot/et_cetera/lynx.lss lynx.lss 
+diff ~greg/dot/et_cetera/lynx-site.cfg lynx-site.cfg 
+diff ~greg/dot/et_cetera/Muttrc Muttrc
+diff ~greg/dot/et_cetera/xdg/surfraw/conf xdg/surfraw/conf 
+diff -ru ~greg/dot/et_cetera/cups/ppd/ cups/ppd/
 diff -ru /home/drbean.orig/ /home/drbean/
+diff -u cups/ppd/{kyocera-210.60.168.210.ppd,Kyocera_FS-2100DN.ppd}
+diff -u exim/exim.conf{,.rpmnew}
+diff -u exim/exim.conf{,.rpmnew} | less
+dig bbb.nuu.edu.tw
+dig fdsfdf.nuu.edu.tw
+dig --mx sac.nuu.edu.tw
+dig MX sac.nuu.edu.tw
+dig --mx sac.nuu.edu.tw @dns.nuu.edu.tw
+dig sac.nuu.edu.tw
+dig sac.nuu.edu.tw @dns.nuu.edu.tw
+dig smail.nuu.edu.tw
+dmesg
+dmesg | ack Transcend
+dmesg | grep -i selinux
+dnf info aisleriot
+dnf info dtach
+dnf info exim
+dnf info sesearch
+dnf info task
+dnf install clang
+dnf install clang-tools-extra
+dnf install clang-toolts-extra
+dnf install clang-toolts-extra-9.0.1
+dnf install cups-libs
+dnf install dtach
 dnf install duplicity
+dnf install etckeeper-dnf
 dnf install lftp
+dnf install linux-libertine-fonts
+dnf install moreutils
+dnf install mutt
+dnf install perl-Catalyst
+dnf install perl-Catalyst-Plugin-Authorization-Roles
+dnf install perl-DBD-Pg
+dnf install perl-DBIx
+dnf install perl-DBIx-Class-Storage-DBI
+dnf install perl-DBIx-Class-Timestamp
+dnf install perl-DBIx-Class-TimeStamp
+dnf install perl-Dist-Zilla
+dnf install perl-Dist-Zilla-PluginBundle::Basic
+dnf install perl-Dist-Zilla-Plugin-ReadmeFromPod
+dnf install perl-Flickr-API
+dnf install perl-Gnu-ReadLine
+dnf install 'perl(List::MoreUtils)'
+dnf install 'perl(List::Util)'
+dnf install perl(List-Util)
+dnf install perl-Math-Random
+dnf install perl-Perl-PrereqScanner
+dnf install perl-Pod-Markdown
+dnf install perl-Software::License::Perl_5
+dnf install perl-Term-ReadLine-Gnu
+dnf install perl-XML-DOM
+dnf install php-process
 dnf install screen
+dnf install setools-console
+dnf install task
+dnf install taskopen
+dnf install tasksh
+dnf install texlive-beamer
+dnf install texlive-dramatist
+dnf install texlive-frankenstein
+dnf install texlive-libertine
+dnf install texlive-lm-math
+dnf install timew
+dnf install youtube-dl
+dnf provides aisleriot
+dnf provides clang
+dnf provides clangd
+dnf provides httpd_selinux
+dnf provides libclang
+dnf provides libclang.so
+dnf provides libgc.so.1
+dnf provides sesearch
+dnf provides sponge
+dnf provides tasksh
+dnf remove task
+dnf remove taskd
+dnf remove texlive-frankenstein
+dnf search aisleriot
+dnf search beamer
+dnf search Catalyst
+dnf search certbot
+dnf search clang
+dnf search cups
+dnf search dialogue
+dnf search Dist-Zilla
+dnf search Dist-Zilla-Plugin
+dnf search dramatist
+dnf search etckeeper
+dnf search frankenstein
+dnf search libclang
+dnf search libertine
+dnf search List-MoreUtilities
+dnf search List-Utilities-Rea
+dnf search modern
+dnf search modern-math
+dnf search perl-List
+dnf search perl-XML-DOM
+dnf search php-process
+dnf search Pod-Markdown
+dnf search posix
+dnf search prereqscanner
+dnf search readline
+dnf search ReadLine
+dnf search selinux
+dnf search sepolicy
+dnf search supertab
+dnf search tags
+dnf search tasksh
+dnf search warrior
+dnf search winch
+dnf search ycm
+dnf search youcompleteme
+dnf search Zilla
+dnf update
+dnslookup sac.nuu.edu.tw
+echo $DISPLAY
+echo $LANG
+#echo cups/ppd/Kyocera_FS-2100DN.ppd.O >> .gitignore 
+echo cups/printers.conf* >> .gitignore 
 eciy
+etckeeper vcs status
+exigrep 1jjluZ-00Ag0b-Ta /var/log/exim/main.log 
+exigrep 1jk8zy-00AqEr-9r
+exigrep 1jk8zy-00AqEr-9r /var/log/exim/main.log 
+exigrep apic /var/log/exim/main.log 
+exigrep gloria /var/log/exim/main.log 
+exigrep -h
+exigrep huifen /var/log/exim/main.log 
+exigrep tust /var/log/exim/main.log 
+exim -bp | exiqsumm
+exim -M 1jjluZ-00Ag0b-Ta
+exim -M 1jk8zy-00AqEr-9r
+exim -Mrm 1jcPOT-006tLz-Nh 
+exim -Mrm 1jk8zy-00AqEr-9r
+exim -Mvc 1jjluZ-00Ag0b-Ta
+exim -Mvc 1jk8zy-00AqEr-9r
+exim -q
+exim -qf
+exim -qff
+exim --version
+exiqgrep
+exiqgrep --help
+exiqgrep -o40
+exiqgrep -o400
+exiqgrep -r freeshell.org
+exiqgrep -r gmail.com
+exiqgrep -r mail.nuu.edu.tw
+exiqgrep -x
+exiqgrep -z
+exiqsumm 
+exiqsumm --help
 exit
+exiwhat
 exiy
+export MANPATH=~drbean/dot/git/git-hub/man/:$MANPATH
+export PATH=~drbean/dot/git/git-hub/lib/:$PATH
+fg 1
+fg 2
+fg 3
+find -name '*backup_database*'
+firewall-cmd --add-port=631/tcp 
+firewall-cmd --add-port=631/tcp --permanent
+firewall-cmd --add-service=ipp
+firewall-cmd --add-service=ipp --permanent
+firewall-cmd --add-service=smtp 
+firewall-cmd --add-service=smtp --permanent
+firewall-cmd --add-service=smtp/tcp --permanent
+firewall-cmd --get-services
+firewall-cmd --list-services
+for action in enable start ; do for process in start stop ; do for unit in service timer ; do  systemctl $action znc_$process $unit; done ; done ;done
+for action in enable start ; do for process in start stop ; do for unit in service timer ; do  systemctl $action znc_$process .{service,timer}; done ; done ;done
+#for action in enable start ; do for process in znc_start znc_stop ; do for unit in service timer ; do  systemctl $action $process.$unit ; done ; done ; done
+for action in enable start ; do for process in znc_start znc_stop ; do for unit in service timer ; do  systemctl $action $process $unit; done ; done ;done
+for action in enable start ; do for process in znc_start znc_stop ; do for unit in service timer ; do  systemctl $action $process.$unit ; done ; done ; done
+for action in restart status ; do systemctl $action exim ; done
+for action in start status ; do systemctl $action exim ; done
+for action in stop status ; do systemctl $action exim ; done
+#for f in jpg pdf ; do for n in [1..4] ; do FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore 圖片/taro/尺八の運指表$n.$f --ignore-errors ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/pics/尺八の運指表$n.$f ; done ; done
+#for f in jpg pdf ; do for n in {1..4} ; do FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore 圖片/taro/尺八の運指表$n.$f --ignore-errors ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/pics/尺八の運指表$n.$f ; done ; done
+for f in jpg pdf ; do for n in [1..4] ; do FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore 圖片/taro/尺八の運指表$n.$f --ignore-errors ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/pics/尺八の運指表$n.$f ; done ; done
+for f in jpg pdf ; do for n in {1..4} ; do FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore 圖片/taro/尺八の運指表$n.$f --ignore-errors ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/pics/尺八の運指表$n.$f ; done ; done
+for i in q y ; do mv /usr/share/texlive/texmf-dist/tex/latex/frankenstein/moredefs.st$i.out  /usr/share/texlive/texmf-dist/tex/latex/frankenstein/moredefs.st$i ; done
+for i in q y ; do mv /usr/share/texlive/texmf-dist/tex/latex/frankenstein/moredefs.st$i /usr/share/texlive/texmf-dist/tex/latex/frankenstein/moredefs.st$i.out ; done
+#for n in 42 45 54 55 66 74 75 83 ; do FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore 圖片/taro/IMG_28$n.JPG --ignore-errors ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/pics/IMG_28$n.JPG ; done
+for n in 42 45 54 55 66 74 75 83 ; do FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore 圖片/taro/IMG_28$n.JPG --ignore-errors ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/pics/IMG_28$n.JPG ; done
+#for n in halfhole pinch ; do FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore 圖片/taro/$n.pdf --ignore-errors ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/pics/$n.pdf ; done
+for n in halfhole pinch ; do FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore 圖片/taro/$n.pdf --ignore-errors ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/pics/$n.pdf ; done
+FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_2014_04_04 /home/drbean
+FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_20140404 /home/drbean
+FTP_PASSWORD=6y6t6y6t duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_2014_08_28 /home/drbean
+# FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --exclude /home/drbean/dot/postgres/moodledb/ /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/moodledb
+ FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --exclude /home/drbean/download/ /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora30
+# FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --exclude /home/drbean/download/ /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora30
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --file-to-restore dot/postgres/moodle081.sql ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql ~drbean/download/moodle081
+#FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --file-to-restore dot/postgres/moodle081.sql ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora30 ~drbean/download/moodle081
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --file-to-restore dot/postgres/moodle081.sql ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora30 ~drbean/download/moodle081
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --file-to-restore . ftp://greg@web.nuu.edu.tw/duplicity/moodle_081.sql ~drbean/download/moodle081.sql
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --file-to-restore . ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql ~drbean/download/moodle081.sql
+#FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --file-to-restore . ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora30 ~drbean/download/moodle081
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --file-to-restore . ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora30 ~drbean/download/moodle081
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity --file-to-restore moodle081.sql ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql ~drbean/download/moodle081
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql ~drbean/download/moodle081
+FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_bean_fedora25 ~drbean/fedora25
+FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_bean_fedora25/  pics/fedora25
+FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_bean_fedora25/圖片/taro pics/taro
+FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_bean_fedora25/'圖片'/taro pics/taro
+FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_bean_fedora25/圖片/taro 圖片/taro
+#FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/fedora25
+FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/fedora25
+#FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity ftp://greg@web.nuu.edu.tw/duplicity/sac_moodle_var_lib_fedora29 /var/lib/moodle
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity  /home/drbean/dot/postgres/moodledb/  ftp://greg@web.nuu.edu.tw/duplicity/moodledb
+##FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicitymoodle081.sql
+#FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicitymoodle081.sql
+FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql
+FTP_PASSWORD=6y6t6y6t PASSPHRASE=181844 duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicitymoodle081.sql
+#FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql 
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql ~drbean/download/moodle081.sql
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicity/moodledb
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora26/pics
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora27/pics
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity list-current-files ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora28/pics
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore moodle081.sql ftp://greg@web.nuu.edu.tw/duplicity/ ~drbean/download/moodle081
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore moodle081.sql ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql ~drbean/download/moodle081
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore 圖片/taro/IMG_2840.JPG --ignore-errors ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/pics
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore --file-to-restore 圖片/taro/IMG_2840.JPG --ignore-errors ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25 ~drbean/pics/IMG_2840.JPG
+ # FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql ~drbean/download/moodle081
+# # FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql ~drbean/download/moodle081
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity restore ftp://greg@web.nuu.edu.tw/duplicity/moodle081.sql ~drbean/download/moodle081
+#FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity /root ftp://greg@web.nuu.edu.tw/duplicity/sac_root_fedora30
+FTP_PASSWORD='6y6t6y6t' PASSPHRASE='181844' duplicity /root ftp://greg@web.nuu.edu.tw/duplicity/sac_root_fedora30
+# FTP_PASSWORD='' PASSPHRASE='' duplicity --exclude /home/drbean/download/ /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora30
 getenforce
+getsebool -a | ack ftp
+getsebool -a | ack httpd
+getsebool | ack httpd
 getsebool -a | grep bitlbee
+#getsebool -a | grep ftp
 getsebool -a | grep ftp
 getsebool -a | grep irc
+git add aliases 
+git add cups
+git add cups/printers.conf*
+git add etckeeper/etckeeper.conf 
+git add exim/exim.conf 
+git add firewalld/zones/FedoraServer.xml 
+git add .gitignore 
+git add letsencrypt/
+git add lvm/backup/fedora_sac 
+git add lynx.lss 
+git add lynx-site.cfg 
+git add php.ini
+git add selinux/mypackage/my-phpfpm.te
+git add selinux/targeted/policy/policy.31 
+git add systemd/system/multi-user.target.wants/znc_st*
+git add systemd/system/timers.target.wants/certbot-renew.timer 
+git add systemd/system/timers.target.wants/znc_st*
+git add systemd/system/znc.service 
+git add systemd/system/znc_st*
+git add vimrc 
+git add xdg/surfraw/conf 
+git checkout /etc/exim/exim.conf
+git commit letsencrypt.no_archive_dir,so_no_security_vulnerability
+git commit -m 121Gb
+git commit -m avoid_daily_autocommits
+git commit -m certbot-renew.enabled
+git commit -m cups/*_didnot_work!
+git commit -m cups.ipp:631
+git commit -m cups.printers.conf:update_on_every_print
+#git commit -m discarded
+git commit -m discarded_bdd1a,adopted_exim-4.94-1.fc31.src.rpm.exim.conf.rpmnew
+git commit -m dot/vim/vimrc.sac_for_some_value_of_vimrc.sac
+git commit -m following_on_from_hostname,relay_to_domains,relay_from_hosts_in_95fa,now_local_part.s//_data/_with_exim-4.94-1.fc31.src.rpm
+git commit -m from_~greg/dot/et_cetera
+git commit -m from_~greg/dot/et_cetera.108-1
+git commit -m gitignore_.gitignore
+git commit -m greg:error_log=php_errors.log,syslog
+git commit -m httpd_read_user_content,httpd_enable_homedirs
+git commit -m ignore.letsencrypt/archive
+git commit -m letsencrypt.no_archive_dir,so_no_security_vulnerability
+git commit =m letsencrypt.no_archive_dir,so_no_security_vulnerability
+git commit -m noreply:fail,greg:drbean
+git commit -m remove_current_policy_allow_avc_comment
+git commit -m vim_completion!
+git commit -m 'znc_{start,stop}
+git commit vimrc -m runtimepath,ycm,ultisnip,snippets,vim_completion!
+git diff
+git diff /etc/exim/exim.conf
+git diff exim/exim.conf
+git diff php.ini
+git hub --help
+git hub help
+git hub help --commands
+git hub repo-delete drbean/et_cetera
+git log
+git log exim/exim.conf
+git log letsencrypt/
+git log Muttrc
+git log ssh/sshd_config
+git log /var/log/exim/main.log 
+git push
+git push --set-upstream origin master
+git remote add origin https://github.com/drbean/et_cetera.git
+git remote get-url
+git restore --staged letsencrypt/archive
+#git show 95fa
+git show 95fa
+git status
+git status 
+git whatchanged
+git whatchanged 06d4f
+groupadd moodle
+history -a
+#/home/owuser/backup_45_toeic_speaking_2020.07.06.mbz
+host 144.217.85.36
 host 172.16.3.33
-host sac.nuu.edu.tw
+host 185.106.28.141
+host bbb.nuu.edu.tw
+host MX sac.nuu.edu.tw
 hostnamectl --help
+hostnamectl help
 hostnamectl set-hostname sac.nuu.edu.tw
 hostnamectl status
+hostnamectl --transient set-hostname sac.nuu.edu.tw
+host sac.nuu.edu.tw
+host smail.nuu.edu.tw
 htop
+https://www.google.com/search?q=%22more%20rarely%22&tbm=bks&tbs=cdr:1,cd_min:1973,cd_max:2019&lr=lang_en
 ifconfig
 iw
 iw --help
+journalctl -u backup_databa
+journalctl -u backup_database
+journalctl -u backup_datase.service
+journalctl -u p-fpm.service 
+journalctl -u php
 journalctl -xn
-less /etc/group
-less /etc/services
+#kill -s SIGTERM 19448
+less aliases
+less aliases 
 less ~/.bash_history 
+less cups/lpoptions 
+less ~/drbean 
+less /etc/exim/exim.conf
+less /etc/group
+less etckeeper/etckeeper.conf 
+less /etc/nsswitch.conf
+less /etc/services
+less exim/exim.conf 
+less fedora-release 
+less .git/config 
+less ~/.git-hub/config 
+less .gitignore 
+less ./git/info
+less group
+less letsencrypt/options-ssl-apache.conf 
+less letsencrypt/.updated-options-ssl-apache-conf-digest.txt 
+less lynx-site.cfg 
+less my-phpfpm.te
+less php.ini 
+less selinux/mypackage/myexim.te
+less selinux/mypackage/myexim.te 
+less selinux/mypackage/my-phpfpm.te
+less ssh/ssh_config.d/05-redhat.conf 
+less ssh/sshd_config
+less systemd/system/postgresql@catalyst.service.d/30-postgresql-setup.conf 
+less /usr/share/doc/postgresql/README.rpm-dist 
+less /usr/share/texlive/texmf-dist/tex/latex/frankenstein/moredefs.st*
+less /usr/share/texlive/texmf-*/franken*
+less /usr/share/vim/vim82/autoload/autocomplete.vim
+less /var/log/exim/main.log 
+less /var/log/exim/panic.log 
+less /var/log/exim/reject.log 
+less /var/log/httpd/access_log 
+less /var/log/httpd/error_log 
+less /var/log/maillog 
+less /var/log/php-fpm/error.log 
+less /var/log/php-fpm/www-error.log 
 lftp
 lftp greg@web.nuu.edu.tw
+ln -s /var/lib/moodle/ ~drbean/var_lib_moodle
+ln /var/lib/moodle/ ~drbean/var_lib_moodle
 locate bitlbee
+locate taro
+lpadmin 
+lpadmin -h
+lpadmin -h 210.60.168.210 -p kyocera -v "network socket" -D "Language Center office" -P /etc/cups/ppd/Kyocera_FS-2100DN -o name='Kyocera FS-2100DN'
+lpadmin -h 210.60.168.210 -p kyocera -v "network socket" -D "Language Center office" -P /etc/cups/ppd/Kyocera_FS-2100DN.ppd -o name='Kyocera FS-2100DN'
+lpadmin -h 210.60.168.210 -p kyocera -v "network socket" -D "Language Center office" -P Kyocera_FS-2100DN -o name='Kyocera FS-2100DN'
+lpadmin -h 210.60.168.210 -p kyocera -v "network socket" -D "Language Center office" -P Kyocera_FS-2100DN.ppd -o name='Kyocera FS-2100DN'
+lpadmin --help
+lpinfo
+lpinfo -m
+lpinfo -v
+lpoptions
+lpoptions -l
+lpr -h
+lpr --help
+lpr -o sides=two-sided-long-edge ~drbean/visa/visa_application_form_feb_2020.pdf 
+#lpr -P kyocera-210.60.168.212 ~drbean/visa/visa_application_form_feb_2020.pdf 
+#lpr -P kyocera-210.60.168.212 -o sides=two-sided-long-edge ~drbean/visa/visa_application_form_feb_2020.pdf 
+lpr -P kyocera-210.60.168.212 -o sides=two-sided-long-edge ~drbean/visa/visa_application_form_feb_2020.pdf 
+lpr -P kyocera-210.60.168.212 -o sides=two-sided-long-edge /home/drbean/visa/visa_application_form_feb_2020.pdf 
+lpstat
+lpstat -h
+lpstat --help
+lpstat -p -d
 ls
+ls -al
+ls -al ~
+ls-al
 ls -al ~/.bash_history 
-ls -lZ /etc/bitlbee/
-ls .znc
-ls .znc/* -al
+ls -al ~/.cpanm/
+ls -al ~/drbean 
+ls -al /root
+ls -al /var/spool/exim/input/
+ls cups/ppd/
+ls ~drbean/dot
+ls ~drbean/dot/postgres/
+ls ~drbean/dot/postgres/db
+ls ~drbean/dot/postgres/moodle081.sql 
+ls ~drbean/dot/postgres/moodledb/ -al
+ls ~drbean/pics/
+ls ~drbean/pics/IMG-*
+ls ~drbean/pics/IMG_
+ls ~drbean/pics/IMG_*
+ls ~drbean/pics/IMG_28*
+ls ~drbean/pics/尺八の運指表*
+ls /etc/exim/exim.conf
 ls /etc/group
+ls exim/
+ls exim/exim.conf.rpmnew 
+ls ./git/
+ls .git
+ls .git/config 
+ls ./.git/info/
+ls .git/info/exclude 
+ls ~greg/dot/et_cetera/selinux/mypackage/
 ls /home/
 ls /home/drbean
-ls /home/drbean -al
 ls /home/drbean/
+ls /home/drbean -al
 ls /home/drbean/ -al
 ls /home/drbean/.svk/local/
-ls /usr/bin/*manage*
-ls /usr/bin/*window*
+ls -lZ cups/ppd/
+ls -lZ cups/ppd/Kyocera_FS-2100DN.ppd 
+ls -lZ /etc/bitlbee/
+ls -lZ ~greg/dot/et_cetera/cups/ppd/Kyocera_FS-2100DN.ppd 
+ls -lZ /usr/sbin/lpadmin
+ls /mount
+ls mount
+ls pics
+ls /root/
+ls /root/ -al
+ls /run/mount
+ls selinux/mypackage/
+ls ssh/
+ls ssh/ssh_config.d
+ls ssh/ssh_config_d
+ls sudo ls ~drbean/download/
+ls systemd/system
+ls systemd/system/
+ls systemd/system/backup_database.*
+ls systemd/system/postgresql@catalyst.service.d
+ls systemd/user
 ls /usr/bin/??
 ls /usr/bin/???
+ls /usr/bin/*manage*
+ls /usr/bin/*why*
+ls /usr/bin/*window*
+ls /usr/local/bin/
+ls /usr/local/bin/ -al
 ls /usr/sbin/
 ls /usr/sbin/*window*
+ls /usr/share/texlive/texmf-dist/tex/latex/frankenstein/moredefs.st*
+ls /usr/share/vim/vim82/autoload/
+ls /var
+ls /var/lib
+ls /var/lib/moodle/
+ls /var/lib/moodle/ -al
+ls /var/lib/systemd/timers/
 ls /var/lib/znc/
 ls /var/lib/znc/ -al
 ls /var/lib/znc/.* -al
@@ -74,20 +571,32 @@ ls /var/lib/znc/.znc/ -al
 ls /var/lib/znc/.znc/* -al
 ls /var/lib/znc/.znc/configs/
 ls /var/lib/znc/.znc/modules/ -al
-ls ~drbean/dot
+ls /var/log
+ls /var/log/maillog 
+ls .znc
+ls .znc/* -al
+lvextend -L +13g /dev/mapper/fedora_sac-root
+lvextend -L +50g /dev/mapper/fedora_sac-root
 man bash
+man -k _selinux
 man yum2dnf 
-mv .znc/configs/znc.conf /var/lib/znc/.znc/configs/
-mv .znc/znc.pem /var/lib/znc/.znc/
-mv /etc/lynx-site.cfg /etc/lynx-site.cfg.fedora
+md5sum ~drbean/{download/moodle081,dot/postgres/moodle081.sql}
+md5sum moodle081
+mkdir /usr/share/texlive/texmf-dist/tex/latex/frankenstein
+#mv ~drbean/dot/postgres/moodle081.sql 
+#mv ~drbean/dot/postgres/moodle081.sql ~drbean/dot/postgres/moodledb/
+mv ~drbean/dot/postgres/moodle081.sql ~drbean/dot/postgres/moodledb/
+mv ~drbean/.znc/configs /var/lib/znc/.znc/
+mv ~drbean/.znc/moddata/ /var/lib/znc/.znc/
+mv ~drbean/.znc/users/ /var/lib/znc/.znc/
 mv /etc/lynx.lss /etc/lynx.lss.fedora 
+mv /etc/lynx-site.cfg /etc/lynx-site.cfg.fedora
 mv /etc/screenrc /etc/screenrc.fedora
 mv /home/drbean/ /home/drbean.orig
 mv /home/drbean/ /home/drbean.orig/
 mv /home/drbean/ home/drbean.orig
-mv ~drbean/.znc/configs /var/lib/znc/.znc/
-mv ~drbean/.znc/moddata/ /var/lib/znc/.znc/
-mv ~drbean/.znc/users/ /var/lib/znc/.znc/
+mv .znc/configs/znc.conf /var/lib/znc/.znc/configs/
+mv .znc/znc.pem /var/lib/znc/.znc/
 nmcli
 nmcli c
 nmcli d
@@ -96,105 +605,239 @@ nmcli n
 nmcli n -a
 nmcli n help
 nmcli r
+ournalctl -u backup_datase.service
+ournalctl -u p-fpm.service 
+pack=myexim ; checkmodule -M -m -o $pack.mod $pack.te && semodule_package -o $pack.pp -m $pack.mod && semodule -i $pack.pp
+pack=myexim checkmodule -M -m -o $pack.mod $pack.te && semodule_package -o $pack.pp -m $pack.mod && semodule -i $pack.pp
+pgrep lynk
+pgrep lynx
 pgrep weechat
 ping 203.64.184.141
 ping sac.nuu.edu.tw
+pkill --help
+pkill -SIGQUIT lynk
 postgresql-setup initdb
+ps aux
 ps -eZ | grep bitlbee
 ps -eZ | grep weechat
 ps | grep weechat
 pwd
 q
 reboot
-semanage port -a -t ircd_port_t -p tcp 6665
+rm -rf /usr/share/texlive/texmf-dist/tex/latex/frankenstein/
+rm /usr/share/vim/vim82/autoload/autocomplete.vim
+screen -ls
+sebool --help
 semanage port -a -t ircd_port_t 6665
+semanage port -a -t ircd_port_t -p tcp 6665
+#semodule -i myexim.pp
+semodule -i myexim.pp
+#semodule -i my-phpfpm.pp
+semodule -i my-phpfpm.pp
+#semodule_package -o myexim.pp -m myexim.mod 
+semodule_package -o myexim.pp -m myexim.mod 
+semodule_package -o my-phpfpm.pp -m my-phpfpm.mod
+sesearch --dontaudit
 setenforce 0
 setenforce 1
+setsebool ftpd_full_access 1
+setsebool httpd_run_stickshift on
+setsebool httpd_run_stickshift on -P
+setsebool httpd_setrlimit on
+setsebool httpd_setrlimit on -P
+setsebool -P ftpd_full_access 1
+setsebool -P httpd_enable_homedirs 1
+setsebool -P httpd_read_user_content 1
 setsebool -P irc_use_any_tcp_ports off
 setsebool -P irc_use_any_tcp_ports on
 show-installed
+su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora /rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
 su -c 'yum localinstall --nogpgcheck  http://download1.rpmfusion.org/nonfree/fedora /rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
 su -c 'yum localinstall --nogpgcheck  http://download1.rpmfusion.org/nonfree/fedora /rpmfusion-nonfree-release-20.noarch.rpm'
 su -c 'yum localinstall --nogpgcheck  http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-20.noarch.rpm'
-su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora /rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
-system-switch-displaymanager 
-system-switch-displaymanager lightdm
+sudo dnf install cmake gcc-c++ make python3-devel
+sudo -u drbean mkdir ~drbean/dot/postgres/moodledb
+su drbean
+systemctl daemon-reload
+systemctl daemon-reload-dae
+systemctl edit --full backup_database.service 
+systemctl edit --full postgresql@catalyst.service 
+systemctl edit --full znc
+systemctl edit postgresql@catalyst.service 
+systemctl enable backup_database.timer
 systemctl enable bitlbee.service 
+systemctl enable certbot-renew.timer
+systemctl enable cups
 systemctl enable httpd.service
 systemctl enable ibus.service 
 systemctl enable postgresql.service 
+systemctl {enable,start} znc_{start,stop}.{service,timer}
+systemctl {enable,start} {"znc_start","znc_stop"}.{service,timer}   
+systemctl {enable,start} {znc_start,znc_stop}.{service,timer}   
 systemctl enable znc.service 
-systemctl restart NetworkManager.service -l
+systemctl help | ack reload
+systemctl list-timers | ack backup
+systemctl list-unit | ack up
+systemctl list-unit-files | ack back
+systemctl list-unit-files | ack backup
+systemctl list-unit-files | ack certbot
+systemctl list-unit-files | ack unoconv
+systemctl list-unit-files | ack up
+systemctl list-unit-files | ack znc
+systemctl list-units | ack backup
+systemctl list-units | ack database
+systemctl list-units | ack db
+systemctl list-units | ack irc
+systemctl list-units | ack moodle
+systemctl list-units | ack postgres
+systemctl list-units | ack start
+systemctl list-units | ack stop
+systemctl list-units | ack unoconv
+systemctl list-units | ack up
+systemctl list-units | ack weechat
+systemctl list-units | ack znc
+systemctl reload
 systemctl restart bitlbee.service
+systemctl restart cups
+systemctl restart exim
+systemctl restart exim.service 
+systemctl restart exim && systemctl status exim
+systemctl restart httpd
+systemctl restart httpd.service
+systemctl restart NetworkManager.service -l
+systemctl restart php-fpm
+systemctl restart php-fpm && systemctl restart httpd.service && systemctl restart php-fpm
+#systemctl restart php-fpm && systemctl restart httpd.service && systemctl status {httpd,php-fpm}
+systemctl restart php-fpm && systemctl restart httpd.service && systemctl status {httpd,php-fpm}
+systemctl restart postgresql@moodle.service
 systemctl restart znc.service 
+systemctl start backup_database.service 
+systemctl start backup_database.timer
 systemctl start bitlbee.service
 systemctl start bitlbee.service 
+systemctl start certbot-renew.timer
+systemctl start cups
 systemctl start httpd.service
 systemctl start ibus.service 
+systemctl start postgresql@moodle.service
 systemctl start postgresql.service
 systemctl start postgresql.service 
 systemctl start znc.service
 systemctl start znc.service 
-systemctl status NetworkManager.service
-systemctl status NetworkManager.service -l
+systemctl status backup_database.service 
+systemctl status backup_database.timer
 systemctl status bitlbee.service
 systemctl status bitlbee.service -l
+systemctl status certbot
+systemctl status certbot-renew.timer
+systemctl status cups
+systemctl status exim
+systemctl status httpd
 systemctl status httpd.service
 systemctl status httpd.service -l
 systemctl status ibus.service 
+systemctl status NetworkManager.service
+systemctl status NetworkManager.service -l
+systemctl status postgresql@moodle.service
 systemctl status postgresql.service
 systemctl status postgresql.service -l
+systemctl status unoconv
+systemctl status unoconv.service
 systemctl status znc.service
 systemctl status znc.service -l
+systemctl status znc_{start,stop}
+systemctl status znc_{start,stop}.timer
+systemctl status znc_start.timer
+systemctl status znc_stop.timer
+systemctl stop backup_database.timer
+systemctl stop httpd
+systemctl stop php-fpm && systemctl restart httpd.service && systemctl start php-fpm && systemctl status {httpd,php-fpm}
+systemctl stop php-fpm && systemctl restart httpd.service && systemctl status {httpd, php-fpm}
+systemctl stop php-fpm && systemctl restart httpd.service && systemctl status {httpd,php-fpm}
+systemctl stop php-fpm && systemctl restart httpd.service && systemctl stop php-fpm && status {httpd,php-fpm}
+systemctl stop php-fpm && systemctl restart httpd.service && systemctl stop php-fpm && systemctl status {httpd,php-fpm}
+systemd stop httpd
+system-switch-displaymanager 
+system-switch-displaymanager lightdm
 tail -F /var/log/httpd/error_log 
+task list
 top
-usermod --help
+uname -a
+usermod -a -G moodle apache
+usermod -a -G moodle drbean
 usermod -a -G wheel
 usermod -a -G wheel drbean
+usermod --help
+/usr/sbin/lpadmin -h 210.60.168.210 -p kyocera -v "network socket" -D "Language Center office" -P /etc/cups/ppd/Kyocera_FS-2100DN.ppd -o name='Kyocera FS-2100DN'
 v
+vimdiff -o ~greg/dot/et_cetera/aliases aliases 
+vimdiff -O ~greg/dot/et_cetera/aliases aliases 
 visudo
+v Muttrc
+v myexim.te 
+v selinux/mypackage/my-phpfpm.te
+v systemd/backup_database.service 
+v /usr/local/bin/backup_database.sh 
 w
 which duplicity
+which exiqgrep
+which lpadmin
+which lpr
 which screen
 which weechat
+whoami
 wi
-yum  install perl-Flickr-API
+xfs_growfs -D 10000000 /
+xfs_growfs -D 10000000 /ls
+#xfs_growfs -D 110000000 /
+xfs_growfs -D 110000000 /
+xfs_growfs -D 17000000 /
+xfs_growfs -D 18000000 /
+#xfs_growfs -D 31719424 /
+xfs_growfs -D 31719424 /
+xfs_growfs -D 7500000 /
+xfs_growfs -D 8000000 /
+xfs_growfs -D 8500000 /
+xfs_growfs -D 9000000 /
+xfs_growfs -D 9000000 /ls
+xfs_growfs -D 9500000 /
 yum help
+yum install $(< ~drbean/dot/sac_f19_installed.txt )
 yum install  $(</home/drbean/dot/sac_f19_installed.txt )
 yum install " $(</home/drbean/dot/sac_f19_installed.txt )"
 yum install $(< /home/drbean/dot/sac_f19_installed.txt )
-yum install $(< ~drbean/dot/sac_f19_installed.txt )
 yum install $(</home/drbean/dot/sac_f19_installed.txt )
-yum install '@libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace'
+yum install ack
 yum install @admin-tools
 yum install @admin-tools -authconfig-gtk -system-config-date -system-config-keyboard @cinnamon-desktop -cinnamon -gnome-screensaver -nemo -policycoreutils-gui -thunderbird @core -ppc64-utils @critical-path-gnome @dial-up @fonts -google-noto-sans-lisu-fonts -google-noto-sans-mandaic-fonts -google-noto-sans-meeteimayek-fonts -google-noto-sans-tagalog-fonts -google-noto-sans-tai-tham-fonts -google-noto-sans-tai-viet-fonts @gnome-desktop -gnome-mplayer -polkit-js-engine gstreamer-plugins-bad @guest-desktop-agents @hardware-support -ql2100-firmware -ql2200-firmware -ql23xx-firmware @input-methods -ibus-qt -im-chooser-xfce -imsettings-qt -imsettings-xfce @libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
 yum install @cinnamon-desktop
 yum install @core
 yum install @core -ppc64-utils @critical-path-gnome @dial-up @fonts -google-noto-sans-lisu-fonts -google-noto-sans-mandaic-fonts -google-noto-sans-meeteimayek-fonts -google-noto-sans-tagalog-fonts -google-noto-sans-tai-tham-fonts -google-noto-sans-tai-viet-fonts @gnome-desktop -gnome-mplayer -polkit-js-engine gstreamer-plugins-bad @guest-desktop-agents @hardware-support -ql2100-firmware -ql2200-firmware -ql23xx-firmware @input-methods -ibus-qt -im-chooser-xfce -imsettings-qt -imsettings-xfce @libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
-yum install @libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
-yum install NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
-yum install ack
 yum install duplicity
 yum install ffmpeg
 yum install ffmpeg-devel
 yum install gstreamer
 yum install gstreamer-plugins-bad
 yum install gstreamer-plugins-ugly
+yum install '@libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace'
+yum install @libreoffice @mate-desktop @manipuri-support -iok @multimedia @printing -ghostscript-cups @sinhala-support -ibus-sayura @sound-and-video audacity ffmpeg gstreamer-plugins-bad-nonfree @standard -rdate @xmonad-mate @xfce-desktop @base-x -xorg-x11-drv-omap NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
 yum install lightdm
 yum install lynx
-yum install perl-CPAN
+yum install NetworkManager-openvpn-gnome NetworkManager-pptp-gnome ack adobe-release-i386 anki aspell-en bitlbee btparser cabal-dev crypto-utils cups-devel dbus-devel flash-plugin gcc-c++ ghc-MonadRandom-devel ghc-cereal-devel ghc-cpphs-devel ghc-haskeline-devel ghc-haskell-src-exts ghc-monad-control-devel ghc-safe-devel ghc-unordered-containers-devel gnutls-devel grub2 gstreamer-plugin-crystalhd haskell-platform hplip-gui icedtea-web kernel-PAE-modules-extra libetonyek libreoffice-langpack-en libtool mesa-libwayland-egl mnemosyne mod_dav_svn mod_nss mod_ssl moreutils mutt net-snmp-devel openrdate pandoc perl-Catalyst-Authentication-Store-DBIx-Class perl-Catalyst-Component-InstancePerContext perl-Catalyst-Model-DBIC-Schema perl-Catalyst-Plugin-Authorization-Roles perl-Catalyst-Plugin-Session-State-Cookie perl-Catalyst-Plugin-Session-Store-DBIC perl-Catalyst-Plugin-Session-Store-FastMmap perl-Catalyst-Plugin-StackTrace
 yum install perl-Catalyst-Action-RenderView
 yum install perl-Catalyst-Plugin-ConfigLoader
 yum install perl-Catalyst-Plugin-Static-Simple
 yum install perl-Catalyst-View-Email
 yum install perl-Catalyst-View-TT
+yum install perl-CPAN
 yum install perl-DBD-Pg
 yum install perl-DBIx-Class-TimeStamp
 yum install perl-Devel-REPL
+yum install perl-Distzilla
 yum install perl-Dist-Zilla
 yum install perl-Dist::Zilla
 yum install perl-DistZilla
-yum install perl-Distzilla
+yum  install perl-Flickr-API
 yum install perl-IO-All
 yum install perl-Module-Locate
 yum install perl-PPI
@@ -212,9 +855,7 @@ yum install xmonad-mate
 yum remove @cinnamon-desktop
 yum repolist
 yum repos
-yum search   xmonad
 yum search 264
-yum search PPI
 yum search ffmpeg
 yum search findbin
 yum search flickr
@@ -223,11 +864,13 @@ yum search gnash
 yum search gstreamer
 yum search module-locate
 yum search postgres
+yum search PPI
 yum search random
 yum search texlive
 yum search tigervnc
 yum search time-compat
 yum search window
+yum search   xmonad
 yum search zilla
 yum update
 znc --makeconf

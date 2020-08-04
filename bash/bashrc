@@ -101,6 +101,10 @@ function edit () {
     cd -
 }
 
+function cygwin () {
+    screen -c /home/$USER/dot/screen/cygwin.rc -dR cygwin
+}
+
 function moodle () {
     # sudo -u  moodle screen -c /home/$USER/dot/screen/moodle.rc -dR moodle
     screen -c /home/$USER/dot/screen/moodle.rc -dR moodle

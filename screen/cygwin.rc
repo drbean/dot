@@ -1,0 +1,23 @@
+screen
+stuff "v^M"
+stuff ":e "
+
+screen
+stuff "for ext in rc _profile ; do cp ~/dot/bash/bash$ext ~/.bash$ext ; done^M"
+stuff "# . ~/dot/alternatives.txt^M"
+stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr info collection-$c ; done^M"
+stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr install collection-$c ; done^M"
+
+screen 4
+stuff "# sed -iBAK -r -e 's/\^INITDB_ARGS=\\\"-E SQL_ASCII --locale=C -D \$PGDATA\\\"/INITDB_ARGS=\\\"-E UTF8 --locale=en_US.UTF-8 -D \$PGDATA\\\"/' /etc/rc.d/init.d/postgresql^M"
+stuff "# diff -u /etc/rc.d/init.d/postgresql{BAK,}^M"
+stuff "# cygserver-config^M"
+stuff "# cygrunsrv --start cygserver^M"
+stuff "# /etc/rc.d/init.d/postgresql initdb^M"
+stuff "# /etc/rc.d/init.d/postgresql install^M"
+stuff "# /etc/rc.d/init.d/postgresql start^M"
+stuff "# psql -U SYSTEM postgres^M"
+stuff "-- ALTER ROLE \"SYSTEM\" WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION;^M"
+stuff "-- CREATE ROLE postgres;^M"
+stuff "-- CREATE ROLE apache WITH LOGIN PASSWORD 'momoyuhi';^M"
+stuff "-- CREATE DATABASE mood082;^M"

@@ -7,7 +7,7 @@ stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr 
 stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr install collection-$c ; done^M"
 
 screen
-stuff "# for m in moose moodle ; do git clone http://github.com/drbean/\$m ; done && mkdir /var/www/cgi-bin && mv moodle/ /var/www/cgi-bin/moodle/^M"
+stuff "# for m in moosh moodle ; do git clone --depth 5 --no-single-branch http://github.com/drbean/\$m ; done && mkdir /var/www/cgi-bin && mv moodle/ /var/www/cgi-bin/moodle/^M"
 stuff "# for m in dot curriculum ttb ; do svn co http://github.com/drbean/\$m/trunk \$m ; done^M"
 stuff "for ext in rc _profile ; do cp ~/dot/bash/bash\$ext ~/.bash\$ext ; done^M"
 stuff "# . ~/dot/alternatives.txt^M"

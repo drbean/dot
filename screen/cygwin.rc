@@ -8,6 +8,10 @@ stuff "# . ~/dot/alternatives.txt^M"
 stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr info collection-$c ; done^M"
 stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr install collection-$c ; done^M"
 
+screen
+stuff "for m in moose moodle ; do git clone http://github.com/drbean/$m ; done^M"
+stuff "for m in dot curriculum ttb ; do svn co http://github.com/drbean/$m/trunk $m ; done^M"
+
 screen 4
 stuff "# sed -iBAK -r -e \"s/\^INITDB_ARGS=.*$/INITDB_ARGS=\\\"-E UTF8 --locale=en_US.UTF-8 -D \\\$PGDATA\\\"/\" /etc/rc.d/init.d/postgresql^M"
 stuff "# diff -u /etc/rc.d/init.d/postgresql{BAK,}^M"

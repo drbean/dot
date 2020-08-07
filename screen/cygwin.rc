@@ -21,10 +21,4 @@ stuff "# /etc/rc.d/init.d/postgresql initdb^M"
 stuff "# /etc/rc.d/init.d/postgresql install^M"
 stuff "# /etc/rc.d/init.d/postgresql start^M"
 stuff "# psql -U SYSTEM postgres^M"
-
-screen 5
-stuff "-- ALTER ROLE \"SYSTEM\" WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION;^M"
-stuff "-- CREATE ROLE postgres;^M"
-stuff "-- CREATE ROLE apache WITH LOGIN PASSWORD 'momoyuhi';^M"
-stuff "-- CREATE ROLE drbean WITH LOGIN;^M"
-stuff "-- CREATE DATABASE mood082;^M"
+stuff "-- \i ~/dot/postgres/cygwin.txt^M"

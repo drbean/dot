@@ -22,3 +22,8 @@ stuff "# /etc/rc.d/init.d/postgresql install^M"
 stuff "# /etc/rc.d/init.d/postgresql start^M"
 stuff "# psql -U SYSTEM postgres^M"
 stuff "-- \i ~/dot/postgres/cygwin.txt^M"
+
+screen 5
+stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do FTP_PASSWORD='' duplicity --ignore-errors --no-encryption -v8 --num-retries 2 ncftp+ftp://drbean@sdf.org/duplicity/\$backup ~/\$backup ; done ^M"
+stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do lftp -c 'open drbean@sdf.org && mirror duplicity/\$backup ~/\$backup && qui'; done ^M"
+stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do duplicity --ignore-errors --no-encryption -v8 -num-retries 2 file://\$HOME/\$backup ~/\$backup ; done ^M"

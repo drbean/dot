@@ -1,8 +1,11 @@
+# greg
+Set-ExecutionPolicy Bypass -Scope Process -Force;
+
 # Download and install Chocolatey nupkg from an OData (HTTP/HTTPS) url such as Artifactory, Nexus, ProGet (all of these are recommended for organizational use), or Chocolatey.Server (great for smaller organizations and POCs)
 # This is where you see the top level API - with xml to Packages - should look nearly the same as https://chocolatey.org/api/v2/
 # If you are using Nexus, always add the trailing slash or it won't work
 # === EDIT HERE ===
-$packageRepo = 'file:///Users/owuser/Downloads/chocolatey.0.10.15.nupkg'
+$packageRepo = 'file:///f:/chocolatey.0.10.15.nupkg'
 
 # If the above $packageRepo repository requires authentication, add the username and password here. Otherwise these leave these as empty strings.
 $repoUsername = ''    # this must be empty is NOT using authentication

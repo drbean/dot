@@ -6,7 +6,7 @@ stuff "# v include/znc/IRCNetwork.h"
 stuff "# sudo touch include/znc/IRCNetwork.h && cmake . && make && sudo make install && sudo systemctl restart znc.service^M"
 
 screen 3
-stuff "links http://sac.nuu.edu.tw:6666"
+stuff "lynk http://localhost:6666"
 screen 4
 stuff "su -^M"
 screen 9

@@ -1,37 +1,19 @@
-[2020-09-01 13:38:14] WeeChat 2.9 (compiled on Jul 18 2020 16:05:54)
-[2020-09-01 13:38:14] Reading configuration file sec.conf
-[2020-09-01 13:38:14] Reading configuration file weechat.conf
-[2020-09-01 13:38:15] Reading configuration file plugins.conf
-[2020-09-01 13:38:15] Reading configuration file charset.conf
-[2020-09-01 13:38:15] Reading configuration file logger.conf
-[2020-09-01 13:38:15] Reading configuration file exec.conf
-[2020-09-01 13:38:15] Reading configuration file trigger.conf
-[2020-09-01 13:38:15] Writing configuration file spell.conf (default options)
-[2020-09-01 13:38:15] Reading configuration file spell.conf
-[2020-09-01 13:38:15] Reading configuration file alias.conf
-[2020-09-01 13:38:15] Writing configuration file buflist.conf (default options)
-[2020-09-01 13:38:15] Reading configuration file buflist.conf
-[2020-09-01 13:38:15] Writing configuration file fifo.conf (default options)
-[2020-09-01 13:38:15] Reading configuration file fifo.conf
-[2020-09-01 13:38:15] Reading configuration file xfer.conf
-[2020-09-01 13:38:15] Reading configuration file irc.conf
-[2020-09-01 13:38:15] Reading configuration file relay.conf
-[2020-09-01 13:38:15] Reading configuration file script.conf
-[2020-09-01 13:38:15] Writing configuration file fset.conf (default options)
-[2020-09-01 13:38:15] Reading configuration file fset.conf
-[2020-09-01 13:39:42] Writing configuration file plugins.conf
-[2020-09-01 13:39:42] Writing configuration file xfer.conf
-[2020-09-01 13:39:42] Writing configuration file trigger.conf
-[2020-09-01 13:39:42] Writing configuration file spell.conf
-[2020-09-01 13:39:42] Writing configuration file script.conf
-[2020-09-01 13:39:42] Writing configuration file relay.conf
-[2020-09-01 13:39:42] Writing configuration file logger.conf
-[2020-09-01 13:39:42] Writing configuration file irc.conf
-[2020-09-01 13:39:42] Writing configuration file fset.conf
-[2020-09-01 13:39:42] Writing configuration file fifo.conf
-[2020-09-01 13:39:42] Writing configuration file exec.conf
-[2020-09-01 13:39:42] Writing configuration file charset.conf
-[2020-09-01 13:39:42] Writing configuration file buflist.conf
-[2020-09-01 13:39:42] Writing configuration file alias.conf
-[2020-09-01 13:39:42] Writing configuration file weechat.conf
-[2020-09-01 13:39:42] Writing configuration file sec.conf
+[2020-09-04 11:24:33] WeeChat 2.9 (compiled on Jul 18 2020 16:05:54)
+[2020-09-04 11:24:33] Reading configuration file sec.conf
+[2020-09-04 11:24:33] Reading configuration file weechat.conf
+[2020-09-04 11:24:33] Reading configuration file plugins.conf
+[2020-09-04 11:24:33] Reading configuration file charset.conf
+[2020-09-04 11:24:33] Reading configuration file logger.conf
+[2020-09-04 11:24:33] Reading configuration file exec.conf
+[2020-09-04 11:24:33] Reading configuration file trigger.conf
+[2020-09-04 11:24:33] Reading configuration file spell.conf
+[2020-09-04 11:24:33] Reading configuration file alias.conf
+[2020-09-04 11:24:33] Reading configuration file buflist.conf
+[2020-09-04 11:24:33] Reading configuration file fifo.conf
+[2020-09-04 11:24:33] Reading configuration file xfer.conf
+[2020-09-04 11:24:33] Reading configuration file irc.conf
+[2020-09-04 11:24:33] Reading configuration file relay.conf
+[2020-09-04 11:24:33] Reading configuration file script.conf
+[2020-09-04 11:24:33] Reading configuration file fset.conf
+[2020-09-04 11:24:37] irc: connecting to server localhost/6666...
+[2020-09-04 11:32:09] irc: connecting to server localhost/6666...

@@ -1,19 +1,23 @@
-[2020-09-04 11:24:33] WeeChat 2.9 (compiled on Jul 18 2020 16:05:54)
-[2020-09-04 11:24:33] Reading configuration file sec.conf
-[2020-09-04 11:24:33] Reading configuration file weechat.conf
-[2020-09-04 11:24:33] Reading configuration file plugins.conf
-[2020-09-04 11:24:33] Reading configuration file charset.conf
-[2020-09-04 11:24:33] Reading configuration file logger.conf
-[2020-09-04 11:24:33] Reading configuration file exec.conf
-[2020-09-04 11:24:33] Reading configuration file trigger.conf
-[2020-09-04 11:24:33] Reading configuration file spell.conf
-[2020-09-04 11:24:33] Reading configuration file alias.conf
-[2020-09-04 11:24:33] Reading configuration file buflist.conf
-[2020-09-04 11:24:33] Reading configuration file fifo.conf
-[2020-09-04 11:24:33] Reading configuration file xfer.conf
-[2020-09-04 11:24:33] Reading configuration file irc.conf
-[2020-09-04 11:24:33] Reading configuration file relay.conf
-[2020-09-04 11:24:33] Reading configuration file script.conf
-[2020-09-04 11:24:33] Reading configuration file fset.conf
-[2020-09-04 11:24:37] irc: connecting to server localhost/6666...
-[2020-09-04 11:32:09] irc: connecting to server localhost/6666...
+[2020-09-05 10:36:41] WeeChat 2.9 (compiled on Jul 18 2020 16:05:54)
+[2020-09-05 10:36:41] Reading configuration file sec.conf
+[2020-09-05 10:36:41] Reading configuration file weechat.conf
+[2020-09-05 10:36:41] Reading configuration file plugins.conf
+[2020-09-05 10:36:43] Reading configuration file charset.conf
+[2020-09-05 10:36:43] Reading configuration file logger.conf
+[2020-09-05 10:36:43] Reading configuration file exec.conf
+[2020-09-05 10:36:43] Reading configuration file trigger.conf
+[2020-09-05 10:36:43] Writing configuration file spell.conf (default options)
+[2020-09-05 10:36:43] Reading configuration file spell.conf
+[2020-09-05 10:36:43] Reading configuration file alias.conf
+[2020-09-05 10:36:43] Writing configuration file buflist.conf (default options)
+[2020-09-05 10:36:43] Reading configuration file buflist.conf
+[2020-09-05 10:36:43] Writing configuration file fifo.conf (default options)
+[2020-09-05 10:36:43] Reading configuration file fifo.conf
+[2020-09-05 10:36:43] Reading configuration file xfer.conf
+[2020-09-05 10:36:43] Reading configuration file irc.conf
+[2020-09-05 10:36:43] Reading configuration file relay.conf
+[2020-09-05 10:36:43] Reading configuration file script.conf
+[2020-09-05 10:36:43] Writing configuration file fset.conf (default options)
+[2020-09-05 10:36:43] Reading configuration file fset.conf
+[2020-09-05 10:37:07] irc: connecting to server localhost/6666...
+[2020-09-05 10:37:14] irc: connecting to server localhost/6666...

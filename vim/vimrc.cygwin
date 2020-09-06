@@ -1,4 +1,4 @@
-" Last Edit: 2020 Sep 06, 12:09:17 PM
+" Last Edit: 2020 Sep 06,  9:05:41 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -1112,7 +1112,7 @@ nmap <C-c><C-c> vip<C-c><C-c>
 
 nmap <C-c>v :call Screen_Vars()<CR>
 
-map <LocalLeader>l :ls<CR>:b<Space>
+" map <LocalLeader>l :ls<CR>:b<Space>
 
 nn <LocalLeader>jigsaw 4<CR>d4d3kP<CR>d3dp<CR>d2dp<CR>ddp<CR>d4d6-P<CR>d3d<CR>p<CR>d2d<CR>p<CR>dd<CR>p<CR>d4d9-P<CR>d3d2<CR>p<CR>d2d2<CR>p<CR>dd2<CR>p
 

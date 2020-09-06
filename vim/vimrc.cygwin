@@ -1,4 +1,4 @@
-" Last Edit: 2020 Sep 06,  9:05:41 PM
+" Last Edit: 2020 Sep 06,  9:29:15 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -627,8 +627,8 @@ au!
 "eyy'ai## ee. . .''18yy''PjjOma''19k
 
 " pandoc link list
-au BufEnter slides.md,README.md,$STORY.md,markdown/*.md nn <buffer> <LocalLeader>l ^/https*:i](A)Bi[V<
-au BufEnter slides.md,README.md,$STORY.md,markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
+au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>l ^/https*:i](A)Bi[V<
+au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
 
 function! BlogRelLink()
 	let words = getline( line('.') )

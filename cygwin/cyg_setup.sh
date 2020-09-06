@@ -8,4 +8,4 @@ cp ~/dot/screen/screen.rc ~/.screenrc
 cp ~/dot/browser/lynx{-site.cfg,.lss} /etc/
 for i in znc weechat ; do svn co http://github.com/drbean/dot/trunk/irc/$i ~/.$i ; done
 for p in pages ; do svn up curriculum/$p ; done
-for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curriculum/pages/$p
+for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curriculum/pages/$p ; done

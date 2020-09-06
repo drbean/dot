@@ -122,8 +122,8 @@ elseif has("win32")
 " cab rc <C-R>=vimrc<CR><CR>
 
 set path=.,		" path for files accessed by gf, etc
-set runtimepath+=~drbean/dot/vim/ultisnips
-
+set runtimepath^=~drbean/dot/vim/ultisnips
+" let g:ycm_key_list_select_completion = ['<Down>']
 " set runtimepath=~/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim63,/usr/share/vim/vimfiles/after,~/.vim/after	"fedora 3 got it wrong
 
 se report=0		"show changes in file
@@ -222,8 +222,8 @@ vmap \m <Plug>MarkersMark
 
 
 "For better colors, specify background
-" set background=dark
-set background=light
+set background=dark
+" set background=light
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -374,6 +374,42 @@ map <LocalLeader>i :call Insert_increment()<CR>
 
 "autocmds
 
+" supertab
+
+" let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
+"if has("gui_running")
+"  imap <c-space> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
+"else " no gui
+"  if has("unix")
+"    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
+"  endif
+"endif
+
+" YouCompleteMe
+
+augroup load_ycm
+  autocmd!
+  autocmd CursorHold, CursorHoldI * :packadd YouCompleteMe
+                                \ | autocmd! load_ycm
+augroup END
+
+augroup perl
+au!
+
+" syntastic
+
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = ["perl", "perlcritic", "podchecker"]
+
+" delimitMate
+
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
+
+augroup END 
+
+
 augroup haskell
 au!
 
@@ -395,18 +431,6 @@ map <silent> <LocalLeader>ti :GhcModTypeInsert<CR>
 map <silent> <LocalLeader>ts :GhcModSplitFunCase<CR>
 map <silent> <LocalLeader>tq :GhcModType<CR>
 map <silent> <LocalLeader>te :GhcModTypeClear<CR>
-
-" supertab
-
-let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
-
-if has("gui_running")
-  imap <c-space> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
-else " no gui
-  if has("unix")
-    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("<Plug>MarkersJumpBlt>c-x><Plug>MarkersJumpBlt>c-o>")<cr>
-  endif
-endif
 
 " necoghc
 
@@ -448,7 +472,7 @@ autocmd BufRead /tmp/mutt* set tw=65
 autocmd BufRead /tmp/mutt* imap <f4> <esc>BlcW
 " \S,\M macros to make folder-hook index returners
 " replaced now with perl script
-autocmd BufRead ~/.muttrc map \S {O<CR>folder-hook . 'macro index h <lt>change-folder>?<lt>tab><lt>jump><lt>enter>0<lt>enter>'<CR><Esc>kma/^mailboxes '!'<CR>
+" autocmd BufRead ~/.muttrc map \S {O<CR>folder-hook . 'macro index h <lt>change-folder>?<lt>tab><lt>jump><lt>enter>0<lt>enter>'<CR><Esc>kma/^mailboxes '!'<CR>
 autocmd BufRead ~/.muttrc map \M f lmb"yyiW'ayypWmaciWy/\d\A`b\M
 "autocmd FileType mail source $V/bracketing.no-meta.vim
 " Sec Zehl's mappings for mail templates
@@ -493,16 +517,28 @@ augroup yaml
 au!
 
 autocmd FileType yaml setlocal shiftwidth=2
-" autocmd FileType yaml set runtimepath+=~/dot/vim/ultisnips
+" autocmd FileType yaml setlocal runtimepath^=~/dot/vim/ultisnips
 " autocmd FileType yaml let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 " autocmd FileType yaml let g:UltiSnipsExpandTrigger="<tab>"
+"
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" https://gist.github.com/lencioni/dff45cd3d1f0e5e23fe6
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
 augroup END
 
-" augroup snippets
-" au!
-" 
-" autocmd FileType snippets setlocal runtimepath+=~/dot/vim/ultisnips
-" augroup END
+augroup snippets
+au!
+
+autocmd FileType snippets setlocal runtimepath+=~/dot/vim/ultisnips
+augroup END
 
 " augroup text
 " au!
@@ -591,10 +627,8 @@ au!
 "eyy'ai## ee. . .''18yy''PjjOma''19k
 
 " pandoc link list
-au BufEnter slides.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
-au BufEnter $STORY.md nn <buffer> <LocalLeader>l ^/https*:i](A)I- [V<o
-au BufEnter slides.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
-au BufEnter $STORY.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
+au BufEnter slides.md,README.md,$STORY.md,markdown/*.md nn <buffer> <LocalLeader>l ^/https*:i](A)Bi[V<
+au BufEnter slides.md,README.md,$STORY.md,markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I- [V<o
 
 function! WikipediaLink()
 	let words = getline( line('.') )
@@ -615,9 +649,21 @@ function! GoogleLink()
 	let string = "http://www.google.com.tw/search?q=%22" . search_quote . "%22&num=100&gws_rd=ssl&tbm=isch&tbo=u&source=univ&sa=X"
 	call setline(".", string)
 endfunction
-au BufEnter slides.md no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
-au BufEnter slides.md ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+au BufEnter slides.md,README.md,$STORY.md no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+au BufEnter slides.md,README.md,$STORY.md ino <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
 au BufEnter content.yaml no <buffer> <LocalLeader>g <Esc>:call GoogleLink()<CR>I
+
+function! YoutubeLink()
+	let lnum = line('$')
+	let words = getline( line('.') )
+	let search = substitute(words, '\v\s+', '+', "g")
+	let search_quote = substitute(search, '\v''', '%27', "g")
+	let string = "https://www.youtube.com/results?search_query=" . search_quote
+	call setline(".", string)
+endfunction
+au BufEnter slides.md,README.md,$STORY.md no <buffer> <LocalLeader>y <Esc>:call YoutubeLink()<CR>I
+au BufEnter slides.md,README.md,$STORY.md ino <buffer> <LocalLeader>y <Esc>:call YoutubeLink()<CR>I
+au BufEnter content.yaml no <buffer> <LocalLeader>y <Esc>:call YoutubeLink()<CR>I
 
 function! HTMLLink()
 	let url = expand( "<cWORD>" )
@@ -831,14 +877,49 @@ au BufEnter Indexes*.txt nn <buffer> g<Right> g$zs
 
 augroup END
 
+augroup scrape
+	au!
+" repetitive extract, sort | uniq email addresses
+au BufEnter ~/edit/email/*.txt ino <buffer> <LocalLeader>v <Esc>:%v/@/d<CR>
+au BufEnter ~/edit/email/*.txt no <buffer> <LocalLeader>! :%! sort \| uniq<CR>
+augroup END
+
 augroup cards
+
+" permutate 3 strings separated by commas
+au BufEnter cards.yaml no <buffer> <LocalLeader>p yyPf,dt,$p<CR>yypldf,f,lPyypf,dt,$pyypldf,f,lPyypf,w,dt,$pV5k:'<,'>!sort<Esc>
+
 au BufEnter cards.yaml no <buffer> <LocalLeader>a :call WriteAnswer()<CR>
+au BufEnter cards.yaml ino <buffer> <LocalLeader>a <Esc>:call WriteAnswer()<CR>A
 function! WriteAnswer()
 	let option_line = getline( line('.') )
 	let answer = substitute(option_line, '           - ', '', "")
 	let answer_line = search( "answer: ")
 	let answer_string = "          answer:" . answer
 	call setline(".", answer_string)
+endfunction
+
+au BufEnter cards.yaml no <buffer> <LocalLeader>c :call ClozeLine()<CR>
+function! ClozeLine()
+        let line = getline( line('.') )
+        let clozed = substitute(line, '          clozed: ', '', "")
+        let item = substitute(clozed, '\s', '|', "g")
+        let item_string = "          clozed: " . item . "|End"
+        call setline(".", item_string)
+endfunction
+
+au BufEnter cards.yaml no <buffer> <LocalLeader>S :call SortWords()<CR>
+function! SortWords()
+        let line = getline( line('.') )
+	let cursor = getcurpos()
+	let offset = get( cursor, 2 )
+	let leader = strcharpart( line, 0, offset-1 )
+	let sentence = strcharpart( line, offset-2 )
+        let word = split(sentence)
+        let sortedlist = sort(word)
+        let sorted = join(word, " ")
+	let newline = leader . sorted
+        call setline(".", newline)
 endfunction
 
 augroup END
@@ -862,6 +943,15 @@ function! Nun()
 	nun <buffer> v
 	nun <buffer> <LocalLeader>~
 endfunction
+
+augroup name
+au!
+
+" Chinese to English names after 1st week
+au BufEnter groups.yaml,league.yaml no <buffer> <LocalLeader>w :<C-F>ilet @e=''<Left>
+au BufEnter groups.yaml,league.yaml no <buffer> <LocalLeader>q k"fyiw/<C-R>f<Enter>ciw<C-R>e<Esc><Esc><C-W><C-W>n.<C-W><C-W>n.<C-W><C-W>
+
+augroup END
 
 " wordlist from text
 fu! Wordlist()

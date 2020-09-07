@@ -1,4 +1,4 @@
-" Last Edit: 2020 Sep 06,  9:29:15 PM
+" Last Edit: 2020 Sep 08,  4:55:04 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -648,7 +648,7 @@ function! WikipediaLink()
 	let string = words . "http://en.wikipedia.org/wiki/" . search
 	call setline(".", string)
 endfunction
-au BufEnter slides.md no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
+au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md  no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
 au BufEnter content.yaml no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
 
 function! GoogleLink()

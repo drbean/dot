@@ -4,7 +4,7 @@ for u in bash screen vim chocolatey cygwin browser irc; do svn up dot/$u ; done
 # svn up edit/joyce
 for ext in rc _profile ; do cp dot/bash/bash$ext ~/.bash$ext ; done
 cd ~/dot && svn up alternatives.sh && . alternatives.sh && cd -
-cp ~/vim/vimrc.cygwin ~/.vimrc
+cp ~/dot/vim/vimrc.cygwin ~/.vimrc
 cp ~/dot/screen/screen.rc ~/.screenrc
 cp ~/dot/browser/lynx{-site.cfg,.lss} /etc/
 for i in znc weechat ; do svn co http://github.com/drbean/dot/trunk/irc/$i ~/.$i ; done

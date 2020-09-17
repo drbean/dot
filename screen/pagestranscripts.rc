@@ -6,5 +6,5 @@ stuff "# perl htmlexerciselist.pl -a $COURSE -l bett -s $STORY  > $COURSE.html &
 # stuff "# perl htmlexerciselist.pl -a $COURSE -l dic -s $STORY  > $COURSE.html && sudo cp $COURSE.html /var/www/html/^M"
 stuff "# for p in \$STORY KoreA WobblyEnglish HomePage ; do pandoc -o \$p.html --template=c:/tools/cygwin/home/owuser/curriculum/pages/pandoc-templates/homepagePost.html5 homepage/markdown/\$p.md; done^M"
 
-screen lftp drbean@drbean.sdf.org
+screen lftp drbean@sdf.org
 stuff "cd html/^M"

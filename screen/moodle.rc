@@ -31,7 +31,7 @@ screen 4
 stuff "sudo -u postgres psql -p 5433 mood082^M"
 screen 5
 stuff "cd ~/moodle/db^M"
-stuff "cd ~/moodle/moosh^M"
+stuff "cd ~/moosh^M"
 stuff "cd ~/moodle/^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/.\/\$page\/index.html/\" www/_site/*.html; ; done^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/..\/\$page\/index.html/\" www/_site/*/*.html; done^M"

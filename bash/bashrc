@@ -35,6 +35,27 @@ alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/scr
 alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/screen/project.rc -dR comp; cd -"
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
+function catalyst () {
+    cpanm Config::General
+    cpanm -n --force Catalyst::Action::RenderView
+    cpanm -n --force Catalyst::Authentication::Store::DBIx::Class
+    cpanm -n --force Catalyst::Plugin::Authorization::Roles
+    cpanm -n --force Catalyst::Plugin::Session::State::Cookie 
+    cpanm -n --force Catalyst::Plugin::Session::Store::DBIC
+    cpanm -n --force Catalyst::Plugin::StackTrace Catalyst::Plugin::Static::Simple Catalyst::Plugin::ConfigLoader
+    cpanm -n --force Catalyst::Runtime
+    cpanm -n --force Catalyst::View::TT
+    cpanm -n --force DBD::Pg
+    cpanm -n --force Flickr::API
+    cpanm -n --force IO::All
+    cpanm -n --force Lingua::Stem
+    cpanm -n --force Math::Random
+    cpanm -n --force Parse::RecDescent
+    cpanm -n --force Parse:RecDescent
+    cpanm -n --force SQL::Translator
+    cpanm -n --force YAML
+}
+
 function timer () {
     OPTIND=1
     local arg count

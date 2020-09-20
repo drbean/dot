@@ -45,7 +45,7 @@ function cyg_pack () {
             *) return 1 # illegal option
         esac
     done
-    /cygdrive/c/tools/cygwin/cygwinsetup --quiet-mode --no-desktop --no-startmenu --root /cygdrive/c/tools/cygwin --local-package-dir /cygdrive/c/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
+    c:/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
 }
 
 function catalyst () {

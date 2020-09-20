@@ -35,6 +35,19 @@ alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/scr
 alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/screen/project.rc -dR comp; cd -"
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
+function cyg_pack () {
+    OPTIND=1
+    local arg package
+    while getopts 'p:' arg
+    do
+        case ${arg} in 
+            p) package=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    /cygdrive/c/tools/cygwin/cygwinsetup --quiet-mode --no-desktop --no-startmenu --root /cygdrive/c/tools/cygwin --local-package-dir /cygdrive/c/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
+}
+
 function catalyst () {
     cpanm Config::General
     cpanm -n --force Catalyst::Action::RenderView

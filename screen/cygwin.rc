@@ -30,7 +30,7 @@ stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do lftp -c 'o
 stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do duplicity --ignore-errors --no-encryption -v8 -num-retries 2 file://\$HOME/\$backup ~/\$backup ; done ^M"
 
 screen 6
-stuff "# for p in gcc gcc-g++ make libcrypt-devel ; do c:/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $p ; done^M"
+stuff "# for p in gcc gcc-g++ make libcrypt-devel ; do c:/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages \$p ; done^M"
 stuff "# cpan App::cpanminus^M"
 stuff "# catalyst^M"
 stuff "# cpanm Config::General^M"

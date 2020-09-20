@@ -35,7 +35,7 @@ export THEME COLORTHEME
 
 #greg
 # screen needs 700 on socketdir?
-if [ "$(uname)" == "CYGWIN_NT-10.1" ]; then
+if [ "$(uname)" == "CYGWIN_NT-6.1" ]; then
 	export SCREENDIR=/cygdrive/c/tmp
 	if [ ! -d $SCREENDIR ]; then
 		mkdir $SCREENDIR

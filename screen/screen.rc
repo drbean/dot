@@ -10,7 +10,9 @@
 
 #defflow on # will force screen to process ^S/^Q
 
-deflogin on
+# greg
+# deflogin on
+deflogin off
 #autodetach off
 
 vbell on

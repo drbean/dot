@@ -48,6 +48,16 @@ function cyg_pack () {
     c:/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
 }
 
+function db_test () {
+    svn co http://github.com/drbean/db/trunk ~/db
+    cpanm -n --force App::Cmd
+    cpanm -n --force DBIx::Class::Schema
+    cd ~/db
+    perl Build.PL
+    ./Build
+    db moodle -p 5432
+}
+
 function catalyst () {
     cpanm Config::General
     cpanm -n --force Catalyst::Action::RenderView

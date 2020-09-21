@@ -28,7 +28,7 @@ stuff "# for g in {1..5} ; do Moosh group-memberadd -g $g -c 17 media_student_$(
 stuff "# COURSE_ID=44 ; moopl section_populate -s 5 -q 6133 -g 633 -l 43 -m quiz_tag_\${COURSE_NAME[\$COURSE_ID]}_\$WEEK -c \$COURSE_ID -n \${COURSE_NAME[\$COURSE_ID]}^M"
 stuff "# for id in {713..713} ; do cm_id \$TYPE \$id | while read -r item ; do Moosh -n activity-delete \$item ; done ; done"
 screen 4
-stuff "sudo -u postgres psql -p 5433 mood082^M"
+stuff "psql -p 5432 mood082^M"
 screen 5
 stuff "cd ~/moodle/db^M"
 stuff "cd ~/moosh^M"

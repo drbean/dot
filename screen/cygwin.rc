@@ -13,7 +13,7 @@ stuff "for ext in rc _profile ; do cp ~/dot/bash/bash\$ext ~/.bash\$ext ; done^M
 stuff "# . ~/dot/alternatives.txt^M"
 
 screen 4
-stuff "choco install postgresql --source cygwin
+stuff "# for p in postgresql libpq5 libpq-devel libpgtypes3 postgresql-client postgresql-devel ; do cyg_pack -p \$p ; done^M"
 stuff "# sed -iBAK -r -e \"s/\^INITDB_ARGS=.*$/INITDB_ARGS=\\\"-E UTF8 --locale=en_US.UTF-8 -D \\\$PGDATA\\\"/\" /etc/rc.d/init.d/postgresql^M"
 stuff "# diff -u /etc/rc.d/init.d/postgresql{BAK,}^M"
 stuff "# cygserver-config^M"

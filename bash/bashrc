@@ -64,7 +64,6 @@ function catalyst () {
     cpanm -n --force Lingua::Stem
     cpanm -n --force Math::Random
     cpanm -n --force Parse::RecDescent
-    cpanm -n --force Parse:RecDescent
     cpanm -n --force SQL::Translator
     cpanm -n --force YAML
 }

@@ -58,7 +58,7 @@ function catalyst () {
     cpanm -n --force Catalyst::Plugin::StackTrace Catalyst::Plugin::Static::Simple Catalyst::Plugin::ConfigLoader
     cpanm -n --force Catalyst::Runtime
     cpanm -n --force Catalyst::View::TT
-    cpanm -n --force DBD::Pg
+    POSTGRES_HOME=/usr/share/postgresql/data cpanm -n --force DBD::Pg
     cpanm -n --force Flickr::API
     cpanm -n --force IO::All
     cpanm -n --force Lingua::Stem

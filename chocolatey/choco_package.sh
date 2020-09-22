@@ -1,3 +1,1 @@
-for p in cygwin ; do choco install $p --params "/DesktopIcon /Site:http://ftp.ntu.edu.tw/sourceware/cygwin"
-for p in subversion openssh lftp vim screen mutt znc exim ; do choco install $p --source=cygwin; done
-for p in qutebrowser ; do choco install $p.install ; done
+for p in subversion openssh znc screen weechat lftp vim mutt exim lynx weechat-perl weechat-python perl make ; do /cygdrive/c/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $p ; done

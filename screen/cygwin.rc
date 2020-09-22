@@ -18,9 +18,7 @@ stuff "# sed -iBAK -r -e \"s/\^INITDB_ARGS=.*$/INITDB_ARGS=\\\"-E UTF8 --locale=
 stuff "# diff -u /etc/rc.d/init.d/postgresql{BAK,}^M"
 stuff "# cygserver-config^M"
 stuff "# cygrunsrv --start cygserver^M"
-stuff "# /etc/rc.d/init.d/postgresql initdb^M"
-stuff "# /etc/rc.d/init.d/postgresql install^M"
-stuff "# /etc/rc.d/init.d/postgresql start^M"
+stuff "# for a in initdb install start ; do  /etc/rc.d/init.d/postgresql \$a^M"
 stuff "# psql -U SYSTEM postgres^M"
 stuff "-- \i ~/dot/postgres/cygwin.txt^M"
 

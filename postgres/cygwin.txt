@@ -4,5 +4,5 @@ ALTER ROLE owuser WITH SUPERUSER INHERIT NOCREATEROLE CREATEDB LOGIN NOREPLICATI
 CREATE ROLE apache WITH LOGIN PASSWORD 'momoyuhi';
 CREATE ROLE drbean WITH LOGIN;
 CREATE DATABASE mood082;
-CREATE TABLE mdl_course ( id INT, name VARCHAR(255 ) ) ;
-INSERT INTO  mdl_course ( id, name ) VALUES ( 1, 'toeic' ) ;
+-- CREATE TABLE mdl_course ( id INT, name VARCHAR(255 ) ) ;
+-- INSERT INTO  mdl_course ( id, name ) VALUES ( 1, 'toeic' ) ;

@@ -28,6 +28,8 @@ stuff "# cpanm -n --force DBI^M"
 stuff "# POSTGRES_LIB=/usr/lib/postgresql POSTGRES_INCLUDE=/usr/include/postgresql POSTGRES_HOME=/usr/share/postgresql/data cpanm -n --force DBD::Pg^M"
 stuff "# cpanm -n --force App::Cmd^M"
 stuff "# cpanm -n --force DBIx::Class::TimeStamp^M"
+stuff "# cpanm -n --force Config::General^M"
+stuff "# cpanm -n --force DBIx::Class^M"
 stuff "# svn co http://github.com/drbean/db/trunk db^M"
 
 

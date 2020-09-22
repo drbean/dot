@@ -23,11 +23,18 @@ stuff "# psql -U SYSTEM postgres^M"
 stuff "-- \i ~/dot/postgres/cygwin.txt^M"
 
 screen 5
+stuff "# cpanm -n --force DBI^M"
+stuff "# POSTGRES_LIB=/usr/lib/postgresql POSTGRES_INCLUDE=/usr/include/postgresql POSTGRES_HOME=/usr/share/postgresql/data cpanm -n --force DBD::Pg^M"
+stuff "# cpanm -n --force App::Cmd^M"
+stuff "# svn co http://github.com/drbean/db/trunk db^M"
+
+
+screen 6
 stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do FTP_PASSWORD='' duplicity --ignore-errors --no-encryption -v8 --num-retries 2 ncftp+ftp://drbean@sdf.org/duplicity/\$backup ~/\$backup ; done ^M"
 stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do lftp -c 'open drbean@sdf.org && mirror duplicity/\$backup ~/\$backup && qui'; done ^M"
 stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do duplicity --ignore-errors --no-encryption -v8 -num-retries 2 file://\$HOME/\$backup ~/\$backup ; done ^M"
 
-screen 6
+screen 7
 stuff "# for p in gcc gcc-g++ make libcrypt-devel ; do cyg_pack -p \$p ; done^M"
 stuff "# cpan App::cpanminus^M"
 stuff "# catalyst^M"

@@ -7,6 +7,7 @@ stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr 
 stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr install collection-$c ; done^M"
 
 screen
+stuff "# for p in httpd httpd-devel httpd-mod_php7 httpd-mod_ssl ; do cyg_pack -p \$p ; done^M"
 stuff "# for p in php php-json php-iconv php-zip php-phar php-zlib php-tokenizer php-simplexml php-xmlwriter php-mbstring ; do cyg_pack -p \$p ; done^M"
 stuff "# for m in moosh moodle ; do git clone --depth 2 --no-single-branch http://github.com/drbean/\$m ; done && mkdir --parent /srv/www/cgi-bin && mv moodle/ /srv/www/cgi-bin/moodle/^M"
 

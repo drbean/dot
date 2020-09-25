@@ -9,9 +9,6 @@ stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr 
 screen
 stuff "# for p in php php-json php-iconv php-zip php-phar php-zlib php-tokenizer php-simplexml php-xmlwriter php-mbstring ; do cyg_pack -p \$p ; done^M"
 stuff "# for m in moosh moodle ; do git clone --depth 2 --no-single-branch http://github.com/drbean/\$m ; done && mkdir --parent /var/www/cgi-bin && mv moodle/ /var/www/cgi-bin/moodle/^M"
-stuff "# for m in dot curriculum ttb ; do svn co http://github.com/drbean/\$m/trunk \$m ; done^M"
-stuff "for ext in rc _profile ; do cp ~/dot/bash/bash\$ext ~/.bash\$ext ; done^M"
-stuff "# . ~/dot/alternatives.txt^M"
 
 screen 4
 stuff "# for p in postgresql libpq5 libpq-devel libpgtypes3 postgresql-client postgresql-devel ; do cyg_pack -p \$p ; done^M"

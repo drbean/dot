@@ -24,7 +24,7 @@ stuff "# cpanm -n --force DBI DBD::Pg App::Cmd DBIx::Class::TimeStamp Config::Ge
 stuff "# svn co http://github.com/drbean/db/trunk ~/db^M"
 stuff "# cd ~/db && perl Build.PL && ./Build install^M"
 stuff "# perl script/deploy.pl^M"
-stuff "# db moodle -p 5432 -u apache -w 'momoyuhi' -d mood082 -t course -a select -v all^M"
+stuff "# db moodle -p 5432 -u apache -w '' -d mood082 -t course -a select -v all^M"
  
 screen 6
 stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do FTP_PASSWORD='' duplicity --ignore-errors --no-encryption -v8 --num-retries 2 ncftp+ftp://drbean@sdf.org/duplicity/\$backup ~/\$backup ; done ^M"

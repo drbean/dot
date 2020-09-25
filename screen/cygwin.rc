@@ -20,7 +20,7 @@ stuff "# diff -u /etc/rc.d/init.d/postgresql{BAK,}^M"
 stuff "# cygserver-config && cygrunsrv --start cygserver^M"
 stuff "# for a in initdb install start ; do  /etc/rc.d/init.d/postgresql \$a ; done^M"
 stuff "# psql -U SYSTEM postgres^M"
-stuff "-- \i ~/dot/postgres/cygwin.txt^M"
+stuff "-- \i ~/dot/postgres/populate.sql^M"
 
 screen 5
 stuff "# cpanm -n --force DBI DBD::Pg App::Cmd DBIx::Class::TimeStamp Config::General DBIx::Class IO::All YAML^M"

@@ -33,6 +33,6 @@ stuff "# . alternatives.txt^M"
 stuff "# su -c 'cp screen/screen.rc /etc/screenrc'^M"
 stuff "# cp screen/screen.rc ~/.screenrc^M"
 stuff "# su -c 'cp bash/bash_completion/*[\^~] /etc/bash_completion.d/'^M"
-stuff "# cp ~/dot/cygwin/cyg_setup.sh ~/dot/chocolatey/choco_package.{ps1,sh} /cydrive/f
+stuff "# cp ~/dot/cygwin/cyg_setup.sh ~/dot/chocolatey/choco_package.{ps1,sh} /cygdrive/f^M"
 screen 0
 stuff "v bash/bashrc bash/bash_completion screen/ vim/ git/ systemd/"

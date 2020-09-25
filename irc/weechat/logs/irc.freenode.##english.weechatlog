@@ -635,3 +635,261 @@
 2020-09-21 15:55:35	<--	no_gravity (~no_gravit@unaffiliated/no-gravity/x-0632109) has quit (Quit: leaving)
 2020-09-21 15:59:21	<--	portalrat (~muskrat@trivialand/player/muskrat) has quit (Ping timeout: 256 seconds)
 2020-09-21 16:03:46	-->	stenno (~stenno@unaffiliated/chao) has joined ##English
+2020-09-25 10:44:59	-->	drbean (~drbean@TC210-63-209-146.static.apol.com.tw) has joined ##English
+2020-09-25 10:44:59	--	Topic for ##English is "English language help & discussion | Try to spell and capitalise correctly | Use UTF-8 | Provide context! | More rules: https://github.com/Freenode-English/topic/wiki | ##english-ops to contact ops | WotD Calumniate - transitive verb; to utter maliciously false statements, charges, or imputations about"
+2020-09-25 10:44:59	--	Topic set by bin_bash (~bin@unaffiliated/bin-bash/x-0273453) on Tue, 18 Aug 2020 06:47:58
+2020-09-25 10:44:59	--	Channel ##English: 311 nicks (1 op, 0 voices, 310 normals)
+2020-09-25 10:44:59	***	Buffer Playback...
+2020-09-25 10:44:59	tinwhiskers	[10:38:46] soulisson: a noun can name anything, like a tree, whereas a proper noun is a specific name of a person or thing (Bob, Texas)
+2020-09-25 10:44:59	soulisson	[10:41:44] tinwhiskers, ok, so two types of nouns "regular and proper nouns", what's the difference with a name?
+2020-09-25 10:44:59	systemfault	[10:42:53] "computer" vs "Jesus" ?
+2020-09-25 10:44:59	tinwhiskers	[10:43:03] name for types of things like apples or trees are regular nouns and specific names for people or things are proper nouns. They're both nouns.
+2020-09-25 10:44:59	tinwhiskers	[10:43:29] yeah, as systemfault says. Computer is a name of a machine and is a regular noun, and Jesus is a proper noun.
+2020-09-25 10:44:59	tinwhiskers	[10:43:59] note regular nouns do not have an uppercase first letter but proper nouns do.
+2020-09-25 10:44:59	systemfault	[10:44:00] "apple" (Fruit) vs "Apple" (Company)
+2020-09-25 10:44:59	tinwhiskers	[10:44:18] ^
+2020-09-25 10:44:59	soulisson	[10:44:39] tinwhiskers, so there is no difference between a noun and a name?
+2020-09-25 10:44:59	tinwhiskers	[10:44:49] not really, no
+2020-09-25 10:44:59	soulisson	[10:44:54] ok
+2020-09-25 10:44:59	***	Playback Complete.
+2020-09-25 10:45:01	--	Channel created on Sat, 24 Mar 2007 02:06:12
+2020-09-25 10:45:07	tinwhiskers	note fruit and company are regular nouns and shouldn't have an uppercase first letter :-)
+2020-09-25 10:46:07	-->	gitesh (uid423739@gateway/web/irccloud.com/x-pugldkbgqkthirjf) has joined ##English
+2020-09-25 10:46:30	-->	lunc (~jme@41.46.143.186) has joined ##English
+2020-09-25 10:46:56	-->	bullgard4 (~chatzilla@unaffiliated/bullgard4) has joined ##English
+2020-09-25 10:47:40	soulisson	can a proper noun in some contexts be made of regular nouns, I'm thinking of programming where I would name for instance something like "my_awesome_function"?
+2020-09-25 10:48:21	tinwhiskers	yeah, I think that qualifies as a proper noun
+2020-09-25 10:50:11	bullgard4	What is a »_bidding_ corporation« in https://en.wikipedia.org/wiki/HTTP_cookie (called 2019-10-30): "… The Wall Street Journal found that America's top fifty websites installed an average of sixty-four pieces of tracking technology onto computers, resulting in a total of 3,180 tracking files.[30] The data can then be collected and sold to bidding corporations."
+2020-09-25 10:50:12	soulisson	ok, thanks a lot :)
+2020-09-25 10:50:12	soulisson	tinwhiskers, sorry for the stupid questions :)
+2020-09-25 10:50:21	tinwhiskers	it's not stupid
+2020-09-25 10:51:27	tinwhiskers	bullgard4: people who will pay money for that data. If they use "bidding", then it's usually sold to the person who offers the most money, like an auction.
+2020-09-25 10:51:53	tinwhiskers	although with that type of data I expect in reality they sell it to many different people so I'm not sure "bidding" is the right term.
+2020-09-25 10:52:05	bullgard4	tinwhiskers: Understood. - Thank you very much for your help.
+2020-09-25 10:52:32	tinwhiskers	yw
+2020-09-25 10:55:19	soulisson	I think that in that context it just mean a  that shows interests and is willing to pay money. In my country, for big projects, companies have to submit an offer to the government, we usually call them bidding companies
+2020-09-25 10:55:43	tinwhiskers	soulisson: yes, but the deal goes to a single company who offers the best deal when bidding
+2020-09-25 10:55:59	soulisson	tinwhiskers, yes, in that context
+2020-09-25 10:56:38	soulisson	some times the governement can choose 2 or more companies and make them work together
+2020-09-25 10:56:44	tinwhiskers	ah. ok
+2020-09-25 10:57:22	tinwhiskers	I agree. I think the intent in the original text is to mean anyone offering to pay.
+2020-09-25 10:57:40	<--	Tuxedo[Qyou] (~TuxQyou]@unaffiliated/tux-qyou/x-4822048) has quit (Remote host closed the connection)
+2020-09-25 10:57:41	-->	darsie (~kvirc@84-113-55-200.cable.dynamic.surfer.at) has joined ##English
+2020-09-25 10:57:42	soulisson	tinwhiskers, it doesn't happen often (I saw it once or twice in my life time)
+2020-09-25 10:58:40	tinwhiskers	the people paying may not be corporations either. The "bidding corporations" should really just be "paying customers".
+2020-09-25 10:59:07	tinwhiskers	or just customers
+2020-09-25 10:59:29	soulisson	tinwhiskers, what world we are living in :) Your identity is actually now a product
+2020-09-25 11:00:09	tinwhiskers	yeah, I try to be as boring as possible to devalue their portfolio :-/
+2020-09-25 11:01:52	-->	Tux[Qyou] (~TuxQyou]@unaffiliated/tux-qyou/x-4822048) has joined ##English
+2020-09-25 11:10:45	<--	Tux[Qyou] (~TuxQyou]@unaffiliated/tux-qyou/x-4822048) has quit (Ping timeout: 240 seconds)
+2020-09-25 11:11:57	-->	internecine1 (~interneci@unaffiliated/internecine) has joined ##English
+2020-09-25 11:12:51	<--	swarfega (~swarfega@znc.swarfegaonline.uk) has quit (Quit: ZNC ~ Powered by LunarBNC: https://LunarBNC.net)
+2020-09-25 11:12:55	<--	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has quit (Quit: Free ZNC ~ Powered by LunarBNC: https://LunarBNC.net)
+2020-09-25 11:13:36	-->	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:13:44	-->	swarfega (~swarfega@znc.swarfegaonline.uk) has joined ##English
+2020-09-25 11:14:04	<--	CalamityToo (~CalamityT@cpe-108-185-144-94.socal.res.rr.com) has quit (Read error: Connection reset by peer)
+2020-09-25 11:14:10	<--	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has quit (Client Quit)
+2020-09-25 11:14:18	<--	swarfega (~swarfega@znc.swarfegaonline.uk) has quit (Client Quit)
+2020-09-25 11:14:26	-->	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:14:43	<--	acetakwas (~acetakwas@acetakwas.powered.by.lunarbnc.net) has quit (Max SendQ exceeded)
+2020-09-25 11:14:46	-->	swarfega (~swarfega@znc.swarfegaonline.uk) has joined ##English
+2020-09-25 11:14:57	<--	GavudVic (~gavudvic@gavudvic.powered.by.lunarbnc.net) has quit (Quit: ZNC - https://znc.in)
+2020-09-25 11:15:45	<--	swarfega (~swarfega@znc.swarfegaonline.uk) has quit (Client Quit)
+2020-09-25 11:16:12	<--	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has quit (Client Quit)
+2020-09-25 11:17:13	-->	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:17:19	-->	acetakwas (~acetakwas@acetakwas.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:17:41	-->	GavudVic (~gavudvic@gavudvic.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:18:07	<--	acetakwas (~acetakwas@acetakwas.powered.by.lunarbnc.net) has quit (Remote host closed the connection)
+2020-09-25 11:19:25	<--	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has quit (Client Quit)
+2020-09-25 11:19:48	-->	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:20:14	<--	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has quit (Client Quit)
+2020-09-25 11:20:44	-->	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:21:13	-->	acetakwas (~acetakwas@acetakwas.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:22:14	<--	acetakwas (~acetakwas@acetakwas.powered.by.lunarbnc.net) has quit (Client Quit)
+2020-09-25 11:23:04	<--	soulisson (~soulisson@unaffiliated/soulisson) has quit (Quit: Leaving)
+2020-09-25 11:23:14	<--	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has quit (Client Quit)
+2020-09-25 11:23:17	<--	GavudVic (~gavudvic@gavudvic.powered.by.lunarbnc.net) has quit (Quit: ZNC - https://znc.in)
+2020-09-25 11:23:52	drbean	bidding corporations: corporations which bid for the data, or corporations which sell to advertisers who submit bids for the data?
+2020-09-25 11:24:04	drbean	I think it's the latter, isnt' it?
+2020-09-25 11:24:41	-->	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:24:58	-->	GavudVic (~gavudvic@gavudvic.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:25:19	-->	acetakwas (~acetakwas@acetakwas.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:26:26	<--	GavudVic (~gavudvic@gavudvic.powered.by.lunarbnc.net) has quit (Client Quit)
+2020-09-25 11:26:38	<--	Sheilong (uid293653@gateway/web/irccloud.com/x-vldvpjxmmaehkxbx) has quit
+2020-09-25 11:27:09	-->	GavudVic (~gavudvic@gavudvic.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:27:33	<--	acetakwas (~acetakwas@acetakwas.powered.by.lunarbnc.net) has quit (Remote host closed the connection)
+2020-09-25 11:29:16	<--	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has quit (Client Quit)
+2020-09-25 11:29:39	-->	jonathanschlink (~Jonathan@jonathanschlink.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:30:03	<--	LuisM18 (~LuisR14@unaffiliated/luisr14) has quit (Ping timeout: 260 seconds)
+2020-09-25 11:30:51	-->	purplex88_ (~purplex88@unaffiliated/purplex88) has joined ##English
+2020-09-25 11:32:12	<--	xenial-user5 (~androirc@3EC97C6F.catv.pool.telekom.hu) has quit (Ping timeout: 240 seconds)
+2020-09-25 11:32:12	-->	acetakwas (~acetakwas@acetakwas.powered.by.lunarbnc.net) has joined ##English
+2020-09-25 11:32:36	<--	purplex88 (~purplex88@unaffiliated/purplex88) has quit (Ping timeout: 272 seconds)
+2020-09-25 11:32:39	--	purplex88_ is now known as purplex88
+2020-09-25 11:33:08	-->	CalamityToo (~CalamityT@cpe-108-185-144-94.socal.res.rr.com) has joined ##English
+2020-09-25 11:36:41	-->	LuisM18 (~LuisR14@unaffiliated/luisr14) has joined ##English
+2020-09-25 11:43:25	<--	k_sze (~k_sze@unaffiliated/kira) has quit (Quit: ZNC 1.8.2 - https://znc.in)
+2020-09-25 11:44:12	-->	k_sze (~k_sze@unaffiliated/kira) has joined ##English
+2020-09-25 11:44:45	<--	k_sze (~k_sze@unaffiliated/kira) has quit (Client Quit)
+2020-09-25 11:45:16	-->	nickodd (~nickodd@unaffiliated/nickodd) has joined ##English
+2020-09-25 11:46:26	<--	darsie (~kvirc@84-113-55-200.cable.dynamic.surfer.at) has quit (Ping timeout: 264 seconds)
+2020-09-25 11:47:57	-->	k_sze (~k_sze@unaffiliated/kira) has joined ##English
+2020-09-25 11:51:42	<--	D-rex (~derek@c-73-150-17-188.hsd1.nj.comcast.net) has quit (Quit: Konversation terminated!)
+2020-09-25 11:52:56	wkalt	is this correct? "your comments on this matter bely a total lack of understanding"? And does it mean "your comments indicate a total lack of understanding" or "your comments hide a total lack of understanding"? I thought the latter but it may be the former
+2020-09-25 11:53:23	<--	internecine1 (~interneci@unaffiliated/internecine) has quit (Ping timeout: 260 seconds)
+2020-09-25 11:55:33	LuisM18	contain/encompass a total lack of understanding
+2020-09-25 11:55:42	LuisM18	belie
+2020-09-25 11:56:33	wkalt	yeah, or "indicate" -- I think that's the way to go for the first meaning. And I actually mixed latter/former -- I had the wrong meaning in mind
+2020-09-25 11:56:50	wkalt	I thought to bely something was to "let something slip"
+2020-09-25 11:57:10	wkalt	but instead it's more like "to conceal"
+2020-09-25 11:57:45	LuisM18	!d bely
+2020-09-25 11:57:46	tinsoldier	bely — Noun: 1. Obsolete spelling of belly, — Verb: 1. Obsolete spelling of belie https://en.wiktionary.org/wiki/bely
+2020-09-25 11:58:40	wkalt	merriam-webster says it's "variant", not obsolete
+2020-09-25 11:59:03	wkalt	tbh bely seems correct to me in the US, vs belie
+2020-09-25 12:00:02	LuisM18	seems less normal to me, *me does not ly*
+2020-09-25 12:00:22	LuisM18	it's all lyes!
+2020-09-25 12:01:03	 *	LuisM18 just lyes around
+2020-09-25 12:01:32	wkalt	to be honest this is a shell shocker to me
+2020-09-25 12:01:48	wkalt	similar to when I realized I had been using "comprised" wrong my whole life
+2020-09-25 12:02:20	wkalt	the group comprises the elements. the group isn't "comprised of" the elements...
+2020-09-25 12:03:30	LuisM18	mhm
+2020-09-25 12:06:10	LuisM18	the lie as in lie around is related
+2020-09-25 12:07:49	wkalt	the lie comprises the lie!
+2020-09-25 12:07:55	<--	MoxygeRen (~David@187.192.12.132) has quit (Quit: Leaving.)
+2020-09-25 12:09:51	<--	audioburn (~audioburn@unaffiliated/theology) has quit (Remote host closed the connection)
+2020-09-25 12:10:26	LuisM18	lol
+2020-09-25 12:25:41	<--	tWqaq (~tWqaq@58.246.29.221) has quit (Quit: Leaving)
+2020-09-25 12:27:58	-->	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has joined ##English
+2020-09-25 12:28:19	<--	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has quit (Max SendQ exceeded)
+2020-09-25 12:28:22	<--	DiffieHellman (~Ident@gateway/tor-sasl/diffiehellman) has quit (Remote host closed the connection)
+2020-09-25 12:28:41	-->	DiffieHellman (~Ident@gateway/tor-sasl/diffiehellman) has joined ##English
+2020-09-25 12:28:53	-->	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has joined ##English
+2020-09-25 12:29:13	<--	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has quit (Max SendQ exceeded)
+2020-09-25 12:29:48	-->	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has joined ##English
+2020-09-25 12:30:07	<--	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has quit (Max SendQ exceeded)
+2020-09-25 12:30:41	-->	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has joined ##English
+2020-09-25 12:31:01	<--	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has quit (Max SendQ exceeded)
+2020-09-25 12:31:46	-->	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has joined ##English
+2020-09-25 12:32:06	<--	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has quit (Max SendQ exceeded)
+2020-09-25 12:32:47	-->	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has joined ##English
+2020-09-25 12:42:58	<--	bsivasub (~buvanesh_@2401:4900:360e:45f9:f159:29be:1e9e:dac5) has quit (Remote host closed the connection)
+2020-09-25 12:48:56	-->	purplex88_ (~purplex88@unaffiliated/purplex88) has joined ##English
+2020-09-25 12:49:44	-->	hassoon_1 (~hassoon@197.1.66.94) has joined ##English
+2020-09-25 12:51:25	<--	purplex88 (~purplex88@unaffiliated/purplex88) has quit (Ping timeout: 240 seconds)
+2020-09-25 12:51:33	--	purplex88_ is now known as purplex88
+2020-09-25 12:52:25	<--	hassoon__ (~hassoon@41.62.138.125) has quit (Ping timeout: 240 seconds)
+2020-09-25 12:55:51	<--	comlord (3ad01bb8@gateway/web/cgi-irc/kiwiirc.com/ip.58.208.27.184) has quit (Ping timeout: 256 seconds)
+2020-09-25 12:57:29	-->	ctlnwr (~catalin@46.97.150.20) has joined ##English
+2020-09-25 12:57:33	-->	ctlnwr_ (~catalin@46.97.150.20) has joined ##English
+2020-09-25 13:04:08	-->	mmohammadi9812 (~mmohammad@188.210.98.27) has joined ##English
+2020-09-25 13:10:39	<--	bullgard4 (~chatzilla@unaffiliated/bullgard4) has quit (Quit: ChatZilla 0.9.92-rdmsoft [XULRunner 35.0.1/20150122214805])
+2020-09-25 13:21:54	-->	tWqaq (~tWqaq@58.246.29.221) has joined ##English
+2020-09-25 13:49:32	<--	stenno1 (~stenno@unaffiliated/chao) has quit (Ping timeout: 246 seconds)
+2020-09-25 13:57:12	<--	kazuma_ (~kazuma@ad012241.dynamic.ppp.asahi-net.or.jp) has quit (Quit: Leaving...)
+2020-09-25 13:58:10	-->	stenno1 (~stenno@unaffiliated/chao) has joined ##English
+2020-09-25 13:58:29	-->	Inimesekene (~textual@gw.quretec.com) has joined ##English
+2020-09-25 13:58:50	<--	Inimesek_ (~textual@gw.quretec.com) has quit (Read error: Connection reset by peer)
+2020-09-25 14:02:31	-->	konrados (~konrados@unaffiliated/konrados) has joined ##English
+2020-09-25 14:04:25	<--	stenno1 (~stenno@unaffiliated/chao) has quit (Ping timeout: 256 seconds)
+2020-09-25 14:11:17	drbean	.w belie
+2020-09-25 14:11:20	tinsoldier	belie — Verb: 1. (transitive, obsolete) To lie around; encompass., 2. (transitive, obsolete, of an army) To surround; beleaguer. https://en.wiktionary.org/wiki/belie
+2020-09-25 14:11:22	-->	Serpent7776 (~Serpent77@90-156-31-193.internetia.net.pl) has joined ##English
+2020-09-25 14:14:07	drbean	Is belie an autoantonym like 'cleave'?
+2020-09-25 14:17:17	drbean	https://people.sc.fsu.edu/~jburkardt/fun/wordplay/autoanto.html has a fun list of autoantonyms.
+2020-09-25 14:17:38	drbean	'We secured all our silverware from thieves'
+2020-09-25 14:19:17	-->	xenial-user5 (~androirc@3EC97C6F.catv.pool.telekom.hu) has joined ##English
+2020-09-25 14:19:27	drbean	We got it all from thieves?
+2020-09-25 14:19:27	drbean	Or we prevented thieves from getting it?
+2020-09-25 14:20:51	<--	bliv (~5@unaffiliated/blivande) has quit (Quit: 0)
+2020-09-25 14:21:32	-->	markopasha (~cc@88.230.160.182) has joined ##English
+2020-09-25 14:23:44	drbean	Burkart also has: "Few would argue that children are the chief beneficiaries."
+2020-09-25 14:24:53	drbean	Most people agree that children are the chief beneficiaries?
+2020-09-25 14:25:34	-->	enriq (~pitagoras@2a01:e34:ec9e:1a90:ece6:e0f2:8579:2e11) has joined ##English
+2020-09-25 14:25:57	drbean	Or only a few people think that children are the chief beneficiaries?
+2020-09-25 14:27:11	drbean	'Your comments belie a total lack of understanding'
+2020-09-25 14:29:20	drbean	Your comments show a total lack of understanding?
+2020-09-25 14:29:20	drbean	Or, despite your comments, the fact is that you understand nothing about the matter?
+2020-09-25 14:31:43	<--	OnkelBlade (~fantomas@unaffiliated/fantomas) has quit (Quit: WeeChat 2.8)
+2020-09-25 14:39:14	<--	xenial-user5 (~androirc@3EC97C6F.catv.pool.telekom.hu) has quit (Ping timeout: 264 seconds)
+2020-09-25 14:39:35	papna	The latter is not a usage I'm familiar with
+2020-09-25 14:41:31	kurahaupo	I would secure the silverware against thieves, and then blackmail the thieves thereby securing hush money from them.
+2020-09-25 14:42:28	kurahaupo	or secure against theft
+2020-09-25 14:44:02	kurahaupo	drbean: I would take it as the latter, but I'm sure you could find examples of autoantonymical misuse
+2020-09-25 14:45:12	kurahaupo	"few would argue" = "most agree" (but sometimes the referent is ambiguous)
+2020-09-25 14:45:50	-->	stenno1 (~stenno@unaffiliated/chao) has joined ##English
+2020-09-25 14:47:20	kurahaupo	Generally actions or observations belie statements, so using it backwards, where statements belie something else, is inviting abusive inversion of its meaning
+2020-09-25 14:47:25	papna	Argue is a good autoantonym. "Few would argue" works about as well as "most agree" and "not many would say"
+2020-09-25 14:48:10	kurahaupo	it's a matter of whether the argument is in favour of or against the proposition
+2020-09-25 14:51:14	kurahaupo	"Your comments { belie / give lie to } [ your claim of ] a total lack of understanding." → you're feigning ignorance but making comments that suggest that you know more than you're letting on.
+2020-09-25 14:51:48	<--	stenno1 (~stenno@unaffiliated/chao) has quit (Ping timeout: 240 seconds)
+2020-09-25 14:53:46	drbean	If it were 'a few would argue that children are the chief beneficiaries,' ie, 'a few', rather than 'few', does  that change the sense?
+2020-09-25 14:53:46	drbean	I think it removes ambiguity. Then it means, most people think children AREN'T the chief beneficiaries and some people are disputing that.
+2020-09-25 14:54:47	-->	lesless (~lessless@obligatory.vehicle.volia.net) has joined ##English
+2020-09-25 14:55:47	kurahaupo	Considering "argue": arguing with or against a proposition generally means disagreeing with it; arguing for or that a proposition generally means agreeing with it. If few argue (either way) then most take the opposing position.
+2020-09-25 14:56:47	kurahaupo	(one of the odd cases where "with" and "against" give the same meaning)
+2020-09-25 14:58:16	kurahaupo	I think that derives from arguing with a proponent, by arguing against their proposition.
+2020-09-25 15:00:03	drbean	'argue' and 'agree' mix up their use of prepositions.
+2020-09-25 15:01:00	drbean	If you argue with someone, you don't agree with them.
+2020-09-25 15:01:34	kurahaupo	Given the current fragility of prepositions in the English language as a whole, I would never be surprised to find otherwise competent native speakers uttering or writing confused autoantonyms 
+2020-09-25 15:02:08	kurahaupo	drbean: I'm pretty sure that's what I said
+2020-09-25 15:02:55	kurahaupo	oh right, the same preposition
+2020-09-25 15:04:28	drbean	'fight' is like 'argue', using both 'with' and 'against' with the same meaning.
+2020-09-25 15:05:04	nalkri	“fight with” can also mean “fight alongside” though
+2020-09-25 15:06:18	<--	markopasha (~cc@88.230.160.182) has quit (Quit: WeeChat 2.9)
+2020-09-25 15:06:39	-->	markopasha (~cc@88.230.160.182) has joined ##English
+2020-09-25 15:06:40	drbean	Unlike 'argue', 'fight with' is an autoantonym?
+2020-09-25 15:08:11	nalkri	I'd say “argue with” can be at least in some contexts
+2020-09-25 15:08:15	drbean	But isnt 'argue' an autoantonym?
+2020-09-25 15:08:47	 *	nalkri shrugs
+2020-09-25 15:08:56	<--	markopasha (~cc@88.230.160.182) has quit (Client Quit)
+2020-09-25 15:09:24	nalkri	As an atomic term, not really no
+2020-09-25 15:09:51	-->	amigo-mobile (uid86330@gateway/web/irccloud.com/x-dlpfhjlykfssbhij) has joined ##English
+2020-09-25 15:10:03	-->	markopasha (~cc@88.230.160.182) has joined ##English
+2020-09-25 15:10:33	drbean	OK, 'few would argue'
+2020-09-25 15:15:00	<--	tommy``|2 (~tommy``@host-87-20-71-71.retail.telecomitalia.it) has quit (Quit: KVIrc 5.0.0 Aria http://www.kvirc.net/)
+2020-09-25 15:15:32	-->	homma (~homma@unaffiliated/homma) has joined ##English
+2020-09-25 15:16:12	<--	markopasha (~cc@88.230.160.182) has quit (Quit: WeeChat 2.9)
+2020-09-25 15:16:17	-->	swarfega (swarfega@znc.swarfegaonline.uk) has joined ##English
+2020-09-25 15:16:30	-->	markopasha (~cc@88.230.160.182) has joined ##English
+2020-09-25 15:25:36	drbean	For 'belie', wiktionary's sense 3: To contradict, to show (something) to be false. Synonym: give (the) lie to.
+2020-09-25 15:25:36	drbean	is consistent with kurahaupo's 'actions or observations belie statements'
+2020-09-25 15:26:58	drbean	Wiktionary's 4th sense (said perhaps nonstandard): To conceal the contradictory or ironic presence of (something). 
+2020-09-25 15:28:07	<--	mmohammadi9812 (~mmohammad@188.210.98.27) has quit (Quit: I quit  (╯°□°）╯︵ ┻━┻)
+2020-09-25 15:28:58	-->	Nalt| (~Nalt|||@2600:1700:2970:18c0:65b3:e6fe:930f:3900) has joined ##English
+2020-09-25 15:29:25	drbean	I guess this is the autoantonymical sense.
+2020-09-25 15:31:13	drbean	The 5th snese (also said perhaps nonstandard):  to show (something) to be present, particularly something deemed contradictory or ironic.
+2020-09-25 15:31:30	-->	tommy`` (~tommy``@unaffiliated/tommy/x-6566540) has joined ##English
+2020-09-25 15:32:03	drbean	This is an extension of sense 3, I think.
+2020-09-25 15:33:10	<--	Nalt|| (~Nalt|||@162-239-107-41.lightspeed.rcsntx.sbcglobal.net) has quit (Ping timeout: 272 seconds)
+2020-09-25 15:33:36	drbean	kurahaupo, nalkri, papna: can I include your comments in a blog post?
+2020-09-25 15:36:56	-->	stenno1 (~stenno@unaffiliated/chao) has joined ##English
+2020-09-25 15:38:03	<--	gitesh (uid423739@gateway/web/irccloud.com/x-pugldkbgqkthirjf) has quit (Quit: Connection closed for inactivity)
+2020-09-25 15:44:22	-->	tarkus (~tarkus@178.62.253.145) has joined ##English
+2020-09-25 15:51:04	<--	stenno1 (~stenno@unaffiliated/chao) has quit (Ping timeout: 260 seconds)
+2020-09-25 15:51:52	-->	brunosaboia_ (~bsaboia@209.14.0.252) has joined ##English
+2020-09-25 15:54:14	<--	BSaboia (~bsaboia@87.72.198.28) has quit (Ping timeout: 264 seconds)
+2020-09-25 15:56:32	-->	Muimi (~ReedK0@113.235.191.127) has joined ##English
+2020-09-25 15:58:27	-->	dorp (~dorp@109-186-29-180.bb.netvision.net.il) has joined ##English
+2020-09-25 16:05:22	-->	hype_2nd (~hype@2409:250:4120:1000:140a:55f:31f9:8339) has joined ##English
+2020-09-25 16:07:34	kurahaupo	drbean: sure
+2020-09-25 16:09:35	<--	enriq (~pitagoras@2a01:e34:ec9e:1a90:ece6:e0f2:8579:2e11) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2020-09-25 16:15:05	<--	lesless (~lessless@obligatory.vehicle.volia.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2020-09-25 16:15:18	<--	hype_2nd (~hype@2409:250:4120:1000:140a:55f:31f9:8339) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2020-09-25 16:19:07	<--	diskin (~diskin@ec2-18-158-88-195.eu-central-1.compute.amazonaws.com) has quit (Read error: Connection reset by peer)
+2020-09-25 16:19:56	-->	hype_2nd (~hype@2409:250:4120:1000:7c6e:f6a3:1ad0:1012) has joined ##English
+2020-09-25 16:20:36	-->	diskin (~diskin@185.49.242.14) has joined ##English
+2020-09-25 16:23:07	<--	diskin (~diskin@185.49.242.14) has quit (Disconnected by services)
+2020-09-25 16:23:08	-->	diskin_ (~diskin@ec2-3-124-171-230.eu-central-1.compute.amazonaws.com) has joined ##English
+2020-09-25 16:25:00	-->	lesless (~lessless@obligatory.vehicle.volia.net) has joined ##English
+2020-09-25 16:27:05	-->	rapier (~lucas@unaffiliated/novato-br/x-1551087) has joined ##English
+2020-09-25 16:27:12	rapier	hi everyone
+2020-09-25 16:27:17	rapier	how are you, guys?
+2020-09-25 16:28:46	<--	hassoon_1 (~hassoon@197.1.66.94) has quit (Ping timeout: 240 seconds)
+2020-09-25 16:31:27	-->	Nalt|| (~Nalt|||@2600:1700:2970:18c0:50a4:d298:5255:d527) has joined ##English
+2020-09-25 16:32:23	drbean	"I would argue that children are the chief beneficiaries"
+2020-09-25 16:32:23	drbean	can only mean, I argue for the position that children are the chief beneficiaries.
+2020-09-25 16:32:23	drbean	How can it be that, "Few would argue that children are the chief beneficiaries,"
+2020-09-25 16:32:23	drbean	can be taken to mean the few are arguing AGAINST the position that children are the chief beneficiaries?
+2020-09-25 16:34:05	drbean	I'm confused.
+2020-09-25 16:35:43	<--	Nalt| (~Nalt|||@2600:1700:2970:18c0:65b3:e6fe:930f:3900) has quit (Ping timeout: 260 seconds)
+2020-09-25 16:43:06	--	irc: disconnected from server

@@ -24,18 +24,9 @@ stuff "# psql -U SYSTEM postgres^M"
 stuff "-- \i ~/dot/postgres/cygwin.txt^M"
 
 screen 5
-stuff "# cpanm -n --force DBI^M"
-stuff "# cpanm -n --force DBD::Pg^M"
-stuff "# POSTGRES_LIB=/usr/lib/postgresql POSTGRES_INCLUDE=/usr/include/postgresql POSTGRES_HOME=/usr/share/postgresql/data cpanm -n --force DBD::Pg^M"
-stuff "# cpanm -n --force App::Cmd^M"
-stuff "# cpanm -n --force DBIx::Class::TimeStamp^M"
-stuff "# cpanm -n --force Config::General^M"
-stuff "# cpanm -n --force DBIx::Class^M"
-stuff "# cpanm -n --force IO::All^M"
-stuff "# cpanm -n --force YAML^M"
+stuff "# cpanm -n --force DBI DBD::Pg App::Cmd DBIx::Class::TimeStamp Config::General DBIx::Class IO::All YAML^M"
 stuff "# svn co http://github.com/drbean/db/trunk db^M"
-
-
+ 
 screen 6
 stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do FTP_PASSWORD='' duplicity --ignore-errors --no-encryption -v8 --num-retries 2 ncftp+ftp://drbean@sdf.org/duplicity/\$backup ~/\$backup ; done ^M"
 stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do lftp -c 'open drbean@sdf.org && mirror duplicity/\$backup ~/\$backup && qui'; done ^M"

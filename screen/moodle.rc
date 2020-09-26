@@ -1,6 +1,6 @@
 screen 1
-stuff "cd /srv/www/cgi-bin/moodle^M"
-stuff "git status^M"
+stuff "mkdir --parent /srv/www/cgi-bin/^M"
+stuff "# cd /srv/www/cgi-bin/moodle && git status^M"
 screen 2
 stuff "cd /srv/www/cgi-bin/moodle/mod/quiz/report/^M"
 stuff "# git hub clone moodle-quiz_tag /srv/www/cgi-bin/moodle/mod/quiz/report/\$tag^M"

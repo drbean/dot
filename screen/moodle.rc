@@ -39,7 +39,7 @@ stuff "# pandoc -o www/_site/commands/index_pandoc.html www/commands/index.md^M"
 screen 8
 stuff "lynk https://sac.nuu.edu.tw/cgi-bin/moodle"
 screen 9
-stuff "lynk file:///home/drbean/moodle/moosh/www/_site/commands/index_pandoc.html"
+stuff "lynk file:///home/owuser/moosh/www/_site/commands/index_pandoc.html"
 screen 0
 stuff "cd /srv/www/cgi-bin/moodle^M"
 stuff "v^M"

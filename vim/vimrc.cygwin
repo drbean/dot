@@ -1,4 +1,4 @@
-" Last Edit: 2020 Sep 08,  4:55:04 AM
+" Last Edit: 2020 Sep 28,  3:42:50 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -122,7 +122,7 @@ elseif has("win32")
 " cab rc <C-R>=vimrc<CR><CR>
 
 set path=.,		" path for files accessed by gf, etc
-set runtimepath^=~drbean/dot/vim/ultisnips
+set runtimepath^=~/dot/vim/ultisnips
 " let g:ycm_key_list_select_completion = ['<Down>']
 " set runtimepath=~/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim63,/usr/share/vim/vimfiles/after,~/.vim/after	"fedora 3 got it wrong
 

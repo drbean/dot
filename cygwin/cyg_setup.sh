@@ -8,7 +8,7 @@ cp ~/dot/vim/vimrc.cygwin ~/.vimrc
 cp ~/dot/screen/screen.rc ~/.screenrc
 cp ~/dot/browser/lynx{-site.cfg,.lss} /etc/
 for i in znc weechat ; do svn co http://github.com/drbean/dot/trunk/irc/$i ~/.$i ; done
-for p in pages ; do svn up curriculum/$p ; done
+for p in pages speaking ; do svn up curriculum/$p ; done
 for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curriculum/pages/$p ; done
 znc
 for u in postgres ; do svn up ~/dot/$u ; done

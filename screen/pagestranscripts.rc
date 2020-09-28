@@ -8,3 +8,4 @@ stuff "# for p in \$STORY KoreA WobblyEnglish HomePage ; do pandoc -o \$p.html -
 
 screen lftp drbean@sdf.org
 stuff "cd html/^M"
+stuff "put $STORY.html^M"

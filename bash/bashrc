@@ -282,7 +282,7 @@ function question_grade_bett () {
 
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
-alias dot="cd ~/dot; screen -c /home/$USER/dot/screen/dotrc -dR dot; cd -"
+alias dot="cd ~/dot; screen -c /home/$USER/dot/screen/dot.rc -dR dot; cd -"
 alias irc="cd ~/znc; screen -c /home/$USER/dot/screen/irc.rc -dR irc; cd -"
 
 alias csfp="cd ~/class/csfp; screen -c /home/$USER/dot/screen/csfprc -dR csfp; cd -"

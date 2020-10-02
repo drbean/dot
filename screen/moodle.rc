@@ -1,6 +1,7 @@
 screen 1
 stuff "mkdir --parent /srv/www/cgi-bin/ /var/lib/moodle/^M"
 stuff "# cd /srv/www/cgi-bin/moodle && git status^M"
+stuff "# /usr/sbin/apachectl start^M"
 screen 2
 stuff "cd /srv/www/cgi-bin/moodle/mod/quiz/report/^M"
 stuff "# git hub clone moodle-quiz_tag /srv/www/cgi-bin/moodle/mod/quiz/report/\$tag^M"

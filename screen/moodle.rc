@@ -1,6 +1,8 @@
 screen 1
 stuff "mkdir --parent /srv/www/cgi-bin/ /var/lib/moodle/^M"
 stuff "# cd /srv/www/cgi-bin/moodle && git status^M"
+stuff "# mkdir /var/lib/moodle/repository^M"
+stuff "# for t in general read pic question information solution opinion; do mkdir /var/lib/moodle/repository/\$t ; done^M"
 stuff "# /usr/sbin/apachectl start^M"
 screen 2
 stuff "cd /srv/www/cgi-bin/moodle/mod/quiz/report/^M"

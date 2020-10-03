@@ -1,4 +1,4 @@
-for p in subversion openssh znc screen
+for p in subversion openssh znc screen git
 	do /cygdrive/c/tools/cygwin/cygwinsetup.exe \
 		--quiet-mode --no-desktop --no-startmenu \
 		--root c:/tools/cygwin --local-package-dir \

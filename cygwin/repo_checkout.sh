@@ -13,3 +13,5 @@ for p in moodle ; do svn up ttb/$p ; done
 for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curriculum/pages/$p ; done
 znc
 for u in postgres ; do svn up ~/dot/$u ; done
+git clone --depth 2 --no-single-branch http://github.com/drbean/moosh ~/moosh
+mkdir --parent /srv/www/cgi-bin && git clone --depth 2 --no-single-branch http://github.com/drbean/moodle /srv/www/cgi-bin/moodle && mkdir /var/lib/moodle/ && chmod 777 /var/lib/moodle

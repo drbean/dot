@@ -4,6 +4,8 @@ stuff "# cd /srv/www/cgi-bin/moodle && git status^M"
 stuff "# mkdir /var/lib/moodle/repository^M"
 stuff "# for t in general read pic question information solution opinion; do mkdir /var/lib/moodle/repository/\$t ; done^M"
 stuff "# /usr/sbin/apachectl start^M"
+stuff "# rm -rf /var/lib/moodle/*cache^M"
+
 screen 2
 stuff "cd /srv/www/cgi-bin/moodle/mod/quiz/report/^M"
 stuff "# git hub clone moodle-quiz_tag /srv/www/cgi-bin/moodle/mod/quiz/report/\$tag^M"

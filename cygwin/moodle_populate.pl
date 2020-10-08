@@ -1,8 +1,11 @@
 course=$(Moosh -n course-create -f 'Teach Yourself TOEIC Speaking' -d 'TOEIC Speaking prep: quizzes, slides, practice tests' -F topics -n 15 toeic)
 echo "course=$course"
 
+# course=2
+
+dummy=$(Moosh -n activity-add --section 0 quiz $course)
+
 # on creating dummy quiz in General Notifications??
-course=2
 top_cat=1
 task=(general read pic question information solution opinion)
 ex_cat=$(Moosh -n gradecategory-create -n exercises $top_cat $course)
@@ -24,10 +27,20 @@ parent=4 # 4 | Default for toeic
 q_cat=$(Moosh -n questioncategory-create --reuse -p $parent -c $context -d 'How to read a text' read)
 echo "q_cat=$q_cat"
 
-# after creating 'read' file system repo
-q_cat=9
-grade_cat=4
-sect='read'
+## after creating 'read' file system repo
+#q_cat=9
+#grade_cat=4
+#sect='read'
+#course=2
+#course_name='speaking/test'
+#perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>$q_cat, g=>$grade_cat, c=>$course, n=>\"$course_name\" })"
+
+q_cat=$(Moosh -n questioncategory-create --reuse -p $parent -c $context -d 'Describing pictures' pic)
+echo "q_cat=$q_cat"
+# after creating 'pic' file system repo
+# q_cat=10
+grade_cat=5
+sect='pic'
 course=2
 course_name='speaking/test'
 perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>$q_cat, g=>$grade_cat, c=>$course, n=>\"$course_name\" })"

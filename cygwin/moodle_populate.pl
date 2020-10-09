@@ -1,9 +1,23 @@
 course=$(Moosh -n course-create -f 'Teach Yourself TOEIC Speaking' -d 'TOEIC Speaking prep: quizzes, slides, practice tests' -F topics -n 15 toeic)
 echo "course=$course"
 
-# course=2
+course=2
 
-dummy=$(Moosh -n activity-add --section 0 quiz $course)
+dummy=$(Moosh -n activity-add --section --name dummy 0 quiz $course)
+echo $dummy
+dummy_quiz=$((dummy+1))
+# dummy_quiz=2
+dummy_category=8
+course_name='speaking/test'
+
+question=$(perl -MYAML4Moodle::Command::xml -e "YAML4Moodle::Command::xml::execute('',{
+	c=>$course_name, t=>'general',
+	s=>'handbook', q=>'jigsaw', f=>0})")
+echo "question=$question"
+file='/var/lib/moodle/repository/general/quiz_handbook_jigsaw_0.xml'
+echo $question > $file
+quiz=$(Moosh -n question-import $file $dummy_quiz $dummy_category)
+Moosh -n activity-delete $dummy_quiz
 
 # on creating dummy quiz in General Notifications??
 top_cat=1
@@ -27,13 +41,12 @@ parent=4 # 4 | Default for toeic
 q_cat=$(Moosh -n questioncategory-create --reuse -p $parent -c $context -d 'How to read a text' read)
 echo "q_cat=$q_cat"
 
-## after creating 'read' file system repo
+# after creating 'read' file system repo
 #q_cat=9
-#grade_cat=4
-#sect='read'
-#course=2
-#course_name='speaking/test'
-#perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>$q_cat, g=>$grade_cat, c=>$course, n=>\"$course_name\" })"
+grade_cat=4
+sect='read'
+course=2
+perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>$q_cat, g=>$grade_cat, c=>$course, n=>\"$course_name\" })"
 
 q_cat=$(Moosh -n questioncategory-create --reuse -p $parent -c $context -d 'Describing pictures' pic)
 echo "q_cat=$q_cat"

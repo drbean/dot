@@ -10,7 +10,7 @@ cp ~/dot/browser/lynx{-site.cfg,.lss} /etc/
 for i in znc weechat ; do svn co http://github.com/drbean/dot/trunk/irc/$i ~/.$i ; done
 for p in pages speaking online; do svn up curriculum/$p ; done
 svn co http://github.com/drbean/yaml4moodle/trunk ttb/yaml4moodle --depth=empty
-for p in moodle yaml4moodle ; do svn up ttb/$p/lib --depth=infinity ; done
+for p in moodle yaml4moodle ; do svn up ttb/$p/{lib,script,Makefile.PL} ; done
 for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curriculum/pages/$p ; done
 znc
 for u in postgres ; do svn up ~/dot/$u ; done

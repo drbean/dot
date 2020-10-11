@@ -5,19 +5,19 @@ course=2
 course_name='speaking/test'
 
 dummy=$(Moosh -n activity-add --section 0 --name dummy quiz $course)
-echo $dummy
+echo "dummy=$dummy"
 dummy_quiz=$((dummy+1))
 # dummy_quiz=2
 dummy_category=8
 
-question=$(perl -MYAML4Moodle::Command::xml -e "YAML4Moodle::Command::xml::execute('',{
-	c=>$course_name, t=>'general',
-	s=>'handbook', q=>'jigsaw', f=>0})")
-echo "question=$question"
-file='/var/lib/moodle/repository/general/quiz_handbook_jigsaw_0.xml'
-echo $question > $file
-quiz=$(Moosh -n question-import $file $dummy_quiz $dummy_category)
-Moosh -n activity-delete $dummy_quiz
+#question=$(perl -MYAML4Moodle::Command::xml -e "YAML4Moodle::Command::xml::execute('',{
+#	c=>$course_name, t=>'general',
+#	s=>'handbook', q=>'jigsaw', f=>0})")
+#echo "question=$question"
+#file='/var/lib/moodle/repository/general/quiz_handbook_jigsaw_0.xml'
+#echo $question > $file
+#quiz=$(Moosh -n question-import $file $dummy_quiz $dummy_category)
+#Moosh -n activity-delete $dummy_quiz
 
 # on creating dummy quiz in General Notifications??
 top_cat=1
@@ -40,7 +40,6 @@ context=25 # 'toeic' context
 parent=4 # 4 | Default for toeic
 q_cat=$(Moosh -n questioncategory-create --reuse -p $parent -c $context -d 'How to read a text' read)
 echo "read q_cat=$q_cat"
-
 # after creating 'read' file system repo
 #q_cat=9
 grade_cat=4

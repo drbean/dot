@@ -1,4 +1,4 @@
-" Last Edit: 2020 Oct 12, 12:36:03 PM
+" Last Edit: 2020 Oct 12,  1:36:03 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -1189,6 +1189,8 @@ endfunction
 " execute pathogen#infect()
 
 " dense-analysis/ale
+let g:ale_completion_enabled=1
+
 packloadall
 " silent! helptags ALL
 helptags ALL

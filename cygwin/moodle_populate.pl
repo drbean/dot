@@ -1,3 +1,5 @@
+task=(general read pic question information solution opinion)
+
 course=$(Moosh -n course-create -f 'Teach Yourself TOEIC Speaking' -d 'TOEIC Speaking prep: quizzes, slides, practice tests' -F topics -n 15 toeic)
 echo "course=$course"
 
@@ -21,7 +23,6 @@ dummy_category=8
 
 # on creating dummy quiz in General Notifications??
 top_cat=1
-task=(general read pic question information solution opinion)
 ex_cat=$(Moosh -n gradecategory-create -n exercises $top_cat $course)
 echo "ex_grade_cat=$ex_cat"
 # ex_cat=6
@@ -36,33 +37,17 @@ for e in {0..4}
 done
 
 # on creating question (editing quiz) for dummy quiz in General Notifications??
+# after creating file system repos
+course=2
+course_name='speaking/test'
 context=25 # 'toeic' context
 parent=4 # 4 | Default for toeic
-q_cat=$(Moosh -n questioncategory-create --reuse -p $parent -c $context -d 'How to read a text' read)
-echo "read q_cat=$q_cat"
-# after creating 'read' file system repo
-#q_cat=9
-grade_cat=4
-sect='read'
-course=2
-perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>$q_cat, g=>$grade_cat, c=>$course, n=>\"$course_name\" })"
-
-q_cat=$(Moosh -n questioncategory-create --reuse -p $parent -c $context -d 'Describing pictures' pic)
-echo "pic q_cat=$q_cat"
-# after creating 'pic' file system repo
-# q_cat=10
-grade_cat=5
-sect='pic'
-course=2
-course_name='speaking/test'
-perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>$q_cat, g=>$grade_cat, c=>$course, n=>\"$course_name\" })"
-
-q_cat=$(Moosh -n questioncategory-create --reuse -p $parent -c $context -d 'Understanding information' information)
-echo "information q_cat=$q_cat"
-# after creating 'pic' file system repo
-# q_cat=10
-grade_cat=7
-sect='information'
-course=2
-course_name='speaking/test'
-perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>$q_cat, g=>$grade_cat, c=>$course, n=>\"$course_name\" })"
+section=('read' 'pic' 'question' 'information')
+info=('How to read a text' 'Describing pictures' 'Answering questions' 'Understanding information')
+for i in 3 ; do
+q_cat=$(Moosh -n questioncategory-create --reuse -p $parent -c $context -d "${info[$i]}" ${section[$i]})
+	echo "${section[$i]} q_cat=$q_cat"
+	grade_cat=$(($i+4))
+	sect=${section[$i]}
+	perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>$q_cat, g=>$grade_cat, c=>$course, n=>\"$course_name\" })"
+done

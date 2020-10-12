@@ -1,4 +1,4 @@
-" Last Edit: 2020 Sep 28,  3:42:50 PM
+" Last Edit: 2020 Oct 12, 12:11:17 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -386,21 +386,21 @@ map <LocalLeader>i :call Insert_increment()<CR>
 "  endif
 "endif
 
-" YouCompleteMe
-
-augroup load_ycm
-  autocmd!
-  autocmd CursorHold, CursorHoldI * :packadd YouCompleteMe
-                                \ | autocmd! load_ycm
-augroup END
+"" YouCompleteMe
+"
+"augroup load_ycm
+"  autocmd!
+"  autocmd CursorHold, CursorHoldI * :packadd YouCompleteMe
+"                                \ | autocmd! load_ycm
+"augroup END
 
 augroup perl
 au!
 
-" syntastic
-
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = ["perl", "perlcritic", "podchecker"]
+"" syntastic
+"
+"let g:syntastic_enable_perl_checker = 1
+"let g:syntastic_perl_checkers = ["perl", "perlcritic", "podchecker"]
 
 " delimitMate
 
@@ -1186,6 +1186,6 @@ function! DigraphLookup()
 endfunction 
 
 " pathogen first
-execute pathogen#infect()
+" execute pathogen#infect()
 
 

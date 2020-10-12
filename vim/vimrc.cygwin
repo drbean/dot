@@ -1,4 +1,4 @@
-" Last Edit: 2020 Oct 12, 12:11:17 PM
+" Last Edit: 2020 Oct 12, 12:14:19 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -1188,4 +1188,6 @@ endfunction
 " pathogen first
 " execute pathogen#infect()
 
-
+packloadall
+" silent! helptags ALL
+helptags ALL

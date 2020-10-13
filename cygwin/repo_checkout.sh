@@ -21,7 +21,7 @@ cd ~/curriculum
 
 for p in online; do svn up curriculum/$p ; done
 svn up ~/curriculum/pages/homepage/markdown --parents
-svn up ~/curriculum/speaking/test/{online,cards.yaml} --parents
+svn up ~/curriculum/speaking/test/{online,information/cards.yaml} --parents
 for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curriculum/pages/$p --depth=empty && svn up ~/curriculum/pages/$p/homepagePost.html5 ; done
 
 cd 

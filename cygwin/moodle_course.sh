@@ -24,6 +24,7 @@ top_cat=1
 ex_cat=$(Moosh -n gradecategory-create -n exercises $top_cat $course)
 echo "ex_grade_cat=$ex_cat"
 # ex_cat=6
+task=(general read pic question information solution opinion)
 for c in {0..6}
 	do Moosh -n gradecategory-create -n ${task[$c]} $ex_cat $course
 done

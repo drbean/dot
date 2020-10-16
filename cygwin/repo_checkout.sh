@@ -6,7 +6,7 @@ cd ~/dot
 for u in chocolatey cygwin ; do svn up $u ; done
 svn up alternatives.sh && . alternatives.sh
 svn up bash/bashrc bash/bash_profile --parents
-svn up screen/{dot,screen,course,moodle,cygwin,web,irc}.rc --parents
+svn up screen/{dot,screen,course,moodle,cygwin,utility,web,irc}.rc --parents
 svn up vim/vimrc.cygwin --parents
 svn up postgres/populate.sql --parents
 svn up browser/lynx{-site.cfg,.lss} --parents

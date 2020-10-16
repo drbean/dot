@@ -7,3 +7,4 @@ for m in moodle yaml4moodle
 	make install
 done
 rm /usr/local/share/perl5/site_perl/5.30/Moodle/Command/question_import.pm
+cd ~/ttb

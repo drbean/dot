@@ -5,5 +5,5 @@ ForEach ($p in "cygwin") { choco install $p --params "/DesktopIcon /Site:http://
 # $pstring = ""
 # ForEach ($p in $ps) { $pstring = $pstring + " " + $p }
 # c:/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $pstring
-$qs = "qutebrowser", "pandoc"
+$qs = "qutebrowser", "nodejs", "pandoc"
 ForEach ($q in $qs) { choco install $q }

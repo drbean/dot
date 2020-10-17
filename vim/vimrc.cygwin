@@ -1,4 +1,4 @@
-" Last Edit: 2020 Oct 12,  1:36:03 PM
+" Last Edit: 2020 Oct 17,  2:47:00 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -406,54 +406,6 @@ au!
 
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
-
-augroup END 
-
-
-augroup haskell
-au!
-
-" syntastic
-
-map <Leader>s :SyntasticToggleMode<CR>
-
-set statusline=%<%f\ %h%m%r%=%-5.(%l,%c%V%)\ %P
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-map <silent> <LocalLeader>ti :GhcModTypeInsert<CR>
-map <silent> <LocalLeader>ts :GhcModSplitFunCase<CR>
-map <silent> <LocalLeader>tq :GhcModType<CR>
-map <silent> <LocalLeader>te :GhcModTypeClear<CR>
-
-" necoghc
-
-let g:haskellmode_completion_ghc = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
-" nerdtree
-
-map <Leader>tr :NERDTreeToggle<CR>
-
-" tabularize haskell tabs
-
-let g:haskell_tabular = 1
-
-vmap a= :Tabularize /=<CR>
-vmap a; :Tabularize /::<CR>
-vmap a- :Tabularize /-><CR>
-
-" Ctrl-P fuzzy file search
-
-map <silent> <Leader>t :CtrlP()<CR>
-noremap <leader>b<space> :CtrlPBuffer<cr>
-let g:ctrlp_custom_ignore = '\v[\/]dist$'
 
 augroup END 
 

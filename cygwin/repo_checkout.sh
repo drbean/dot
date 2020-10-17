@@ -27,7 +27,7 @@ for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curric
 cd 
 
 svn co http://github.com/drbean/yaml4moodle/trunk ttb/yaml4moodle --depth=empty
-for p in moodle yaml4moodle ; do svn up ttb/$p/{lib,script,Makefile.PL} ; done
+for p in moodle yaml4moodle ; do svn up ttb/$p/{lib,Makefile.PL} ; done
 znc
 git clone --depth 2 --no-single-branch http://github.com/drbean/moosh ~/moosh
 mkdir --parent /srv/www/cgi-bin && git clone --depth 2 --no-single-branch http://github.com/drbean/moodle /srv/www/cgi-bin/moodle && mkdir /var/lib/moodle/ && chmod 777 /var/lib/moodle

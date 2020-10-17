@@ -33,6 +33,6 @@ git clone --depth 2 --no-single-branch http://github.com/drbean/moosh ~/moosh
 mkdir --parent /srv/www/cgi-bin && git clone --depth 2 --no-single-branch http://github.com/drbean/moodle /srv/www/cgi-bin/moodle && mkdir /var/lib/moodle/ && chmod 777 /var/lib/moodle
 
 
-curl -sL install-node.now.sh | sh
+# curl -sL install-node.now.sh | sh
 mkdir -p ~/.vim/pack/git-plugins/start
-for v in delimitMate vim-surround ale ; do git clone --depth 1 https://github.com/drbean/$v.git ~/.vim/pack/git-plugins/start/$v ; done
+for v in delimitMate vim-surround ale ultisnips ; do git clone --depth 1 https://github.com/drbean/$v.git ~/.vim/pack/git-plugins/start/$v ; done

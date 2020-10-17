@@ -6,7 +6,7 @@ cd ~/dot
 for u in chocolatey cygwin ; do svn up $u ; done
 svn up alternatives.sh && . alternatives.sh
 svn up bash/bashrc bash/bash_profile --parents
-svn up screen/{dot,screen,course,moodle,cygwin,utility,web,irc}.rc --parents
+svn up screen/{dot,screen,course,moodle,cygwin,utility,web,irc,pagestranscripts}.rc --parents
 svn up vim/vimrc.cygwin --parents
 svn up postgres/populate.sql --parents
 svn up browser/lynx{-site.cfg,.lss} --parents
@@ -22,7 +22,7 @@ cd ~/curriculum
 for p in online; do svn up curriculum/$p ; done
 svn up ~/curriculum/pages/homepage/markdown --parents
 svn up ~/curriculum/speaking/test/{online,information/cards.yaml} --parents
-for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curriculum/pages/$p --depth=empty && svn up ~/curriculum/pages/$p/homepagePost.html5 ; done
+for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curriculum/pages/$p --depth=empty && svn up ~/curriculum/pages/$p/{styles.html,homepagePost.html5} ; done
 
 cd 
 
@@ -35,4 +35,4 @@ mkdir --parent /srv/www/cgi-bin && git clone --depth 2 --no-single-branch http:/
 
 # curl -sL install-node.now.sh | sh
 mkdir -p ~/.vim/pack/git-plugins/start
-for v in delimitMate vim-surround ale ultisnips ; do git clone --depth 1 https://github.com/drbean/$v.git ~/.vim/pack/git-plugins/start/$v ; done
+for v in delimitMate vim-surround ale ultisnips coc.nvim ; do git clone --depth 1 https://github.com/drbean/$v.git ~/.vim/pack/git-plugins/start/$v ; done

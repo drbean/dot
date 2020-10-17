@@ -17,6 +17,8 @@ export LANG=en_US.UTF8
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
+export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"
+
 #greg
 # export PATH=$HOME/.cabal/bin:$PATH
 # /etc/profile.d/cabalinstall.sh does it for me

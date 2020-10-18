@@ -18,9 +18,9 @@ export LANG=en_US.UTF8
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"
-# export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/node_modules/yarn/bin"
+export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/node_modules/yarn/bin"
 # export PATH=$PATH:"/cygdrive/c/Users/owuser/node_modules/yarn/bin"
-export PATH=$PATH:"/home/owuser/node_modules/yarn/bin"
+# export PATH=$PATH:"/home/owuser/node_modules/yarn/bin"
 
 #greg
 # export PATH=$HOME/.cabal/bin:$PATH

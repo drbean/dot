@@ -1,4 +1,4 @@
-" Last Edit: 2020 Oct 17,  2:47:00 PM
+" Last Edit: 2020 Oct 18,  8:59:16 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -1142,6 +1142,7 @@ endfunction
 
 " dense-analysis/ale
 let g:ale_completion_enabled=1
+let g:ale_disable_lsp = 1
 
 packloadall
 " silent! helptags ALL

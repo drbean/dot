@@ -36,3 +36,4 @@ mkdir --parent /srv/www/cgi-bin && git clone --depth 2 --no-single-branch http:/
 # curl -sL install-node.now.sh | sh
 mkdir -p ~/.vim/pack/git-plugins/start
 for v in delimitMate vim-surround ale ultisnips coc.nvim ; do git clone --depth 1 https://github.com/drbean/$v.git ~/.vim/pack/git-plugins/start/$v ; done
+echo '{"diagnostic.displayByAle": true}' > ~/.vim/coc-settings.json

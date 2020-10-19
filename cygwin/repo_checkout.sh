@@ -39,4 +39,4 @@ for v in delimitMate vim-surround ale ultisnips coc.nvim ; do git clone --depth 
 echo '{"diagnostic.displayByAle": true}' > ~/.vim/coc-settings.json
 cd /cygdrive/c/Program\ Files/nodejs/ && npm install yarn && cd -
 ln -s ~/dot/cygwin/ /cygdrive/c/cygwin # not working? try in pshell:
-# New-Item -Path C:\home -ItemType SymbolicLink -Value \tools\cygwin\home
+# New-Item -Path C:\home -ItemType SymbolicLink -Value C:\tools\cygwin\home

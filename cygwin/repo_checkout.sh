@@ -37,3 +37,4 @@ mkdir --parent /srv/www/cgi-bin && git clone --depth 2 --no-single-branch http:/
 mkdir -p ~/.vim/pack/git-plugins/start
 for v in delimitMate vim-surround ale ultisnips coc.nvim ; do git clone --depth 1 https://github.com/drbean/$v.git ~/.vim/pack/git-plugins/start/$v ; done
 echo '{"diagnostic.displayByAle": true}' > ~/.vim/coc-settings.json
+cd /cygdrive/c/Program\ Files/nodejs/ && npm install yarn && cd -

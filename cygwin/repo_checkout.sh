@@ -38,3 +38,5 @@ mkdir -p ~/.vim/pack/git-plugins/start
 for v in delimitMate vim-surround ale ultisnips coc.nvim ; do git clone --depth 1 https://github.com/drbean/$v.git ~/.vim/pack/git-plugins/start/$v ; done
 echo '{"diagnostic.displayByAle": true}' > ~/.vim/coc-settings.json
 cd /cygdrive/c/Program\ Files/nodejs/ && npm install yarn && cd -
+ln -s ~/dot/cygwin/ /cygdrive/c/cygwin # not working? try in pshell:
+# New-Item -Path C:\home -ItemType SymbolicLink -Value \tools\cygwin\home

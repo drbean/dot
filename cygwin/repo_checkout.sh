@@ -37,8 +37,7 @@ mkdir --parent /srv/www/cgi-bin && git clone --depth 2 --no-single-branch http:/
 # curl -sL install-node.now.sh | sh
 mkdir -p ~/.vim/pack/git-plugins/start
 for v in delimitMate vim-surround ale ultisnips coc.nvim ; do git clone --depth 1 https://github.com/drbean/$v.git ~/.vim/pack/git-plugins/start/$v ; done
-cd /cygdrive/c/Program\ Files/nodejs/ && npm install yarn && cd -
 ln -s /cygdrive/c/tools/cygwin/home /cygdrive/c/home # not working? try in pshell:
 # New-Item -Path C:\home -ItemType SymbolicLink -Value C:\tools\cygwin\home
 # cmd /c mklink /D c:\home c:\tools\cygwin\home
-cd /cygdrive/c/Users/AppData/Roaming/npm && npm install bash-language-server && cd -
+cd /cygdrive/c/Users/AppData/Roaming/npm && npm install yarn bash-language-server && cd -

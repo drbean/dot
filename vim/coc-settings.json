@@ -8,5 +8,6 @@
       "ignoredRootPaths": ["~"]
     }
   },
+  "sh.enable": true,
   "sh.commandPath": "C:/Users/owuser/AppData/Roaming/npm"
 }

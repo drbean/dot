@@ -40,4 +40,4 @@ for v in delimitMate vim-surround ale ultisnips coc.nvim ; do git clone --depth 
 ln -s /cygdrive/c/tools/cygwin/home /cygdrive/c/home # not working? try in pshell:
 # New-Item -Path C:\home -ItemType SymbolicLink -Value C:\tools\cygwin\home
 # cmd /c mklink /D c:\home c:\tools\cygwin\home
-cd /cygdrive/c/Users/AppData/Roaming/npm && npm install yarn bash-language-server && cd -
+cd /cygdrive/c/Users/$USER/AppData/Roaming/npm && npm install yarn bash-language-server && cd -

@@ -13,7 +13,7 @@ svn up browser/lynx{-site.cfg,.lss} --parents
 
 for ext in rc _profile ; do cp ~/dot/bash/bash$ext ~/.bash$ext ; done
 cp ~/dot/vim/vimrc.cygwin ~/.vimrc
-cp ~/dot/vim/coc-settings.json ~/.vim/ --parents
+mkdir ~/.vim/ && cp ~/dot/vim/coc-settings.json ~/.vim/
 cp ~/dot/screen/screen.rc ~/.screenrc
 cp ~/dot/browser/lynx{-site.cfg,.lss} /etc/
 for i in znc weechat ; do svn co http://github.com/drbean/dot/trunk/irc/$i ~/.$i ; done

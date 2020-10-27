@@ -162,7 +162,7 @@ function cm_id () {
 	module_string_preshrunk module_id cm_string_preshrunk
     module=$1
     activity_id=$2
-    cd /var/www/cgi-bin/moodle || exit 1
+    cd /srv/www/cgi-bin/moodle || exit 1
     module_string=$(Moosh -n sql-run "select id from {modules} where name='$module'")
     sqlrun_prefix="
 Record 1

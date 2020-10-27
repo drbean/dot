@@ -1,14 +1,6 @@
-for p in subversion openssh znc screen git
-	do /cygdrive/c/tools/cygwin/cygwinsetup.exe \
-		--quiet-mode --no-desktop --no-startmenu \
-		--root c:/tools/cygwin --local-package-dir \
-		c:/tools/cygwin/packages --site \
-		http://ftp.ntu.edu.tw/cygwin/ --packages $p
-	done
+p=subversion,openssh,znc,screen,git
+cyg_pack -p $p
 p=weechat,lftp,vim,mutt,exim,lynx,weechat-perl,\
 weechat-python,perl,\
 perl-YAML,perl-List-MoreUtils,cron,perl-XML-DOM,python37
-/cygdrive/c/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop \
-	--no-startmenu --root c:/tools/cygwin --local-package-dir \
-	c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ \
-	--packages $p
+cyg_pack -p $p

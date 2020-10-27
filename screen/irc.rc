@@ -9,6 +9,9 @@ screen 3
 stuff "lynk http://localhost:6666"
 screen 4
 stuff "su -^M"
+stuff "znc^M"
+stuff "ps aux | grep znc^M"
+stuff "kill -s SIGQUIT "
 screen 9
 stuff "man weechat"
 screen 1

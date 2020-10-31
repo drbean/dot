@@ -30,14 +30,15 @@ cd
 svn co http://github.com/drbean/yaml4moodle/trunk ttb/yaml4moodle --depth=empty
 for p in moodle yaml4moodle ; do svn up ttb/$p/{lib,Makefile.PL} ; done
 znc
-git clone --depth 2 --no-single-branch http://github.com/drbean/moosh ~/moosh
-mkdir --parent /srv/www/cgi-bin && git clone --depth 2 --no-single-branch http://github.com/drbean/moodle /srv/www/cgi-bin/moodle && mkdir /var/lib/moodle/ && chmod 777 /var/lib/moodle
 
 
 # curl -sL install-node.now.sh | sh
 mkdir -p ~/.vim/pack/git-plugins/start
 for v in delimitMate vim-surround ale ultisnips coc.nvim ; do git clone --depth 1 https://github.com/drbean/$v.git ~/.vim/pack/git-plugins/start/$v ; done
-ln -s /cygdrive/c/tools/cygwin/home /cygdrive/c/home # not working? try in pshell:
+# ln -s /cygdrive/c/tools/cygwin/home /cygdrive/c/home # not working! try in pshell:
 # New-Item -Path C:\home -ItemType SymbolicLink -Value C:\tools\cygwin\home
 # cmd /c mklink /D c:\home c:\tools\cygwin\home
 cd /cygdrive/c/Users/$USER/AppData/Roaming/npm && npm install yarn bash-language-server && cd -
+
+git clone --depth 2 --no-single-branch http://github.com/drbean/moosh ~/moosh
+mkdir --parent /srv/www/cgi-bin && git clone --depth 2 --no-single-branch http://github.com/drbean/moodle /srv/www/cgi-bin/moodle && mkdir /var/lib/moodle/ && chmod 777 /var/lib/moodle

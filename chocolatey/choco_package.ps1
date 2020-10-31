@@ -8,3 +8,5 @@ ForEach ($p in "cygwin") { choco install $p --params "/DesktopIcon /Site:http://
 # $qs = "qutebrowser", "nodejs", "pandoc"
 $qs = "nodejs", "pandoc" # install qutebrowser by hand
 ForEach ($q in $qs) { choco install $q }
+
+cmd /c mklink /d c:\home c:\tools\cygwin\home

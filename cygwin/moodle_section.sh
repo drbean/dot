@@ -4,9 +4,9 @@ course=2
 course_name='speaking/test'
 context=25 # 'toeic' context
 parent=4 # 4 | Default for toeic
-section=('read' 'pic' 'question' 'information' 'solution' 'opinion')
-info=('How to read a text' 'Describing pictures' 'Answering questions' 'Understanding information' 'Solving problems' 'Expressing opinions')
-for i in {0..5} ; do
+section=('read' 'pic' 'question' 'information' 'solution' 'opinion' 'test0' 'test1')
+info=('How to read a text' 'Describing pictures' 'Answering questions' 'Understanding information' 'Solving problems' 'Expressing opinions' 'Test 1' 'Test 2')
+for i in {0..7} ; do
 q_cat=$(Moosh -n questioncategory-create --reuse -p $parent -c $context -d "${info[$i]}" ${section[$i]})
 	echo "${section[$i]} q_cat=$q_cat"
 	grade_cat=$(($i+4))

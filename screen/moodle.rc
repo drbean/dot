@@ -5,6 +5,10 @@ stuff "# for t in general read pic question information solution opinion; do mkd
 stuff "# git checkout production^M"
 stuff "# /usr/sbin/apachectl start^M"
 stuff "# rm -rf /var/lib/moodle/*cache^M"
+stuff "# cyg_pack -p ctags^M"
+stuff "# ctags -R --fields=+aimS --php-kinds=cdfint --languages=php \
+	--extras=+q --tag-relative=yes --exclude='.git' --exclude='vendor' \
+	--exclude='node_modules' --exclude='composer.phar' --totals=yes^M"
 
 screen 2
 stuff "cd /srv/www/cgi-bin/moodle/mod/quiz/report/^M"
@@ -32,6 +36,9 @@ stuff "# for g in {1..5} ; do Moosh group-memberadd  -g $g $((277 + $g*2 - 1))  
 stuff "# for g in {1..5} ; do Moosh group-memberadd -g $g -c 17 media_student_$(($g*2 - 1))  media_student_$(($g*2)) ; done^M"
 stuff "# COURSE_ID=44 ; moopl section_populate -s 5 -q 6133 -g 633 -l 43 -m quiz_tag_\${COURSE_NAME[\$COURSE_ID]}_\$WEEK -c \$COURSE_ID -n \${COURSE_NAME[\$COURSE_ID]}^M"
 stuff "# for id in {713..713} ; do cm_id \$TYPE \$id | while read -r item ; do Moosh -n activity-delete \$item ; done ; done"
+stuff "# . ~/dot/cygwin/moodle_course.sh^M"
+stuff "# . ~/dot/cygwin/moodle_section.sh^M"
+
 screen 4
 stuff "psql -p 5432 mood082^M"
 screen 5
@@ -41,6 +48,7 @@ stuff "cd ~/moodle/^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/.\/\$page\/index.html/\" www/_site/*.html; ; done^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/..\/\$page\/index.html/\" www/_site/*/*.html; done^M"
 stuff "# pandoc -o www/_site/commands/index_pandoc.html www/commands/index.md^M"
+stuff "# . ~/dot/cygwin/web_pack.sh && . ~/dot/cygwin/moosh_setup.sh^M"
 screen 8
 stuff "lynk https://sac.nuu.edu.tw/cgi-bin/moodle"
 screen 9

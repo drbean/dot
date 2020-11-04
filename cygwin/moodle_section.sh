@@ -5,8 +5,6 @@ course_name='speaking/test'
 context=25 # 'toeic' context
 parent=4 # 4 | Default for toeic
 section=('general' 'read' 'pic' 'question' 'information' 'solution' 'opinion' 'test0' 'test1')
-name=('general' 'Question 1–2 Read a text aloud' 'Question 3 Describe a picture' 'Question 4-6 Respond to questions' 'Question 7-9 Respond to questions using information provided' 'Question 10 Propose a solution' 'Question 11 Express an opinion')
-description=('The TOEIC test' 'How to read a text' 'Describing pictures' 'Answering questions' 'Understanding information' 'Solving problems' 'Expressing opinions' 'Test 1' 'Test 2')
 
 for s in {0..6}
 do

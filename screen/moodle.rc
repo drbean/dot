@@ -6,9 +6,7 @@ stuff "# git checkout production^M"
 stuff "# /usr/sbin/apachectl start^M"
 stuff "# rm -rf /var/lib/moodle/*cache^M"
 stuff "# cyg_pack -p ctags^M"
-stuff "# ctags -R --fields=+aimS --php-kinds=cdfint --languages=php \
-	--extras=+q --tag-relative=yes --exclude='.git' --exclude='vendor' \
-	--exclude='node_modules' --exclude='composer.phar' --totals=yes^M"
+stuff "# ctags -R --fields=+aimS --php-kinds=cdfi --languages=php --tag-relative=yes --exclude='.git' --totals=yes^M"
 
 screen 2
 stuff "cd /srv/www/cgi-bin/moodle/mod/quiz/report/^M"

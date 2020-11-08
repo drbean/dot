@@ -1,3 +1,4 @@
+if [[ ! -x /cygdrive/c/Program\ Files/nodejs/npm ]] ; then echo "No npm. Install node.js\n" && return ; fi
 cd
 for p in dot edit ttb curriculum ; do svn co http://github.com/drbean/$p/trunk $p --depth=empty ; done
 

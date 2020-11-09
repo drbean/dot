@@ -46,6 +46,8 @@ stuff "cd ~/moodle/^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/.\/\$page\/index.html/\" www/_site/*.html; ; done^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/..\/\$page\/index.html/\" www/_site/*/*.html; done^M"
 stuff "# pandoc -o www/_site/commands/index_pandoc.html www/commands/index.md^M"
+screen 6
+stuff "cd ~/moosh^M"
 stuff "# . ~/dot/cygwin/web_pack.sh && . ~/dot/cygwin/moosh_setup.sh^M"
 screen 8
 stuff "lynk https://sac.nuu.edu.tw/cgi-bin/moodle"

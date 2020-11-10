@@ -1,8 +1,7 @@
 screen 1
 stuff "mkdir --parent /srv/www/cgi-bin/ /var/lib/moodle/^M"
-stuff "# cd /srv/www/cgi-bin/moodle && git status^M"
+stuff "# cd /srv/www/cgi-bin/moodle && git checkout production^M"
 stuff "# for t in general read pic question information solution opinion; do mkdir /var/lib/moodle/repository/\$t --parent ; done^M"
-stuff "# git checkout production^M"
 stuff "# /usr/sbin/apachectl start^M"
 stuff "# rm -rf /var/lib/moodle/*cache^M"
 stuff "# cyg_pack -p ctags^M"

@@ -6,7 +6,7 @@ course_name='speaking/test'
 
 dummy=$(Moosh -n activity-add --section 0 --name dummy -o="--visible=0" quiz $course)
 echo "dummy=$dummy"
-dummy_quiz=$((dummy+1))
+dummy_quiz=$(($dummy+1))
 # dummy_quiz=2
 dummy_category=8
 

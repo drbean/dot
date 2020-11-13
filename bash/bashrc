@@ -45,10 +45,10 @@ function cyg_pack () {
             *) return 1 # illegal option
         esac
     done
-    if [[ -x c:/tools/cygwin/cygwinsetup.exe ]] ; then
-	c:/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
-    elif [[ -x c:/Users/$USER/Downloads/setup-x86_64.exe ]] ; then
+    if [[ -x c:/Users/$USER/Downloads/setup-x86_64.exe ]] ; then
 	c:/Users/$USER/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/cygwin64/etc/setup --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
+    elif [[ -x c:/tools/cygwin/cygwinsetup.exe ]] ; then
+	c:/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
     fi
 }
 

@@ -1,5 +1,5 @@
 svn up ~/ttb/moodle
-cyg_pack -p perl-ExtUtils-MakeMaker,make
+cyg_pack perl-ExtUtils-MakeMaker,make
 for m in moodle yaml4moodle
 	do cd ~/ttb/$m
 	perl Makefile.PL INST_SCRIPT=script

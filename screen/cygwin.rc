@@ -7,13 +7,13 @@ stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr 
 stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr install collection-\$c ; done^M"
 
 screen
-stuff "# for p in httpd httpd-devel httpd-mod_php7 httpd-mod_ssl ; do cyg_pack -p \$p ; done^M"
-stuff "# for p in php php-json php-iconv php-zip php-phar php-zlib php-tokenizer php-simplexml php-xmlwriter php-mbstring php-pgsql php-curl php-ctype php-gd php-intl php-fileinfo php-xmlrpc php-soap php-xmlreader php-opcache; do cyg_pack -p \$p ; done^M"
-stuff "# cyg_pack -p git^M"
+stuff "# for p in httpd httpd-devel httpd-mod_php7 httpd-mod_ssl ; do cyg_pack \$p ; done^M"
+stuff "# for p in php php-json php-iconv php-zip php-phar php-zlib php-tokenizer php-simplexml php-xmlwriter php-mbstring php-pgsql php-curl php-ctype php-gd php-intl php-fileinfo php-xmlrpc php-soap php-xmlreader php-opcache; do cyg_pack \$p ; done^M"
+stuff "# cyg_pack git^M"
 stuff "# for m in moosh moodle ; do git clone --depth 2 --no-single-branch http://github.com/drbean/\$m ; done && mkdir --parent /srv/www/cgi-bin && mv moodle/ /srv/www/cgi-bin/moodle/ && mkdir /var/lib/moodle/ && chmod 777 /var/lib/moodle^M"
 
 screen 4
-stuff "# for p in postgresql libpq5 libpq-devel libpgtypes3 postgresql-client postgresql-devel ; do cyg_pack -p \$p ; done^M"
+stuff "# for p in postgresql libpq5 libpq-devel libpgtypes3 postgresql-client postgresql-devel ; do cyg_pack \$p ; done^M"
 stuff "# sed -iBAK -r -e \"s/\^INITDB_ARGS=.*$/INITDB_ARGS=\\\"-E UTF8 --locale=en_US.UTF-8 -D \\\$PGDATA\\\"/\" /etc/rc.d/init.d/postgresql^M"
 stuff "# diff -u /etc/rc.d/init.d/postgresql{BAK,}^M"
 stuff "# cygserver-config && cygrunsrv --start cygserver && for a in initdb install start ; do  /etc/rc.d/init.d/postgresql \$a ; done^M"
@@ -32,6 +32,6 @@ stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do lftp -c 'o
 stuff "# for backup in moodle082.sql sac_moodle_var_lib_fedora31 ; do duplicity --ignore-errors --no-encryption -v8 -num-retries 2 file://\$HOME/\$backup ~/\$backup ; done ^M"
 
 screen 7
-stuff "# for p in gcc gcc-g++ make libcrypt-devel ; do cyg_pack -p \$p ; done^M"
+stuff "# for p in gcc gcc-g++ make libcrypt-devel ; do cyg_pack \$p ; done^M"
 stuff "# cpan App::cpanminus^M"
 stuff "# catalyst^M"

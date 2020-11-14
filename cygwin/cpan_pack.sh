@@ -1,4 +1,4 @@
-cyg_pack -p gcc-g++,make,libcrypt-devel,libnsl-devel
+cyg_pack gcc-g++,make,libcrypt-devel,libnsl-devel
 # perl -MCPAN -e "CPAN::Shell->notest('install', 'Module::Build::XSUtil')"
 # perl -MCPAN -e "CPAN::Shell->notest('install', 'Perl::LanguageServer')"
 perl -MCPAN -e "CPAN::Shell->notest('install', 'App::Cmd')"

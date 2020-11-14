@@ -36,15 +36,7 @@ alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation 
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
 function cyg_pack () {
-    OPTIND=1
-    local arg package
-    while getopts 'p:' arg
-    do
-        case ${arg} in 
-            p) package=${OPTARG};;
-            *) return 1 # illegal option
-        esac
-    done
+    package=$1
     if [[ -x c:/Users/$USER/Downloads/setup-x86_64.exe ]] ; then
 	c:/Users/$USER/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/cygwin64/etc/setup --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
     elif [[ -x c:/tools/cygwin/cygwinsetup.exe ]] ; then

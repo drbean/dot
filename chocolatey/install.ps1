@@ -2,7 +2,7 @@
 # too late
 # Set-ExecutionPolicy Bypass -Scope Process -Force;
 mkdir c:/ProgramData/choco-cache
-cp f:\chocolatey.nupkg c:\ProgramData\choco-cache\chocolatey.nupkg
+cp c:Users\owuser\Downloads\chocolatey.nupkg c:\ProgramData\choco-cache\chocolatey.nupkg
 
 # Download and install Chocolatey nupkg from an OData (HTTP/HTTPS) url such as Artifactory, Nexus, ProGet (all of these are recommended for organizational use), or Chocolatey.Server (great for smaller organizations and POCs)
 # This is where you see the top level API - with xml to Packages - should look nearly the same as https://chocolatey.org/api/v2/

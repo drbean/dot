@@ -36,6 +36,7 @@ znc
 # curl -sL install-node.now.sh | sh
 mkdir -p ~/.vim/pack/git-plugins/start
 for v in delimitMate vim-surround ale ultisnips coc.nvim ; do git clone --depth 1 https://github.com/drbean/$v.git ~/.vim/pack/git-plugins/start/$v ; done
+
 # ln -s /cygdrive/c/tools/cygwin/home /cygdrive/c/home # not working! try in pshell:
 # New-Item -Path C:\home -ItemType SymbolicLink -Value C:\tools\cygwin\home
 # cmd /c mklink /D c:\home c:\tools\cygwin\home

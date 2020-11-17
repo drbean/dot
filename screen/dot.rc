@@ -35,7 +35,7 @@ stuff "# cp screen/screen.rc ~/.screenrc^M"
 stuff "# su -c 'cp bash/bash_completion/*[\^~] /etc/bash_completion.d/'^M"
 stuff "# cp ~/dot/cygwin/repo_checkout.sh ~/dot/chocolatey/choco_package.{ps1,sh} /cygdrive/f^M"
 stuff "for script in chocolatey.nupkg install.ps1 cygwin_package.sh ; do diff -u {~/dot/chocolatey,/cygdrive/c/Users/owuser/Downloads}/\$script ; done^M"
-stuff "diff -u {~/dot/cygwin/,/cygdrive/c/Users/owuser/Downloads/repo_checkout.sh^M"
+stuff "diff -u {~/dot/cygwin,/cygdrive/c/Users/owuser/Downloads}/repo_checkout.sh^M"
 stuff "# lftp -c 'open web.nuu.edu.tw && cd public_html && put chocolatey/cygwin_package.sh && put cygwin/repo_checkout.sh && quit'^M"
 screen 0
 stuff "v bash/bashrc bash/bash_completion screen/ vim/ cygwin/"

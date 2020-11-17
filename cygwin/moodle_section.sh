@@ -12,6 +12,6 @@ for i in {0..8} ; do
 	echo "${section[$i]} q_cat=$q_cat"
 	grade_cat=$(($i+4))
 	sect=${section[$i]}
-	perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>$q_cat, g=>$grade_cat, c=>$course, n=>\"$course_name\" })"
+	perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>\"$q_cat\", g=>$grade_cat, c=>$course, n=>\"$course_name\" })"
 done
 

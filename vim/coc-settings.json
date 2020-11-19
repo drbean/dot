@@ -1,29 +1,35 @@
 {
   "diagnostic.displayByAle": true,
   "languageserver": {
-    "bash": {
-      "command": "bash-language-server",
+    "json": {
+      "command": "json-language-server",
       "args": ["start"],
-      "filetypes": ["sh"],
+      "filetypes": ["json"],
+      "ignoredRootPaths": ["~"]
+    },
+    "yaml": {
+      "command": "yaml-language-server",
+      "args": ["start"],
+      "filetypes": ["yaml"],
       "ignoredRootPaths": ["~"]
     },
     "haskell": {
-      "command": "ghcide",
-      "args": [
-        "--lsp"
-      ],
-      "rootPatterns": [
-        ".stack.yaml",
-        ".hie-bios",
-        "BUILD.bazel",
-        "cabal.config",
-        "package.yaml"
-      ],
-      "filetypes": [
-        "hs",
-        "lhs",
-        "haskell"
-      ]
+       "command": "ghcide",
+       "args": [
+         "--lsp"
+       ],
+       "rootPatterns": [
+         ".stack.yaml",
+         ".hie-bios",
+         "BUILD.bazel",
+         "cabal.config",
+         "package.yaml"
+       ],
+       "filetypes": [
+         "hs",
+         "lhs",
+         "haskell"
+       ]
     }
   },
   "sh.enable": true,

@@ -50,7 +50,10 @@ stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/..\/
 stuff "# pandoc -o www/_site/commands/index_pandoc.html www/commands/index.md^M"
 stuff "# . ~/dot/cygwin/web_pack.sh && . ~/dot/cygwin/moosh_setup.sh^M"
 screen 8
-stuff "lynk http://localhost/cgi-bin/moodle"
+stuff "# lynk http://localhost/cgi-bin/moodle^M"
+stuff "# lynk http://localhost/cgi-bin/moodle/course/view.php?id=2^M"
+stuff "# lynk http://localhost/cgi-bin/moodle/mod/quiz/view.php?id=2^M"
+stuff "# lynk http://localhost/cgi-bin/moodle/mod/quiz/edit.php?cmid=2^M"
 screen 9
 stuff "lynk file:///home/owuser/moosh/www/_site/commands/index_pandoc.html"
 screen 0

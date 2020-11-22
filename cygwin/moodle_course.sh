@@ -11,6 +11,7 @@ dummy_quiz=$(($dummy+0))
 toeic_context=16
 top_cat=$(Moosh -n questioncategory-create --parent 0 --context $toeic_context top)
 toeic_cat=$(Moosh -n questioncategory-create --parent $top_cat --context $toeic_context "toeic default")
+general_cat=$(Moosh -n questioncategory-create --parent $toeic_cat --context $toeic_context "general")
 # toeic_cat=4
 
 file='/var/lib/moodle/repository/general/quiz_dummy_jigsaw_0.xml'
@@ -34,4 +35,3 @@ echo "test_grade_cat=$test_cat"
 for e in {0..4}
 	do Moosh -n gradecategory-create -n "practice_test_$e" $test_cat $course
 done
-

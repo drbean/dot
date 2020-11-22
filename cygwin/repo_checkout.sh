@@ -28,8 +28,7 @@ for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curric
 
 cd 
 
-svn co http://github.com/drbean/yaml4moodle/trunk ~/ttb/yaml4moodle --depth=empty
-for p in moodle yaml4moodle ; do svn up ~/ttb/$p/{lib,Makefile.PL} --parents; done
+for p in moodle ; do svn up ~/ttb/$p/{lib,Makefile.PL} --parents; done
 znc
 
 

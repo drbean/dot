@@ -2,7 +2,7 @@
 # after creating file system repos
 course=2
 course_name='speaking/test'
-context=25 # 'toeic' context
+context=16 # 'toeic' context
 parent=4 # 4 | Default for toeic
 section=('general' 'read' 'pic' 'question' 'information' 'solution' 'opinion' 'test0' 'test1')
 

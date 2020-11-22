@@ -3,7 +3,7 @@ stuff "v ./$TOPIC/dic.yaml ./$TOPIC/cards.yaml ./$TOPIC/slides.md ./$TOPIC/$STOR
 
 screen 1
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
-stuff "# yaml4moodle intro -c $COURSE -t $TOPIC -s $STORY -a ${TYPE:-\"description\"} -f $FORM > $HOME/curriculum/$COURSE/$TOPIC/intro.md^M"
+stuff "# moopl intro -c $COURSE -t $TOPIC -s $STORY -a ${TYPE:-\"description\"} -f $FORM > $HOME/curriculum/$COURSE/$TOPIC/intro.md^M"
 stuff "# svn mkdir ./$TOPIC && lftp -c 'open greg@web.nuu.edu.tw && cd public_html/ && mkdir $VIEW && qui'^M"
 stuff "# vroom -html ./$TOPIC && lftp -c 'open greg@web.nuu.edu.tw && cd public_html/$VIEW && mput ./$TOPIC/html/*.html && qui'^M"
 stuff "# xelatex bingo.tex && evince bingo.pdf^M"
@@ -22,7 +22,7 @@ stuff "# FORM=$FORM; ~/ttb/dictation/script/text_dic $COURSE ctest $STORY \$FORM
 stuff "# FORM=$FORM; perl ~/ttb/dictation/script/dic text -c $COURSE -z ctest -s $STORY -f \$FORM -t $TOPIC -p a7 && xelatex --output-directory=$HOME/curriculum/$COURSE/$TOPIC ./$TOPIC/dic_${STORY}_\$FORM.tex && lftp -c \"open greg@web.nuu.edu.tw && cd public_html/$COURSE && put ./$TOPIC/dic_${STORY}_\$FORM.pdf\" # evince ./$TOPIC/dic_${STORY}_\$FORM.pdf^M"
 stuff "# lpr $TOPIC/dic_${STORY}.pdf^M"
 stuff "# sudo mkdir /var/lib/moodle/repository/$TOPIC && sudo chown apache:moodle /var/lib/moodle/repository/$TOPIC && sudo chmod 777 /var/lib/moodle/repository/$TOPIC^M"
-stuff "# FORM=$FORM; STORY=$STORY; QUIZ=$QUIZ; TOPIC=$TOPIC; for format in gift xml ; do yaml4moodle \$format -c $COURSE -t \$TOPIC -s \$STORY -q \$QUIZ -f \$FORM > /var/lib/moodle/repository/\${TOPIC}/quiz_\${STORY}_\${QUIZ}_\${FORM}.\$format ; done^M"
+stuff "# FORM=$FORM; STORY=$STORY; QUIZ=$QUIZ; TOPIC=$TOPIC; for format in gift xml ; do moopl \$format -c $COURSE -t \$TOPIC -s \$STORY -q \$QUIZ -f \$FORM > /var/lib/moodle/repository/\${TOPIC}/quiz_\${STORY}_\${QUIZ}_\${FORM}.\$format ; done^M"
 
 screen 2
 stuff "# perl ../cclass/cards.pl -t ./$TOPIC && xelatex ./\$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf^M"

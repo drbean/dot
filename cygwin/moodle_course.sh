@@ -8,8 +8,9 @@ dummy=$(Moosh -n activity-add --section 0 --name dummy -o="--visible=0" quiz $co
 echo "dummy=$dummy"
 dummy_quiz=$(($dummy+0))
 # dummy_quiz=1
-toeic_context=16
-top_cat=$(Moosh -n questioncategory-create --parent 0 --context $toeic_context top)
+toeic_context=3
+# top_cat=$(Moosh -n questioncategory-create --parent '""' --context $toeic_context top)
+top_cat=6
 toeic_cat=$(Moosh -n questioncategory-create --parent $top_cat --context $toeic_context "toeic default")
 general_cat=$(Moosh -n questioncategory-create --parent $toeic_cat --context $toeic_context "general")
 # toeic_cat=4

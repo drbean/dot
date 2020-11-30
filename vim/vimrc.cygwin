@@ -1,4 +1,4 @@
-" Last Edit: 2020 Oct 18,  8:59:16 PM
+" Last Edit: 2020 Nov 30,  1:37:45 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -324,8 +324,7 @@ map \cG y0:.,$-5d<CR>"0Pa<CR><CR><CR><CR><Up><Up>
 " map \cG :.,$-5d<CR>i<CR>
 
 " Bram's signature-choosing mapping. Uses mark X
-map \S mX:sp ~/.mutt/fortunes<CR>ggd/^--/<CR>Gp:wq<CR>'XGA<CR><Esc>p`X
-
+map \S mX:sp ~/dot/mutt/fortunes<CR>gg:1,/^%/d<CR>Gp:wq<CR>'XGA<CR><Esc>p`X
 "      \ri = "Read in" basic lines from the email header NEEDS WORK
 "            Useful when replying to an email:
 "nmap \ri :r!readmsg \|egrep '^From:\|^Subject:\|^Date:\|^To:\|^Cc:'

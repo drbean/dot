@@ -28,6 +28,7 @@ for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curric
 
 cd 
 
+for p in email ; do svn up edit/$p ; done
 for p in moodle ; do svn up ~/ttb/$p/{lib,Makefile.PL} --parents; done
 znc
 

@@ -31,6 +31,8 @@ cd
 for p in email ; do svn up edit/$p ; done
 for p in moodle ; do svn up ~/ttb/$p/{lib,Makefile.PL} --parents; done
 znc
+for p in job ; do svn co http://github.com/drbean/job/trunk/job; done
+for p in spam ; do svn co http://github.com/drbean/job/trunk/spam ~/job/spam; done
 
 
 # curl -sL install-node.now.sh | sh

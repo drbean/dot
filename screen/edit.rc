@@ -2,7 +2,7 @@ screen v -S Session.vim
 screen 3
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "d=$(date)^M"
-stuff "# f=00 ; svn rm ^/trunk/email/north_\$f -m \"$d ^M"
+stuff "# f=00 ; svn rm \^/trunk/email/north_\$f -m \"$d ^M"
 screen 4
 stuff "./textbook.sh && xelatex textbook.tex && lftp -c 'open web.nuu.edu.tw && cd public_html && put textbook.pdf'^M"
 screen 5

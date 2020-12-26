@@ -113,8 +113,8 @@ function user_unknown () {
     sed -i.BAK -e "/^$1$/d" */address.txt;
     svn diff */address.txt;
     echo "commit? y/n"
-    read -n 1 proceed
-    if [[ $proceed == '^y' ]]
+    read proceed
+    if [[ $proceed =~ ^y ]]
         then svn ci -m "$1: User unknown"
     fi
 }

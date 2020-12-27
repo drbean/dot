@@ -109,13 +109,23 @@ function scrape () {
     cd -
 }
 
-function user_unknown () {
+function prof_remove () {
     sed -i.BAK -e "/^$1$/d" */address.txt;
     svn diff */address.txt;
-    echo "commit? y/n"
+    echo -e "\nCommit? y/n"
     read proceed
     if [[ $proceed =~ ^y ]]
         then svn ci -m "$1: User unknown"
+    fi
+}
+
+function prof_edit () {
+    sed -i.BAK -e "s/^$1$/$2/" */address.txt;
+    svn diff */address.txt;
+    echo -e "\nCommit? y/n"
+    read proceed
+    if [[ $proceed =~ ^y ]]
+        then svn ci -m "Edited prof:s/$1/$2/"
     fi
 }
 

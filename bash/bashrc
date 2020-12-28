@@ -438,6 +438,29 @@ function reading () {
 	cd -
 }
 
+function toefl () {
+    OPTIND=1
+    local arg course=toefl topic story form
+    while getopts 'v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+	cd ~/curriculum/toefl
+	COURSE=$course \
+	TOPIC=$topic \
+	STORY=$story \
+	FORM=$form \
+	VIEW=${view:-"toeic/$topic"} \
+	screen -c /home/$USER/dot/screen/course.rc -dR $topic
+	cd -
+}
+
 function speaking () {
     OPTIND=1
     local arg course=speaking/test topic story form

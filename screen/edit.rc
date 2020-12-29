@@ -1,9 +1,9 @@
 screen v -S Session.vim
 screen 1
 stuff "ls^M"
-stuff "^ grep -r ^M"
-stuff "^ prof_remove ^M"
-stuff "^ prof_edit ^M"
+stuff "# grep -r ^M"
+stuff "# prof_remove ^M"
+stuff "# prof_edit ^M"
 screen 3
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "d=$(date)^M"

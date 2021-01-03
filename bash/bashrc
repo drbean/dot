@@ -121,7 +121,9 @@ function prof_remove () {
 
 function prof_edit () {
     sed -i.BAK -e "s/^$1$/$2/" */address.txt;
-    svn diff */address.txt;
+    sed -i.BAK -e "$ a\
+	$2" north_requeue
+    svn diff */address.txt north_requeue;
     echo -e "\nCommit? y/n"
     read proceed
     if [[ $proceed =~ ^y ]]

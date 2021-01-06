@@ -453,7 +453,7 @@ function toefl () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/toefl
+	cd ~/curriculum/test/toefl
 	COURSE=$course \
 	TOPIC=$topic \
 	STORY=$story \

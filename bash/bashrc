@@ -458,7 +458,7 @@ function toefl () {
 	TOPIC=$topic \
 	STORY=$story \
 	FORM=$form \
-	VIEW=${view:-"toeic/$topic"} \
+	VIEW=${view:-"toefl/$topic"} \
 	screen -c /home/$USER/dot/screen/course.rc -dR $topic
 	cd -
 }

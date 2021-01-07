@@ -11,7 +11,7 @@ stuff "# f=00 ; svn rm \^/trunk/email/north_\$f -m \"$d ^M"
 screen 4
 stuff "./textbook.sh && xelatex textbook.tex && lftp -c 'open web.nuu.edu.tw && cd public_html && put textbook.pdf'^M"
 screen 5
-stuff "# f=00 ; lftp -c \"open drbean@freeshell.org && cd job && put north_\$f && rm north_$(($f-1)) && qui\"^M"
+stuff "# f=00 ; lftp -c \"open drbean@freeshell.org && cd job && put north_\$f && rm north_$((\$f-1)) && qui\"^M"
 screen 9
 stuff "# man pandoc_markdown^M"
 stuff "man pandoc^M"

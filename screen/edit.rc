@@ -4,6 +4,8 @@ stuff "ls^M"
 stuff "# grep -r ^M"
 stuff "# prof_remove ^M"
 stuff "# prof_edit ^M"
+screen 2
+stuff "# /cygdrive/c/Program\ Files/Microsoft\ Office/Office15/winword /t abstract.docx^M"
 screen 3
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "d=$(date)^M"

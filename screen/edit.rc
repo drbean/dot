@@ -9,6 +9,7 @@ stuff "# pandoc -o $SOURCE-reference.docx --print-default-data-file reference.do
 stuff "# svn add $SOURCE-reference.docx^M"
 stuff "# svn ci $SOURCE-reference.docx -m styles_for_$SOURCE^M"
 stuff "# /cygdrive/c/Program\ Files/Microsoft\ Office/Office15/winword /t abstract.docx^M"
+stuff "# /cygdrive/c/Program\ Files/Microsoft\ Office/root/Office16/WINWORD /t abstract.docx^M"
 screen 3
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"
 stuff "d=$(date)^M"

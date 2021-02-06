@@ -149,16 +149,18 @@ function email () {
 
 function edit () {
     OPTIND=1
-    local arg source
-    while getopts 's:' arg
+    local arg source file
+    while getopts 's:f:' arg
     do
         case ${arg} in
             s) source=${OPTARG};;
+            f) file=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
+    svn up ~/edit/$source
     cd ~/edit/$source || exit 1
-    SOURCE=$source screen -c /home/$USER/dot/screen/edit.rc -dR $source
+    SOURCE=$source FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR $source
     cd -
 }
 

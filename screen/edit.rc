@@ -1,4 +1,4 @@
-screen v -S Session.vim
+screen v $FILE.md
 screen 1
 stuff "ls^M"
 stuff "# grep -r ^M"

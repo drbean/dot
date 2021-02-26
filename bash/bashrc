@@ -93,6 +93,8 @@ function timer () {
     echo $'\a'
 }
 
+function f () { sed -f email.sed >> cmu/address.txt; }
+
 function scrape () {
     OPTIND=1
     local arg school department

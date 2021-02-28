@@ -96,18 +96,17 @@ function timer () {
 function f () { sed -f email.sed >> cmu/address.txt; }
 function e () {
     curl $1 |
-	sed -f http.sed |
-	    while read h
-	    do
-		echo -e $h "\n"
-		echo -e "\nGet? y/n ";
-		read proceed
-		echo "proceed=$proceed"
-		# if [[ $proceed =~ ^y ]]
-		    curl $h | sed -f link.sed >> cmu/address.txt
-		    # then curl $h | sed -f link.sed
-		# fi
-	    done;
+	sed -f http.sed > scratch.html
+    declare -a pages
+    readarray pages < scratch.html
+    for page in ${pages[@]}
+    do
+	echo "$page" 
+	read -p "\nFetch? y/n " proceed
+	if [[ $proceed =~ ^y ]]
+	    then curl "$page" | sed -f link.sed >> cmu/address.txt
+	fi
+    done
 }
 
 function scrape () {

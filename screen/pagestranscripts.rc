@@ -1,4 +1,4 @@
-screen v ~/.weechat/logs/irc.freenode.\\\#\\\#english.weechatlog $COURSE/markdown/$STORY.md $COURSE/markdown/WobblyEnglish.md Contents.html
+screen v ~/.weechat/logs/irc.bnc4free.\\\#\\\#english.weechatlog $COURSE/markdown/$STORY.md $COURSE/markdown/WobblyEnglish.md Contents.html
 screen
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M svn info^M"
 stuff "export HISTTIMEFORMAT='%m-%d'^M"

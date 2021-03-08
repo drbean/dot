@@ -105,7 +105,7 @@ function e () {
 	echo "$page" 
 	read -p "\nFetch? y/n " proceed
 	if [[ $proceed =~ ^y ]]
-	    then curl "$page" | sed -f link.sed >> \$SCHOOL/address.txt
+	    then curl "$page" | sed -f link.sed >> $SCHOOL/address.txt
 	fi
     done
 }

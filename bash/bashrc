@@ -93,8 +93,8 @@ function timer () {
     echo $'\a'
 }
 
-function f () { sed -f email.sed >> fcu/address.txt; }
-function l () { sed -f link.sed >> csmu/address.txt; }
+function f () { sed -f email.sed >> $SCHOOL/address.txt; }
+function l () { sed -f link.sed >> $SCHOOL/address.txt; }
 function e () {
     curl $1 |
 	sed -f http.sed > scratch.html

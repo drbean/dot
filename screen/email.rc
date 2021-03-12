@@ -1,6 +1,6 @@
 screen 0
 # editing
-stuff "# v $SCHOOL/address.txt^M"
+stuff "# echo -e \\\\nhttp://$DEPARTMENT.$SCHOOL.edu.tw >> $SCHOOL/address.txt ; v $SCHOOL/address.txt^M"
 
 screen 1
 # status 

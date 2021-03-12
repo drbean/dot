@@ -14,8 +14,8 @@ stuff "git status"
 
 screen 3
 stuff "# svn mkdir $SCHOOL/^M"
-stuff "# svn add $SCHOOL.edu.tw/address.txt^M"
-stuff "# svn ci $SCHOOL/address -m ^M"
+stuff "# svn add $SCHOOL/address.txt^M"
+stuff "# svn ci $SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw^M"
 
 # screen 4
 # # old commands

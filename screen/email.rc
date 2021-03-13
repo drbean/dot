@@ -1,7 +1,3 @@
-screen 0
-# editing
-stuff "echo -e \\\\nhttp://$DEPARTMENT.$SCHOOL.edu.tw >> $SCHOOL/address.txt ; v $SCHOOL/address.txt"
-
 screen 1
 # status 
 stuff "echo '"
@@ -23,3 +19,8 @@ stuff "svn ci $SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
 # stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if ! ( ack \"\^\$address\$\" $SCHOOL/sent_address.txt > /dev/null ) ; then printf '%s\\n' \"\$address\" >> $SCHOOL/\${department}_new_address.txt ; fi ; done < $SCHOOL/\${department}_0.txt && wc $SCHOOL/\${department}_0.txt $SCHOOL/\${department}_new_address.txt ; done ^M"
 # # send mails
 # stuff "# cd ~/edit/email/$SCHOOL && for department in $DEPARTMENT ; do printf '%b' \"\\n# \${department}_0\\n\" >> sent_address.txt && mv \${department}_new_address.txt address.txt && bash $HOME/job/spam/spam.sh < address.txt >> edit_offer_mailing.txt && cat address.txt >> sent_address.txt ; done ^M"
+
+screen 0
+# editing
+stuff "echo -e \\\\nhttp://$DEPARTMENT.$SCHOOL.edu.tw >> $SCHOOL/address.txt ; v $SCHOOL/address.txt"
+

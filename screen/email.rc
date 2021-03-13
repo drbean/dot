@@ -1,10 +1,10 @@
 screen 0
 # editing
-stuff "# echo -e \\\\nhttp://$DEPARTMENT.$SCHOOL.edu.tw >> $SCHOOL/address.txt ; v $SCHOOL/address.txt^M"
+stuff "echo -e \\\\nhttp://$DEPARTMENT.$SCHOOL.edu.tw >> $SCHOOL/address.txt ; v $SCHOOL/address.txt"
 
 screen 1
 # status 
-stuff "git status"
+stuff "echo '"
 
 # screen 2
 # # download addresses
@@ -15,7 +15,7 @@ stuff "git status"
 screen 3
 stuff "# svn mkdir $SCHOOL/^M"
 stuff "# svn add $SCHOOL/address.txt^M"
-stuff "# svn ci $SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw^M"
+stuff "svn ci $SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
 
 # screen 4
 # # old commands

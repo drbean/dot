@@ -95,6 +95,18 @@ function timer () {
 
 function f () { sed -f email.sed >> $SCHOOL/address.txt; }
 function l () { sed -f link.sed >> $SCHOOL/address.txt; }
+function p () {
+    declare -a pages
+    readarray pages < $1
+    for page in ${pages[@]}
+    do
+	echo "$page" 
+	read -p "\nFetch? y/n " proceed
+	if [[ $proceed =~ ^y ]]
+	    then curl "$page" | sed -f link.sed >> $SCHOOL/address.txt
+	fi
+    done
+}
 function e () {
     curl $1 |
 	sed -f http.sed > scratch.html

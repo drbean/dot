@@ -1,5 +1,5 @@
 screen 1
-# status 
+stuff "# for p in {..} ; do curl \"\" | l ; done^M"
 stuff "echo '"
 
 # screen 2

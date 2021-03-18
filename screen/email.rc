@@ -1,5 +1,6 @@
 screen 1
 stuff "# for p in {..} ; do curl \"\" | l ; done^M"
+stuff "# lynx '^M"
 stuff "echo '"
 
 # screen 2

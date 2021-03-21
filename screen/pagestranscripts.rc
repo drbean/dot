@@ -8,7 +8,9 @@ stuff "# for p in \$STORY KoreA WobblyEnglish HomePage ; do pandoc -o \$p.html -
 stuff "# svn add homepage/markdown/\$STORY.md^M"
 stuff "# svn ci homepage/markdown/{\$STORY,WobblyEnglish}.md -m \$STORY^M"
 
-screen lftp drbean@sdf.org
-stuff "cd html/^M"
+screen
+stuff "lftp drbean@sdf.org^M"
+stuff "pwd^M"
 stuff "put WobblyEnglish.html^M"
 stuff "put $STORY.html^M"
+stuff "cd html/^M"

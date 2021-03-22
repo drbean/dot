@@ -1,4 +1,4 @@
-# Last Edit: 2021 Mar 22, 11:00:39 AM
+# Last Edit: 2021 Mar 22,  2:10:29 PM
 #
 # The ultimate Mutt settings
 #
@@ -193,7 +193,8 @@ set editor="v"
 set folder=~/Mail	# where are the mailboxs (+ and = are shortcuts)
 #set folder="{luv}Mail"	# where are the mailboxs (+ and = are shortcuts)
 # set from="counterbean@gmail.com"		# From: address (see send-hook my_hdr From)
-set from="drbean@freeshell.org"		# From: address (see send-hook my_hdr From)
+# set from="drbean@freeshell.org"		# From: address (see send-hook my_hdr From)
+# set from="beancounterbean@yahoo.com"		# From: address (see send-hook my_hdr From)
 # set from="lang@ms.chinmin.edu.tw"		# From: address (see send-hook my_hdr From)
 # set from="greg@momotaro.chinmin.edu.tw"		# From: address (see send-hook my_hdr From)
 #reset ispell		# ispell binary (compile time default)
@@ -207,7 +208,7 @@ set postponed="=z/pp"	# folder for postponed messages
 #set print_command="a2ps -gEmail"	# print using a2ps to default printer
 #set print_command="a2psmail"		# print using a2ps to default printer
 #set query_command="lbdbq %s"	# query tlr's little brothers database.
-set record="=z/sent"		# Don't save a copy of outgoing messages (Fcc)
+set record="~/Mail/sent"		# Don't save a copy of outgoing messages (Fcc)
 #reset sendmail		# Default-Sendmail with options ("-oem -oi")
 set sendmail="/usr/sbin/sendmail -oem -oi"
 # set sendmail="/usr/sbin/exim -oem -oi"
@@ -413,14 +414,20 @@ set attach_format="%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s] "
 #set imap_servernoise	# display warnings from IMAP server.
 
 # # from https://ubuntuforums.org/showthread.php?t=1197245
-# 
+# # https://help.yahoo.com/kb/new-mail-for-desktop/imap-server-settings-yahoo-mail-sln4075.html
 # set imap_user="counterbean@gmail.com"
-set imap_user="beancounterbean@yahoo.com"
+# set imap_user="beancounterbean@yahoo.com"
 # set imap_pass=""
-set imap_pass=""
 # 
 # set folder ="imaps://imap.gmail.com:993"
+set folder ="imaps://imap.mail.yahoo.com:993"
 # set spoolfile="+INBOX"
+set spoolfile="+INBOX"
+# from https://help.yahoo.com/kb/SLN4075.html
+set smtp_url="smtp://beancounterbean@smtp.mail.yahoo.com:465/"
+set smtp_pass=""
+# set ssl_starttls=yes
+# set ssl_force_tls=yes
 
 #
 # IMAP SSL (only if compiled with --enable-ssl)

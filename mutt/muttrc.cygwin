@@ -1,4 +1,4 @@
-# Last Edit: 2021 Mar 22, 10:51:42 AM
+# Last Edit: 2021 Mar 22, 11:00:39 AM
 #
 # The ultimate Mutt settings
 #
@@ -417,7 +417,7 @@ set attach_format="%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s] "
 # set imap_user="counterbean@gmail.com"
 set imap_user="beancounterbean@yahoo.com"
 # set imap_pass=""
-set imap_pass="nodmttxzbwvurddk"
+set imap_pass=""
 # 
 # set folder ="imaps://imap.gmail.com:993"
 # set spoolfile="+INBOX"

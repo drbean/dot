@@ -1,8 +1,3 @@
-screen 1
-stuff "# for p in {..} ; do curl \"\" | l ; done^M"
-stuff "# lynx '^M"
-stuff "echo '"
-
 # screen 2
 # # download addresses
 # stuff "# curl 'http://lctc.nuu.edu.tw/afl/webs/index.php?account=admin&id=14&mod_area=15' | xargs -0 printf '%s\\n' | sed -n -e 's/^\[^\@\]*\(\w\+@nuu.edu.tw\)/\\1\\n/g p'^M"
@@ -23,5 +18,10 @@ stuff "svn ci $SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
 
 screen 0
 # editing
-stuff "echo -e \\\\nhttp://$DEPARTMENT.$SCHOOL.edu.tw >> $SCHOOL/address.txt ; v $SCHOOL/address.txt"
+stuff "echo -e \\\\nhttp://$DEPARTMENT.$SCHOOL.edu.tw >> $SCHOOL/address.txt ; v $SCHOOL/address.txt^M"
+
+screen 1
+stuff "# for p in {..} ; do curl \"\" | l ; done^M"
+stuff "# lynx '^M"
+stuff "echo '"
 

@@ -5,6 +5,7 @@ stuff "# v^M"
 screen
 stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr info collection-\$c ; done^M"
 stuff "# for c in langcjk xetex latexextra fontsrecommended pictures ; do tlmgr install collection-\$c ; done^M"
+stuff "# . ~/dot/cygwin/tex_pack.sh^M"
 
 screen
 stuff "# for p in httpd httpd-devel httpd-mod_php7 httpd-mod_ssl ; do cyg_pack \$p ; done^M"

@@ -18,7 +18,7 @@ stuff "svn ci $SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
 
 screen 0
 # editing
-stuff "echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.edu.tw >> $SCHOOL/address.txt ; v $SCHOOL/address.txt^M"
+# stuff "echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.edu.tw >> $SCHOOL/address.txt ; v $SCHOOL/address.txt^M"
 
 screen 1
 stuff "# for p in {..} ; do curl \"\" | l ; done^M"

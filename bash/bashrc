@@ -152,8 +152,8 @@ function prof_edit () {
     sed -i.BAK -e "s/^$1\s*$/$2/" */address.txt;
     sed -i.BAK -e "$ a\
 	$2" taichung_requeue
-    svn diff */address.txt north_requeue;
-    echo -e "\nCommit? y/n"
+    svn diff */address.txt taichung_requeue;
+    echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]
         then svn ci -m "Edited prof:s/$1/$2/"

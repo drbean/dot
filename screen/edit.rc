@@ -8,8 +8,9 @@ screen 2
 stuff "# pandoc -o $SOURCE-reference.docx --print-default-data-file reference.docx^M"
 stuff "# svn add $SOURCE-reference.docx^M"
 stuff "# svn ci $SOURCE-reference.docx -m styles_for_$SOURCE^M"
+stuff "# cp {,their_}$FILE.docx"
 stuff "# pandoc -o $FILE.md --extract-media=./ $FILE.docx^M"
-stuff "# pandoc -o revised_$FILE.docx --reference-doc=$SOURCE-reference.docx $FILE.md^M"
+stuff "# pandoc -o my_$FILE.docx --reference-doc=$SOURCE-reference.docx $FILE.md^M"
 stuff "# /cygdrive/c/Program\ Files/Microsoft\ Office/root/Office16/WINWORD /t $FILE.docx^M"
 screen 3
 stuff "svn st -q^M svn log -vr BASE:HEAD^M"

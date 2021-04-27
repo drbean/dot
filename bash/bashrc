@@ -195,18 +195,18 @@ function edit () {
 
 function emoeco () {
     OPTIND=1
-    local arg url endpoint
-    while getopts 'u:e:' arg
+    local arg url search
+    while getopts 'u:s:' arg
     do
         case ${arg} in
             u) url=${OPTARG};;
-            e) endpoint=${OPTARG};;
+            s) search=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     svn up ~/emoeco
     cd ~/emoeco || exit 1
-    URL=$url ENDPOINT=$endpoint screen -c $HOME/dot/screen/emoeco.rc -dR $url
+    URL=$url SEARCH=$search screen -c $HOME/dot/screen/emoeco.rc -dR $url
     cd -
 }
 

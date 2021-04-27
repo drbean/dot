@@ -49,5 +49,7 @@ cd ~/.vim/pack/git-plugins/start/coc.nvim/ && \
 # cmd /c mklink /D c:\home c:\cygwin64\home
 cd /cygdrive/c/Users/$USER/AppData/Roaming/npm && /cygdrive/c/Program\ Files/nodejs/npm install -g yarn bash-language-server && cd -
 
+curl https://github.com/mikefarah/yq/releases/download/v4.7.1/yq_windows_amd64.exe > /usr/bin/yq && chmod +x /usr/bin/yq
+
 git clone --depth 2 --no-single-branch http://github.com/drbean/moosh ~/moosh
 mkdir --parent /srv/www/cgi-bin && git clone --depth 2 --no-single-branch http://github.com/drbean/moodle /srv/www/cgi-bin/moodle && mkdir /var/lib/moodle/ && chmod 777 /var/lib/moodle

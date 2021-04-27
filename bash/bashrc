@@ -193,6 +193,23 @@ function edit () {
     cd -
 }
 
+function emoeco () {
+    OPTIND=1
+    local arg url endpoint
+    while getopts 'u:e:' arg
+    do
+        case ${arg} in
+            u) url=${OPTARG};;
+            e) endpoint=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    svn up ~/emoeco
+    cd ~/emoeco || exit 1
+    URL=$url ENDPOINT=$endpoint screen -c $HOME/dot/screen/emoeco.rc -dR $url
+    cd -
+}
+
 function cygwin () {
     screen -c /home/$USER/dot/screen/cygwin.rc -dR cygwin
 }

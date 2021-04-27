@@ -5,7 +5,7 @@ stuff "# git add $SCHOOL/${DEPARTMENT}_0.txt && git commit -m $SCHOOL/${DEPARTME
 
 screen 2
 # download tweets
-stuff "# curl https://api.twitter.com/2/tweets/search/recent?query=\$SEARCH%20lang%3Aen | yq e -P \${SEARCH}_en.yaml^M"
+stuff "# curl \"https://api.twitter.com/2/tweets/search/recent?query=\$SEARCH%20lang%3Aen\" | sed -e '\\u/\\\\u/' | yq e -P \${SEARCH}_en.yaml^M"
 # stuff "# for i in {1..100} ; do wget http://www.$department.$SCHOOL.edu.tw ; done ^M"
 
 screen 0

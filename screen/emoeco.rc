@@ -3,12 +3,11 @@ screen 1
 stuff "git status^M"
 stuff "# git add $SCHOOL/${DEPARTMENT}_0.txt && git commit -m $SCHOOL/${DEPARTMENT}_0.txt^M"
 
-# screen 2
-# # download addresses
-# stuff "# curl 'http://lctc.nuu.edu.tw/afl/webs/index.php?account=admin&id=14&mod_area=15' | xargs -0 printf '%s\\n' | sed -n -e 's/^\[^\@\]*\(\w\+@nuu.edu.tw\)/\\1\\n/g p'^M"
+screen 2
+# download tweets
+stuff "# curl https://api.twitter.com/2/tweets/search/recent?query=\$SEARCH%20lang%3Aen | yq e -P \${SEARCH}_en.yaml^M"
 # stuff "# for i in {1..100} ; do wget http://www.$department.$SCHOOL.edu.tw ; done ^M"
 
 screen 0
 # editing
-stuff "v $SCHOOL/${DEPARTMENT}_0.txt^M"
-stuff "i"
+stuff "v ${SEARCH}_en.yaml^M"

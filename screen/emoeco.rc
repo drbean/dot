@@ -6,7 +6,7 @@ stuff "# git add $SCHOOL/${DEPARTMENT}_0.txt && git commit -m $SCHOOL/${DEPARTME
 screen 2
 # download tweets
 stuff "# export BEARER_TOKEN=^M"
-# stuff "# curl -X GET -H \"Authorization: Bearer \$BEARER_TOKEN\" \"https://api.twitter.com/2/tweets/search/recent?query=\$SEARCH20lang%3Aen\" | sed -e 's/\\u/\\\\u/g' | yq e -P > \${SEARCH}_en.yaml"
+stuff "# curl -X GET -H \"Authorization: Bearer \$BEARER_TOKEN\" \"https://api.twitter.com/2/tweets/search/recent?query=\$SEARCH20lang%3Aen\" | sed -e 's/\\u/\\\\u/g' | yq e -P > \${SEARCH}_en.yaml"
 # stuff "# for i in {1..100} ; do wget http://www.$department.$SCHOOL.edu.tw ; done ^M"
 
 screen 0

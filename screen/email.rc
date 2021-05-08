@@ -5,6 +5,7 @@
 # stuff "# for item in {63879..63883} 155338 155339 155420 {75568..75570} 75612 75613 64406 117163 64192 ; do curl --data-urlencode =content 'http://www.nuu.edu.tw/UIPWeb/wSite/ct?xItem=\$item&ctNode=10444&mp=39' | xargs -0 printf '%s\n' | sed -n -e 's/[^@]*[^[:alnum:]]\([[:alnum:]][[:alnum:]._-]*[[:alnum:]]\+@nuu.edu.tw\)/\1\n/g p' ; done^M"
 
 screen 3
+stuff "# area=tc ; for n in {xxx} ; do svn rm \^/trunk/email/\$area\$n -m \$area\$n.out ; done ^M"
 stuff "# svn mkdir $SCHOOL/^M"
 stuff "# svn add $SCHOOL/address.txt^M"
 stuff "svn ci $SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"

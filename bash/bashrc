@@ -139,7 +139,7 @@ function scrape () {
 }
 
 function prof_remove () {
-    sed -i.BAK -e "/^$1\s*$/d" */address.txt;
+    sed -i.BAK -e "s/^\($1.*\)$/# \1/" */address.txt;
     svn diff */address.txt;
     echo -ne "\nCommit? y/n "
     read proceed
@@ -149,7 +149,7 @@ function prof_remove () {
 }
 
 function prof_edit () {
-    sed -i.BAK -e "s/^$1\s*$/$2/" */address.txt;
+    sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/" */address.txt;
     sed -i.BAK -e "$ a\
 	$2" taichung_requeue
     svn diff */address.txt taichung_requeue;

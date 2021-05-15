@@ -9,6 +9,10 @@ stuff "# export B=^M"
 stuff "# curl -X GET -H \"Authorization: Bearer \$B\" \"https://api.twitter.com/2/tweets/search/recent?query=\$SEARCH20lang%3Aen\" | sed -e 's/\\u/\\\\u/g' | yq e -P > \${SEARCH}_en.yaml"
 # stuff "# for i in {1..100} ; do wget http://www.$department.$SCHOOL.edu.tw ; done ^M"
 
+screen 3
+# install AnyEvent
+stuff "# PERL_CANARY_STABILITY_NOPROMPT=1 . ~/dot/cygwin/twitter_setup.sh^M"
+
 screen 0
 # editing
 stuff "v ${SEARCH}_en.yaml^M"

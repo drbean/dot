@@ -5,11 +5,11 @@ cyg_pack perl-ExtUtils-MakeMaker,make,gcc-g++,libcrypt-devel,libnsl-devel,perl-M
 
 # Devel::REPL
 cyg_pack perl-Clone,perl-Test-Without-Module,perl-Path-Class,per-Algorithm-Diff,perl-Capture-Tiny,perl-PadWalker,perl-Test-Exception,perl-Sub-Uplevel,perl-HTTP-Daemon,perl-Module-Pluggable
-# for m in AnyEvent::Twitter::Stream Twitter::API Devel::REPL
-for m in Devel::REPL
+for m in AnyEvent::Twitter::Stream Twitter::API Devel::REPL
+# for m in Devel::REPL
 # for m in Twitter::API
 # for m in AnyEvent::Twitter::Stream
-#for m in AnyEvent::HTTP
+# for m in AnyEvent::HTTP
 	do cd ~/emoeco
 	perl -MCPAN -e "CPAN::Shell->notest('install', $m)"
 done

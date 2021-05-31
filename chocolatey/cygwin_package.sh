@@ -1,7 +1,8 @@
 first=subversion,openssh,znc,screen,git
 second=weechat,lftp,vim,mutt,exim,lynx,weechat-perl,\
 weechat-python,perl,\
-perl-YAML,perl-List-MoreUtils,cron,perl-XML-DOM,python37
+perl-YAML,perl-List-MoreUtils,cron,perl-XML-DOM,python37,\
+jq
 if [[ -x /cygdrive/c/tools/cygwin/cygwinsetup.exe ]]
 	then for p in "$second"
 		do /cygdrive/c/tools/cygwin/cygwinsetup.exe \

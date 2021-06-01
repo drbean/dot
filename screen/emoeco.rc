@@ -12,6 +12,8 @@ stuff "# curl -X GET -H \"Authorization: Bearer \$B\" \"https://api.twitter.com/
 stuff "# curl -X GET 'https://api.twitter.com/2/tweets/search/stream/rules' -H \"Authorization: Bearer \$B\"^M"
 stuff "# curl \"https://youtube.googleapis.com/youtube/v3/search?part=id,snippet&fields=items%28id%28videoId%29,snippet%28title,description%29%29&maxResults=2&q=\$SEARCH&relevanceLanguage=en&order=date&key=\$KEY\" | yq e -P > \$SEARCH.yaml^M"
 stuff "# curl \"https://youtube.googleapis.com/youtube/v3/commentThreads?videoId=\$VIDEOID&part=id,snippet,replies&maxResults=50&key=\$KEY\" > jq.json^M"
+stuff "# export PAGE=^M"
+stuff "# for i in {..} ; do curl \"https://youtube.googleapis.com/youtube/v3/commentThreads?videoId=\$VIDEOID&part=id,snippet,replies&pageToken=\$PAGE&maxResults=100&key=$KEY\" > jq_\$i.json && sleep 2 && PAGE=\$(jq '.nextPageToken' < jq_\$i.json) ; done^M"
 stuff "# jq '.items[].snippet.topLevelComment.snippet.textOriginal' < jq.json^M"
 
 screen 3

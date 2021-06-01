@@ -6,7 +6,10 @@ pack1='perl-ExtUtils-MakeMaker,make,gcc-g++,libcrypt-devel,libnsl-devel,perl-Mod
 # Devel::REPL
 pack2='perl-Term-ReadLine-Gnu,perl-Clone,perl-Test-Without-Module,perl-Path-Class,perl-Algorithm-Diff,perl-Capture-Tiny,perl-PadWalker,perl-Test-Exception,perl-Sub-Uplevel,perl-HTTP-Daemon,perl-Module-Pluggable'
 
-pack="$pack1,$pack2"
+# LWP
+pack3='perl-LWP-Protocol-https'
+
+pack="$pack1,$pack2,$pack3"
 cyg_pack $pack
 
 for m in AnyEvent::Twitter::Stream Twitter::API Devel::REPL

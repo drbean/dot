@@ -194,19 +194,20 @@ function edit () {
 }
 
 function emoeco () {
-    OPTIND=1
-    local arg url search
-    while getopts 'u:s:' arg
-    do
-        case ${arg} in
-            u) url=${OPTARG};;
-            s) search=${OPTARG};;
-            *) return 1 # illegal option
-        esac
-    done
+    #OPTIND=1
+    #local arg url search
+    #while getopts 'u:s:' arg
+    #do
+    #    case ${arg} in
+    #        u) url=${OPTARG};;
+    #        s) search=${OPTARG};;
+    #        *) return 1 # illegal option
+    #    esac
+    #done
     svn up ~/emoeco
     cd ~/emoeco || exit 1
-    URL=$url SEARCH=$search screen -c $HOME/dot/screen/emoeco.rc -dR $url
+    # URL=$url SEARCH=$search screen -c $HOME/dot/screen/emoeco.rc -dR $url
+    screen -c $HOME/dot/screen/emoeco.rc -dR emoeco
     cd -
 }
 

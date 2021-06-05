@@ -93,8 +93,8 @@ function timer () {
     echo $'\a'
 }
 
-function f () { sed -f email.sed >> $SCHOOL/address.txt; }
-function l () { sed -f link.sed >> $SCHOOL/address.txt; }
+function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
+function l () { sed -f link.sed >> $COUNTY/$SCHOOL/address.txt; }
 function p () {
     declare -a pages
     readarray pages < $1

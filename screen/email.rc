@@ -6,9 +6,9 @@
 
 screen 3
 stuff "# area=tc ; for n in {xxx} ; do svn rm \^/trunk/email/\$area\$n -m \$area\$n.out ; done ^M"
-stuff "# svn mkdir $SCHOOL/^M"
-stuff "# svn add $SCHOOL/address.txt^M"
-stuff "svn ci $SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
+stuff "# svn mkdir $COUNTY/$SCHOOL/^M"
+stuff "# svn add $COUNTY/$SCHOOL/address.txt^M"
+stuff "svn ci $COUNTY/$SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
 
 # screen 4
 # # old commands

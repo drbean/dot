@@ -22,7 +22,8 @@ screen 0
 stuff "echo -e \\\\n# http://www.$SCHOOL.edu.tw/$DEPARTMENT >> $COUNTY/$SCHOOL/address.txt ; v $COUNTY/$SCHOOL/address.txt^M"
 
 screen 1
-stuff "# while read p ; do curl "${p%'\r'}" | sed -f link.sed ; done >> $COUNTY/$SCHOOL/address.txt < scratch.html^M"
+stuff "# curl \"\" | sed -e '//!d' -f page.sed > scratch.html^M"
+stuff "# while read p ; do curl \"\${p%\$\'\\r\'}\" | sed -f link.sed ; done >> $COUNTY/$SCHOOL/address.txt < scratch.html^M"
 stuff "# for p in {..} ; do curl \"\" | l ; done^M"
 stuff "# lynx '^M"
 stuff "echo '"

@@ -1,4 +1,4 @@
-" Last Edit: 2020 Nov 30,  1:37:45 PM
+" Last Edit: 2021 Jun 17,  9:37:08 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -911,6 +911,14 @@ au!
 " Chinese to English names after 1st week
 au BufEnter groups.yaml,league.yaml no <buffer> <LocalLeader>w :<C-F>ilet @e=''<Left>
 au BufEnter groups.yaml,league.yaml no <buffer> <LocalLeader>q k"fyiw/<C-R>f<Enter>ciw<C-R>e<Esc><Esc><C-W><C-W>n.<C-W><C-W>n.<C-W><C-W>
+
+augroup END
+
+augroup address
+au!
+
+" remove markup around *1* address in address.txt
+au BufEnter address.txt no <buffer> <LocalLeader>a :.s/^.*[^-_.[:alnum:]]\([-_.[:alnum:]]\+@[-_.[:alnum:]]\+\)[^-_.[:alnum:]].*$/\1/<CR>
 
 augroup END
 

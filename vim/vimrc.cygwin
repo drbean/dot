@@ -1,4 +1,4 @@
-" Last Edit: 2021 Jun 17,  9:37:08 PM
+" Last Edit: 2021 Jun 19,  3:37:41 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -917,6 +917,8 @@ augroup END
 augroup address
 au!
 
+" extract url from <a href= link
+au BufEnter scratch.html no <buffer> <LocalLeader>h :.s/^.*href=["']\([^"']*\)["'].*$/\1/<CR>
 " remove markup around *1* address in address.txt
 au BufEnter address.txt no <buffer> <LocalLeader>a :.s/^.*[^-_.[:alnum:]]\([-_.[:alnum:]]\+@[-_.[:alnum:]]\+\)[^-_.[:alnum:]].*$/\1/<CR>
 

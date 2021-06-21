@@ -187,7 +187,7 @@ function edit () {
             *) return 1 # illegal option
         esac
     done
-    svn up ~/edit/$source
+    svn up ~/edit/$source/$file.md
     cd ~/edit/$source || exit 1
     SOURCE=$source FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR $source
     cd -

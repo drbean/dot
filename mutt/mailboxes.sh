@@ -1,17 +1,17 @@
 #!/bin/sh
 
-for mailbox in $@;
+for mailbox in $@
 do {
-	printf =$mailbox;
-	printf " ";
-};
-done;
+	printf =$mailbox
+	printf " "
+}
+done
 
-cd $HOME/Mail;
-for mailbox in *;
+cd $HOME/Mail
+for mailbox in *
 do {
-	printf =$mailbox;
-	printf " ";
-};
-done;
-cd -;
+	printf =$mailbox
+	printf " "
+}
+done
+cd -

@@ -122,7 +122,7 @@ bind	index	x	sync-mailbox
 #
 
 # neomutt warning for \t macro
-# bind	pager	'\'	noop
+bind	pager	'\'	noop
 
 bind	pager	<up>	previous-line
 bind	pager	<down>	next-line

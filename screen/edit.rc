@@ -9,9 +9,9 @@ stuff "# pandoc -o reference.docx --print-default-data-file reference.docx^M"
 stuff "# svn add reference.docx^M"
 stuff "# svn ci reference.docx -m styles_for_$SOURCE^M"
 stuff "# cp {,their_}$FILE.docx^M"
-stuff "# pandoc -o \$FILE.md --extract-media=./ \$FILE.docx^M"
-stuff "# pandoc -o my_\$FILE.docx --reference-doc=./reference.docx \$FILE.md^M"
-stuff "# /cygdrive/c/Program\ Files/Microsoft\ Office/root/Office16/WINWORD /t $FILE.docx^M"
+stuff "# pandoc -o orig_\$FILE.md --extract-media=./ \$FILE.docx^M"
+stuff "# MINE=$FILE; pandoc -o \$MINE.docx --reference-doc=./reference.docx \$FILE.md "
+stuff "&& /cygdrive/c/Program\ Files/Microsoft\ Office/root/Office16/WINWORD /t \$MINE.docx^M"
 screen 3
 stuff "svn st -q^M svn log -vr BASE:HEAD^M# svn add $FILE.md^M"
 stuff "d=$(date)^M"
@@ -19,6 +19,8 @@ stuff "# f=00 ; svn rm \^/trunk/email/north_\$f -m \"$d ^M"
 screen 4
 stuff "./textbook.sh && xelatex textbook.tex && lftp -c 'open web.nuu.edu.tw && cd public_html && put textbook.pdf'^M"
 screen 5
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open drbean@freeshell.org && cd edit && put their_\$f.docx -o their_\${s}_\$f.docx && qui\"^M"
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open drbean@freeshell.org && cd edit && get their_\${s}_\$f.docx -o their_\$f.docx && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open drbean@freeshell.org && cd edit && get \${s}_\$f.docx -o \$f.docx && qui\"^M"
 screen 9
 stuff "# man pandoc_markdown^M"

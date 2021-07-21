@@ -4,7 +4,7 @@ stuff "svn st -q^Msvn log -vr BASE:HEAD^M svn info^M"
 stuff "export HISTTIMEFORMAT='%m-%d'^M"
 stuff "# perl htmlexerciselist.pl -a $COURSE -l bett -s $STORY  > $COURSE.html && lftp -c 'open web.nuu.edu.tw; cd public_html; put $COURSE.html'^M"
 # stuff "# perl htmlexerciselist.pl -a $COURSE -l dic -s $STORY  > $COURSE.html && sudo cp $COURSE.html /var/www/html/^M"
-stuff "# for p in \$STORY KoreA WobblyEnglish HomePage ; do pandoc -o \$p.html --template=c:/home/owuser/curriculum/pages/pandoc-templates/homepagePost.html5 homepage/markdown/\$p.md; done^M"
+stuff "# for p in \$STORY KoreA WobblyEnglish HomePage ; do pandoc -o \$p.html --template=c:$HOME/curriculum/pages/pandoc-templates/homepagePost.html5 homepage/markdown/\$p.md; done^M"
 stuff "# svn add homepage/markdown/\$STORY.md^M"
 stuff "# svn ci homepage/markdown/{\$STORY,WobblyEnglish}.md -m \$STORY^M"
 

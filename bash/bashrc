@@ -189,7 +189,7 @@ function edit () {
     done
     svn up ~/edit/$source --depth empty
     svn up ~/edit/$source/$file.md
-    cd ~/edit/$source || exit 1
+    cd ~/edit/git/$source || exit 1
     SOURCE=$source FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR $source
     cd -
 }

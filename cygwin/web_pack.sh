@@ -1,7 +1,8 @@
 h=httpd,httpd-devel,httpd-mod_php7,httpd-mod_ssl
 cyg_pack $h
-p=php,php-json,php-iconv,php-zip,php-phar,php-zlib,php-tokenizer,\
-php-simplexml,php-xmlwriter,php-mbstring,php-pgsql,php-curl,\
-php-ctype,php-gd,php-intl,php-fileinfo,php-xmlrpc,php-soap,\
-php-xmlreader,php-opcache,php-posix
+p=php,\
+php-ctype,php-curl,php-fileinfo,php-gd,php-iconv,\
+php-intl,php-json,php-mbstring,php-opcache,php-pgsql,\
+php-phar,php-posix,php-simplexml,php-soap,php-tokenizer,\
+php-xmlreader,php-xmlrpc,php-xmlwriter,php-zip,php-zlib
 cyg_pack $p

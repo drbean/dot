@@ -191,9 +191,11 @@ function edit () {
     done
     svn up ~/edit/$source --depth empty
     svn up ~/edit/$source/$file.md
-    cd ~/edit/git/$source || exit 1
+    if [[ ! -e ~/edit/$source/git ]] ; then
+        git clone http://github.com/drbean/edit ~/edit/$source/git --depth 1
+    fi
+    cd ~/edit/$source/git || echo "no git subdir"
     SOURCE=$source FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR $source
-    cd -
 }
 
 function emoeco () {

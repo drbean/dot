@@ -141,8 +141,8 @@ function scrape () {
 }
 
 function prof_remove () {
-    sed -i.BAK -e "s/^\($1.*\)$/# \1/" */address.txt;
-    svn diff */address.txt;
+    sed -i.BAK -e "s/^\($1.*\)$/# \1/" */*/address.txt;
+    svn diff */*/address.txt;
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]
@@ -151,10 +151,10 @@ function prof_remove () {
 }
 
 function prof_edit () {
-    sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/" */address.txt;
+    sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/" */*/address.txt;
     sed -i.BAK -e "$ a\
-	$2" taichung_requeue
-    svn diff */address.txt taichung_requeue;
+	$2" midsouth_requeue
+    svn diff */*/address.txt midsouth_requeue;
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]

@@ -141,7 +141,8 @@ function scrape () {
 }
 
 function prof_remove () {
-    sed -i.BAK -e "s/^\($1.*\)$/# \1/" */*/address.txt;
+    address=$(grep -l "^$1" */*/address.txt)
+    echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/# \1/"
     svn diff */*/address.txt;
     echo -ne "\nCommit? y/n "
     read proceed

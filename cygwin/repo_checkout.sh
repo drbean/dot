@@ -24,6 +24,7 @@ cd ~/curriculum
 for p in online; do svn up $p ; done
 svn up ~/curriculum/pages/homepage/markdown --parents
 svn up ~/curriculum/speaking/test/ --parents
+svn up ~/curriculum/test/toefl --parents
 for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curriculum/pages/$p --depth=empty && svn up ~/curriculum/pages/$p/{styles.html,homepagePost.html5} ; done
 
 cd 

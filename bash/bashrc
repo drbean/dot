@@ -152,7 +152,8 @@ function prof_remove () {
 }
 
 function prof_edit () {
-    sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/" */*/address.txt;
+    address=$(grep -l "^$1" */*/address.txt)
+    echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/"
     sed -i.BAK -e "$ a\
 	$2" midsouth_requeue
     svn diff */*/address.txt midsouth_requeue;

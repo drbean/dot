@@ -12,6 +12,7 @@ for i in {0..6} ; do
 	echo "${section[$i]} q_cat=$q_cat"
 	grade_cat=$(($i+4))
 	sect=${section[$i]}
+	if [[ $(perl -MMoodle::Command::section_populate -e 0 2>&1) ]] ; then echo 'run ~/dot/cygwin/moopl_setup.sh' && exit; fi
 	perl -MMoodle::Command::section_populate -e "Moodle::Command::section_populate::execute('', { s=>\"$sect\", q=>\"$q_cat\", g=>$grade_cat, c=>$course, n=>\"$course_name\" })"
 done
 

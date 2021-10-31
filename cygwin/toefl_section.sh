@@ -3,10 +3,10 @@
 course=2
 course_name='test/toefl'
 context=16 # 'toefl' context
-parent=4 # 4 | Default for toeic
+parent=4 # 4 | Default for toefl
 section=('general' 'reading' 'listening' 'speaking' 'writing' 'test0' 'test1')
 
-for i in {0..6} ; do
+for i in {0..4} ; do
 	q_cat=${section[$i]}
 	q_cat_id=$(Moosh -n questioncategory-create --reuse -p $parent -c $context $q_cat)
 	echo "${section[$i]} q_cat=$q_cat"

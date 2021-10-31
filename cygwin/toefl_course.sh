@@ -8,12 +8,12 @@ dummy=$(Moosh -n activity-add --section 0 --name dummy -o="--visible=0" quiz $co
 echo "dummy=$dummy"
 dummy_quiz=$(($dummy+0))
 # dummy_quiz=1
-toefl_context=3
+toefl_context=12
 # top_cat=$(Moosh -n questioncategory-create --parent '""' --context $toefl_context top)
 top_cat=6
 toefl_cat=$(Moosh -n questioncategory-create --parent $top_cat --context $toefl_context "toefl default")
-general_cat=$(Moosh -n questioncategory-create --parent $toefl_cat --context $toefl_context "general")
 # toefl_cat=4
+general_cat=$(Moosh -n questioncategory-create --parent $toefl_cat --context $toefl_context "general")
 # general_cat=
 
 file='/var/lib/moodle/repository/general/quiz_dummy_jigsaw_0.xml'

@@ -36,3 +36,6 @@ screen 7
 stuff "# for p in gcc gcc-g++ make libcrypt-devel ; do cyg_pack \$p ; done^M"
 stuff "# cpan App::cpanminus^M"
 stuff "# catalyst^M"
+
+screen 8
+stuff "# . ~/dot/cygwin/moopl_setup.sh^M"

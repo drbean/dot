@@ -31,11 +31,13 @@ echo "ex_grade_cat=$ex_cat"
 # ex_cat=6
 task=(general reading listening speaking writing)
 for c in {0..4}
-	do Moosh -n gradecategory-create -n ${task[$c]} $ex_cat $course
+	do echo -n "${task[$c]} cat="
+	Moosh -n gradecategory-create -n ${task[$c]} $ex_cat $course
 done
 test_cat=$(Moosh -n gradecategory-create -n tests $total_grade $course)
 echo "test_grade_cat=$test_cat"
 # test_cat=7
 for e in {0..4}
-	do Moosh -n gradecategory-create -n "practice_test_$e" $test_cat $course
+	do echo -n "test_$e cat="
+	Moosh -n gradecategory-create -n "practice_test_$e" $test_cat $course
 done

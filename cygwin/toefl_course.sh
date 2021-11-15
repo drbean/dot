@@ -1,4 +1,4 @@
-course=$(Moosh -n course-create -f 'Teach Yourself TOEFL' -d 'TOEFL prep: quizzes, slides, practice tests' -F topics -n 8 toefl)
+course=$(Moosh -n course-create -f 'Teach Yourself TOEFL (under construction)' -d 'TOEFL prep: quizzes, slides, practice tests' -F topics -n 8 toefl)
 echo "course=$course"
 
 course=2
@@ -11,8 +11,8 @@ dummy_quiz=$(($dummy+0))
 toefl_context=12
 # top_cat=$(Moosh -n questioncategory-create --parent '""' --context $toefl_context top)
 top_cat=6
-toefl_cat=$(Moosh -n questioncategory-create --parent $top_cat --context $toefl_context "toefl default")
-# toefl_cat=4
+# toefl_cat=$(Moosh -n questioncategory-create --parent $top_cat --context $toefl_context "toefl default")
+toefl_cat=7
 echo "toefl q_cat=$toefl_cat"
 general_cat=$(Moosh -n questioncategory-create --parent $toefl_cat --context $toefl_context "general")
 # general_cat=

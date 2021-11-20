@@ -155,8 +155,8 @@ function prof_edit () {
     address=$(grep -l "^$1" */*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/"
     sed -i.BAK -e "$ a\
-	$2" midsouth_requeue
-    svn diff */*/address.txt midsouth_requeue;
+	$2" south_requeue
+    svn diff */*/address.txt south_requeue;
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]
@@ -176,7 +176,7 @@ function email () {
         esac
     done
     cd ~/edit/email || exit 1
-    COUNTY='midsouth' SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR email_$school
+    COUNTY='south' SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR email_$school
     cd -
 }
 

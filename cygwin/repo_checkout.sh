@@ -1,6 +1,6 @@
 if [[ ! -x /cygdrive/c/Program\ Files/nodejs/npm ]] ; then echo "No npm. Install node.js\n" && return ; fi
 cd
-for p in dot edit ttb curriculum emoeco; do svn co http://github.com/drbean/$p/trunk $p --depth=empty ; done
+for p in dot edit ttb curriculum ; do svn co http://github.com/drbean/$p/trunk $p --depth=empty ; done
 
 cd ~/dot
 
@@ -29,7 +29,7 @@ for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curric
 
 cd 
 
-# for p in email jeffreykuo; do svn up edit/$p ; done
+for p in email jeffreykuo; do svn up edit/$p ; done
 # for i in dapper-invoice; do svn co http://github.com/drbean/$i/trunk ~/edit/invoice/$i; done
 for p in moodle ; do svn up ~/ttb/$p/{lib,Makefile.PL} --parents; done
 znc

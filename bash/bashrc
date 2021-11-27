@@ -97,6 +97,12 @@ function timer () {
 
 function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
 function l () { sed -f link.sed >> $COUNTY/$SCHOOL/address.txt; }
+function a () {
+    echo -e "\\\\n# http://www.$SCHOOL.edu.tw/$DEPARTMENT" >> $COUNTY/$SCHOOL/address.txt ;
+    sed -f link.sed >> $COUNTY/$SCHOOL/address.txt;
+    svn ci $COUNTY/$SCHOOL/address.txt -m http://www.$SCHOOL.edu.tw/$DEPARTMENT;
+    svn log --diff -r HEAD;
+}
 function p () {
     declare -a pages
     readarray pages < $1

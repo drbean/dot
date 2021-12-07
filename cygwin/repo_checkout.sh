@@ -29,7 +29,7 @@ for p in pandoc-templates ; do svn co http://github.com/drbean/$p/trunk ~/curric
 
 cd 
 
-for p in "email/tainan" ; do svn up ~/edit/$p --parents ; done
+for p in "email/gaoxiong" ; do svn up ~/edit/$p --parents ; done
 # for i in dapper-invoice; do svn co http://github.com/drbean/$i/trunk ~/edit/invoice/$i; done
 for p in moodle ; do svn up ~/ttb/$p/{lib,Makefile.PL} --parents; done
 znc

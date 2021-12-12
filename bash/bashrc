@@ -104,8 +104,34 @@ function a () {
     fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     sed -f link.sed >> $COUNTY/$SCHOOL/address.txt;
-    svn ci $COUNTY/$SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw;
-    svn log --diff -r HEAD;
+    svn diff $COUNTY/$SCHOOL/address.txt
+    read -p  "\nCommit? y/n " proceed
+    if [[ $proceed =~ ^y ]] ; then
+	svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+    fi
+    # svn log --diff -r HEAD;
+}
+function h () {
+    TOP=$1
+    INDEX=$2
+    curl -L "$TOP" | sed -e "/$INDEX/!d" -f page.sed > scratch.html
+    sort | uniq > page.html < scratch.html
+    proceed="n"
+    while ! [[ $proceed =~ ^y ]] ; do
+	cat page.html
+	read -p "\nProf page set OK? y/n " proceed
+	if [[ $proceed =~ ^y ]] ; then 
+	    while read p ; do
+		curl -L "${p%$'\r'}" | sed -f link.sed
+	    done > scratch.txt < page.html
+	    sort | uniq >> gaoxiong/$SCHOOL/address.txt < scratch.txt
+	fi
+    done
+    svn diff $COUNTY/$SCHOOL/address.txt
+    read -p  "\nCommit? y/n " proceed
+    if [[ $proceed =~ ^y ]]
+        then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+    fi
 }
 function p () {
     declare -a pages

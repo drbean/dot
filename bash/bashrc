@@ -104,10 +104,12 @@ function a () {
     fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     sed -f link.sed >> $COUNTY/$SCHOOL/address.txt;
-    svn diff $COUNTY/$SCHOOL/address.txt
+    svn diff $COUNTY/$SCHOOL/address.txt ;
+    # echo -ne "\nCommit? y/n "
+    # read proceed
     read -p  "\nCommit? y/n " proceed
-    if [[ $proceed =~ ^y ]] ; then
-	svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+    if [[ $proceed =~ ^y ]]
+	then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
     fi
     # svn log --diff -r HEAD;
 }

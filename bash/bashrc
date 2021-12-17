@@ -103,7 +103,10 @@ function a () {
 	then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
     # echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
-    sed -f link.sed >> $COUNTY/$SCHOOL/address.txt
+    exec 3>&1
+    exec >> $COUNTY/$SCHOOL/address.txt 
+    sed -f link.sed
+    exec >&3
     diff_check="n"
     commit="n"
     while ! [[ $diff_check =~ ^y ]] ; do

@@ -105,6 +105,7 @@ function a () {
     # echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     sed -f link.sed >> $COUNTY/$SCHOOL/address.txt
     diff_check="n"
+    commit="n"
     while ! [[ $diff_check =~ ^y ]] ; do
 	svn diff $COUNTY/$SCHOOL/address.txt
 	# echo -ne "\nCommit? y/n "

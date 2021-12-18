@@ -124,7 +124,7 @@ function a () {
 function h () {
     TOP=$1
     INDEX=$2
-    curl -L "$TOP" | sed -e "/$INDEX/!d" -f page.sed | sort | uniq > page.html
+    curl -L "$TOP" | sed -e "/$INDEX/!d" -f page.sed | uniq > page.html
     page="n"
     while ! [[ $page =~ ^y ]] ; do
 	cat page.html

@@ -1,4 +1,4 @@
-" Last Edit: 2021 Dec 19,  3:23:12 PM
+" Last Edit: 2021 Dec 19,  8:56:20 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -843,8 +843,9 @@ augroup scrape
 " repetitive extract, sort | uniq email addresses
 au BufEnter ~/edit/email/*/*/address.txt no <buffer> <LocalLeader>v :'<,'>v/@/d<CR>
 au BufEnter ~/edit/email/*/*/address.txt no <buffer> <LocalLeader>! :'<,'>! sort \| uniq<CR>
-au BufEnter ~/edit/email/*.html no <buffer> <LocalLeader>u :.! perl -MURI::Escape -e 'chomp($line=<STDIN>);
-	\ print uri_escape($line, "^\x{00}-\x{ff}")'
+au BufEnter ~/edit/email/*.html no <buffer> <LocalLeader>u :.! perl
+	\ -MURI::Escape -e 'chomp($line=<STDIN>);
+	\ print uri_escape($line)'<CR>
 augroup END
 
 augroup cards

@@ -1,4 +1,4 @@
-" Last Edit: 2021 Dec 19,  8:56:20 PM
+" Last Edit: 2021 Dec 20,  2:55:24 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -364,6 +364,22 @@ fu! Insert_increment()
 	let s:line = join( s:chars, "" )
 	call setline(".", s:line)
 endf
+
+" from vim docu map.txt
+
+let counter = 0
+inoremap <expr> <C-L> ListItem()
+inoremap <expr> <C-R> ListReset()
+
+func ListItem()
+  let g:counter += 1
+  return g:counter
+endfunc
+
+func ListReset()
+  let g:counter = 0
+  return ''
+endfunc
 
 map <LocalLeader>i :call Insert_increment()<CR>
 

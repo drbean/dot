@@ -19,7 +19,7 @@ stuff "svn ci $COUNTY/$SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
 
 screen 0
 # editing
-stuff "echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.edu.tw >> $COUNTY/$SCHOOL/address.txt ; v page.html $COUNTY/$SCHOOL/address.txt^M"
+stuff "echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.edu.tw >> $COUNTY/$SCHOOL/address.txt ; v $COUNTY/$SCHOOL/address.txt page.html^M"
 
 screen 1
 stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"
@@ -27,6 +27,6 @@ stuff "# while read p ; do curl -L \"\${p%\$\'\\r\'}\" | sed -f link.sed ; done 
 stuff "# for p in {..} ; do curl -L \"\$p\" | l ; done^M"
 stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"
 stuff "# lynx '^M"
-stuff "# echo '^M"
-stuff "h '"
+stuff "# h '^M"
+stuff "echo '"
 

@@ -1,4 +1,4 @@
-" Last Edit: 2021 Dec 21, 11:08:09 AM
+" Last Edit: 2021 Dec 21, 12:57:33 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -861,7 +861,7 @@ au BufEnter ~/edit/email/*/*/address.txt no <buffer> <LocalLeader>v :'<,'>v/@/d<
 au BufEnter ~/edit/email/*/*/address.txt no <buffer> <LocalLeader>! :'<,'>! sort \| uniq<CR>
 au BufEnter ~/edit/email/*.html no <buffer> <LocalLeader>u :.! perl
 	\ -MURI::Escape -e 'chomp($line=<STDIN>);
-	\ print uri_escape($line)'<CR>
+	\ print uri_escape($line, "^A-Za-z0-9\-\._~/ :")'<CR>
 augroup END
 
 augroup cards

@@ -102,7 +102,7 @@ function a () {
     if ! [[ -f ~/edit/email/$COUNTY/$SCHOOL/address.txt ]] 
 	then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
-    echo -e "\\n# https://www2.isu.edu.tw/2018/homepage_v01.php?dept_mno=6" >> $COUNTY/$SCHOOL/address.txt ;
+    # echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     exec 3>&1
     exec >> $COUNTY/$SCHOOL/address.txt 
     sed -f link.sed

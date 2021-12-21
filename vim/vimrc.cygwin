@@ -1,4 +1,4 @@
-" Last Edit: 2021 Dec 20,  2:55:24 PM
+" Last Edit: 2021 Dec 21, 11:08:09 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -368,8 +368,8 @@ endf
 " from vim docu map.txt
 
 let counter = 0
-inoremap <expr> <C-L> ListItem()
-inoremap <expr> <C-R> ListReset()
+inoremap <expr> <LocalLeader>l ListItem()
+inoremap <expr> <LocalLeader>r ListReset()
 
 func ListItem()
   let g:counter += 1

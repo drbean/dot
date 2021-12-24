@@ -27,6 +27,6 @@ stuff "# while read p ; do curl -L \"\${p%\$\'\\r\'}\" | sed -f link.sed ; done 
 stuff "# for p in {..} ; do curl -L \"\$p\" | l ; done^M"
 stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"
 stuff "# lynx '^M"
-stuff "# h '^M"
+stuff "# DEPARTMENT= h '^M"
 stuff "echo '"
 

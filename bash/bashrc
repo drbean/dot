@@ -124,18 +124,19 @@ function a () {
 function h () {
     TOP=$1
     INDEX=$2
-    curl -L "$TOP" | sed -e "/$INDEX/!d" -f page.sed | uniq > page.html
+    curl -L "$TOP" | sed -e "/$INDEX/!d" -f page.sed | uniq > prof_page.html
     page="n"
     while ! [[ $page =~ ^y ]] ; do
-	cat page.html
+	cat prof_page.html
 	read -p "Prof page set OK? y/n " page
 	if [[ $page =~ ^y ]] ; then 
 	    rm email.txt
 	    while read p ; do
 		curl -L "${p%$'\r'}" | sed -f link.sed >> email.txt
-	    done < page.html
+	    done < prof_page.html
 	fi
     done
+    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     cat email.txt | sort | uniq >> $COUNTY/$SCHOOL/address.txt
     svn diff $COUNTY/$SCHOOL/address.txt ;
     read -p  "Commit? y/n " commit

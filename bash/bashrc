@@ -109,6 +109,7 @@ function a () {
     read -p  "Commit? y/n " commit
     if [[ $commit =~ ^y ]]
         then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	else echo "What commit=$commit?"
     fi
     # svn log --diff -r HEAD;
 }

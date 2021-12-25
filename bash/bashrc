@@ -98,7 +98,7 @@ function timer () {
 function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
 function l () { sed -f link.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {
-    DEPARTMENT=$1 ;
+    DEPARTMENT=$1
     if ! [[ -f ~/edit/email/$COUNTY/$SCHOOL/address.txt ]] 
 	then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
@@ -111,7 +111,7 @@ function a () {
         then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
 	else echo "What commit=$commit?"
     fi
-    # svn log --diff -r HEAD;
+    # svn log --diff -r HEAD
 }
 function h () {
     TOP=$1

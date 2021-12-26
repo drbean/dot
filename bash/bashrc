@@ -106,10 +106,12 @@ function a () {
     sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
     # commit="n"
     svn diff $COUNTY/$SCHOOL/address.txt
+    exec 0< /dev/tty
     read -p  "Commit? y/n " commit
     if [[ $commit =~ ^y ]]
         then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
-	else echo "What commit=$commit?"
+	else echo -e "commit=$commit?\nDEPARTMENT=$DEPARTMENT?"
+	    ls -l /dev/fd/
     fi
     # svn log --diff -r HEAD
 }

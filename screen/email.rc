@@ -7,7 +7,7 @@
 screen 3
 stuff "# area=tc ; for n in {xxx} ; do svn rm \^/trunk/email/\$area\$n -m \$area\$n.out ; done ^M"
 stuff "# svn mkdir $COUNTY/$SCHOOL/^M"
-stuff "# svn add $COUNTY/$SCHOOL/address.txt^M"
+stuff "# touch $COUNTY/$SCHOOL/address.txt && svn add $COUNTY/$SCHOOL/address.txt^M"
 stuff "svn ci $COUNTY/$SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
 
 # screen 4

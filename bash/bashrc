@@ -182,9 +182,9 @@ function scrape () {
 }
 
 function prof_remove () {
-    address=$(grep -l "^$1" */*/address.txt)
+    address=$(grep -l "^$1" south/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/# \1/"
-    svn diff */*/address.txt;
+    svn diff south/*/*/address.txt;
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]
@@ -193,11 +193,11 @@ function prof_remove () {
 }
 
 function prof_edit () {
-    address=$(grep -l "^$1" */*/address.txt)
+    address=$(grep -l "^$1" south/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/"
     sed -i.BAK -e "$ a\
 	$2" south_requeue
-    svn diff */*/address.txt south_requeue;
+    svn diff south/*/*/address.txt south_requeue;
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]

@@ -1,6 +1,6 @@
 course=$(Moosh -n course-create -f 'Teach Yourself TOEFL (under construction)' -d 'TOEFL prep: quizzes, slides, practice tests' -F topics -n 8 toefl)
 echo "course=$course"
-if [[ $course =~ "^[0-9]*$" ]] ; then echo 'new toefl$course' >&2 && exit 1; fi
+if [[ $course =~ ^[0-9]*$ ]] ; then echo 'new toefl$course' >&2 && exit 1; fi
 # course=2
 course_name='test/toefl'
 summary=$(Moosh -n course-config-set course $course summary "A companion course to ETS's TOEFLx on edX")

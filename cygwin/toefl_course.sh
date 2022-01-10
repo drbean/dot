@@ -1,4 +1,4 @@
-course=$(Moosh -n course-create -f 'Teach Yourself TOEFL (under construction)' -d 'TOEFL prep: quizzes, slides, practice tests' -F topics -n 8 toefl)
+course=$(Moosh -n course-create -f 'Teach Yourself TOEFL (under construction)' -d 'TOEFL prep: quizzes, slides, practice tests' -F topics -n 5 toefl)
 echo "course=$course"
 if [[ ! $course =~ ^[0-9]*$ ]] ; then echo 'new toefl$course' >&2 && sleep 1; fi
 # course=2

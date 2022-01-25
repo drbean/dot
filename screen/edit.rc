@@ -2,8 +2,6 @@ screen v $SOURCE/$FILE.md
 screen 1
 stuff "ls^M"
 stuff "# grep -r ^M"
-stuff "# prof_remove ^M"
-stuff "# prof_edit ^M"
 screen 2
 stuff "# pandoc -o reference.docx --print-default-data-file reference.docx^M"
 stuff "# svn add reference.docx^M"

@@ -12,8 +12,6 @@ stuff "# MINE=my_\$FILE; pandoc -o \$MINE.docx --reference-doc=./reference.docx 
 stuff "&& /cygdrive/c/Program\ Files/Microsoft\ Office/root/Office16/WINWORD /t \$MINE.docx^M"
 screen 3
 stuff "svn st -q^M svn log -vr BASE:HEAD^M# svn add $FILE.md^M"
-stuff "d=$(date)^M"
-stuff "# f=00 ; svn rm \^/trunk/email/north_\$f -m \"$d ^M"
 screen 4
 stuff "./textbook.sh && xelatex textbook.tex && lftp -c 'open web.nuu.edu.tw && cd public_html && put textbook.pdf'^M"
 screen 5

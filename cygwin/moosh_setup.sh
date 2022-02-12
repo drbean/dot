@@ -8,5 +8,5 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 php composer.phar install
 php composer.phar dumpautoload
-ln -s /home/owuser/moosh/moosh.php /usr/local/bin/Moosh
+ln -s /home/$USER/moosh/moosh.php /usr/local/bin/Moosh
 chmod 775 /usr/local/bin/Moosh

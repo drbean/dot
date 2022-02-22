@@ -38,7 +38,7 @@ stuff "# . ~/dot/cygwin/toefl_course.sh^M"
 stuff "# . ~/dot/cygwin/toefl_section.sh^M"
 
 screen 4
-stuff "psql -p 5432 mood082^M"
+stuff "psql -p 5432 mood082 -U owuser^M"
 screen 5
 stuff "# cd ~/moodle/db^M"
 stuff "cd ~/moosh^M"

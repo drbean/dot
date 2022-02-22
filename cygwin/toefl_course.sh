@@ -25,8 +25,8 @@ file='/var/lib/moodle/repository/general/quiz_dummy_jigsaw_0.xml'
 perl -MMoodle::Command::xml -e 'print Moodle::Command::xml::execute(
 	"", { c=>"test/toefl", t=>"general", s=>"dummy", q=>"jigsaw", f=>0 }
 	);' > $file
-#question=$(Moosh -n question-import $file $dummy_quiz $general_cat)
-#echo "dummy quiz question=$question"
+# question=$(Moosh -n question-import $file $dummy_quiz $general_cat)
+# echo "dummy quiz question=$question"
 Moosh -n activity-delete 1 # Announcements forum
 
 total_grade=1

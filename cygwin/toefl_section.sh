@@ -2,14 +2,14 @@
 # after creating file system repos
 course=2
 course_name='test/toefl'
-context=12 # 'toefl' context
-parent=4 # 7 # 4 | Default for toefl
+context=12 # 16? #'toefl' context
+parent=7 # 9? # 4 | Default for toefl
 # parent id = 1 according to questioncategory-create
 section=('general' 'reading' 'listening' 'speaking' 'writing' 'test0' 'test1')
 
 for i in {0..4} ; do
 	q_cat=${section[$i]}
-q_cat_id=$(Moosh -n questioncategory-create --reuse -p $parent -c $context $q_cat)
+	q_cat_id=$(Moosh -n questioncategory-create --reuse -p $parent -c $context $q_cat)
 	echo "$q_cat q_cat=$q_cat_id"
 	grade_cat=$(($i+4))
 	sect=${section[$i]}

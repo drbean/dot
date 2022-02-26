@@ -1,12 +1,12 @@
 screen 1
 stuff "mkdir --parent /srv/www/cgi-bin/ /var/lib/moodle/^M"
-stuff "# cd /srv/www/cgi-bin/moodle && git checkout production^M"
 stuff "# for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done^M"
 stuff "# /usr/sbin/apachectl start^M"
 stuff "# php admin/cli/install_database.php --adminpass='' --agree-license --adminemail='drbean@freeshell.org' --fullname='Teach yourself English with Dr Bean' --shortname='drbean'^M"
 stuff "# rm -rf /var/lib/moodle/*cache^M"
 stuff "# cyg_pack ctags^M"
 stuff "# ctags -R --fields=+aimS --php-kinds=cdfi --languages=php --tag-relative=yes --exclude='.git' --totals=yes^M"
+stuff "cd /srv/www/cgi-bin/moodle && git checkout production"
 
 screen 2
 stuff "cd /srv/www/cgi-bin/moodle/mod/quiz/report/^M"
@@ -48,7 +48,7 @@ stuff "cd ~/moosh^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/.\/\$page\/index.html/\" www/_site/*.html; ; done^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/..\/\$page\/index.html/\" www/_site/*/*.html; done^M"
 stuff "# pandoc -o www/_site/commands/index_pandoc.html www/commands/index.md^M"
-stuff "# . ~/dot/cygwin/web_pack.sh && . ~/dot/cygwin/moosh_setup.sh^M"
+stuff ". ~/dot/cygwin/web_pack.sh && . ~/dot/cygwin/moosh_setup.sh"
 screen 8
 stuff "# lynk http://localhost/cgi-bin/moodle^M"
 stuff "# lynk http://localhost/cgi-bin/moodle/course/view.php?id=2^M"

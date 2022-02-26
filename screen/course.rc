@@ -26,6 +26,11 @@ stuff "# perl ../cclass/cards.pl -t ./$TOPIC && xelatex ./\$TOPIC/quiz_${STORY}_
 stuff "# mount ~/media/^M"
 stuff "# cp jigsaw_${STORY}_$FORM.pdf quiz_${STORY}_$FORM.pdf ~/media/^M"
 stuff "# umount ~/media/^M"
+stuff "svn st -q^M svn log -vr BASE:HEAD^M"
+stuff "# moopl intro -c $COURSE -t $TOPIC -s $STORY -a ${TYPE:-\"description\"} -f $FORM > $HOME/curriculum/$COURSE/$TOPIC/intro.md^M"
+stuff "# svn mkdir ./$TOPIC && lftp -c 'open drbean@sdf.org && cd html/ && mkdir $VIEW && qui'^M"
+stuff "# vroom -html ./$TOPIC && lftp -c 'open drbean@sdf.org && cd html/$VIEW && mput ./$TOPIC/html/*.html && qui'^M"
+
 screen 5 lftp drbean@freeshell.org
 stuff "# mkdir html/$VIEW^M"
 stuff "cd html/$VIEW^M"
@@ -36,10 +41,6 @@ stuff "# put jigsaw_${STORY}_$FORM.pdf^M"
 stuff "# put quiz_${STORY}_$FORM.pdf^M"
 stuff "# open freeshell.org^M"
 stuff "# put bingo.pdf && open freeshell.org && put bingo.pdf^M"
-stuff "svn st -q^M svn log -vr BASE:HEAD^M"
-stuff "# moopl intro -c $COURSE -t $TOPIC -s $STORY -a ${TYPE:-\"description\"} -f $FORM > $HOME/curriculum/$COURSE/$TOPIC/intro.md^M"
-stuff "# svn mkdir ./$TOPIC && lftp -c 'open drbean@sdf.org && cd html/ && mkdir $VIEW && qui'^M"
-stuff "# vroom -html ./$TOPIC && lftp -c 'open drbean@sdf.org && cd html/$VIEW && mput ./$TOPIC/html/*.html && qui'^M"
 
 screen 6
 stuff "#dtach -A /tmp/\$COURSE v online/{default,\$TOPIC.yaml ../online/default.yaml^M"

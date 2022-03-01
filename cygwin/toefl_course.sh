@@ -29,10 +29,12 @@ perl -MMoodle::Command::xml -e 'print Moodle::Command::xml::execute(
 # echo "dummy quiz question=$question"
 Moosh -n activity-delete 1 # Announcements forum
 
+# check gradebook in browser for ex_cat, test_cat
+# need to change total_grade if course!=2
 total_grade=1
 ex_cat=$(Moosh -n gradecategory-create -n exercises $total_grade $course)
 echo "section_grade_cats=$ex_cat"
-# ex_cat=6
+ex_cat=6 # 15
 task=(general reading listening speaking writing)
 for c in {0..4}
 	do echo -n "${task[$c]} cat="
@@ -40,7 +42,7 @@ for c in {0..4}
 done
 test_cat=$(Moosh -n gradecategory-create -n tests $total_grade $course)
 echo "test_grade_cat=$test_cat"
-# test_cat=7
+test_cat=7 # 16
 for e in {0..4}
 	do echo -n "test_$e grade cat="
 	Moosh -n gradecategory-create -n "practice_test_$e" $test_cat $course

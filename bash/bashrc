@@ -2,7 +2,7 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+        . /etc/bashrc
 fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
@@ -38,11 +38,11 @@ alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 function cyg_pack () {
     package=$1
     if [[ -x d:/User-Data/Downloads/setup-x86_64.exe ]] ; then
-	d:/User-Data/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/User/$USER/Downloads --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
+        d:/User-Data/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/User/$USER/Downloads --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
     elif [[ -x c:/Users/$USER/Downloads/setup-x86_64.exe ]] ; then
-	c:/Users/$USER/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/User/$USER/Downloads --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
+        c:/Users/$USER/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/User/$USER/Downloads --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
     elif [[ -x c:/tools/cygwin/cygwinsetup.exe ]] ; then
-	c:/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
+        c:/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
     fi
 }
 
@@ -100,7 +100,7 @@ function l () { sed -f link.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {
     DEPARTMENT=$1
     if ! [[ -f ~/edit/email/$COUNTY/$SCHOOL/address.txt ]] 
-	then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
+        then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt
     sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
@@ -110,8 +110,8 @@ function a () {
     read -p  "Commit? y/n " commit
     if [[ $commit =~ ^y ]]
         then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
-	else echo -e "commit=$commit?\nDEPARTMENT=$DEPARTMENT?"
-	    ls -l /dev/fd/
+        else echo -e "commit=$commit?\nDEPARTMENT=$DEPARTMENT?"
+            ls -l /dev/fd/
     fi
     # svn log --diff -r HEAD
 }
@@ -121,14 +121,14 @@ function h () {
     curl -L "$TOP" | sed -e "/$INDEX/!d" -f page.sed | uniq | vipe > prof_page.html
     page="n"
     while ! [[ $page =~ ^y ]] ; do
-	cat prof_page.html
-	read -p "Prof page set OK? y/n " page
-	if [[ $page =~ ^y ]] ; then 
-	    rm email.txt
-	    while read p ; do
-		curl -L "${p%$'\r'}" | sed -f link.sed >> email.txt
-	    done < prof_page.html
-	fi
+        cat prof_page.html
+        read -p "Prof page set OK? y/n " page
+        if [[ $page =~ ^y ]] ; then 
+            rm email.txt
+            while read p ; do
+                curl -L "${p%$'\r'}" | sed -f link.sed >> email.txt
+            done < prof_page.html
+        fi
     done
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     cat email.txt | sort | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
@@ -143,25 +143,25 @@ function p () {
     readarray pages < $1
     for page in ${pages[@]}
     do
-	echo "$page" 
-	read -p "\nFetch? y/n " proceed
-	if [[ $proceed =~ ^y ]]
-	    then curl "$page" | sed -f link.sed >> $SCHOOL/address.txt
-	fi
+        echo "$page" 
+        read -p "\nFetch? y/n " proceed
+        if [[ $proceed =~ ^y ]]
+            then curl "$page" | sed -f link.sed >> $SCHOOL/address.txt
+        fi
     done
 }
 function e () {
     curl $1 |
-	sed -f http.sed > scratch.html
+        sed -f http.sed > scratch.html
     declare -a pages
     readarray pages < scratch.html
     for page in ${pages[@]}
     do
-	echo "$page" 
-	read -p "\nFetch? y/n " proceed
-	if [[ $proceed =~ ^y ]]
-	    then curl "$page" | sed -f link.sed >> $SCHOOL/address.txt
-	fi
+        echo "$page" 
+        read -p "\nFetch? y/n " proceed
+        if [[ $proceed =~ ^y ]]
+            then curl "$page" | sed -f link.sed >> $SCHOOL/address.txt
+        fi
     done
 }
 
@@ -181,6 +181,20 @@ function scrape () {
     cd -
 }
 
+function pp () {
+    if [[ $# -gt 2 ]]; then
+        echo "$@: Too many args" >&2
+        exit 2
+    elif [[ $# -eq 2 ]]; then
+        prof_edit $@
+    elif [[ $# -eq 1 ]]; then
+        prof_remove $@
+    else
+        echo "$@: No args" >&2
+        exit 2
+    fi
+}
+
 function prof_remove () {
     address=$(grep -l "^$1" south/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/# \1/"
@@ -196,7 +210,7 @@ function prof_edit () {
     address=$(grep -l "^$1" south/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/"
     sed -i.BAK -e "$ a\
-	$2" south_requeue
+        $2" south_requeue
     svn diff south/*/*/address.txt south_requeue;
     echo -ne "\nCommit? y/n "
     read proceed
@@ -271,7 +285,7 @@ function moodle () {
 
 function cm_id () {
     local module activity_id module_string sqlrun_prefix sqlrun_suffix \
-	module_string_preshrunk module_id cm_string_preshrunk
+        module_string_preshrunk module_id cm_string_preshrunk
     module=$1
     activity_id=$2
     cd /srv/www/cgi-bin/moodle || exit 1
@@ -286,7 +300,7 @@ stdClass Object
     module_string_preshrunk=${module_string#"$sqlrun_prefix"}
     module_id=${module_string_preshrunk%"$sqlrun_suffix"}
     cm_string=$(Moosh -n sql-run "select id from {course_modules} where \
-	module=$module_id and instance=$activity_id")
+        module=$module_id and instance=$activity_id")
     cm_string_preshrunk=${cm_string#"$sqlrun_prefix"}
     echo ${cm_string_preshrunk%"$sqlrun_suffix"}
     cd - > /dev/null 2>&1
@@ -302,7 +316,7 @@ function aca () {
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
             o) old_story=${OPTARG};;
-	    r) round=${OPTARG};;
+            r) round=${OPTARG};;
             l) league=${OPTARG};;
             x) script_arg=${OPTARG};;
             *) return 1 # illegal option
@@ -323,7 +337,7 @@ function dic () {
             t) topic=${OPTARG};;
             s) story=${OPTARG};;
             o) old_story=${OPTARG};;
-	    r) round=${OPTARG};;
+            r) round=${OPTARG};;
             l) league=${OPTARG};;
             x) script_arg=${OPTARG};;
             *) return 1 # illegal option
@@ -352,7 +366,7 @@ function bett () {
             c) course=${OPTARG};;
             s) story=${OPTARG};;
             o) old_story=${OPTARG};;
-	    r) round=${OPTARG};;
+            r) round=${OPTARG};;
             l) league=${OPTARG};;
             x) script_arg=${OPTARG};;
             *) return 1 # illegal option
@@ -377,7 +391,7 @@ function question_grade_bett () {
     do
         case ${arg} in
             o) old_story=${OPTARG};;
-	    r) round=${OPTARG};;
+            r) round=${OPTARG};;
             l) league=${OPTARG};;
             *) return 1 # illegal option
         esac
@@ -391,9 +405,9 @@ function question_grade_bett () {
     svn add ~/$SEMESTER/$league/homework/$round.yaml &&
     svn ci -m $old_story ~/$SEMESTER/$league/homework/$round.yaml &&
     lftp -c "open web.nuu.edu.tw &&
-	cd public_html/$league &&
-	put ~/$SEMESTER/$league/homework/$round.yaml -o homework.yaml &&
-	qui"
+        cd public_html/$league &&
+        put ~/$SEMESTER/$league/homework/$round.yaml -o homework.yaml &&
+        qui"
 }
 
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
@@ -411,10 +425,10 @@ function GF () {
     while getopts 'c:t:s:p:' arg
     do
         case ${arg} in
-	    c) course=${OPTARG};;
-	    t) topic=${OPTARG};;
-	    s) story=${OPTARG};;
-	    o) oldstory=${OPTARG};;
+            c) course=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            o) oldstory=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
@@ -433,9 +447,9 @@ function gftags2ctags () {
     while getopts 'c:t:s:' arg
     do
         case ${arg} in
-	    c) course=${OPTARG};;
-	    t) topic=${OPTARG};;
-	    s) story=${OPTARG};;
+            c) course=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
@@ -505,14 +519,14 @@ function pres () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/presentation
-	COURSE=$course \
-	VIEW=$course \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=0 \
-	screen -c /home/$USER/dot/screen/course.rc -dR pres_$topic
-	cd -
+        cd ~/class/presentation
+        COURSE=$course \
+        VIEW=$course \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=0 \
+        screen -c /home/$USER/dot/screen/course.rc -dR pres_$topic
+        cd -
 }
 
 function reading () {
@@ -528,14 +542,14 @@ function reading () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/reading
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR reading
-	cd -
+        cd ~/curriculum/reading
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR reading
+        cd -
 }
 
 function toefl () {
@@ -551,14 +565,14 @@ function toefl () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/test/toefl
-	COURSE=$course \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	VIEW=${view:-"toefl/$topic"} \
-	screen -c /home/$USER/dot/screen/course.rc -dR $topic
-	cd -
+        cd ~/curriculum/test/toefl
+        COURSE=$course \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        VIEW=${view:-"toefl/$topic"} \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
 }
 
 function speaking () {
@@ -574,14 +588,14 @@ function speaking () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/speaking/test
-	COURSE=$course \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	VIEW=${view:-"toeic/$topic"} \
-	screen -c /home/$USER/dot/screen/course.rc -dR $topic
-	cd -
+        cd ~/curriculum/speaking/test
+        COURSE=$course \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        VIEW=${view:-"toeic/$topic"} \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
 }
 
 function top () {
@@ -596,14 +610,14 @@ function top () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course
-	COURSE=$course \
-	VIEW="topics" \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR topics_$story
-	cd -
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW="topics" \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR topics_$story
+        cd -
 }
 
 function college () {
@@ -619,14 +633,14 @@ function college () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR $course
-	cd -
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
 }
 
 function biz () {
@@ -642,14 +656,14 @@ function biz () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR $course
-	cd -
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
 }
 
 function anime () {
@@ -666,15 +680,15 @@ function anime () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course
-	COURSE=$course \
-	VIEW=${view:-$topic} \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	QUIZ=${quiz:-"jigsaw"} \
-	screen -c /home/$USER/dot/screen/course.rc -dR $topic
-	cd -
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=${view:-$topic} \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        QUIZ=${quiz:-"jigsaw"} \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
 }
 
 function corr () {
@@ -691,15 +705,15 @@ function corr () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course
-	COURSE=$course \
-	VIEW=${view:-$topic} \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	QUIZ=${quiz:-"jigsaw"} \
-	screen -c /home/$USER/dot/screen/course.rc -dR $topic
-	cd -
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=${view:-$topic} \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        QUIZ=${quiz:-"jigsaw"} \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
 }
 
 function wr () {
@@ -715,14 +729,14 @@ function wr () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR $topic
-	cd -
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
 }
 
 function cnv () {
@@ -739,15 +753,15 @@ function cnv () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	QUIZ=${quiz:-"jigsaw"} \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR $topic
-	cd -
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        QUIZ=${quiz:-"jigsaw"} \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
 }
 
 function pd () {
@@ -765,15 +779,15 @@ function pd () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	QUIZ=${quiz:-"jigsaw"} \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/pandoc.rc -dR pandoc_$topic
-	cd -
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        QUIZ=${quiz:-"jigsaw"} \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/pandoc.rc -dR pandoc_$topic
+        cd -
 }
 
 function intm () {
@@ -789,14 +803,14 @@ function intm () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR $course
-	cd -
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
 }
 
 function call () {
@@ -812,14 +826,14 @@ function call () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR $course
-	cd -
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
 }
 
 function tech () {
@@ -835,14 +849,14 @@ function tech () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR $course
-	cd -
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
 }
 
 function n () {
@@ -858,14 +872,14 @@ function n () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/curriculum/$course
-	COURSE=$course \
-	VIEW=$view \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR $course
-	cd -
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
 }
 
 function tour () {
@@ -880,27 +894,27 @@ function tour () {
             *) return 1 # illegal option
         esac
     done
-	cd ~/class/$course
-	COURSE=$course \
-	VIEW=$topic \
-	TOPIC=$topic \
-	STORY=$story \
-	FORM=$form \
-	screen -c /home/$USER/dot/screen/course.rc -dR $course
-	cd -
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW=$topic \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
 }
 
 function ex () {
     local arg course round topic story form
     case $1 in
-	anime) course=$1;;
-	conversation) course=$1;;
-	speaking) course=$1;;
-	tech) course=$1;;
-	media) course=$1;;
-	business) course=$1;;
-	college) course=$1;;
-	*) return 1 # illegal league
+        anime) course=$1;;
+        conversation) course=$1;;
+        speaking) course=$1;;
+        tech) course=$1;;
+        media) course=$1;;
+        business) course=$1;;
+        college) course=$1;;
+        *) return 1 # illegal league
     esac
     OPTIND=2
     while getopts 'c:t:s:f:v:q' arg
@@ -939,7 +953,7 @@ function gr () {
         esac
     done
     if [[ -z "$n" ]]
-	then n=2
+        then n=2
     fi
     cd ~/$SEMESTER/$league
     LEAGUE=$league \
@@ -966,7 +980,7 @@ function gr_ex () {
         esac
     done
     if [[ -z "$n" ]]
-	then n=2
+        then n=2
     fi
     cd ~/$SEMESTER/$league
     LEAGUE=$league \
@@ -1017,7 +1031,7 @@ function gr_comp () {
         esac
     done
     if [[ -z "$n" ]]
-	then n=2
+        then n=2
     fi
     cd ~/$SEMESTER/$league
     LEAGUE=$league \
@@ -1043,7 +1057,7 @@ function new () {
         esac
     done
     if [[ -z "$n" ]]
-	then n=2
+        then n=2
     fi
     cd ~/$SEMESTER/
     SCHOOL=$school \
@@ -1069,13 +1083,13 @@ function session () {
     league=$1
     week=$2
     case ${league} in
-	*)
-	    if (($week <= 5)); then session=1
-	    elif (($week <= 9)); then session=2
-	    elif (($week <= 13)); then session=3
-	    elif (($week <= 18)); then session=4
-	    else return 1 # illegal week
-	    fi;;
+        *)
+            if (($week <= 5)); then session=1
+            elif (($week <= 9)); then session=2
+            elif (($week <= 13)); then session=3
+            elif (($week <= 18)); then session=4
+            else return 1 # illegal week
+            fi;;
     esac
 }
 
@@ -1084,61 +1098,61 @@ function tables () {
     league=$1
     letter=$2
     case ${league} in
-		# 16 groups
-	241)
-	    case ${letter} in
-		X) tables="1-2,1-3,2-1,2-2,2-3,3-1,3-2,3-3,4-1,4-2,4-3,5-2,5-3";;
-		*) return 1 # illegal option
-	    esac;;
-	KB1)
-	    case ${letter} in
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
-		*) return 1 # illegal option
-	    esac;;
-	MA1)
-	    case ${letter} in
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
-		*) return 1 # illegal letter
-	    esac;;
-	BMA0045)
-	    case ${letter} in
-		X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,4-1,4-2,4-3,4-4,5-1,5-2,5-3,5-4,6-1,6-2,6-3,6-4,7-2,7-3";;
-		Y) tables="Black Blue Brown Gray Green BlackBlack BlueBlue GreenGreen Orange Pink Purple Red White Yellow OrangeOrange PinkPink PurplePurple";;
-		*) return 1 # illegal option
-	    esac;;
-	MIA0009)
-	    case ${letter} in
-		X) tables="1-1,1-2,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,4-1,4-2,4-3,5-4,5-1,5-2,5-3,5-4,6-1,6-2,6-3";;
-		Y) tables="Black Blue Brown Gray Green BlackBlack BlueBlue GreenGreen Orange Pink Purple Red White Yellow OrangeOrange PinkPink PurplePurple";;
-		*) return 1 # illegal option
-	    esac;;
-	GL00043)
-	    case ${letter} in
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
-		*) return 1 # illegal option
-	    esac;;
-	FLA0003)
-	    case ${letter} in
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
-		*) return 1 # illegal option
-	    esac;;
-	FLA0015)
-	    case ${letter} in
-		X) tables="1-1,1-2,2-1,2-2,2-3,2-4,3-1,3-2";;
-		*) return 1 # illegal option
-	    esac;;
-	FLA0019)
-	    case ${letter} in
-		A) tables="1-1,1-2::1-3,1-4::2-1,2-2::2-3,2-4::3-1,3-2";;
-		X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
-		*) return 1 # illegal option
-	    esac;;
-	FLA0021)
-	    case ${letter} in
-		X) tables="1-1,1-2,1-3,2-1,2-2,2-3,3-1,3-2,3-3,4-1,4-2";;
-		*) return 1 # illegal option
-	    esac;;
-	*) return 1 # illegal league
+                # 16 groups
+        241)
+            case ${letter} in
+                X) tables="1-2,1-3,2-1,2-2,2-3,3-1,3-2,3-3,4-1,4-2,4-3,5-2,5-3";;
+                *) return 1 # illegal option
+            esac;;
+        KB1)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
+                *) return 1 # illegal option
+            esac;;
+        MA1)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
+                *) return 1 # illegal letter
+            esac;;
+        BMA0045)
+            case ${letter} in
+                X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,4-1,4-2,4-3,4-4,5-1,5-2,5-3,5-4,6-1,6-2,6-3,6-4,7-2,7-3";;
+                Y) tables="Black Blue Brown Gray Green BlackBlack BlueBlue GreenGreen Orange Pink Purple Red White Yellow OrangeOrange PinkPink PurplePurple";;
+                *) return 1 # illegal option
+            esac;;
+        MIA0009)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,4-1,4-2,4-3,5-4,5-1,5-2,5-3,5-4,6-1,6-2,6-3";;
+                Y) tables="Black Blue Brown Gray Green BlackBlack BlueBlue GreenGreen Orange Pink Purple Red White Yellow OrangeOrange PinkPink PurplePurple";;
+                *) return 1 # illegal option
+            esac;;
+        GL00043)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
+                *) return 1 # illegal option
+            esac;;
+        FLA0003)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
+                *) return 1 # illegal option
+            esac;;
+        FLA0015)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,2-3,2-4,3-1,3-2";;
+                *) return 1 # illegal option
+            esac;;
+        FLA0019)
+            case ${letter} in
+                A) tables="1-1,1-2::1-3,1-4::2-1,2-2::2-3,2-4::3-1,3-2";;
+                X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
+                *) return 1 # illegal option
+            esac;;
+        FLA0021)
+            case ${letter} in
+                X) tables="1-1,1-2,1-3,2-1,2-2,2-3,3-1,3-2,3-3,4-1,4-2";;
+                *) return 1 # illegal option
+            esac;;
+        *) return 1 # illegal league
     esac
 }
 

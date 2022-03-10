@@ -1,13 +1,3 @@
-screen 1
-stuff "mkdir --parent /srv/www/cgi-bin/ /var/lib/moodle/^M"
-stuff "# for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done^M"
-stuff "# /usr/sbin/apachectl start^M"
-stuff "# php admin/cli/install_database.php --adminpass='' --agree-license --adminemail='drbean@freeshell.org' --fullname='Teach yourself English with Dr Bean' --shortname='drbean'^M"
-stuff "# rm -rf /var/lib/moodle/*cache^M"
-stuff "# cyg_pack ctags^M"
-stuff "# ctags -R --fields=+aimS --php-kinds=cdfi --languages=php --tag-relative=yes --exclude='.git' --totals=yes^M"
-stuff "cd /srv/www/cgi-bin/moodle && git checkout production"
-
 screen 2
 stuff "cd /srv/www/cgi-bin/moodle/mod/quiz/report/^M"
 stuff "# git hub clone moodle-quiz_tag /srv/www/cgi-bin/moodle/mod/quiz/report/\$tag^M"
@@ -56,7 +46,18 @@ stuff "# lynk http://localhost/cgi-bin/moodle/mod/quiz/view.php?id=2^M"
 stuff "# lynk http://localhost/cgi-bin/moodle/mod/quiz/edit.php?cmid=2^M"
 screen 9
 stuff "lynk file:///home/$USER/moosh/www/_site/commands/index_pandoc.html"
+
 screen 0
 stuff "cd /srv/www/cgi-bin/moodle^M"
 stuff "v^M"
 stuff ":e "
+
+screen 1
+stuff "mkdir --parent /srv/www/cgi-bin/ /var/lib/moodle/^M"
+stuff "# for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done^M"
+stuff "# /usr/sbin/apachectl start^M"
+stuff "# php admin/cli/install_database.php --adminpass='' --agree-license --adminemail='drbean@freeshell.org' --fullname='Teach yourself English with Dr Bean' --shortname='drbean'^M"
+stuff "# rm -rf /var/lib/moodle/*cache^M"
+stuff "# cyg_pack ctags^M"
+stuff "# ctags -R --fields=+aimS --php-kinds=cdfi --languages=php --tag-relative=yes --exclude='.git' --totals=yes^M"
+stuff "p= ; cd /srv/www/cgi-bin/moodle && git checkout production && for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done && sed -iBAK -e \"s/dbpass    = ''/dbpass    = '\$p'/\" config.php"

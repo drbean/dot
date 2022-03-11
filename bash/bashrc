@@ -290,15 +290,14 @@ function moodle () {
     mkdir --parent /srv/www/cgi-bin/ /var/lib/moodle/
     for t in general read pic question information solution opinion \
 	reading listening speaking writing
-	do mkdir /var/lib/moodle/repository/\$t --parent
+	do mkdir /var/lib/moodle/repository/$t --parent
 	done
     cd /srv/www/cgi-bin/moodle && git checkout production
-    sed -iBAK -e \"s/dbpass    = ''/dbpass    = '$word'/\" config.php
+    sed -iBAK -e "s/dbpass    = ''/dbpass    = '$word'/" config.php
     php admin/cli/install_database.php --adminpass=$word --agree-license \
 	--adminemail='drbean@freeshell.org' \
 	--fullname='Teach yourself English with Dr Bean' \
 	--shortname='drbean'
-    # sudo -u  moodle screen -c /home/$USER/dot/screen/moodle.rc -dR moodle
     screen -c /home/$USER/dot/screen/moodle.rc -dR moodle
 }
 

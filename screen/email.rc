@@ -25,7 +25,7 @@ stuff "svn ci $COUNTY/$SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
 
 screen 0
 # editing
-stuff "echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.edu.tw >> $COUNTY/$SCHOOL/address.txt ; v $COUNTY/$SCHOOL/address.txt page.html^M"
+stuff "echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.edu.tw >> $COUNTY/$SCHOOL/address.txt ; v $COUNTY/$SCHOOL/address.txt ^M"
 
 screen 1
 stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"

@@ -33,7 +33,7 @@ stuff "# lynk http://localhost/cgi-bin/moodle/mod/quiz/view.php?id=2^M"
 stuff "# lynk http://localhost/cgi-bin/moodle/mod/quiz/edit.php?cmid=2^M"
 stuff "lynk http://localhost/cgi-bin/moodle"
 screen 9
-stuff "lynk file:///home/$USER/moosh/www/_site/commands/index_pandoc.html"
+stuff "lynk file:///home/$USER/moosh/www/_site/commands/index_pandoc.html^M"
 
 screen 0
 stuff "cd /srv/www/cgi-bin/moodle^M"
@@ -48,7 +48,7 @@ stuff "# rm -rf /var/lib/moodle/*cache^M"
 stuff "# cyg_pack ctags^M"
 stuff "# ctags -R --fields=+aimS --php-kinds=cdfi --languages=php --tag-relative=yes --exclude='.git' --totals=yes^M"
 stuff "# p= ; cd /srv/www/cgi-bin/moodle && git checkout production && for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done && sed -iBAK -e \"s/dbpass    = ''/dbpass    = '\$p'/\" config.php^M"
-stuff "/usr/sbin/apachectl start"
+stuff "/usr/sbin/apachectl start^M"
 
 screen 3
 stuff "cd ~/moodle/moosh^M"

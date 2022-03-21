@@ -197,9 +197,10 @@ function pp () {
 }
 
 function prof_remove () {
-    address=$(grep -l "^$1" south/*/*/address.txt)
+    AREA="eastisland"
+    address=$(grep -l "^$1" $AREA/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/# \1/"
-    svn diff south/*/*/address.txt;
+    svn diff $AREA/*/*/address.txt;
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]
@@ -208,11 +209,12 @@ function prof_remove () {
 }
 
 function prof_edit () {
-    address=$(grep -l "^$1" south/*/*/address.txt)
+    AREA="eastisland"
+    address=$(grep -l "^$1" $AREA/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/"
     sed -i.BAK -e "$ a\
-        $2" south_requeue
-    svn diff south/*/*/address.txt south_requeue;
+        $2" requeue_$AREA
+    svn diff $AREA/*/*/address.txt requeue_$AREA;
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]

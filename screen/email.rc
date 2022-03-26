@@ -11,7 +11,7 @@ stuff "# for f in {xxx}; do svn rm \^/trunk/email/eastisland.\$f -m \"eastisland
 stuff "# prof_remove ^M"
 stuff "# prof_edit ^M"
 stuff "# svn up requeue_eastisland eastisland --depth infinity eastisland.2{0..9} taibei --depth infinity^M"
-stuff "# lftp -c 'open drbean@sdf.org && cd job && mput east.* && qui'^M"
+stuff "# lftp -c 'open drbean@sdf.org && cd job && mput eastisland.* && qui'^M"
 stuff "# svn mkdir $COUNTY/$SCHOOL/^M"
 stuff "# touch $COUNTY/$SCHOOL/address.txt && svn add $COUNTY/$SCHOOL/address.txt^M"
 stuff "svn ci $COUNTY/$SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"

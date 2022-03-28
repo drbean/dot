@@ -132,7 +132,7 @@ function h () {
     done
     if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
-    cat email.txt | sort | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
+    cat email.txt | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
     svn diff $COUNTY/$SCHOOL/address.txt ;
     read -p  "Commit? y/n " commit
     if [[ $commit =~ ^y ]]

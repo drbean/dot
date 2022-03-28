@@ -102,14 +102,14 @@ function a () {
     if ! [[ -f ~/edit/email/$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
-    echo -e "\\n# http://management.$SCHOOL.edu.tw/$DEPARTMENT" >> $COUNTY/$SCHOOL/address.txt
+    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt
     sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
     # commit="n"
     svn diff $COUNTY/$SCHOOL/address.txt
     exec 0< /dev/tty
     read -p  "Commit? y/n " commit
     if [[ $commit =~ ^y ]]
-        then svn ci $COUNTY/$SCHOOL/address.txt -m "http://management.$SCHOOL.edu.tw/$DEPARTMENT"
+        then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
         else echo -e "commit=$commit?\nDEPARTMENT=$DEPARTMENT?"
             ls -l /dev/fd/
     fi
@@ -131,12 +131,12 @@ function h () {
         fi
     done
     if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; fi
-    echo -e "\\n# http://management.$SCHOOL.edu.tw/$DEPARTMENT" >> $COUNTY/$SCHOOL/address.txt ;
+    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     cat email.txt | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
     svn diff $COUNTY/$SCHOOL/address.txt ;
     read -p  "Commit? y/n " commit
     if [[ $commit =~ ^y ]]
-        then svn ci $COUNTY/$SCHOOL/address.txt -m "http://management.$SCHOOL.edu.tw/$DEPARTMENT"
+        then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
     fi
 }
 function p () {

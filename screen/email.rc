@@ -14,7 +14,7 @@ stuff "# svn up requeue_eastisland eastisland --depth infinity taibei --depth in
 stuff "# lftp -c 'open drbean@sdf.org && cd job && mput eastisland.* && qui'^M"
 stuff "# svn mkdir $COUNTY/$SCHOOL/^M"
 stuff "# touch $COUNTY/$SCHOOL/address.txt && svn add $COUNTY/$SCHOOL/address.txt^M"
-stuff "svn ci $COUNTY/$SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
+stuff "svn ci $COUNTY/$SCHOOL/address.txt -m http://www.law.$SCHOOL.edu.tw/$DEPARTMENT"
 
 # screen 4
 # # old commands
@@ -25,7 +25,7 @@ stuff "svn ci $COUNTY/$SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
 
 screen 0
 # editing
-stuff "echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.edu.tw >> $COUNTY/$SCHOOL/address.txt ; v $COUNTY/$SCHOOL/address.txt ^M"
+stuff "echo -e \\\\n# http://www.law.$SCHOOL.edu.tw/$DEPARTMENT >> $COUNTY/$SCHOOL/address.txt ; v $COUNTY/$SCHOOL/address.txt^M"
 
 screen 1
 stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"

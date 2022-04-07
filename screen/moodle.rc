@@ -51,8 +51,7 @@ stuff "# p= ; cd /srv/www/cgi-bin/moodle && git checkout production && for t in 
 stuff "/usr/sbin/apachectl start^M"
 
 screen 3
-stuff "cd ~/moodle/moosh^M"
-stuff "# php composer-setup.php && php composer.phar install^M"
+stuff "cd ~/moosh^M"
 stuff "# su -c 'cp bash_completion /etc/bash_completion.d/Moosh'^M"
 stuff "cd /srv/www/cgi-bin/moodle^M"
 stuff "# re.pl --rcfile ~/$SEMESTER/rc/user-create.rc # change the city, school, etc^M"

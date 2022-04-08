@@ -298,10 +298,10 @@ function moodle () {
 	done
     cd /srv/www/cgi-bin/moodle && git checkout production
     sed -iBAK -e "s/dbpass    = ''/dbpass    = '$word'/" config.php
-    php admin/cli/install_database.php --adminpass=$word --agree-license \
-	--adminemail='drbean@freeshell.org' \
-	--fullname='Teach yourself English with Dr Bean' \
-	--shortname='drbean'
+#    php admin/cli/install_database.php --adminpass=$word --agree-license \
+#	--adminemail='drbean@freeshell.org' \
+#	--fullname='Teach yourself English with Dr Bean' \
+#	--shortname='drbean'
     screen -c /home/$USER/dot/screen/moodle.rc -dR moodle
 }
 

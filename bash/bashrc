@@ -285,24 +285,7 @@ function cygwin () {
 
 function moodle () {
     word=$1
-    . ~/dot/cygwin/pg_setup.sh
-    psql -U owuser -c "CREATE ROLE apache WITH LOGIN PASSWORD '$word';" \
-	postgres
-    . ~/dot/cygwin/web_pack.sh
-    . ~/dot/cygwin/moosh_setup.sh
-    . ~/dot/cygwin/moopl_setup.sh
-    mkdir --parent /srv/www/cgi-bin/ /var/lib/moodle/
-    for t in general read pic question information solution opinion \
-	reading listening speaking writing
-	do mkdir /var/lib/moodle/repository/$t --parent
-	done
-    cd /srv/www/cgi-bin/moodle && git checkout production
-    sed -iBAK -e "s/dbpass    = ''/dbpass    = '$word'/" config.php
-#    php admin/cli/install_database.php --adminpass=$word --agree-license \
-#	--adminemail='drbean@freeshell.org' \
-#	--fullname='Teach yourself English with Dr Bean' \
-#	--shortname='drbean'
-    screen -c /home/$USER/dot/screen/moodle.rc -dR moodle
+    word=$word screen -c /home/$USER/dot/screen/moodle.rc -dR moodle
 }
 
 function cm_id () {

@@ -14,6 +14,8 @@ stuff "# sudo systemctl stop php-fpm && sudo systemctl restart httpd && sudo sys
 stuff "# export COURSE=COURSE ; export tag=tag_\${COURSE}_$WEEK"
 
 screen 4
+stuff ". ~/dot/cygwin/pg_setup.sh^M"
+stuff "psql -U owuser -c \"CREATE ROLE apache WITH LOGIN PASSWORD \'$word\';\" postgres"
 stuff "psql -p 5432 mood082 -U owuser^M"
 screen 5
 stuff "# cd ~/moodle/db^M"
@@ -24,7 +26,7 @@ screen 6
 stuff "cd ~/moosh^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/.\/\$page\/index.html/\" www/_site/*.html; ; done^M"
 stuff "# for page in faq commands dev tutorials ; do sed -i -e \"s/\/\$page/..\/\$page\/index.html/\" www/_site/*/*.html; done^M"
-stuff "# . ~/dot/cygwin/web_pack.sh && . ~/dot/cygwin/moosh_setup.sh^M"
+stuff ". ~/dot/cygwin/web_pack.sh && . ~/dot/cygwin/moosh_setup.sh^M"
 stuff "pandoc -o www/_site/commands/index_pandoc.html www/commands/index.md^M"
 
 screen 8
@@ -42,12 +44,12 @@ stuff ":e "
 
 screen 1
 stuff "mkdir --parent /srv/www/cgi-bin/ /var/lib/moodle/^M"
-stuff "# for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done^M"
-stuff "# php admin/cli/install_database.php --adminpass='' --agree-license --adminemail='drbean@freeshell.org' --fullname='Teach yourself English with Dr Bean' --shortname='drbean'^M"
+stuff "for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done^M"
+stuff "# php admin/cli/install_database.php --adminpass='$word' --agree-license --adminemail='drbean@freeshell.org' --fullname='Teach yourself English with Dr Bean' --shortname='drbean'^M"
 stuff "# rm -rf /var/lib/moodle/*cache^M"
 stuff "# cyg_pack ctags^M"
 stuff "# ctags -R --fields=+aimS --php-kinds=cdfi --languages=php --tag-relative=yes --exclude='.git' --totals=yes^M"
-stuff "# p= ; cd /srv/www/cgi-bin/moodle && git checkout production && for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done && sed -iBAK -e \"s/dbpass    = ''/dbpass    = '\$p'/\" config.php^M"
+stuff "p=$word ; cd /srv/www/cgi-bin/moodle && git checkout production && for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done && sed -iBAK -e \"s/dbpass    = ''/dbpass    = '\$p'/\" config.php^M"
 stuff "/usr/sbin/apachectl start^M"
 
 screen 3
@@ -62,5 +64,6 @@ stuff "# for g in {1..5} ; do Moosh group-memberadd -g $g -c 17 media_student_$(
 stuff "# COURSE_ID=44 ; moopl section_populate -s 5 -q 6133 -g 633 -l 43 -m quiz_tag_\${COURSE_NAME[\$COURSE_ID]}_\$WEEK -c \$COURSE_ID -n \${COURSE_NAME[\$COURSE_ID]}^M"
 stuff "# TYPE='' ; for id in {713..713} ; do cm_id \$TYPE \$id | while read -r item ; do Moosh -n activity-delete \$item ; done ; done^M"
 stuff "# Moosh -n course-backup -f ./moosh_backup_course_2_toefl_\$(date -I)-nu.mbz^M"
+stuff ". ~/dot/cygwin/moopl_setup.sh^M"
 stuff "# . ~/dot/cygwin/toefl_section.sh^M"
 stuff ". ~/dot/cygwin/toefl_course.sh^M"

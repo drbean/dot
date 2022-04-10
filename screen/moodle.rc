@@ -15,7 +15,7 @@ stuff "# export COURSE=COURSE ; export tag=tag_\${COURSE}_$WEEK"
 
 screen 4
 stuff ". ~/dot/cygwin/pg_setup.sh^M"
-stuff "psql -U owuser -c \"CREATE ROLE apache WITH LOGIN PASSWORD \'$word\';\" postgres"
+stuff "psql -U owuser -c \"CREATE ROLE apache WITH LOGIN PASSWORD \'$word\';\" postgres^M"
 stuff "psql -p 5432 mood082 -U owuser^M"
 screen 5
 stuff "# cd ~/moodle/db^M"

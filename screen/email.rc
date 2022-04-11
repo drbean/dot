@@ -14,7 +14,7 @@ stuff "svn up taibei --depth infinity^M"
 stuff "# lftp -c 'open drbean@sdf.org && cd job && mput eastisland.* && qui'^M"
 stuff "# svn mkdir $COUNTY/$SCHOOL/^M"
 stuff "# touch $COUNTY/$SCHOOL/address.txt && svn add $COUNTY/$SCHOOL/address.txt^M"
-stuff "svn ci $COUNTY/$SCHOOL/address.txt -m http://$DEPARTMENT.$SCHOOL.edu.tw"
+stuff "svn ci $COUNTY/$SCHOOL -m http://$DEPARTMENT.$SCHOOL.edu.tw"
 
 # screen 4
 # # old commands

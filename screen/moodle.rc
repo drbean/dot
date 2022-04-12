@@ -27,6 +27,7 @@ stuff "cd ~/moosh^M"
 stuff ". ~/dot/cygwin/web_pack.sh^M"
 stuff ". ~/dot/cygwin/moosh_setup.sh^M"
 stuff "pandoc -o www/_site/commands/index_pandoc.html www/commands/index.md^M"
+stuff "git checkout mod_3_11^M"
 
 screen 8
 stuff "# lynk http://localhost/cgi-bin/moodle/course/view.php?id=2^M"

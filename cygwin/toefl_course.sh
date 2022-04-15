@@ -16,10 +16,10 @@ toefl_context=12
 top_cat=6
 # toefl_cat=$(Moosh -n questioncategory-create --parent $top_cat --context $toefl_context "toefl default")
 toefl_cat=7
-#echo "toefl q_cat=$toefl_cat"
-#general_cat=$(Moosh -n questioncategory-create --parent $toefl_cat --context $toefl_context "general")
-## general_cat=
-#echo "general q_cat=$general_cat"
+echo "toefl q_cat=$toefl_cat"
+# general_cat=$(Moosh -n questioncategory-create --parent $toefl_cat --context $toefl_context "general")
+general_cat=8
+echo "general q_cat=$general_cat"
 
 file='/var/lib/moodle/repository/general/quiz_dummy_jigsaw_0.xml'
 perl -MMoodle::Command::xml -e 'print Moodle::Command::xml::execute(
@@ -27,6 +27,13 @@ perl -MMoodle::Command::xml -e 'print Moodle::Command::xml::execute(
 	);' > $file
 # question=$(Moosh -n question-import $file $dummy_quiz $general_cat)
 # echo "dummy quiz question=$question"
+dummy_id=1
+dummy_category=$(Moosh -n questioncategory-create -r -p 0 -c 0 "dummy_category");
+eval /home/$USER/moosh/moosh.php -n question-import \
+	$file $dummy_id $dummy_category || echo \
+	"question import of 'dummy' jigsaw activity \
+	question in '$dummy_category' category into \
+	'$dummy_id' quiz, from '$file' file failed. ";
 Moosh -n activity-delete 1 # Announcements forum
 
 # check gradebook in browser for ex_cat, test_cat

@@ -1,4 +1,3 @@
-screen v $SOURCE/$FILE.md
 screen 1
 stuff "ls^M"
 stuff "# grep -r ^M"
@@ -23,3 +22,6 @@ stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open drbean@freeshell.org && cd edit &&
 screen 9
 stuff "# man pandoc_markdown^M"
 stuff "man pandoc^M"
+
+screen 0
+screen v $FILE.md

@@ -20,7 +20,7 @@ screen 4
 stuff "./textbook.sh && xelatex textbook.tex && lftp -c 'open web.nuu.edu.tw && cd public_html && put textbook.pdf'^M"
 
 screen 5
-stuff "s=$SOURCE f=$FILE ; lftp -c \"open drbean@freeshell.org && cd html && put Diff.html -o ${s}_Diff.html && qui\"^M"
+stuff "s=\$SOURCE f=\$FILE ; lftp -c \"open drbean@freeshell.org && cd html && put Diff.html -o \${s}_Diff.html && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open drbean@freeshell.org && cd edit && put their_\$f.docx -o their_\${s}_\$f.docx && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open drbean@freeshell.org && cd edit && get their_\${s}_\$f.docx -o their_\$f.docx && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open drbean@freeshell.org && cd edit && get \${s}_\$f.docx -o \$f.docx && qui\"^M"

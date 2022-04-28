@@ -140,30 +140,26 @@ function h () {
     fi
 }
 function p () {
-    declare -a pages
-    readarray pages < $1
-    for page in ${pages[@]}
-    do
-        echo "$page" 
-        read -p "\nFetch? y/n " proceed
-        if [[ $proceed =~ ^y ]]
-            then curl "$page" | sed -f link.sed >> $SCHOOL/address.txt
-        fi
-    done
+    TOP=$1
+    HTTP=$2
+    echo -e "\\n# $HTTP" >> $COUNTY/$SCHOOL/address.txt ;
+    curl -L "$TOP" | sed -e "/href/!d" -e "/@/!d" | vipe >> $COUNTY/$SCHOOL/address.txt
+    svn diff $COUNTY/$SCHOOL/address.txt ;
+    read -p  "Commit? y/n " commit
+    if [[ $commit =~ ^y ]]
+        then svn ci $COUNTY/$SCHOOL/address.txt -m "$HTTP"
+    fi
 }
 function e () {
-    curl $1 |
-        sed -f http.sed > scratch.html
-    declare -a pages
-    readarray pages < scratch.html
-    for page in ${pages[@]}
-    do
-        echo "$page" 
-        read -p "\nFetch? y/n " proceed
-        if [[ $proceed =~ ^y ]]
-            then curl "$page" | sed -f link.sed >> $SCHOOL/address.txt
-        fi
-    done
+    TOP=$1
+    HTTP=$2
+    echo -e "\\n# $HTTP" >> $COUNTY/$SCHOOL/address.txt ;
+    curl $TOP | sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
+    svn diff $COUNTY/$SCHOOL/address.txt ;
+    read -p  "Commit? y/n " commit
+    if [[ $commit =~ ^y ]]
+        then svn ci $COUNTY/$SCHOOL/address.txt -m "$HTTP"
+    fi
 }
 
 function scrape () {

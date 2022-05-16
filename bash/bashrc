@@ -120,6 +120,8 @@ function h () {
     INDEX=$2
     curl -L "$TOP" | sed -e "/$INDEX/!d" -f page.sed | uniq | vipe > prof_page.html
     page="n"
+    # exec 3> /dev/stderr
+    # exec 1>&3
     while ! [[ $page =~ ^y ]] ; do
         cat prof_page.html
         read -p "Prof page set OK? y/n " page
@@ -130,6 +132,7 @@ function h () {
             done < prof_page.html
         fi
     done
+    exec 3>&-
     if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     cat email.txt | uniq | vipe >> $COUNTY/$SCHOOL/address.txt

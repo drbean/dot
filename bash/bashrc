@@ -128,7 +128,7 @@ function h () {
         if [[ $page =~ ^y ]] ; then 
             rm email.txt
             while read p ; do
-                curl -L "${p%$'\r'}" | sed -f link.sed >> email.txt
+                curl -L "${p%$'\r'}" | sed -f link.sed | tee /dev/stderr >> email.txt
             done < prof_page.html
         fi
     done

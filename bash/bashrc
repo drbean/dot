@@ -21,8 +21,8 @@ export LEAGUES_RE="BMA0036|GL00018|GL00019|GL00020"
 # # greg
 # ibus-daemon -drx
 
-## ingydotnet/git-hub
-#source ~/dot/git/git-hub/.rc
+# ingydotnet/git-hub
+source ~/dot/git/git-hub/.rc
 ## ingydotnet/git-subrepo
 #source ~/dot/git/git-subrepo/.rc
 

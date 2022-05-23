@@ -46,6 +46,9 @@ cd ~/.vim/pack/git-plugins/start/coc.nvim/ && \
 	git fetch upstream && git merge upstream/master && \
 	git checkout release && git merge upstream/release && cd -
 
+mkdir -p ~/dot/git
+git clone https://github.com/drbean/git-hub ~/dot/git/git-hub
+
 # ln -s /cygdrive/c/tools/cygwin/home /cygdrive/c/home # not working! try in pshell:
 # New-Item -Path C:\home -ItemType SymbolicLink -Value C:\tools\cygwin\home
 # cmd /c mklink /D c:\home c:\tools\cygwin\home

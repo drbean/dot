@@ -17,6 +17,7 @@ elif [ -x /cygdrive/c/Users/$USER/Downloads/setup-x86_64.exe ]
 			--quiet-mode --no-desktop --no-startmenu \
 			--root c:/cygwin64 --local-package-dir \
 			c:/Users/$USER/Downloads --site \
-			http://ftp.ntu.edu.tw/cygwin/ --packages $p
+			ftp://ftp.twaren.net/Unix/sourceware.org/cygwin \
+			--packages $p
 		done
 fi

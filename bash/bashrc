@@ -225,7 +225,7 @@ function prof_remove () {
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]
-        then svn ci $AREA/*/*/address.txt -m "$1: User unknown"
+        then svn ci $AREA/*/address.txt -m "$1: User unknown"
     fi
 }
 
@@ -239,7 +239,7 @@ function prof_edit () {
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]
-        then svn ci $AREA/*/*/address.txt requeue_$AREA \
+        then svn ci $AREA/*/address.txt requeue_$AREA \
 	    -m "Edited prof:s/$1/$2/"
     fi
 }

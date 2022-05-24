@@ -256,7 +256,7 @@ function email () {
         esac
     done
     cd ~/edit/email || exit 1
-    COUNTY='taibei' SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR email_$school
+    AREA='taibei' COUNTY='taibei' SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR email_$school
     cd -
 }
 

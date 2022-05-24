@@ -7,7 +7,7 @@
 screen 3
 stuff "# area=tc ; for n in {xxx} ; do svn rm \^/trunk/email/\$area\$n -m \$area\$n.out ; done ^M"
 stuff "d=$(date)^M"
-stuff "cat $AREA/*/*/address.txt | sort | uniq | vipe | shuf | split -a 3 -d -l 40 - $AREA"
+stuff "cat $AREA/*/*/address.txt | sort | uniq | vipe | shuf | split -a 3 -d -l 40 - $AREA."
 stuff "# for f in {xxx}; do svn rm \^/trunk/email/eastisland.\$f -m \"eastisland.$f $d; done^M"
 stuff "# prof_remove ^M"
 stuff "# prof_edit ^M"

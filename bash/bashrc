@@ -218,8 +218,8 @@ function pp () {
 }
 
 function prof_remove () {
-    AREA="eastisland"
-    address=$(grep -l "^$1" $AREA/*/*/address.txt)
+    AREA="taibei"
+    address=$(grep -l "^$1" $AREA/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/# \1/"
     svn diff $AREA/*/*/address.txt;
     echo -ne "\nCommit? y/n "
@@ -230,8 +230,8 @@ function prof_remove () {
 }
 
 function prof_edit () {
-    AREA="eastisland"
-    address=$(grep -l "^$1" $AREA/*/*/address.txt)
+    AREA="taibei"
+    address=$(grep -l "^$1" $AREA/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/"
     sed -i.BAK -e "$ a\
         $2" requeue_$AREA

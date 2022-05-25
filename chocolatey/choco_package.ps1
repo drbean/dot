@@ -1,5 +1,5 @@
 choco feature enable -n allowGlobalConfirmation
-ForEach ($p in "cygwin") { choco install $p --params "/DesktopIcon /Site:http://ftp.ntu.edu.tw/cygwin" }
+ForEach ($p in "cygwin") { choco install $p --params "/DesktopIcon /Site:ftp://twaren.net/Unix/sourceware.org/cygwin" }
 # $ps = "subversion", "openssh", "znc", "screen", "weechat", "lftp", "vim", "mutt", "exim", "lynx", "weechat-perl", "weechat-python", "perl", "make"
 # ForEach ($p in $ps) { choco install $p --source=cygwin }
 # $pstring = ""

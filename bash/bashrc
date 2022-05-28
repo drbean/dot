@@ -236,11 +236,20 @@ function prof_edit () {
     sed -i.BAK -e "$ a\
         $2" requeue_$AREA
     svn diff $AREA/*/address.txt requeue_$AREA;
+    echo -ne "\nSend again? y/n "
+    read send
+    if [[ $send =~ ^y ]]
+        then screen -p 1 -X stuff \
+            "mutt -s 'Paper Editing' -i \
+        /sdf/udd/d/drbean/job/edit_offer.txt $2"
+        echo "Sending to $2 via mutt on sdf."
+        svn revert requeue_$AREA
+    fi
     echo -ne "\nCommit? y/n "
-    read proceed
-    if [[ $proceed =~ ^y ]]
+    read commit
+    if [[ $commit =~ ^y ]]
         then svn ci $AREA/*/address.txt requeue_$AREA \
-	    -m "Edited prof:s/$1/$2/"
+           -m "Edited prof:s/$1/$2/"
     fi
 }
 

@@ -239,17 +239,19 @@ function prof_edit () {
     echo -ne "\nSend again? y/n "
     read send
     if [[ $send =~ ^y ]]
-        then screen -p 1 -X stuff \
-            "mutt -s 'Paper Editing' -i \
-        /sdf/udd/d/drbean/job/edit_offer.txt $2"
-        echo "Sending to $2 via mutt on sdf."
+        then screen -p 0 -X stuff \
+            "echo $2 | /sdf/udd/d/drbean/job/spam.sh^M
+	    read next < /sdf/udd/d/drbean/job/next^M
+	    n=\$((--next))^M
+	    echo \\\$n > /sdf/udd/d/drbean/job/next^M"
+        echo "Sending to $2 via spam.sh on sdf."
         svn revert requeue_$AREA
     fi
     echo -ne "\nCommit? y/n "
     read commit
     if [[ $commit =~ ^y ]]
         then svn ci $AREA/*/address.txt requeue_$AREA \
-           -m "Edited prof:s/$1/$2/"
+           -m "'Edited prof:s/$1/$2/'"
     fi
 }
 

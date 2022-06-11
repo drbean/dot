@@ -240,11 +240,8 @@ function prof_edit () {
     read send
     if [[ $send =~ ^y ]]
         then screen -p 0 -X stuff \
-            "echo $2 | /sdf/udd/d/drbean/job/spam.sh
-	    read next < /sdf/udd/d/drbean/job/next
-	    n=\$((--next))
-	    echo \\\$n > /sdf/udd/d/drbean/job/next^M"
-        echo "Sending to $2 via spam.sh on sdf."
+            "echo $2 | /sdf/udd/d/drbean/job/send.sh^M"
+        echo "Sending to $2 via send.sh on sdf."
         svn revert requeue_$AREA
     fi
     echo -ne "\nCommit? y/n "

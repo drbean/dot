@@ -252,6 +252,28 @@ function prof_edit () {
     fi
 }
 
+function premail () {
+    OPTIND=1
+    local arg school department
+    while getopts 's:d:' arg
+    do
+        case ${arg} in
+            s) school=${OPTARG};;
+            d) department=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/edit/email || exit 1
+    AREA='north' COUNTY='jilong' SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR email_$school
+    cd -
+}
+
+function postmail () {
+    cd ~/edit/email || exit 1
+    AREA='taibei' COUNTY='taibei' screen -c /home/$USER/dot/screen/email.rc -dR email_$AREA
+    cd -
+}
+
 function email () {
     OPTIND=1
     local arg school department

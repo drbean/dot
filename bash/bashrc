@@ -264,13 +264,13 @@ function premail () {
         esac
     done
     cd ~/edit/email || exit 1
-    AREA='north' COUNTY='jilong' SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR email_$school
+    AREA='north' COUNTY='jilong' SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/premail.rc -dR email_$school
     cd -
 }
 
 function postmail () {
     cd ~/edit/email || exit 1
-    AREA='taibei' COUNTY='taibei' screen -c /home/$USER/dot/screen/email.rc -dR email_$AREA
+    AREA='taibei' COUNTY='taibei' screen -c /home/$USER/dot/screen/postmail.rc -dR email_$AREA
     cd -
 }
 

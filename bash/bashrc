@@ -249,7 +249,8 @@ function prof_edit () {
     read commit
     if [[ $commit =~ ^y ]]
         then svn ci $AREA/*/address.txt requeue_$AREA \
-           -m "'Edited prof:s/$1/$2/'"
+           -m "$1: Edited
+$2"
     fi
 }
 
@@ -305,10 +306,11 @@ function edit () {
     svn up ~/edit/$source --depth empty
     svn up ~/edit/$source/$file.md
     if [[ ! -e ~/edit/gitedit ]] ; then
-        git clone http://github.com/drbean/edit ~/edit/gitedit --depth 1
+        git clone http://github.com/drbean/edit ~/edit/gitedit
+    else
+	cd ~/edit/gitedit/$source
+	git status
     fi
-    # cd ~/edit/$source/git || echo "no git subdir"
-    cd ~/edit/$source || exit 1
     SOURCE=$source FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR $source
 }
 

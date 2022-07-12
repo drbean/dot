@@ -1,4 +1,4 @@
-" Last Edit: 2022 May 10,  4:07:29 PM
+" Last Edit: 2022 Jul 09,  2:26:18 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -24,6 +24,7 @@ source $VIMRUNTIME/defaults.vim
 "endif
 set printencoding=utf-8
 
+set mouse=		" set mouse=nvi
 "set verbose=9		"for testing autocommands
 set nocompatible	" Use Vim defaults (much better!)
 set comments=b:#,:%,fb:-,n:>,n:) "plus sr:/*,mb:*,el:*/,://,:XCOMM,

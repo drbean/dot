@@ -308,7 +308,8 @@ function edit () {
     if [[ ! -e ~/edit/gitedit ]] ; then
         git clone http://github.com/drbean/edit ~/edit/gitedit
     else
-	cd ~/edit/gitedit/$source
+	cd ~/edit/gitedit
+	git checkout $source
 	git status
     fi
     SOURCE=$source FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR $source

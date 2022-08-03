@@ -12,7 +12,7 @@ stuff "# DEPARTMENT= h '^M"
 stuff "echo '"
 
 screen 3
-stuff "svn mkdir $COUNTY/$SCHOOL/^M"
+stuff "svn mkdir --parents $COUNTY/$SCHOOL/^M"
 stuff "touch $COUNTY/$SCHOOL/address.txt && svn add $COUNTY/$SCHOOL/address.txt^M"
 stuff "svn up $COUNTY^M"
 stuff "svn ci $COUNTY/$SCHOOL -m http://$DEPARTMENT.$SCHOOL.edu.tw"

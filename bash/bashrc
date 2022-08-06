@@ -39,6 +39,8 @@ function cyg_pack () {
     package=$1
     if [[ -x d:/User-Data/Downloads/setup-x86_64.exe ]] ; then
         d:/User-Data/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/User/$USER/Downloads --site ftp://ftp.twaren.net/Unix/sourceware.org/cygwin/ --packages $package
+    elif [[ -x d:/Users/$USER/Downloads/setup-x86_64.exe ]] ; then
+        d:/Users/$USER/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/User/$USER/Downloads --site ftp://ftp.twaren.net/Unix/sourceware.org/cygwin/ --packages $package
     elif [[ -x c:/Users/$USER/Downloads/setup-x86_64.exe ]] ; then
         c:/Users/$USER/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/User/$USER/Downloads --site ftp://ftp.twaren.net/Unix/sourceware.org/cygwin/ --packages $package
     elif [[ -x c:/tools/cygwin/cygwinsetup.exe ]] ; then

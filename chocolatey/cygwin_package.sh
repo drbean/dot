@@ -20,4 +20,13 @@ elif [ -x /cygdrive/c/Users/$USER/Downloads/setup-x86_64.exe ]
 			ftp://ftp.twaren.net/Unix/sourceware.org/cygwin \
 			--packages $p
 		done
+elif [ -x /cygdrive/d/Users/$USER/Downloads/setup-x86_64.exe ]
+	then for p in "$second"
+		do /cygdrive/d/Users/$USER/Downloads/setup-x86_64.exe \
+			--quiet-mode --no-desktop --no-startmenu \
+			--root c:/cygwin64 --local-package-dir \
+			c:/Users/$USER/Downloads --site \
+			ftp://ftp.nuu.edu.tw/cygwin \
+			--packages $p
+		done
 fi

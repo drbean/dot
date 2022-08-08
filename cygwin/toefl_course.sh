@@ -21,27 +21,27 @@ perl -MMoodle::Command::xml -e 'print Moodle::Command::xml::execute(
 	);' > $file
 # question=$(Moosh -n question-import $file $dummy_quiz $general_cat)
 # echo "dummy quiz question=$question"
-dummy_id=1
-# works: no parent, first context
-dummy_top_cat=$(Moosh -n questioncategory-create -r -p 0 -c 17 "top")
-dummy_category=$(Moosh -n questioncategory-create -r -p 1 -c 17 "dummy_category");
-toefl_cat=4
-toefl_context=16
-toefl_top_cat=$(Moosh -n questioncategory-create -r -p 0 -c 16 "top")
-toefl_category=$(Moosh -n questioncategory-create -r -p 3 -c 16 "toefl_category");
-miscellaneous_top_cat=$(Moosh -n questioncategory-create -r -p 0 -c 3 "top")
-miscellaneous_category=$(Moosh -n questioncategory-create -r -p 5 -c 3 "miscellaneous_category");
-system_top_cat=$(Moosh -n questioncategory-create -r -p 0 -c 1 "top")
-system_category=$(Moosh -n questioncategory-create -r -p 7 -c 1 "system_category");
-# dummy_quiz=1
-# top_cat=$(Moosh -n questioncategory-create --parent '""' --context $toefl_context top)
-top_cat=6
-# toefl_cat=$(Moosh -n questioncategory-create --parent $top_cat --context $toefl_context "toefl default")
-eval /home/$USER/moosh/moosh.php -n question-import \
-	$file $dummy_id $dummy_category || echo \
-	"question import of 'dummy' jigsaw activity \
-	question in '$dummy_category' category into \
-	'$dummy_id' quiz, from '$file' file failed. ";
+# dummy_id=1
+# # works: no parent, first context
+# dummy_top_cat=$(Moosh -n questioncategory-create -r -p 0 -c 17 "top")
+# dummy_category=$(Moosh -n questioncategory-create -r -p 1 -c 17 "dummy_category");
+# toefl_cat=4
+# toefl_context=16
+# toefl_top_cat=$(Moosh -n questioncategory-create -r -p 0 -c 16 "top")
+# toefl_category=$(Moosh -n questioncategory-create -r -p 3 -c 16 "toefl_category");
+# miscellaneous_top_cat=$(Moosh -n questioncategory-create -r -p 0 -c 3 "top")
+# miscellaneous_category=$(Moosh -n questioncategory-create -r -p 5 -c 3 "miscellaneous_category");
+# system_top_cat=$(Moosh -n questioncategory-create -r -p 0 -c 1 "top")
+# system_category=$(Moosh -n questioncategory-create -r -p 7 -c 1 "system_category");
+# # dummy_quiz=1
+# # top_cat=$(Moosh -n questioncategory-create --parent '""' --context $toefl_context top)
+# top_cat=6
+# # toefl_cat=$(Moosh -n questioncategory-create --parent $top_cat --context $toefl_context "toefl default")
+# eval /home/$USER/moosh/moosh.php -n question-import \
+# 	$file $dummy_id $dummy_category || echo \
+# 	"question import of 'dummy' jigsaw activity \
+# 	question in '$dummy_category' category into \
+# 	'$dummy_id' quiz, from '$file' file failed. ";
 Moosh -n activity-delete 1 # Announcements forum
 
 # check gradebook in browser for ex_cat, test_cat

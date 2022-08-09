@@ -246,7 +246,7 @@ function prof_edit () {
         echo "Sending to $2 via send.sh on sdf."
         svn revert requeue_$AREA
     fi
-    svn st | sed -e '/^M/!d'
+    svn st $AREA | sed -e '/^M/!d'
     echo -ne "\nCommit? y/n "
     read commit
     if [[ $commit =~ ^y ]]

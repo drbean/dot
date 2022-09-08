@@ -196,7 +196,7 @@ function e () {
     if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     curl -L $TOP | sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
-    read -p  "Commit? y/n " commit
+    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
     if [[ $commit =~ ^y ]]
         then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
     fi

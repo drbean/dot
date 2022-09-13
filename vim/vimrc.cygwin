@@ -1,4 +1,4 @@
-" Last Edit: 2022 Sep 12,  2:34:02 PM
+" Last Edit: 2022 Sep 13, 12:37:03 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -860,7 +860,10 @@ augroup scrape
 " repetitive extract, sort | uniq email addresses
 au BufEnter ~/edit/email/*/*/address.txt no <buffer> <LocalLeader>v :'<,'>v/@/d<CR>
 au BufEnter ~/edit/email/*/*/address.txt no <buffer> <LocalLeader>! :'<,'>! sort \| uniq<CR>
-au BufEnter /tmp/* no <buffer> <LocalLeader>q
+au BufEnter /tmp/* no <buffer> <LocalLeader>p
+	\ :%v/^http/d<CR>
+	\ :%! sort <Bar> uniq<CR>
+au BufEnter /tmp/* no <buffer> <LocalLeader>a
 	\ :%v/@/d<CR>
 	\ :%s/<.*$//<CR>
 	\ :%! sort <Bar> uniq<CR>

@@ -113,7 +113,7 @@ function a () {
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
 	svn diff $COUNTY/$SCHOOL/address.txt ;
-        read -p "* $COUNTY/$SCHOOL/address.txt set OK? y/n " address_page
+        read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
     read -p  "Commit? y/n " commit
     if [[ $commit =~ ^y ]]
@@ -132,7 +132,7 @@ function h () {
     # exec 1>&3
     while ! [[ $page =~ ^y ]] ; do
         cat prof_page.html
-        read -p "Prof page set OK? y/n " page
+        read -p "Prof page looks good? y/n " page
         if [[ $page =~ ^y ]] ; then 
             rm email.txt
             while read p ; do
@@ -147,7 +147,7 @@ function h () {
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
 	svn diff $COUNTY/$SCHOOL/address.txt ;
-        read -p "* $COUNTY/$SCHOOL/address.txt set OK? y/n " address_page
+        read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
     read -p  "Commit? y/n " commit
     if [[ $commit =~ ^y ]]
@@ -162,7 +162,7 @@ function p () {
     prof_page="n"
     while ! [[ $prof_page =~ ^y ]] ; do
         cat prof_page.html
-        read -p "Prof page set OK? y/n " prof_page
+        read -p "Prof page looks good? y/n " prof_page
         if [[ $prof_page =~ ^y ]] ; then 
             # rm email_page.html
             while read p ; do
@@ -173,7 +173,7 @@ function p () {
     email_page="n"
     while ! [[ $email_page =~ ^y ]] ; do
         vipe <> email_page.html
-        read -p "Email page set OK? y/n " email_page
+        read -p "Email page looks good? y/n " email_page
     done
     while read p ; do
 	curl -L "${p%$'\r'}" | sed -f link.sed
@@ -184,7 +184,7 @@ function p () {
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
 	svn diff $COUNTY/$SCHOOL/address.txt ;
-        read -p "* $COUNTY/$SCHOOL/address.txt set OK? y/n " address_page
+        read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
     read -p  "Commit? y/n " commit
     if [[ $commit =~ ^y ]]
@@ -199,7 +199,7 @@ function e () {
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
 	svn diff $COUNTY/$SCHOOL/address.txt ;
-        read -p "* $COUNTY/$SCHOOL/address.txt set OK? y/n " address_page
+        read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
     read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
     if [[ $commit =~ ^y ]]

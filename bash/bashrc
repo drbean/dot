@@ -312,6 +312,14 @@ function email () {
     cd -
 }
 
+function ttb () {
+    svn co http://github.com/drbean/ttb ~/ttb --depth empty
+    svn up ~/ttb/branches/hint/dictation ~/ttb --parents
+    cd ~/ttb
+    screen -c /home/$USER/dot/screen/utility.rc -dR ttb
+    cd -
+}
+
 function edit () {
     OPTIND=1
     local arg source file
@@ -586,7 +594,6 @@ function sound () {
 }
 
 alias curr="cd ~/curriculum; screen -c /home/$USER/dot/screen/utility.rc -dR curriculum; cd -"
-alias ttb="cd ~/ttb; screen -c /home/$USER/dot/screen/utility.rc -dR ttb; cd -"
 alias $SEMESTER="cd ~/$SEMESTER; screen -c /home/$USER/dot/screen/utility.rc -dR s$SEMESTER; cd -"
 alias meth="cd ~/methodology/; screen -c /home/$USER/dot/screen/utility.rc -dR methodology; cd -"
 alias tmpl="cd ~/class/tmpl; screen -c /home/$USER/dot/screen/utility.rc -dR tmpl; cd -"

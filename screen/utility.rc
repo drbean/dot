@@ -5,5 +5,5 @@ screen
 stuff "svn st -q^M svn log -vr BASE:HEAD^M svn info^M"
 
 screen
-stuff "cd ~/ttb/forms/bean^M"
+stuff "cd ~/ttb/trunk/forms/bean^M"
 stuff "# for n in one five ; do xelatex --output-directory=./build \${n}_bean.tex   && lftp -c \"open drbean@sdf.org && cd html/topics && put ./build/\${n}_bean.pdf && quit\"; done^M"

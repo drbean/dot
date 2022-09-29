@@ -315,6 +315,7 @@ function email () {
 function ttb () {
     svn co http://github.com/drbean/ttb ~/ttb --depth empty
     svn up ~/ttb/branches/hint/dictation ~/ttb --parents
+    svn up ~/ttb/trunk/forms/bean --parents
     cd ~/ttb
     screen -c /home/$USER/dot/screen/utility.rc -dR ttb
     cd -

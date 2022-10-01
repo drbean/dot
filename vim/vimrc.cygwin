@@ -1,4 +1,4 @@
-" Last Edit: 2022 Sep 13, 12:37:03 PM
+" Last Edit: 2022 Oct 01,  1:02:50 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -597,6 +597,8 @@ au!
 " pandoc link list
 au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>l ^/https*:i](A)Bi[V<
 au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I[V<o
+
+au BufEnter slides.md nn <buffer> <LocalLeader>p :! pandoc -i --self-contained -t revealjs -o culture.html slides.md<CR>
 
 function! BlogRelLink()
 	let words = getline( line('.') )

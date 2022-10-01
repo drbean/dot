@@ -334,17 +334,18 @@ function edit () {
     done
     svn up ~/edit/$source --depth empty
     svn up ~/edit/$source/$file.md
-    if [[ ! -e ~/edit/gitedit ]] ; then
-        git clone http://github.com/drbean/edit ~/edit/gitedit
-    elif [[ ! -e ~/edit/gitedit/$source ]] ; then
-	cd ~/edit/gitedit
-	git checkout $source
-    else
-	cd ~/edit/gitedit/$source
-	git checkout $source
-    fi
-    cd ~/edit/gitedit/$source
-    git status
+    cd ~/edit/$source
+    #if [[ ! -e ~/edit/gitedit ]] ; then
+    #    git clone http://github.com/drbean/edit ~/edit/gitedit
+    #elif [[ ! -e ~/edit/gitedit/$source ]] ; then
+    #    cd ~/edit/gitedit
+    #    git checkout $source
+    #else
+    #    cd ~/edit/gitedit/$source
+    #    git checkout $source
+    #fi
+    #cd ~/edit/gitedit/$source
+    #git status
     SOURCE=$source FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR $source
 }
 

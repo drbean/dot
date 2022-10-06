@@ -1,4 +1,4 @@
-" Last Edit: 2022 Oct 06, 12:36:38 PM
+" Last Edit: 2022 Oct 06, 12:40:31 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -869,6 +869,7 @@ au BufEnter /tmp/* no <buffer> <LocalLeader>p
 au BufEnter /tmp/* no <buffer> <LocalLeader>a
 	\ :%v/@/d<CR>
 	\ :%s/<.*$//<CR>
+	\ :%s/".*$//<CR>
 	\ :%! sort <Bar> uniq<CR>
 au BufEnter ~/edit/email/*.html no <buffer> <LocalLeader>u :.! perl
 	\ -MURI::Escape -e 'chomp($line=<STDIN>);

@@ -115,7 +115,7 @@ function a () {
 	svn diff $COUNTY/$SCHOOL/address.txt ;
         read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
-    read -p  "Commit? y/n " commit
+    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
     if [[ $commit =~ ^y ]]
         then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
         else echo -e "commit=$commit?\nDEPARTMENT=$DEPARTMENT?"
@@ -149,7 +149,7 @@ function h () {
 	svn diff $COUNTY/$SCHOOL/address.txt ;
         read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
-    read -p  "Commit? y/n " commit
+    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
     if [[ $commit =~ ^y ]]
         then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
     fi
@@ -186,7 +186,7 @@ function p () {
 	svn diff $COUNTY/$SCHOOL/address.txt ;
         read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
-    read -p  "Commit? y/n " commit
+    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
     if [[ $commit =~ ^y ]]
         then svn ci $COUNTY/$SCHOOL -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
     fi

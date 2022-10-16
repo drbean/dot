@@ -21,6 +21,7 @@ stuff "# FORM=$FORM; STORY=$STORY; QUIZ=$QUIZ; TOPIC=$TOPIC; for format in gift 
 
 screen 5 lftp drbean@freeshell.org
 stuff "# mkdir html/$VIEW^M"
+stuff "# mkdir html/$VIEW^M"
 stuff "cd html/$VIEW^M"
 stuff "# put $TOPIC/${STORY}.html^M"
 stuff "# put $TOPIC/dic_${STORY}_$FORM.pdf^M"
@@ -29,6 +30,8 @@ stuff "# put jigsaw_${STORY}_$FORM.pdf^M"
 stuff "# put quiz_${STORY}_$FORM.pdf^M"
 stuff "# open freeshell.org^M"
 stuff "# put bingo.pdf && open freeshell.org && put bingo.pdf^M"
+stuff "# user drbean PASSWD^M"
+stuff "# cd ~/html && put lecture.html^M"
 
 screen 6
 stuff "#dtach -A /tmp/\$COURSE v online/{default,\$TOPIC.yaml ../online/default.yaml^M"

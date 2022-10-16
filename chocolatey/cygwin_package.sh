@@ -19,6 +19,15 @@ elif [ -x /cygdrive/c/Users/$USER/Downloads/setup-x86_64.exe ]
 			c:/Users/$USER/Downloads --site \
 			ftp://ftp.twaren.net/Unix/sourceware.org/cygwin \
 			--packages $p
+		if ! [[ -d /home/owuser ]] ; then 
+			/cygdrive/c/Users/$USER/Downloads/setup-x86_64.exe \
+				--quiet-mode --no-desktop \
+				--no-startmenu \
+				--root c:/cygwin64 \
+				--local-package-dir \
+				c:/Users/$USER/Downloads --site \
+				http://ftp.ntu.edu.tw/cygwin/ --packages $p
+		fi
 		done
 elif [ -x /cygdrive/d/Users/$USER/Downloads/setup-x86_64.exe ]
 	then for p in "$second"

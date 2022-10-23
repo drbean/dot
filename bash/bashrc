@@ -674,7 +674,7 @@ function toefl () {
 
 function speaking () {
     OPTIND=1
-    local arg course=speaking/test topic story form
+    local arg course=speaking topic story form
     while getopts 'v:t:s:f:' arg
     do
         case ${arg} in
@@ -685,12 +685,12 @@ function speaking () {
             *) return 1 # illegal option
         esac
     done
-        cd ~/curriculum/speaking/test
+        cd ~/curriculum/speaking
         COURSE=$course \
         TOPIC=$topic \
         STORY=$story \
         FORM=$form \
-        VIEW=${view:-"toeic/$topic"} \
+        VIEW=${view:-"presentation"} \
         screen -c /home/$USER/dot/screen/course.rc -dR $topic
         cd -
 }

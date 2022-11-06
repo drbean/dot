@@ -1,4 +1,4 @@
-" Last Edit: 2022 Oct 24,  9:40:27 PM
+" Last Edit: 2022 Nov 06,  3:31:21 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -868,6 +868,7 @@ au BufEnter /tmp/* no <buffer> <LocalLeader>p
 	\ :%! uniq<CR>
 au BufEnter /tmp/* no <buffer> <LocalLeader>a
 	\ :%v/@/d<CR>
+	\ :%s/<[^>]*>//g<CR>
 	\ :%s/<.*$//<CR>
 	\ :%s/[^A-Za-z0-9]*$//<CR>
 	\ :%! sort <Bar> uniq<CR>

@@ -336,6 +336,7 @@ function edit () {
     done
     svn up ~/edit/$source --depth empty
     svn up ~/edit/$source/$file.md
+    svn up ~/edit/$source/issues.md
     cd ~/edit/$source
     #if [[ ! -e ~/edit/gitedit ]] ; then
     #    git clone http://github.com/drbean/edit ~/edit/gitedit

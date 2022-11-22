@@ -244,6 +244,26 @@ function e () {
         then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
     fi
 }
+function E () {
+    PRE_TOP=$1
+    TOP_INDEX=$2
+    POST_TOP=$3
+    if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
+    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+    for i in $TOP_INDEX ; do
+	curl -L $PRE_TOP$i$POST_TOP |
+	    sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
+    done
+    address_page="n"
+    while ! [[ $address_page =~ ^y ]] ; do
+	svn diff $COUNTY/$SCHOOL/address.txt ;
+        read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+    done
+    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+    if [[ $commit =~ ^y ]]
+        then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+    fi
+}
 
 function scrape () {
     OPTIND=1

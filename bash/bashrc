@@ -154,6 +154,44 @@ function h () {
         then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
     fi
 }
+function H () {
+    PRE_TOP=$1
+    TOP_INDEX=$2
+    POST_TOP=$3
+    PROF_PAGE_INDEX=$4
+    mv {,orig_}prof_page.html
+    for i in $TOP_INDEX ; do
+	curl -L "$PRE_TOP$i$POST_TOP" |
+	    sed -e "/$PROF_PAGE_INDEX/!d" -f page.sed |
+	    uniq | vipe >> prof_page.html
+    done
+    page="n"
+    # exec 3> /dev/stderr
+    # exec 1>&3
+    while ! [[ $page =~ ^y ]] ; do
+        cat prof_page.html
+        read -p "Prof page looks good? y/n " page
+        if [[ $page =~ ^y ]] ; then 
+            rm email.txt
+            while read p ; do
+                curl -b cook -L "${p%$'\r'}" | sed -f link.sed | tee -a email.txt
+            done < prof_page.html
+        fi
+    done
+    exec 3>&-
+    if [[ $# -eq 5 ]]; then DEPARTMENT=$5 ; fi
+    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+    cat email.txt | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
+    address_page="n"
+    while ! [[ $address_page =~ ^y ]] ; do
+	svn diff $COUNTY/$SCHOOL/address.txt ;
+        read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+    done
+    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+    if [[ $commit =~ ^y ]]
+        then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+    fi
+}
 function p () {
     TOP=$1
     PROF_INDEX=$2

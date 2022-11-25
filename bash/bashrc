@@ -126,7 +126,7 @@ function a () {
 function h () {
     TOP=$1
     INDEX=$2
-    curl -L "$TOP" | sed -e "/$INDEX/!d" -f page.sed | uniq | vipe > prof_page.html
+    curl -kL "$TOP" | sed -e "/$INDEX/!d" -f page.sed | uniq | vipe > prof_page.html
     page="n"
     # exec 3> /dev/stderr
     # exec 1>&3
@@ -136,7 +136,7 @@ function h () {
         if [[ $page =~ ^y ]] ; then 
             rm email.txt
             while read p ; do
-                curl -b cook -L "${p%$'\r'}" | sed -f link.sed | tee -a email.txt
+                curl -b cook -kL "${p%$'\r'}" | sed -f link.sed | tee -a email.txt
             done < prof_page.html
         fi
     done
@@ -161,7 +161,7 @@ function H () {
     PROF_PAGE_INDEX=$4
     mv {,orig_}prof_page.html
     for i in $TOP_INDEX ; do
-	curl -L "$PRE_TOP$i$POST_TOP" |
+	curl -kL "$PRE_TOP$i$POST_TOP" |
 	    sed -e "/$PROF_PAGE_INDEX/!d" -f page.sed |
 	    uniq | vipe >> prof_page.html
     done
@@ -174,7 +174,7 @@ function H () {
         if [[ $page =~ ^y ]] ; then 
             rm email.txt
             while read p ; do
-                curl -b cook -L "${p%$'\r'}" | sed -f link.sed | tee -a email.txt
+                curl -b cook -kL "${p%$'\r'}" | sed -f link.sed | tee -a email.txt
             done < prof_page.html
         fi
     done
@@ -196,7 +196,7 @@ function p () {
     TOP=$1
     PROF_INDEX=$2
     EMAIL_INDEX=$3
-    curl -L "$TOP" | sed -e "/$PROF_INDEX/!d" -f page.sed | uniq | vipe > prof_page.html
+    curl -kL "$TOP" | sed -e "/$PROF_INDEX/!d" -f page.sed | uniq | vipe > prof_page.html
     prof_page="n"
     while ! [[ $prof_page =~ ^y ]] ; do
         cat prof_page.html
@@ -204,7 +204,7 @@ function p () {
         if [[ $prof_page =~ ^y ]] ; then 
             # rm email_page.html
             while read p ; do
-                curl -L "${p%$'\r'}" | sed -e "/$EMAIL_INDEX/!d" -f page.sed
+                curl -kL "${p%$'\r'}" | sed -e "/$EMAIL_INDEX/!d" -f page.sed
             done < prof_page.html > email_page.html
         fi
     done
@@ -214,7 +214,7 @@ function p () {
         read -p "Email page looks good? y/n " email_page
     done
     while read p ; do
-	curl -L "${p%$'\r'}" | sed -f link.sed
+	curl -kL "${p%$'\r'}" | sed -f link.sed
     done < email_page.html > email.txt
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
@@ -233,7 +233,7 @@ function e () {
     TOP=$1
     if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
-    curl -L $TOP | sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
+    curl -kL $TOP | sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
 	svn diff $COUNTY/$SCHOOL/address.txt ;
@@ -251,7 +251,7 @@ function E () {
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     for i in $TOP_INDEX ; do
-	curl -L $PRE_TOP$i$POST_TOP |
+	curl -kL $PRE_TOP$i$POST_TOP |
 	    sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
     done
     address_page="n"

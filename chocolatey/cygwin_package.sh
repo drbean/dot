@@ -1,4 +1,4 @@
-first=subversion,openssh,znc,screen,git
+first=subversion,mosh,znc,screen,git
 second=weechat,lftp,vim,mutt,exim,lynx,weechat-perl,\
 weechat-python,perl,\
 perl-YAML,perl-List-MoreUtils,cron,perl-XML-DOM,python37,\

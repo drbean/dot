@@ -161,6 +161,7 @@ function H () {
     PROF_PAGE_INDEX=$4
     mv {,orig_}prof_page.html
     for i in $TOP_INDEX ; do
+	echo -e "\\n$PRE_TOP$i$POST_TOP\\n\\n"
 	curl -kL "$PRE_TOP$i$POST_TOP" |
 	    sed -e "/$PROF_PAGE_INDEX/!d" -f page.sed |
 	    uniq | vipe >> prof_page.html
@@ -251,6 +252,7 @@ function E () {
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     for i in $TOP_INDEX ; do
+	echo -e "\\n$PRE_TOP$i$POST_TOP\\n\\n"
 	curl -kL $PRE_TOP$i$POST_TOP |
 	    sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
     done

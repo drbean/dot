@@ -250,7 +250,9 @@ function e () {
     TOP=$1
     if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
-    curl -kL $TOP | sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
+    dump_cookies > cookies.txt
+    curl -b cookies.txt -c cookies.txt -kL $TOP |
+	sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
 	svn diff $COUNTY/$SCHOOL/address.txt ;
@@ -267,9 +269,10 @@ function E () {
     POST_TOP=$3
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+    dump_cookies > cookies.txt
     for i in $TOP_INDEX ; do
 	echo -e "\\n$PRE_TOP$i$POST_TOP\\n\\n"
-	curl -kL $PRE_TOP$i$POST_TOP |
+	curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$i$POST_TOP |
 	    sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
     done
     address_page="n"

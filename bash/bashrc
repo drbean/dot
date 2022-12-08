@@ -272,12 +272,28 @@ function e () {
 }
 function ee () {
     if [[ $# -eq 1 ]]; then DEPARTMENT=$1 ; fi
+    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     declare -a faculty
     readarray faculty
     for (( i=0; i<${#faculty[*]}; i++ )); do
 	if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
 	echo -e "\\nGetting ${faculty[$i]}\\n"
-	e "${faculty[$i]}" $DEPARTMENT ; done
+	dump_cookies > cookies.txt
+	curl -b cookies.txt -c cookies.txt -kL ${faculty[$i]} |
+	    sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
+    done
+    exec 3<&0
+    exec 0< /dev/tty
+    address_page="n"
+    while ! [[ $address_page =~ ^y ]] ; do
+	svn diff $COUNTY/$SCHOOL/address.txt ;
+        read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+    done
+    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+    if [[ $commit =~ ^y ]]
+	then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+    fi
+    exec 0<&3
 }
 function E () {
     PRE_TOP=$1

@@ -181,7 +181,7 @@ function H () {
     mv {,orig_}prof_page.html
     dump_cookies > cookies.txt
     for i in $TOP_INDEX ; do
-	echo -e "\\n$PRE_TOP$i$POST_TOP\\n\\n"
+	echo -e "\\nGetting $PRE_TOP$i$POST_TOP\\n"
 	curl -b cookies.txt -c cookies.txt -kL "$PRE_TOP$i$POST_TOP" |
 	    sed -e "/$PROF_PAGE_INDEX/!d" -f page.sed |
 	    uniq | vipe >> prof_page.html
@@ -257,6 +257,8 @@ function e () {
     dump_cookies > cookies.txt
     curl -b cookies.txt -c cookies.txt -kL $TOP |
 	sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
+	    exec 3<&0
+	    exec 0< /dev/tty
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
 	svn diff $COUNTY/$SCHOOL/address.txt ;
@@ -266,6 +268,13 @@ function e () {
     if [[ $commit =~ ^y ]]
         then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
     fi
+    exec 0<&3
+}
+function ee () {
+    if [[ $# -eq 1 ]]; then DEPARTMENT=$1 ; fi
+    while read faculty ; do
+	echo -e "\\nGetting $faculty\\n"
+	e "$faculty" $DEPARTMENT ; done
 }
 function E () {
     PRE_TOP=$1
@@ -275,7 +284,7 @@ function E () {
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
     dump_cookies > cookies.txt
     for i in $TOP_INDEX ; do
-	echo -e "\\n$PRE_TOP$i$POST_TOP\\n\\n"
+	echo -e "\\nGetting $PRE_TOP$i$POST_TOP\\n"
 	curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$i$POST_TOP |
 	    sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
     done

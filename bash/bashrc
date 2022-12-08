@@ -272,9 +272,12 @@ function e () {
 }
 function ee () {
     if [[ $# -eq 1 ]]; then DEPARTMENT=$1 ; fi
-    while read faculty ; do
-	echo -e "\\nGetting $faculty\\n"
-	e "$faculty" $DEPARTMENT ; done
+    declare -a faculty
+    readarray faculty
+    for (( i=0; i<${#faculty[*]}; i++ )); do
+	if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
+	echo -e "\\nGetting ${faculty[$i]}\\n"
+	e "${faculty[$i]}" $DEPARTMENT ; done
 }
 function E () {
     PRE_TOP=$1

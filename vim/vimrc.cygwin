@@ -1,4 +1,4 @@
-" Last Edit: 2022 Dec 10,  3:54:23 PM
+" Last Edit: 2022 Dec 10,  9:37:19 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -863,16 +863,18 @@ augroup scrape
 au BufEnter address.txt no <buffer> <LocalLeader>v :'<,'>v/@/d<CR>
 au BufEnter address.txt no <buffer> <LocalLeader>s :'<,'>! sort \| uniq<CR>
 au BufEnter prof_page.html,/tmp/* no <buffer> <LocalLeader>s :%! sort <Bar> uniq<CR>
-au BufEnter prof_page.html,/tmp/* no <buffer> <LocalLeader>u :%! uniq<CR>
+au BufEnter *.html,/tmp/* no <buffer> <LocalLeader>u :%! uniq<CR>
+au BufEnter *.html no <buffer> <LocalLeader>h
+	\ :%! sed -f page.sed<CR>
+	\ :%v/^http/d<CR>
+	\ :%! uniq<CR>
 au BufEnter /tmp/* no <buffer> <LocalLeader>p
 	\ :%v/^http/d<CR>
 	\ :%! uniq<CR>
 au BufEnter /tmp/* no <buffer> <LocalLeader>a
 	\ :%v/@/d<CR>
-	\ :%s/<[^>]*>//g<CR>
-	\ :%s/<.*$//<CR>
-	\ :%s/[^A-Za-z0-9]*$//<CR>
-	\ :%! sort <Bar> uniq<CR>
+	\ :%s/\(^[-._A-Za-z0-9@]*\).*$/\1/<CR>
+	\ :%! uniq<CR>
 au BufEnter ~/edit/email/*.html no <buffer> <LocalLeader>u :.! perl
 	\ -MURI::Escape -e 'chomp($line=<STDIN>);
 	\ print uri_escape($line, "^A-Za-z0-9\-\._~/ :&=?")'<CR><CR>

@@ -1,4 +1,4 @@
-" Last Edit: 2022 Dec 12,  6:21:14 PM
+" Last Edit: 2022 Dec 13,  5:34:04 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -869,7 +869,7 @@ au BufEnter *.html no <buffer> <LocalLeader>h
 	\ :%v/^http/d<CR>
 	\ :%! uniq<CR>
 au BufEnter /tmp/* no <buffer> <LocalLeader>p
-	\ :%v/^http/d<CR>
+	\ :%g/[><]/d<CR>
 	\ :%! uniq<CR>
 au BufEnter /tmp/* no <buffer> <LocalLeader>a
 	\ :%v/@/d<CR>

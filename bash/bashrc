@@ -251,70 +251,70 @@ function p () {
     fi
 }
 function e () {
-    TOP=$1
-    if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; fi
-    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
-    dump_cookies > cookies.txt
-    curl -b cookies.txt -c cookies.txt -kL $TOP |
-	sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
-	    exec 3<&0
-	    exec 0< /dev/tty
-    address_page="n"
-    while ! [[ $address_page =~ ^y ]] ; do
-	svn diff $COUNTY/$SCHOOL/address.txt ;
-        read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
-    done
-    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
-    if [[ $commit =~ ^y ]]
-        then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
-    fi
-    exec 0<&3
-}
-function ee () {
-    if [[ $# -eq 1 ]]; then DEPARTMENT=$1 ; fi
-    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
-    declare -a faculty
-    readarray faculty
-    for (( i=0; i<${#faculty[*]}; i++ )); do
-	if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
-	echo -e "\\nGetting ${faculty[$i]}\\n"
+    if [[ $# -le 1 ]]; then
+	if [[ $# -eq 1 ]]; then DEPARTMENT=$1 ; fi
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	declare -a faculty
+	readarray faculty
+	for (( i=0; i<${#faculty[*]}; i++ )); do
+	    if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
+	    echo -e "\\nGetting ${faculty[$i]}\\n"
+	    dump_cookies > cookies.txt
+	    curl -b cookies.txt -c cookies.txt -kL ${faculty[$i]} |
+		sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
+	done
+	exec 3<&0
+	exec 0< /dev/tty
+	address_page="n"
+	while ! [[ $address_page =~ ^y ]] ; do
+	    svn diff $COUNTY/$SCHOOL/address.txt ;
+	    read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	done
+	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+	if [[ $commit =~ ^y ]]
+	    then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	fi
+	exec 0<&3
+    elif [[ $# -le 2 ]]; then
+	TOP=$1
+	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; fi
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
 	dump_cookies > cookies.txt
-	curl -b cookies.txt -c cookies.txt -kL ${faculty[$i]} |
+	curl -b cookies.txt -c cookies.txt -kL $TOP |
 	    sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
-    done
-    exec 3<&0
-    exec 0< /dev/tty
-    address_page="n"
-    while ! [[ $address_page =~ ^y ]] ; do
-	svn diff $COUNTY/$SCHOOL/address.txt ;
-        read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
-    done
-    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
-    if [[ $commit =~ ^y ]]
-	then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
-    fi
-    exec 0<&3
-}
-function E () {
-    PRE_TOP=$1
-    TOP_INDEX=$2
-    POST_TOP=$3
-    if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
-    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
-    for i in $TOP_INDEX ; do
-	echo -e "\\nGetting $PRE_TOP$i$POST_TOP\\n"
-	dump_cookies > cookies.txt
-	curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$i$POST_TOP |
-	    sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
-    done
-    address_page="n"
-    while ! [[ $address_page =~ ^y ]] ; do
-	svn diff $COUNTY/$SCHOOL/address.txt ;
-        read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
-    done
-    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
-    if [[ $commit =~ ^y ]]
-        then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+		exec 3<&0
+		exec 0< /dev/tty
+	address_page="n"
+	while ! [[ $address_page =~ ^y ]] ; do
+	    svn diff $COUNTY/$SCHOOL/address.txt ;
+	    read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	done
+	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+	if [[ $commit =~ ^y ]]
+	    then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	fi
+	exec 0<&3
+    elif [[ $# -le 4 ]]; then
+	PRE_TOP=$1
+	TOP_INDEX=$2
+	POST_TOP=$3
+	if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	for i in $TOP_INDEX ; do
+	    echo -e "\\nGetting $PRE_TOP$i$POST_TOP\\n"
+	    dump_cookies > cookies.txt
+	    curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$i$POST_TOP |
+		sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
+	done
+	address_page="n"
+	while ! [[ $address_page =~ ^y ]] ; do
+	    svn diff $COUNTY/$SCHOOL/address.txt ;
+	    read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	done
+	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+	if [[ $commit =~ ^y ]]
+	    then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	fi
     fi
 }
 

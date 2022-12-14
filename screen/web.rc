@@ -9,5 +9,3 @@ screen 9
 stuff "man httpd_selinux"
 screen 0
 stuff "mosh drbean@freeshell.org^M"
-stuff "password_here^M"
-stuff "./.bin/mutt^M"

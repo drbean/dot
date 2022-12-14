@@ -1,4 +1,4 @@
-" Last Edit: 2022 Dec 13,  5:34:04 PM
+" Last Edit: 2022 Dec 14,  2:18:46 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -863,7 +863,7 @@ augroup scrape
 au BufEnter address.txt no <buffer> <LocalLeader>v :'<,'>v/@/d<CR>
 au BufEnter address.txt no <buffer> <LocalLeader>s :'<,'>! sort \| uniq<CR>
 au BufEnter prof_page.html,/tmp/* no <buffer> <LocalLeader>s :%! sort <Bar> uniq<CR>
-au BufEnter *.html,/tmp/* no <buffer> <LocalLeader>u :%! uniq<CR>
+au BufEnter *.html,/tmp/* no <buffer> <LocalLeader>q :%! uniq<CR>
 au BufEnter *.html no <buffer> <LocalLeader>h
 	\ :%! sed -f page.sed<CR>
 	\ :%v/^http/d<CR>

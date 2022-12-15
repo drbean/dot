@@ -251,8 +251,14 @@ function p () {
     fi
 }
 function e () {
+    URL=$1
+    SCHEME=http*//
+    URI=${URL#$SCHEME}
+    DOMAIN=$SCHOOL.edu.tw
+    PATHINFO=${URL#*$DOMAIN}
+    HOST=${URI%.$DOMAIN$PATHINFO}
     if [[ $# -le 1 ]]; then
-	if [[ $# -eq 1 ]]; then DEPARTMENT=$1 ; fi
+	if [[ $# -eq 1 ]]; then DEPARTMENT=$1 ; else DEPARTMENT=$HOST ; fi
 	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
 	declare -a faculty
 	readarray faculty
@@ -276,11 +282,10 @@ function e () {
 	fi
 	exec 0<&3
     elif [[ $# -le 2 ]]; then
-	TOP=$1
-	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; fi
+	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
 	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
 	dump_cookies > cookies.txt
-	curl -b cookies.txt -c cookies.txt -kL $TOP |
+	curl -b cookies.txt -c cookies.txt -kL $URL |
 	    sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt
 		exec 3<&0
 		exec 0< /dev/tty
@@ -295,12 +300,12 @@ function e () {
 	fi
 	exec 0<&3
     elif [[ $# -le 4 ]]; then
-	PRE_TOP=$1
-	TOP_INDEX=$2
-	POST_TOP=$3
-	if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
+	PRE_TOP=$2
+	IFS=' ' read -a TOP_INDEX <<< "$3"
+	POST_TOP=${URL#$PRE_TOP${TOP_INDEX[0]}}
+	if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; else DEPARTMENT=$HOST ; fi
 	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
-	for i in $TOP_INDEX ; do
+	for i in ${TOP_INDEX[@]:0} ; do
 	    echo -e "\\nGetting $PRE_TOP$i$POST_TOP\\n"
 	    dump_cookies > cookies.txt
 	    curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$i$POST_TOP |

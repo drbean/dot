@@ -251,7 +251,7 @@ function p () {
     fi
 }
 function e () {
-    URL=${2:-http://$DEPARTMENT.$SCHOOL.edu.tw}
+    URL=${1:-http://$DEPARTMENT.$SCHOOL.edu.tw}
     SCHEME=http*//
     URI=${URL#$SCHEME}
     DOMAIN=$SCHOOL.edu.tw
@@ -287,6 +287,10 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
     elif [[ $# -le 2 ]]; then
 	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
 	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\nGetting prof page from positional parameter 1:\\n
+	    $1
+	URL=$URL\\n
+SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	dump_cookies > cookies.txt
 	curl -b cookies.txt -c cookies.txt -kL $URL |
 	    sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt

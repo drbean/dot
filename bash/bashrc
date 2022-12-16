@@ -251,20 +251,23 @@ function p () {
     fi
 }
 function e () {
-    URL=$1
+    URL=${2:-http://$DEPARTMENT.$SCHOOL.edu.tw}
     SCHEME=http*//
     URI=${URL#$SCHEME}
     DOMAIN=$SCHOOL.edu.tw
     PATHINFO=${URL#*$DOMAIN}
     HOST=${URI%.$DOMAIN$PATHINFO}
-    if [[ $# -le 1 ]]; then
-	if [[ $# -eq 1 ]]; then DEPARTMENT=$1 ; else DEPARTMENT=$HOST ; fi
+    if ! [[ -t 0 ]] ; then
+	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
 	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
 	declare -a faculty
 	readarray faculty
 	for (( i=0; i<${#faculty[*]}; i++ )); do
 	    if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
-	    echo -e "\\nGetting ${faculty[$i]}\\n"
+	    echo -e "\\nGetting prof page $i from file list:\\n
+	    ${faculty[$i]}
+URL=$URL\\n
+SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    dump_cookies > cookies.txt
 	    curl -b cookies.txt -c cookies.txt -kL ${faculty[$i]} |
 		sed -f link.sed | vipe >> $COUNTY/$SCHOOL/address.txt

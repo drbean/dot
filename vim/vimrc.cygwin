@@ -1,4 +1,4 @@
-" Last Edit: 2022 Dec 14, 10:08:24 PM
+" Last Edit: 2022 Dec 17, 12:19:07 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -74,6 +74,9 @@ set showcmd		" show command in progress
 set nonumber		" number on left side, I think
 se helpheight=0		" sets the minimum height of help when opened
 set winminheight=0	"non-focused window reduced to status bar
+se report=0		"show changes in file
+se ruler		" show column, line
+
 
 "Colors
 "set term=screen
@@ -126,9 +129,6 @@ set path=.,		" path for files accessed by gf, etc
 set runtimepath^=~/dot/vim/ultisnips
 " let g:ycm_key_list_select_completion = ['<Down>']
 " set runtimepath=~/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim63,/usr/share/vim/vimfiles/after,~/.vim/after	"fedora 3 got it wrong
-
-se report=0		"show changes in file
-se ruler		" show column, line
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")

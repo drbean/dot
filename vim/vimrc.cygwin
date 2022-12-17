@@ -1,4 +1,4 @@
-" Last Edit: 2022 Dec 17,  2:55:03 PM
+" Last Edit: 2022 Dec 17,  6:05:57 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -657,7 +657,7 @@ au BufEnter content.yaml ino <buffer> <LocalLeader>a <Esc>:call HTMLLink()<CR>A
 
 au BufEnter slides.md nm <buffer> <LocalLeader>q cW_____()<Esc>'aPO<Esc>ma''$?_____()<Esc>f(\iW
 
-set statusline=statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{wordcount().chars}
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{wordcount().chars}
 set   laststatus=2	" always with a status line on last window, too 
 
 augroup END

@@ -482,7 +482,7 @@ function edit () {
     #fi
     #cd ~/edit/gitedit/$source
     #git status
-    SOURCE=$source FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR $source
+    SOURCE=$source FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR ${source#*/}
 }
 
 function emoeco () {

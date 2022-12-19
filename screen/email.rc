@@ -25,17 +25,3 @@ stuff "# lynx '^M"
 stuff "# DEPARTMENT= h '^M"
 stuff "# echo '^M"
 stuff "ssh drbean@sdf.org"
-
-screen 3
-stuff "d=$(date)^M"
-stuff "# cat \$AREA/*/*/address.txt | sort | uniq | vipe | shuf | split -a 3 -d -l 40 - \$AREA.^M"
-stuff "# for f in {xx..xx}; do svn rm \^/trunk/email/\${AREA}\$f -m \"\${AREA}\$f $d; done^M"
-stuff "# lftp -c 'open drbean@sdf.org && cd job && mput taibei??? && qui'^M"
-stuff "# prof_remove ^M"
-stuff "# prof_edit ^M"
-stuff "svn up taibei --depth infinity^M"
-stuff "# svn mkdir $COUNTY/$SCHOOL/^M"
-stuff "# touch $COUNTY/$SCHOOL/address.txt && svn add $COUNTY/$SCHOOL/address.txt^M"
-stuff "# svn ci $COUNTY/$SCHOOL -m http://$DEPARTMENT.$SCHOOL.edu.tw^M"
-stuff "svn up taibei04{0..9}"
-

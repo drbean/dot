@@ -1,7 +1,7 @@
-svn up ~/ttb/moodle
+svn up ~/ttb/trunk/moodle
 cyg_pack perl-ExtUtils-MakeMaker,make
 for m in moodle
-	do cd ~/ttb/$m
+	do cd ~/ttb/trunk/$m
 	perl Makefile.PL INST_SCRIPT=script
 	make
 	make install

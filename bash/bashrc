@@ -146,7 +146,59 @@ function h () {
     PATHINFO=${URL#*$DOMAIN}
     HOST=${URI%.$DOMAIN$PATHINFO}
     INDEX=$2
-    if [[ $# -le 3 ]]; then
+    if ! [[ -t 0 ]] ; then
+	declare -a faculty
+	readarray faculty
+	INDEX=$1
+	URL=${faculty[0]}
+	URI=${URL#$SCHEME}
+	HOST=${URI%.$DOMAIN*}
+	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	mv {,orig_}prof_page.html
+	for (( i=0; i<${#faculty[*]}; i++ )); do
+	    if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
+	    URL=${faculty[$i]}
+	    echo -e "\\nGetting faculty page $i from file list:\\n
+	    ${faculty[$i]}
+URL=$URL\\n
+SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
+	    dump_cookies > cookies.txt
+	    curl -b cookies.txt -c cookies.txt -kL "$URL" |
+		sed -f page.sed | uniq | vipe >> prof_page.html
+	done
+	exec 3<&0
+	exec 0< /dev/tty
+	page="n"
+	while ! [[ $page =~ ^y ]] ; do
+	    cat prof_page.html
+	    read -p "Prof page looks good? y/n " page
+	    if [[ $page =~ ^y ]] ; then 
+		rm email.txt
+		dump_cookies > cookies.txt
+		declare -i i=0
+		while read p ; do
+		    echo -e "\\n\\nReading page $i from prof_page.html\\n\\t\\t$p\\n"
+		    i+=1
+		    curl -b cookies.txt -c cookies.txt -kL "${p%$'\r'}" |
+			sed -f link.sed | tee -a email.txt
+		done < prof_page.html
+	    fi
+	done
+	if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; else DEPARTMENT=$HOST ; fi
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	cat email.txt | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
+	address_page="n"
+	while ! [[ $address_page =~ ^y ]] ; do
+	    svn diff $COUNTY/$SCHOOL/address.txt ;
+	    read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	done
+	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+	if [[ $commit =~ ^y ]]
+	    then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	fi
+	exec 0<&3
+    elif [[ $# -le 3 ]]; then
 	echo -e "\\nGetting faculty page from positional parameter 1:\\n
 	    $1
 	URL=$URL\\n
@@ -418,14 +470,15 @@ function premail () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/edit/email || exit 1
-    AREA='north' COUNTY='taoyuan' SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
+    cd ~/edit/trunk/email || exit 1
+    # AREA=${AREA:-north/}; COUNTY=${COUNTY:-xinbei} SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
+    SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
     cd -
 }
 
 function postmail () {
-    cd ~/edit/email || exit 1
-    AREA='north' COUNTY='xinbei' screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_$AREA
+    cd ~/edit/trunk/email || exit 1
+    AREA=${AREA:-north/}; COUNTY=${COUNTY:-xinbei} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_$AREA
     cd -
 }
 

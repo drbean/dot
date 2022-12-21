@@ -1,6 +1,14 @@
 screen v homepage/markdown/$STORY.md homepage/markdown/$TOPIC.md Contents.html ~/.weechat/logs/irc.freenodebnc.\\\#\\\#english.weechatlog
 
 screen
+stuff "lftp drbean@sdf.org^M"
+stuff "pwd^M"
+stuff "put $TOPIC.html^M"
+stuff "put $STORY.html^M"
+stuff "cd html/^M"
+stuff "user drbean "
+
+screen 1
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M svn info^M"
 stuff "export HISTTIMEFORMAT='%m-%d'^M"
 stuff "# perl htmlexerciselist.pl -a COURSE -l bett -s $STORY  > COURSE.html && lftp -c 'open web.nuu.edu.tw; cd public_html; put COURSE.html'^M"
@@ -8,13 +16,6 @@ stuff "# perl htmlexerciselist.pl -a COURSE -l bett -s $STORY  > COURSE.html && 
 stuff "# cat ~/dot/mutt/fortunes | sed -f fortune.sed >> ~/curriculum/pages/homepage/markdown/WittySayings.md^M"
 stuff "# for p in \$STORY \$TOPIC HomePage ; do pandoc -o \$p.txt --standalone homepage/markdown/\$p.md; done^M"
 stuff "# for p in \$STORY \$TOPIC HomePage ; do pandoc -o \$p.html --template=c:$HOME/curriculum/pages/pandoc-templates/homepagePost.html5 homepage/markdown/\$p.md; done^M"
+stuff "svn mv https://github.com/drbean/curriculum/trunk/pages/homepage/markdown/{$STORY,$STORY}.md -m $TOPIC.$STORY^M"
 stuff "# svn add homepage/markdown/\$STORY.md^M"
 stuff "# svn ci homepage/markdown/{\$STORY,\$TOPIC}.md -m \$TOPIC:\$STORY^M"
-
-screen
-stuff "lftp drbean@sdf.org^M"
-stuff "pwd^M"
-stuff "put $TOPIC.html^M"
-stuff "put $STORY.html^M"
-stuff "cd html/^M"
-stuff "user drbean "

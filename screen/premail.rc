@@ -4,7 +4,7 @@ stuff "echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.edu.tw >> $AREA$COUNTY/$SCHOOL/
 
 screen 1
 stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"
-stuff "# while read p ; do curl -L \"\${p%\$\'\\r\'}\" | sed -f link.sed | tee -a $COUNTY/$SCHOOL/address.txt ; done < scratch.html^M"
+stuff "# while read p ; do curl -L \"\${p%\$\'\\r\'}\" | sed -f link.sed | tee -a $AREA$COUNTY/$SCHOOL/address.txt ; done < scratch.html^M"
 stuff "# for p in {..} ; do curl -L \"\$p\" | l ; done^M"
 stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"
 stuff "# lynx '^M"

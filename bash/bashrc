@@ -478,7 +478,7 @@ function premail () {
 
 function postmail () {
     cd ~/edit/trunk/email || exit 1
-    AREA=${AREA:-north/}; COUNTY=${COUNTY:-xinbei} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_$AREA
+    AREA=${AREA:-$AREA}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
     cd -
 }
 

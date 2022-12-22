@@ -471,8 +471,8 @@ function premail () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    # AREA=${AREA:-north/}; COUNTY=${COUNTY:-xinbei} SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
-    SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
+    AREA=${AREA:-north/}; COUNTY=${COUNTY:-xinbei} SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
+    # SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
     cd -
 }
 

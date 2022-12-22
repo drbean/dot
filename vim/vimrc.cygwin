@@ -1,4 +1,4 @@
-" Last Edit: 2022 Dec 22,  9:03:10 AM
+" Last Edit: 2022 Dec 22,  7:55:30 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -858,6 +858,7 @@ au BufEnter Indexes*.txt nn <buffer> g<Left> g^ze
 au BufEnter ~/edit/.svn/*.svn-base nn <buffer> g<Right> g$zs
 au BufEnter Indexes*.txt nn <buffer> g<Right> g$zs
 
+au BufEnter /tmp/*,address.txt nn <buffer> <LocalLeader>f /^\(^# http:\/\/\)\?.*[^-._0-9a-zA-Z@]<CR>
 augroup END
 
 augroup scrape

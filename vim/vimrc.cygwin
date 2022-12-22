@@ -1,4 +1,4 @@
-" Last Edit: 2022 Dec 17,  6:05:57 PM
+" Last Edit: 2022 Dec 22,  9:03:10 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -608,7 +608,7 @@ function! BlogRelLink()
 	let string = "[" . words . "](" . search . ".html)"
 	call setline(".", string)
 endfunction
-au BufEnter *.md no <buffer> <LocalLeader>b <Esc>:call BlogRelLink()<CR>I
+au BufEnter *.md ino <buffer> <LocalLeader>b <Esc>:call BlogRelLink()<CR>I
 
 function! WikipediaLink()
 	let words = getline( line('.') )

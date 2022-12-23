@@ -423,37 +423,37 @@ function pp () {
 }
 
 function prof_remove () {
-    AREA="taibei"
-    address=$(grep -l "^$1" $AREA/*/address.txt)
+    AREA=${AREA%/}
+    address=$(grep -l "^$1" $AREA/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/# \1/"
-    svn diff $AREA/*/address.txt;
+    svn diff $AREA/*/*/address.txt;
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]
-        then svn ci $AREA/*/address.txt -m "$1: User unknown"
+        then svn ci $AREA/*/*/address.txt -m "$1: User unknown"
     fi
 }
 
 function prof_edit () {
-    AREA="taibei"
-    address=$(grep -l "^$1" $AREA/*/address.txt)
+    AREA=${AREA%/}
+    address=$(grep -l "^$1" $AREA/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/"
     sed -i.BAK -e "$ a\
-        $2" requeue_$AREA
-    svn diff $AREA/*/address.txt requeue_$AREA;
+        $2" requeue
+    svn diff $AREA/*/*/address.txt requeue
     echo -ne "\nSend again? y/n "
     read send
     if [[ $send =~ ^y ]]
-        then screen -p 0 -X stuff \
+        then screen -p 1 -X stuff \
             "echo $2 | /sdf/udd/d/drbean/job/send.sh^M"
         echo "Sending to $2 via send.sh on sdf."
-        svn revert requeue_$AREA
+        svn revert requeue
     fi
     svn st $AREA | sed -e '/^M/!d'
     echo -ne "\nCommit? y/n "
     read commit
     if [[ $commit =~ ^y ]]
-        then svn ci $AREA/*/address.txt requeue_$AREA \
+        then svn ci $AREA/*/*/address.txt requeue \
            -m "$1: Edited
 $2"
     fi

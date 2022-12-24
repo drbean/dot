@@ -1,4 +1,4 @@
-" Last Edit: 2022 Dec 24,  1:34:05 PM
+" Last Edit: 2022 Dec 24,  2:29:15 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -595,7 +595,7 @@ au!
 "eyy'ai## ee. . .''18yy''PjjOma''19k
 
 " pandoc link list
-au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>l ^/https*:i](A)Bi[V<
+au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>l ^/https*:<CR>i](<Esc>A)<Esc>Bi[<Esc>
 au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I[V<o
 
 au BufEnter slides.md nn <buffer> <LocalLeader>p :! pandoc -i --self-contained -t revealjs -o culture.html slides.md<CR>
@@ -618,7 +618,7 @@ function! WikipediaLink()
 	let string = words . "http://en.wikipedia.org/wiki/" . search
 	call setline(".", string)
 endfunction
-au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md  no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
+au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md  no <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>
 au BufEnter content.yaml ino <buffer> <LocalLeader>w <Esc>:call WikipediaLink()<CR>I
 
 function! GoogleLink()

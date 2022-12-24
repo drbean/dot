@@ -476,12 +476,6 @@ function premail () {
     cd -
 }
 
-function postmail () {
-    cd ~/edit/trunk/email || exit 1
-    AREA=${AREA:-$AREA}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
-    cd -
-}
-
 function email () {
     OPTIND=1
     local arg school department
@@ -495,6 +489,12 @@ function email () {
     done
     cd ~/edit/email || exit 1
     AREA='taibei' COUNTY='taibei' SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR email_$school
+    cd -
+}
+
+function postmail () {
+    cd ~/edit/trunk/email || exit 1
+    AREA=${AREA:-$AREA}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
     cd -
 }
 

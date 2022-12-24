@@ -478,17 +478,17 @@ function premail () {
 
 function email () {
     OPTIND=1
-    local arg school department
+    local arg area county
     while getopts 's:d:' arg
     do
         case ${arg} in
-            s) school=${OPTARG};;
-            d) department=${OPTARG};;
+            a) area=${OPTARG};;
+            c) county=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
-    cd ~/edit/email || exit 1
-    AREA='taibei' COUNTY='taibei' SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/email.rc -dR email_$school
+    cd ~/edit/trunk/email || exit 1
+    AREA={$area:-pusan} COUNTY={$county:-pusan} screen -c /home/$USER/dot/screen/email.rc -dR email_$school
     cd -
 }
 

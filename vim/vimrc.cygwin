@@ -1,4 +1,4 @@
-" Last Edit: 2022 Dec 22,  7:55:30 PM
+" Last Edit: 2022 Dec 24,  1:34:05 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -406,7 +406,7 @@ map <LocalLeader>i :call Insert_increment()<CR>
 "
 "augroup load_ycm
 "  autocmd!
-"  autocmd CursorHold, CursorHoldI * :packadd YouCompleteMe
+"  autocmd CursorHold,CursorHoldI * :packadd YouCompleteMe
 "                                \ | autocmd! load_ycm
 "augroup END
 
@@ -657,8 +657,8 @@ au BufEnter content.yaml ino <buffer> <LocalLeader>a <Esc>:call HTMLLink()<CR>A
 
 au BufEnter slides.md nm <buffer> <LocalLeader>q cW_____()<Esc>'aPO<Esc>ma''$?_____()<Esc>f(\iW
 
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{wordcount().chars}
-set   laststatus=2	" always with a status line on last window, too 
+au CursorHold,CursorHoldI *.md set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{wordcount().chars}
+au CursorHold,CursorHoldI *.md set laststatus=2 " always with a status line on last window, too 
 
 augroup END
 

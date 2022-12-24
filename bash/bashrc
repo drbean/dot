@@ -450,7 +450,9 @@ function prof_edit () {
         svn revert requeue
     fi
     svn st $AREA | sed -e '/^M/!d'
-    echo -ne "\nCommit? y/n "
+    echo -ne "\nCommit with message:
+$1: Edited
+$2? y/n "
     read commit
     if [[ $commit =~ ^y ]]
         then svn ci $AREA/*/*/address.txt requeue \

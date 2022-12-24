@@ -120,7 +120,7 @@ function a () {
     if ! [[ -f ~/edit/trunk/email/$AREA$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
-    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt
+    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt
     sed -f link.sed | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
     # commit="n"
     svn diff $AREA$COUNTY/$SCHOOL/address.txt
@@ -130,19 +130,19 @@ function a () {
 	svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
         read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
-    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
     if [[ $commit =~ ^y ]]
-        then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+        then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
         else echo -e "commit=$commit?\nDEPARTMENT=$DEPARTMENT?"
             ls -l /dev/fd/
     fi
     # svn log --diff -r HEAD
 }
 function h () {
-    URL=${1:-http://$DEPARTMENT.$SCHOOL.edu.tw}
+    URL=${1:-http://$DEPARTMENT.$SCHOOL.ac.kr}
     SCHEME=http*//
     URI=${URL#$SCHEME}
-    DOMAIN=$SCHOOL.edu.tw
+    DOMAIN=$SCHOOL.ac.kr
     PATHINFO=${URL#*$DOMAIN}
     HOST=${URI%.$DOMAIN$PATHINFO}
     INDEX=$2
@@ -154,7 +154,7 @@ function h () {
 	URI=${URL#$SCHEME}
 	HOST=${URI%.$DOMAIN*}
 	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
 	mv {,orig_}prof_page.html
 	for (( i=0; i<${#faculty[*]}; i++ )); do
 	    if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
@@ -186,16 +186,16 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    fi
 	done
 	if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
 	cat email.txt | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
 	address_page="n"
 	while ! [[ $address_page =~ ^y ]] ; do
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
-	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
 	if [[ $commit =~ ^y ]]
-	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
 	fi
 	exec 0<&3
     elif [[ $# -le 3 ]]; then
@@ -224,16 +224,16 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    fi
 	done
 	if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
 	cat email.txt | uniq | vipe >> $AREA$COUNTY/$SCHOOL/address.txt
 	address_page="n"
 	while ! [[ $address_page =~ ^y ]] ; do
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
-	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
 	if [[ $commit =~ ^y ]]
-	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
 	fi
 	exec 0<&3
     elif [[ $# -le 4 ]]; then
@@ -262,16 +262,16 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	done
 	exec 3>&-
 	if [[ $# -eq 5 ]]; then DEPARTMENT=$5 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $AREA$COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	cat email.txt | uniq | vipe >> $AREA$COUNTY/$SCHOOL/address.txt
 	address_page="n"
 	while ! [[ $address_page =~ ^y ]] ; do
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
-	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
 	if [[ $commit =~ ^y ]]
-	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
 	fi
     fi
 }
@@ -300,28 +300,28 @@ function p () {
 	curl -kL "${p%$'\r'}" | sed -f link.sed
     done < email_page.html > email.txt
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
-    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
     cat email.txt | uniq | vipe >> $AREA$COUNTY/$SCHOOL/address.txt
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
 	svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
         read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
-    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
     if [[ $commit =~ ^y ]]
-        then svn ci $AREA$COUNTY/$SCHOOL -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+        then svn ci $AREA$COUNTY/$SCHOOL -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
     fi
 }
 function e () {
-    URL=${1:-http://$DEPARTMENT.$SCHOOL.edu.tw}
+    URL=${1:-http://$DEPARTMENT.$SCHOOL.ac.kr}
     SCHEME=http*//
     URI=${URL#$SCHEME}
-    DOMAIN=$SCHOOL.edu.tw
+    DOMAIN=$SCHOOL.ac.kr
     PATHINFO=${URL#*$DOMAIN}
     HOST=${URI%.$DOMAIN$PATHINFO}
     if ! [[ -t 0 ]] ; then
 	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
 	declare -a faculty
 	readarray faculty
 	for (( i=0; i<${#faculty[*]}; i++ )); do
@@ -341,14 +341,14 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
-	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
 	if [[ $commit =~ ^y ]]
-	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
 	fi
 	exec 0<&3
     elif [[ $# -le 2 ]]; then
 	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
 	echo -e "\\nGetting prof page from positional parameter 1:\\n
 	    $1
 	URL=$URL\\n
@@ -363,9 +363,9 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    svn diff $COUNTY/$SCHOOL/address.txt ;
 	    read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
-	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
 	if [[ $commit =~ ^y ]]
-	    then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	    then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
 	fi
 	exec 0<&3
     elif [[ $# -le 4 ]]; then
@@ -373,7 +373,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	IFS=' ' read -a TOP_INDEX <<< "$3"
 	POST_TOP=${URL#$PRE_TOP${TOP_INDEX[0]}}
 	if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.edu.tw" >> $COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
 	for i in ${TOP_INDEX[@]:0} ; do
 	    echo -e "\\nGetting $PRE_TOP$i$POST_TOP\\n"
 	    dump_cookies > cookies.txt
@@ -385,9 +385,9 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    svn diff $COUNTY/$SCHOOL/address.txt ;
 	    read -p "* $COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
-	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.edu.tw'? y/n " commit
+	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
 	if [[ $commit =~ ^y ]]
-	    then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.edu.tw"
+	    then svn ci $COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
 	fi
     fi
 }

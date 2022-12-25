@@ -1,4 +1,4 @@
-screen v homepage/markdown/$STORY.md homepage/markdown/$TOPIC.md Contents.html ~/.weechat/logs/irc.freenodebnc.\\\#\\\#english.weechatlog
+screen v homepage/markdown/$STORY.md homepage/markdown/$TOPIC.md homepage/markdown/HomePage.md Contents.html ~/.weechat/logs/irc.freenodebnc.\\\#\\\#english.weechatlog
 
 screen
 stuff "lftp drbean@sdf.org^M"

@@ -490,13 +490,13 @@ function email () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA={$area:-pusan} COUNTY={$county:-pusan} screen -c /home/$USER/dot/screen/email.rc -dR email_$school
+    AREA={$area:-pusan} COUNTY={$county:-pusan} screen -c /home/$USER/dot/screen/email.rc -dR email_$area
     cd -
 }
 
 function postmail () {
     cd ~/edit/trunk/email || exit 1
-    AREA=${AREA:-$AREA}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
+    AREA=${AREA:-north}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
     cd -
 }
 

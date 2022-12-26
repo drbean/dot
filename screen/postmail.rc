@@ -2,12 +2,12 @@ screen 0
 stuff "ssh drbean@sdf.org"
 
 screen 1
-stuff "# ssh drbean@sdf.org^M"
-stuff "lftp drbean@sdf.org^M"
-stuff "pwd^M"
-stuff "put my_word.txt next^M"
-stuff "cd job/^M"
-stuff "user drbean "
+stuff "# lftp drbean@sdf.org^M"
+stuff "# pwd^M"
+stuff "# put my_word.txt next^M"
+stuff "# cd job/^M"
+stuff "# user drbean "
+stuff "ssh drbean@sdf.org^M"
 
 screen 3
 stuff "d=$(date)^M"

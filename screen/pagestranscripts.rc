@@ -3,6 +3,7 @@ screen v homepage/markdown/$STORY.md homepage/markdown/$TOPIC.md homepage/markdo
 screen
 stuff "lftp drbean@sdf.org^M"
 stuff "pwd^M"
+stuff "put HomePage.html -o index.html^M"
 stuff "put HomePage.html^M"
 stuff "put $TOPIC.html^M"
 stuff "put $STORY.html^M"

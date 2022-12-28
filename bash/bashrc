@@ -199,7 +199,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	fi
 	exec 0<&3
     elif [[ $# -le 3 ]]; then
-	echo -e "\\nGetting faculty page from positional parameter 1:\\n
+	echo -e "\\nGetting faculty page from \$1:\\n
 	    $1
 	URL=$URL\\n
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
@@ -224,16 +224,16 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    fi
 	done
 	if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\n# $URL" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	cat email.txt | uniq | vipe >> $AREA$COUNTY/$SCHOOL/address.txt
 	address_page="n"
 	while ! [[ $address_page =~ ^y ]] ; do
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
-	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
+	read -p  "Commit as $URL? y/n " commit
 	if [[ $commit =~ ^y ]]
-	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
+	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "$URL"
 	fi
 	exec 0<&3
     elif [[ $# -le 4 ]]; then

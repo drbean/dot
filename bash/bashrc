@@ -380,13 +380,15 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	POST_TOP=${URL#$PRE_TOP${TOP_INDEX[0]}}
 	if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; else DEPARTMENT=$HOST ; fi
 	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $AREA$COUNTY/$SCHOOL/address.txt ;
-	for i in ${TOP_INDEX[@]:0} ; do
-	    echo -e "\\nGetting prof page from positional parameters 1, 2, 3:\\n
+	declare -i n=0
+	for ix in ${TOP_INDEX[@]:0} ; do
+
+	    echo -e "\\nGetting prof page $((++n)) from positional parameters 1~3:\\n
 	    $1
-	PRE_TOP=$PRE_TOP, TOP_INDEX=$i, POST_TOP=$POST_TOP\\n
-	     URL=$PRE_TOP$i$POST_TOP\\n"
+	PRE_TOP=$PRE_TOP, TOP_INDEX=$ix, POST_TOP=$POST_TOP\\n
+	     URL=$PRE_TOP$ix$POST_TOP\\n"
 	    dump_cookies > cookies.txt
-	    curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$i$POST_TOP |
+	    curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$ix$POST_TOP |
 		sed -f link.sed | uniq | vipe >> $AREA$COUNTY/$SCHOOL/address.txt
 	done
 	address_page="n"

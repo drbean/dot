@@ -178,8 +178,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 		dump_cookies > cookies.txt
 		declare -i i=0
 		while read p ; do
-		    echo -e "\\n\\nReading page $i from prof_page.html\\n\\t\\t$p\\n"
-		    i+=1
+		    echo -e "\\n\\nReading page $((++i)) from prof_page.html\\n\\t\\t$p\\n"
 		    curl -b cookies.txt -c cookies.txt -kL "${p%$'\r'}" |
 			sed -f link.sed | tee -a email.txt
 		done < prof_page.html
@@ -216,8 +215,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 		dump_cookies > cookies.txt
 		declare -i i=0
 		while read p ; do
-		    echo -e "\\n\\nReading page $i from prof_page.html\\n\\t\\t$p\\n"
-		    i+=1
+		    echo -e "\\n\\nReading page $((++i)) from prof_page.html\\n\\t\\t$p\\n"
 		    curl -b cookies.txt -c cookies.txt -kL "${p%$'\r'}" |
 			sed -f link.sed | tee -a email.txt
 		done < prof_page.html
@@ -355,7 +353,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
     elif [[ $# -le 2 ]]; then
 	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
 	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $AREA$COUNTY/$SCHOOL/address.txt ;
-	echo -e "\\nGetting prof page from positional parameter 1:\\n
+	echo -e "\\nGetting prof page from \$1:\\n
 	    $1
 	URL=$URL\\n
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
@@ -382,8 +380,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	declare -i n=0
 	for ix in ${TOP_INDEX[@]:0} ; do
-
-	    echo -e "\\nGetting prof page $((++n)) from positional parameters 1~3:\\n
+	    echo -e "\\nGetting prof page $((++n)) from \$1~\$3:\\n
 	    $1
 	PRE_TOP=$PRE_TOP, TOP_INDEX=$ix, POST_TOP=$POST_TOP\\n
 	     URL=$PRE_TOP$ix$POST_TOP\\n"

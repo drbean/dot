@@ -25,7 +25,7 @@ stuff "# cat \$AREA\$COUNTY/*/address.txt | sort | uniq | vipe | shuf | split -a
 stuff "# START=000^M"
 stuff "# END=000^M"
 stuff "# svn rm \^/trunk/email/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$END $d\"; done^M"
-stuff "# lftp -c \"open drbean@sdf.org && cd job && mput \$AREA??? && qui\"^M"
+stuff "# lftp -c \"open drbean@sdf.org && cd job && mput \$AREA/\$AREA.??? && qui\"^M"
 stuff "# pp # sdf tmux screen in window 1 for prof_edit^M"
 stuff "svn up \$AREA --depth infinity^M"
 stuff "svn up requeue_\$AREA^M"

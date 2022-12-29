@@ -154,24 +154,25 @@ function h () {
 	URI=${URL#$SCHEME}
 	HOST=${URI%.$DOMAIN*}
 	if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\n# $URL" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	mv {,orig_}prof_page.html
 	for (( i=0; i<${#faculty[*]}; i++ )); do
 	    if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
-	    URL=${faculty[$i]}
+	    URL="${faculty[$i]%$'\n'}"
+	    PATHINFO=${URL#*$DOMAIN}
 	    echo -e "\\nGetting faculty page $i from file list:\\n
 	    ${faculty[$i]}
-URL=$URL\\n
+        URL=$URL
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    dump_cookies > cookies.txt
-	    curl -b cookies.txt -c cookies.txt -kL "$URL" |
+	    curl -b cookies.txt -c cookies.txt -kL "${URL%$'\r'}" |
 		sed -f page.sed | uniq | vipe >> prof_page.html
 	done
 	exec 3<&0
 	exec 0< /dev/tty
 	page="n"
 	while ! [[ $page =~ ^y ]] ; do
-	    cat prof_page.html
+	    vim prof_page.html
 	    read -p "Prof page looks good? y/n " page
 	    if [[ $page =~ ^y ]] ; then 
 		rm email.txt
@@ -185,16 +186,16 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    fi
 	done
 	if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
-	cat email.txt | uniq | vipe >> $COUNTY/$SCHOOL/address.txt
+	echo -e "\\n# $URL" >> $AREA$COUNTY/$SCHOOL/address.txt ;
+	cat email.txt | uniq | vipe >> $AREA$COUNTY/$SCHOOL/address.txt
 	address_page="n"
 	while ! [[ $address_page =~ ^y ]] ; do
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
-	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
+	read -p  "Commit as '$URL'? y/n " commit
 	if [[ $commit =~ ^y ]]
-	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
+	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "$URL"
 	fi
 	exec 0<&3
     elif [[ $# -le 3 ]]; then
@@ -250,7 +251,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	page="n"
 	while ! [[ $page =~ ^y ]] ; do
 	    cat prof_page.html
-	    read -p "Prof page looks good? y/n " page
+	    read -p "Prof page ready, can get email? y/n " page
 	    if [[ $page =~ ^y ]] ; then 
 		rm email.txt
 		while read p ; do

@@ -190,6 +190,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	cat email.txt | uniq | vipe >> $AREA$COUNTY/$SCHOOL/address.txt
 	address_page="n"
 	while ! [[ $address_page =~ ^y ]] ; do
+	    vim $AREA$COUNTY/$SCHOOL/address.txt
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done

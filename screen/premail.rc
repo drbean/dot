@@ -1,19 +1,22 @@
 screen 0
 # editing
-stuff "echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.ac.kr >> $AREA$COUNTY/$SCHOOL/address.txt ; v $AREA$COUNTY/$SCHOOL/address.txt ^M"
+stuff "# echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.ac.kr >> $AREA$COUNTY/$SCHOOL/address.txt ; v $AREA$COUNTY/$SCHOOL/address.txt ^M"
+stuff "echo -e \\\\n# $URL >> $AREA$COUNTY/$SCHOOL/address.txt ; v {page,link}.sed {prof_page,faculty}.html^M"
+
+screen 3
+stuff "# svn mkdir --parents $AREA$COUNTY/$SCHOOL && "
+stuff " touch $AREA$COUNTY/$SCHOOL/address.txt && svn add $AREA$COUNTY/$SCHOOL/address.txt^M"
+stuff "# svn up $AREA$COUNTY^M"
+stuff "# svn ci $AREA$COUNTY/$SCHOOL -m http://$DEPARTMENT.$SCHOOL.ac.kr^M"
+stuff "svn ci $AREA$COUNTY/$SCHOOL -m $URL"
 
 screen 1
 stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"
 stuff "# while read p ; do curl -L \"\${p%\$\'\\r\'}\" | sed -f link.sed | tee -a $AREA$COUNTY/$SCHOOL/address.txt ; done < scratch.html^M"
 stuff "# for p in {..} ; do curl -L \"\$p\" | l ; done^M"
+stuff "# curl -L \"$URL\" > faculty.html^M"
 stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"
 stuff "# lynx '^M"
 stuff "# DEPARTMENT= h '^M"
-stuff "# echo '^M"
-stuff "e < faculty.html"
-
-screen 3
-stuff "# svn mkdir --parents $AREA$COUNTY/$SCHOOL/^M"
-stuff "# touch $AREA$COUNTY/$SCHOOL/address.txt && svn add $AREA$COUNTY/$SCHOOL/address.txt^M"
-stuff "svn up $AREA$COUNTY^M"
-stuff "svn ci $AREA$COUNTY/$SCHOOL -m http://$DEPARTMENT.$SCHOOL.ac.kr"
+stuff "# e < faculty.html^M"
+stuff "echo '^M"

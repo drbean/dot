@@ -130,7 +130,7 @@ function a () {
 	vim $AREA$COUNTY/$SCHOOL/address.txt ;
 	svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	echo
-        read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+        read -p "$AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
     read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr/en/about/staff'? y/n " commit
     if [[ $commit =~ ^y ]]
@@ -196,7 +196,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    vim $AREA$COUNTY/$SCHOOL/address.txt
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    echo
-	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	    read -p "$AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
 	read -p  "Commit as '$URL'? y/n " commit
 	if [[ $commit =~ ^y ]]
@@ -234,7 +234,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	while ! [[ $address_page =~ ^y ]] ; do
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    echo
-	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	    read -p "$AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
 	read -p  "Commit as $URL? y/n " commit
 	if [[ $commit =~ ^y ]]
@@ -273,7 +273,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	while ! [[ $address_page =~ ^y ]] ; do
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    echo
-	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	    read -p "$AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
 	read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
 	if [[ $commit =~ ^y ]]
@@ -312,7 +312,7 @@ function p () {
     while ! [[ $address_page =~ ^y ]] ; do
 	svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	echo
-        read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+        read -p "$AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
     read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
     if [[ $commit =~ ^y ]]
@@ -355,7 +355,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    vim $AREA$COUNTY/$SCHOOL/address.txt ;
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    echo
-	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	    read -p "$AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
 	read -p  "Commit as '$URL'? y/n " commit
 	if [[ $commit =~ ^y ]]
@@ -379,7 +379,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    vim $AREA$COUNTY/$SCHOOL/address.txt ;
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    echo
-	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	    read -p "$AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
 	read -p  "Commit as '$URL'? y/n " commit
 	if [[ $commit =~ ^y ]]
@@ -408,7 +408,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    vim $AREA$COUNTY/$SCHOOL/address.txt ;
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    echo
-	    read -p "* $AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	    read -p "$AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
 	read -p  "Commit as \"$PRE_TOP '$TOP_INDEX' $POST_TOP\"? y/n " commit
 	if [[ $commit =~ ^y ]]

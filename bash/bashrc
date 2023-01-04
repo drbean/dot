@@ -339,13 +339,13 @@ function e () {
 	echo -e "\\n# $URL" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	for (( i=0; i<${#faculty[*]}; i++ )); do
 	    if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
-	    URL="${faculty[$i]%$'\n'}"
+	    url="${faculty[$i]%$'\n'}"
 	    echo -e "\\nGetting prof page $i from file list:\\n
 	    ${faculty[$i]}
-        URL=$URL\\n
+        URL=$url\\n
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    dump_cookies > cookies.txt
-	    curl -b cookies.txt -c cookies.txt -kL ${faculty[$i]} |
+	    curl -b cookies.txt -c cookies.txt -kL $url |
 		sed -f link.sed | vipe >> $AREA$COUNTY/$SCHOOL/address.txt
 	done
 	exec 3<&0

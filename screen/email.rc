@@ -14,7 +14,7 @@
 screen 0
 # editing
 stuff "# echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.edu.tw >> $COUNTY/$SCHOOL/address.txt ; v $COUNTY/$SCHOOL/address.txt ^M"
-stuff "ssh drbean@sdf.org"
+stuff "mosh drbean@sdf.org"
 
 screen 1
 stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"
@@ -24,4 +24,4 @@ stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"
 stuff "# lynx '^M"
 stuff "# DEPARTMENT= h '^M"
 stuff "# echo '^M"
-stuff "ssh drbean@sdf.org"
+stuff "mosh drbean@sdf.org"

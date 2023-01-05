@@ -1,7 +1,8 @@
 screen 0
 # editing
 stuff "# echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.ac.kr >> $AREA$COUNTY/$SCHOOL/address.txt ; v $AREA$COUNTY/$SCHOOL/address.txt ^M"
-stuff "echo -e \\\\n# $URL >> $AREA$COUNTY/$SCHOOL/address.txt ; v {page,link}.sed {prof_page,faculty}.html^M"
+stuff "# echo -e \\\\n# $URL >> $AREA$COUNTY/$SCHOOL/address.txt ; v {page,link}.sed {prof_page,faculty}.html^M"
+stuff "v {page,link}.sed {prof_page,faculty}.html^M"
 
 screen 3
 stuff "# svn mkdir --parents $AREA$COUNTY/$SCHOOL && "

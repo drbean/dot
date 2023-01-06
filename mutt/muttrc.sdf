@@ -1,4 +1,4 @@
-# Last Edit: 2023 Jan 06,  8:22:42 PM
+# Last Edit: 2023 Jan 06,  8:27:08 PM
 #
 # The ultimate Mutt settings
 #
@@ -745,7 +745,7 @@ subscribe code-switching
 # \M to generate flder-hook list
 
 # perl scripts to get mailoboses, above indexhooks
-mailboxes '!' `$HOME/.mutt/mailboxes.pl`
+# mailboxes '!' `$HOME/.mutt/mailboxes.pl`
 # mailboxes '!' =yo =mb =pr =v =cy =cm =p5 =p6 =pl =cg =lx =lg =os =sm =bt =db =sl =ch =la =lt =bi =esl =cjk =cl =net =ma =hold =ic =ph =ps =mo =ad =ed =te
 
 source $HOME/.mutt/indexhooks.sh|

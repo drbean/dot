@@ -1,4 +1,4 @@
-# Last Edit: 2021 Jun 26,  9:50:20 AM
+# Last Edit: 2023 Jan 06,  8:22:42 PM
 #
 # The ultimate Mutt settings
 #
@@ -138,9 +138,10 @@ set reply_to=ask-yes	# Use or ignore Reply-To.
 set history=200		# Size of the history buffer
 set mail_check=3	# time (in seconds) how often buffy checks for new mail
 set pager_context=0	# number of lines, to display twice on PgUp/Down
-set pager_index_lines=4	# add small message index at top of pager (4)
+# set pager_index_lines=4	# add small message index at top of pager (4)
 #set pager_index_lines=`zsh -c 'temp=($(stty size)) ; expr $temp[1] / 5 + 1'`
 #set pager_index_lines=`((stty size 2>/dev/null||echo 24 80);echo s0 5/1+p)|dc`
+set pager_index_lines=0	# add small message index at top of pager (4)
 set read_inc=10		# Mutt will notify when reading mailbox messages
 set sendmail_wait=10	# >0 (wait seconds), 0 (forground), <0 (background)
 set timeout=60		# time in seconds, till Mutt looks for new mail
@@ -841,7 +842,7 @@ save-hook bug-games-tournament-swiss =sw
 #
 
 fcc-save-hook ^(listproc|listserv|lyris|majordomo|mail2news|sympa|.*request@|.*subscribe@) =z/l
-# fcc-save-hook (akihiro1@kyoto-be.ne.jp|parker@jrchcn|Hgoos|appliedinternet|hendren|wjlund|ae$) =t
+fcc-save-hook (MAILER-DAEMON|) =email
 fcc-save-hook (kk68x7|j27acebc4225qa|koara8|ghm2y|shirokvmayou) =yo
 
 #

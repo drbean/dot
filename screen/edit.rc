@@ -13,7 +13,7 @@ stuff "&& /cygdrive/c/Program\ Files/Microsoft\ Office/root/Office16/WINWORD /t 
 
 screen 3
 stuff "svn st -q^M svn log -vr BASE:HEAD^M# svn add $FILE.md^M"
-stuff "# ln ~/edit/\$SOURCE/$FILE.md ~/edit/gitedit/\$SOURCE/$FILE.md^M"
+stuff "# ln ~/edit/branches/\$SOURCE/$FILE.md ~/edit/gitedit/\$SOURCE/$FILE.md^M"
 stuff "# cd ~/edit/gitedit/^M git status"
 
 screen 4

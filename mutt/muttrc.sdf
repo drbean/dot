@@ -1,4 +1,4 @@
-# Last Edit: 2023 Jan 06,  8:27:08 PM
+# Last Edit: 2023 Jan 09, 12:37:46 PM
 #
 # The ultimate Mutt settings
 #
@@ -842,7 +842,9 @@ save-hook bug-games-tournament-swiss =sw
 #
 
 fcc-save-hook ^(listproc|listserv|lyris|majordomo|mail2news|sympa|.*request@|.*subscribe@) =z/l
-fcc-save-hook (MAILER-DAEMON|) =email
+fcc-save-hook (MAILER-DAEMON) =email
+fcc-save-hook paypal =paypal
+fcc-save-hook chinte =chinte
 fcc-save-hook (kk68x7|j27acebc4225qa|koara8|ghm2y|shirokvmayou) =yo
 
 #

@@ -1,4 +1,4 @@
-" Last Edit: 2023 Jan 04, 11:36:54 AM
+" Last Edit: 2023 Jan 05,  1:31:50 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -435,7 +435,7 @@ autocmd BufNewFile /tmp/mutt* normal \S
 "I did this better before
 autocmd BufRead /tmp/mutt* %s/^[><C-I> ]\+$//
 "autocmd BufRead /tmp/mutt* normal \cq
-autocmd BufRead /tmp/mutt* set tw=65 
+autocmd BufRead /tmp/mutt* set tw=55 
 " DOS terminal problem with <shift+space>
 autocmd BufRead /tmp/mutt* imap <f4> <esc>BlcW
 " \S,\M macros to make folder-hook index returners

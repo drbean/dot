@@ -160,14 +160,14 @@ function h () {
 	mv {,orig_}prof_page.html
 	for (( i=0; i<${#faculty[*]}; i++ )); do
 	    if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
-	    URL="${faculty[$i]%$'\n'}"
+	    url="${faculty[$i]%$'\r\n'}"
 	    PATHINFO=${URL#*$DOMAIN}
 	    echo -e "\\nGetting faculty page $i from file list:\\n
 	    ${faculty[$i]}
-        URL=$URL
+        URL=$url
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    dump_cookies > cookies.txt
-	    curl -b cookies.txt -c cookies.txt -kL "${URL%$'\r'}" |
+	    curl -b cookies.txt -c cookies.txt -kL "$url" |
 		sed -f page.sed | uniq | vipe >> prof_page.html
 	done
 	exec 3<&0
@@ -232,11 +232,13 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	cat email.txt | uniq | vipe >> $AREA$COUNTY/$SCHOOL/address.txt
 	address_page="n"
 	while ! [[ $address_page =~ ^y ]] ; do
+	    vim $AREA$COUNTY/$SCHOOL/address.txt
 	    svn diff $AREA$COUNTY/$SCHOOL/address.txt ;
 	    echo
 	    read -p "$AREA$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
-	read -p  "Commit as $URL? y/n " commit
+	echo -n  "Commit as URL=$URL? y/n " | vipe
+	read commit
 	if [[ $commit =~ ^y ]]
 	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -m "$URL"
 	fi
@@ -339,10 +341,10 @@ function e () {
 	echo -e "\\n# $URL" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	for (( i=0; i<${#faculty[*]}; i++ )); do
 	    if (( $i==${#faculty[*]}-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
-	    url="${faculty[$i]%$'\n'}"
+	    url="${faculty[$i]%$'\r\n'}"
 	    echo -e "\\nGetting prof page $i from file list:\\n
 	    ${faculty[$i]}
-        URL=$url\\n
+        URL=$url
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    dump_cookies > cookies.txt
 	    curl -b cookies.txt -c cookies.txt -kL $url |
@@ -450,7 +452,7 @@ function pp () {
 function prof_remove () {
     AREA=${AREA%/}
     address=$(grep -l "^$1" $AREA/*/*/address.txt)
-    echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/# \1/"
+    echo $address | xargs sed -i.BAK -e "s/^\($1\)\(\s\|$\)/# \1/"
     svn diff $AREA/*/*/address.txt;
     echo -ne "\nCommit? y/n "
     read proceed
@@ -459,10 +461,18 @@ function prof_remove () {
     fi
 }
 
+function prof_find () {
+    AREA=${AREA%/}
+    address=$1
+    file=$(grep -l "$address" $AREA/*/*/address.txt)
+    echo $file | xargs v --not-a-term +/$address
+    screen kill
+}
+
 function prof_edit () {
     AREA=${AREA%/}
     address=$(grep -l "^$1" $AREA/*/*/address.txt)
-    echo $address | xargs sed -i.BAK -e "s/^\($1.*\)$/$2 # \1/"
+    echo $address | xargs sed -i.BAK -e "s/^\($1\)\(\s\|$\)/$2 # \1/"
     sed -i.BAK -e "$ a\
         $2" requeue
     svn diff $AREA/*/*/address.txt requeue
@@ -547,10 +557,10 @@ function edit () {
             *) return 1 # illegal option
         esac
     done
-    svn up ~/edit/$source --depth empty
-    svn up ~/edit/$source/$file.md
-    svn up ~/edit/$source/issues.md
-    cd ~/edit/$source
+    svn up ~/edit/branches/$source --depth empty
+    svn up ~/edit/branches/$source/$file.md
+    svn up ~/edit/branches/$source/issues.md
+    cd ~/edit/branches/$source
     #if [[ ! -e ~/edit/gitedit ]] ; then
     #    git clone http://github.com/drbean/edit ~/edit/gitedit
     #elif [[ ! -e ~/edit/gitedit/$source ]] ; then

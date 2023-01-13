@@ -98,6 +98,28 @@ function timer () {
     echo $'\a'
 }
 
+function rec () {
+    file=$1
+    basename=${file##*/}
+    dirname=${file%/*}
+    swap=$dirname/.$basename.swp
+    diff recover $file
+    if [[ $? != 0 ]] ; then
+	read -p "cp recover to $file? y/n " r2f
+	if [[ $r2f =~ ^y ]] ; then 
+	    cp recover $file
+	    echo "Done: recover -> $file"
+	fi
+    fi
+    read -p "OK to remove recover, '$dirname/.$basename.swp'? y/n " ok
+    if [[ $ok =~ ^y ]] ; then 
+	rm recover $swap
+	echo "recover, swap=$swap removed"
+    else
+	echo "recover, swap=$swap NOT removed"
+    fi
+}
+
 function dump_cookies ()  {
     echo '# Netscape HTTP Cookie File' # needed by youtube-dl
     # there's no attempt to url encode $1, but SQLite already handles

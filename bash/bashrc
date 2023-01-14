@@ -36,6 +36,10 @@ alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/scr
 alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/screen/project.rc -dR comp; cd -"
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
+function off () {
+    shutdown /s /t 2
+}
+
 function cyg_pack () {
     package=$1
     if [[ -x d:/User-Data/Downloads/setup-x86_64.exe ]] ; then
@@ -101,15 +105,19 @@ function timer () {
 function rec () {
     file=$1
     basename=${file##*/}
-    dirname=${file%/*}
+    dirname=${file%/$basename}
     swap=$dirname/.$basename.swp
+    echo "dirname: '$dirname', basename: '$basename'"
     diff recover $file
-    if [[ $? != 0 ]] ; then
+    status=$?
+    if [[ $status == 1 ]] ; then
 	read -p "cp recover to $file? y/n " r2f
 	if [[ $r2f =~ ^y ]] ; then 
 	    cp recover $file
 	    echo "Done: recover -> $file"
 	fi
+    elif [[ $status == 0 ]] ; then
+	echo "'recover' and '$file' the same."
     fi
     read -p "OK to remove recover, '$dirname/.$basename.swp'? y/n " ok
     if [[ $ok =~ ^y ]] ; then 

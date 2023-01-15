@@ -13,6 +13,8 @@
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
 # config.load_autoconfig(True)
+# greg
+config.load_autoconfig(True)
 
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
@@ -54,6 +56,8 @@
 ##   - webengine: Use QtWebEngine (based on Chromium - recommended).
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari - many known security issues!).
 # c.backend = 'webengine'
+# greg
+# c.backend = 'webkit'
 
 ## Map keys to other keys, so that they are equivalent in all modes. When
 ## the key used as dictionary-key is pressed, the binding for the key

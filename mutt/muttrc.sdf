@@ -1,4 +1,4 @@
-# Last Edit: 2023 Jan 09, 10:23:12 PM
+# Last Edit: 2023 Jan 16, 12:36:51 PM
 #
 # The ultimate Mutt settings
 #
@@ -780,6 +780,7 @@ set default_hook="~t %s"
 # First send-hook
 send-hook . "set attribution='On %{%a, %d %b %Y}, %n wrote:\n' indent_string='> '"
 
+send-hook gmail\\.com 'my_hdr Bcc: counterbean@gmail.com'
 # send-hook penpals-two 'unmy_hdr From' 
 send-hook penpals-two 'my_hdr From: lang-penpals-two@ms.chinmin.edu.tw'
 

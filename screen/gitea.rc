@@ -1,0 +1,69 @@
+screen 2
+stuff "cd /srv/www/cgi-bin/moodle/mod/quiz/report/^M"
+stuff "# git hub clone moodle-quiz_tag /srv/www/cgi-bin/moodle/mod/quiz/report/\$tag^M"
+stuff "# cp /srv/www/cgi-bin/moodle/mod/quiz/report/\$tag/lang/en/{quiz_tag_COURSE_WEEK,quiz_\$tag}.php^M"
+stuff "# cd /srv/www/cgi-bin/moodle/mod/quiz/report/\$tag^M"
+stuff "# v /srv/www/cgi-bin/moodle/{config,mod/quiz/report/\$tag/{version,db/tag,lang/en/quiz_\$tag}}.php^M"
+stuff "# sed -iBAK -r -e \"s/quiz_tag_(correspondence|conversation|anime|toeic_speaking)_\$((\$WEEK-1))/quiz_\$tag/\" /srv/www/cgi-bin/moodle/config.php^M"
+stuff "# sed -iBAK -r -e \"s/quiz_tag_(correspondence|conversation|anime|toeic_speaking)_\$WEEK/quiz_\$tag/\" /srv/www/cgi-bin/moodle/config.php \$HOME/moodle/moosh/Moosh/Command/Moodle26/Question/QuestionImport.php^M"
+stuff "# sed -iBAK -r -e \"s/(correspondence|conversation|anime|toeic_speaking)/\$COURSE/g\" /srv/www/cgi-bin/moodle/{config,mod/quiz/report/\$tag/{version,db/tag,lang/en/quiz_\$tag}}.php^M"
+stuff "# cd /srv/www/cgi-bin/moodle/mod/quiz/report/\$tag && git add version.php db/tag.php lang/en/quiz_tag_COURSE_WEEK.php && git commit -m WEEK.s/\$((\$WEEK-1))/\$WEEK/ && git push && git checkout master~1 && cd -^M"
+stuff "# sed -iBAK -r -e \"s/ \$((\$WEEK-1))/ \$WEEK/g\" -e \"s/_\$((\$WEEK-1))/_\$WEEK/g\"  /srv/www/cgi-bin/moodle/mod/quiz/report/\$tag/{version,db/tag,lang/en/quiz_{tag_COURSE_WEEK,\$tag}}.php^M"
+stuff "# sed -iBAK -r -e \"s/ \$((\$WEEK-1))/ \$WEEK/g\" -e \"s/_\$((\$WEEK-1))/_\$WEEK/g\"  /srv/www/cgi-bin/moodle/mod/quiz/report/\$tag/lang/en/quiz_tag_COURSE_WEEK.php^M"
+stuff "# sudo systemctl stop php-fpm && sudo systemctl restart httpd && sudo systemctl status {php-fpm,httpd}^M"
+stuff "# export COURSE=COURSE ; export tag=tag_\${COURSE}_$WEEK"
+
+screen 4
+stuff "# . ~/dot/cygwin/pg_setup.sh^M"
+stuff "# psql -U owuser -c \"CREATE ROLE apache WITH LOGIN PASSWORD \'$word\';\" postgres^M"
+stuff "# psql -p 5432 mood082 -U owuser^M"
+screen 5
+stuff "# cd ~/moodle/db^M"
+stuff "cd ~/moosh^M"
+stuff "# cd ~/moodle/^M"
+
+screen 6
+stuff "cd ~/moosh^M"
+stuff "# . ~/dot/cygwin/web_pack.sh^M"
+stuff "# . ~/dot/cygwin/moosh_setup.sh^M"
+stuff "pandoc -o www/_site/commands/index_pandoc.html www/commands/index.md^M"
+stuff "# git checkout mod_3_11^M"
+
+screen 8
+stuff "# lynk http://localhost/cgi-bin/moodle/course/view.php?id=2^M"
+stuff "# lynk http://localhost/cgi-bin/moodle/mod/quiz/view.php?id=2^M"
+stuff "# lynk http://localhost/cgi-bin/moodle/mod/quiz/edit.php?cmid=2^M"
+stuff "lynk http://localhost/cgi-bin/moodle"
+screen 9
+stuff "lynk file:///home/$USER/moosh/www/_site/commands/index_pandoc.html^M"
+
+screen 0
+stuff "cd /srv/www/cgi-bin/moodle^M"
+stuff "v^M"
+stuff ":e "
+
+screen 1
+stuff "mkdir --parent /srv/www/cgi-bin/ /var/lib/moodle/^M"
+stuff "for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done^M"
+stuff "# php admin/cli/install_database.php --adminpass='$word' --agree-license --adminemail='drbean@freeshell.org' --fullname='Teach yourself English with Dr Bean' --shortname='drbean'^M"
+stuff "# rm -rf /var/lib/moodle/*cache^M"
+stuff "# cyg_pack ctags^M"
+stuff "# ctags -R --fields=+aimS --php-kinds=cdfi --languages=php --tag-relative=yes --exclude='.git' --totals=yes^M"
+stuff "# p=$word ; cd /srv/www/cgi-bin/moodle && git checkout mod_3_11 && for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done && sed -iBAK -e \"s/dbpass    = ''/dbpass    = '\$p'/\" config.php^M"
+stuff "# /usr/sbin/apachectl start^M"
+
+screen 3
+stuff "cd ~/moosh^M"
+stuff "# su -c 'cp bash_completion /etc/bash_completion.d/Moosh'^M"
+stuff "# re.pl --rcfile ~/$SEMESTER/rc/user-create.rc # change the city, school, etc^M"
+stuff "# for id in {290..314} ; do Moosh -n cohort-enrol -u \$id 2L1a ; done # change ids, cohortname^M"
+stuff "# Moosh -n cohort-enrol -c 20 2L1a # change courseid, cohortname^M"
+stuff "# for g in {1..5} ; do Moosh group-memberadd  -g $g $((277 + $g*2 - 1))  $((277 + $g*2)) ; done^M"
+stuff "# for g in {1..5} ; do Moosh group-memberadd -g $g -c 17 media_student_$(($g*2 - 1))  media_student_$(($g*2)) ; done^M"
+stuff "# COURSE_ID=44 ; moopl section_populate -s 5 -q 6133 -g 633 -l 43 -m quiz_tag_\${COURSE_NAME[\$COURSE_ID]}_\$WEEK -c \$COURSE_ID -n \${COURSE_NAME[\$COURSE_ID]}^M"
+stuff "# TYPE='' ; for id in {713..713} ; do cm_id \$TYPE \$id | while read -r item ; do Moosh -n activity-delete \$item ; done ; done^M"
+stuff "# Moosh -n course-backup -f ./moosh_backup_course_2_toefl_\$(date -I)-nu.mbz^M"
+stuff "# . ~/dot/cygwin/moopl_setup.sh^M"
+stuff "cd /srv/www/cgi-bin/moodle^M"
+stuff "# . ~/dot/cygwin/toefl_section.sh^M"
+stuff "# . ~/dot/cygwin/toefl_course.sh^M"

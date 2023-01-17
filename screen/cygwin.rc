@@ -39,7 +39,3 @@ stuff "# catalyst^M"
 
 screen 8
 stuff ". ~/dot/cygwin/moopl_setup.sh"
-
-screen 9
-stuff "# kill -1 $GITEA_PID^M"
-stuff "# GITEA_WORK_DIR=/var/lib/gitea/ /usr/local/bin/gitea web -c /etc/gitea/app.ini"

@@ -51,6 +51,8 @@ stuff "# cyg_pack ctags^M"
 stuff "# ctags -R --fields=+aimS --php-kinds=cdfi --languages=php --tag-relative=yes --exclude='.git' --totals=yes^M"
 stuff "# p=$word ; cd /srv/www/cgi-bin/moodle && git checkout mod_3_11 && for t in general read pic question information solution opinion reading listening speaking writing; do mkdir /var/lib/moodle/repository/\$t --parent ; done && sed -iBAK -e \"s/dbpass    = ''/dbpass    = '\$p'/\" config.php^M"
 stuff "# /usr/sbin/apachectl start^M"
+stuff "# kill -1 $GITEA_PID^M"
+-stuff "# GITEA_WORK_DIR=/var/lib/gitea/ /usr/local/bin/gitea web -c /etc/gitea/"
 
 screen 3
 stuff "cd ~/moosh^M"

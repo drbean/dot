@@ -424,7 +424,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	IFS=' ' read -a top_index <<< "$TOP_INDEX"
 	POST_TOP=${URL#$PRE_TOP${top_index[0]}}
 	if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# '$PRE_TOP '$TOP_INDEX' $POST_TOP" >> $AREA$COUNTY/$SCHOOL/address.txt ;
+	echo -e "\\n# $PRE_TOP '$TOP_INDEX' $POST_TOP" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	declare -i n=0
 	for ix in ${TOP_INDEX[@]:0} ; do
 	    echo -e "\\nGetting prof page $((++n)) from \$1~\$3:\\n

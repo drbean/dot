@@ -566,7 +566,7 @@ function email () {
 
 function postmail () {
     cd ~/edit/trunk/email || exit 1
-    AREA=${AREA:-north}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
+    AREA=${AREA:-pusan}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
     cd -
 }
 

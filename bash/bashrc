@@ -192,11 +192,13 @@ function h () {
 	for (( i=0; i<$total; i++ )); do
 	    if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
 	    url="${faculty[$i]%$'\r\n'}"
-	    PATHINFO=${URL#*$DOMAIN}
+	    uri=${url#$SCHEME}
+	    pathinfo=${uri#*$DOMAIN}
+	    host=${uri%.$DOMAIN$pathinfo}
 	    echo -e "\\nGetting faculty page $i of $total from file list:\\n
-	    ${faculty[$i]}
-        URL=$url
-SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
+	    ${faculty[$i]}↓
+        URL=$url↓
+SCHEME=$SCHEME, HOST=$host, DOMAIN=$DOMAIN, PATHINFO=$pathinfo\\n"
 	    dump_cookies > cookies.txt
 	    curl -b cookies.txt -c cookies.txt -kL "$url" |
 		sed -f page.sed | uniq | vipe >> prof_page.html
@@ -237,7 +239,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
     elif [[ $# -le 3 ]]; then
 	echo -e "\\nGetting faculty page from \$1:\\n
 	    $1
-	URL=$TOP\\n
+	URL=$TOP↓\\n
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	INDEX=$INDEX
 	curl -kL "$URL" | sed -e "/$INDEX/!d" -f page.sed | uniq | vipe > prof_page.html

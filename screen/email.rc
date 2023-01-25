@@ -5,7 +5,7 @@
 # # send mails
 
 screen 3
-stuff "declare +i wc=\$(wc -l $AREA$COUNTY/*/address.txt | tail -n 1 | ^M"
+stuff "declare +i wc=\$(wc -l \$AREA\$COUNTY/*/address.txt | tail -n 1 | "
 stuff "	cut -f 2 -d ' ')^M"
 stuff "sed -n -e \"/\^levitate$/,+\$((\$wc+300))p\" /usr/share/dict/words > my_word.txt^M"
 stuff "# echo 100 > next^M"

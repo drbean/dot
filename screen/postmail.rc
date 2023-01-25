@@ -1,4 +1,4 @@
-screen 0
+creen 0
 stuff "mosh drbean@sdf.org^M"
 
 screen 1
@@ -11,17 +11,7 @@ stuff "mosh drbean@sdf.org^M"
 
 screen 3
 stuff "d=$(date)^M"
-stuff "declare +i wc=\$(wc -l $AREA$COUNTY/*/address.txt | tail -n 1 | ^M"
-stuff "	cut -f 2 -d ' ')^M"
-stuff "sed -n -e \"/\^levitate$/,+\$((\$wc+300))p\" /usr/share/dict/words > my_word.txt^M"
-stuff "# echo 100 > next^M"
 stuff "# touch requeue && svn add requeue^M"
-stuff "# sed -i.BAK -e 's/\s*$//' \$AREA*/*/address.txt^M"
-stuff "# sed -e '/\^#/d' \$AREA$COUNTY/*/address.txt | grep -r -P '[\^-_.a-zA-Z0-9@]' -^M"
-stuff "# grep -l -e '[\^-_.a-zA-Z0-9@#/:?\&= ]' $AREA$COUNTY/*/address.txt | wc^M"
-stuff "# grep -e '[\^-_.a-zA-Z0-9@#/:?&= ]' $AREA$COUNTY/*/address.txt^M"
-stuff "# v $(grep -l -e '[\^-_.a-zA-Z0-9@#/:?&= ]' $AREA$COUNTY/*/address.txt)^M"
-stuff "# cat \$AREA\$COUNTY/*/address.txt | sort | uniq | vipe | shuf | split -a 3 -d -l 40 - \$AREA.^M"
 stuff "# START=000^M"
 stuff "# END=000^M"
 stuff "# svn rm \^/trunk/email/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$END $d\"; done^M"
@@ -29,6 +19,4 @@ stuff "# pp # sdf tmux screen in window 1 for prof_edit^M"
 stuff "# svn up \$AREA --depth infinity^M"
 stuff "# svn up requeue_\$AREA^M"
 stuff "# svn up \${AREA}04{0..9}^M"
-stuff "# lftp -c \"open drbean@sdf.org && cd job && mput \$AREA/\$AREA.\$batch? && qui\"^M"
-stuff "batch=2"
 

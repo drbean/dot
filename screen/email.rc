@@ -5,18 +5,23 @@
 # # send mails
 
 screen 3
+# prep my_word
 stuff "declare +i wc=\$(wc -l \$AREA\$COUNTY/*/address.txt | tail -n 1 | "
 stuff "	cut -c 3,4,5,6,7)^M"
 stuff "sed -n -e \"/\^levitate$/,+\$((\$wc+300))p\" /usr/share/dict/words > my_word.txt^M"
 stuff "for f in my_word* ; do for op in head tail ; do echo -n \"\$op \$f: \" && \$op -n 1 \$f ; done && echo ;  done^M"
 stuff "# echo 100 > next^M"
+# clean address.txt
 stuff "# sed -i.BAK -e 's/\s*$//' \$AREA*/*/address.txt^M"
-stuff "# sed -e '/\^#/d' \$AREA$COUNTY/*/address.txt | grep -r -P '[\^-_.a-zA-Z0-9@]' -^M"
+stuff "# sed -e '/\^#/d' \$AREA\$COUNTY/*/address.txt | grep -r -P '[\^-_.a-zA-Z0-9@]' -^M"
+stuff "svn diff \$AREA\$COUNTY/*/address.txt -m 'unescaped http web page links'^M"
 stuff "# grep -l -e '[\^-_.a-zA-Z0-9@#/:?\&= ]' $AREA$COUNTY/*/address.txt | wc^M"
 stuff "# grep -e '[\^-_.a-zA-Z0-9@#/:?&= ]' $AREA$COUNTY/*/address.txt^M"
 stuff "# v $(grep -l -e '[\^-_.a-zA-Z0-9@#/:?&= ]' $AREA$COUNTY/*/address.txt)^M"
+# batch address
 stuff "# cat \$AREA\$COUNTY/*/address.txt | sort | uniq | vipe | shuf | split -a 3 -d -l 40 - \$AREA.^M"
 # stuff "# cd ~/edit/email/$SCHOOL && for department in $DEPARTMENT ; do printf '%b' \"\\n# \${department}_0\\n\" >> sent_address.txt && mv \${department}_new_address.txt address.txt && bash $HOME/job/spam/spam.sh < address.txt >> edit_offer_mailing.txt && cat address.txt >> sent_address.txt ; done ^M"
+# upload batch
 stuff "# svn rm \^/trunk/email/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$END $d\"; done^M"
 stuff "# pp # sdf tmux screen in window 1 for prof_edit^M"
 stuff "# svn up \$AREA --depth infinity^M"

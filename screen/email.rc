@@ -8,7 +8,7 @@ screen 3
 stuff "declare +i wc=\$(wc -l \$AREA\$COUNTY/*/address.txt | tail -n 1 | "
 stuff "	cut -c 3,4,5,6,7)^M"
 stuff "sed -n -e \"/\^levitate$/,+\$((\$wc+300))p\" /usr/share/dict/words > my_word.txt^M"
-stuff "for f in my_word* ; do for op in head tail ; do echo \"\$f: \$op\" && \$op -n 1 \$f && echo ; done ; done
+stuff "for f in my_word* ; do for op in head tail ; do echo -n \"\$op \$f: \" && \$op -n 1 \$f ; done && echo ;  done^M"
 stuff "# echo 100 > next^M"
 stuff "# sed -i.BAK -e 's/\s*$//' \$AREA*/*/address.txt^M"
 stuff "# sed -e '/\^#/d' \$AREA$COUNTY/*/address.txt | grep -r -P '[\^-_.a-zA-Z0-9@]' -^M"

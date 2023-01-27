@@ -2,11 +2,6 @@ creen 0
 stuff "mosh drbean@sdf.org^M"
 
 screen 1
-stuff "# lftp drbean@sdf.org^M"
-stuff "# pwd^M"
-stuff "# put my_word.txt next^M"
-stuff "# cd job/^M"
-stuff "# user drbean ^M"
 stuff "mosh drbean@sdf.org^M"
 
 screen 3

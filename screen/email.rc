@@ -4,12 +4,18 @@
 # stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if ! ( ack \"\^\$address\$\" $SCHOOL/sent_address.txt > /dev/null ) ; then printf '%s\\n' \"\$address\" >> $SCHOOL/\${department}_new_address.txt ; fi ; done < $SCHOOL/\${department}_0.txt && wc $SCHOOL/\${department}_0.txt $SCHOOL/\${department}_new_address.txt ; done ^M"
 # # send mails
 
+screen 0
+stuff "mosh drbean@sdf.org^M"
+
+screen 1
+stuff "mosh drbean@sdf.org^M"
+
 screen 3
 # prep my_word
-stuff "declare +i wc=\$(wc -l \$AREA\$COUNTY/*/address.txt | tail -n 1 | "
+stuff "declare +i wc=\$(wc -l \$AREA\$COUNTY/*/address.txt | tail -n 1 | ^M"
 stuff "	cut -c 3,4,5,6,7)^M"
-stuff "sed -n -e \"/\^levitate$/,+\$((\$wc+300))p\" /usr/share/dict/words > my_word.txt^M"
-stuff "for f in my_word* ; do for op in head tail ; do echo -n \"\$op \$f: \" && \$op -n 1 \$f ; done && echo ;  done^M"
+stuff "# sed -n -e \"/\^overtrain$/,+\$((\$wc+300))p\" /usr/share/dict/words > my_word.txt^M"
+stuff "# for f in my_word* ; do for op in head tail ; do echo -n \"\$op \$f: \" && \$op -n 1 \$f ; done && echo ;  done^M"
 stuff "# echo 100 > next^M"
 # clean address.txt
 stuff "# sed -i.BAK -e 's/\s*$//' \$AREA*/*/address.txt^M"
@@ -19,8 +25,8 @@ stuff "# svn ci \$AREA\$COUNTY/*/address.txt -m 'intrusive email chars'^M"
 stuff "# grep -l -e '[\^-_.a-zA-Z0-9@#/:?\&= ]' $AREA$COUNTY/*/address.txt | wc^M"
 stuff "# grep -e '[\^-_.a-zA-Z0-9@#/:?&= ]' $AREA$COUNTY/*/address.txt^M"
 stuff "# v $(grep -l -e '[\^-_.a-zA-Z0-9@#/:?&= ]' $AREA$COUNTY/*/address.txt)^M"
-stuff "# svn ci \$AREA\$COUNTY/*/address.txt -m 'intrusive chars, including my quote chars, in http links'"
-stuff "# sed -e '/^#/d' -e '/^$/d' -e '/@/d' ${AREA}pusan/*/address.txt^M"
+stuff "# svn ci \$AREA\$COUNTY/*/address.txt -m 'intrusive chars, including my quote chars, in http links'^M"
+stuff "# sed -e '/\^#/d' -e '/\^$/d' -e '/@/d' ${AREA}pusan/*/address.txt^M"
 stuff "# svn ci pusan/pusan/*/address.txt -m 'missing @'^M"
 # batch address
 stuff "# cat \$AREA\$COUNTY/*/address.txt | sort | uniq | vipe | shuf | split -a 3 -d -l 40 - \$AREA.^M"
@@ -32,5 +38,4 @@ stuff "# svn up \$AREA --depth infinity^M"
 stuff "# svn up requeue_\$AREA^M"
 stuff "# svn up \${AREA}04{0..9}^M"
 stuff "# lftp -c \"open drbean@sdf.org && cd job && mput \$AREA/\$AREA.\$batch? && qui\"^M"
-stuff "batch=2"
-
+stuff "batch=0"

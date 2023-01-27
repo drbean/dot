@@ -496,12 +496,12 @@ function prof_remove () {
     fi
 }
 
+alias pf='prof_find'
 function prof_find () {
     AREA=${AREA%/}
     address=$1
     file=$(grep -l "$address" $AREA/*/*/address.txt)
-    echo $file | xargs v --not-a-term +/$address
-    screen kill
+    v $file +/$address
 }
 
 function prof_edit () {

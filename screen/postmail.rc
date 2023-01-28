@@ -1,4 +1,4 @@
-creen 0
+screen 0
 stuff "mosh drbean@sdf.org^M"
 
 screen 1

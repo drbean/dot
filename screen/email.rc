@@ -4,9 +4,6 @@
 # stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if ! ( ack \"\^\$address\$\" $SCHOOL/sent_address.txt > /dev/null ) ; then printf '%s\\n' \"\$address\" >> $SCHOOL/\${department}_new_address.txt ; fi ; done < $SCHOOL/\${department}_0.txt && wc $SCHOOL/\${department}_0.txt $SCHOOL/\${department}_new_address.txt ; done ^M"
 # # send mails
 
-screen 0
-stuff "mosh drbean@sdf.org^M"
-
 screen 1
 stuff "mosh drbean@sdf.org^M"
 

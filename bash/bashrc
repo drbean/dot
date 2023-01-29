@@ -501,21 +501,21 @@ $good"
 function pp () {
     if [[ $# -gt 2 ]]; then
         echo "$@: Too many args" >&2
-        exit 2
+        return 2
     elif [[ $# -eq 2 ]]; then
         prof_edit $@
     elif [[ $# -eq 1 ]]; then
         prof_remove $@
     else
         echo "$@: No args" >&2
-        exit 2
+        return 2
     fi
 }
 
 function prof_remove () {
     if ! [[ -v 1 ]] ; then
         echo "$@: No args" >&2
-        exit 2
+        return 2
     fi
     AREA=${AREA%/}
     address=$(grep -l "^$1" $AREA/*/*/address.txt)
@@ -537,6 +537,10 @@ function prof_find () {
 }
 
 function prof_edit () {
+    if ! [[ -v 1 ]] ; then
+        echo "$@: No args" >&2
+        return 2
+    fi
     AREA=${AREA%/}
     address=$(grep -l "^$1" $AREA/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1\)\(\s\|$\)/$2 # \1/"

@@ -513,6 +513,10 @@ function pp () {
 }
 
 function prof_remove () {
+    if ! [[ -v 1 ]] ; then
+        echo "$@: No args" >&2
+        exit 2
+    fi
     AREA=${AREA%/}
     address=$(grep -l "^$1" $AREA/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1\)\(\s\|$\)/# \1/"

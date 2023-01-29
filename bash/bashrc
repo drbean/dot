@@ -214,15 +214,16 @@ SCHEME=$SCHEME, HOST=$host, DOMAIN=$DOMAIN, PATHINFO=$pathinfo\\n"
 		rm email.txt
 		dump_cookies > cookies.txt
 		declare -i i=0
+		echo >> $AREA$COUNTY/$SCHOOL/address.txt
 		while read p ; do
 		    echo -e "\\n\\nReading page $((++i)) from prof_page.html\\n\\t\\t$p\\n"
+		    echo "# $p" >> $AREA$COUNTY/$SCHOOL/address.txt
 		    curl -b cookies.txt -c cookies.txt -kL "${p%$'\r'}" |
 			sed -f link.sed | tee -a email.txt
 		done < prof_page.html
 	    fi
 	done
 	if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; else DEPARTMENT=$HOST ; fi
-	echo -e "\\n# $URL" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	cat email.txt | uniq | vipe >> $AREA$COUNTY/$SCHOOL/address.txt
 	address_page="n"
 	while ! [[ $address_page =~ ^y ]] ; do

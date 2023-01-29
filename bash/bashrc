@@ -380,6 +380,7 @@ function e () {
 	    ${faculty[$i]}↓
         URL=$url↓
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
+	    echo "# $url" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	    dump_cookies > cookies.txt
 	    curl -b cookies.txt -c cookies.txt -kL $url |
 		sed -f link.sed | vipe >> $AREA$COUNTY/$SCHOOL/address.txt

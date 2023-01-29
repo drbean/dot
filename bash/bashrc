@@ -515,7 +515,7 @@ function pp () {
 }
 
 function prof_remove () {
-    if ! [[ -v 1 ]] ; then
+    if [[ -v 1 ]] ; then
         echo "$@: No args" >&2
         return 2
     fi
@@ -539,7 +539,7 @@ function prof_find () {
 }
 
 function prof_edit () {
-    if ! [[ -v 1 ]] ; then
+    if [[ -v 1 ]] ; then
         echo "$@: No args" >&2
         return 2
     fi

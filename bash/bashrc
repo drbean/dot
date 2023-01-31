@@ -403,7 +403,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	done
 	read -p  "Commit as '$URL'? y/n " commit
 	if [[ $commit =~ ^y ]]
-	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -f cache_url.txt
+	    then svn ci $AREA$COUNTY/$SCHOOL/address.txt -F cache_url.txt
 	fi
 	exec 0<&3
     elif [[ $# -le 2 ]]; then
@@ -622,6 +622,17 @@ function ttb () {
     fi
     cd ~/ttb
     screen -c /home/$USER/dot/screen/utility.rc -dR ttb
+    cd -
+}
+
+function qutebrowser () {
+    #if [[ ! -e ~/qutebrowser ]] ; then
+    #    svn co http://github.com/drbean/qutebrowser ~/qutebrowser --depth empty
+    #    svn up ~/qutebrowser/branches/hint/dictation ~/qutebrowser --parents
+    #    svn up ~/qutebrowser/trunk/forms/bean --parents
+    #fi
+    cd ~/edit/trunk/email
+    screen -c /home/$USER/dot/screen/qutebrowser.rc -dR qutebrowser
     cd -
 }
 

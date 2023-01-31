@@ -621,7 +621,7 @@ function ttb () {
 	svn up ~/ttb/trunk/forms/bean --parents
     fi
     cd ~/ttb
-    screen -c /home/$USER/dot/screen/utility.rc -dR ttb
+    screen -c /home/$USER/dot/screen/ttb.rc -dR ttb
     cd -
 }
 

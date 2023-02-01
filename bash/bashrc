@@ -128,7 +128,7 @@ function rec () {
     fi
 }
 
-source ~/dot/bash/email.rc
+source ~/dot/bash/email.sh
 
 function ttb () {
     if [[ ! -e ~/ttb ]] ; then

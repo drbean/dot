@@ -249,17 +249,17 @@ function e () {
 	    DEPARTMENT=$HOST
 	fi
 	rm cache_url.txt
-	echo -e "\\n# $URL" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	total=${#faculty[*]}
 	for (( i=0; i<$total; i++ )); do
 	    if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
-	    url=${faculty[$i]%$'\r'$'\n'}
+	    url=$faculty[$i]
 	    echo -e "\\nGetting prof page $i of $total from file list:\\n
 	    ${faculty[$i]}↓
         URL=$url↓
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	    echo $url >> cache_url.txt
-	    echo "# $url" >> $AREA$COUNTY/$SCHOOL/address.txt ;
+	    echo
+	    echo "# $url" | tr -d "\\n" >> $AREA$COUNTY/$SCHOOL/address.txt ;
 	    dump_cookies > cookies.txt
 	    curl -b cookies.txt -c cookies.txt -kL $url |
 		sed -f link.sed | vipe >> $AREA$COUNTY/$SCHOOL/address.txt

@@ -1,4 +1,4 @@
-" Last Edit: 2023 Feb 02,  8:35:59 AM
+" Last Edit: 2023 Feb 02, 11:13:29 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -887,11 +887,12 @@ au BufEnter /tmp/* no <buffer> <LocalLeader>a
 	\ :%s/^\([-._a-zA-Z0-9+@]\+\).*$/\1/<CR>
 	\ :%! uniq<CR>
 au BufEnter /tmp/* no <buffer> <LocalLeader>cue
+	\ :e ++ff=dos<CR>
 	\ :%v/ID/d<CR>
 	\ :%s/<[^>]*>//g<CR>
 	\ :%s/$/@cue.ac.kr/<CR>
-	\ :%s///<CR>
 	\ :%! uniq<CR>
+	\ :se ff=unix<CR>
 au BufEnter /tmp/*,~/edit/email/*.html no <buffer> <LocalLeader>u :.! perl
 	\ -MURI::Escape -e 'chomp($line=<STDIN>);
 	\ print uri_escape($line, "^A-Za-z0-9\-\._~/ :&=?")'<CR><CR>

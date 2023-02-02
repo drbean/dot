@@ -1,12 +1,12 @@
 screen 0
 stuff "cd \$(cygpath \$APPDATA/qutebrowser/config)^M"
-stuff "v config.py $HOME/edit/trunk/email/{wrap_,}open_{faculty,prof_page}.*^M"
+stuff "v config.py $HOME/edit/trunk/email/open_{faculty,prof_page}{_wrap.bat,.sh}^M"
 
 screen 1
-stuff "# rm $(cygpath \$APPDATA/qutebrowser/config/userscripts/{wrap_,}open_{faculty,prof_page}.*)^M"
-stuff "# for us in faculty prof_page ; do for e in bat sh ; do ^M"
-stuff " ln $HOME/edit/trunk/email/\$us.\$e ^M"
-stuff " /cygdrive/c/Users/$USER/AppData/Roaming/qutebrowser/config/userscripts/\$us.\$e ^M"
+stuff "# rm $(cygpath \$APPDATA/qutebrowser/config/userscripts/open_{faculty,prof_page}{_wrap.bat,.sh})^M"
+stuff "# for us in faculty prof_page ; do for e in _wrap.bat .sh ; do ^M"
+stuff " ln $HOME/edit/trunk/email/open_\$us\$e "
+stuff " /cygdrive/c/Users/$USER/AppData/Roaming/qutebrowser/config/userscripts/open_\$us\$e ^M"
 stuff " done ; done^M"
 stuff "cd \$(cygpath \$APPDATA/qutebrowser/config)^M"
 stuff "# chmod 775 userscripts/*.{bat,sh}^M"

@@ -17,6 +17,7 @@ export LANG=en_US.UTF8
 export TERM=screen
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
+PATH=$PATH:$(cygpath $APPDATA/local/bin)
 
 export PATH= PATH=/cygdrive/c/Program\ Files/Vim/vim82/:$PATH
 

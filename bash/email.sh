@@ -460,7 +460,7 @@ function premail () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${AREA:-pusan/}; COUNTY=${COUNTY:-pusan} SCHOOL=$school DEPARTMENT=$department URL=$url screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
+    AREA=${AREA:-kyengsang/}; COUNTY=${COUNTY:-namdo} SCHOOL=$school DEPARTMENT=$department URL=$url screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
     cd -
 }
 
@@ -476,13 +476,12 @@ function email () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-pusan} COUNTY=${county:-pusan} screen -c /home/$USER/dot/screen/email.rc -dR email_${area%/}
+    AREA=${area:-kyengsang} COUNTY=${county:-namdo} screen -c /home/$USER/dot/screen/email.rc -dR email_${area%/}
     cd -
 }
 
 function postmail () {
     cd ~/edit/trunk/email || exit 1
-    AREA=${AREA:-pusan}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
-    cd -
+    AREA=${AREA:-kyengsang}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
 }
 

@@ -481,6 +481,16 @@ function email () {
 }
 
 function postmail () {
+    OPTIND=1
+    local arg area county
+    while getopts 'a:c:' arg
+    do
+        case ${arg} in
+            a) area=${OPTARG};;
+            c) county=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
     cd ~/edit/trunk/email || exit 1
     AREA=${AREA:-kyengsang}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
 }

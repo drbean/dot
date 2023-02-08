@@ -129,10 +129,10 @@ function rec () {
     fi
 }
 
-function clip_log () {
+function log_clip () {
     while true
     do
-        if [[ "$(</dev/clipboard)" = "${LastClip}" ]]
+        if [[ "$(</dev/clipboard)" == "${LastClip}" ]]
         then
             sleep 2
         else

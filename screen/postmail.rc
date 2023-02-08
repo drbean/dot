@@ -1,8 +1,8 @@
-screen 0
-stuff "mosh drbean@sdf.org^M"
-
 screen 1
 stuff "mosh drbean@sdf.org^M"
+
+screen 4
+stuff "rlwrap remove_email.sh^M"
 
 screen 3
 stuff "d=$(date)^M"
@@ -11,3 +11,6 @@ stuff "# START=000^M"
 stuff "# END=000^M"
 stuff "# svn rm \^/trunk/email/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$END $d\"; done^M"
 stuff "# pp # sdf tmux screen in window 1 for prof_edit^M"
+
+screen 0
+stuff "mosh drbean@sdf.org^M"

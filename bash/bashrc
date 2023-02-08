@@ -129,6 +129,20 @@ function rec () {
     fi
 }
 
+function clip_log () {
+    while true
+    do
+        if [[ "$(</dev/clipboard)" = "${LastClip}" ]]
+        then
+            sleep 2
+        else
+            LastClip="$(</dev/clipboard)"
+            echo "$(</dev/clipboard)" >> $HOME/cliplog.txt
+            sleep 1
+        fi
+    done
+}
+
 source ~/dot/bash/email.sh
 
 function ttb () {

@@ -1,4 +1,4 @@
-" Last Edit: 2023 Feb 02, 11:13:29 AM
+" Last Edit: 2023 Feb 09,  6:11:45 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -866,6 +866,7 @@ augroup scrape
 " repetitive extract, sort | uniq email addresses
 au BufEnter address.txt no <buffer> <LocalLeader>v :'<,'>v/@/d<CR>
 au BufEnter address.txt no <buffer> <LocalLeader>s :'<,'>! sort \| uniq<CR>
+au BufEnter address.txt no <buffer> <LocalLeader>e :'<,'>s/[^-._0-9A-Za-z@].*$//<CR>
 au BufEnter prof_page.html,/tmp/* no <buffer> <LocalLeader>s :%! sort <Bar> uniq<CR>
 au BufEnter *.html,/tmp/* no <buffer> <LocalLeader>q :%! uniq<CR>
 au BufEnter /tmp/*,*.html no <buffer> <LocalLeader>h
@@ -893,7 +894,7 @@ au BufEnter /tmp/* no <buffer> <LocalLeader>cue
 	\ :%s/$/@cue.ac.kr/<CR>
 	\ :%! uniq<CR>
 	\ :se ff=unix<CR>
-au BufEnter /tmp/*,~/edit/email/*.html no <buffer> <LocalLeader>u :.! perl
+au BufEnter /tmp/*,~/edit/trunk/email/*.html no <buffer> <LocalLeader>u :.! perl
 	\ -MURI::Escape -e 'chomp($line=<STDIN>);
 	\ print uri_escape($line, "^A-Za-z0-9\-\._~/ :&=?")'<CR><CR>
 au BufEnter /tmp/*,~/edit/email/*.html no <buffer> <LocalLeader>U :.! perl

@@ -1,4 +1,4 @@
-" Last Edit: 2013 Apr 14, 02:50:06 PM
+" Last Edit: 2023 Feb 09,  6:14:24 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -406,7 +406,7 @@ augroup END
 augroup text
 au!
 
-autocmd FileType text set tw=78	
+autocmd FileType text set tw=60
 " DOS terminal problem with <shift+space>
 autocmd FileType text imap <f4> <esc>BlcW
 autocmd FileType text ino _  _________

@@ -13,6 +13,12 @@ fi
 # User specific aliases and functions
 # User specific environment and startup programs
 
+# https://cygwin.com/pipermail/cygwin/2023-February/253054.html
+# eg, man -H ls
+case $(uname) in
+(CYGWIN_NT-*) export BROWSER=cygstart
+esac
+
 LANG=en_US.UTF8
 LC_CTYPE=en_US.UTF8
 LC_COLLATE=en_US.UTF8
@@ -24,7 +30,7 @@ LC_ALL=en_US.UTF8
 export LANG LC LC_CTYPE LC_COLLATE LC_TIME \
 LC_NUMERIC LC_MONETARY LC_MESSAGES LC_ALL
 
-export TERM=screen
+# export TERM=screen
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 PATH=$PATH:$(cygpath $APPDATA/local/bin)

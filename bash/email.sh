@@ -18,29 +18,32 @@ function dump_cookies ()  {
 function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
 function l () { sed -f link.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {
-    DEPARTMENT=$1
+    URL=${1:-http://$DEPARTMENT.$SCHOOL.ac.kr}
+    SCHEME=http*//
+    URI=${URL#$SCHEME}
+    DOMAIN=$SCHOOL.ac.kr
+    PATHINFO=${URL#*$DOMAIN}
+    HOST=${URI%.$DOMAIN$PATHINFO}
     if ! [[ -f ~/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
-    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr/en/about/staff" >> $AREA/$COUNTY/$SCHOOL/address.txt
-    sed -f link.sed | uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
-    # commit="n"
+    echo "# $URL" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
+    echo "$(</dev/clipboard)" | sed -f link.sed | uniq | vipe \
+            >> $AREA/$COUNTY/$SCHOOL/address.txt
     svn diff $AREA/$COUNTY/$SCHOOL/address.txt
-    exec 0< /dev/tty
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
-	vim $AREA/$COUNTY/$SCHOOL/address.txt ;
-	svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
-	echo
+        vim $AREA/$COUNTY/$SCHOOL/address.txt ;
+        svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+        echo
         read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
-    read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr/en/about/staff'? y/n " commit
+    read -p "Enter real URL=$URL " new_url
+    read -p "Commit as URL=${new_url:=$URL}? y/n " commit 
     if [[ $commit =~ ^y ]]
-        then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
-        else echo -e "commit=$commit?\nDEPARTMENT=$DEPARTMENT?"
-            ls -l /dev/fd/
+        then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$new_url"
     fi
-    # svn log --diff -r HEAD
+    ls -l /dev/fd/
 }
 function h () {
     TOP=${1:-http://$DEPARTMENT.$SCHOOL.ac.kr}
@@ -427,15 +430,16 @@ function premail () {
         case ${arg} in
             s) school=${OPTARG};;
             d) department=${OPTARG};;
-	    u) url=$OPTARG;;
+            u) url=$OPTARG;;
             *) return 1 # illegal option
         esac
     done
     cd ~/edit/trunk/email || exit 1
     AREA=${AREA:-kyengsang/}; COUNTY=${COUNTY:-pukdo}
     SCHOOL=$school; DEPARTMENT=$department; URL=$url
-    AD="$HOME/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt" 
-    export AD AREA COUNTY SCHOOL DEPARTMENT URL
+    A="$HOME/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt" 
+    export A AREA COUNTY SCHOOL DEPARTMENT URL
+    log_clip &
     screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
     cd -
 }

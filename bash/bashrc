@@ -137,7 +137,7 @@ function log_clip () {
             sleep 2
         else
             LastClip="$(</dev/clipboard)"
-            echo "$(</dev/clipboard)" >> $HOME/clip_log.txt
+            echo "$(</dev/clipboard)" >> $HOME/edit/trunk/email/clip_log.txt
             sleep 1
         fi
     done

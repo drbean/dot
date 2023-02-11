@@ -255,7 +255,7 @@ function e () {
         total=${#faculty[*]}
         for (( i=0; i<$total; i++ )); do
             if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
-            url=$faculty[$i]
+            url=${faculty[$i]}
             echo -e "\\nGetting prof page $i of $total from file list:\\n
             ${faculty[$i]}↓
         URL=$url↓

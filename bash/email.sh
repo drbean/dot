@@ -314,6 +314,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	echo -e "\\n# $PRE_TOP '$TOP_INDEX' $POST_TOP" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
 	declare -i n=0
 	total=${#top_index[@]}
+	rm email.txt
 	for ix in ${TOP_INDEX[@]:0} ; do
 	    echo -e "\\nGetting prof page $((++n)) of $total from \$1~\$3:\\n
 	    $1
@@ -321,8 +322,9 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 	     URL=$PRE_TOP$ix$POST_TOP↓\\n"
 	    dump_cookies > cookies.txt
 	    curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$ix$POST_TOP |
-		sed -f link.sed | uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+		    sed -f link.sed | uniq | tee -a email.txt
 	done
+	cat email.txt >> $AREA/$COUNTY/$SCHOOL/address.txt
 	address_page="n"
 	while ! [[ $address_page =~ ^y ]] ; do
 	    vim $AREA/$COUNTY/$SCHOOL/address.txt ;

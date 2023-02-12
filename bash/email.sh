@@ -261,8 +261,8 @@ function e () {
         URL=$url↓
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo $url >> cache_url.txt
-            echo
-            echo "# $url" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
+            echo >> $AREA/$COUNTY/$SCHOOL/address.txt
+            echo "# $url" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $url |
                 sed -f link.sed | tee -a $AREA/$COUNTY/$SCHOOL/address.txt
@@ -441,7 +441,6 @@ function premail () {
     SCHOOL=$school; DEPARTMENT=$department; URL=$url
     A="$HOME/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt" 
     export A AREA COUNTY SCHOOL DEPARTMENT URL
-    log_clip &
     screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
     cd -
 }

@@ -112,20 +112,20 @@ function rec () {
     diff recover $file
     status=$?
     if [[ $status == 1 ]] ; then
-	read -p "cp recover to $file? y/n " r2f
+	read -p "cp 'recover' to '$file'? y/n " r2f
 	if [[ $r2f =~ ^y ]] ; then 
 	    cp recover $file
-	    echo "Done: recover -> $file"
+	    echo "Done: 'recover' -> '$file'"
 	fi
     elif [[ $status == 0 ]] ; then
 	echo "'recover' and '$file' the same."
     fi
-    read -p "OK to remove recover, '$dirname/.$basename.swp'? y/n " ok
+    read -p "OK to remove 'recover', '$dirname/.$basename.swp'? y/n " ok
     if [[ $ok =~ ^y ]] ; then 
 	rm recover $swap
-	echo "recover, swap=$swap removed"
+	echo "'recover', swap='$swap' removed"
     else
-	echo "recover, swap=$swap NOT removed"
+	echo "'recover', swap='$swap' NOT removed"
     fi
 }
 
@@ -138,6 +138,8 @@ function log_clip () {
         else
             LastClip="$(</dev/clipboard)"
             echo "$(</dev/clipboard)" >> $HOME/edit/trunk/email/clip_log.txt
+            uniq $HOME/edit/trunk/email/clip_log.txt \
+		$HOME/edit/trunk/email/clip_log.txt
             sleep 1
         fi
     done

@@ -1,4 +1,4 @@
-" Last Edit: 2023 Feb 12,  9:14:27 AM
+" Last Edit: 2023 Feb 14, 11:57:53 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -858,11 +858,12 @@ au BufEnter Indexes*.txt nn <buffer> g<Left> g^ze
 au BufEnter ~/edit/.svn/*.svn-base nn <buffer> g<Right> g$zs
 au BufEnter Indexes*.txt nn <buffer> g<Right> g$zs
 
-au BufEnter /tmp/*,address.txt nn <buffer> <LocalLeader>f /^\(^# http:\/\/\)\?.*[^-._0-9a-zA-Z@]<CR>
 augroup END
 
 augroup scrape
 	au!
+
+au BufEnter /tmp/*,address.txt nn <buffer> <LocalLeader>f /^\(^# http:\/\/\)\?.*[^-._0-9a-zA-Z@]<CR>
 " repetitive extract, sort | uniq email addresses
 au BufEnter address.txt no <buffer> <LocalLeader>v :'<,'>v/@/d<CR>
 au BufEnter address.txt no <buffer> <LocalLeader>s :'<,'>! sort \| uniq<CR>

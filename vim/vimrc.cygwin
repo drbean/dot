@@ -1,4 +1,4 @@
-" Last Edit: 2023 Feb 14, 12:22:57 PM
+" Last Edit: 2023 Feb 14, 12:38:41 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -299,53 +299,6 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 " Convert output of SQLite dump to YAML of last round
 nn \Y :%s/^\w*\s//<CR>:%s/<Tab>/:<Space>/<CR>G$"eyiw:v/e$/d<CR>:%s/\s*e$//<CR>ggO---<Esc>
 
-" Email editing
-
-" removes > in front of blank lines in quoted mail
-nmap \cq :%s/^[><Tab> ]\+$//e<CR>
-vmap \cq  :s/^[><Tab> ]\+$//e<CR>
-
-" toggle im for quick emails
-" nmap \i :set insertmode!<CR> :set insertmode?<CR>
-
-" quote visually-selected section
-vmap \qp :s/^/> /<CR>
-"map \qp :'q,.s/^/> /<CR>
-"map \qp vip:s/^/> /<CR>
-
-vmap \dp :s/^> //<CR>
-
-" prevent das deleting quote mark
-map \das dasi> <ESC>
-
-" delete, change rest of email message, except my signature
-map \dG :.,$-5d<CR>
-" map \cG mXG5kmY`xd`YO<CR>
-map \cG y0:.,$-5d<CR>"0Pa<CR><CR><CR><CR><Up><Up>
-" map \cG :.,$-5d<CR>i<CR>
-
-" Bram's signature-choosing mapping. Uses mark X
-map \S mX:sp ~/dot/mutt/fortunes<CR>gg:1,/^%/d<CR>Gp:wq<CR>'XGA<CR><Esc>p`X
-"      \ri = "Read in" basic lines from the email header NEEDS WORK
-"            Useful when replying to an email:
-"nmap \ri :r!readmsg \|egrep '^From:\|^Subject:\|^Date:\|^To:\|^Cc:'
-"            NOTE: "readmsg" ships with the mailer ELM.
-
-cab HEMAIL ^\(From\\|Cc\\|To\\|Date\\|Subject\\|Message-ID\\|Message-Id\\|X-\)
-nmap \we vip:v/HEMAIL/d
-vmap \we    :v/HEMAIL/d
-
-" for gqap formatting in INSERT
-imap gqap <C-O>gqap
-
-" join line in commented/quoted text and formats it. This is breaking something.
-"nmap J Vjgq
-
-"words=changes. u undoes. do \h first.
-map \wc :%s/[^ <Tab>]\+/&/g<CR>``
-
-" cp line for editing with nopaste set
-map \ed "eyyoS"epoS-r 
 " dic.yaml question creator
 nn <buffer> <Leader>answers y14y"0P"0P"0P14j3j27.jrB7k.1347.jrC7k.1367.jrD7k.27-wC
 
@@ -428,6 +381,53 @@ augroup END
 augroup mutt
 au!
 
+" Email editing
+
+" removes > in front of blank lines in quoted mail
+nmap \cq :%s/^[><Tab> ]\+$//e<CR>
+vmap \cq  :s/^[><Tab> ]\+$//e<CR>
+
+" toggle im for quick emails
+" nmap \i :set insertmode!<CR> :set insertmode?<CR>
+
+" quote visually-selected section
+vmap \qp :s/^/> /<CR>
+"map \qp :'q,.s/^/> /<CR>
+"map \qp vip:s/^/> /<CR>
+
+vmap \dp :s/^> //<CR>
+
+" prevent das deleting quote mark
+map \das dasi> <ESC>
+
+" delete, change rest of email message, except my signature
+map \dG :.,$-5d<CR>
+" map \cG mXG5kmY`xd`YO<CR>
+map \cG y0:.,$-5d<CR>"0Pa<CR><CR><CR><CR><Up><Up>
+" map \cG :.,$-5d<CR>i<CR>
+
+" Bram's signature-choosing mapping. Uses mark X
+map \S mX:sp ~/dot/mutt/fortunes<CR>gg:1,/^%/d<CR>Gp:wq<CR>'XGA<CR><Esc>p`X
+"      \ri = "Read in" basic lines from the email header NEEDS WORK
+"            Useful when replying to an email:
+"nmap \ri :r!readmsg \|egrep '^From:\|^Subject:\|^Date:\|^To:\|^Cc:'
+"            NOTE: "readmsg" ships with the mailer ELM.
+
+cab HEMAIL ^\(From\\|Cc\\|To\\|Date\\|Subject\\|Message-ID\\|Message-Id\\|X-\)
+nmap \we vip:v/HEMAIL/d
+vmap \we    :v/HEMAIL/d
+
+" for gqap formatting in INSERT
+imap gqap <C-O>gqap
+
+" join line in commented/quoted text and formats it. This is breaking something.
+"nmap J Vjgq
+
+"words=changes. u undoes. do \h first.
+map \wc :%s/[^ <Tab>]\+/&/g<CR>``
+
+" cp line for editing with nopaste set
+map \ed "eyyoS"epoS-r 
 " Brams signature changing mapping. Didn't work in autocmd with <F3>
 " with BufNewFile or whatever
 autocmd BufNewFile /tmp/mutt* normal \S

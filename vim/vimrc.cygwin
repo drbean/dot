@@ -1,4 +1,4 @@
-" Last Edit: 2023 Feb 14, 11:57:53 AM
+" Last Edit: 2023 Feb 14, 12:22:57 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -858,6 +858,12 @@ au BufEnter Indexes*.txt nn <buffer> g<Left> g^ze
 au BufEnter ~/edit/.svn/*.svn-base nn <buffer> g<Right> g$zs
 au BufEnter Indexes*.txt nn <buffer> g<Right> g$zs
 
+au BufEnter edit/*/*/*.md :set textwidth=40<CR>
+au BufEnter edit/*/*/*.md nv <Buffer> <LocalLeader>q Jgqj
+au BufEnter edit/*/*/*.md no <Buffer> <LocalLeader>w
+	\ vip-o<CR><LocalLeader>q<CR><CR><CR>
+au BufEnter edit/*/*/*.md no <Buffer> <LocalLeader>e
+	\ vip:s/^> //<CR>vip-o<CR><LocalLeader>qvip:s/^:\@!/> /<CR>
 augroup END
 
 augroup scrape

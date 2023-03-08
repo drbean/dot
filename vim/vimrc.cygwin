@@ -1,4 +1,4 @@
-" Last Edit: 2023 Mar 08,  4:40:43 PM
+" Last Edit: 2023 Mar 08,  6:54:36 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -863,8 +863,7 @@ au FileType markdown map <LocalLeader>q
 	\ :set textwidth=40<CR>
 	\ vip
 	\ Jgqj
-	\ :set textwidth=0<CR>
-	\ }<CR>
+	\ :set textwidth=0<CR><CR>
 au FileType markdown map <LocalLeader>e
 	\ vip:s/^> //<CR>
 	\ vip-o<CR><LocalLeader>q

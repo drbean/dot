@@ -1,4 +1,4 @@
-" Last Edit: 2023 Mar 07,  2:27:11 PM
+" Last Edit: 2023 Mar 08,  4:40:43 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -859,12 +859,12 @@ au BufEnter ~/edit/.svn/*.svn-base nn <buffer> g<Right> g$zs
 au BufEnter Indexes*.txt nn <buffer> g<Right> g$zs
 
 au FileType markdown setlocal textwidth=0
-au FileType markdown vmap <LocalLeader>q
-	\ setlocal textwidth=40<CR>
+au FileType markdown map <LocalLeader>q
+	\ :set textwidth=40<CR>
+	\ vip
 	\ Jgqj
-	\ setlocal textwidth=0<CR>
-au FileType markdown map <LocalLeader>w
-	\ vip<LocalLeader>q<CR><CR><CR>
+	\ :set textwidth=0<CR>
+	\ }<CR>
 au FileType markdown map <LocalLeader>e
 	\ vip:s/^> //<CR>
 	\ vip-o<CR><LocalLeader>q

@@ -26,6 +26,8 @@ source ~/dot/git/git-hub/.rc
 ## ingydotnet/git-subrepo
 #source ~/dot/git/git-subrepo/.rc
 
+alias postmail="cd ~/postmail ; postmail -a kyengsang -c namdo"
+alias yuchieh="cd ~/yuchieh/ ; edit -s yuchieh -f 'editing_statement_certificate'"
 alias mosh="export LANG=\"en_US.UTF8\" && export LC_CTYPE=\"en_US.UTF8\" && export LC_COLLATE=\"en_US.UTF8\" && export LC_TIME=\"en_US.UTF8\" && export LC_NUMERIC=\"en_US.UTF8\" && export LC_MONETARY=\"en_US.UTF8\" && export LC_MESSAGES=\"en_US.UTF8\" && export LC_ALL=\"en_US.UTF8\" && mosh"
 alias battery="WMIC PATH Win32_Battery Get EstimatedChargeRemaining"
 alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./\$ROUND"
@@ -138,8 +140,8 @@ function log_clip () {
         else
             LastClip="$(</dev/clipboard)"
             echo "$(</dev/clipboard)" >> $HOME/edit/trunk/email/clip_log.txt
-            uniq $HOME/edit/trunk/email/clip_log.txt \
-		$HOME/edit/trunk/email/clip_log.txt
+            uniq $HOME/edit/trunk/email/clip_log.txt /tmp/clipboard.txt
+	    cp /tmp/clipboard.txt $HOME/edit/trunk/email/clip_log.txt
             sleep 1
         fi
     done
@@ -180,10 +182,11 @@ function edit () {
             *) return 1 # illegal option
         esac
     done
-    svn up ~/edit/branches/$source --depth empty
-    svn up ~/edit/branches/$source/$file.md
-    svn up ~/edit/branches/$source/issues.md
-    cd ~/edit/branches/$source
+    # svn up ~/edit/branches/$source --depth empty
+    # svn up ~/edit/branches/$source/$file.md
+    # svn up ~/edit/branches/$source/issues.md
+    # cd ~/edit/branches/$source
+    cd ~/$source
     #if [[ ! -e ~/edit/gitedit ]] ; then
     #    git clone http://github.com/drbean/edit ~/edit/gitedit
     #elif [[ ! -e ~/edit/gitedit/$source ]] ; then
@@ -355,7 +358,7 @@ function question_grade_bett () {
 
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
-alias dot="cd ~/dot; screen -c /home/$USER/dot/screen/dot.rc -dR dot; cd -"
+alias dot="cd ~/dot; screen -c /home/$USER/dot/screen/dot.rc -dR dot"
 alias irc="cd ~/znc; screen -c /home/$USER/dot/screen/irc.rc -dR irc; cd -"
 
 alias csfp="cd ~/class/csfp; screen -c /home/$USER/dot/screen/csfprc -dR csfp; cd -"

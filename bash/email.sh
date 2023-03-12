@@ -27,7 +27,11 @@ function a () {
     if ! [[ -f ~/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
-    echo "# $URL" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
+    echo >> $AREA/$COUNTY/$SCHOOL/address.txt
+    read -p "Enter title, real URL=$URL " new_url
+    echo "# ${new_url:=$URL}" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
+    echo "Now new_url='$new_url', URL='$URL', new_url:=URL=${new_url:=$URL}"
+    echo >> $AREA/$COUNTY/$SCHOOL/address.txt
     echo "$(</dev/clipboard)" | sed -f link.sed | uniq | vipe \
             >> $AREA/$COUNTY/$SCHOOL/address.txt
     svn diff $AREA/$COUNTY/$SCHOOL/address.txt
@@ -38,8 +42,7 @@ function a () {
         echo
         read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
-    read -p "Enter real URL=$URL " new_url
-    read -p "Commit as URL=${new_url:=$URL}? y/n " commit 
+    read -p "Commit as URL=$new_url? y/n " commit 
     if [[ $commit =~ ^y ]]
         then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$new_url"
     fi
@@ -253,6 +256,7 @@ function e () {
         fi
         rm cache_url.txt
         total=${#faculty[*]}
+        rm email.txt
         for (( i=0; i<$total; i++ )); do
             if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
             url=${faculty[$i]}
@@ -265,8 +269,9 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo "# $url" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $url |
-                sed -f link.sed | tee -a $AREA/$COUNTY/$SCHOOL/address.txt
+                sed -f link.sed | tee -a email.txt
         done
+        cat email.txt | uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
         exec 3<&0
         exec 0< /dev/tty
         address_page="n"

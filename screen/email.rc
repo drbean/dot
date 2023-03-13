@@ -27,7 +27,7 @@ stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'intrusive chars, including my 
 stuff "# sed -e '/\^#/d' -e '/\^$/d' -e '/@/d' ${AREA}/\$COUNTY/*/address.txt^M"
 stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'missing @'^M"
 # batch address
-stuff "# cat \$AREA/\$COUNTY/*/address.txt | sort | uniq | vipe | shuf | split -a 5 -d -l 40 - ''^M"
+stuff "# cat \$AREA/\$COUNTY/*/address.txt | sort | uniq | vipe | shuf | split -a 4 -d -l 40 - ''^M"
 # stuff "# cd ~/edit/email/$SCHOOL && for department in $DEPARTMENT ; do printf '%b' \"\\n# \${department}_0\\n\" >> sent_address.txt && mv \${department}_new_address.txt address.txt && bash $HOME/job/spam/spam.sh < address.txt >> edit_offer_mailing.txt && cat address.txt >> sent_address.txt ; done ^M"
 # upload batch
 stuff "# svn rm \^/trunk/email/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$END $d\"; done^M"
@@ -36,5 +36,5 @@ stuff "# svn up \$AREA --depth infinity^M"
 stuff "# svn up requeue_\$AREA^M"
 stuff "# svn up \${AREA}04{0..9}^M"
 stuff "# lftp -c \"open drbean@sdf.org && cd job && mput my_word.txt edit_offer.txt && qui\"^M"
-stuff "# lftp -c \"open drbean@sdf.org && cd job && mput \$AREA/\$AREA\$COUNTY.\$batch? && qui\"^M"
+stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$AREA && mput \$AREA/00\$batch? && qui\"^M"
 stuff "batch=0"

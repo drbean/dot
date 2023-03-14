@@ -1,4 +1,4 @@
-" Last Edit: 2023 Mar 08,  9:56:26 PM
+" Last Edit: 2023 Mar 09, 10:16:06 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -859,11 +859,12 @@ au BufEnter ~/edit/.svn/*.svn-base nn <buffer> g<Right> g$zs
 au BufEnter Indexes*.txt nn <buffer> g<Right> g$zs
 
 au FileType markdown setlocal textwidth=0
+au FileType markdown setlocal spell spelllang=en_us
 au FileType markdown map <buffer> <LocalLeader>ntw
 	\ :let g:old_tw = &tw<CR>
 	\ :let &textwidth = 40<CR>
 au FileType markdown map <buffer> <LocalLeader>otw
-	\ :set tw = g:old_tw<CR>
+	\ :let &tw = g:old_tw<CR>
 au FileType markdown vmap <buffer> <LocalLeader>q Jgqj
 au FileType markdown map <buffer> <LocalLeader>w
 	\ :set textwidth=40<CR>

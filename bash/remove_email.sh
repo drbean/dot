@@ -11,17 +11,17 @@ if [[ ${#p[@]} -gt 2 ]]; then
 elif [[ ${#p[@]} -eq 2 ]]; then
     good=${p[1]}
     sed -i.BAK -e "s/^\($bad\)\(\s\|$\)/$good # \1/" $school
-    svn diff $AREA/$COUNTY/*/address.txt
+    svn diff $AREA/*/*/address.txt
     screen -p 1 -X stuff \
-    "echo $2 | /sdf/udd/d/drbean/job/send.sh^M"
-    echo "Sending to $2 via send.sh on sdf."
+    "echo $good | /sdf/udd/d/drbean/job/send.sh^M"
+    echo "Sending to $good via send.sh on sdf."
     svn ci $AREA/*/*/address.txt \
        -m "$bad: Edited
 $good"
 elif [[ ${#p[@]} -eq 1 ]]; then
     sed -i.BAK -e "s/^\($bad\)\(\s\|$\)/# \1/" $school
-    svn diff $AREA/$COUNTY/*/address.txt;
-    svn ci $AREA/$COUNTY/*/address.txt -m "$bad: User unknown"
+    svn diff $AREA/*/*/address.txt;
+    svn ci $AREA/*/*/address.txt -m "$bad: User unknown"
 else
     echo "No args: \"${#p[@]}: ${p[@]}\""  >&2
 fi

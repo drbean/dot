@@ -442,7 +442,7 @@ function premail () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${AREA:-kyengsang/}; COUNTY=${COUNTY:-pukdo}
+    AREA=${AREA:-kyengsang/}; COUNTY=${COUNTY:-pukto}
     SCHOOL=$school; DEPARTMENT=$department; URL=$url
     A="$HOME/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt" 
     export A AREA COUNTY SCHOOL DEPARTMENT URL

@@ -14,7 +14,7 @@ elif [[ ${#p[@]} -eq 2 ]]; then
     svn diff $AREA/*/*/address.txt
     screen -p 1 -X stuff \
     "echo $good | /sdf/udd/d/drbean/job/send.sh^M"
-    echo "Sending to $good via send.sh on sdf."
+    echo "Sending to '$good' via send.sh on sdf."
     svn ci $AREA/*/*/address.txt \
        -m "$bad: Edited
 $good"

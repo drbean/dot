@@ -478,6 +478,6 @@ function postmail () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${AREA:-kyengsang}; COUNTY=${COUNTY:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${AREA%/}
+    AREA=${area:-kyengsang} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${area%/}
 }
 

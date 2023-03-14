@@ -1229,7 +1229,7 @@ function hw () {
 
 alias contest="cd ~/001/contest; screen -dR contest; cd -"
 
-alias job="cd ~/job; screen -dR job; cd -"
+alias job="cd ~/job; screen -c /home/$USER/dot/screen/job.rc -dR job"
 
 alias q=exit
 

@@ -27,14 +27,13 @@ function a () {
     if ! [[ -f ~/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
+    echo "$(</dev/clipboard)" | sed -f link.sed | uniq | vipe > email.txt
     echo >> $AREA/$COUNTY/$SCHOOL/address.txt
     read -p "Enter title, real URL=$URL " new_url
     echo "# ${new_url:=$URL}" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
     echo "Now new_url='$new_url', URL='$URL', new_url:=URL=${new_url:=$URL}"
     echo >> $AREA/$COUNTY/$SCHOOL/address.txt
-    echo "$(</dev/clipboard)" | sed -f link.sed | uniq | vipe \
-            >> $AREA/$COUNTY/$SCHOOL/address.txt
-    svn diff $AREA/$COUNTY/$SCHOOL/address.txt
+    cat email.txt >> $AREA/$COUNTY/$SCHOOL/address.txt
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
         vim $AREA/$COUNTY/$SCHOOL/address.txt ;

@@ -27,11 +27,16 @@ function a () {
     if ! [[ -f ~/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
+    next_list=y
+while [[ $next_list =~ ^y ]] ; do
     echo "$(</dev/clipboard)" | sed -f link.sed | uniq | vipe > email.txt
     echo >> $AREA/$COUNTY/$SCHOOL/address.txt
     read -p "Enter title, real URL=$URL " new_url
     echo "# ${new_url:=$URL}" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
-    echo "Now new_url='$new_url', URL='$URL', new_url:=URL=${new_url:=$URL}"
+    echo \
+	 " Now new_url='$new_url',
+         URL='$URL',
+new_url:=URL=${new_url:=$URL}"
     echo >> $AREA/$COUNTY/$SCHOOL/address.txt
     cat email.txt >> $AREA/$COUNTY/$SCHOOL/address.txt
     address_page="n"
@@ -45,6 +50,8 @@ function a () {
     if [[ $commit =~ ^y ]]
         then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$new_url"
     fi
+    read -p "Next list ready? y/n " next_list
+done
     ls -l /dev/fd/
 }
 function h () {
@@ -441,7 +448,7 @@ function premail () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${AREA:-kyengsang/}; COUNTY=${COUNTY:-pukto}
+    AREA=${AREA:-kyengsang}; COUNTY=${COUNTY:-pukto}
     SCHOOL=$school; DEPARTMENT=$department; URL=$url
     A="$HOME/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt" 
     export A AREA COUNTY SCHOOL DEPARTMENT URL

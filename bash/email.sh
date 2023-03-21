@@ -27,6 +27,39 @@ function a () {
     if ! [[ -f ~/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
+    if ! [[ -t 0 ]] ; then
+        declare -a faculty
+        readarray -t faculty
+        total=${#faculty[*]}
+        for (( i=0; i<$total; i++ )); do
+            URL=${faculty[$i]}
+            echo >> $AREA/$COUNTY/$SCHOOL/address.txt
+            echo "# $URL">> $AREA/$COUNTY/$SCHOOL/address.txt ;
+            if (( $i==$total-1 )) ; then echo -e "\\nLAST FACULTY PAGE!!" ; fi
+            echo -e "\\nPreparing faculty list(s) $((i*1)) of $total from file pages:\\n
+            $URL\\n"
+            exec 3<&0
+            exec 0< /dev/tty
+            declare -i j=1
+            read -p "list $j at $URL ready? y/n " next_list
+            while [[ $next_list =~ ^y ]] ; do
+                    echo "$(</dev/clipboard)" | sed -f address.sed | uniq | vipe \
+                            >> $AREA/$COUNTY/$SCHOOL/address.txt
+                    address_page="n"
+                    while ! [[ $address_page =~ ^y ]] ; do
+                        vim $AREA/$COUNTY/$SCHOOL/address.txt ;
+                        svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+                        echo
+                        read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+                    done
+                    read -p "Commit as URL=${faculty[$i]}? y/n " commit
+                    if [[ $commit =~ ^y ]]
+                        then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$URL" &
+    fi
+                    read -p "Another list $((++j)), ready at ${faculty[$i]}? y/n " next_list
+            done
+        done
+else
     next_list=y
 while [[ $next_list =~ ^y ]] ; do
     echo "$(</dev/clipboard)" | sed -f link.sed | uniq | vipe > email.txt
@@ -53,6 +86,7 @@ new_url:=URL=${new_url:=$URL}"
     read -p "Next list ready? y/n " next_list
 done
     ls -l /dev/fd/
+fi
 }
 function h () {
     TOP=${1:-http://$DEPARTMENT.$SCHOOL.ac.kr}

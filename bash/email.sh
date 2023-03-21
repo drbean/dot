@@ -19,11 +19,6 @@ function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
 function l () { sed -f link.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {
     URL=${1:-http://$DEPARTMENT.$SCHOOL.ac.kr}
-    SCHEME=http*//
-    URI=${URL#$SCHEME}
-    DOMAIN=$SCHOOL.ac.kr
-    PATHINFO=${URL#*$DOMAIN}
-    HOST=${URI%.$DOMAIN$PATHINFO}
     if ! [[ -f ~/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi

@@ -49,7 +49,7 @@ function a () {
                     done
                     read -p "Commit as URL=${faculty[$i]}? y/n " commit
                     if [[ $commit =~ ^y ]]
-                        then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$URL" &
+                        then exec svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$URL" &
     fi
                     read -p "Another list $((++j)), ready at ${faculty[$i]}? y/n " next_list
             done

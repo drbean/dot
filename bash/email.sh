@@ -49,7 +49,8 @@ function a () {
                     done
                     read -p "Commit as URL=${faculty[$i]}? y/n " commit
                     if [[ $commit =~ ^y ]]
-                        then exec svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$URL" &
+                        then exec svn ci $AREA/$COUNTY/$SCHOOL/address.txt \
+                            -m "$URL" 2> /dev/null &
     fi
                     read -p "Another list $((++j)), ready at ${faculty[$i]}? y/n " next_list
             done
@@ -62,7 +63,7 @@ while [[ $next_list =~ ^y ]] ; do
     read -p "Enter title, real URL=$URL " new_url
     echo "# ${new_url:=$URL}" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
     echo \
-	 " Now new_url='$new_url',
+         " Now new_url='$new_url',
          URL='$URL',
 new_url:=URL=${new_url:=$URL}"
     echo >> $AREA/$COUNTY/$SCHOOL/address.txt
@@ -256,15 +257,15 @@ function p () {
         read -p "Email page looks good? y/n " email_page
     done
     while read p ; do
-	curl -kL "${p%$'\r'}" | sed -f link.sed
+        curl -kL "${p%$'\r'}" | sed -f link.sed
     done < email_page.html > email.txt
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
     cat email.txt | uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
-	svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
-	echo
+        svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+        echo
         read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
     read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
@@ -316,7 +317,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo
             read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
-	read -p  "commit with cache_url.txt='$(echo ; cat cache_url.txt)' " commit
+        read -p  "commit with cache_url.txt='$(echo ; cat cache_url.txt)' " commit
         if [[ $commit =~ ^y ]]
             then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -F cache_url.txt
         fi

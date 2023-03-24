@@ -147,6 +147,8 @@ function log_clip () {
     done
 }
 
+declare -a roman=(i ii iii iv v vi vii viii ix x)
+
 source ~/dot/bash/email.sh
 
 function ttb () {

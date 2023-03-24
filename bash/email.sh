@@ -31,12 +31,12 @@ function a () {
             echo >> $AREA/$COUNTY/$SCHOOL/address.txt
             echo "# $URL">> $AREA/$COUNTY/$SCHOOL/address.txt ;
             if (( $i==$total-1 )) ; then echo -e "\\nLAST FACULTY PAGE!!" ; fi
-            echo -e "\\nPreparing faculty list(s) $((i*1)) of $total from file pages:\\n
+            echo -e "\\nPreparing faculty listing $((i+1))th of $total from file pages:\\n
             $URL\\n"
             exec 3<&0
             exec 0< /dev/tty
             declare -i j=1
-            read -p "list $j at $URL ready? y/n " next_list
+            read -p "list $((i+1)).${roman$[$j]} at $URL ready? y/n " next_list
             while [[ $next_list =~ ^y ]] ; do
                     echo "$(</dev/clipboard)" | sed -f address.sed | uniq | vipe \
                             >> $AREA/$COUNTY/$SCHOOL/address.txt
@@ -49,10 +49,10 @@ function a () {
                     done
                     read -p "Commit as URL=${faculty[$i]}? y/n " commit
                     if [[ $commit =~ ^y ]]
-                        then exec svn ci $AREA/$COUNTY/$SCHOOL/address.txt \
-                            -m "$URL" 2> /dev/null &
+                        then exec svn ci $AREA/$COUNTY/$SCHOOL/address.txt -q \
+                            -m "$URL" > /dev/null 2>&1 &
     fi
-                    read -p "Another list $((++j)), ready at ${faculty[$i]}? y/n " next_list
+                    read -p "Another list, $((i+1)).${roman$[$((++j))]} ready at ${faculty[$i]}? y/n " next_list
             done
         done
 else
@@ -498,7 +498,7 @@ function email () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-kyengsang} COUNTY=${county:-namdo} screen -c /home/$USER/dot/screen/email.rc -dR email_${area%/}
+    AREA=${area:-kyengsang} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/email.rc -dR email_${area%/}
     cd -
 }
 

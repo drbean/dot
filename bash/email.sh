@@ -35,8 +35,8 @@ function a () {
             $URL\\n"
             exec 3<&0
             exec 0< /dev/tty
-            declare -i j=1
-            read -p "list $((i+1)).${roman$[$j]} at $URL ready? y/n " next_list
+            declare -i j=0
+            read -p "list $((i+1)).${roman[$j]} at $URL ready? y/n " next_list
             while [[ $next_list =~ ^y ]] ; do
                     echo "$(</dev/clipboard)" | sed -f address.sed | uniq | vipe \
                             >> $AREA/$COUNTY/$SCHOOL/address.txt
@@ -52,7 +52,7 @@ function a () {
                         then exec svn ci $AREA/$COUNTY/$SCHOOL/address.txt -q \
                             -m "$URL" > /dev/null 2>&1 &
     fi
-                    read -p "Another list, $((i+1)).${roman$[$((++j))]} ready at ${faculty[$i]}? y/n " next_list
+                    read -p "Another list, $((i+1)).${roman[$((++j))]} ready at ${faculty[$i]}? y/n " next_list
             done
         done
 else

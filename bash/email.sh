@@ -282,7 +282,7 @@ function e () {
     HOST=${URI%.$DOMAIN$PATHINFO}
     if ! [[ -t 0 ]] ; then
         declare -a faculty
-        readarray faculty
+        readarray -t faculty
         if [[ $# -eq 1 ]]; then DEPARTMENT=$1
         else URL=${faculty[0]}
             URI=${URL#$SCHEME}
@@ -296,13 +296,13 @@ function e () {
         for (( i=0; i<$total; i++ )); do
             if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
             url=${faculty[$i]}
-            echo -e "\\nGetting prof page $i of $total from file list:\\n
+            echo -e "\\nGetting prof page $((i+1)) of $total from file list:\\n
             ${faculty[$i]}↓
         URL=$url↓
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo $url >> cache_url.txt
             echo >> $AREA/$COUNTY/$SCHOOL/address.txt
-            echo "# $url" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt
+            echo -e "# $url\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $url |
                 sed -f link.sed | tee -a |

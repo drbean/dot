@@ -305,9 +305,9 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo "# $url" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $url |
-                sed -f link.sed | tee -a email.txt
+                sed -f link.sed | tee -a |
+		uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
         done
-        cat email.txt | uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
         exec 3<&0
         exec 0< /dev/tty
         address_page="n"

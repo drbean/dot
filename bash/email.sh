@@ -16,7 +16,7 @@ function dump_cookies ()  {
     FROM cookies;'
 }
 function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
-function l () { sed -f link.sed >> $COUNTY/$SCHOOL/address.txt; }
+function l () { sed -f address.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {
     URL=${1:-http://$DEPARTMENT.$SCHOOL.ac.kr}
     if ! [[ -f ~/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
@@ -58,7 +58,7 @@ function a () {
 else
     next_list=y
 while [[ $next_list =~ ^y ]] ; do
-    echo "$(</dev/clipboard)" | sed -f link.sed | uniq | vipe > email.txt
+    echo "$(</dev/clipboard)" | sed -f address.sed | uniq | vipe > email.txt
     echo >> $AREA/$COUNTY/$SCHOOL/address.txt
     read -p "Enter title, real URL=$URL " new_url
     echo "# ${new_url:=$URL}" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
@@ -135,7 +135,7 @@ SCHEME=$SCHEME, HOST=$host, DOMAIN=$DOMAIN, PATHINFO=$pathinfo\\n"
                     echo $p >> cache_url.txt
                     echo "# $p" >> $AREA/$COUNTY/$SCHOOL/address.txt
                     curl -b cookies.txt -c cookies.txt -kL "${p%$'\r'}" |
-                        sed -f link.sed | tee -a email.txt
+                        sed -f address.sed | tee -a email.txt
                 done < prof_page.html
             fi
         done
@@ -175,7 +175,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
                 while read p ; do
                     echo -e "\\n\\nReading page $((++i)) from prof_page.html\\n\\t\\t$p\\n"
                     curl -b cookies.txt -c cookies.txt -kL "${p%$'\r'}" |
-                        sed -f link.sed | tee -a email.txt
+                        sed -f address.sed | tee -a email.txt
                 done < prof_page.html
             fi
         done
@@ -215,7 +215,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             if [[ $page =~ ^y ]] ; then 
                 rm email.txt
                 while read p ; do
-                    curl -b cook -kL "${p%$'\r'}" | sed -f link.sed | tee -a email.txt
+                    curl -b cook -kL "${p%$'\r'}" | sed -f address.sed | tee -a email.txt
                 done < prof_page.html
             fi
         done
@@ -257,7 +257,7 @@ function p () {
         read -p "Email page looks good? y/n " email_page
     done
     while read p ; do
-        curl -kL "${p%$'\r'}" | sed -f link.sed
+        curl -kL "${p%$'\r'}" | sed -f address.sed
     done < email_page.html > email.txt
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
@@ -305,7 +305,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo -e "# $url\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $url |
-                sed -f link.sed | tee -a |
+                sed -f address.sed | tee -a |
 		uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
         done
         exec 3<&0
@@ -331,7 +331,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         dump_cookies > cookies.txt
         curl -b cookies.txt -c cookies.txt -kL $URL |
-            sed -f link.sed | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+            sed -f address.sed | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
                 exec 3<&0
                 exec 0< /dev/tty
         address_page="n"
@@ -363,7 +363,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
              URL=$PRE_TOP$ix$POST_TOP↓\\n"
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$ix$POST_TOP |
-                    sed -f link.sed | uniq | tee -a email.txt
+                    sed -f address.sed | uniq | tee -a email.txt
         done
         cat email.txt >> $AREA/$COUNTY/$SCHOOL/address.txt
         address_page="n"

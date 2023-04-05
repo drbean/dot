@@ -13,5 +13,5 @@ stuff "# svn rm \^/trunk/email/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$
 stuff "# pp # sdf tmux screen in window 1 for prof_edit^M"
 
 screen 0
-stuff "screen -X bind X eval 'select 4' 'paste .' 'stuff \^M' 'select 0'^M"
+stuff "screen -X bind X eval 'select 4' 'paste .' 'stuff \^M' 'select 0'  'activity \"^GSent to remove_prof in window %\"'^M"
 stuff "mosh drbean@sdf.org^M"

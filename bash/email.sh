@@ -349,7 +349,8 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
     elif [[ $# -le 4 ]]; then
         PRE_TOP=$2
         TOP_INDEX=$3
-        IFS=' ' read -a top_index <<< "$TOP_INDEX"
+	ifdd
+        IFS=' ' read -a top_index <<< $(eval echo "$TOP_INDEX")
         POST_TOP=${URL#$PRE_TOP${top_index[0]}}
         if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; else DEPARTMENT=$HOST ; fi
         echo -e "\\n# $PRE_TOP '$TOP_INDEX' $POST_TOP" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
@@ -498,7 +499,7 @@ function email () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-kyengsang} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/email.rc -dR email_${area%/}
+    AREA=${area:-midsouth} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/email.rc -dR email_${area%/}
     cd -
 }
 
@@ -514,6 +515,6 @@ function postmail () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-kyengsang} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${area%/}
+    AREA=${area:-midsouth} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${area%/}
 }
 

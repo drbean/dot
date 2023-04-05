@@ -5,7 +5,12 @@
 AREA=${AREA%/}
 while true ; do read -p '> ' -a p
 bad=${p[0]}
+if [[ $bad != *@* ]] ; then
+    echo "No '@' in bad arg: \"${#p[@]}: ${p[@]}\""  >&2
+    return 1 ; fi
 school=$(grep -l "^$bad" $AREA/*/*/address.txt)
+if [[ $school == *ntupes* ]]; then 
+    p[1]="${bad%ntupes.edu.tw}ntus.edu.tw"; fi
 if [[ ${#p[@]} -gt 2 ]]; then
     echo "${p[@]}: Too many args" >&2
 elif [[ ${#p[@]} -eq 2 ]]; then

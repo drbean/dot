@@ -343,7 +343,8 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         done
         read -p  "Commit as '$URL'? y/n " commit
         if [[ $commit =~ ^y ]]
-            then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$URL"
+            then exec svn ci $AREA/$COUNTY/$SCHOOL/address.txt -q \
+                -m "$URL" > /dev/null 2>&1 &
         fi
         exec 0<&3
     elif [[ $# -le 4 ]]; then
@@ -363,7 +364,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
              URL=$PRE_TOP$ix$POST_TOP↓\\n"
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$ix$POST_TOP |
-                    sed -f address.sed | uniq | tee -a email.txt
+                    sed -f address.sed | sed -f cleanup.sed | uniq | tee -a email.txt
         done
         cat email.txt >> $AREA/$COUNTY/$SCHOOL/address.txt
         address_page="n"

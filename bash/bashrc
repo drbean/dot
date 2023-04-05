@@ -26,7 +26,6 @@ source ~/dot/git/git-hub/.rc
 ## ingydotnet/git-subrepo
 #source ~/dot/git/git-subrepo/.rc
 
-alias postmail="cd ~/postmail ; postmail -a kyengsang"
 alias yuchieh="cd ~/yuchieh/ ; edit -s yuchieh -f 'editing_statement_certificate'"
 alias mosh="export LANG=\"en_US.UTF8\" && export LC_CTYPE=\"en_US.UTF8\" && export LC_COLLATE=\"en_US.UTF8\" && export LC_TIME=\"en_US.UTF8\" && export LC_NUMERIC=\"en_US.UTF8\" && export LC_MONETARY=\"en_US.UTF8\" && export LC_MESSAGES=\"en_US.UTF8\" && export LC_ALL=\"en_US.UTF8\" && mosh"
 alias battery="WMIC PATH Win32_Battery Get EstimatedChargeRemaining"

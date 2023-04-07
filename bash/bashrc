@@ -149,6 +149,7 @@ function log_clip () {
 declare -a roman=(i ii iii iv v vi vii viii ix x)
 
 source ~/dot/bash/email.sh
+source ~/dot/bash/e.sh
 
 function ttb () {
     if [[ ! -e ~/ttb ]] ; then

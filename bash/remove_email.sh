@@ -7,7 +7,7 @@ while true ; do read -p '> ' -a p
 bad=${p[0]}
 if [[ $bad != *@* ]] ; then
     echo "No '@' in bad arg: \"${#p[@]}: ${p[@]}\""  >&2
-    exit 1 ; fi
+    continue 1 ; fi
 school=$(grep -l "^$bad" $AREA/*/*/address.txt)
 if [[ $school == *ntupes* ]]; then 
     p[1]="${bad%ntupes.edu.tw}ntus.edu.tw"; fi

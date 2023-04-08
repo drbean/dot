@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+# addresses on pages
+
 function e () {
     URL=${1:-http://$DEPARTMENT.$SCHOOL.ac.kr}
     SCHEME=http*//

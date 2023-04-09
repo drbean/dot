@@ -7,7 +7,7 @@ stuff "Contents.html "
 stuff "~/.weechat/logs/irc.freenodebnc.\\\#\\\#english.weechatlo^M"
 
 screen
-stuff "lftp drbean@sdf.org^M"
+stuff "lftp sftp://drbean@sdf.org^M"
 stuff "pwd^M"
 stuff "put HomePage.html -o index.html^M"
 stuff "put HomePage.html^M"

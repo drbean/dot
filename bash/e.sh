@@ -34,9 +34,10 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo -e "# $url\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $url |
-                sed -f address.sed | tee -a |
-		uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+                sed -f address.sed | sed -f cleanup.sed |
+                    tee -a email.txt
         done
+	< email.txt uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
         exec 3<&0
         exec 0< /dev/tty
         address_page="n"
@@ -60,7 +61,8 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         dump_cookies > cookies.txt
         curl -b cookies.txt -c cookies.txt -kL $URL |
-            sed -f address.sed | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+            sed -f address.sed | sed -f cleanup.sed |
+                vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
                 exec 3<&0
                 exec 0< /dev/tty
         address_page="n"

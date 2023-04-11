@@ -22,6 +22,7 @@ function e () {
         rm cache_url.txt
         total=${#faculty[*]}
         rm email.txt
+        echo >> $AREA/$COUNTY/$SCHOOL/address.txt
         for (( i=0; i<$total; i++ )); do
             if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
             url=${faculty[$i]}

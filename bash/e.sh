@@ -30,8 +30,7 @@ function e () {
         URL=$url↓
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo $url >> cache_url.txt
-            echo >> $AREA/$COUNTY/$SCHOOL/address.txt
-            echo -e "# $url\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt
+            echo "# $url" >> $AREA/$COUNTY/$SCHOOL/address.txt
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $url |
                 sed -f address.sed | sed -f cleanup.sed |

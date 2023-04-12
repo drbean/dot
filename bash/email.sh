@@ -373,7 +373,7 @@ function premail () {
     done
     cd ~/edit/trunk/email || exit 1
     AREA=${AREA:-kyengsang}; COUNTY=${COUNTY:-pukto}
-    SCHOOL=$school; DEPARTMENT=$department; URL=$url
+    SCHOOL=$school:-handong; DEPARTMENT=$department; URL=$url
     A="$HOME/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt" 
     export A AREA COUNTY SCHOOL DEPARTMENT URL
     screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school

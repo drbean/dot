@@ -8,12 +8,19 @@ screen 1
 stuff "mosh drbean@sdf.org^M"
 
 screen 3
-# prep my_word
-stuff "declare +i wc=\$(wc -l \$AREA/\$COUNTY/*/address.txt | tail -n 1 | ^M"
-stuff "	cut -c 3,4,5,6,7)^M"
-stuff "# sed -n -e \"/\^overtrain$/,+\$((\$wc+300))p\" /usr/share/dict/words > my_word.txt^M"
-stuff "# for f in my_word* ; do for op in head tail ; do echo -n \"\$op \$f: \" && \$op -n 1 \$f ; done && echo ;  done^M"
-stuff "# echo 100 > next^M"
+## prep my_word
+#stuff "declare +i wc=\$(wc -l \$AREA/\$COUNTY/*/address.txt | tail -n 1 | ^M"
+#stuff "	cut -c 3,4,5,6,7)^M"
+#stuff "# sed -n -e \"/\^overtrain$/,+\$((\$wc+300))p\" /usr/share/dict/words > my_word.txt^M"
+#stuff "# for f in my_word* ; do for op in head tail ; do echo -n \"\$op \$f: \" && \$op -n 1 \$f ; done && echo ;  done^M"
+#stuff "# echo 100 > next^M"
+
+# AREALIST, COUNTYLIST, SCHOOLLIST
+stuff "declare -a AREALIST=(north mid south eastisland pusan kyengsang)^M"
+stuff "declare -A COUNTYLIST SCHOOLLIST^M"
+stuff "for a in ${AREALIST[*]} ; do COUNTYLIST[$a]=$(ls $a | sed '/^[0-9]*$/d' ) ; done^M"
+stuff "for c in ${COUNTYLIST[$AREA]} ; do SCHOOLLIST[$c]=$( ls $AREA/$c | tr '\n' ' ' ); done^M"
+
 # clean address.txt
 stuff "# sed -i.BAK -e 's/\s*$//' \$AREA*/*/address.txt^M"
 stuff "# sed -e '/\^#/d' \$AREA/\$COUNTY/*/address.txt | grep -r -P '[\^-_.a-zA-Z0-9@]' -^M"

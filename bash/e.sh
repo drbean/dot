@@ -88,7 +88,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         declare -i n=0
         total=${#top_index[@]}
         rm email.txt
-        for ix in ${TOP_INDEX[@]:0} ; do
+        for ix in ${top_index[@]} ; do
             echo -e "\\nGetting prof page $((++n)) of $total from \$1~\$3:\\n
             $1
         PRE_TOP=$PRE_TOP, top_index=$ix, POST_TOP=$POST_TOP\\n

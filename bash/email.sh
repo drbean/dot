@@ -376,7 +376,7 @@ function premail () {
     SCHOOL=${school:-kmu}; DEPARTMENT=$department; URL=$url
     A="$HOME/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt" 
     export A AREA COUNTY SCHOOL DEPARTMENT URL
-    screen -c /home/$USER/dot/screen/premail.rc -dR premail_$school
+    screen -c /home/$USER/dot/screen/premail.rc -dR premail.$school
     cd -
 }
 
@@ -392,7 +392,7 @@ function email () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-south} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/email.rc -dR email_${area%/}
+    AREA=${area:-south} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/email.rc -dR email.${area%/}
     cd -
 }
 
@@ -408,6 +408,6 @@ function postmail () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-midsouth} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail_${area%/}
+    AREA=${area:-midsouth} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail.${area%/}
 }
 

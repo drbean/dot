@@ -18,8 +18,8 @@ screen 3
 # AREALIST, COUNTYLIST, SCHOOLLIST
 stuff "declare -a AREALIST=(north mid south eastisland pusan kyengsang)^M"
 stuff "declare -A COUNTYLIST SCHOOLLIST^M"
-stuff "for a in ${AREALIST[*]} ; do COUNTYLIST[$a]=$(ls $a | sed '/^[0-9]*$/d' ) ; done^M"
-stuff "for c in ${COUNTYLIST[$AREA]} ; do SCHOOLLIST[$c]=$( ls $AREA/$c | tr '\n' ' ' ); done^M"
+stuff "for a in \${AREALIST[*]} ; do COUNTYLIST[\$a]=\$(ls \$a | sed '/\^[0-9]*$/d ; /\.txt/d' ) ; done^M"
+stuff "for c in \${COUNTYLIST[\$AREA]} ; do SCHOOLLIST[\$c]=\$( ls \$AREA/\$c | sed '/\.txt$/d' | tr '\\n' ' ' ); done^M"
 
 # clean address.txt
 stuff "# sed -i.BAK -e 's/\s*$//' \$AREA*/*/address.txt^M"

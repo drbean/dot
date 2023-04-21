@@ -22,14 +22,12 @@ stuff "for a in \${AREALIST[*]} ; do COUNTYLIST[\$a]=\$(ls \$a | sed '/\^[0-9]*$
 stuff "for c in \${COUNTYLIST[\$AREA]} ; do SCHOOLLIST[\$c]=\$( ls \$AREA/\$c | sed '/\.txt$/d' | tr '\\n' ' ' ); done^M"
 
 # clean address.txt
-stuff "# sed -i.BAK -e 's/\s*$//' \$AREA*/*/address.txt^M"
-stuff "# sed -e '/\^#/d' \$AREA/\$COUNTY/*/address.txt | grep -r -P '[\^-_.a-zA-Z0-9@]' -^M"
+stuff "# eol_space^M"
 stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'unescaped http web page links'^M"
+stuff "# wrong_char^M"
 stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'intrusive email chars'^M"
-stuff "# grep -l -e '[\^-_.a-zA-Z0-9@#/:?\&= ]' $AREA/$COUNTY/*/address.txt | wc^M"
-stuff "# grep -e '[\^-_.a-zA-Z0-9@#/:?&= ]' $AREA/$COUNTY/*/address.txt^M"
+stuff "# unescaped_uri^M"
 stuff "# v $(grep -l -e '[\^-_.a-zA-Z0-9@#/:?&= ]' $AREA/$COUNTY/*/address.txt)^M"
-stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'intrusive chars, including my quote chars, in http links'^M"
 stuff "# sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' \$AREA/\$COUNTY/*/address.txt^M"
 stuff "# sed -i.BAK  's/\s*$//' \$AREA/\$COUNTY/*/^M"
 stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'intrusive, eol white space'^M"

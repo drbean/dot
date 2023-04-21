@@ -399,7 +399,7 @@ function email () {
 function eol_space () { sed -i.BAK -e 's/\s*$//' $AREA/*/*/address.txt ; }
 function wrong_char () { sed -e '/^#/d' $AREA/$COUNTY/*/address.txt | grep -r -P '[^-_.a-zA-Z0-9@]' - ; }
 function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $AREA/$COUNTY/*/address.txt ; }
-function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' \$AREA/\$COUNTY/*/address.txt ; }
+function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $AREA/$COUNTY/*/address.txt ; }
 
 function postmail () {
     OPTIND=1

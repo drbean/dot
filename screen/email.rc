@@ -29,7 +29,7 @@ stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'intrusive email chars'^M"
 stuff "# eol_space^M"
 stuff "# in_addr_space^M"
 stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'intrusive, eol white space'^M"
-stuff "# sed -e '/\^#/d' -e '/\^$/d' -e '/@/d' ${AREA}/\$COUNTY/*/address.txt^M"
+stuff "# no_at_mark^M"
 stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'missing @'^M"
 # batch address
 stuff "# cat \$AREA/\$COUNTY/*/address.txt | sort | uniq | vipe | shuf | split -a 4 -d -l 40 - ''^M"

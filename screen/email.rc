@@ -32,7 +32,7 @@ stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'intrusive, eol white space'^M"
 stuff "# no_at_mark^M"
 stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'missing @'^M"
 # batch address
-stuff "# cat \$AREA/\$COUNTY/*/address.txt | sort | uniq | vipe | shuf | split -a 4 -d -l 40 - ''^M"
+stuff "# cat \$AREA/\$COUNTY/*/address.txt | sort | uniq | vipe | shuf | split -a 4 -d -l 40 - $AREA/^M"
 # upload batch
 stuff "# AREA/COUNTY=$AREA/$COUNTY^M"
 stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$AREA && mput \$AREA/0\$batch? && qui\"^M"

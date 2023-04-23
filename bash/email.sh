@@ -322,9 +322,9 @@ function prof_remove () {
 
 alias pf='prof_find'
 function prof_find () {
-    AREA=${AREA%/}
+    address_list=$(eval echo $AREA/*/*/address.txt)
     address=$1
-    file=$(grep -l "$address" $AREA/*/*/address.txt)
+    file=$(grep -l "$address" $address_list)
     v $file +/$address
 }
 

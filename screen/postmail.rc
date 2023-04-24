@@ -1,5 +1,5 @@
 screen 1
-stuff "mosh drbean@sdf.org^M"
+stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"
 
 screen 4
 stuff "rlwrap remove_email.sh^M"
@@ -11,4 +11,4 @@ stuff "# pp "
 
 screen 0
 stuff "screen -X bind X eval 'select 4' 'paste .' 'stuff \^M' 'select 0'  'activity \"^GSent to remove_prof in window %\"'^M"
-stuff "mosh drbean@sdf.org^M"
+stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"

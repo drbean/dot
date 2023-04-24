@@ -5,7 +5,7 @@
 # # send mails
 
 screen 1
-stuff "mosh drbean@sdf.org^M"
+stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"
 
 screen 3
 ## prep my_word

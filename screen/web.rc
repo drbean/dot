@@ -8,4 +8,4 @@ screen 5 ssh -L 5902:localhost:5902 drbean@sac.nuu.edu.tw
 screen 9
 stuff "man httpd_selinux"
 screen 0
-stuff "mosh drbean@freeshell.org^M"
+stuff "mosh drbean@freeshell.org --server='LANG=en_US.UTF-8 mosh-server'^M"

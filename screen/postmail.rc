@@ -5,9 +5,8 @@ screen 4
 stuff "rlwrap remove_email.sh^M"
 
 screen 3
-stuff "# touch requeue && svn add requeue^M"
 stuff "# START=000; END=000; svn rm \^/trunk/email/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$END $(date)\"; done^M"
-stuff "# pp "
+stuff "pf "
 
 screen 0
 stuff "screen -X bind X eval 'select 4' 'paste .' 'stuff \^M' 'select 0'  'activity \"^GSent to remove_prof in window %\"'^M"

@@ -396,6 +396,7 @@ function email () {
     cd -
 }
 
+function old_address () { sed -i.BAK -E 's/^([^#]+)#.*$/\1/' south/$COUNTY/*/address.txt ; } 
 function eol_space () { sed -i.BAK -e 's/\s*$//' $AREA/*/*/address.txt ; }
 function wrong_char () { sed -e '/^#/d' $AREA/$COUNTY/*/address.txt | grep -r -P '[^-_.a-zA-Z0-9@]' - ; }
 function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $AREA/$COUNTY/*/address.txt ; }

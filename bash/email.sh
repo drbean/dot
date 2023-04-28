@@ -329,7 +329,7 @@ function prof_find () {
 }
 
 function prof_edit () {
-    if [[ ${#@} -ne 2 ]] ; then
+    if [[ $# -ne 2 ]] ; then
         echo "prof_edit $@: Less/More than 2 args" >&2
         return 2
     fi

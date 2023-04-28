@@ -292,14 +292,14 @@ function scrape () {
 
 function pp () {
     if [[ $# -gt 2 ]]; then
-        echo "$@: Too many args" >&2
+        echo "pp $@: Too many args" >&2
         return 2
     elif [[ $# -eq 2 ]]; then
         prof_edit $@
     elif [[ $# -eq 1 ]]; then
         prof_remove $@
     else
-        echo "$@: No args" >&2
+        echo "pp $@: No args" >&2
         return 2
     fi
 }
@@ -329,8 +329,8 @@ function prof_find () {
 }
 
 function prof_edit () {
-    if [[ -v 1 ]] ; then
-        echo "$@: No args" >&2
+    if [[ ${#@} -ne 2 ]] ; then
+        echo "prof_edit $@: Less/More than 2 args" >&2
         return 2
     fi
     AREA=${AREA%/}

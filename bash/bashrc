@@ -1375,10 +1375,10 @@ alias q=exit
 # }
 # 
 
+# greg
 # b') function wcd
 
 # from 'man wcd'
-# greg
 
 function wcd () {
     /etc/profile.d/wcd.sh "$@"

@@ -39,3 +39,7 @@ stuff "batch=$(( $(< \$AREA/batch.txt ) + 1 )) && echo \$batch | tee \$AREA/batc
 stuff "lftp -c \"open sftp://drbean@sdf.org && cd job/\$AREA && mput \$AREA/0\$batch? && qui\"^M"
 stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$AREA && mput \$AREA/0\$batch? && qui\"^M"
 stuff "batch=00"
+
+screen 0
+stuff "screen -X bind X eval 'select 1' 'stuff \"tmux at -t \\\$AREA\^M\"' 'stuff \"../run.sh \\\$AREA 17\^M\"' 'select 0'  'activity \"\^GRun batch 17 in window %\"'^M"
+stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"

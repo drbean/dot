@@ -35,10 +35,6 @@ stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'missing @'^M"
 stuff "# cat \$AREA/\$COUNTY/*/address.txt | sort | uniq | vipe | shuf | split -a 4 -d -l 40 - $AREA/^M"
 # upload batch
 stuff "# AREA/COUNTY=$AREA/$COUNTY^M"
-stuff "batch=$(( $(< \$AREA/batch.txt ) + 1 )) && echo \$batch | tee \$AREA/batch.txt^M"
-stuff "lftp -c \"open sftp://drbean@sdf.org && cd job/\$AREA && mput \$AREA/0\$batch? && qui\"^M"
-stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$AREA && mput \$AREA/0\$batch? && qui\"^M"
-stuff "batch=00"
 
 screen 0
 stuff "# BATCH=$BATCH^M"
@@ -47,3 +43,5 @@ stuff "# upped_cache_batch^M"
 stuff "# screen -X bind X eval 'select 1' 'stuff \"tmux at -t \\\$AREA\^M\"' 'stuff \"../run.sh \\\$AREA \\\$BATCH\^M\"' 'select 0'  'activity \"\^GRun \\\$AREA batch \\\$BATCH in window %\"'^M"
 stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'"
 stuff "# compute_old_batch^M"
+stuff "# BATCH=00"
+stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$AREA && mput \$AREA/0\$BATCH? && qui\"^M"

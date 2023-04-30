@@ -405,6 +405,11 @@ function upped_cache_batch () {
     echo $BATCH > $AREA/batch.txt
 }
 
+function compute_old_batch () {
+        export old_batch=$(( BATCH - 1 ))
+        echo old_batch=$old_batch
+}
+
 function old_address () { sed -E 's/^([^#]+)#.*$/\1/' ; } 
 function eol_space () { sed -i.BAK -e 's/\s*$//' $AREA/*/*/address.txt ; }
 function wrong_char () { sed -e '/^#/d' $AREA/$COUNTY/*/address.txt | grep -r -P '[^-_.a-zA-Z0-9@]' - ; }

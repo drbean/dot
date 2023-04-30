@@ -9,5 +9,6 @@ stuff "# START=000; END=000; svn rm \^/trunk/email/\${AREA}{\$START..\$END} -m \
 stuff "pf "
 
 screen 0
+stuff "screen -X bind Y eval 'select 4' 'paste .' 'stuff \^M' 'select 0'^M"
 stuff "screen -X bind X eval copy 'stuff Ml\^Me\^M' 'select 4' 'paste .' 'stuff \^M' 'select 0'  'activity \"^GSent to remove_prof in window %\"'^M"
 stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"

@@ -382,18 +382,27 @@ function premail () {
 
 function email () {
     OPTIND=1
-    local arg area county
+    local arg area county batch
     while getopts 'a:c:' arg
     do
         case ${arg} in
             a) area=${OPTARG};;
             c) county=${OPTARG};;
+            b) batch=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-south} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/email.rc -dR email.${area%/}
+    AREA=${area:-south} COUNTY=${county:-*} \
+    BATCH=${batch:-$(< $area/batch.txt )} \
+    screen -c /home/$USER/dot/screen/email.rc -dR email.${area%/}
     cd -
+}
+
+function upped_cache_batch () {
+    BATCH=$(< $AREA/batch.txt )
+    echo BATCH=$(( ++BATCH ))
+    echo $BATCH > $AREA/batch.txt
 }
 
 function old_address () { sed -E 's/^([^#]+)#.*$/\1/' ; } 

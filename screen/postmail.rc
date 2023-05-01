@@ -9,7 +9,7 @@ stuff "# START=000; END=000; svn rm \^/trunk/email/\${AREA}{\$START..\$END} -m \
 stuff "pf "
 
 screen 0
-bind Z eval copy 'stuff Ml^Me^M' "activity \"\^G copy $AREA address in window %\""
-stuff "screen -X bind Y eval 'select 4' 'paste .' 'stuff \^M' 'select 0'^M"
 stuff "screen -X bind X eval copy 'stuff Ml\^Me\^M' 'select 4' 'paste .' 'stuff \^M' 'select 0'  'activity \"\^G remove_prof from $AREA in window %\"'^M"
+bind Y eval copy 'stuff Ml^Me^M' "activity \"\^G copy $AREA address in window %\""
+stuff "screen -X bind Z eval 'select 4' 'paste .' 'stuff \^M' 'select 0'^M"
 stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"

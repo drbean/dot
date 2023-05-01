@@ -5,7 +5,7 @@
 # # send mails
 
 screen 1
-stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"
+stuff "# mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"
 
 screen 3
 ## prep my_word
@@ -45,3 +45,4 @@ stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'"
 stuff "# compute_old_batch^M"
 stuff "# BATCH=00"
 stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$AREA && mput \$AREA/0\$BATCH? && qui\"^M"
+stuff "# screen ~p 1 -X stuff \"mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M\"^M"

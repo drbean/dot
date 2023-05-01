@@ -48,5 +48,5 @@ stuff "# screen -p 1 -X stuff 'qwe123\^M'^M"
 stuff "# screen -p 1 -X stuff 'tmux at -t \$AREA\^M'^M"
 stuff "# screen -p 1 -X stuff 'tmux new-window\^M ls\^M'^M"
 stuff "# screen -p 1 -X stuff \"rm 0\$old_batch?\^M ls\^M\"^M" 
-stuff "# screen -p 1 -X stuff '../run.sh \$AREA \$BATCH\^M'^M"
+stuff "# screen -p 1 -X stuff \"../run.sh \$AREA \$BATCH\^M\"^M"
 

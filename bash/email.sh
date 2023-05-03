@@ -18,7 +18,7 @@ function dump_cookies ()  {
 function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
 function l () { sed -f address.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {
-    URL=${1:-http://$DEPARTMENT.$SCHOOL.ac.kr}
+    URL=${URL:-${1:-"http://$DEPARTMENT.$SCHOOL.ac.kr"}}
     if ! [[ -f ~/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi

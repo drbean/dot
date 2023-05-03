@@ -1375,15 +1375,15 @@ alias q=exit
 # }
 # 
 
-# greg
-# b') function wcd
-
-# from 'man wcd'
-
-function wcd () {
-    /etc/profile.d/wcd.sh "$@"
-    . ${WCDHOME:-${HOME}}/bin/wcd.go
-}
+## greg
+## b') function wcd
+#
+## from 'man wcd'
+#
+#function wcd () {
+#    /etc/profile.d/wcd.sh "$@"
+#    . ${WCDHOME:-${HOME}}/bin/wcd.go
+#}
 
 # b) function cd_func
 # This function defines a 'cd' replacement function capable of keeping, 

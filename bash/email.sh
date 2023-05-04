@@ -110,7 +110,7 @@ function h () {
             uri=${url#$SCHEME}
             pathinfo=${uri#*$DOMAIN}
             host=${uri%.$DOMAIN$pathinfo}
-            echo -e "\\nGetting faculty page $i of $total from file list:\\n
+            echo -e "\\nGetting faculty page $((i+1)) of $total from file list:\\n
             ${faculty[$i]}↓
         URL=$url↓
 SCHEME=$SCHEME, HOST=$host, DOMAIN=$DOMAIN, PATHINFO=$pathinfo\\n"

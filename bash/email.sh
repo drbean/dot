@@ -189,7 +189,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo
             read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
-        read -p "Enter new URL=$URL " new_url
+        read -p "Enter new URL=$URL > " new_url
         read -p "Commit as URL=${new_url:=$URL}? y/n " commit 
         if [[ $commit =~ ^y ]]
             then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$new_url"

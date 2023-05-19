@@ -19,7 +19,8 @@ stuff "# ln ~/edit/branches/\$SOURCE/$FILE.md ~/edit/gitedit/\$SOURCE/$FILE.md^M
 stuff "# cd ~/edit/gitedit/^M git status"
 
 screen 4
-stuff "/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE \$FILE.docx"
+stuff "# mkdir docx && mv \$FILE.docx docx/^M"
+stuff "/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE docx/\$FILE.docx"
 
 screen 5
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd html && put Diff.html -o \${s}_Diff.html && qui\"^M"

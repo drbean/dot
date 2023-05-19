@@ -427,6 +427,7 @@ function pages () {
     cd ~/curriculum/pages
     TOPIC=$topic \
     STORY=$story \
+    M="$HOME/curriculum/pages/homepage/markdown" \
     screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$story
     cd -
 }

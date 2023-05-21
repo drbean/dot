@@ -6,10 +6,10 @@ screen 2
 stuff "# pandoc -o reference.docx --print-default-data-file reference.docx^M"
 stuff "# svn add reference.docx^M"
 stuff "# svn ci reference.docx -m styles_for_$SOURCE^M"
-stuff "# cp {docx/,their_}$FILE.docx^M"
+stuff "# cp {,their_}$FILE.docx^M"
 stuff "# cp {orig_,}\$FILE.md^M"
 stuff "# pandoc -o orig_\$FILE.md --from=docx+styles --to=markdown-link_attributes --extract-media=./ \$FILE.docx^M"
-stuff "# MINE=my_\$FILE; pandoc -o \$MINE.docx --reference-doc=./docx/\$FILE.docx \$FILE.md "
+stuff "# MINE=my_\$FILE; pandoc -o \$MINE.docx --reference-doc=./\$FILE.docx \$FILE.md "
 stuff "# && /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD /t \$MINE.docx^M"
 stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE \$FILE.docx^M"
 
@@ -19,8 +19,7 @@ stuff "# ln ~/edit/branches/\$SOURCE/$FILE.md ~/edit/gitedit/\$SOURCE/$FILE.md^M
 stuff "# cd ~/edit/gitedit/^M git status"
 
 screen 4
-stuff "# mkdir docx && mv \$FILE.docx docx/^M"
-stuff "/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE docx/\$FILE.docx"
+stuff "/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE \$FILE.docx"
 
 screen 5
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd html && put Diff.html -o \${s}_Diff.html && qui\"^M"

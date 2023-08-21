@@ -7,6 +7,14 @@ fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
+
+AREA=kangwento
+COUNTY=kangwento
+SCHOOL=sangji
+A=$AREA/$COUNTY/$SCHOOL/address.txt
+# URL=
+export AREA COUNTY SCHOOL A URL
+
 export SEMESTER=111
 export WEEK=1
 export LEAGUES="cultureA cultureB BMA0036 GL00018 GL00019 GL00020"

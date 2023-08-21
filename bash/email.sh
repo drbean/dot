@@ -361,19 +361,19 @@ $2"
 
 function premail () {
     OPTIND=1
-    local arg school department url
-    while getopts 's:d:u:' arg
+    local arg area county school department url
+    while getopts 'a:c:s:d:u:' arg
     do
         case ${arg} in
-            s) school=${OPTARG};;
-            d) department=${OPTARG};;
-            u) url=$OPTARG;;
+            a) AREA=${OPTARG:$AREA};;
+            c) COUNTY=${OPTARG:$COUNTY};;
+            s) SCHOOL=${OPTARG:$SCHOOL};;
+            d) DEPARTMENT=${OPTARG};;
+            u) URL=$OPTARG;;
             *) return 1 # illegal option
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${AREA:-kangwento}; COUNTY=${COUNTY:-kangwento}
-    SCHOOL=${school:-kmu}; DEPARTMENT=$department; URL=$url
     A="$HOME/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt" 
     export A AREA COUNTY SCHOOL DEPARTMENT URL
     screen -c /home/$USER/dot/screen/premail.rc -dR premail.$school

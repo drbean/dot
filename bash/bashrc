@@ -30,12 +30,12 @@ export LEAGUES_RE="cultureA|cultureB|MA0036|GL00018|GL00019|GL00020"
 # ibus-daemon -drx
 
 # ingydotnet/git-hub
-source ~/dot/git/git-hub/.rc
+# source ~/dot/git/git-hub/.rc
 ## ingydotnet/git-subrepo
 #source ~/dot/git/git-subrepo/.rc
 
 alias yuchieh="cd ~/yuchieh/ ; edit -s yuchieh -f 'editing_statement_certificate'"
-alias mosh="export LANG=\"en_US.UTF8\" && export LC_CTYPE=\"en_US.UTF8\" && export LC_COLLATE=\"en_US.UTF8\" && export LC_TIME=\"en_US.UTF8\" && export LC_NUMERIC=\"en_US.UTF8\" && export LC_MONETARY=\"en_US.UTF8\" && export LC_MESSAGES=\"en_US.UTF8\" && export LC_ALL=\"en_US.UTF8\" && mosh"
+# alias mosh="export LANG=\"en_US.UTF8\" && export LC_CTYPE=\"en_US.UTF8\" && export LC_COLLATE=\"en_US.UTF8\" && export LC_TIME=\"en_US.UTF8\" && export LC_NUMERIC=\"en_US.UTF8\" && export LC_MONETARY=\"en_US.UTF8\" && export LC_MESSAGES=\"en_US.UTF8\" && export LC_ALL=\"en_US.UTF8\" && mosh"
 alias battery="WMIC PATH Win32_Battery Get EstimatedChargeRemaining"
 alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./\$ROUND"
 alias web="cd; screen -c /home/$USER/dot/screen/web.rc -dR web; cd -"

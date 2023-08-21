@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # addresses on pages
 
@@ -32,24 +32,27 @@ function e () {
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo $url >> cache_url.txt
             echo "# $url" >> $AREA/$COUNTY/$SCHOOL/address.txt
-            dump_cookies > cookies.txt
-            curl -b cookies.txt -c cookies.txt -kL $url |
-                sed -f address.sed | sed -f cleanup.sed |
+            # dump_cookies > cookies.txt
+            # curl -b cookies.txt -c cookies.txt -kL $url |
+            curl -kL $url |
+                # sed -f address.sed | sed -f cleanup.sed |
+                sed -f address.sed |
                     tee -a email.txt
         done
-	< email.txt uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+	# < email.txt uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+	< email.txt uniq >> $AREA/$COUNTY/$SCHOOL/address.txt
         exec 3<&0
         exec 0< /dev/tty
         address_page="n"
         while ! [[ $address_page =~ ^y ]] ; do
             vim $AREA/$COUNTY/$SCHOOL/address.txt ;
-            svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+            cvs diff $AREA/$COUNTY/$SCHOOL/address.txt ;
             echo
             read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
         read -p  "commit with cache_url.txt='$(echo ; cat cache_url.txt)' " commit
         if [[ $commit =~ ^y ]]
-            then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -F cache_url.txt
+            then cvs ci $AREA/$COUNTY/$SCHOOL/address.txt -F cache_url.txt
         fi
         exec 0<&3
     elif [[ $# -le 2 ]]; then
@@ -59,22 +62,25 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             $1↓
         URL=$URL↓\\n
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
-        dump_cookies > cookies.txt
-        curl -b cookies.txt -c cookies.txt -kL $URL |
-            sed -f address.sed | sed -f cleanup.sed | uniq |
-                vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+        # dump_cookies > cookies.txt
+        # curl -b cookies.txt -c cookies.txt -kL $URL |
+        curl -kL $URL |
+            # sed -f address.sed | sed -f cleanup.sed | uniq |
+                # vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+            sed -f address.sed | uniq \
+                >> $AREA/$COUNTY/$SCHOOL/address.txt
                 exec 3<&0
                 exec 0< /dev/tty
         address_page="n"
         while ! [[ $address_page =~ ^y ]] ; do
             vim $AREA/$COUNTY/$SCHOOL/address.txt ;
-            svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+            cvs diff $AREA/$COUNTY/$SCHOOL/address.txt ;
             echo
             read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
         read -p  "Commit as '$URL'? y/n " commit
         if [[ $commit =~ ^y ]]
-            then exec svn ci $AREA/$COUNTY/$SCHOOL/address.txt -q \
+            then exec cvs ci $AREA/$COUNTY/$SCHOOL/address.txt -q \
                 -m "$URL" > /dev/null 2>&1 &
         fi
         exec 0<&3
@@ -93,21 +99,23 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             $1
         PRE_TOP=$PRE_TOP, top_index=$ix, POST_TOP=$POST_TOP\\n
              URL=$PRE_TOP$ix$POST_TOP↓\\n"
-            dump_cookies > cookies.txt
-            curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$ix$POST_TOP |
-                    sed -f address.sed | sed -f cleanup.sed | uniq | tee -a email.txt
+            # dump_cookies > cookies.txt
+            # curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$ix$POST_TOP |
+            curl -kL $PRE_TOP$ix$POST_TOP |
+                    # sed -f address.sed | sed -f cleanup.sed | uniq | tee -a email.txt
+                    sed -f address.sed | uniq | tee -a email.txt
         done
         cat email.txt >> $AREA/$COUNTY/$SCHOOL/address.txt
         address_page="n"
         while ! [[ $address_page =~ ^y ]] ; do
             vim $AREA/$COUNTY/$SCHOOL/address.txt ;
-            svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+            cvs diff $AREA/$COUNTY/$SCHOOL/address.txt ;
             echo
             read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
         read -p  "Commit as \"$PRE_TOP '$TOP_INDEX' $POST_TOP\"? y/n " commit
         if [[ $commit =~ ^y ]]
-            then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$PRE_TOP '$TOP_INDEX' $POST_TOP"
+            then cvs ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$PRE_TOP '$TOP_INDEX' $POST_TOP"
         fi
     fi
 }

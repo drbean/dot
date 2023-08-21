@@ -159,6 +159,22 @@ declare -a roman=(i ii iii iv v vi vii viii ix x)
 source ~/dot/bash/email.sh
 source ~/dot/bash/e.sh
 
+function  tm () {
+    # AREA=kangwento
+    # COUNTY=kangwento
+    # SCHOOL=kduniv
+    # URL=
+    # export AREA COUNTY SCHOOL URL
+
+    f=$1
+    # cd ~/â$f
+    Fun=${f^} ; F=${Fun:0:1}
+    tmux at -t $f || 
+    tmux new-session -A -s $f \
+	-c ~/$f -n setup -P \; \
+	source-file ~/dot/tmux/$f.rc
+}
+
 function ttb () {
     if [[ ! -e ~/ttb ]] ; then
 	svn co http://github.com/drbean/ttb ~/ttb --depth empty

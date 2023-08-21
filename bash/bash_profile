@@ -48,6 +48,7 @@ export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/node_modules/yarn/bin"
 export HISTSIZE=50000
 
 export EDITOR=v
+# export EDITOR="/usr/pkg/bin/vim"
 
 # ibus
 export GTK_IM_MODULE=ibus

@@ -1,4 +1,4 @@
-# Last Edit: 2021 Mar 22,  2:10:29 PM
+# Last Edit: 2023 Aug 24, 12:09:28 PM
 #
 # The ultimate Mutt settings
 #
@@ -420,12 +420,11 @@ set attach_format="%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s] "
 # set imap_pass=""
 # 
 # set folder ="imaps://imap.gmail.com:993"
-set folder ="imaps://imap.mail.yahoo.com:993"
+# set folder ="imaps://imap.mail.yahoo.com:993"
 # set spoolfile="+INBOX"
-set spoolfile="+INBOX"
 # from https://help.yahoo.com/kb/SLN4075.html
-set smtp_url="smtp://beancounterbean@smtp.mail.yahoo.com:465/"
-set smtp_pass=""
+# set smtp_url="smtp://beancounterbean@smtp.mail.yahoo.com:465/"
+# set smtp_pass=""
 # set ssl_starttls=yes
 # set ssl_force_tls=yes
 

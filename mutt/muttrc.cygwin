@@ -1,4 +1,4 @@
-# Last Edit: 2023 Aug 25,  8:21:00 AM
+# Last Edit: 2023 Aug 25,  1:12:38 PM
 #
 # The ultimate Mutt settings
 #
@@ -196,7 +196,7 @@ set folder=~/Mail	# where are the mailboxs (+ and = are shortcuts)
 # set from="drbean@freeshell.org"		# From: address (see send-hook my_hdr From)
 # set from="beancounterbean@yahoo.com"		# From: address (see send-hook my_hdr From)
 # set from="lang@ms.chinmin.edu.tw"		# From: address (see send-hook my_hdr From)
-# set from="greg@momotaro.chinmin.edu.tw"		# From: address (see send-hook my_hdr From)
+set from="drbean@grr.grr.li"		# From: address (see send-hook my_hdr From)
 #reset ispell		# ispell binary (compile time default)
 set mbox=+mbox		# not used if "set move=no"
 set pager=builtin	# internal pager: "builtin" or e.g. "less -e" 

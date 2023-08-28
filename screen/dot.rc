@@ -26,7 +26,7 @@ screen 2
 source vim.rc
 screen 1
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
-stuff "for ext in rc _profile; do cp bash/bash\$ext ~/.bash\$ext; done^M"
+stuff "for x in rc _profile; do cp bash/bash\$x ~/.bash\$x; done^M"
 stuff "# #careful cp bash/history ~/.bash_history^M"
 stuff "# export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# . alternatives.txt^M"

@@ -451,7 +451,10 @@ function pages () {
     cd ~/curriculum/pages
     TOPIC=$topic \
     STORY=$story \
-    M="$HOME/curriculum/pages/homepage/markdown" \
+    M="$HOME/curriculum/pages/homepage/markdown"
+    if [[ ! -f "$M/$STORY" ]]
+    then echo -e "% \n\n\nBack to [$TOPIC]{$TOPIC.html}" > $M/$STORY.html
+    fi
     screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$story
     cd -
 }

@@ -208,6 +208,7 @@ function edit () {
             *) return 1 # illegal option
         esac
     done
+    # svn mkdir ~/edit/branches/$source
     # svn up ~/edit/branches/$source --depth empty
     # svn up ~/edit/branches/$source/$file.md
     # svn up ~/edit/branches/$source/issues.md
@@ -439,22 +440,21 @@ function gftags2ctags () {
 
 function pages () {
     OPTIND=1
-    local arg topic story
+    local arg TOPIC STORY
     while getopts 'c:t:s:o:l:x:' arg
     do
         case ${arg} in
-            t) topic=${OPTARG};;
-            s) story=${OPTARG};;
+            t) TOPIC=${OPTARG};;
+            s) STORY=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     cd ~/curriculum/pages
-    TOPIC=$topic \
-    STORY=$story \
     M="$HOME/curriculum/pages/homepage/markdown"
-    if [[ ! -f "$M/$STORY" ]]
-    then echo -e "% \n\n\nBack to [$TOPIC]{$TOPIC.html}" > $M/$STORY.html
+    if [[ ! -f "$M/$STORY.md" ]]
+    then echo -e "% \n\n\nBack to [$TOPIC]{$TOPIC.html}" > $M/$STORY.md
     fi
+    export TOPIC STORY M
     screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$story
     cd -
 }

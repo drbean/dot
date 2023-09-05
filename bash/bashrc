@@ -115,7 +115,10 @@ function timer () {
 function rec () {
     file=$1
     basename=${file##*/}
-    dirname=${file%/$basename}
+    if [[ $file =~ / ]] ; then
+	dirname=${file%/$basename}
+    else dirname=.
+    fi
     swap=$dirname/.$basename.swp
     echo "dirname: '$dirname', basename: '$basename'"
     diff recover $file

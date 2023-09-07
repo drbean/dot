@@ -1,6 +1,7 @@
 screen 1
 stuff "ls^M"
 stuff "# grep -r ^M"
+stuff "svn diff --diff-cmd $VD"
 
 screen 2
 stuff "# pandoc -o reference.docx --print-default-data-file reference.docx^M"

@@ -35,4 +35,4 @@ stuff "# man pandoc_markdown^M"
 stuff "man pandoc^M"
 
 screen 0
-stuff "v $FILE.md^M"
+stuff "v $FILE.md issues.md^M"

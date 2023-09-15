@@ -204,11 +204,12 @@ function qutebrowser () {
 
 function edit () {
     OPTIND=1
-    local arg source file
-    while getopts 's:f:' arg
+    local arg source repo file
+    while getopts 's:r:f:' arg
     do
         case ${arg} in
             s) source=${OPTARG};;
+            r) repo=${OPTARG};;
             f) file=${OPTARG};;
             *) return 1 # illegal option
         esac
@@ -230,7 +231,7 @@ function edit () {
     #fi
     #cd ~/edit/gitedit/$source
     #git status
-    SOURCE=$source FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR edit.${source#*/}
+    SOURCE=$source REPO=$repo FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR edit.${source#*/}
 }
 
 function emoeco () {

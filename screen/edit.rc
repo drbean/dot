@@ -1,6 +1,7 @@
 screen 1
 stuff "ls^M"
 stuff "# grep -r ^M"
+stuff "cd \$REPO^M"
 stuff "svn diff --diff-cmd $VD"
 
 screen 2
@@ -17,7 +18,7 @@ stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WIN
 stuff "# cygstart media/*^M"
 
 screen 3
-stuff "/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE my_\$FILE.docx"
+stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE my_\$FILE.docx^M"
 stuff "# cygstart \$FILE.docx^M"
 stuff "# cygstart my_\$FILE.docx^M"
 stuff "# cygstart their_\$FILE.docx^M"
@@ -39,4 +40,4 @@ stuff "# man pandoc_markdown^M"
 stuff "man pandoc^M"
 
 screen 0
-stuff "v --cmd 'set spellfile=$SOURCE.utf-8.add' $FILE.md issues.md^M"
+stuff "v --cmd 'set spellfile=spell.en.utf-8.add' \$REPO/{\$FILE,issues}.md^M"

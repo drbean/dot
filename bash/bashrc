@@ -32,7 +32,7 @@ export LEAGUES_RE="cultureA|cultureB|MA0036|GL00018|GL00019|GL00020"
 # ibus-daemon -drx
 
 # ingydotnet/git-hub
-# source ~/dot/git/git-hub/.rc
+source ~/dot/vcs/git-hub/.rc
 ## ingydotnet/git-subrepo
 #source ~/dot/git/git-subrepo/.rc
 

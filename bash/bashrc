@@ -204,13 +204,13 @@ function qutebrowser () {
 
 function edit () {
     OPTIND=1
-    local arg source repo file
+    local arg SOURCE REPO FILE
     while getopts 's:r:f:' arg
     do
         case ${arg} in
-            s) source=${OPTARG};;
-            r) repo=${OPTARG};;
-            f) file=${OPTARG};;
+            s) SOURCE=${OPTARG};;
+            r) REPO=${OPTARG};;
+            f) FILE=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
@@ -218,7 +218,7 @@ function edit () {
     # svn up ~/edit/branches/$source --depth empty
     # svn up ~/edit/branches/$source/$file.md
     # svn up ~/edit/branches/$source/issues.md
-    cd ~/edit/branches/$source
+    cd ~/edit/branches/$SOURCE
     # cd ~/edit/trunk/$source
     #if [[ ! -e ~/edit/gitedit ]] ; then
     #    git clone http://github.com/drbean/edit ~/edit/gitedit
@@ -231,7 +231,9 @@ function edit () {
     #fi
     #cd ~/edit/gitedit/$source
     #git status
-    SOURCE=$source REPO=$repo FILE=$file screen -c /home/$USER/dot/screen/edit.rc -dR edit.${source#*/}
+    REPO=${REPO:-'.'}
+    export SOURCE REPO FILE
+    screen -c /home/$USER/dot/screen/edit.rc -dR edit.${source#*/}
 }
 
 function emoeco () {

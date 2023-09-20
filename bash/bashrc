@@ -233,7 +233,7 @@ function edit () {
     #git status
     REPO=${REPO:-'.'}
     export SOURCE REPO FILE
-    screen -c /home/$USER/dot/screen/edit.rc -dR edit.${source#*/}
+    screen -c /home/$USER/dot/screen/edit.rc -dR ${SOURCE#*/}.edit
 }
 
 function emoeco () {

@@ -5,6 +5,7 @@ stuff "cd \$REPO^M"
 stuff "svn diff --diff-cmd $VD"
 
 screen 2
+stuff "# cd \$REPO^M"
 stuff "# pandoc -o reference.docx --print-default-data-file reference.docx^M"
 stuff "# svn add reference.docx^M"
 stuff "# svn ci reference.docx -m styles_for_$SOURCE^M"

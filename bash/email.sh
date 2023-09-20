@@ -361,7 +361,7 @@ $2"
 
 function premail () {
     OPTIND=1
-    local arg area county school department url
+    local arg AREA COUNTY SCHOOL DEPARTMENT URL
     while getopts 'a:c:s:d:u:' arg
     do
         case ${arg} in

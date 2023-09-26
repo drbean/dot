@@ -464,7 +464,7 @@ function pages () {
 	\n\nBack to [$TOPIC]($TOPIC.html)" > $M/$STORY.md
     fi
     export TOPIC STORY M
-    screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$story
+    screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$STORY
     cd -
 }
 

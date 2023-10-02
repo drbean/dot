@@ -1,4 +1,4 @@
-# Last Edit: 2023 Aug 27, 10:03:38 PM
+# Last Edit: 2023 Oct 02,  6:48:46 PM
 #
 # The ultimate Mutt settings
 #
@@ -210,7 +210,8 @@ set postponed="=z/pp"	# folder for postponed messages
 #set query_command="lbdbq %s"	# query tlr's little brothers database.
 set record="~/Mail/sent"		# Don't save a copy of outgoing messages (Fcc)
 #reset sendmail		# Default-Sendmail with options ("-oem -oi")
-set sendmail="/usr/sbin/sendmail -oem -oi"
+set sendmail="/usr/sbin/ssmtp"
+#set sendmail="/usr/sbin/sendmail -oem -oi"
 # set sendmail="/usr/sbin/exim -oem -oi"
 # not from roland
 # set smtp_url="smtp://greg@mail.nuu.edu.tw"
@@ -427,10 +428,11 @@ set imap_user="j27acebc4225qa@imap.softbank.jp"
 # from https://help.yahoo.com/kb/SLN4075.html
 # set smtp_url="smtp://beancounterbean@smtp.mail.yahoo.com:465/"
 # set smtp_pass=""
-#set smtp_url="smtp://j27acebc4225qa:M013Y017@smtp.softbank.jp:465/"
-#set smtp_pass=""
+# set smtp_url="smtp://j27acebc4225qa@smtp.softbank.jp:465/"
+# set smtp_url="smtp://drbean@mx.sdf.org:587/"
 # set ssl_starttls=yes
 # set ssl_force_tls=yes
+# set smtp_authenticators="login"
 
 #
 # IMAP SSL (only if compiled with --enable-ssl)

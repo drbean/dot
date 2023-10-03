@@ -95,7 +95,7 @@ macro	index	Q	":set quit=yes\nq" "Quit mutt without asking"
 # macro	index	\er	":source /etc/Muttrc\n" "Reload muttrc"
 macro	pager	\er	":source ~/.muttrc\n" "Reload muttrc"
 #bind	index	S	copy-message
-macro	index	'\t'	"<toggle-new><change-folder>-\n" "View other one"
+# macro	index	'\t'	"<toggle-new><change-folder>-\n" "View other one"
 macro	index	\eu	"|uudeview -\n"	"UUdecode Mail(s)"
 bind	index	x	sync-mailbox
 #bind	index	y	print-message

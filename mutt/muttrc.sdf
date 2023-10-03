@@ -1,4 +1,4 @@
-# Last Edit: 2023 Jan 16, 12:36:51 PM
+# Last Edit: 2023 Oct 03,  1:57:15 PM
 #
 # The ultimate Mutt settings
 #
@@ -9,7 +9,7 @@
 #
 
 reset all		# reset all variables to system defaults.
-# unhook *		# remove all hooks
+unhook *		# remove all hooks
 
 
 #
@@ -769,7 +769,9 @@ folder-hook =v 'macro index S <change-folder>~/Mail/z/l<enter><search>vim<enter>
 #
 # only match "To" address for send-hooks:
 #
-set default_hook="~t %s"
+# https://neomutt.org/guide/reference.html#default-hook
+# set default_hook="~f %s !~P | (~P ~C %s)"
+# set default_hook="~t %s"
 
 # # not in Rosenfeld, send-hooks not working when reply
 # reply-hook . 'unmy_hdr cc'
@@ -780,7 +782,11 @@ set default_hook="~t %s"
 # First send-hook
 send-hook . "set attribution='On %{%a, %d %b %Y}, %n wrote:\n' indent_string='> '"
 
-send-hook gmail\\.com 'my_hdr Bcc: counterbean@gmail.com'
+unmy_hdr bcc
+send-hook . 'unmy_hdr bcc'
+send-hook '~t gmail\\.com$' 'my_hdr Bcc: counterbean@gmail.com'
+send2-hook '~t gmail\\.com$' 'my_hdr Bcc: counterbean@gmail.com'
+
 # send-hook penpals-two 'unmy_hdr From' 
 send-hook penpals-two 'my_hdr From: lang-penpals-two@ms.chinmin.edu.tw'
 
@@ -844,8 +850,8 @@ save-hook bug-games-tournament-swiss =sw
 
 fcc-save-hook ^(listproc|listserv|lyris|majordomo|mail2news|sympa|.*request@|.*subscribe@) =z/l
 fcc-save-hook (MAILER-DAEMON) =email
-fcc-save-hook paypal =paypal
-fcc-save-hook (chinte|chintelin) =chinte
+fcc-save-hook (paypal|wise\\.com$) =money
+fcc-save-hook (chinte|chintelin) =prof/chinte
 fcc-save-hook (kk68x7|j27acebc4225qa|koara8|ghm2y|shirokvmayou) =yo
 
 #

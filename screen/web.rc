@@ -1,5 +1,5 @@
 screen 1 lftp sftp://drbean@freeshell.org
-screen 2 mutt
+screen 2 neomutt 2>mess
 screen 3 
 stuff "# FTP_PASSWORD='' PASSPHRASE='' duplicity --exclude /home/drbean/soundfiles --exclude /home/drbean/Downloads /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25"
 stuff "v ~/.muttrc^M"

@@ -5,6 +5,7 @@ stuff "cd \$REPO^M"
 stuff "svn diff --diff-cmd $VD"
 
 screen 2
+stuff "# for o in touch rm ; do $o output/\$FILE.pdf ; done && xelatex --output-directory=output \$FILE.tex && cygstart output/\$FILE.pdf^M"
 stuff "# cd \$REPO^M"
 stuff "# pandoc -o reference.docx --print-default-data-file reference.docx^M"
 stuff "# svn add reference.docx^M"
@@ -28,6 +29,7 @@ screen 4
 stuff "/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE their_\$FILE.docx"
 
 screen 5
+stuff "# s=$SOURCE f=$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$f output/\$f.pdf -o invoice.pdf && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd html && put Diff.html -o \${s}_Diff.html && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$s their_\$f.docx -o their_\$f.docx && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/their_\$f.docx -o their_\$f.docx && qui\"^M"

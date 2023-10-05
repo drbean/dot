@@ -1,4 +1,4 @@
-# Last Edit: 2023 Oct 02,  6:48:46 PM
+# Last Edit: 2023 Oct 05,  4:49:36 PM
 #
 # The ultimate Mutt settings
 #
@@ -196,7 +196,8 @@ set folder=~/Mail	# where are the mailboxs (+ and = are shortcuts)
 # set from="drbean@freeshell.org"		# From: address (see send-hook my_hdr From)
 # set from="beancounterbean@yahoo.com"		# From: address (see send-hook my_hdr From)
 # set from="lang@ms.chinmin.edu.tw"		# From: address (see send-hook my_hdr From)
-set from="drbean@grr.grr.li"		# From: address (see send-hook my_hdr From)
+# set from="drbean@grr.grr.li"		# From: address (see send-hook my_hdr From)
+set from="j27acebc4225qa@i.softbank.jp"		# From: address (see send-hook my_hdr From)
 #reset ispell		# ispell binary (compile time default)
 set mbox=+mbox		# not used if "set move=no"
 set pager=builtin	# internal pager: "builtin" or e.g. "less -e" 
@@ -219,7 +220,8 @@ set sendmail="/usr/sbin/ssmtp"
 reset shell		# Take shell from /etc/passwd 
 # set signature='~/.signature'	# Signature (See send-hook!)
 set signature='fortune ~/dot/mutt/fortunes|'	# Signature (See send-hook!)
-reset spoolfile	# Default spool-file (e.g. /var/spool/mail/user)
+# reset spoolfile	# Default spool-file (e.g. /var/spool/mail/user)
+set spoolfile='/var/spool/mail/$USER'	# Default spool-file (e.g. /var/spool/mail/user)
 #set spoolfile=+mbox	# Maildir incoming file (~/Mail/incoming)
 reset tmpdir		# tmp-Dir (use compile time default)
 # reset visual		# use $VISUAL as builtin editor.
@@ -417,22 +419,26 @@ set attach_format="%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s] "
 # # from https://ubuntuforums.org/showthread.php?t=1197245
 # # https://help.yahoo.com/kb/new-mail-for-desktop/imap-server-settings-yahoo-mail-sln4075.html
 # set imap_user="counterbean@gmail.com"
-set imap_user="j27acebc4225qa@imap.softbank.jp"
+ set imap_user="j27acebc4225qa"
 # sett imap_user="beancounterbean@yahoo.com"
-# set imap_pass=""
-# 
+# set imap_pass="Yoko1117"
+set imap_pass=""
+
+subscribe-to imaps://j27acebc4225qa:ucKmpcu7Qp@imap.softbank.jp
+# subscribe-to imaps://imap.softbank.jp
 # set folder ="imaps://imap.gmail.com:993"
 # set folder ="imaps://imap.mail.yahoo.com:993"
-#set folder= "imaps;//imap.softbank.jp"
-#set spoolfile="+INBOX"
+set folder= "imaps://imap.softbank.jp:993"
+set spoolfile="+INBOX"
 # from https://help.yahoo.com/kb/SLN4075.html
 # set smtp_url="smtp://beancounterbean@smtp.mail.yahoo.com:465/"
-# set smtp_pass=""
-# set smtp_url="smtp://j27acebc4225qa@smtp.softbank.jp:465/"
+set smtp_pass=""
+set smtp_url="smtps://j27acebc4225qa@smtp.softbank.jp:465/"
 # set smtp_url="smtp://drbean@mx.sdf.org:587/"
-# set ssl_starttls=yes
-# set ssl_force_tls=yes
+set ssl_starttls=ask-yes
+set ssl_force_tls=yes
 # set smtp_authenticators="login"
+# set preconnect="ssh -f -q -L 1234:imap.softbank.jp:143 imap.softbank.jp sleep 20 < /dev/null >> mess"
 
 #
 # IMAP SSL (only if compiled with --enable-ssl)

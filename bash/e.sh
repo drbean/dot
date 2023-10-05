@@ -47,7 +47,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo
             read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
-        read -p  "commit with cache_url.txt='$(echo ; cat cache_url.txt)' " commit
+        read -p  "commit with cache_url.txt='$(echo ; cat cache_url.txt)' y/n " commit
         if [[ $commit =~ ^y ]]
             then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -F cache_url.txt
         fi

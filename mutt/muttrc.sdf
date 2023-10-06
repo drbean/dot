@@ -1,4 +1,4 @@
-# Last Edit: 2023 Oct 03,  1:57:15 PM
+# Last Edit: 2023 Oct 06, 10:46:11 PM
 #
 # The ultimate Mutt settings
 #
@@ -784,8 +784,8 @@ send-hook . "set attribution='On %{%a, %d %b %Y}, %n wrote:\n' indent_string='> 
 
 unmy_hdr bcc
 send-hook . 'unmy_hdr bcc'
-send-hook '~t gmail\\.com$' 'my_hdr Bcc: counterbean@gmail.com'
-send2-hook '~t gmail\\.com$' 'my_hdr Bcc: counterbean@gmail.com'
+send-hook '~t gmail\.com$' 'my_hdr Bcc: counterbean@gmail.com'
+send2-hook '~t gmail\.com$' 'my_hdr Bcc: counterbean@gmail.com'
 
 # send-hook penpals-two 'unmy_hdr From' 
 send-hook penpals-two 'my_hdr From: lang-penpals-two@ms.chinmin.edu.tw'
@@ -803,7 +803,7 @@ send-hook ^(listproc|listserv|lyris|majordomo|sympa|pgp|newsupd|gup@|areafix|are
 #
 # Check "To" and "Cc" address for address send hooks:
 #
-set default_hook="~C %s"
+# set default_hook="~C %s"
 
 ###send-hook . 'unmy_hdr From'
 #send-hook . \
@@ -836,7 +836,7 @@ send-hook f418\\.n2435\\.z2\\.fidonet\\.org 'my_hdr X-Flags: C'
 #
 # Match From or To address for save-hooks by default:
 #
-set default_hook="~f %s | ~t %s"
+# set default_hook="~f %s | ~t %s"
 
 save-hook vote|voting|wahlleiter|ballot =vote.gz
 save-hook newsupd|gup@ =gup.gz
@@ -848,10 +848,15 @@ save-hook bug-games-tournament-swiss =sw
 # (don't forget to set default_hook first!)
 #
 
+group -group prof -group tw -rx 'edu\.tw$'
+group -group prof -group kr -rx 'ac\.kr$'
+group -group prof -group jp -rx 'ac\.jp$'
+
+fcc-save-hook '%L prof' '=prof/%u'
 fcc-save-hook ^(listproc|listserv|lyris|majordomo|mail2news|sympa|.*request@|.*subscribe@) =z/l
 fcc-save-hook (MAILER-DAEMON) =email
 fcc-save-hook (paypal|wise\\.com$) =money
-fcc-save-hook (chinte|chintelin) =prof/chinte
+# fcc-save-hook (chinte|chintelin) =prof/chinte
 fcc-save-hook (kk68x7|j27acebc4225qa|koara8|ghm2y|shirokvmayou) =yo
 
 #

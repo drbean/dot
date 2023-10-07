@@ -1,4 +1,4 @@
-# Last Edit: 2023 Oct 07,  9:28:35 AM
+# Last Edit: 2023 Oct 07,  5:53:07 PM
 #
 # The ultimate Mutt settings
 #
@@ -430,6 +430,7 @@ subscribe-to imaps://j27acebc4225qa:ucKmpcu7Qp@imap.softbank.jp
 # set folder ="imaps://imap.mail.yahoo.com:993"
 set folder= "imaps://imap.softbank.jp:993"
 set spoolfile="+INBOX"
+set imap_authenticators="login"
 # from https://help.yahoo.com/kb/SLN4075.html
 # set smtp_url="smtp://beancounterbean@smtp.mail.yahoo.com:465/"
 set smtp_pass=""

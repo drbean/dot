@@ -393,7 +393,7 @@ function email () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-south} COUNTY=${county:-*} \
+    AREA=${area:-eastisland} COUNTY=${county:-*} \
     BATCH=${batch:-$(< $area/batch.txt )} \
     screen -c /home/$USER/dot/screen/email.rc -dR email.${area%/}
     cd -

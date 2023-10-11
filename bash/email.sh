@@ -359,6 +359,7 @@ $2"
     fi
 }
 
+# assemble an address list for a school
 function premail () {
     OPTIND=1
     local arg AREA COUNTY SCHOOL DEPARTMENT URL
@@ -380,6 +381,7 @@ function premail () {
     cd -
 }
 
+# stage email batches from an area
 function email () {
     OPTIND=1
     local arg area county batch
@@ -417,6 +419,7 @@ function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $AREA/$COUNTY/*/a
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $AREA/$COUNTY/*/address.txt ; }
 function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' ${AREA}/$COUNTY/*/address.txt ; }
 
+# cleanup post-batch posting
 function postmail () {
     OPTIND=1
     local arg area county

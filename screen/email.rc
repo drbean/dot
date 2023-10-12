@@ -16,7 +16,7 @@ screen 3
 #stuff "# echo 100 > next^M"
 
 # AREALIST, COUNTYLIST, SCHOOLLIST
-stuff "declare -a AREALIST=(north mid south eastisland pusan kyengsang)^M"
+stuff "declare -a AREALIST=(north mid south eastisland pusan kyengsang kangwento)^M"
 stuff "declare -A COUNTYLIST SCHOOLLIST^M"
 stuff "for a in \${AREALIST[*]} ; do COUNTYLIST[\$a]=\$(ls \$a | sed '/\^[0-9]*$/d ; /\.txt/d' ) ; done^M"
 stuff "for c in \${COUNTYLIST[\$AREA]} ; do SCHOOLLIST[\$c]=\$( ls \$AREA/\$c | sed '/\.txt$/d' | tr '\\n' ' ' ); done^M"

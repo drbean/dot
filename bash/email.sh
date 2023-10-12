@@ -385,7 +385,7 @@ function premail () {
 function email () {
     OPTIND=1
     local arg area county batch
-    while getopts 'a:c:' arg
+    while getopts 'a:c:b:' arg
     do
         case ${arg} in
             a) area=${OPTARG};;
@@ -395,9 +395,9 @@ function email () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-eastisland} COUNTY=${county:-*} \
+    AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}" \
     BATCH=${batch:-$(< $area/batch.txt )} \
-    screen -c /home/$USER/dot/screen/email.rc -dR email.${area%/}
+    screen -c /home/$USER/dot/screen/email.rc -dR email:${area%/}
     cd -
 }
 

@@ -8,11 +8,11 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-AREA=kangwento
-COUNTY=kangwento
+AREA=${AREA:-eastisland}
+COUNTY=${COUNTY:-'*'}
 SCHOOL=sangji
 A=$AREA/$COUNTY/$SCHOOL/address.txt
-# URL=
+URL=
 export AREA COUNTY SCHOOL A URL
 
 export VD=$HOME/dot/vcs/vimdiff

@@ -5,7 +5,7 @@ stuff "cd \$REPO^M"
 stuff "svn diff --diff-cmd $VD"
 
 screen 2
-stuff "# for o in touch rm ; do $o output/\$FILE.pdf ; done && xelatex --output-directory=output \$FILE.tex && cygstart output/\$FILE.pdf^M"
+stuff "# for o in touch rm ; do \$o output/\$FILE.pdf ; done && xelatex --output-directory=output \$FILE.tex && cygstart output/\$FILE.pdf^M"
 stuff "# cd \$REPO^M"
 stuff "# pandoc -o reference.docx --print-default-data-file reference.docx^M"
 stuff "# svn add reference.docx^M"

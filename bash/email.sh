@@ -397,8 +397,13 @@ function email () {
     cd ~/edit/trunk/email || exit 1
     AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}" \
     BATCH=${batch:-$(< $area/batch.txt )} \
-    screen -c /home/$USER/dot/screen/email.rc -dR email:${area%/}
+    screen -c /home/$USER/dot/screen/email.rc -dR email:${AREA%/}
     cd -
+}
+
+function PX {
+    command="$*"
+    screen -p 1 -X stuff "$*^M"
 }
 
 function upped_cache_batch () {

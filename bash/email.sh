@@ -401,6 +401,11 @@ function email () {
     cd -
 }
 
+function UP {
+    file=$1
+    lftp -c "open sftp://drbean@sdf.org && cd job/\$AREA && put $file && qui^
+}
+
 function PX {
     command="$*"
     screen -p 1 -X stuff "$*^M"

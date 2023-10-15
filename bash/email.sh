@@ -396,14 +396,14 @@ function email () {
     done
     cd ~/edit/trunk/email || exit 1
     AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}" \
-    BATCH=${batch:-$(< $area/batch.txt )} \
+    BATCH=${batch:-$(< $HOME/edit/trunk/email/tw/$AREA/batch.txt )} \
     screen -c /home/$USER/dot/screen/email.rc -dR email:${AREA%/}
     cd -
 }
 
 function UP {
     file=$1
-    lftp -c "open sftp://drbean@sdf.org && cd job/\$AREA && put $file && qui^
+    lftp -c "open sftp://drbean@sdf.org && cd job/$AREA && put $file && qui"
 }
 
 function PX {
@@ -411,10 +411,20 @@ function PX {
     screen -p 1 -X stuff "$*^M"
 }
 
-function upped_cache_batch () {
-    BATCH=$(< $AREA/batch.txt )
-    echo BATCH=$(( ++BATCH ))
-    echo $BATCH > $AREA/batch.txt
+function incr_BATCH () {
+    # declare -i BATCH
+    file="$HOME/edit/trunk/email/tw/$AREA/batch.txt"
+    if [[ -f $file ]] 
+    then BATCH=$(< $file )
+    else echo "No batch.txt! BATCH=$BATCH?"; return 1
+    fi
+    case $BATCH in
+        ''|*[!0-9]*) echo "BATCH=$BATCH, not integer"; return 1 ;;
+        *) echo -n "BATCH was $BATCH. Now BATCH="; \
+	    BATCH=$(printf "%02d" $((++BATCH)));
+	    echo $BATCH ;;
+    esac
+    echo $BATCH > $file
 }
 
 function compute_old_batch () {

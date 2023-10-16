@@ -362,10 +362,11 @@ $2"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
-    local arg area county SCHOOL DEPARTMENT URL
-    while getopts 'a:c:s:d:u:' arg
+    local arg LAND area county SCHOOL DEPARTMENT URL
+    while getopts 'l:a:c:s:d:u:' arg
     do
         case ${arg} in
+            l) LAND=${OPTARG};;
             a) area=${OPTARG};;
             c) county=${OPTARG};;
             s) SCHOOL=${OPTARG};;
@@ -376,8 +377,8 @@ function premail () {
     done
     cd ~/edit/trunk/email || exit 1
     AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
-    A="$HOME/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt" 
-    export A AREA COUNTY SCHOOL DEPARTMENT URL
+    A="$HOME/edit/trunk/email/$LAND/$AREA/$COUNTY/$SCHOOL/address.txt"
+    export A LAND AREA COUNTY SCHOOL DEPARTMENT URL
     screen -c /home/$USER/dot/screen/premail.rc -dR premail.$SCHOOL
     cd -
 }
@@ -397,14 +398,15 @@ function email () {
     done
     cd ~/edit/trunk/email || exit 1
     AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}" \
-    BATCH=${batch:-$(< $HOME/edit/trunk/email/tw/$AREA/batch.txt )} \
-    screen -c /home/$USER/dot/screen/email.rc -dR email:${AREA%/}
+        BATCH=${batch:-$(< $HOME/edit/trunk/email/tw/$AREA/batch.txt )} \
+        screen -c /home/$USER/dot/screen/email.rc -dR email:${AREA%/}
     cd -
 }
 
 function UP {
     file=$1
-    lftp -c "open sftp://drbean@sdf.org && cd job/$AREA && put $file && qui"
+    lftp -c "open sftp://drbean@sdf.org && cd job/$AREA && \
+        mput tw/$AREA/$file && qui"
 }
 
 function PX {
@@ -443,15 +445,17 @@ function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' ${AREA}/$COUNTY/*/a
 # cleanup post-batch posting
 function postmail () {
     OPTIND=1
-    local arg area county
+    local arg land area county
     while getopts 'a:c:' arg
     do
         case ${arg} in
+            l) land=${OPTARG};;
             a) area=${OPTARG};;
             c) county=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-midsouth} COUNTY=${county:-*} screen -c /home/$USER/dot/screen/postmail.rc -dR postmail.${area%/}
+    LAND=${land:-$LAND} AREA=${area:-$AREA} COUNTY=${county:-$COUNTY} \
+        screen -c /home/$USER/dot/screen/postmail.rc -dR postmail:${area%/}
 }

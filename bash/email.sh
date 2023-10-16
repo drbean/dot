@@ -362,22 +362,23 @@ $2"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
-    local arg AREA COUNTY SCHOOL DEPARTMENT URL
+    local arg area county SCHOOL DEPARTMENT URL
     while getopts 'a:c:s:d:u:' arg
     do
         case ${arg} in
-            a) AREA=${OPTARG:$AREA};;
-            c) COUNTY=${OPTARG:$COUNTY};;
-            s) SCHOOL=${OPTARG:$SCHOOL};;
+            a) area=${OPTARG};;
+            c) county=${OPTARG};;
+            s) SCHOOL=${OPTARG};;
             d) DEPARTMENT=${OPTARG};;
             u) URL=$OPTARG;;
             *) return 1 # illegal option
         esac
     done
     cd ~/edit/trunk/email || exit 1
+    AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
     A="$HOME/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt" 
     export A AREA COUNTY SCHOOL DEPARTMENT URL
-    screen -c /home/$USER/dot/screen/premail.rc -dR premail.$school
+    screen -c /home/$USER/dot/screen/premail.rc -dR premail.$SCHOOL
     cd -
 }
 

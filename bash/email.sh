@@ -19,7 +19,7 @@ function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
 function l () { sed -f address.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {
     URL=${URL:-${1:-"http://$DEPARTMENT.$SCHOOL.ac.kr"}}
-    if ! [[ -f ~/edit/trunk/email/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
+    if ! [[ -f ~/edit/trunk/email/$LAND/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
     if ! [[ -t 0 ]] ; then
@@ -28,8 +28,8 @@ function a () {
         total=${#faculty[*]}
         for (( i=0; i<$total; i++ )); do
             URL=${faculty[$i]}
-            echo >> $AREA/$COUNTY/$SCHOOL/address.txt
-            echo "# $URL">> $AREA/$COUNTY/$SCHOOL/address.txt ;
+            echo >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
+            echo "# $URL">> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
             if (( $i==$total-1 )) ; then echo -e "\\nLAST FACULTY PAGE!!" ; fi
             echo -e "\\nPreparing faculty listing $((i+1))th of $total from file pages:\\n
             $URL\\n"
@@ -39,17 +39,17 @@ function a () {
             read -p "list $((i+1)).${roman[$j]} at $URL ready? y/n " next_list
             while [[ $next_list =~ ^y ]] ; do
                     echo "$(</dev/clipboard)" | sed -f address.sed | uniq | vipe \
-                            >> $AREA/$COUNTY/$SCHOOL/address.txt
+                            >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
                     address_page="n"
                     while ! [[ $address_page =~ ^y ]] ; do
-                        vim $AREA/$COUNTY/$SCHOOL/address.txt ;
-                        svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+                        vim $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+                        svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
                         echo
-                        read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+                        read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
                     done
                     read -p "Commit as URL=${faculty[$i]}? y/n " commit
                     if [[ $commit =~ ^y ]]
-                        then exec svn ci $AREA/$COUNTY/$SCHOOL/address.txt -q \
+                        then exec svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -q \
                             -m "$URL" > /dev/null 2>&1 &
     fi
                     read -p "Another list, $((i+1)).${roman[$((++j))]} ready at ${faculty[$i]}? y/n " next_list
@@ -59,25 +59,25 @@ else
     next_list=y
 while [[ $next_list =~ ^y ]] ; do
     echo "$(</dev/clipboard)" | sed -f address.sed | uniq | vipe > email.txt
-    echo >> $AREA/$COUNTY/$SCHOOL/address.txt
-    read -p "Enter title, real URL=$URL " new_url
-    echo "# ${new_url:=$URL}" | tr -d "\\n" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
+    echo >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
+    read -p "Enter title, or accept real URL=$URL " new_url
+    echo "# ${new_url:=$URL}" | tr -d "\\n" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
     echo \
          " Now new_url='$new_url',
          URL='$URL',
 new_url:=URL=${new_url:=$URL}"
-    echo >> $AREA/$COUNTY/$SCHOOL/address.txt
-    cat email.txt >> $AREA/$COUNTY/$SCHOOL/address.txt
+    echo >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
+    cat email.txt >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
-        vim $AREA/$COUNTY/$SCHOOL/address.txt ;
-        svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+        vim $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+        svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
         echo
-        read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+        read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
     read -p "Commit as URL=$new_url? y/n " commit 
     if [[ $commit =~ ^y ]]
-        then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$new_url"
+        then svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -m "$new_url"
     fi
     read -p "Next list ready? y/n " next_list
 done
@@ -358,6 +358,7 @@ $2? y/n "
 $2"
     fi
 }
+alias P="premail -l kr -a kangwento -c kangwento -s halla -u http://www.halla.ac.kr"
 
 # assemble an address list for a school
 function premail () {
@@ -383,13 +384,15 @@ function premail () {
     cd -
 }
 
+alias E="email -l tw -a eastisland -c '*'"
 # stage email batches from an area
 function email () {
     OPTIND=1
-    local arg area county batch
-    while getopts 'a:c:b:' arg
+    local arg land area county batch
+    while getopts 'l:a:c:b:' arg
     do
         case ${arg} in
+            l) land=${OPTARG};;
             a) area=${OPTARG};;
             c) county=${OPTARG};;
             b) batch=${OPTARG};;
@@ -397,9 +400,9 @@ function email () {
         esac
     done
     cd ~/edit/trunk/email || exit 1
-    AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}" \
-        BATCH=${batch:-$(< $HOME/edit/trunk/email/tw/$AREA/batch.txt )} \
-        screen -c /home/$USER/dot/screen/email.rc -dR email:${AREA%/}
+    export LAND=${land:-$LAND} AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
+    export BATCH=${batch:-$(< $HOME/edit/trunk/email/$LAND/old/$AREA/batch.txt )}
+    screen -c /home/$USER/dot/screen/email.rc -dR email:${AREA%/}
     cd -
 }
 
@@ -414,25 +417,42 @@ function PX {
     screen -p 1 -X stuff "$*^M"
 }
 
-function incr_BATCH () {
+function create_BATCH () {
+    batch=$1
+    file="$HOME/edit/trunk/email/tw/$AREA/batch.txt"
+    echo $batch 1>$file
+}
+
+function read_BATCH () {
     # declare -i BATCH
     file="$HOME/edit/trunk/email/tw/$AREA/batch.txt"
     if [[ -f $file ]] 
     then BATCH=$(< $file )
     else echo "No batch.txt! BATCH=$BATCH?"; return 1
     fi
+    echo $BATCH
+}
+
+function update_BATCH () {
+    file="$HOME/edit/trunk/email/tw/$AREA/batch.txt"
+    echo $BATCH 1>$file
+
+}
+function incr_BATCH () {
+    BATCH=$(read_BATCH)
     case $BATCH in
         ''|*[!0-9]*) echo "BATCH=$BATCH, not integer"; return 1 ;;
         *) echo -n "BATCH was $BATCH. Now BATCH="; \
-	    BATCH=$(printf "%02d" $((++BATCH)));
+	    export BATCH=$(printf "%02d" $((++BATCH)));
 	    echo $BATCH ;;
     esac
-    echo $BATCH > $file
+    update_BATCH
 }
 
-function compute_old_batch () {
-        export old_batch=$(( BATCH - 1 ))
-        echo old_batch=$old_batch
+function decr_BATCH () {
+    BATCH=$(read_BATCH)
+    export old_batch=$(( BATCH - 1 ))
+    echo -n $(printf "%02d" $old_batch)
 }
 
 function old_address () { sed -E 's/^([^#]+)#.*$/\1/' ; } 

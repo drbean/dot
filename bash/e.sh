@@ -22,7 +22,7 @@ function e () {
         rm cache_url.txt
         total=${#faculty[*]}
         rm email.txt
-        echo >> $AREA/$COUNTY/$SCHOOL/address.txt
+        echo >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
         for (( i=0; i<$total; i++ )); do
             if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
             url=${faculty[$i]}
@@ -31,30 +31,30 @@ function e () {
         URL=$url↓
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo $url >> cache_url.txt
-            echo "# $url" >> $AREA/$COUNTY/$SCHOOL/address.txt
+            echo "# $url" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $url |
                 sed -f address.sed | sed -f cleanup.sed |
                     tee -a email.txt
         done
-	< email.txt uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+	< email.txt uniq | vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
         exec 3<&0
         exec 0< /dev/tty
         address_page="n"
         while ! [[ $address_page =~ ^y ]] ; do
-            vim $AREA/$COUNTY/$SCHOOL/address.txt ;
-            svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+            vim $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+            svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
             echo
-            read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+            read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
         read -p  "commit with cache_url.txt='$(echo ; cat cache_url.txt)' y/n " commit
         if [[ $commit =~ ^y ]]
-            then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -F cache_url.txt
+            then svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -F cache_url.txt
         fi
         exec 0<&3
     elif [[ $# -le 2 ]]; then
         if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
-        echo -e "\\n# $URL" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
+        echo -e "\\n# $URL" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
         echo -e "\\nGetting prof address page from \$1:\\n
             $1↓
         URL=$URL↓\\n
@@ -62,19 +62,19 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         dump_cookies > cookies.txt
         curl -b cookies.txt -c cookies.txt -kL $URL |
             sed -f address.sed | sed -f cleanup.sed | uniq |
-                vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+                vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
                 exec 3<&0
                 exec 0< /dev/tty
         address_page="n"
         while ! [[ $address_page =~ ^y ]] ; do
-            vim $AREA/$COUNTY/$SCHOOL/address.txt ;
-            svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+            vim $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+            svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
             echo
-            read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+            read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
         read -p  "Commit as '$URL'? y/n " commit
         if [[ $commit =~ ^y ]]
-            then exec svn ci $AREA/$COUNTY/$SCHOOL/address.txt -q \
+            then exec svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -q \
                 -m "$URL" > /dev/null 2>&1 &
         fi
         exec 0<&3
@@ -84,7 +84,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         IFS=' ' read -a top_index <<< $(eval echo "$TOP_INDEX")
         POST_TOP=${URL#$PRE_TOP${top_index[0]}}
         if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; else DEPARTMENT=$HOST ; fi
-        echo -e "\\n# $PRE_TOP '$TOP_INDEX' $POST_TOP" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
+        echo -e "\\n# $PRE_TOP '$TOP_INDEX' $POST_TOP" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
         declare -i n=0
         total=${#top_index[@]}
         rm email.txt
@@ -97,17 +97,17 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$ix$POST_TOP |
                     sed -f address.sed | sed -f cleanup.sed | uniq | tee -a email.txt
         done
-        cat email.txt >> $AREA/$COUNTY/$SCHOOL/address.txt
+        cat email.txt >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
         address_page="n"
         while ! [[ $address_page =~ ^y ]] ; do
-            vim $AREA/$COUNTY/$SCHOOL/address.txt ;
-            svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+            vim $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+            svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
             echo
-            read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+            read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
         read -p  "Commit as \"$PRE_TOP '$TOP_INDEX' $POST_TOP\"? y/n " commit
         if [[ $commit =~ ^y ]]
-            then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$PRE_TOP '$TOP_INDEX' $POST_TOP"
+            then svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -m "$PRE_TOP '$TOP_INDEX' $POST_TOP"
         fi
     fi
 }

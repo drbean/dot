@@ -1,4 +1,4 @@
-" Last Edit: 2023 Sep 12,  7:44:56 AM
+" Last Edit: 2023 Oct 17,  5:40:47 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -889,7 +889,7 @@ au BufEnter /tmp/*,address.txt nn <buffer> <LocalLeader>f /^\(^# http:\/\/\)\?.*
 au BufEnter address.txt no <buffer> <LocalLeader>v :'<,'>v/@/d<CR>
 au BufEnter address.txt no <buffer> <LocalLeader>s :'<,'>! sort \| uniq<CR>
 au BufEnter address.txt no <buffer> <LocalLeader>e :'<,'>s/[^-._0-9A-Za-z@].*$//<CR>
-au BufEnter address.txt no <buffer> <LocalLeader>m :'<,'>s///<CR>
+au BufEnter *.txt,*.html,/tmp/* no <buffer> <LocalLeader>M :%s///<CR>
 au BufEnter *.html,/tmp/* no <buffer> <LocalLeader>s :%! sort <Bar> uniq<CR>
 au BufEnter *.txt,*.html,/tmp/* no <buffer> <LocalLeader>q :%! uniq<CR>
 au BufEnter /tmp/*,*.html no <buffer> <LocalLeader>h

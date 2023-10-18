@@ -358,7 +358,7 @@ $2? y/n "
 $2"
     fi
 }
-alias P="premail -l kr -a kangwento -c kangwento -s halla -u http://www.halla.ac.kr"
+alias P="premail -l kr -a kangwento -c kangwento -s hallym -u http://www.hallym.ac.kr"
 
 # assemble an address list for a school
 function premail () {
@@ -384,7 +384,7 @@ function premail () {
     cd -
 }
 
-alias E="email -l tw -a eastisland -c '*'"
+alias E="email -l kr -a east -c '*'"
 # stage email batches from an area
 function email () {
     OPTIND=1
@@ -456,11 +456,11 @@ function decr_BATCH () {
 }
 
 function old_address () { sed -E 's/^([^#]+)#.*$/\1/' ; } 
-function eol_space () { sed -i.BAK -e 's/\s*$//' $AREA/*/*/address.txt ; }
-function wrong_char () { sed -e '/^#/d' $AREA/$COUNTY/*/address.txt | grep -r -P '[^-_.a-zA-Z0-9@]' - ; }
-function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $AREA/$COUNTY/*/address.txt ; }
-function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $AREA/$COUNTY/*/address.txt ; }
-function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' ${AREA}/$COUNTY/*/address.txt ; }
+function line_ends_space () { sed -i.BAK -e 's/^\s*//' -e 's/\s*$//' $LAND/$AREA/*/*/address.txt ; }
+function wrong_char () { sed -e '/^#/d' $LAND/$AREA/$COUNTY/*/address.txt | grep -r -P '[^-_.a-zA-Z0-9@]' - ; }
+function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUNTY/*/address.txt ; }
+function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
+function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
 
 # cleanup post-batch posting
 function postmail () {

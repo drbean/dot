@@ -409,7 +409,7 @@ function email () {
 function UP {
     file=$1
     lftp -c "open sftp://drbean@sdf.org && cd job/$AREA && \
-        mput tw/$AREA/$file && qui"
+        mput $LAND/$AREA/$file && qui"
 }
 
 function PX {
@@ -419,13 +419,13 @@ function PX {
 
 function create_BATCH () {
     batch=$1
-    file="$HOME/edit/trunk/email/tw/$AREA/batch.txt"
+    file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
     echo $batch 1>$file
 }
 
 function read_BATCH () {
     # declare -i BATCH
-    file="$HOME/edit/trunk/email/tw/$AREA/batch.txt"
+    file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
     if [[ -f $file ]] 
     then BATCH=$(< $file )
     else echo "No batch.txt! BATCH=$BATCH?"; return 1
@@ -434,7 +434,7 @@ function read_BATCH () {
 }
 
 function update_BATCH () {
-    file="$HOME/edit/trunk/email/tw/$AREA/batch.txt"
+    file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
     echo $BATCH 1>$file
 
 }

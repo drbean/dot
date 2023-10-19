@@ -1,5 +1,5 @@
 screen 1
-stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"
+stuff "mosh drbean@sdf.org^M"
 
 screen 4
 stuff "rlwrap remove_email.sh^M"

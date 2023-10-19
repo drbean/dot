@@ -101,7 +101,7 @@ function h () {
         URI=${TOP#$SCHEME}
         HOST=${URI%.$DOMAIN*}
         if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
-        echo -e "\\n# $TOP" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
+        echo -e "\\n# $TOP" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
         mv {,orig_}prof_page.html
         total=${#faculty[*]}
         for (( i=0; i<$total; i++ )); do
@@ -129,28 +129,28 @@ SCHEME=$SCHEME, HOST=$host, DOMAIN=$DOMAIN, PATHINFO=$pathinfo\\n"
                 rm email.txt
                 dump_cookies > cookies.txt
                 declare -i i=0
-                echo >> $AREA/$COUNTY/$SCHOOL/address.txt
+                echo >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
                 while read p ; do
                     echo -e "\\n\\nReading page $((++i)) from prof_page.html\\n\\t\\t$p\\n"
                     echo $p >> cache_url.txt
-                    echo "# $p" >> $AREA/$COUNTY/$SCHOOL/address.txt
+                    echo "# $p" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
                     curl -b cookies.txt -c cookies.txt -kL "${p%$'\r'}" |
                         sed -f address.sed | tee -a email.txt
                 done < prof_page.html
             fi
         done
         if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; else DEPARTMENT=$HOST ; fi
-        cat email.txt | uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+        cat email.txt | uniq | vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
         address_page="n"
         while ! [[ $address_page =~ ^y ]] ; do
-            vim $AREA/$COUNTY/$SCHOOL/address.txt
-            svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+            vim $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
+            svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
             echo
-            read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+            read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
         read -p  "Commit as '$URL'? y/n " commit
         if [[ $commit =~ ^y ]]
-            then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -f cache_url.txt
+            then svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -f cache_url.txt
         fi
         exec 0<&3
     elif [[ $# -le 3 ]]; then
@@ -180,19 +180,19 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             fi
         done
         if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; else DEPARTMENT=$HOST ; fi
-        echo -e "\\n# $URL" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
-        cat email.txt | uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+        echo -e "\\n# $URL" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+        cat email.txt | uniq | vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
         address_page="n"
         while ! [[ $address_page =~ ^y ]] ; do
-            vim $AREA/$COUNTY/$SCHOOL/address.txt
-            svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+            vim $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
+            svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
             echo
-            read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+            read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
         read -p "Enter new URL=$URL > " new_url
         read -p "Commit as URL=${new_url:=$URL}? y/n " commit 
         if [[ $commit =~ ^y ]]
-            then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "$new_url"
+            then svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -m "$new_url"
         fi
         exec 0<&3
     elif [[ $# -le 4 ]]; then
@@ -221,17 +221,17 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         done
         exec 3>&-
         if [[ $# -eq 5 ]]; then DEPARTMENT=$5 ; else DEPARTMENT=$HOST ; fi
-        echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $AREA/$COUNTY/$SCHOOL/address.txt ;
-        cat email.txt | uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+        echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+        cat email.txt | uniq | vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
         address_page="n"
         while ! [[ $address_page =~ ^y ]] ; do
-            svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+            svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
             echo
-            read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+            read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
         done
         read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
         if [[ $commit =~ ^y ]]
-            then svn ci $AREA/$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
+            then svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
         fi
     fi
 }
@@ -261,16 +261,16 @@ function p () {
     done < email_page.html > email.txt
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
-    cat email.txt | uniq | vipe >> $AREA/$COUNTY/$SCHOOL/address.txt
+    cat email.txt | uniq | vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do
-        svn diff $AREA/$COUNTY/$SCHOOL/address.txt ;
+        svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
         echo
-        read -p "$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+        read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
     done
     read -p  "Commit as 'http://$DEPARTMENT.$SCHOOL.ac.kr'? y/n " commit
     if [[ $commit =~ ^y ]]
-        then svn ci $AREA/$COUNTY/$SCHOOL -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
+        then svn ci $LAND/$LAND/$AREA/$COUNTY/$SCHOOL -m "http://$DEPARTMENT.$SCHOOL.ac.kr"
     fi
 }
 
@@ -310,19 +310,19 @@ function prof_remove () {
         return 2
     fi
     AREA=${AREA%/}
-    address=$(grep -l "^$1" $AREA/*/*/address.txt)
+    address=$(grep -l "^$1" $LAND/$AREA/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1\)\(\s\|$\)/# \1/"
-    svn diff $AREA/*/*/address.txt;
+    svn diff $LAND/$AREA/*/*/address.txt;
     echo -ne "\nCommit? y/n "
     read proceed
     if [[ $proceed =~ ^y ]]
-        then svn ci $AREA/*/*/address.txt -m "$1: User unknown"
+        then svn ci $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
     fi
 }
 
 alias pf='prof_find'
 function prof_find () {
-    address_list=$(eval echo $AREA/*/*/address.txt)
+    address_list=$(eval echo $LAND/$AREA/*/*/address.txt)
     address=$1
     file=$(grep -l "$address" $address_list)
     v $file +/$address
@@ -334,11 +334,11 @@ function prof_edit () {
         return 2
     fi
     AREA=${AREA%/}
-    address=$(grep -l "^$1" $AREA/*/*/address.txt)
+    address=$(grep -l "^$1" $LAND/$AREA/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1\)\(\s\|$\)/$2 # \1/"
     sed -i.BAK -e "$ a\
         $2" requeue
-    svn diff $AREA/*/*/address.txt requeue
+    svn diff $LAND/$AREA/*/*/address.txt requeue
     echo -ne "\nTry \"$2\" again? y/n "
     read send
     if [[ $send =~ ^y ]]
@@ -347,18 +347,18 @@ function prof_edit () {
         echo "Sending to $2 via send.sh on sdf."
         svn revert requeue
     fi
-    svn st $AREA | sed -e '/^M/!d'
+    svn st $LAND/$AREA | sed -e '/^M/!d'
     echo -ne "\nCommit with message:
 $1: Edited
 $2? y/n "
     read commit
     if [[ $commit =~ ^y ]]
-        then svn ci $AREA/*/*/address.txt requeue \
+        then svn ci $LAND/$AREA/*/*/address.txt requeue \
            -m "$1: Edited
 $2"
     fi
 }
-alias P="premail -l kr -a kangwento -c kangwento -s hallym -u http://www.hallym.ac.kr"
+# alias P="premail -l kr -a kangwento -c kangwento -s hallym -u http://www.hallym.ac.kr"
 
 # assemble an address list for a school
 function premail () {
@@ -462,11 +462,12 @@ function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUN
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
 
+alias P="postmail -l tw -a eastisland -c '*'"
 # cleanup post-batch posting
 function postmail () {
     OPTIND=1
     local arg land area county
-    while getopts 'a:c:' arg
+    while getopts 'l:a:c:' arg
     do
         case ${arg} in
             l) land=${OPTARG};;

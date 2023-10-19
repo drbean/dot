@@ -5,7 +5,7 @@ screen 4
 stuff "rlwrap remove_email.sh^M"
 
 screen 3
-stuff "# START=000; END=000; svn rm \^/trunk/email/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$END $(date)\"; done^M"
+stuff "# START=000; END=000; svn rm \^/trunk/email/\$LAND/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$END $(date)\"; done^M"
 stuff "pf "
 
 screen 0

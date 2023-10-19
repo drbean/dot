@@ -401,7 +401,7 @@ function email () {
     done
     cd ~/edit/trunk/email || exit 1
     export LAND=${land:-$LAND} AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
-    export BATCH=${batch:-$(< $HOME/edit/trunk/email/$LAND/old/$AREA/batch.txt )}
+    export BATCH=${batch:-$(< $HOME/edit/trunk/email/$LAND/$AREA/batch.txt )}
     screen -c /home/$USER/dot/screen/email.rc -dR email:${AREA%/}
     cd -
 }

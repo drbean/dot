@@ -443,7 +443,7 @@ function incr_BATCH () {
     case $BATCH in
         ''|*[!0-9]*) echo "BATCH=$BATCH, not integer"; return 1 ;;
         *) echo -n "BATCH was $BATCH. Now BATCH="; \
-	    export BATCH=$(printf "%02d" $((++BATCH)));
+	    export BATCH=$(printf "%03d" $((++BATCH)));
 	    echo $BATCH ;;
     esac
     update_BATCH
@@ -452,7 +452,7 @@ function incr_BATCH () {
 function decr_BATCH () {
     BATCH=$(read_BATCH)
     export old_batch=$(( BATCH - 1 ))
-    echo -n $(printf "%02d" $old_batch)
+    echo -n $(printf "%03d" $old_batch)
 }
 
 function old_address () { sed -E 's/^([^#]+)#.*$/\1/' ; } 

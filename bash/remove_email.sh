@@ -27,10 +27,13 @@ elif [[ ${#p[@]} -eq 2 ]]; then
 $good"
 elif [[ ${#p[@]} -eq 1 ]]; then
     sed -i.BAK -e "s/^\($bad\)\(\s\|$\)/# \1/" $school 2>mess
-    if [[ $(<mess) == "sed: no input files" ]]
-    then exit 1 ; fi
-    svn diff $address_list;
-    svn ci $address_list -m "$bad: User unknown"
+    mess=$(<mess)
+    if [[ $mess == "sed: no input files" ]]
+    then echo $mess
+    else
+        svn diff $address_list;
+        svn ci $address_list -m "$bad: User unknown"
+    fi
 else
     echo "No args: \"${#p[@]}: ${p[@]}\""  >&2
 fi

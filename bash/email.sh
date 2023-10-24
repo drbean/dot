@@ -358,8 +358,8 @@ $2? y/n "
 $2"
     fi
 }
-# alias P="premail -l kr -a kangwento -c kangwento -s hallym -u http://www.hallym.ac.kr"
 
+alias Pr="premail -l kr -a west -c kwangcwu -s jnu -u http://www.hallym.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
@@ -401,7 +401,8 @@ function email () {
     done
     cd ~/edit/trunk/email || exit 1
     export LAND=${land:-$LAND} AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
-    export BATCH=${batch:-$(< $HOME/edit/trunk/email/$LAND/$AREA/batch.txt )}
+    cache_batch=$(read_BATCH)
+    export BATCH=${batch:-$cache_batch}
     screen -c /home/$USER/dot/screen/email.rc -dR email:${AREA%/}
     cd -
 }
@@ -417,17 +418,21 @@ function PX {
     screen -p 1 -X stuff "$*^M"
 }
 
-function create_BATCH () {
-    batch=$1
-    file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
-    echo $batch 1>$file
+function write_BATCH () {
+    new_batch=$1
+    case $new_batch in
+        ''|*[!0-9]*) echo "BATCH=$new_batch, not integer"; return 1 ;;
+        *) bare_batch=${new_batch##*0}
+            file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
+            echo $bare_batch 1>$file ;;
+    esac
 }
 
 function read_BATCH () {
     # declare -i BATCH
     file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
     if [[ -f $file ]] 
-    then BATCH=$(< $file )
+    then BATCH=$(printf "%03d" $(< $file ))
     else echo "No batch.txt! BATCH=$BATCH?"; return 1
     fi
     echo $BATCH
@@ -435,16 +440,19 @@ function read_BATCH () {
 
 function update_BATCH () {
     file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
-    echo $BATCH 1>$file
+    echo ${BATCH##*0} 1>$file
 
 }
 function incr_BATCH () {
-    BATCH=$(read_BATCH)
-    case $BATCH in
-        ''|*[!0-9]*) echo "BATCH=$BATCH, not integer"; return 1 ;;
-        *) echo -n "BATCH was $BATCH. Now BATCH="; \
-	    export BATCH=$(printf "%03d" $((++BATCH)));
-	    echo $BATCH ;;
+    cache_batch=$(read_BATCH)
+    case $cache_batch in
+        ''|*[!0-9]*) echo "BATCH=$cache_batch, not integer"; return 1 ;;
+        *) echo -n "BATCH was "
+            bare_batch=${cache_batch##*0}
+            padded=$(printf "%03d" $bare_batch)
+            echo -n "$padded. Now BATCH="
+            export BATCH=$(printf "%03d" $((++bare_batch)))
+            echo $BATCH ;;
     esac
     update_BATCH
 }
@@ -462,7 +470,7 @@ function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUN
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
 
-alias P="postmail -l tw -a eastisland -c '*'"
+alias Po="postmail -l kr -a east -c '*'"
 # cleanup post-batch posting
 function postmail () {
     OPTIND=1

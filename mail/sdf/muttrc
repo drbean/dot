@@ -1,4 +1,4 @@
-# Last Edit: 2023 Oct 06, 10:46:11 PM
+# Last Edit: 2023 Oct 28,  6:01:11 PM
 #
 # The ultimate Mutt settings
 #
@@ -852,7 +852,11 @@ group -group prof -group tw -rx 'edu\.tw$'
 group -group prof -group kr -rx 'ac\.kr$'
 group -group prof -group jp -rx 'ac\.jp$'
 
-fcc-save-hook '%L prof' '=prof/%u'
+save-hook '%L prof' '=prof/%u'
+# fcc-hook '%L prof' '=prof/%-6@name@'
+index-format-hook name "%C prof" "--%v" 
+index-format-hook name "~A" $record
+
 fcc-save-hook ^(listproc|listserv|lyris|majordomo|mail2news|sympa|.*request@|.*subscribe@) =z/l
 fcc-save-hook (MAILER-DAEMON) =email
 fcc-save-hook (paypal|wise\\.com$) =money
@@ -890,8 +894,10 @@ charset-hook windows-1258 CP1258
 #folder-hook . set sort=threads
 #folder-hook "!" set sort=date-received
 
-folder-hook . set sort=threads
-folder-hook "=z/pp" set sort=reverse-date
+folder-hook . set sort=threads record=$record
+# folder-hook "=z/pp" set sort=reverse-date
+folder-hook $postponed set sort=reverse-date
+folder-hook "=prof\/" set record=^
 
 #
 # pUsh

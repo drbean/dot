@@ -359,7 +359,7 @@ $2"
     fi
 }
 
-alias Pr="premail -l kr -a west -c kwangcwu -s jnu -u http://www.hallym.ac.kr"
+alias Pr="premail -l kr -a west -c kwangcwu -s chosun -u http://www.chosun.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
@@ -403,6 +403,7 @@ function email () {
     export LAND=${land:-$LAND} AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
     cache_batch=$(read_BATCH)
     export BATCH=${batch:-$cache_batch}
+    export LA=$LAND/$AREA/
     screen -c /home/$USER/dot/screen/email.rc -dR email:${AREA%/}
     cd -
 }
@@ -459,8 +460,24 @@ function incr_BATCH () {
 
 function decr_BATCH () {
     BATCH=$(read_BATCH)
-    export old_batch=$(( BATCH - 1 ))
+    export old_batch=$(( $(< $LAND/$AREA/batch.txt) -1  ))
     echo -n $(printf "%03d" $old_batch)
+}
+
+function sign_in () {
+    PX mosh drbean@sdf.org
+    read -p "Bird is the word? " word
+}
+
+function run_next_batch () {
+    PX $word
+    PX cd ~/job/$AREA && tmux new-session -A -s $AREA
+    # PX rm $BATCH?
+    # incr_BATCH
+    # UP $BATCH?
+    # PX tmux new-window -n $BATCH
+    # PX ls
+    # PX ../run.sh $AREA $BATCH
 }
 
 function old_address () { sed -E 's/^([^#]+)#.*$/\1/' ; } 

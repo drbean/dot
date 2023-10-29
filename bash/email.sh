@@ -464,20 +464,20 @@ function decr_BATCH () {
     echo -n $(printf "%03d" $old_batch)
 }
 
-function sign_in () {
+function prep_auth () {
     PX mosh drbean@sdf.org
     read -p "Bird is the word? " word
 }
 
 function run_next_batch () {
     PX $word
-    PX cd ~/job/$AREA && tmux new-session -A -s $AREA
-    # PX rm $BATCH?
-    # incr_BATCH
-    # UP $BATCH?
-    # PX tmux new-window -n $BATCH
-    # PX ls
-    # PX ../run.sh $AREA $BATCH
+    PX "cd ~/job/$AREA && tmux new-session -A -s $AREA"
+    PX rm $BATCH?
+    incr_BATCH
+    UP $BATCH?
+    PX tmux new-window -n $BATCH
+    PX ls
+    PX ../run.sh $AREA $BATCH
 }
 
 function old_address () { sed -E 's/^([^#]+)#.*$/\1/' ; } 

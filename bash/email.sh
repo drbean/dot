@@ -359,7 +359,7 @@ $2"
     fi
 }
 
-alias Pr="premail -l kr -a west -c kwangcwu -s chosun -u http://www.chosun.ac.kr"
+alias Pr="premail -l kr -a west -c kwangcwu -s songwon -u http://www.songwon.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
@@ -465,6 +465,8 @@ function decr_BATCH () {
 }
 
 function prep_auth () {
+    incr_BATCH
+    UP $BATCH?
     PX mosh drbean@sdf.org
     read -p "Bird is the word? " word
 }
@@ -472,9 +474,7 @@ function prep_auth () {
 function run_next_batch () {
     PX $word
     PX "cd ~/job/$AREA && tmux new-session -A -s $AREA"
-    PX rm $BATCH?
-    incr_BATCH
-    UP $BATCH?
+    PX rm $(decr_BATCH)?
     PX tmux new-window -n $BATCH
     PX ls
     PX ../run.sh $AREA $BATCH

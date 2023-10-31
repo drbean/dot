@@ -423,9 +423,11 @@ function write_BATCH () {
     new_batch=$1
     case $new_batch in
         ''|*[!0-9]*) echo "BATCH=$new_batch, not integer"; return 1 ;;
-        *) bare_batch=${new_batch##*0}
-            file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
-            echo $bare_batch 1>$file ;;
+        *) file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
+            if [[ $new_batch =~ ^(0*)([1-9]*)([0-9]*)(.)$  ]] ; then
+                $bare_batch=$(printf '%s' ${BASH_REMATCH[@]:2} )
+                echo $bare_batch 1>$file
+            fi;;
     esac
 }
 
@@ -471,9 +473,12 @@ function prep_auth () {
     read -p "Bird is the word? " word
 }
 
-function run_next_batch () {
+function sign_in () {
     PX $word
     PX "cd ~/job/$AREA && tmux new-session -A -s $AREA"
+}
+
+function run_next_batch () {
     PX rm $(decr_BATCH)?
     PX tmux new-window -n $BATCH
     PX ls

@@ -359,7 +359,7 @@ $2"
     fi
 }
 
-alias Pr="premail -l kr -a west -c kwangcwu -s songwon -u http://www.songwon.ac.kr"
+alias Pr="premail -l kr -a west -c kwangcwu -s kwangshin -u http://www.kwangshin.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
@@ -425,8 +425,8 @@ function write_BATCH () {
         ''|*[!0-9]*) echo "BATCH=$new_batch, not integer"; return 1 ;;
         *) file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
             if [[ $new_batch =~ ^(0*)([1-9]*)([0-9]*)(.)$  ]] ; then
-                $bare_batch=$(printf '%s' ${BASH_REMATCH[@]:2} )
-                echo $bare_batch 1>$file
+                bare_batch=$(printf '%s' ${BASH_REMATCH[@]:2} )
+                echo $bare_batch >$file
             fi;;
     esac
 }
@@ -451,8 +451,9 @@ function incr_BATCH () {
     case $cache_batch in
         ''|*[!0-9]*) echo "BATCH=$cache_batch, not integer"; return 1 ;;
         *) echo -n "BATCH was "
-            bare_batch=${cache_batch##*0}
-            padded=$(printf "%03d" $bare_batch)
+            if [[ $cache_batch =~ ^(0*)([1-9]*)([0-9]*)(.)$  ]] ; then
+                bare_batch=$(printf '%s' ${BASH_REMATCH[@]:2} ) ; fi
+            padded=$(printf "%03d" $bare_batch)
             echo -n "$padded. Now BATCH="
             export BATCH=$(printf "%03d" $((++bare_batch)))
             echo $BATCH ;;
@@ -467,8 +468,6 @@ function decr_BATCH () {
 }
 
 function prep_auth () {
-    incr_BATCH
-    UP $BATCH?
     PX mosh drbean@sdf.org
     read -p "Bird is the word? " word
 }
@@ -478,10 +477,15 @@ function sign_in () {
     PX "cd ~/job/$AREA && tmux new-session -A -s $AREA"
 }
 
-function run_next_batch () {
+function check_setup () {
+    incr_BATCH
+    UP $BATCH?
     PX rm $(decr_BATCH)?
-    PX tmux new-window -n $BATCH
     PX ls
+}
+
+function run_next_batch () {
+    PX tmux new-window -n $BATCH
     PX ../run.sh $AREA $BATCH
 }
 

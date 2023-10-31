@@ -34,7 +34,7 @@ stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'missing @'^M"
 # batch address
 stuff "# cat \$AREA/\$COUNTY/*/address.txt | old_address | sort | uniq | vipe | shuf | split -a 4 -d -l 40 - $AREA/^M"
 # upload batch
-stuff "# \$LAND/\$AREA/\$COUNTY=$LAND/$AREA/$COUNTY^M"
+stuff "# \$LAND/\$AREA/\$COUNTY \$BATCH=$LAND/$AREA/$COUNTY $BATCH^M"
 
 screen 0
 stuff "# read_BATCH^M"

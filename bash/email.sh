@@ -448,17 +448,22 @@ function update_BATCH () {
 }
 function incr_BATCH () {
     cache_batch=$(read_BATCH)
+    declare -i bare_batch plus_batch
     case $cache_batch in
         ''|*[!0-9]*) echo "BATCH=$cache_batch, not integer"; return 1 ;;
         *) echo -n "BATCH was "
             if [[ $cache_batch =~ ^(0*)([1-9]*)([0-9]*)(.)$  ]] ; then
                 bare_batch=$(printf '%s' ${BASH_REMATCH[@]:2} ) ; fi
-            padded=$(printf "%03d" $bare_batch)
-            echo -n "$padded. Now BATCH="
-            export BATCH=$(printf "%03d" $((++bare_batch)))
-            echo $BATCH ;;
+            plus_batch=$(( bare_batch + 1 ))
+            old_BATCH=$(printf "%03d" $bare_batch)
+            new_BATCH=$(printf "%03d" $plus_batch)
+            echo "$old_BATCH. Now BATCH=$new_BATCH"
+            export BATCH=$new_BATCH
     esac
-    update_BATCH
+    read -p "Save good new $BATCH batch value? y/n " go
+    if [[ $go =~ ^y ]] ; then write_BATCH $BATCH ;
+    else echo "You can 'write_BATCH old_good_value' to file and try again."
+    fi
 }
 
 function decr_BATCH () {

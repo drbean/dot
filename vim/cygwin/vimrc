@@ -1,4 +1,4 @@
-" Last Edit: 2023 Oct 17,  5:40:47 PM
+" Last Edit: 2023 Nov 02,  3:50:11 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -909,6 +909,9 @@ au BufEnter /tmp/* no <buffer> <LocalLeader>a
 	\ :%v/@/d<CR>
 	\ :%s/<[^>]*>//g<CR>
 	\ :%s/^\([-._a-zA-Z0-9+@]\+\).*$/\1/<CR>
+	\ :%! uniq<CR>
+au BufEnter /tmp/* no <buffer> <LocalLeader>aa
+	\ :%! sed -f address.sed<CR>
 	\ :%! uniq<CR>
 au BufEnter /tmp/* no <buffer> <LocalLeader>knu
 	\ :e ++ff=dos<CR>

@@ -1,4 +1,4 @@
-# Last Edit: 2023 Oct 28,  6:01:11 PM
+# Last Edit: 2023 Oct 30,  5:11:02 PM
 #
 # The ultimate Mutt settings
 #
@@ -860,6 +860,7 @@ index-format-hook name "~A" $record
 fcc-save-hook ^(listproc|listserv|lyris|majordomo|mail2news|sympa|.*request@|.*subscribe@) =z/l
 fcc-save-hook (MAILER-DAEMON) =email
 fcc-save-hook (paypal|wise\\.com$) =money
+fcc-save-hook yamagomori =taro
 # fcc-save-hook (chinte|chintelin) =prof/chinte
 fcc-save-hook (kk68x7|j27acebc4225qa|koara8|ghm2y|shirokvmayou) =yo
 

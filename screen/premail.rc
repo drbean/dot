@@ -2,7 +2,7 @@ screen 0
 # editing
 stuff "# echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.ac.kr >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; v $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ^M"
 stuff "# echo -e \\\\n# $URL >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; v {page,address}.sed {prof_page,faculty}.html^M"
-stuff "v {address,page,cleanup}.sed clip_log.txt {prof_page,faculty}.html^M"
+stuff "v {address,page,cleanup}.sed /tmp/clip.txt {prof_page,faculty}.html^M"
 
 screen 1
 stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"

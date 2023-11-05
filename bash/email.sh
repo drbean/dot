@@ -24,9 +24,8 @@ function log_clip () {
             sleep 2
         else
             LastClip="$(</dev/clipboard)"
-            echo "$(</dev/clipboard)" >> $HOME/edit/trunk/email/clip_log.txt
-            uniq $HOME/edit/trunk/email/clip_log.txt /tmp/clipboard.txt
-	    cp /tmp/clipboard.txt $HOME/edit/trunk/email/clip_log.txt
+            echo "$(</dev/clipboard)" >> /tmp/clip.txt
+            <<<$(tail -n 100 /tmp/clip.txt) uniq > /tmp/clip.txt
             sleep 1
         fi
     done

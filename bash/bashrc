@@ -142,22 +142,6 @@ function rec () {
     fi
 }
 
-function log_clip () {
-    while true
-    do
-        if [[ "$(</dev/clipboard)" == "${LastClip}" ]]
-        then
-            sleep 2
-        else
-            LastClip="$(</dev/clipboard)"
-            echo "$(</dev/clipboard)" >> $HOME/edit/trunk/email/clip_log.txt
-            uniq $HOME/edit/trunk/email/clip_log.txt /tmp/clipboard.txt
-	    cp /tmp/clipboard.txt $HOME/edit/trunk/email/clip_log.txt
-            sleep 1
-        fi
-    done
-}
-
 declare -a roman=(i ii iii iv v vi vii viii ix x)
 
 source ~/dot/bash/email.sh

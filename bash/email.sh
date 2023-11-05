@@ -15,6 +15,23 @@ function dump_cookies ()  {
         value
     FROM cookies;'
 }
+
+function log_clip () {
+    while true
+    do
+        if [[ "$(</dev/clipboard)" == "${LastClip}" ]]
+        then
+            sleep 2
+        else
+            LastClip="$(</dev/clipboard)"
+            echo "$(</dev/clipboard)" >> $HOME/edit/trunk/email/clip_log.txt
+            uniq $HOME/edit/trunk/email/clip_log.txt /tmp/clipboard.txt
+	    cp /tmp/clipboard.txt $HOME/edit/trunk/email/clip_log.txt
+            sleep 1
+        fi
+    done
+}
+
 function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
 function l () { sed -f address.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {

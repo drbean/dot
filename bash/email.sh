@@ -24,8 +24,8 @@ function log_clip () {
             sleep 2
         else
             LastClip="$(</dev/clipboard)"
-            echo "$(</dev/clipboard)" >> /tmp/clip.txt
-            <<<$(tail -n 100 /tmp/clip.txt) uniq > /tmp/clip.txt
+            echo "$(</dev/clipboard)" > /tmp/clip.txt
+            <<<$(tail -n 500 /tmp/clip.txt) address.sed > /tmp/clip.txt
             sleep 1
         fi
     done
@@ -375,7 +375,7 @@ $2"
     fi
 }
 
-alias Pr="premail -l kr -a west -c cenlanamto -s dsu -u http://www.dsu.ac.kr"
+alias Pr="premail -l kr -a west -c cenlanamto -s kentech -u http://www.kentech.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

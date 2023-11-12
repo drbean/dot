@@ -451,8 +451,14 @@ function pages () {
     cd ~/curriculum/pages
     M="$HOME/curriculum/pages/homepage/markdown"
     if [[ ! -f "$M/$STORY.md" ]]
-    then echo -e "% \n\n\nMe at [Mastodon](https://mastodon.sdf.org/@drbean)\
-	\n\nBack to [$TOPIC]($TOPIC.html)" > $M/$STORY.md
+    then echo -e "% \n\n\nMe at
+    <form action='https://mastodon.sdf.org/@drbean'>
+    <button type='submit' class='btn'>
+    <img src='./mastodon.svg'
+        alt='https://joinmastodon.org/logos/wordmark-black-text.svg'
+        style='width:100px;height:50px'/>
+    </button></form>
+    \nBack to [$TOPIC]($TOPIC.html)" > $M/$STORY.md
     fi
     export TOPIC STORY M
     screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$STORY

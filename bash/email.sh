@@ -375,7 +375,7 @@ $2"
     fi
 }
 
-alias Pr="premail -l kr -a west -c cenlapukto -s kunsan -u http://www.kunsan.ac.kr"
+alias Pr="premail -l kr -a west -c cenlapukto -s yewon -u http://www.yewon.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

@@ -93,7 +93,8 @@ new_url:=URL=${new_url:=$URL}"
     done
     read -p "Commit as URL=$new_url? y/n " commit 
     if [[ $commit =~ ^y ]]
-        then svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -m "$new_url"
+        then exec svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -q \
+    	-m "$new_url" > /dev/null 2>&1 &
     fi
     read -p "Next list ready? y/n " next_list
 done

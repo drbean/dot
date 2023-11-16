@@ -33,6 +33,8 @@ LC_NUMERIC LC_MONETARY LC_MESSAGES LC_ALL
 
 # export TERM=screen
 
+MANPATH=$HOME/edit/trunk/email/trurl/man:${MANPATH-}
+
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 PATH=$PATH:$(cygpath $APPDATA/local/bin)
 

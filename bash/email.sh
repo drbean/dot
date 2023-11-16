@@ -376,6 +376,19 @@ $2"
     fi
 }
 
+function rewrite_url () {
+    old_url=$1
+    declare -A url
+    for part in 'host' 'path' ; do
+        url[$part]=$(trurl --url "$old_url" --get [$part])
+    done
+    dept=${url[host]%%.*}
+    domain=${url[host]#$dept.}
+    host="dept.$domain"
+    path="/$dept${url[path]}"
+    trurl --url $old_url --set host=$host --set path=$path
+}
+
 alias Pr="premail -l kr -a west -c cenlapukto -s jbnu -u http://www.jbnu.ac.kr"
 # assemble an address list for a school
 function premail () {

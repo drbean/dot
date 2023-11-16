@@ -376,6 +376,37 @@ $2"
     fi
 }
 
+function int_in_path () {
+    source_url=$1
+    declare -A url
+    declare -i int
+    for part in 'host' 'path' ; do
+        url[$part]=$(trurl --url "$source_url" --get [$part])
+    done
+    if [[ ${url[path]} =~ ^([^0-9]*)([0-9]{3,})(.*)$  ]]
+    then int=${BASH_REMATCH[2]}
+    else echo "no [0-9]{3,} in ${url[path]}
+           in $source_url"
+        return 2
+    fi
+    echo $int
+}
+
+function emulate_three_e_args () {
+    source_url=$1
+    alt_int=$2
+    declare -A url
+    declare -i int
+    for part in 'scheme' 'host' 'path' 'query' ; do
+        url[$part]=$(trurl --url "$source_url" --get [$part])
+    done
+    scheme_host=${url[scheme]}://${url[host]}
+    path=${url[path]}
+    int=$(int_in_path $source_url)
+    pre_match_path=${path%$int*}
+    echo "$source_url $scheme_host$pre_match_path '$int $alt_int'"
+}
+
 function rewrite_url () {
     old_url=$1
     declare -A url

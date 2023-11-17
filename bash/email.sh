@@ -404,7 +404,7 @@ function emulate_three_e_args () {
     path=${url[path]}
     int=$(int_in_path $source_url)
     pre_match_path=${path%$int*}
-    echo "$source_url $scheme_host$pre_match_path '$int $alt_int'"
+    e $source_url $scheme_host$pre_match_path "$int $alt_int"
 }
 
 function rewrite_url () {

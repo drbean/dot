@@ -394,7 +394,7 @@ function int_in_path () {
 
 function emulate_three_e_args () {
     source_url=$1
-    alt_int=$2
+    alt_int=${@#$source_url}
     declare -A url
     declare -i int
     for part in 'scheme' 'host' 'path' 'query' ; do

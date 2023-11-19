@@ -78,9 +78,10 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
                 -m "$URL" > /dev/null 2>&1 &
         fi
         exec 0<&3
-    elif [[ $# -le 4 ]]; then
+    else
         PRE_TOP=$2
-        TOP_INDEX=$3
+        shift 2
+        TOP_INDEX=$@
         IFS=' ' read -a top_index <<< $(eval echo "$TOP_INDEX")
         POST_TOP=${URL#$PRE_TOP${top_index[0]}}
         if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; else DEPARTMENT=$HOST ; fi

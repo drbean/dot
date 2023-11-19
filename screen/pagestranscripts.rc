@@ -3,7 +3,7 @@ stuff "v --cmd 'set spellfile=spell.en.utf-8.add' "
 stuff "homepage/markdown/\$STORY.md "
 stuff "homepage/markdown/$TOPIC.md "
 stuff "homepage/markdown/HomePage.md "
-stuff "\$STORY.txt "
+stuff "/tmp/pandoc/\$STORY.txt "
 stuff "Contents.html "
 stuff "~/.weechat/logs/irc.freenodebnc.\\\#\\\#english.weechatlo^M"
 

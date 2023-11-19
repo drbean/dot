@@ -27,8 +27,8 @@ function e () {
             if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
             url=${faculty[$i]}
             echo -e "\\nGetting prof page $((i+1)) of $total from file list:\\n
-            ${faculty[$i]}↓
-        URL=$url↓
+            ${faculty[$i]}⏎
+        URL=$url⏎
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo $url >> cache_url.txt
             echo "# $url" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
@@ -56,8 +56,8 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
         echo -e "\\n# $URL" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
         echo -e "\\nGetting prof address page from \$1:\\n
-            $1↓
-        URL=$URL↓\\n
+            $1⏎
+        URL=$URL⏎\\n
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         dump_cookies > cookies.txt
         curl -b cookies.txt -c cookies.txt -kL $URL |

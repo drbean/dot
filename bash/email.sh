@@ -128,8 +128,8 @@ function h () {
             pathinfo=${uri#*$DOMAIN}
             host=${uri%.$DOMAIN$pathinfo}
             echo -e "\\nGetting faculty page $((i+1)) of $total from file list:\\n
-            ${faculty[$i]}↓
-        URL=$url↓
+            ${faculty[$i]}⏎
+        URL=$url⏎
 SCHEME=$SCHEME, HOST=$host, DOMAIN=$DOMAIN, PATHINFO=$pathinfo\\n"
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL "$url" |
@@ -173,8 +173,8 @@ SCHEME=$SCHEME, HOST=$host, DOMAIN=$DOMAIN, PATHINFO=$pathinfo\\n"
     elif [[ $# -le 3 ]]; then
         url=$TOP
         echo -e "\\nGetting faculty page from \$1:\\n
-            $1↓
-        URL=$url↓\\n
+            $1⏎
+        URL=$url⏎\\n
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         INDEX=$INDEX
         curl -b cookies.txt -c cookies.txt -kL "$url" |

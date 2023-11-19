@@ -92,7 +92,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo -e "\\nGetting prof page $((++n)) of $total from \$1~\$3:\\n
             $1
         PRE_TOP=$PRE_TOP, top_index=$ix, POST_TOP=$POST_TOP\\n
-             URL=$PRE_TOP$ix$POST_TOP↓\\n"
+             URL=$PRE_TOP$ix$POST_TOP⏎\\n\\n"
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$ix$POST_TOP |
                     sed -f address.sed | sed -f cleanup.sed | uniq | tee -a email.txt

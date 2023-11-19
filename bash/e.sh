@@ -37,7 +37,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
                 sed -f address.sed | sed -f cleanup.sed |
                     tee -a email.txt
         done
-	< email.txt uniq | vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
+        < email.txt uniq | vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
         exec 3<&0
         exec 0< /dev/tty
         address_page="n"

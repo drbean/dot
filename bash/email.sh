@@ -420,7 +420,7 @@ function rewrite_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l kr -a west -c ceycwu -s jeju -u http://www.jeju.ac.kr"
+alias Pr="premail -l kr -a west -c ceycwu -s jejunu -u http://www.jejunu.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

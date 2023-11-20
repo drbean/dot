@@ -447,7 +447,7 @@ function path_assemble () {
     
 }
 
-function rewrite_url () {
+function permute_url () {
     old_url=$1
     declare -A url
     for part in 'host' 'path' ; do

@@ -407,6 +407,46 @@ function emulate_three_e_args () {
     e $source_url $scheme_host$pre_match_path "$int $alt_int"
 }
 
+function url_assemble () {
+    OPTIND=0
+    local arg host hostname domain path query url
+    while getopts 's:h:n:d:p:q:u:' arg
+    do
+        case ${arg} in
+            s) scheme=${OPTARG};;
+            h) host=${OPTARG};;
+            n) hostname=${OPTARG};;
+            d) domain=${OPTARG};;
+            p) path=${OPTARG};;
+            q) query=${OPTARG};;
+            u) url=$OPTARG;;
+            *) return 1 # illegal option
+        esac
+    done
+    scheme=${scheme:="https"}
+    if [[ -v host ]] ; then
+        fqdn=$host
+    else fqdn="$hostname.$domain"
+    echo "$scheme://$fqdn/$path?$query"
+    fi
+}
+
+function path_assemble () {
+    OPTIND=0
+    local prefix infix suffix
+    while getopts 'p:i:s:' arg
+    do
+        case ${arg} in
+            p) prefix=${OPTARG};;
+            i) infix=${OPTARG};;
+            s) suffix=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    echo "$prefix/$infix/$suffix"
+    
+}
+
 function rewrite_url () {
     old_url=$1
     declare -A url

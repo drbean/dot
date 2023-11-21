@@ -427,8 +427,8 @@ function url_assemble () {
     if [[ -v host ]] ; then
         fqdn=$host
     else fqdn="$hostname.$domain"
-    echo "$scheme://$fqdn/$path?$query"
     fi
+    echo "$scheme://$fqdn/$path?$query"
 }
 
 function path_assemble () {

@@ -13,7 +13,10 @@ stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"
 stuff "# lynx '^M"
 stuff "# DEPARTMENT= h '^M"
 stuff "# echo '^M"
-stuff "# e < prof_page.html^M"
+
+stuff "function $SCHOOL () { readarray -t faculty ; for (( i = 0; i < \${#faculty[@]}; i++ )); do url_assemble -h \"\${faculty[\$i]}.\$SCHOOL.ac.kr\" -p \"\${faculty[\$i]}/index/info/professorinfo.htm\" ; done }^M"
+
+stuff "# < prof_page.html \$SCHOOL | e^M"
 
 screen 3
 stuff "# svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL && "

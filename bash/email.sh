@@ -407,14 +407,6 @@ function emulate_three_e_args () {
     e $source_url $scheme_host$pre_match_path "$int $alt_int"
 }
 
-jejunu () {
-	readarray -t faculty
-	for (( i = 0; i < ${#faculty[@]}; i++ )); do
-		url_assemble -h "${faculty[$i]}.jejunu.ac.kr"\
-			-p "${faculty[$i]}/index/info/professorinfo.htm"
-	done
-}
-
 function url_assemble () {
     OPTIND=0
     local arg host hostname domain path query url

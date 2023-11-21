@@ -428,7 +428,8 @@ function url_assemble () {
         fqdn=$host
     else fqdn="$hostname.$domain"
     fi
-    echo "$scheme://$fqdn/$path?$query"
+    trurl -s scheme=$scheme -s host=$fqdn \
+	-s path=$path -s query=$query
 }
 
 function path_assemble () {

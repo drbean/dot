@@ -25,13 +25,9 @@ function e () {
         echo >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
         for (( i=0; i<$total; i++ )); do
             if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
-            # url=${faculty[$i]}
-            hostname=${faculty[$i]}
-            domain="jejunu.ac.kr"
-            host=$hostname.$domain
-            path=$(path_assemble -p ${faculty[$i]} -s "professor/professorinfo.htm")
-            url=$(url_assemble -s https -h $host -p $path)
+            url=${faculty[$i]}
             echo -e "\\nGetting prof page $((i+1)) of $total from file list:\\n
+            ${faculty[$i]}⏎
         URL=$url⏎
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo $url >> cache_url.txt

@@ -1,12 +1,12 @@
 screen 9
 stuff "man bash"
-screen 5
+screen 6
 stuff "cd et_cetera^M"
 stuff "# su -^M"
 stuff "# chmod 700 -R .^M"
 stuff "git status^M"
 stuff "# for config in lynx-site.cfg ; do sudo cp ~greg/dot/et_cetera/$config /etc/$config^M"
-screen 4
+screen 5
 stuff "# ln systemd/desktop/desktop_background@.service ~/.config/systemd/user/^M"
 stuff "# ln systemd/desktop/desktop_background@.timer ~/.config/systemd/user/^M"
 stuff "# systemctl --user daemon-reload^M"
@@ -18,6 +18,10 @@ stuff "# for type in service timer ; do cp ~/dot/systemd/dns/update_dns.\$type ~
 stuff "# ln -s ~/dot/systemd/email/status-email-drbean@.service ~/.config/systemd/user/status-email-drbean@.service^M"
 stuff "# for service in dns/update_dns ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}.\$type; done; done^M"
 stuff "# for service in desktop/desktop_background ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}@.\$type; done; done^M"
+screen 4
+stuff "cat ~/dot/mail/fortunes | sed -f fortune.sed >> ~/curriculum/pages/homepage/markdown/WittySayings.md"
+stuff "/usr/sbin/strfile.exe fortunes^M"
+stuff "lftp -c 'open drbean@sdf.org && mput -O ~/.mutt ~/dot/mail/fortunes*'^M"
 screen 3
 stuff "cd vcs^M"
 stuff "# cp ignore ~/.config/git/ignore^M"

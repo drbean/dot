@@ -486,7 +486,7 @@ function premail () {
     cd -
 }
 
-alias E="email -l kr -a east -c '*'"
+alias E="email -l tw -a north -c '*'"
 # stage email batches from an area
 function email () {
     OPTIND=1
@@ -581,7 +581,7 @@ function prep_auth () {
 
 function sign_in () {
     PX $word
-    PX "cd ~/job/$AREA && tmux new-session -A -s $AREA"
+    PX "cd ~/job/$LAND/$AREA && tmux new-session -A -s $AREA"
 }
 
 function set_batch_up () {

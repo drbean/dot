@@ -598,7 +598,7 @@ function run_batch () {
 
 function old_address () { sed -E 's/^([^#]+)\s#.*$/\1/' ; } 
 function line_ends_space () { sed -i.BAK -e 's/^\s*//' -e 's/\s*$//' $LAND/$AREA/*/*/address.txt ; }
-function wrong_char () { sed -e '/^#/d' $LAND/$AREA/$COUNTY/*/address.txt | grep -r -P '[^-_.a-zA-Z0-9@]' - ; }
+function wrong_char () { sed -e '/^#/d' $LAND/$AREA/$COUNTY/*/address.txt | old_address | grep -r -P '[^-_.a-zA-Z0-9@]' - ; }
 function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }

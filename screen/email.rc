@@ -27,7 +27,7 @@ stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'unescaped http web page links'
 stuff "# wrong_char^M"
 stuff "# unescaped_uri^M"
 stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'intrusive email chars'^M"
-stuff "# eol_space^M"
+stuff "# line_ends_space^M"
 stuff "# in_addr_space^M"
 stuff "# svn ci \$AREA/\$COUNTY/*/address.txt -m 'intrusive, eol white space'^M"
 stuff "# no_at_mark^M"

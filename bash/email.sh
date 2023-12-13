@@ -593,7 +593,7 @@ function set_batch_up () {
 }
 
 function run_batch () {
-    PX ../run.sh $AREA $BATCH
+    PX ../run.sh $LAND/$AREA $BATCH
 }
 
 function old_address () { sed -E 's/^([^#]+)\s#.*$/\1/' ; } 

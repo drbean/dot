@@ -34,7 +34,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             echo "# $url" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $url |
-                sed -f address.sed | sed -f cleanup.sed |
+                address.sed | sed -f cleanup.sed |
                     tee -a email.txt
         done
         < email.txt uniq | vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
@@ -96,7 +96,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
              URL=$PRE_TOP$ix$POST_TOP⏎\\n\\n"
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL $PRE_TOP$ix$POST_TOP |
-                    sed -f address.sed | sed -f cleanup.sed | uniq | tee -a email.txt
+                    address.sed | sed -f cleanup.sed | uniq | tee -a email.txt
         done
         cat email.txt >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
         address_page="n"

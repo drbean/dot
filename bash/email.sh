@@ -383,9 +383,9 @@ function int_in_path () {
     for part in 'host' 'path' ; do
         url[$part]=$(trurl --url "$source_url" --get [$part])
     done
-    if [[ ${url[path]} =~ ^([^0-9]*)([0-9]{3,})(.*)$  ]]
+    if [[ ${url[path]} =~ ^/([A-Z]*[0-9]*)/([0-9]{4,})(.*)$  ]]
     then int=${BASH_REMATCH[2]}
-    else echo "no [0-9]{3,} in ${url[path]}
+    else echo "no [0-9]{4,} in ${url[path]}
            in $source_url"
         return 2
     fi
@@ -461,7 +461,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l kr -a west -c ceycwu -s jejunu -u http://www.jejunu.ac.kr"
+alias Pr="premail -l kr -a west -c chwungchengnamto -s kongju -u http://www.kongju.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
@@ -512,7 +512,7 @@ function email () {
 
 function UP {
     file=$1
-    lftp -c "open sftp://drbean@sdf.org && cd job/$AREA && \
+    lftp -c "open sftp://drbean@sdf.org && cd job/$LAND/$AREA && \
         mput $LAND/$AREA/$file && qui"
 }
 
@@ -584,16 +584,24 @@ function sign_in () {
     PX "cd ~/job/$LAND/$AREA && tmux new-session -A -s $AREA"
 }
 
+function first_batch () {
+    write_BATCH 000
+    read_BATCH
+    UP $BATCH\?
+    PX ls
+    PX tmux new-window -n $BATCH
+}
+
 function set_batch_up () {
     incr_BATCH
-    UP $BATCH?
+    UP $BATCH\?
     PX rm $(decr_BATCH)?
     PX ls
     PX tmux new-window -n $BATCH
 }
 
 function run_batch () {
-    PX ../run.sh $LAND/$AREA $BATCH
+    PX ../../run.sh $LAND/$AREA $BATCH
 }
 
 function old_address () { sed -E 's/^([^#]+)\s#.*$/\1/' ; } 
@@ -603,7 +611,7 @@ function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUN
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
 
-alias Po="postmail -l kr -a east -c '*'"
+alias Po="postmail -l tw -a north -c '*'"
 # cleanup post-batch posting
 function postmail () {
     OPTIND=1

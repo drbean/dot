@@ -32,7 +32,7 @@ function log_clip () {
 }
 
 function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
-function l () { sed -f address.sed >> $COUNTY/$SCHOOL/address.txt; }
+function l () { address.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {
     URL=${URL:-${1:-"http://$DEPARTMENT.$SCHOOL.ac.kr"}}
     if ! [[ -f ~/edit/trunk/email/$LAND/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
@@ -54,7 +54,7 @@ function a () {
             declare -i j=0
             read -p "list $((i+1)).${roman[$j]} at $URL ready? y/n " next_list
             while [[ $next_list =~ ^y ]] ; do
-                    echo "$(</dev/clipboard)" | sed -f address.sed | uniq | vipe \
+                    echo "$(</dev/clipboard)" | address.sed | uniq | vipe \
                             >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
                     address_page="n"
                     while ! [[ $address_page =~ ^y ]] ; do
@@ -74,7 +74,7 @@ function a () {
 else
     next_list=y
 while [[ $next_list =~ ^y ]] ; do
-    echo "$(</dev/clipboard)" | sed -f address.sed | uniq | vipe > email.txt
+    echo "$(</dev/clipboard)" | address.sed | uniq | vipe > email.txt
     echo >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
     read -p "Enter title, or accept real URL=$URL " new_url
     echo "# ${new_url:=$URL}" | tr -d "\\n" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
@@ -152,7 +152,7 @@ SCHEME=$SCHEME, HOST=$host, DOMAIN=$DOMAIN, PATHINFO=$pathinfo\\n"
                     echo $p >> cache_url.txt
                     echo "# $p" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
                     curl -b cookies.txt -c cookies.txt -kL "${p%$'\r'}" |
-                        sed -f address.sed | tee -a email.txt
+                        address.sed | tee -a email.txt
                 done < prof_page.html
             fi
         done
@@ -192,7 +192,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
                 while read p ; do
                     echo -e "\\n\\nReading page $((++i)) from prof_page.html\\n\\t\\t$p\\n"
                     curl -b cookies.txt -c cookies.txt -kL "${p%$'\r'}" |
-                        sed -f address.sed | tee -a email.txt
+                        address.sed | tee -a email.txt
                 done < prof_page.html
             fi
         done
@@ -232,7 +232,7 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
             if [[ $page =~ ^y ]] ; then 
                 rm email.txt
                 while read p ; do
-                    curl -b cook -kL "${p%$'\r'}" | sed -f address.sed | tee -a email.txt
+                    curl -b cook -kL "${p%$'\r'}" | address.sed | tee -a email.txt
                 done < prof_page.html
             fi
         done
@@ -274,7 +274,7 @@ function p () {
         read -p "Email page looks good? y/n " email_page
     done
     while read p ; do
-        curl -kL "${p%$'\r'}" | sed -f address.sed
+        curl -kL "${p%$'\r'}" | address.sed
     done < email_page.html > email.txt
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;

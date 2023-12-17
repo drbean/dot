@@ -14,7 +14,7 @@ fi
 # URL=
 # # export AREA COUNTY SCHOOL A URL
 
-export VD=$HOME/dot/vcs/vim/vimdiff
+export VD=$HOME/dot/vcs/svn/vimdiff
 
 export SEMESTER=111
 export WEEK=1

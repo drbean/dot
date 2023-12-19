@@ -530,11 +530,11 @@ function commit_bag () {
     mess=$(svn log $file -r $last | sed -n '4p')
     file_txt="$file.txt"
     for i in ${list[@]} ; do
-        back=$(svn info $file | sed -n '/Last Changed Rev: /s/^.*: //p')
-        mess=$(svn log $file -r $back | sed -n '4p')
-        svn cat ^/trunk/email/$file_txt -r $back | vipe |
+        rev=$(svn info $file | sed -n '/Last Changed Rev: /s/^.*: //p')
+        mess=$(svn log $file -r $rev | sed -n '4p')
+        svn cat ^/trunk/email/$file_txt -r $rev | vipe |
             tee $file_txt > $bag/$file.$i.txt
-        svn ci $file_txt -m \"r$back: $mess $i" > /dev/null 2>&1  ; done^M"
+        svn ci $file_txt -m \"r$rev: $mess $i" > /dev/null 2>&1  ; done^M"
 }
 
 function UP {

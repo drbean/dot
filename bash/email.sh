@@ -510,6 +510,33 @@ function email () {
     cd -
 }
 
+function commit_bag () {
+    OPTIND=0
+    local arg rev file bag
+    # declare -i rev
+    while getopts 'r:f:b:' arg
+    do
+        case ${arg} in
+            r) rev=${OPTARG};;
+            f) file=${OPTARG};;
+            b) bag=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    declare -a list
+    IFS=' ' read -a list <<< $(eval echo "$rev")
+    n=${#list}
+    last=$(svn info $file | sed -n '/Last Changed Rev: /s/^.*: //p')
+    mess=$(svn log $file -r $last | sed -n '4p')
+    file_txt="$file.txt"
+    for i in ${list[@]} ; do
+        back=$(svn info $file | sed -n '/Last Changed Rev: /s/^.*: //p')
+        mess=$(svn log $file -r $back | sed -n '4p')
+        svn cat ^/trunk/email/$file_txt -r $back | vipe |
+            tee $file_txt > $bag/$file.$i.txt
+        svn ci $file_txt -m \"r$back: $mess $i" > /dev/null 2>&1  ; done^M"
+}
+
 function UP {
     file=$1
     lftp -c "open sftp://drbean@sdf.org && cd job/$LAND/$AREA && \

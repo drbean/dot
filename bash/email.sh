@@ -535,6 +535,7 @@ function commit_bag () {
         svn cat ^/trunk/email/$file_txt -r $rev | vipe |
             tee $file_txt > $bag/$file.$i.txt
         svn ci $file_txt -m \"r$rev: $mess $i" > /dev/null 2>&1  ; done^M"
+    done
 }
 
 function UP {

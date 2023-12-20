@@ -182,7 +182,7 @@ function ttb () {
     cd -
 }
 
-function qutebrowser () {
+function qb () {
     #if [[ ! -e ~/qutebrowser ]] ; then
     #    svn co http://github.com/drbean/qutebrowser ~/qutebrowser --depth empty
     #    svn up ~/qutebrowser/branches/hint/dictation ~/qutebrowser --parents

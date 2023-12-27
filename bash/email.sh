@@ -277,7 +277,7 @@ function p () {
         curl -kL "${p%$'\r'}" | address.sed
     done < email_page.html > email.txt
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
-    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $COUNTY/$SCHOOL/address.txt ;
+    echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
     cat email.txt | uniq | vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
     address_page="n"
     while ! [[ $address_page =~ ^y ]] ; do

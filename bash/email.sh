@@ -254,28 +254,28 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 }
 function p () {
     TOP=$1
-    PROF_INDEX=$2
-    EMAIL_INDEX=$3
-    curl -kL "$TOP" | sed -e "/$PROF_INDEX/!d" -f page.sed | uniq | vipe > prof_page.html
-    prof_page="n"
-    while ! [[ $prof_page =~ ^y ]] ; do
-        cat prof_page.html
-        read -p "Prof page looks good? y/n " prof_page
-        if [[ $prof_page =~ ^y ]] ; then 
-            # rm email_page.html
+    FIRST_LINK_KEYWORD=$2
+    SECOND_LINK_KEYWORD=$3
+    curl -kL "$TOP" | sed -e "/$FIRST_LINK_KEYWORD/!d" -f page.sed | uniq | vipe > link_list.html
+    link_list="n"
+    while ! [[ $link_list =~ ^y ]] ; do
+        cat link_list.html
+        read -p "Prof page looks good? y/n " link_list
+        if [[ $link_list =~ ^y ]] ; then 
+            # rm email_page_list.html
             while read p ; do
-                curl -kL "${p%$'\r'}" | sed -e "/$EMAIL_INDEX/!d" -f page.sed
-            done < prof_page.html > email_page.html
+                curl -kL "${p%$'\r'}" | sed -e "/$SECOND_LINK_KEYWORD/!d" -f page.sed
+            done < link_list.html > email_page_list.html
         fi
     done
-    email_page="n"
-    while ! [[ $email_page =~ ^y ]] ; do
-        vipe <> email_page.html
-        read -p "Email page looks good? y/n " email_page
+    email_page_list="n"
+    while ! [[ $email_page_list =~ ^y ]] ; do
+        vipe <> email_page_list.html
+        read -p "Email page looks good? y/n " email_page_list
     done
     while read p ; do
         curl -kL "${p%$'\r'}" | address.sed
-    done < email_page.html > email.txt
+    done < email_page_list.html > email.txt
     if [[ $# -eq 4 ]]; then DEPARTMENT=$4 ; fi
     echo -e "\\n# http://$DEPARTMENT.$SCHOOL.ac.kr" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
     cat email.txt | uniq | vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt

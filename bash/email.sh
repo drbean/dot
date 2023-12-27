@@ -119,7 +119,7 @@ function h () {
         HOST=${URI%.$DOMAIN*}
         if [[ $# -eq 2 ]]; then DEPARTMENT=$2 ; else DEPARTMENT=$HOST ; fi
         echo -e "\\n# $TOP" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
-        mv {,orig_}prof_page.html
+        mv {,orig_}link_list.html
         total=${#faculty[*]}
         for (( i=0; i<$total; i++ )); do
             if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!" ; fi
@@ -133,13 +133,13 @@ function h () {
 SCHEME=$SCHEME, HOST=$host, DOMAIN=$DOMAIN, PATHINFO=$pathinfo\\n"
             dump_cookies > cookies.txt
             curl -b cookies.txt -c cookies.txt -kL "$url" |
-                sed -f page.sed | uniq | vipe >> prof_page.html
+                sed -f page.sed | uniq | vipe >> link_list.html
         done
         exec 3<&0
         exec 0< /dev/tty
         page="n"
         while ! [[ $page =~ ^y ]] ; do
-            vim prof_page.html
+            vim link_list.html
             echo
             read -p "Prof page looks good? y/n " page
             if [[ $page =~ ^y ]] ; then 
@@ -148,12 +148,12 @@ SCHEME=$SCHEME, HOST=$host, DOMAIN=$DOMAIN, PATHINFO=$pathinfo\\n"
                 declare -i i=0
                 echo >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
                 while read p ; do
-                    echo -e "\\n\\nReading page $((++i)) from prof_page.html\\n\\t\\t$p\\n"
+                    echo -e "\\n\\nReading page $((++i)) from link_list.html\\n\\t\\t$p\\n"
                     echo $p >> cache_url.txt
                     echo "# $p" >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
                     curl -b cookies.txt -c cookies.txt -kL "${p%$'\r'}" |
                         address.sed | tee -a email.txt
-                done < prof_page.html
+                done < link_list.html
             fi
         done
         if [[ $# -eq 3 ]]; then DEPARTMENT=$3 ; else DEPARTMENT=$HOST ; fi

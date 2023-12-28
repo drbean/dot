@@ -14,9 +14,9 @@ stuff "# lynx '^M"
 stuff "# DEPARTMENT= h '^M"
 stuff "# echo '^M"
 
-stuff "function $SCHOOL () { readarray -t faculty ; for (( i = 0; i < \${#faculty[@]}; i++ )); do url_assemble -h \"\${faculty[\$i]}.\$SCHOOL.ac.kr\" -p \"\${faculty[\$i]}/index/info/professorinfo.htm\" ; done }^M"
+stuff "function sourcer () { readarray -t faculty ; for (( i = 0; i < \${#faculty[@]}; i++ )); do url_assemble -h \"\${faculty[\$i]}.\$SCHOOL.ac.kr\" -p \"\${faculty[\$i]}/index/info/professorinfo.htm\" ; done }^M"
 
-stuff "# < source_list.html \$SCHOOL | e^M"
+stuff "# < source_list.html sourcer | e^M"
 
 screen 3
 stuff "# svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL && "

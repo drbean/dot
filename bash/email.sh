@@ -445,7 +445,7 @@ function url_assemble () {
     else fqdn="$hostname.$domain"
     fi
     trurl -s scheme=$scheme -s host=$fqdn \
-	-s path=$path -s query=$query
+	-s path=$path -s query:=$query
 }
 
 function path_assemble () {

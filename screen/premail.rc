@@ -17,6 +17,7 @@ stuff "# echo '^M"
 stuff "function sourcer () { readarray -t ul ; for u in \${ul[@]} ; do p=$(trurl \"\$u\" --get [path]) ; q=$(trurl \"\$u\" --get [query]) ; url_assemble -h \"www.\$SCHOOL.ac.kr\" -p \"\$p\" -q \"\$q\"; done }^M"
 
 stuff "# < source_list.html sourcer | e^M"
+stuff "# < cache_url.txt sourcer | curler | sed -ne 's/^.*E-MAIL<\/span><p>\([-._a-zA-Z0-9@]*\)<.*$/\1/p' >> $A"
 
 screen 3
 stuff "# svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL && "

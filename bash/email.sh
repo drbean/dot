@@ -31,6 +31,22 @@ function log_clip () {
     done
 }
 
+function curler () {
+	declare -a page
+	readarray -t page
+	total=${#page[*]}
+	SCHEME=http*//
+	if [[ -f mess ]] ; then mv {,orig_}mess ; fi
+	for (( i=0; i<$total; i++ )); do
+		echo ${page[$i]}
+		if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
+		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
+		${page[$i]}⏎\\n" >> mess 2>&1
+		dump_cookies > cookies.txt
+		curl -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
+	done;
+}
+
 function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
 function l () { address.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {
@@ -461,7 +477,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l kr -a west -c chwungchengnamto -s sunmoon -u http://www.sunmoon.ac.kr"
+alias Pr="premail -l kr -a west -c chwungchengnamto -s joongbu -u http://www.joongbu.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

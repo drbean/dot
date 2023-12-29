@@ -14,7 +14,7 @@ stuff "# lynx '^M"
 stuff "# DEPARTMENT= h '^M"
 stuff "# echo '^M"
 
-stuff "function sourcer () { readarray -t faculty ; for (( i = 0; i < \${#faculty[@]}; i++ )); do url_assemble -h \"\${faculty[\$i]}.\$SCHOOL.ac.kr\" -p \"\${faculty[\$i]}/index/info/professorinfo.htm\" ; done }^M"
+stuff "function sourcer () { readarray -t ul ; for u in \${ul[@]} ; do p=$(trurl \"\$u\" --get [path]) ; q=$(trurl \"\$u\" --get [query]) ; url_assemble -h \"www.\$SCHOOL.ac.kr\" -p \"\$p\" -q \"\$q\"; done }^M"
 
 stuff "# < source_list.html sourcer | e^M"
 

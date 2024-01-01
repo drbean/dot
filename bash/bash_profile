@@ -35,10 +35,11 @@ LC_NUMERIC LC_MONETARY LC_MESSAGES LC_ALL
 
 MANPATH=$HOME/edit/trunk/email/trurl/man:${MANPATH-}
 
+export PATH=$PATH:"/cygdrive/c/Program Files/qutebrowser"
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 PATH=$PATH:$(cygpath $APPDATA/local/bin)
 
-export PATH= PATH=/cygdrive/c/Program\ Files/Vim/vim82/:$PATH
+export PATH=/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim90/:$PATH
 
 PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"
 export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/node_modules/yarn/bin"

@@ -36,9 +36,12 @@ function curler () {
 	readarray -t page
 	total=${#page[*]}
 	SCHEME=http*//
-	if [[ -f mess ]] ; then mv {,orig_}mess ; fi
+	for file in mess cache_url.txt ; do
+		if [[ -f $file ]] ; then mv {,orig_}$file ; fi
+	done
 	for (( i=0; i<$total; i++ )); do
-		echo ${page[$i]}
+		echo ${page[$i]} >> cache_url.txt
+		echo -e "\n# $p"
 		if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
 		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
 		${page[$i]}⏎\\n" >> mess 2>&1
@@ -46,6 +49,38 @@ function curler () {
 		curl -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
 	done;
 }
+
+function clip () {
+	read p
+	qutebrowser $p
+	echo $p > cache_url.txt
+	echo -e "\n$p"
+}
+
+function paste () {
+	< /dev/clipboard | sed '/@/!d ; s/^M//'
+}
+
+function save () {
+	cat >> $A
+}
+
+function commit () {
+	address_page="n"
+	while ! [[ $address_page =~ ^y ]] ; do
+		vim $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+		svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+		echo
+		read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+	done
+	mess=$(< cache_url.txt)
+	read -p  "Commit as $mess''? y/n " commit
+	if [[ $commit =~ ^y ]]
+	then exec svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -q \
+		-m $mess > /dev/null 2>&1 &
+	fi
+}
+
 
 function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
 function l () { address.sed >> $COUNTY/$SCHOOL/address.txt; }
@@ -477,7 +512,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l kr -a west -c chwungchengnamto -s hoseo -u http://www.hoseo.ac.kr"
+alias Pr="premail -l kr -a west -c chwungchengnamto -s sch -u http://www.sch.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

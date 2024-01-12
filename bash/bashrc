@@ -193,6 +193,66 @@ function qb () {
     cd -
 }
 
+# When going git's tough, subversion gets it going
+function gitwrap_svn () {
+    OPTIND=2
+    local arg repo logmess
+    while getopts 'r:m:' arg
+    do
+        case ${arg} in
+            r) repo=${OPTARG};;
+            m) logmess=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    file=$1
+    basename=${file##*/}
+    subdirname=${file%/$basename}
+    dir=dot
+    for vcs in svn git ; do
+        cd $vcs.$dir
+        if [[ ! -f $subdirname ]] ; then
+            if [[ $vcs=='svn' ]] ; then
+                $vcs mkdir --parents $subdirname
+            elif [[$vcs=='git' ]] ; then
+                mkdir --parents $subdirname
+            fi
+        fi
+        cp ~/$dir/$file ~/$dir/$vcs.$dir/$file
+        echo "Committing to $vcs with -m '$logmess'"
+	echo "$vcs add $subdirname $file:"
+	if [[ $vcs == 'svn' ]] ; then
+	    $vcs add $subdirname
+	fi
+	$vcs add $file
+	echo "$vcs status:"
+	$vcs status
+	read -p "$file $vcs status OK? y/n " status
+	if [[ $status == 'n' ]] ; then
+	    echo "Fix $file in $dir!"
+	    return 0
+	fi
+	echo "$vcs diff $file:"
+	$vcs diff $file
+	echo
+	read -p "$file $vcs diff looks good? y/n " diff
+	if [[ $diff == 'n' ]] ; then
+	    echo "Fix $file in $dir!"
+	    return 0
+	fi
+        read -p  "Commit as '$logmess' to $vcs.$dir? y/n " commit
+        if [[ $commit =~ ^y ]] ; then
+            if [[ $vcs == 'svn' ]] ; then
+		$vcs ci $file -m "$logmess"
+            elif [[ $vcs == 'git' ]] ; then
+		git pull
+                git push
+            fi
+        fi
+        cd -
+    done
+}
+
 function edit () {
     OPTIND=1
     local arg SOURCE REPO FILE

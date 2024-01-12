@@ -207,51 +207,90 @@ function gitwrap_svn () {
     done
     file=$1
     basename=${file##*/}
-    subdirname=${file%/$basename}
+    if [[ $file =~ / ]] ; then
+	subdir=${file%/$basename}
+    else subdir=.
+    fi
     dir=dot
+    repo=$dir
     for vcs in svn git ; do
-        cd $vcs.$dir
-        if [[ ! -f $subdirname ]] ; then
-            if [[ $vcs=='svn' ]] ; then
-                $vcs mkdir --parents $subdirname
-            elif [[$vcs=='git' ]] ; then
-                mkdir --parents $subdirname
-            fi
-        fi
-        cp ~/$dir/$file ~/$dir/$vcs.$dir/$file
-        echo "Committing to $vcs with -m '$logmess'"
-	echo "$vcs add $subdirname $file:"
-	if [[ $vcs == 'svn' ]] ; then
-	    $vcs add $subdirname
+	if ! [[ -d $vcs.$dir/$subdir ]] ; then
+	    mkdir $vcs.$dir/$subdir
 	fi
-	$vcs add $file
-	echo "$vcs status:"
-	$vcs status
-	read -p "$file $vcs status OK? y/n " status
-	if [[ $status == 'n' ]] ; then
-	    echo "Fix $file in $dir!"
-	    return 0
-	fi
-	echo "$vcs diff $file:"
-	$vcs diff $file
-	echo
-	read -p "$file $vcs diff looks good? y/n " diff
-	if [[ $diff == 'n' ]] ; then
-	    echo "Fix $file in $dir!"
-	    return 0
-	fi
-        read -p  "Commit as '$logmess' to $vcs.$dir? y/n " commit
-        if [[ $commit =~ ^y ]] ; then
-            if [[ $vcs == 'svn' ]] ; then
-		$vcs ci $file -m "$logmess"
-            elif [[ $vcs == 'git' ]] ; then
-		git pull
-                git push
-            fi
-        fi
-        cd -
+	cp $file $vcs.$dir/$subdir
     done
+
+    vcs=svn
+    cp $file $
+    cd $vcs.$dir
+    repo_subdir=$(sed -n 1p <<<$($vcs info $subdir))
+    if ! [[ $repo_subdir == "Path: $subdir"  ]] ; then
+	$vcs mkdir $subdir
+    fi
+    repo_file=$(sed -n 1p <<<$($vcs info $file))
+    if ! [[ $repo_file == "Path: $file"  ]] ; then
+	$vcs add $file
+    fi
+    echo "$vcs status:"
+    $vcs status
+    read -p "$file $vcs status OK? y/n " status
+    if [[ $status == 'n' ]] ; then
+	echo "Fix $file in $dir!"
+	return 0
+    fi
+    echo "$vcs diff $file:"
+    $vcs diff $file
+    echo
+    read -p "$file $vcs diff looks good? y/n " diff
+    if [[ $diff == 'n' ]] ; then
+	echo "Fix $file in $dir!"
+	return 0
+    fi
+    read -p  "Commit as '$logmess' to $vcs.$dir? y/n " commit
+    if [[ $commit =~ ^y ]] ; then
+	subdir_status=$(sed -n 7p <<<$($vcs info $subdir))
+	if [[ $subdir_status == "Schedule: add"  ]] ; then
+	    $vcs commit $subdir -m "$logmess"
+	else
+	    $vcs commit $file -m "$logmess"
+	fi
+    else
+	echo "Fix $file in $dir!"
+	return 0
+    fi
+    cd -
+
+    vcs=git
+    cd $vcs.$dir
+    echo "$vcs status:"
+    $vcs status
+    read -p "$file $vcs status OK? y/n " status
+    if [[ $status == 'n' ]] ; then
+	echo "Fix $file in $dir!"
+	return 0
+    fi
+    echo "$vcs diff $file:"
+    $vcs diff $file
+    echo
+    read -p "$file $vcs diff looks good? y/n " diff
+    if [[ $diff == 'n' ]] ; then
+	echo "Fix $file in $dir!"
+	return 0
+    fi
+    $vcs add $file
+    read -p  "Commit as '$logmess' to $vcs.$dir? y/n " commit
+    if [[ $commit =~ ^y ]] ; then
+	$vcs commit -m "$logmess"
+	$vcs pull
+	$vcs push
+    else
+	echo "Fix $file in $dir!"
+	return 0
+    fi
+    cd -
+    cd ~/$dir
 }
+
 
 function edit () {
     OPTIND=1

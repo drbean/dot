@@ -245,7 +245,7 @@ function gitwrap_svn () {
     read -p  \
 "Commit $wc/$change as '$logmess' to $vcs repo? y/n " commit
     if [[ $commit =~ ^y ]] ; then
-    subdir_status=$(sed -n 8p <<<$($vcs info $subdir))
+        subdir_status=$(sed -n 8p <<<$($vcs info $subdir))
     if [[ $subdir_status == "Schedule: add"  ]] ; then
         echo "Committing '$wc/$change'"
         $vcs commit $wc/$subdir -m "$logmess"
@@ -288,9 +288,9 @@ function gitwrap_svn () {
     read -p  \
 "Commit $repo/$change as '$logmess' to $vcs repo? y/n " commit
     if [[ $commit =~ ^y ]] ; then
-    $vcs commit -m "$logmess"
-    $vcs pull
-    $vcs push
+        $vcs commit -m "$logmess"
+        $vcs pull
+        $vcs push
     else
         echo "Fix $change in $dev_dir!"
         cd -
@@ -299,7 +299,6 @@ function gitwrap_svn () {
     cd -
     cd $dev_dir
 }
-
 
 function edit () {
     OPTIND=1

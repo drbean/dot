@@ -381,12 +381,13 @@ function prof_remove () {
     AREA=${AREA%/}
     address=$(grep -l "^$1" $LAND/$AREA/*/*/address.txt)
     echo $address | xargs sed -i.BAK -e "s/^\($1\)\(\s\|$\)/# \1/"
-    svn diff $LAND/$AREA/*/*/address.txt;
-    echo -ne "\nCommit? y/n "
-    read proceed
-    if [[ $proceed =~ ^y ]]
-        then svn ci $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
-    fi
+    # svn diff $LAND/$AREA/*/*/address.txt;
+    # echo -ne "\nCommit? y/n "
+    # read proceed
+    # if [[ $proceed =~ ^y ]]
+    #     then svn ci $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
+    # fi
+    gitwrap_svn $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
 }
 
 alias pf='prof_find'

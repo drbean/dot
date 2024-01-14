@@ -303,6 +303,11 @@ function gitwrap_svn () {
 	    cd -
 	    cd $dev_dir
 	;;
+
+	*)
+	    echo "No $subcommand subcommand"
+	    return 1
+	;;
     esac
 }
 

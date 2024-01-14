@@ -211,7 +211,8 @@ function gitwrap_svn () {
         subdir=${change%/$basename}
         else subdir=.
     fi
-    project=dot
+    pwd=$(pwd)
+    project=${pwd#/home/drbean/}
     dev_dir=~/$project
 
     vcs=svn

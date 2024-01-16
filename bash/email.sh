@@ -387,7 +387,7 @@ function prof_remove () {
     # if [[ $proceed =~ ^y ]]
     #     then svn ci $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
     # fi
-    gitwrap_svn $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
+    gitwrap_svn ci $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
 }
 
 alias pf='prof_find'

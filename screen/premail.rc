@@ -18,6 +18,8 @@ stuff "function sourcer () { readarray -t ul ; for u in \${ul[@]} ; do p=$(trurl
 
 stuff "# < source_list.html sourcer | e^M"
 stuff "# < cache_url.txt sourcer | curler | sed -ne 's/^.*E-MAIL<\/span><p>\([-._a-zA-Z0-9@]*\)<.*$/\\1/p' >> $A"
+stuff "# head -n 1 prof_page.html | clip ; paste | address.sed | save ; commit^M"
+stuff "head -n 1 prof_page.html | curler | address.sed | save ; commit"
 
 screen 3
 stuff "# svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL && "

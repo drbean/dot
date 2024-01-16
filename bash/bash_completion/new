@@ -1,0 +1,44 @@
+# file: new
+# grading parameter completion
+# copied from gr
+
+function _new () {
+	local cur prev opts league league_re round_opt round topic_opt topic
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	opts="-l -s -n"
+	league_opt="-l"
+	league=$LEAGUES
+	league_re=$LEAGUES_RE
+	school_opt="-s"
+	school="must nuu"
+	school_re="must|nuu"
+	n_opt="-n"
+	n="2 3"
+
+	if [[ ${prev} == new ]]; then
+	COMPREPLY=( $(compgen -W "${league_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${league_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${league}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${league_re} ]] ; then
+	COMPREPLY=( $(compgen -W "${school_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${school_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${school}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${school_re} ]] ; then
+	COMPREPLY=( $(compgen -W "${n_opt}" -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${n_opt} ]] ; then
+	COMPREPLY=( $(compgen -W "${n}" -- ${cur}) )
+	return 0
+	elif [[ ${cur} == * ]] ; then
+	COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+	return 0
+	fi
+}
+
+complete -F _new new

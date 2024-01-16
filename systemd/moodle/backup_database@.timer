@@ -1,0 +1,10 @@
+[Unit]
+Description="Dump moodSEMESTER,backup at duplicity/sac_mood0SEMESTER_fedora2? every ? hours"
+
+[Timer]
+OnCalendar=Mon 12:13,18:13
+OnCalendar=Mon,Fri 15:03
+Unit=backup_database@%i.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,4 @@
+screen v -S Literature.vim
+screen
+stuff "svn st^Msvn log -r BASE:HEAD"
+screen

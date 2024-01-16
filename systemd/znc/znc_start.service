@@ -1,0 +1,13 @@
+[Unit]
+Description="Start up znc--an advanced irc bouncer--by Greg"
+After=network-online.target
+OnFailure=status-email-drbean@%n.service
+Conflicts=znc_stop.service
+
+[Service]
+ExecStart=/usr/bin/znc -f --datadir=/var/lib/znc
+User=znc
+Nice=19
+
+[Install]
+WantedBy=multi-user.target

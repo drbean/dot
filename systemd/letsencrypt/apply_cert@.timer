@@ -1,0 +1,10 @@
+[Unit]
+Description=Run certbot certonly --webroot, get cert for momo.mydns.jp
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+Unit=apply_cert.service
+
+[Install]
+WantedBy=timers.target

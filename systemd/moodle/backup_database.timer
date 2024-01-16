@@ -1,0 +1,13 @@
+[Unit]
+Description=Back up database after class
+
+[Timer]
+OnBootSec=180
+# OnCalendar=1/6:03
+OnCalendar=Mon 12,18:13
+OnCalendar=Tue 17:03
+OnCalendar=Mon,Fri 15:03
+Unit=backup_database.service
+
+[Install]
+WantedBy=timers.target

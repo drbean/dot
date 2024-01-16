@@ -1,0 +1,1485 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# AREA=${AREA:-eastisland}
+# COUNTY=${COUNTY:-'*'}
+# A=$AREA/$COUNTY/$SCHOOL/address.txt
+# URL=
+# # export AREA COUNTY SCHOOL A URL
+
+export VD=$HOME/dot/vcs/svn/vimdiff
+
+export SEMESTER=111
+export WEEK=1
+export LEAGUES="cultureA cultureB BMA0036 GL00018 GL00019 GL00020"
+export LEAGUES_RE="cultureA|cultureB|MA0036|GL00018|GL00019|GL00020"
+
+# declare -A LEAGUE_ID=( [BMA0036]=41 [GL00018]=44 [GL00019]=43 [GL00020]=42 [toeic]=45)
+# declare -A COURSE_NAME=( [44]="conversation" [43]="anime" [42]="speaking/test" [41]="correspondence" [45]="speaking/test")
+# export LEAGUE_ID COURSE_NAME
+
+# User specific aliases and functions
+
+# # greg
+# ibus-daemon -drx
+
+# ingydotnet/git-hub
+source ~/dot/vcs/git-hub/.rc
+## ingydotnet/git-subrepo
+#source ~/dot/git/git-subrepo/.rc
+
+alias yuchieh="cd ~/yuchieh/ ; edit -s yuchieh -f 'editing_statement_certificate'"
+# alias mosh="export LANG=\"en_US.UTF-8\" && export LC_CTYPE=\"en_US.UTF-8\" && export LC_COLLATE=\"en_US.UTF-8\" && export LC_TIME=\"en_US.UTF-8\" && export LC_NUMERIC=\"en_US.UTF-8\" && export LC_MONETARY=\"en_US.UTF-8\" && export LC_MESSAGES=\"en_US.UTF-8\" && export LC_ALL=\"en_US.UTF-8\" && mosh"
+alias battery="WMIC PATH Win32_Battery Get EstimatedChargeRemaining"
+alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./\$ROUND"
+alias web="cd; screen -c /home/$USER/dot/screen/web.rc -dR web; cd -"
+alias surf="cd; tmux attach-session; cd -"
+alias tennis="cd ~/tennis; screen -dR tennis; cd -"
+alias beans="cd ~/ttb/beans; APP=beans COURSE= screen -c /home/$USER/dot/screen/project.rc -dR beans; cd -"
+alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/screen/project.rc -dR swiss; cd -"
+alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/screen/project.rc -dR comp; cd -"
+alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
+
+function off () {
+    shutdown /s /t 2
+}
+
+function cyg_pack () {
+    package=$1
+    if [[ -x d:/User-Data/Downloads/setup-x86_64.exe ]] ; then
+        d:/User-Data/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/User/$USER/Downloads --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
+    elif [[ -x d:/Users/$USER/Downloads/setup-x86_64.exe ]] ; then
+        d:/Users/$USER/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/User/$USER/Downloads --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
+    elif [[ -x c:/Users/$USER/Downloads/setup-x86_64.exe ]] ; then
+        c:/Users/$USER/Downloads/setup-x86_64.exe --quiet-mode --no-desktop --no-startmenu --root c:/cygwin64 --local-package-dir c:/User/$USER/Downloads --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
+    elif [[ -x c:/tools/cygwin/cygwinsetup.exe ]] ; then
+        c:/tools/cygwin/cygwinsetup.exe --quiet-mode --no-desktop --no-startmenu --root c:/tools/cygwin --local-package-dir c:/tools/cygwin/packages --site http://ftp.ntu.edu.tw/cygwin/ --packages $package
+    fi
+}
+
+function db_test () {
+    svn co http://github.com/drbean/db/trunk ~/db
+    cpanm -n --force App::Cmd
+    cpanm -n --force DBIx::Class::Schema
+    cd ~/db
+    perl Build.PL
+    ./Build
+    db moodle -p 5432
+}
+
+function catalyst () {
+    cpanm Config::General
+    cpanm -n --force Catalyst::Action::RenderView
+    cpanm -n --force Catalyst::Authentication::Store::DBIx::Class
+    cpanm -n --force Catalyst::Plugin::Authorization::Roles
+    cpanm -n --force Catalyst::Plugin::Session::State::Cookie 
+    cpanm -n --force Catalyst::Plugin::Session::Store::DBIC
+    cpanm -n --force Catalyst::Plugin::StackTrace Catalyst::Plugin::Static::Simple Catalyst::Plugin::ConfigLoader
+    cpanm -n --force Catalyst::Runtime
+    cpanm -n --force Catalyst::View::TT
+    POSTGRES_LIB=/usr/lib/postgresql POSTGRES_INCLUDE=/usr/include/postgresql POSTGRES_HOME=/usr/share/postgresql/data cpanm -n --force DBD::Pg
+    cpanm -n --force Flickr::API
+    cpanm -n --force IO::All
+    cpanm -n --force Lingua::Stem
+    cpanm -n --force Math::Random
+    cpanm -n --force Parse::RecDescent
+    cpanm -n --force SQL::Translator
+    cpanm -n --force YAML
+}
+
+function timer () {
+    OPTIND=1
+    local arg count
+    while getopts 'c:' arg
+    do
+        case ${arg} in
+            c) count=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    for ((i=1; $count+1-$i; i++))
+    do
+        sleep 1
+        printf "%.2d:%.2d\n" $(($i/60)) $(($i%60))
+    done
+    echo $'\a'
+    echo $'\a'
+}
+
+function avail () {
+    path=$1
+    basename=${oath##*/}
+    dir=${path%/*}
+    cp $path /usr/local/bin/$basename
+    chmod 775 /usr/local/bin/$basename
+}
+
+function rec () {
+    file=$1
+    basename=${file##*/}
+    if [[ $file =~ / ]] ; then
+	dirname=${file%/$basename}
+    else dirname=.
+    fi
+    swap=$dirname/.$basename.swp
+    echo "dirname: '$dirname', basename: '$basename'"
+    diff recover $file
+    status=$?
+    if [[ $status == 1 ]] ; then
+	read -p "cp 'recover' to '$file'? y/n " r2f
+	if [[ $r2f =~ ^y ]] ; then 
+	    cp recover $file
+	    echo "Done: 'recover' -> '$file'"
+	fi
+    elif [[ $status == 0 ]] ; then
+	echo "'recover' and '$file' the same."
+    fi
+    read -p "OK to remove 'recover', '$dirname/.$basename.swp'? y/n " ok
+    if [[ $ok =~ ^y ]] ; then 
+	rm recover $swap
+	echo "'recover', swap='$swap' removed"
+    else
+	echo "'recover', swap='$swap' NOT removed"
+    fi
+}
+
+declare -a roman=(i ii iii iv v vi vii viii ix x)
+
+source ~/dot/bash/email.sh
+source ~/dot/bash/e.sh
+
+function  tm () {
+    # AREA=kangwento
+    # COUNTY=kangwento
+    # SCHOOL=kduniv
+    # URL=
+    # export AREA COUNTY SCHOOL URL
+
+    f=$1
+    # cd ~/â$f
+    Fun=${f^} ; F=${Fun:0:1}
+    tmux at -t $f || 
+    tmux new-session -A -s $f \
+	-c ~/$f -n setup -P \; \
+	source-file ~/dot/tmux/$f.rc
+}
+
+function ttb () {
+    if [[ ! -e ~/ttb ]] ; then
+	svn co http://github.com/drbean/ttb ~/ttb --depth empty
+	svn up ~/ttb/branches/hint/dictation ~/ttb --parents
+	svn up ~/ttb/trunk/forms/bean --parents
+    fi
+    cd ~/ttb
+    screen -c /home/$USER/dot/screen/ttb.rc -dR ttb
+    cd -
+}
+
+function qb () {
+    #if [[ ! -e ~/qutebrowser ]] ; then
+    #    svn co http://github.com/drbean/qutebrowser ~/qutebrowser --depth empty
+    #    svn up ~/qutebrowser/branches/hint/dictation ~/qutebrowser --parents
+    #    svn up ~/qutebrowser/trunk/forms/bean --parents
+    #fi
+    cd ~/edit/trunk/email
+    screen -c /home/$USER/dot/screen/qutebrowser.rc -dR qutebrowser
+    cd -
+}
+
+source ~/dot/bash/gitwrap_svn.sh
+
+function edit () {
+    OPTIND=1
+    local arg SOURCE REPO FILE
+    while getopts 's:r:f:' arg
+    do
+        case ${arg} in
+            s) SOURCE=${OPTARG};;
+            r) REPO=${OPTARG};;
+            f) FILE=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    # svn mkdir ~/edit/branches/$source
+    # svn up ~/edit/branches/$source --depth empty
+    # svn up ~/edit/branches/$source/$file.md
+    # svn up ~/edit/branches/$source/issues.md
+    cd ~/edit/branches/$SOURCE
+    # cd ~/edit/trunk/$source
+    #if [[ ! -e ~/edit/gitedit ]] ; then
+    #    git clone http://github.com/drbean/edit ~/edit/gitedit
+    #elif [[ ! -e ~/edit/gitedit/$source ]] ; then
+    #    cd ~/edit/gitedit
+    #    git checkout $source
+    #else
+    #    cd ~/edit/gitedit/$source
+    #    git checkout $source
+    #fi
+    #cd ~/edit/gitedit/$source
+    #git status
+    REPO=${REPO:-'.'}
+    export SOURCE REPO FILE
+    screen -c /home/$USER/dot/screen/edit.rc -dR ${SOURCE#*/}.edit
+}
+
+function emoeco () {
+    #OPTIND=1
+    #local arg url search
+    #while getopts 'u:s:' arg
+    #do
+    #    case ${arg} in
+    #        u) url=${OPTARG};;
+    #        s) search=${OPTARG};;
+    #        *) return 1 # illegal option
+    #    esac
+    #done
+    svn up ~/emoeco
+    cd ~/emoeco || exit 1
+    # URL=$url SEARCH=$search screen -c $HOME/dot/screen/emoeco.rc -dR $url
+    screen -c $HOME/dot/screen/emoeco.rc -dR emoeco
+    cd -
+}
+
+function cygwin () {
+    screen -c /home/$USER/dot/screen/cygwin.rc -dR cygwin
+}
+
+
+function moodle () {
+    word=$1
+    word=$word screen -c /home/$USER/dot/screen/moodle.rc -dR moodle
+}
+
+function cm_id () {
+    local module activity_id module_string sqlrun_prefix sqlrun_suffix \
+        module_string_preshrunk module_id cm_string_preshrunk
+    module=$1
+    activity_id=$2
+    cd /srv/www/cgi-bin/moodle || exit 1
+    module_string=$(Moosh -n sql-run "select id from {modules} where name='$module'")
+    sqlrun_prefix="
+Record 1
+stdClass Object
+(
+    [id] => "
+    sqlrun_suffix="
+)"
+    module_string_preshrunk=${module_string#"$sqlrun_prefix"}
+    module_id=${module_string_preshrunk%"$sqlrun_suffix"}
+    cm_string=$(Moosh -n sql-run "select id from {course_modules} where \
+        module=$module_id and instance=$activity_id")
+    cm_string_preshrunk=${cm_string#"$sqlrun_prefix"}
+    echo ${cm_string_preshrunk%"$sqlrun_suffix"}
+    cd - > /dev/null 2>&1
+}
+# 5763 )
+function aca () {
+    OPTIND=1
+    local arg app=aca course topic story old_story round league script_arg
+    while getopts 'c:t:s:o:r:l:x:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            o) old_story=${OPTARG};;
+            r) round=${OPTARG};;
+            l) league=${OPTARG};;
+            x) script_arg=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/$app
+    APP=$app COURSE=$course TOPIC=$topic STORY=$story OLD_STORY=$old_story BASE=${old_story/-*/} ROUND=$round LEAGUE=$league SCRIPT_ARG=$script_arg screen -c /home/$USER/dot/screen/$app.rc -dR ${app}_$course
+    cd -
+}
+
+function dic () {
+    OPTIND=1
+    local arg app=dic course topic story old_story round league script_arg
+    while getopts 'c:t:s:o:r:l:x:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            o) old_story=${OPTARG};;
+            r) round=${OPTARG};;
+            l) league=${OPTARG};;
+            x) script_arg=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/dic
+    APP=$app \
+    MOD=${app^} \
+    COURSE=$course \
+    TOPIC=$topic \
+    STORY=$story \
+    OLD_STORY=$old_story \
+    ROUND=$round \
+    LEAGUE=$league \
+    SCRIPT_ARG="" \
+    screen -c /home/$USER/dot/screen/app.rc -dR dic
+    cd -
+}
+
+function bett () {
+    OPTIND=1
+    local arg app=bett course topic story old_story round league script_arg
+    while getopts 'c:s:o:r:l:x:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            s) story=${OPTARG};;
+            o) old_story=${OPTARG};;
+            r) round=${OPTARG};;
+            l) league=${OPTARG};;
+            x) script_arg=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/bett
+    APP=bett \
+    MOD=${app^} \
+    COURSE=$course \
+    STORY=$story \
+    OLD_STORY=$old_story \
+    ROUND=$round \
+    LEAGUE=$league \
+    SCRIPT_ARG="-t Non-competitive -g $course -i $story -d \"$script_arg\"" \
+    screen -c /home/$USER/dot/screen/bett.rc -dR bett
+    cd -
+}
+
+function question_grade_bett () {
+    local arg app=bett old_story round league
+    while getopts 'o:r:l:' arg
+    do
+        case ${arg} in
+            o) old_story=${OPTARG};;
+            r) round=${OPTARG};;
+            l) league=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/$app
+    # svn update bett.yaml -r 508 &&
+    perl script/question_grade_${app}.pl -l $league -x $old_story -q 1 -o 2 -w 2 > ~/$SEMESTER/$league/homework.yaml && 
+    # svn update bett.yaml -r 509 &&
+    less ~/$SEMESTER/$league/homework.yaml &&
+    mv ~/$SEMESTER/$league/homework.yaml ~/$SEMESTER/$league/homework/$round.yaml &&
+    svn add ~/$SEMESTER/$league/homework/$round.yaml &&
+    svn ci -m $old_story ~/$SEMESTER/$league/homework/$round.yaml &&
+    lftp -c "open web.nuu.edu.tw &&
+        cd public_html/$league &&
+        put ~/$SEMESTER/$league/homework/$round.yaml -o homework.yaml &&
+        qui"
+}
+
+alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
+
+alias dot="cd ~/dot; screen -c /home/$USER/dot/screen/dot.rc -dR dot"
+alias irc="cd ~/znc; screen -c /home/$USER/dot/screen/irc.rc -dR irc; cd -"
+
+alias csfp="cd ~/class/csfp; screen -c /home/$USER/dot/screen/csfprc -dR csfp; cd -"
+
+alias nlp="cd ~/nlp; screen -dR nlp; cd -"
+
+function GF () {
+    OPTIND=1
+    local module
+    while getopts 'c:t:s:p:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            o) oldstory=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/GF
+    COURSE=$course \
+    TOPIC=$topic \
+    STORY=$story \
+    MOD=${story^} \
+    OLDSTORY=${oldstory:-$story} \
+    OLDMOD=${OLDSTORY^} \
+    screen -c /home/$USER/dot/screen/gf.rc -dR GF_$story
+    cd -
+}
+
+function gftags2ctags () {
+    while getopts 'c:t:s:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    mod=${story^}
+    gf --tags /home/$USER/GF/gf-contrib/$USER/$course/$topic/$story/${mod}Eng.gf 2>/dev/null |
+    sed '\@/home/$USER/@!d' |
+    sed 's@^.*\(/home/$USER/.*$\)@\1@' |
+    xargs cat |
+    sed '\@/home/$USER/@!d' |
+    sed '\@indir@d' |
+    sed 's@^\([a-zA-Z0-9_]*\)\t\([a-z-]*\)\t\(/.*\.gf\):\([0-9]*\)[-0-9]*[ \t]*\(.*\)$@\1\t\3\t\4;"\t\2\ttype:\5@' |
+    LC_ALL=C sort |
+    uniq
+}
+
+function pages () {
+    OPTIND=1
+    local arg TOPIC STORY
+    while getopts 'c:t:s:o:l:x:' arg
+    do
+        case ${arg} in
+            t) TOPIC=${OPTARG};;
+            s) STORY=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/curriculum/pages
+    M="$HOME/curriculum/pages/homepage/markdown"
+    if [[ ! -f "$M/$STORY.md" ]]
+    then echo -e "% \n\n\nMe at
+    <form action='https://mastodon.sdf.org/@drbean'>
+    <button type='submit' class='btn'>
+    <img src='./mastodon.svg'
+        alt='https://joinmastodon.org/logos/wordmark-black-text.svg'
+        style='width:100px;height:50px'/>
+    </button></form>
+    \nBack to [$TOPIC]($TOPIC.html)" > $M/$STORY.md
+    fi
+    export TOPIC STORY M
+    screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$STORY
+    cd -
+}
+
+function sound () {
+    OPTIND=1
+    local arg course
+    while getopts 'c:d:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            d) directory=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/下載/soundfiles
+    COURSE=$course \
+    DIRECTORY=$directory \
+    screen -c /home/$USER/dot/screen/soundfiles.rc -dR sound_$course
+    cd -
+}
+
+alias curr="cd ~/curriculum; screen -c /home/$USER/dot/screen/utility.rc -dR curriculum; cd -"
+alias $SEMESTER="cd ~/$SEMESTER; screen -c /home/$USER/dot/screen/utility.rc -dR s$SEMESTER; cd -"
+alias meth="cd ~/methodology/; screen -c /home/$USER/dot/screen/utility.rc -dR methodology; cd -"
+alias tmpl="cd ~/class/tmpl; screen -c /home/$USER/dot/screen/utility.rc -dR tmpl; cd -"
+alias rc="cd ~/$SEMESTER/rc; screen -c /home/$USER/dot/screen/utility.rc -dR rc; cd -"
+
+function reading () {
+    OPTIND=1
+    local arg course=reading topic story form
+    while getopts 'v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/reading
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR reading
+        cd -
+}
+
+function lec () {
+    OPTIND=1
+    local arg course=lecture topic story form
+    while getopts 'v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/lecture
+        COURSE=$course \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        VIEW=${view:-"lecture/$topic"} \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
+}
+
+function toefl () {
+    OPTIND=1
+    local arg course=toefl topic story form
+    while getopts 'v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/test/toefl
+        COURSE=$course \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        VIEW=${view:-"toefl/$topic"} \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
+}
+
+function speaking () {
+    OPTIND=1
+    local arg course=speaking topic story form
+    while getopts 'v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/speaking/test
+        COURSE=speaking/test \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        VIEW=${view:-"presentation"} \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
+}
+
+function top () {
+    OPTIND=1
+    local arg course=topics view topic story form
+    while getopts 't:s:f:' arg
+    do
+        case ${arg} in
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW="topics" \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR topics_$story
+        cd -
+}
+
+function college () {
+    OPTIND=1
+    local arg course=college view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
+}
+
+function biz () {
+    OPTIND=1
+    local arg course=business view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
+}
+
+function anime () {
+    OPTIND=1
+    local arg course=anime view topic story form
+    while getopts 'v:t:s:f:q:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            q) quiz=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=${view:-$topic} \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        QUIZ=${quiz:-"jigsaw"} \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
+}
+
+function corr () {
+    OPTIND=1
+    local arg course=correspondence view topic story form
+    while getopts 'v:t:s:f:q:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            q) quiz=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=${view:-$topic} \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        QUIZ=${quiz:-"jigsaw"} \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
+}
+
+function wr () {
+    OPTIND=1
+    local arg course=writing view topic story form
+    while getopts 'v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
+}
+
+function cnv () {
+    OPTIND=1
+    local arg course=conversation view topic story form
+    while getopts 'v:t:s:q:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            q) quiz=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        QUIZ=${quiz:-"jigsaw"} \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
+}
+
+function pd () {
+    OPTIND=1
+    local arg course view topic story form
+    while getopts 'c:v:t:s:q:f:' arg
+    do
+        case ${arg} in
+            c) course=${OPTARG};;
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            q) quiz=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        QUIZ=${quiz:-"jigsaw"} \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/pandoc.rc -dR pandoc_$topic
+        cd -
+}
+
+function intm () {
+    OPTIND=1
+    local arg course=intm view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
+}
+
+function call () {
+    OPTIND=1
+    local arg course=call view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
+}
+
+function tech () {
+    OPTIND=1
+    local arg course=tech view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
+}
+
+function n () {
+    OPTIND=1
+    local arg course=media view topic story form
+    while getopts 'c:v:t:s:f:' arg
+    do
+        case ${arg} in
+            v) view=${OPTARG};;
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/curriculum/$course
+        COURSE=$course \
+        VIEW=$view \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
+}
+
+function tour () {
+    OPTIND=1
+    local arg course=tourism topic story form
+    while getopts 't:s:f:' arg
+    do
+        case ${arg} in
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW=$topic \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR $course
+        cd -
+}
+
+function ex () {
+    local arg course round topic story form
+    case $1 in
+        anime) course=$1;;
+        conversation) course=$1;;
+        speaking) course=$1;;
+        tech) course=$1;;
+        media) course=$1;;
+        business) course=$1;;
+        college) course=$1;;
+        *) return 1 # illegal league
+    esac
+    OPTIND=2
+    while getopts 'c:t:s:f:v:q' arg
+    do
+        case ${arg} in
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            v) view=${OPTARG};;
+            q) quiz=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/curriculum/$course
+    COURSE=$course \
+    VIEW=${view:-$topic} \
+    TOPIC=$topic \
+    STORY=$story \
+    FORM=$form \
+    QUIZ=${quiz:-"jigsaw"} \
+    screen -c /home/$USER/dot/screen/exam_prep.rc -dR exam_$story
+    cd -
+}
+
+function gr () {
+    local arg league round topic n
+    OPTIND=1
+    while getopts 'l:r:t:n:' arg
+    do
+        case ${arg} in
+            l) league=${OPTARG};;
+            r) round=${OPTARG};;
+            t) topic=${OPTARG};;
+            n) n=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    if [[ -z "$n" ]]
+        then n=2
+    fi
+    cd ~/$SEMESTER/$league
+    LEAGUE=$league \
+    ROUND=$round \
+    NEXTROUND=$(($round+1)) \
+    PREVROUND=$(($round-1)) \
+    TOPIC=$topic \
+    N=$n \
+    screen -c /home/$USER/dot/screen/grading.rc -dR s_$league
+    cd -
+}
+
+function gr_ex () {
+    local arg league round topic n
+    OPTIND=1
+    while getopts 'l:r:t:n:' arg
+    do
+        case ${arg} in
+            l) league=${OPTARG};;
+            r) round=${OPTARG};;
+            t) topic=${OPTARG};;
+            n) n=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    if [[ -z "$n" ]]
+        then n=2
+    fi
+    cd ~/$SEMESTER/$league
+    LEAGUE=$league \
+    ROUND=$round \
+    NEXTROUND=$(($round+1)) \
+    PREVROUND=$(($round-1)) \
+    TOPIC=$topic \
+    N=$n \
+    screen -c /home/$USER/dot/screen/grading_exam.rc -dR gr_ex_$league
+    cd -
+}
+
+function jigsaw () {
+    local arg league round topic n
+    OPTIND=1
+    while getopts 'l:r:t:n:' arg
+    do
+        case ${arg} in
+            l) league=${OPTARG};;
+            r) round=${OPTARG};;
+            t) topic=${OPTARG};;
+            n) n=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/$SEMESTER/$league
+    LEAGUE=$league \
+    ROUND=$round \
+    NEXTROUND=$(($round+1)) \
+    PREVROUND=$(($round-1)) \
+    TOPIC=$topic \
+    N=${n:-3} \
+    screen -c /home/$USER/dot/screen/jigsaw.rc -dR jigsaw_$league
+    cd -
+}
+
+function gr_comp () {
+    local arg league round topic n
+    OPTIND=1
+    while getopts 'l:r:t:n:' arg
+    do
+        case ${arg} in
+            l) league=${OPTARG};;
+            r) round=${OPTARG};;
+            t) topic=${OPTARG};;
+            n) n=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    if [[ -z "$n" ]]
+        then n=2
+    fi
+    cd ~/$SEMESTER/$league
+    LEAGUE=$league \
+    ROUND=$round \
+    NEXTROUND=$(($round+1)) \
+    PREVROUND=$(($round-1)) \
+    TOPIC=$topic \
+    N=$n \
+    screen -c /home/$USER/dot/screen/comp.rc -dR gr_comp_$league
+    cd -
+}
+
+function new () {
+    local arg league school n
+    OPTIND=1
+    while getopts 'l:s:n:' arg
+    do
+        case ${arg} in
+            l) league=${OPTARG};;
+            s) school=${OPTARG};;
+            n) n=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    if [[ -z "$n" ]]
+        then n=2
+    fi
+    cd ~/$SEMESTER/
+    SCHOOL=$school \
+    LEAGUE=$league \
+    N=$n \
+    SESSION=1 \
+    PREVSESSION=$(($SESSION-1)) \
+    screen -c /home/$USER/dot/screen/setup.rc -dR n_$league
+    cd -
+}
+
+alias intercultural="cd ~/curriculum/intercultural; VIEW=intercultural TOPIC= screen -c /home/$USER/dot/screen/course.rc -dR intercultural; cd -"
+alias literature="cd ~/class/literature; VIEW=literature TOPIC= STORY=robin-hood FORM=2 screen -c /home/$USER/dot/screen/course.rc -dR literature; cd -"
+
+alias grammar="cd ~/curriculum/grammar; screen -dR grammar; cd -"
+alias friends="cd ~/class/friends; screen -dR friends; cd -"
+alias pop="cd ~/class/curriculum/pop; screen -dR pop; cd -"
+alias ko="cd ~/class/curriculum/ko; screen -dR ko; cd -"
+alias magazine="cd ~/class/magazine; screen -dR magazine; cd -"
+
+function session () {
+    local league week
+    league=$1
+    week=$2
+    case ${league} in
+        *)
+            if (($week <= 5)); then session=1
+            elif (($week <= 9)); then session=2
+            elif (($week <= 13)); then session=3
+            elif (($week <= 18)); then session=4
+            else return 1 # illegal week
+            fi;;
+    esac
+}
+
+function tables () {
+    local league letter
+    league=$1
+    letter=$2
+    case ${league} in
+                # 16 groups
+        241)
+            case ${letter} in
+                X) tables="1-2,1-3,2-1,2-2,2-3,3-1,3-2,3-3,4-1,4-2,4-3,5-2,5-3";;
+                *) return 1 # illegal option
+            esac;;
+        KB1)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
+                *) return 1 # illegal option
+            esac;;
+        MA1)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
+                *) return 1 # illegal letter
+            esac;;
+        BMA0045)
+            case ${letter} in
+                X) tables="1-1,1-2,1-3,1-4,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,4-1,4-2,4-3,4-4,5-1,5-2,5-3,5-4,6-1,6-2,6-3,6-4,7-2,7-3";;
+                Y) tables="Black Blue Brown Gray Green BlackBlack BlueBlue GreenGreen Orange Pink Purple Red White Yellow OrangeOrange PinkPink PurplePurple";;
+                *) return 1 # illegal option
+            esac;;
+        MIA0009)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,2-3,2-4,3-1,3-2,3-3,3-4,4-1,4-2,4-3,5-4,5-1,5-2,5-3,5-4,6-1,6-2,6-3";;
+                Y) tables="Black Blue Brown Gray Green BlackBlack BlueBlue GreenGreen Orange Pink Purple Red White Yellow OrangeOrange PinkPink PurplePurple";;
+                *) return 1 # illegal option
+            esac;;
+        GL00043)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
+                *) return 1 # illegal option
+            esac;;
+        FLA0003)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1";;
+                *) return 1 # illegal option
+            esac;;
+        FLA0015)
+            case ${letter} in
+                X) tables="1-1,1-2,2-1,2-2,2-3,2-4,3-1,3-2";;
+                *) return 1 # illegal option
+            esac;;
+        FLA0019)
+            case ${letter} in
+                A) tables="1-1,1-2::1-3,1-4::2-1,2-2::2-3,2-4::3-1,3-2";;
+                X) tables="1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2";;
+                *) return 1 # illegal option
+            esac;;
+        FLA0021)
+            case ${letter} in
+                X) tables="1-1,1-2,1-3,2-1,2-2,2-3,3-1,3-2,3-3,4-1,4-2";;
+                *) return 1 # illegal option
+            esac;;
+        *) return 1 # illegal league
+    esac
+}
+
+function csv2yaml ( ) {
+    WORK=$1
+    MOODLEGRADE=$2
+    cat ${WORK}/$MOODLEGRADE.csv | sed \
+    -e '1i ---' \
+    -e '/ID number/d' \
+    -e 's/^\([UNVB][[:digit:]]*\),"\?\([[:digit:]]*\).*$/\1: \2/' \
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),[UNVB][[:digit:]]*,,,[A-Za-z0-9._]*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,"\?\([[:digit:]]*\).*$/\1: \2/' \
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),[UNVB][[:digit:]]*,,,[A-Za-z0-9._]*@[^,]*,"\?[-0].*$/\1: 0/' \
+    -e 's/^\w*,\([UNVB][[:digit:]]*\),,,,[A-Za-z0-9._]*@[^,]*,"\?[-0].*$/\1: 0/'
+}
+
+
+function w () {
+    local arg league session week letter topic tables
+    league=$1
+    week=$2
+    OPTIND=3
+    while getopts 'w:l:t:' arg
+    do
+        case ${arg} in
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    session $league $week
+    tables $league $letter
+    cd ~/$SEMESTER/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/$USER/dot/screen/class.rc -dR ${league}_$week
+    cd -
+}
+
+function cw () {
+    local arg league session week letter topic tables
+    league=$1
+    week=$2
+    OPTIND=3
+    while getopts 'w:l:t:' arg
+    do
+        case ${arg} in
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    session $league $week
+    tables $league $letter
+    cd ~/$SEMESTER/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/$USER/dot/screen/classwork.rc -dR ${league}_$week
+    cd -
+}
+
+function work () {
+    local arg work league session week letter topic tables
+    work=$1
+    league=$2
+    week=$3
+    OPTIND=4
+    while getopts 'w:l:t:' arg
+    do
+        case ${arg} in
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    session $league $week
+    tables $league $letter
+    cd ~/$SEMESTER/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    WORK=$work \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/$USER/dot/screen/work.rc -dR ${league}_$week
+    cd -
+}
+
+function hw () {
+    local arg league session week letter topic tables
+    league=$1
+    week=$2
+    OPTIND=3
+    while getopts 'w:l:t:' arg
+    do
+        case ${arg} in
+            l) letter=${OPTARG};;
+            t) topic=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    session $league $week
+    tables $league $letter
+    cd ~/$SEMESTER/$league
+    SESSION=$session \
+    WEEK=$week \
+    LASTWEEK=$(($week-1)) \
+    LEAGUE=$league \
+    TOPIC=$topic \
+    LETTER=$letter \
+    TABLES=$tables \
+    screen -c /home/$USER/dot/screen/homework.rc -dR ${league}_$week
+    cd -
+}
+
+alias contest="cd ~/001/contest; screen -dR contest; cd -"
+
+alias job="cd ~/job; screen -c /home/$USER/dot/screen/job.rc -dR job"
+
+alias q=exit
+
+# To the extent possible under law, the author(s) have dedicated all 
+# copyright and related and neighboring rights to this software to the 
+# public domain worldwide. This software is distributed without any warranty. 
+# You should have received a copy of the CC0 Public Domain Dedication along 
+# with this software. 
+# If not, see <http://creativecommons.org/publicdomain/zero/1.0/>. 
+
+# base-files version 4.2-4
+
+# ~/.bashrc: executed by bash(1) for interactive shells.
+
+# The latest version as installed by the Cygwin Setup program can
+# always be found at /etc/defaults/etc/skel/.bashrc
+
+# Modifying /etc/skel/.bashrc directly will prevent
+# setup from updating it.
+
+# The copy in your home directory (~/.bashrc) is yours, please
+# feel free to customise it to create a shell
+# environment to your liking.  If you feel a change
+# would be benifitial to all, please feel free to send
+# a patch to the cygwin mailing list.
+
+# User dependent .bashrc file
+
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
+# Shell Options
+#
+# See man bash for more options...
+#
+# Don't wait for job termination notification
+# set -o notify
+#
+# Don't use ^D to exit
+# set -o ignoreeof
+#
+# Use case-insensitive filename globbing
+# shopt -s nocaseglob
+#
+# Make bash append rather than overwrite the history on disk
+# shopt -s histappend
+#
+# When changing directory small typos can be ignored by bash
+# for example, cd /vr/lgo/apaache would find /var/log/apache
+# shopt -s cdspell
+
+# Completion options
+#
+# These completion tuning parameters change the default behavior of bash_completion:
+#
+# Define to access remotely checked-out files over passwordless ssh for CVS
+# COMP_CVS_REMOTE=1
+#
+# Define to avoid stripping description in --option=description of './configure --help'
+# COMP_CONFIGURE_HINTS=1
+#
+# Define to avoid flattening internal contents of tar files
+# COMP_TAR_INTERNAL_PATHS=1
+#
+# Uncomment to turn on programmable completion enhancements.
+# Any completions you add in ~/.bash_completion are sourced last.
+# [[ -f /etc/bash_completion ]] && . /etc/bash_completion
+
+# History Options
+#
+# Don't put duplicate lines in the history.
+# export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+#
+# Ignore some controlling instructions
+# HISTIGNORE is a colon-delimited list of patterns which should be excluded.
+# The '&' is a special pattern which suppresses duplicate entries.
+# export HISTIGNORE=$'[ \t]*:&:[fb]g:exit'
+# export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
+#
+# Whenever displaying the prompt, write the previous line to disk
+# export PROMPT_COMMAND="history -a"
+
+# Aliases
+#
+# Some people use a different file for aliases
+# if [ -f "${HOME}/.bash_aliases" ]; then
+#   source "${HOME}/.bash_aliases"
+# fi
+#
+# Some example alias instructions
+# If these are enabled they will be used instead of any instructions
+# they may mask.  For example, alias rm='rm -i' will mask the rm
+# application.  To override the alias instruction use a \ before, ie
+# \rm will call the real rm not the alias.
+#
+# Interactive operation...
+# alias rm='rm -i'
+# alias cp='cp -i'
+# alias mv='mv -i'
+#
+# Default to human readable figures
+# alias df='df -h'
+# alias du='du -h'
+#
+# Misc :)
+# alias less='less -r'                          # raw control characters
+# alias whence='type -a'                        # where, of a sort
+# alias grep='grep --color'                     # show differences in colour
+# alias egrep='egrep --color=auto'              # show differences in colour
+# alias fgrep='fgrep --color=auto'              # show differences in colour
+#
+# Some shortcuts for different directory listings
+# alias ls='ls -hF --color=tty'                 # classify files in colour
+# alias dir='ls --color=auto --format=vertical'
+# alias vdir='ls --color=auto --format=long'
+# alias ll='ls -l'                              # long list
+# alias la='ls -A'                              # all but . and ..
+# alias l='ls -CF'                              #
+
+# Umask
+#
+# /etc/profile sets 022, removing write perms to group + others.
+# Set a more restrictive umask: i.e. no exec perms for others:
+# umask 027
+# Paranoid: neither group nor others have any perms:
+# umask 077
+
+# Functions
+#
+# Some people use a different file for functions
+# if [ -f "${HOME}/.bash_functions" ]; then
+#   source "${HOME}/.bash_functions"
+# fi
+#
+# Some example functions:
+#
+# a) function settitle
+# settitle () 
+# { 
+#   echo -ne "\e]2;$@\a\e]1;$@\a"; 
+# }
+# 
+
+# greg
+# b') function wcd
+
+# from 'man wcd'
+
+function wcd () {
+    /usr/lib/wcd/wcd.exe "$@"
+    . ${WCDHOME:-${HOME}}/bin/wcd.go
+}
+
+# b) function cd_func
+# This function defines a 'cd' replacement function capable of keeping, 
+# displaying and accessing history of visited directories, up to 10 entries.
+# To use it, uncomment it, source this file and try 'cd --'.
+# acd_func 1.0.5, 10-nov-2004
+# Petar Marinov, http:/geocities.com/h2428, this is public domain
+# cd_func ()
+# {
+#   local x2 the_new_dir adir index
+#   local -i cnt
+# 
+#   if [[ $1 ==  "--" ]]; then
+#     dirs -v
+#     return 0
+#   fi
+# 
+#   the_new_dir=$1
+#   [[ -z $1 ]] && the_new_dir=$HOME
+# 
+#   if [[ ${the_new_dir:0:1} == '-' ]]; then
+#     #
+#     # Extract dir N from dirs
+#     index=${the_new_dir:1}
+#     [[ -z $index ]] && index=1
+#     adir=$(dirs +$index)
+#     [[ -z $adir ]] && return 1
+#     the_new_dir=$adir
+#   fi
+# 
+#   #
+#   # '~' has to be substituted by ${HOME}
+#   [[ ${the_new_dir:0:1} == '~' ]] && the_new_dir="${HOME}${the_new_dir:1}"
+# 
+#   #
+#   # Now change to the new dir and add to the top of the stack
+#   pushd "${the_new_dir}" > /dev/null
+#   [[ $? -ne 0 ]] && return 1
+#   the_new_dir=$(pwd)
+# 
+#   #
+#   # Trim down everything beyond 11th entry
+#   popd -n +11 2>/dev/null 1>/dev/null
+# 
+#   #
+#   # Remove any other occurence of this dir, skipping the top of the stack
+#   for ((cnt=1; cnt <= 10; cnt++)); do
+#     x2=$(dirs +${cnt} 2>/dev/null)
+#     [[ $? -ne 0 ]] && return 0
+#     [[ ${x2:0:1} == '~' ]] && x2="${HOME}${x2:1}"
+#     if [[ "${x2}" == "${the_new_dir}" ]]; then
+#       popd -n +$cnt 2>/dev/null 1>/dev/null
+#       cnt=cnt-1
+#     fi
+#   done
+# 
+#   return 0
+# }
+# 
+# alias cd=cd_func
+
+# vim: set ts=8 sts=4 sw=4 noet:
+

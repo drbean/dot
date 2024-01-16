@@ -1,0 +1,14 @@
+[Unit]
+Description=Set gnome, mate background picture
+
+[Service]
+Type=oneshot
+Nice=19
+Environment=DISPLAY=:0
+IOSchedulingClass=2
+IOSchedulingPriority=7
+Environment=USER=%i
+ExecStart=/usr/local/bin/picture_uri.pl
+
+[Install]
+WantedBy=graphical.target

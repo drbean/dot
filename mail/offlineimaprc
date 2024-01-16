@@ -1,0 +1,20 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+
+[general]
+accounts = gmail
+
+[Account gmail]
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = ~/mail
+
+[Repository Remote]
+type = IMAP
+remotehost = imap.gmail.com
+remoteuser = counterbean
+remotepass = 6y6t6y6t
+sslcacertfile = /etc/pki/tls/cert.pem

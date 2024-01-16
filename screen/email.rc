@@ -1,0 +1,66 @@
+# screen 4
+# # old commands
+# # format address file, removing dupes
+# stuff "# for department in $DEPARTMENT ; do while IFS= read -r address ; do if ! ( ack \"\^\$address\$\" $SCHOOL/sent_address.txt > /dev/null ) ; then printf '%s\\n' \"\$address\" >> $SCHOOL/\${department}_new_address.txt ; fi ; done < $SCHOOL/\${department}_0.txt && wc $SCHOOL/\${department}_0.txt $SCHOOL/\${department}_new_address.txt ; done ^M"
+# # send mails
+
+screen 1
+stuff "# mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"
+
+screen 3
+## prep my_word
+#stuff "declare +i wc=\$(wc -l \$AREA/\$COUNTY/*/address.txt | tail -n 1 | ^M"
+#stuff "	cut -c 3,4,5,6,7)^M"
+#stuff "# sed -n -e \"/\^overtrain$/,+\$((\$wc+300))p\" /usr/share/dict/words > my_word.txt^M"
+#stuff "# for f in my_word* ; do for op in head tail ; do echo -n \"\$op \$f: \" && \$op -n 1 \$f ; done && echo ;  done^M"
+#stuff "# echo 100 > next^M"
+
+# AREALIST, COUNTYLIST, SCHOOLLIST
+stuff "declare-a LANDLIST=(tw kr)^M"
+stuff "declare -a AREALIST=(tw/north tw/mid tw/south tw/eastisland kr/east kr/west)^M"
+stuff "declare -A COUNTYLIST SCHOOLLIST^M"
+stuff "for a in \${AREALIST[*]} ; do COUNTYLIST[\$a]=\$(ls \$a | sed '/\^[0-9]*$/d ; /\.txt/d' ) ; done^M"
+stuff "for c in \${COUNTYLIST[\$AREA]} ; do SCHOOLLIST[\$c]=\$( ls \$AREA/\$c | sed '/\.txt$/d' | tr '\\n' ' ' ); done^M"
+
+# clean address.txt
+stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'unescaped http web page links'^M"
+stuff "# wrong_char^M"
+stuff "# unescaped_uri^M"
+stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'intrusive email chars'^M"
+stuff "# line_ends_space^M"
+stuff "# in_addr_space^M"
+stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'intrusive, eol white space'^M"
+stuff "# no_at_mark^M"
+stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'missing @'^M"
+# batch address
+stuff "# cat \$LAND/\$AREA/\$COUNTY/*/address.txt | old_address | sort | uniq | vipe | shuf | split -a 4 -d -l 40 - \$LAND/\$AREA/^M"
+# upload batch
+stuff "# \$LAND/\$AREA/\$COUNTY \$BATCH=$LAND/$AREA/$COUNTY $BATCH^M"
+
+screen 0
+stuff "# read_BATCH^M"
+stuff "# cached batch=$(< \$LAND/\$AREA/batch.txt )^M"
+stuff "# decr_BATCH^M"
+stuff "# BATCH=$((--BATCH))^M"
+stuff "# BATCH=000 && echo $BATCH > \$LAND/\$AREA/batch.txt^M"
+stuff "# \$BATCH=$BATCH^M"
+stuff "# PX './spam.sh < drbean_addresses.txt'^M"
+stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/ && put ~/job/spam/run.sh && chmod 775 run.sh && qui\"^M"
+stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && mput drbean_addresses.txt ~/job/spam/spam.sh && chmod 775 spam.sh && qui\"^M"
+stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && mkdir -p \$AREA/\$c && qui\" ; done^M"
+stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && glob -f rm \$AREA/\$c/* && mput -O \$AREA/\$c \$c/*.txt && qui\" ; done^M"
+stuff "# screen -p 1 -X stuff \"../run.sh $LAND/\$AREA \$BATCH\^M\"^M"
+stuff "# screen -p 1 -X stuff \"tmux new-window -n \$BATCH && ls\^M\"^M"
+stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && mput \$LAND/\$AREA/\$BATCH? && qui\"^M"
+stuff "# incr_BATCH^M"
+stuff "# PX rm $BATCH?^M" 
+stuff "# screen -p 1 -X stuff 'cd ~/job/\LAND/\$AREA && tmux new-session -A -s \$AREA\^M'^M"
+stuff "# screen -p 1 -X stuff \"mosh drbean@sdf.org\^M\"^M"
+stuff "# first_batch^M"
+stuff "# run_batch^M"
+stuff "# set_batch_up^M"
+stuff "# sign_in^M"
+stuff "# prep_auth^M"
+stuff "echo -n \"BATCH=\$BATCH, batch.txt=\" && cat \$LAND/\$AREA/batch.txt^M"
+stuff "PX \$word"
+

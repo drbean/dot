@@ -1,0 +1,51 @@
+screen 9
+stuff "man bash"
+screen 7
+stuff "# for repo in curriculum ; do rm -rf /srv/svn/\$repo && svnadmin create /srv/svn/\$repoo && svn mkdir file:///srv/svn/\$repo/trunk -m \"\$repo: trunk\"; done^M"
+# screen 6
+# stuff "cd et_cetera^M"
+# stuff "# su -^M"
+# stuff "# chmod 700 -R .^M"
+# stuff "git status^M"
+# stuff "# for config in lynx-site.cfg ; do sudo cp ~greg/dot/et_cetera/$config /etc/$config^M"
+# screen 5
+# stuff "# ln systemd/desktop/desktop_background@.service ~/.config/systemd/user/^M"
+# stuff "# ln systemd/desktop/desktop_background@.timer ~/.config/systemd/user/^M"
+# stuff "# systemctl --user daemon-reload^M"
+# stuff "# systemctl --user enable desktop_background@$USER.timer^M"
+# stuff "# systemctl --user restart desktop_background@$USER.timer^M"
+# stuff "# systemctl --user start desktop_background@$USER.service^M"
+# stuff "# systemctl list-timers --user --all^M"
+# stuff "# for type in service timer ; do cp ~/dot/systemd/dns/update_dns.\$type ~/.config/systemd/user/update_dns.\$type ; chmod 600 ~/.config/systemd/user/update_dns.\$type ; done^M"
+# stuff "# ln -s ~/dot/systemd/email/status-email-drbean@.service ~/.config/systemd/user/status-email-drbean@.service^M"
+# stuff "# for service in dns/update_dns ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}.\$type; done; done^M"
+# stuff "# for service in desktop/desktop_background ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}@.\$type; done; done^M"
+screen 4
+stuff "cat ~/dot/mail/fortunes | sed -f fortune.sed >> ~/curriculum/pages/homepage/markdown/WittySayings.md"
+stuff "/usr/sbin/strfile.exe fortunes^M"
+stuff "lftp -c 'open drbean@sdf.org && mput -O ~/.mutt ~/dot/mail/fortunes*'^M"
+screen 3
+stuff "cd vcs^M"
+stuff "# cp ignore ~/.config/git/ignore^M"
+stuff '# for repo in git-hub git-subrepo ; do git clone https://github.com/drbean/$repo.git && cd $repo && git remote add upstream https://github.com/ingydotnet/$repo.git && git fetch upstream && git merge upstream/master && cd .. ; done^M'
+screen 2
+source vim.rc
+screen 1
+stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
+stuff "for x in rc _profile; do cp bash/bash\$x ~/.bash\$x; done^M"
+stuff "# #careful cp bash/history ~/.bash_history^M"
+stuff "# export HISTTIMEFORMAT='%m-%d '^M"
+stuff "# . alternatives.txt^M"
+stuff "# su -c 'cp screen/screen.rc /etc/screenrc'^M"
+stuff "# cp screen/screen.rc ~/.screenrc^M"
+stuff "# su -c 'cp bash/bash_completion/*[\^~] /etc/bash_completion.d/'^M"
+stuff "# cp ~/dot/cygwin/repo_checkout.sh ~/dot/chocolatey/choco_package.{ps1,sh} /cygdrive/f^M"
+stuff "# for m in premail email postmail ; do ln -s ~/edit/trunk/email ~/$m; done^M"
+stuff "# cp ~drbean/edit/trunk/email/trurl/trurl.exe /usr/local/bin/trurl && chmod 555 /usr/local/bin/trurl^M"
+stuff "# cp bash/remove_email.sh /usr/local/bin/remove_email.sh && chmod 775 /usr/local/bin/remove_email.sh^M"
+stuff "# for script in chocolatey.nupkg install.ps1 powerup_cygwin.ps1 cygwin_package.sh ; do /usr/bin/diff -u {~/dot/chocolatey,/cygdrive/c/Users/$USER/Downloads}/\$script ; done^M"
+stuff "for script in cygwin_package.sh ; do /usr/bin/diff -u {~/dot/chocolatey,/cygdrive/c/Users/$USER/Downloads}/\$script ; done^M"
+stuff "/usr/bin/diff -u {~/dot/cygwin,/cygdrive/c/Users/$USER/Downloads}/repo_checkout.sh^M"
+stuff "# lftp -c 'open drbean@sdf.org && cd html && put chocolatey/powerup_cygwin.ps1 && put chocolatey/powerup_ntu_cygwin.ps1 && put chocolatey/cygwin_package.sh && put cygwin/repo_checkout.sh && quit'^M"
+screen 0
+stuff "v bash/{bashrc,e{,mail}.sh} screen/{*mail,dot}.rc ~/.git-hub/config"

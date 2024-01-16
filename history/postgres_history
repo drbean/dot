@@ -1,0 +1,31 @@
+#createdb aca021 -T template0
+createdb aca021 -T template0
+createdb aca022 -T template0
+createdb bett022 -T template0
+createdb dic022 -T template0
+createdb mydb
+createuser apache
+createuser drbean
+dropdb aca022
+dropdb mydb
+exit
+less ~/.bash_history 
+less data/moodle/pg_hba.conf 
+less data/pg_hba.conf 
+lftp
+ls
+ls data/
+psql
+psql aca022 
+psql aca022 < aca022.sql 
+psql bett022 
+psql dic022
+psql dic022 
+psql mood082
+psql -p 5433 mood082
+psql -P 5433 mood082
+psql --set ON_ERROR_STOP=on aca022 < aca022.sql
+psql --set ON_ERROR_STOP=on bett022 < bett022.sql
+psql --set ON_ERROR_STOP=on dic022 < dic022.sql
+pwd
+q

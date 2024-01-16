@@ -1,0 +1,13 @@
+[Unit]
+Description=Stop znc before moodle-using class
+
+[Timer]
+OnBootSec=180
+# OnCalendar=1/6:03
+OnCalendar=Mon 10,16:10
+OnCalendar=Tue 15:10
+OnCalendar=Mon,Fri 13:00
+Unit=znc_stop.service
+
+[Install]
+WantedBy=timers.target

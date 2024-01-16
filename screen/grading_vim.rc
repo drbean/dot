@@ -1,0 +1,3 @@
+screen 0
+stuff "v league.yaml session/$ROUND/groups.yaml exam/$ROUND/round.yaml exam/$ROUND/response.yaml exam/$ROUND/scores.yaml exam/$ROUND/g1.yaml comp/$ROUND/round.yaml comp/$ROUND/response.yaml comp/$ROUND/scores.yaml exam/$ROUND/g2.yaml exam/$ROUND/g.yaml grades.txt groups.yaml session/$NEXTROUND/groups.yaml cohort.txt"
+

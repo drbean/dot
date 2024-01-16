@@ -1,0 +1,15 @@
+screen 1
+stuff "mosh drbean@sdf.org^M"
+
+screen 4
+stuff "rlwrap remove_email.sh^M"
+
+screen 3
+stuff "# START=000; END=000; svn rm \^/trunk/email/\$LAND/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$END $(date)\"; done^M"
+stuff "pf "
+
+screen 0
+stuff "screen -X bind X eval copy 'stuff M?@\^Mb\^Me\^M' 'select 4' 'paste .' 'stuff \^M' 'select 0'  'activity \"\^G remove_prof from $AREA in window %\"'^M"
+bind Y eval copy 'stuff M?@^Mb^Me^M' "activity \"\^G copy $AREA address in window %\""
+stuff "screen -X bind Z eval 'select 4' 'paste .' 'stuff \^M' 'select 0'^M"
+stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"

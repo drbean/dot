@@ -1,0 +1,5 @@
+screen 2
+stuff "# lftp -c \"open sftp://drbean@sdf.org && lcd spam && cd job && mput spam.sh run.sh send.sh\"^M"
+
+screen 0
+stuff "v spam/{run,spam,send}.sh"

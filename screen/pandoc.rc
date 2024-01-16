@@ -1,0 +1,8 @@
+screen
+
+stuff ". $HOME/.bash_profile^M"
+stuff "# TOPIC=$TOPIC STORY=$STORY ; pandoc -s -t html --self-contained --variable=CJKmainfont:'WenQuanYi Zen Hei' --variable=CJKmonofont:'WenQuanYi Zen Hei Mono' ./\$TOPIC/\$STORY.md -o ./\$TOPIC/\$STORY.html && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./\$TOPIC/\$STORY.html && qui'^M"
+stuff "# v ./$TOPIC/$STORY.html^M"
+stuff "# pandoc -s -t beamer -V theme:\${THEME[\$((\$WEEK%13))]} -V colortheme:\${COLOR[$((\$WEEK%13))]} --pdf-engine=xelatex --variable=CJKmainfont:'WenQuanYi Zen Hei' --variable=CJKmonofont:'WenQuanYi Zen Hei Mono' ./$TOPIC/slides.md -o ./$TOPIC/slides.pdf && lftp -c 'open web.nuu.edu.tw && cd public_html/$VIEW && put ./$TOPIC/slides.pdf && qui'^M"
+stuff "# while true; do pandoc -i --self-contained -t revealjs -o presentation.html slides.md && lftp -c \"open sdf.org && user drbean PASSWD && cd html && put presentation.html\" && echo \"presentation.html uploaded\" && sleep 60 ; done^M"
+stuff "pandoc -i --self-contained -t revealjs -o presentation.html slides.md"

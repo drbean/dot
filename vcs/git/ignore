@@ -1,0 +1,14 @@
+*.hs~
+*.gf~
+*.hs.sw?
+*.gf.sw?
+*.gfo
+*.gf-tags
+Interpretation.hs
+Evaluation.hs
+LogicalForm.hs
+Translate.hs
+gf_tags
+haskell_tags
+tags
+.ghci

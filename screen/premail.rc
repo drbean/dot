@@ -1,0 +1,28 @@
+screen 0
+# editing
+stuff "# echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.ac.kr >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; v $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ^M"
+stuff "# echo -e \\\\n# $URL >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; v {page,address}.sed {prof_page,faculty}.html^M"
+stuff "v {prof_page,faculty}.html {address,page,cleanup}.sed /tmp/clip.txt^M"
+
+screen 1
+stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"
+stuff "# while read p ; do curl -L \"\${p%\$\'\\r\'}\" | sed -f address.sed | tee -a $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; done < scratch.html^M"
+stuff "# for p in {..} ; do curl -L \"\$p\" | l ; done^M"
+stuff "# curl -L \"$URL\" > faculty.html^M"
+stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"
+stuff "# lynx '^M"
+stuff "# DEPARTMENT= h '^M"
+stuff "# echo '^M"
+
+stuff "function sourcer () { readarray -t ul ; for u in \${ul[@]} ; do p=$(trurl \"\$u\" --get [path]) ; q=$(trurl \"\$u\" --get [query]) ; url_assemble -h \"www.\$SCHOOL.ac.kr\" -p \"\$p\" -q \"\$q\"; done }^M"
+
+stuff "# < source_list.html sourcer | e^M"
+stuff "# < cache_url.txt sourcer | curler | sed -ne 's/^.*E-MAIL<\/span><p>\([-._a-zA-Z0-9@]*\)<.*$/\\1/p' >> $A"
+
+screen 3
+stuff "# svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL && "
+stuff " touch $LAND/$AREA/$COUNTY/$SCHOOL/address.txt && svn add $LAND/$AREA/$COUNTY/$SCHOOL/address.txt^M"
+stuff "# svn up $LAND/$AREA/$COUNTY^M"
+stuff "# svn ci $LAND/$AREA/$COUNTY/$SCHOOL -m http://$DEPARTMENT.$SCHOOL.ac.kr^M"
+stuff "# svn ci \$LAND/\$AREA/\$COUNTY/\$SCHOOL -m '$URL'^M"
+stuff "log_clip &"

@@ -1,0 +1,10 @@
+[Unit]
+Description=Scrape IP address, update DNS record on boot/every 6 hrs
+
+[Timer]
+OnBootSec=180
+OnCalendar=1/6:03
+Unit=update_dns.service
+
+[Install]
+WantedBy=timers.target

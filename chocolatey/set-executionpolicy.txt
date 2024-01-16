@@ -1,0 +1,3 @@
+set-executionpolicy bypass -scope process
+y
+c:\Users\$USER\Downloads\powerup_cygwin.ps1

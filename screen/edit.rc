@@ -1,0 +1,46 @@
+screen 1
+stuff "ls^M"
+stuff "# grep -r ^M"
+stuff "cd \$REPO^M"
+stuff "svn diff --diff-cmd $VD"
+
+screen 2
+stuff "# for o in touch rm ; do \$o output/\$FILE.pdf ; done && xelatex --output-directory=output \$FILE.tex && cygstart output/\$FILE.pdf^M"
+stuff "# cd \$REPO^M"
+stuff "# pandoc -o reference.docx --print-default-data-file reference.docx^M"
+stuff "# svn add reference.docx^M"
+stuff "# svn ci reference.docx -m styles_for_$SOURCE^M"
+stuff "# mv {,orig_}\$FILE.docx^M"
+stuff "# cp {orig_,their_}$FILE.docx^M"
+stuff "# cp {orig_,}\$FILE.md^M"
+stuff "# pandoc -o orig_\$FILE.md --from=docx+styles --to=markdown-link_attributes --extract-media=./ \$FILE.docx^M"
+stuff "# MINE=my_\$FILE; pandoc -o \$MINE.docx --reference-doc=./\$FILE.docx \$FILE.md "
+stuff "# && /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD /t \$MINE.docx^M"
+stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE \$FILE.docx^M"
+stuff "# cygstart media/*^M"
+
+screen 3
+stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE my_\$FILE.docx^M"
+stuff "# cygstart \$FILE.docx^M"
+stuff "# cygstart my_\$FILE.docx^M"
+stuff "# cygstart their_\$FILE.docx^M"
+
+screen 4
+stuff "/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE their_\$FILE.docx"
+
+screen 5
+stuff "# s=$SOURCE f=$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$f output/\$f.pdf -o invoice.pdf && qui\"^M"
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd html && put Diff.html -o \${s}_Diff.html && qui\"^M"
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$s their_\$f.docx -o their_\$f.docx && qui\"^M"
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/their_\$f.docx -o their_\$f.docx && qui\"^M"
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/\$f.docx -o \$f.docx && qui\"^M"
+
+screen 6
+stuff "/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE orig_\$FILE.docx"
+
+screen 9
+stuff "# man pandoc_markdown^M"
+stuff "man pandoc^M"
+
+screen 0
+stuff "v --cmd 'set spellfile=spell.en.utf-8.add' \$REPO/{\$FILE,issues}.md^M"

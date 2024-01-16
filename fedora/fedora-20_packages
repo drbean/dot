@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-gb">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="Fedora Sticky Notes is a feature-rich, yet lightweight paste utility" />
+
+	<title>#245963 &bull; Fedora Project Pastebin</title>
+	<link href="/skins/fedora/images/favicon.ico" rel="shortcut icon" />
+	<link href="/rss/" rel="alternate" type="application/rss+xml" title="Feed" />
+	<link href="/skins/fedora/css/fedora.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="" rel="stylesheet" type="text/css" media="screen, projection" id="raw_switch" />
+    <script type="text/javascript" src="/addons/jquery/core/jquery.min.js"></script>
+    <script type="text/javascript" src="/addons/jquery/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/skins/fedora/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/skins/fedora/js/main.js"></script>
+
+	<style type="text/css">
+		/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.text .de1, .text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text  {word-wrap:break-word;}
+.text .imp {font-weight: bold; color: red;}
+.text li, .text .li1 {font-weight: normal; vertical-align:top;}
+.text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text .li2 {font-weight: bold; vertical-align:top;}
+.text span.xtra { display:block; }
+
+	</style>
+</head>
+
+<body>
+
+<div id="wrap">
+      <div id="innerwrap">
+
+        <!-- HEADER -->
+        <div id="header">
+            <a class="brand" href="/"><img src="/skins/fedora/images/fpaste.png" alt="fpaste Logo" id="fpasteLogo"/></a>
+        </div><!-- end header -->
+
+        <!-- MAIN NAVIGATION -->
+        <div id="mainNav">
+
+                    <ul class="nav">
+                        <li>
+                            <a href="/">
+                                New Paste
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/all/">
+                                Archives
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/rss/">
+                                Feed
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/doc/api/">
+                                API
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/doc/help/">
+                                Help
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/doc/about/">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/">
+                                Admin
+                            </a>
+                        </li>
+                    </ul>
+      </div>
+
+    <div id="content">
+        <div class="alert stretch hidden alert-">
+            <a class="close" data-dismiss="alert">×</a>
+            
+        </div>
+    
+
+    <div class="container graybox">
+        <form id="paste_form" class="form-inline" action="" method="post"><div class="">
+    <div class="whitebox whitebox_nomargin">
+        <div class="pull-right">
+            <a id="wrap_toggle" href="#" class="btn btn-info">Wrap</a>
+            <a class="btn btn-info" href="/245963/37374482/raw/">Raw code</a>
+        </div>
+    
+        <div class="imagefix">
+             <strong>Shortened URL</strong>: <a href="http://ur1.ca/n67pv">http://ur1.ca/n67pv</a>
+        </div>
+    
+        <hr />
+        <div class="codewrap">
+            <div class="text" style="word-wrap:break-word;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/YUM-REPOLIST_20150720.txt</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Loaded plugins: langpacks, refresh-packagekit</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">repo id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; repo name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; status</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">adobe-linux-i386 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Adobe Systems Incorporated &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">fedora/20/i386 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Fedora 20 - i386 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;32,493</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">rpmfusion-free/20/i386 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RPM Fusion for Fedora 20 - Free &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;391</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">rpmfusion-free-updates/20/i386 &nbsp; &nbsp;RPM Fusion for Fedora 20 - Free - Updat &nbsp;1,040</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">rpmfusion-nonfree/20/i386 &nbsp; &nbsp; &nbsp; &nbsp; RPM Fusion for Fedora 20 - Nonfree &nbsp; &nbsp; &nbsp; &nbsp; 178</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">rpmfusion-nonfree-updates/20/i386 RPM Fusion for Fedora 20 - Nonfree - Up &nbsp; &nbsp;978</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">updates/20/i386 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Fedora 20 - i386 - Updates &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;18,994</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">repolist: 54,076</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/URGENT-REVIEW_20150720.txt</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">missing &nbsp; &nbsp; /var/run/wpa_supplicant</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.M....... &nbsp; &nbsp;/var/lib/nfs/rpc_pipefs</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.......T. &nbsp;d /usr/share/doc/ghc/html/libraries/frames.html</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.......T. &nbsp;d /usr/share/doc/ghc/html/libraries/hslogo-16.png</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.......T. &nbsp;d /usr/share/doc/ghc/html/libraries/ocean.css</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.......T. &nbsp;d /usr/share/doc/ghc/html/libraries/synopsis.png</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.M....... &nbsp; &nbsp;/</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.M....... &nbsp; &nbsp;/home</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">missing &nbsp; &nbsp; /media</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.M....... &nbsp; &nbsp;/sys</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">missing &nbsp; &nbsp; /usr/share/pandoc-1.12.3.3/data/templates/default.beamer</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.M....G.. &nbsp; &nbsp;/var/log/journal</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">missing &nbsp; &nbsp; /run/gdm</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.M....G.. &nbsp; &nbsp;/var/log/gdm</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp; &nbsp;/usr/share/icons/Crux/icon-theme.cache</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp; &nbsp;/usr/share/icons/Mist/icon-theme.cache</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/REVIEW-CONFIGS_20150720.txt</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/lynx-site.cfg</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/lynx.lss</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/exim/exim.conf</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.......T. &nbsp;c /etc/kdump.conf</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/sane.d/dll.conf</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">....L.... &nbsp;c /etc/pam.d/fingerprint-auth</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">....L.... &nbsp;c /etc/pam.d/password-auth</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">....L.... &nbsp;c /etc/pam.d/postlogin</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">....L.... &nbsp;c /etc/pam.d/smartcard-auth</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">....L.... &nbsp;c /etc/pam.d/system-auth</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/printcap</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /var/lib/unbound/root.key</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/hba.conf</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/httpd/conf.d/fcgid.conf</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.M....... &nbsp;c /etc/cups/subscriptions.conf</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /usr/share/texlive/texmf-dist/web2c/updmap.cfg</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/vimrc</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/screenrc</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/plymouth/plymouthd.conf</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/cups/cups-browsed.conf</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.i386/jre/lib/security/US_export_policy.jar</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.i386/jre/lib/security/local_policy.jar</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/profile.d/cabal-install.sh</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/bitlbee/bitlbee.conf</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/selinux/targeted/contexts/files/file_contexts.local</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">S.5....T. &nbsp;c /etc/xdg/surfraw/conf</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/PROBLEM-PACKAGES_20150720.txt</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">No Problems Found</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/ORPHANED-PACKAGES_20150720.txt</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">flash-plugin-11.2.202.481-release.i386</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">kernel-PAE-3.19.3-100.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">kernel-PAE-3.19.5-100.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">kernel-PAE-modules-extra-3.19.3-100.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">kernel-PAE-modules-extra-3.19.5-100.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/REVIEW-OBSOLETE-CONFIGS_20150720.txt</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">/etc/chrony.keys.rpmnew</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">/etc/cups/cups-browsed.conf.rpmnew</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/SELINUX-CUSTOM-CONFIG_20150720.txt</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -D</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">login -D</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">interface -D</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">user -D</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">port -D</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">node -D</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">fcontext -D</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">module -D</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -m -0 httpd_builtin_scripting</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -m -1 httpd_can_connect_ftp</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -m -1 httpd_can_network_connect</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -m -1 httpd_can_network_relay</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -m -1 httpd_can_sendmail</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -m -1 httpd_enable_homedirs</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -m -1 httpd_read_user_content</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -m -1 httpd_sys_script_anon_write</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -m -1 httpd_unified</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">boolean -m -0 irc_use_any_tcp_ports</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">login -a -s unconfined_u -r 's0-s0:c0.c1023' __default__</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">login -a -s unconfined_u -r 's0-s0:c0.c1023' root</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">login -a -s system_u -r 's0-s0:c0.c1023' system_u</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">port -a -t ircd_port_t -p tcp 6665</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">fcontext -a -f a -t public_content_t '/home/drbean/022/*/classwork/*/groups.yaml'</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">fcontext -a -f a -t home_root_t '/home/drbean/022/*/comp/de.yaml'</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">fcontext -a -f a -t public_content_rw_t '/home/drbean/022/*/comp/draw.yaml'</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">fcontext -a -f a -t public_content_t '/home/drbean/022/*/league.yaml'</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/SHOW-DEVELRPMS_20150720.txt</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">autoconf-2.69-15.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">automake-1.13.4-6.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cups-devel-1.7.5-13.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">dbus-devel-1.6.30-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">elfutils-devel-0.161-6.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">elfutils-libelf-devel-0.161-6.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">expat-devel-2.1.0-7.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ffmpeg-devel-2.1.8-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">fontconfig-devel-2.11.0-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">freeglut-devel-2.8.1-3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">freetype-devel-2.5.0-10.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gdbm-devel-1.10-8.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gettext-0.18.3.2-5.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-Cabal-devel-1.16.0-18.3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-GLURaw-devel-1.3.0.0-36.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-GLUT-devel-2.4.0.0-36.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-HTTP-devel-4000.2.8-32.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-HUnit-devel-1.2.5.2-31.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-MonadRandom-devel-0.1.12-1.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-OpenGL-devel-2.8.0.0-36.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-OpenGLRaw-devel-1.3.0.0-36.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-QuickCheck-devel-2.6-32.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-X11-devel-1.6.1.1-3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-X11-xft-devel-0.3.1-11.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-aeson-devel-0.6.2.1-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-array-devel-0.4.0.1-18.3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-async-devel-2.0.1.4-30.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-attoparsec-devel-0.10.4.0-2.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-base-devel-4.6.0.1-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-base-unicode-symbols-devel-0.2.2.4-4.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-binary-devel-0.5.1.1-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-blaze-builder-devel-0.3.1.1-2.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-bytestring-devel-0.10.0.2-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-case-insensitive-devel-1.0.0.1-2.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-cereal-devel-0.3.5.2-7.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-cgi-devel-3001.1.7.5-36.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-containers-devel-0.5.0.0-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-cpphs-devel-1.16-5.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-data-default-devel-0.5.1-3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-deepseq-devel-1.3.0.1-18.3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-directory-devel-1.2.0.1-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-dlist-devel-0.5-11.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-extensible-exceptions-devel-0.1.1.4-13.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-fgl-devel-5.4.2.4-36.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-filepath-devel-1.3.0.1-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-ghc-devel-7.6.3-18.3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-hashable-devel-1.1.2.5-4.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-haskeline-devel-0.7.0.3-3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-haskell-platform-devel-2013.2.0.0-36.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-haskell-src-devel-1.0.1.5-36.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-haskell2010-devel-1.1.1.0-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-haskell98-devel-2.0.0.2-18.3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-hoopl-devel-3.9.0.0-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-hpc-devel-0.6.0.0-18.3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-html-devel-1.0.1.2-28.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-lifted-base-devel-0.2.2.1-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-monad-control-devel-0.3.2.1-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-mtl-devel-2.1.2-27.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-network-devel-2.4.1.2-31.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-old-locale-devel-1.0.0.5-18.3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-old-time-devel-1.1.0.1-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-pandoc-types-devel-1.12.3.3-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-parallel-devel-3.2.0.3-34.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-parsec-devel-3.1.3-30.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-pretty-devel-1.1.1.0-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-primitive-devel-0.5.0.1-4.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-process-devel-1.1.0.2-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-random-devel-1.0.1.1-26.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-regex-base-devel-0.93.2-28.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-regex-compat-devel-0.95.1-34.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-regex-posix-devel-0.95.2-29.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-safe-devel-0.3.3-8.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-split-devel-0.2.2-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-stm-devel-2.4.2-25.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-syb-devel-0.4.0-35.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-template-haskell-devel-2.8.0.0-18.3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-terminfo-devel-0.3.2.5-4.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-text-devel-0.11.3.1-2.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-time-devel-1.4.0.1-18.3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-transformers-base-devel-0.4.1-9.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-transformers-devel-0.3.0.0-33.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-unix-devel-2.6.0.1-18.3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-unordered-containers-devel-0.2.3.0-3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-utf8-string-devel-0.3.7-8.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-vector-devel-0.10.0.1-7.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-xhtml-devel-3000.2.1-36.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-xmonad-contrib-devel-0.11.2-3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-xmonad-devel-0.11-9.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-zlib-devel-0.5.4.1-27.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gmp-devel-5.1.2-2.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnutls-devel-3.1.28-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">keyutils-libs-devel-1.5.9-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">krb5-devel-1.11.5-19.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libX11-devel-1.6.1-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libXau-devel-1.0.8-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libXdamage-devel-1.1.4-4.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libXext-devel-1.3.2-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libXfixes-devel-5.0.1-2.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libXft-devel-2.3.1-5.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libXinerama-devel-1.1.3-2.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libXrandr-devel-1.4.1-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libXrender-devel-0.9.8-2.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libXxf86vm-devel-1.1.3-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libcom_err-devel-1.42.12-4.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libdb-devel-5.3.28-1.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libdrm-devel-2.4.58-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libffi-devel-3.0.13-5.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libselinux-devel-2.2.1-6.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libsepol-devel-2.1.9-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libtasn1-devel-3.8-3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libtool-2.4.2-24.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libverto-devel-0.2.5-3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libxcb-devel-1.9.1-3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">lm_sensors-devel-3.3.4-10.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">m4-1.4.16-10.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mesa-libGL-devel-10.3.3-1.20141110.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mesa-libGLU-devel-9.0.0-5.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ncurses-devel-5.9-12.20130511.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">net-snmp-devel-5.7.2-18.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">openssl-devel-1.0.1e-42.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">p11-kit-devel-0.20.7-1.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">pcre-devel-8.33-11.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Devel-1.37-6.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Plugin-Static-Simple-0.30-6.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-Caller-2.06-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-CheckBin-0.02-2.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-FastProf-0.08-14.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-GlobalDestruction-0.12-1.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-LexAlias-0.05-3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-NYTProf-5.05-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-OverloadInfo-0.002-2.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-PartialDump-0.15-11.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-REPL-1.003015-3.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-SmallProf-2.02-17.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-StackTrace-1.34-1.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-StackTrace-AsHTML-0.14-3.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-ExtUtils-CBuilder-0.28.2.10-293.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-ExtUtils-Config-0.007-6.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-ExtUtils-Embed-1.30-293.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-ExtUtils-Helpers-0.021-3.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-ExtUtils-Install-1.59-293.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-ExtUtils-InstallPaths-0.009-5.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-ExtUtils-MakeMaker-6.72-3.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-ExtUtils-Manifest-1.63-1.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-ExtUtils-ParseXS-3.18-292.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Module-Build-0.40.07-4.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Class-0.40-1.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-CleanNamespaces-0.16-2.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Deep-0.112-1.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Fatal-0.013-1.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-File-1.35-1.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Harness-3.28-4.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-MockObject-1.20120301-4.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Output-1.02-1.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-SharedFork-0.29-1.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Simple-1.001002-2.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-TCP-2.12-1.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Warnings-0.010-1.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-devel-5.18.4-293.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">pkgconfig-0.28-3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">policycoreutils-devel-2.2.5-4.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">popt-devel-1.16-2.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">postgresql-devel-9.3.6-1.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">python-devel-2.7.5-16.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remmina-devel-1.0.0-9.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">rpm-devel-4.11.3-3.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">selinux-policy-devel-3.12.1-197.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">swig-3.0.5-6.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">systemtap-sdt-devel-2.7-1.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">tcp_wrappers-devel-7.6-76.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">weechat-devel-1.2-2.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xorg-x11-proto-devel-7.7-12.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">zlib-devel-1.2.8-3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/SHOW-EXTERNAL_20150720.txt</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">adobe-release-i386-1.0-1.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/SHOW-LEAVES_20150720.txt</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove PyPAM-0.5.0-18.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove anaconda-20.25.16-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove cinnamon-session-2.6.1-1.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove cinnamon-settings-daemon-2.6.1-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove cjs-2.6.0-1.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove crash-7.0.3-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove cryptopp-5.6.2-3.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove gnome-python2-gconf-2.28.1-13.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove gnome-python2-gnome-2.28.1-13.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove gnome-themes-2.32.0-11.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove kernel-PAE-modules-extra-3.19.3-100.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove kernel-PAE-modules-extra-3.19.5-100.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove kernel-PAE-modules-extra-3.19.8-100.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove leveldb-1.12.0-5.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove libreswan-3.13-1.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove muffin-2.6.1-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove notify-python-0.1.1-28.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove opencv-python-2.4.7-6.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove perl-Config-GitLike-1.10-4.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove protobuf-c-0.15-8.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove python-di-0.3-2.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove python-pexpect-3.1-1.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove qt-mobility-1.2.2-0.16.20140317git169da60c.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove socat-1.7.2.4-1.fc20.i686</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove udisks-1.0.4-13.fc20.i686</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove zukitwo-gtk2-theme-20131210-1.fc20.noarch</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remove zukitwo-gtk3-theme-20131210-1.fc20.noarch</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===== /tmp/-bash-5FDRE.log/SHOW-INSTALLED2_20150720.txt</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">===============================================================================</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@admin-tools</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@critical-path-gnome</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@dial-up</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@fonts</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@guest-desktop-agents</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@java</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@libreoffice</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@multimedia</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@printing</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@sound-and-video</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@standard</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">NetworkManager-openconnect</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">NetworkManager-openvpn-gnome</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">NetworkManager-pptp-gnome</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">NetworkManager-vpnc-gnome</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">PackageKit-command-not-found</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">PackageKit-gtk3-module</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">PyPAM</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ack</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">adobe-release-i386</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">aic94xx-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">aisleriot</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">anaconda</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">anki</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">aspell-en</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">atmel-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">audacity</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">b43-fwcutter</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">b43-openfwwf</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">baobab</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">bijiben</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">biosdevname</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">bitlbee</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">brasero-nautilus</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cabal-dev</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cheese</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cinnamon-session</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cinnamon-settings-daemon</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cjs</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">crash</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">crypto-utils</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cryptopp</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cups-devel</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">dbus-devel</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">deja-dup</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">desktop-backgrounds-basic</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">dracut-config-rescue</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">empathy</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">eog</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">evince-nautilus</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">evolution-ews</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">evolution-help</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ffmpeg</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ffmpeg-devel</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">file-roller-nautilus</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">firewall-config</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">flash-plugin</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gcc-c++</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gedit</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-MonadRandom-devel</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-cereal-devel</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-cpphs-devel</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-haskeline-devel</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-haskell-src-exts</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-lifted-base-devel</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-pandoc-types-devel</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ghc-safe-devel</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnash</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-backgrounds</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-boxes</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-calculator</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-clocks</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-color-manager</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-contacts</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-dictionary</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-documents</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-epub-thumbnailer</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-font-viewer</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-getting-started-docs</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-initial-setup</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-maps</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-photos</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-python2-gconf</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-python2-gnome</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-screenshot</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-software</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-system-log</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-system-monitor</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnome-themes</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gnutls-devel</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">grub2</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">grubby</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gstreamer-plugin-crystalhd</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gstreamer-plugins-bad</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gstreamer1-plugins-bad-freeworld</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gtk2-immodule-xim</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gtk3-immodule-xim</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gucharmap</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">guvcview</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gvfs-afp</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gvfs-archive</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gvfs-goa</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gvfs-gphoto2</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gvfs-mtp</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">gvfs-smb</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">haskell-platform</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">hplip-gui</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">htop</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ibus-chewing</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ibus-hangul</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ibus-kkc</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ibus-libpinyin</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ibus-m17n</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ibus-rawcode</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ibus-table-latin</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ibus-typing-booster</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">im-chooser</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ipw2100-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ipw2200-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ivtv-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl100-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl1000-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl105-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl135-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl2000-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl2030-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl3160-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl3945-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl4965-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl5000-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl5150-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl6000-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl6000g2a-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl6000g2b-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl6050-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">iwl7260-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">kernel-PAE-modules-extra</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">leveldb</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libertas-usb8388-firmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libproxy-mozjs</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libreoffice-langpack-en</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libreoffice-langpack-zh-Hant</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libreswan</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">libtool</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">m17n-contrib</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">man-db</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mate-desktop</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mnemosyne</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mod_dav_svn</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mod_fcgid</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mod_nss</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mod_ssl</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">moreutils</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mosh</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mousetweaks</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mplayer</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">muffin</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mutt</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">nautilus-sendto</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">net-snmp-devel</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">notify-python</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">nspluginwrapper</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">oidentd</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">opencv-python</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">openrdate</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">openssh-server</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">orca</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">pandoc-pdf</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Authentication-Store-DBIx-Class</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Component-InstancePerContext</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Model-DBIC-Schema</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Plugin-Authorization-Roles</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Plugin-Email</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Plugin-Session-State-Cookie</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Plugin-Session-Store-DBIC</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Plugin-Session-Store-FastMmap</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-Plugin-StackTrace</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-View-Email</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Catalyst-View-TT</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Config-GitLike</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-DBD-Pg</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-DBIx-Class-TimeStamp</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-CheckBin</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-OverloadInfo</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Devel-REPL</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Dist-Zilla</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-ExtUtils-Embed</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-File-Slurp-Tiny</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Flickr-API</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-IO-All</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Module-Build-Tiny</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-MouseX-Getopt</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-SVK</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Sort-Versions</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Term-ReadLine-Gnu</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Term-ReadLine-Perl</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Class</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-CleanNamespaces</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Fatal</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-File</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-MockObject</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Output</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">perl-Test-Warnings</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">plymouth-system-theme</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">postgresql-devel</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">postgresql-server</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">protobuf-c</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">python-devel</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">python-di</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">python-pexpect</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">qt-mobility</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remmina-devel</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remmina-plugins-gnome</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remmina-plugins-nx</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remmina-plugins-rdp</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remmina-plugins-vnc</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">remmina-plugins-xdmcp</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">rhythmbox</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">rootfiles</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">rpmdevtools</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">rpmfusion-nonfree-release</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sane-backends-drivers-scanners</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">screen</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">seahorse</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">selinux-policy-targeted</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">setools</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">shotwell</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">simple-scan</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">socat</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sound-juicer</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">surfraw</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sushi</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">swaks</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">swig</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">system-switch-displaymanager</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">texlive</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">texlive-collection-xetex</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">texlive-libertine</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">texlive-sudoku</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">texlive-sudoku-doc</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">texlive-sudokubundle</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">texlive-sudokubundle-doc</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">texlive-texdraw</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">tigervnc</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">tigervnc-server</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">totem-mozplugin</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">totem-nautilus</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">transmission-gtk</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">tw</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">uboot-tools</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">udisks</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">vim-perl-support</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">vinagre</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">vsftpd</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">weechat-devel</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xmonad</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xmonad-mate</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xorg-x11-drv-geode</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xorg-x11-drv-mga</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xorg-x11-drv-modesetting</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xorg-x11-drv-openchrome</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xorg-x11-drv-vmmouse</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xorg-x11-drv-vmware</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xorg-x11-drv-wacom</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xorg-x11-twm</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xorg-x11-utils</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">youtube-dl</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">zd1211-firmware</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">znc</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">zukitwo-gtk2-theme</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">zukitwo-gtk3-theme</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li>
+</ol></div>
+        </div>
+        <hr />
+    
+        <div class="pull-right pasteinfo"><i>Posted by Anonymous at 20 Jul 2015, 06:41:21 UTC</i></div>
+        <div class="pasteinfo"><i>Language: text</i></div>
+    </div>
+</div>
+
+<div class="hero-unit align-center nomargin hidden">
+    <div class="error">
+        <h1></h1>
+    </div>
+</div></form>
+    </div>
+    <br/><br/>
+    <footer id="copyright" class="copyright align-center">Powered by <a href="http://www.sayakbanerjee.com/sticky-notes/" rel="nofollow">Sticky Notes</a>. Using <a href="http://github.com/athmane/sticky-notes-fedora-skin">Fedora skin</a>.
+<br/>
+"Sticky Notes" (the web application) is released under the BSD license,
+Copyright © 2012 <a href="http://sayakbanerjee.com">Sayak Banerjee</a>.
+<p>"Fedora" and the Fedora logo are trademarks of Red Hat, Inc. The Fedora project is maintained and driven by the community. This is a community maintained site. Red Hat is not responsible for content.</p>
+<p><a href="http://fedoraproject.org/en/sponsors">Sponsors</a> | <a href="http://fedoraproject.org/wiki/Legal:Main">Legal</a> | <a href="http://fedoraproject.org/wiki/Legal:Trademark_guidelines">Trademark Guidelines</a></p></footer>
+    
+    <div class="pre-cache">
+        <input type="checkbox" checked="checked" />
+    </div>
+
+    <script src="https://apps.fedoraproject.org/fedmenu/js/fedmenu.js"></script>
+    <script>
+      fedmenu({
+          'url': 'https://apps.fedoraproject.org/js/data.js',
+          'mimeType': 'application/javascript',
+          'position': 'bottom-right',
+      });
+    </script>
+
+</body>
+</html>

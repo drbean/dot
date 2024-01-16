@@ -9,15 +9,11 @@ changes=$(/usr/bin/svnlook changed $repo -r $rev)
 path=$(sed -n -e 's/^.*trunk\/\(.*\)$/\1/p' <<<$changes )
 dev_dir=$(sed -n -E 's/^.*\s([[:alnum:]]*)\/.*$/\1/p' <<<$changes)
 
-# /usr/bin/cd /home/drbean/$dev_dir
-/usr/bin/cd /home/drbean/dot
+/usr/bin/cd /home/drbean/$dev_dir
 /usr/bin/git status
-/usr/bin/git diff --cached vcs/svn/post-commit
-# /usr/bin/git add $path
-/usr/bin/git add vcs/svn/post-commit
+/usr/bin/git diff
+/usr/bin/git add $path
 /usr/bin/git commit -m "$mess"
 /usr/bin/git pull
 /usr/bin/git push
-/usr/bin/echo "commit path: $path message: \"$mess\" pwd: $(pwd)" 1>&2
-
-whats happening
+/usr/bin/echo "commit path: $path message: '$mess' pwd: $(pwd)" 1>&2

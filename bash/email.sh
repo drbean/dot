@@ -87,7 +87,7 @@ function f () { sed -f email.sed >> $COUNTY/$SCHOOL/address.txt; }
 function l () { address.sed >> $COUNTY/$SCHOOL/address.txt; }
 function a () {
     URL=${URL:-${1:-"http://$DEPARTMENT.$SCHOOL.ac.kr"}}
-    if ! [[ -f ~/edit/trunk/email/$LAND/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
+    if ! [[ -f ~/edit/email/$LAND/$AREA/$COUNTY/$SCHOOL/address.txt ]] 
         then echo "COUNTY? SCHOOL?" && sleep 1 && exit 1
     fi
     if ! [[ -t 0 ]] ; then
@@ -354,7 +354,7 @@ function scrape () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/edit/trunk/email || exit 1
+    cd ~/edit/email || exit 1
     SCHOOL=$school DEPARTMENT=$department screen -c /home/$USER/dot/screen/scrape.rc -dR scrape_$school
     cd -
 }
@@ -531,9 +531,9 @@ function premail () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/edit/trunk/email || exit 1
+    cd ~/edit/email || exit 1
     AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
-    A="$HOME/edit/trunk/email/$LAND/$AREA/$COUNTY/$SCHOOL/address.txt"
+    A="$HOME/edit/email/$LAND/$AREA/$COUNTY/$SCHOOL/address.txt"
     export A LAND AREA COUNTY SCHOOL DEPARTMENT URL
     screen -c /home/$USER/dot/screen/premail.rc -dR premail.$SCHOOL
     cd -
@@ -585,7 +585,7 @@ function commit_bag () {
     for i in ${list[@]} ; do
         rev=$(svn info $file | sed -n '/Last Changed Rev: /s/^.*: //p')
         mess=$(svn log $file -r $rev | sed -n '4p')
-        svn cat ^/trunk/email/$file_txt -r $rev | vipe |
+        svn cat ^/email/$file_txt -r $rev | vipe |
             tee $file_txt > $bag/$file.$i.txt
         svn ci $file_txt -m \"r$rev: $mess $i" > /dev/null 2>&1  ; done^M"
     done
@@ -606,7 +606,7 @@ function write_BATCH () {
     new_batch=$1
     case $new_batch in
         ''|*[!0-9]*) echo "BATCH=$new_batch, not integer"; return 1 ;;
-        *) file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
+        *) file="$HOME/edit/email/$LAND/$AREA/batch.txt"
             if [[ $new_batch =~ ^(0*)([1-9]*)([0-9]*)(.)$  ]] ; then
                 bare_batch=$(printf '%s' ${BASH_REMATCH[@]:2} )
                 echo $bare_batch >$file
@@ -616,7 +616,7 @@ function write_BATCH () {
 
 function read_BATCH () {
     # declare -i BATCH
-    file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
+    file="$HOME/edit/email/$LAND/$AREA/batch.txt"
     if [[ -f $file ]] 
     then BATCH=$(printf "%03d" $(< $file ))
     else echo "No batch.txt! BATCH=$BATCH?"; return 1
@@ -625,7 +625,7 @@ function read_BATCH () {
 }
 
 function update_BATCH () {
-    file="$HOME/edit/trunk/email/$LAND/$AREA/batch.txt"
+    file="$HOME/edit/email/$LAND/$AREA/batch.txt"
     echo ${BATCH##*0} 1>$file
 
 }
@@ -706,7 +706,7 @@ function postmail () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/edit/trunk/email || exit 1
+    cd ~/edit/email || exit 1
     LAND=${land:-$LAND} AREA=${area:-$AREA} COUNTY=${county:-$COUNTY} \
         screen -c /home/$USER/dot/screen/postmail.rc -dR postmail:${area%/}
 }

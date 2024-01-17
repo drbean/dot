@@ -554,7 +554,7 @@ function email () {
             *) return 1 # illegal option
         esac
     done
-    cd ~/edit/trunk/email || exit 1
+    cd ~/edit/email || exit 1
     export LAND=${land:-$LAND} AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
     cache_batch=$(read_BATCH)
     export BATCH=${batch:-$cache_batch}

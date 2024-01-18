@@ -2,6 +2,7 @@ screen 1
 stuff "mosh drbean@sdf.org^M"
 
 screen 4
+stuff "cd $HOME/edit^M"
 stuff "rlwrap remove_email.sh^M"
 
 screen 3

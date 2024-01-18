@@ -2,7 +2,7 @@
 
 # was function ploop () {
 
-address_list=$(eval echo $LAND/$AREA/*/*/address.txt)
+address_list=$(eval echo email/$LAND/$AREA/*/*/address.txt)
 while true ; do read -p '> ' -a p
 bad=${p[0]}
 if [[ $bad != *@* ]] ; then

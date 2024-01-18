@@ -10,12 +10,14 @@ path=$(sed -n -e 's/^.*trunk\/\(.*\)$/\1/p' <<<$changes )
 dev_dir=$(sed -n -E 's/^.*\s([[:alnum:]]*)\/.*$/\1/p' <<<$changes)
 
 /usr/bin/cd /home/drbean/$dev_dir
-/usr/bin/git status 2>&1
-/usr/bin/git diff 2>&1
-/usr/bin/git add $path 2>&1
-/usr/bin/git commit $path -m "$mess" 2>&1
+# /usr/bin/git status 2>&1
+# /usr/bin/git diff 2>&1
+# /usr/bin/git add $path 2>&1
+/usr/bin/git commit $path -m \"$mess\" 2>&1
 /usr/bin/git pull
 /usr/bin/git push
 /usr/bin/echo "commit path: $path message: '$mess' pwd: $(pwd)" 2>&1
 
-what happened?
+$mess happened?
+$path is?
+$(pwd)

@@ -20,3 +20,5 @@ dev_dir=$(sed -n -E 's/^.*\s([[:alnum:]]*)\/.*$/\1/p' <<<$changes)
 # "$mess" happened?
 # $path is?
 # $(pwd)
+
+exit 2

@@ -18,6 +18,6 @@ dev_dir=$(sed -n -E 's/^.*\s([[:alnum:]]*)\/.*$/\1/p' <<<$changes)
 /usr/bin/git push
 /usr/bin/echo "commit path: $path message: '$mess' pwd: $(pwd)" 2>&1
 
-$mess happened?
+"$mess" happened?
 $path is?
 $(pwd)

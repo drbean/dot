@@ -1,5 +1,16 @@
 #!/usr/bin/bash
 
+echo "Who am I? I am '$(whoami)'" 1>&2
+for c in global local ; do
+	echo -e "\\n$c helper: "
+	git config --$c --get credential.helper
+	for u in name password email ; do
+		echo -e "\n$c $u: " ;
+		git config --$c --get user.$u
+	done
+done 1>&2
+
+
 repo=$1
 rev=$2
 info=$(/usr/bin/svnlook info $repo -r $rev)

@@ -10,6 +10,7 @@ path=$(sed -n -e 's/^.*trunk\/\(.*\)$/\1/p' <<<$changes )
 dev_dir=$(sed -n -E 's/^.*\s([[:alnum:]]*)\/.*$/\1/p' <<<$changes)
 
 /usr/bin/cd /home/drbean/$dev_dir
+/usr/bin/whoami 1>&2
 /usr/bin/git status 1>&2
 /usr/bin/git diff 1>&2
 # /usr/bin/git add $path 2>&1

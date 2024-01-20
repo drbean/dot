@@ -13,7 +13,7 @@ dev_dir=$(sed -n -E 's/^.*\s([[:alnum:]]*)\/.*$/\1/p' <<<$changes)
 /usr/bin/git status 1>&2
 /usr/bin/git diff 1>&2
 # /usr/bin/git add $path 2>&1
-/usr/bin/git commit $path -m \"$mess\"
+/usr/bin/git commit $path -m "$mess"
 /usr/bin/git push
 # /usr/bin/echo "commit path: $path message: '$mess' pwd: $(pwd)" 2>&1
 

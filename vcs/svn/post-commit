@@ -5,13 +5,12 @@ echo "Who am I? I am '$(whoami)' at '$HOME'" 1>&2
 
 git config user.name 'Dr Bean'
 git config user.email 'drbean@freeshell.org'
-git config user.password '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'
-git config credential.helper 'cache --timeout 3600
-'
+git config credential.helper 'cache --timeout 3600'
+
 for c in global local ; do
 	echo -e "\\n$c helper: "
 	git config --$c --get credential.helper
-	for u in name password email ; do
+	for u in name email ; do
 		echo -e "\n$c $u: " ;
 		git config --$c --get user.$u
 	done

@@ -19,20 +19,20 @@ done 1>&2
 
 repo=$1
 rev=$2
-info=$(/usr/bin/svnlook info $repo -r $rev)
+info=$(svnlook info $repo -r $rev)
 mess=$(sed -n -e '4p' <<<$info )
 
-changes=$(/usr/bin/svnlook changed $repo -r $rev)
+changes=$(svnlook changed $repo -r $rev)
 path=$(sed -n -e 's/^.*trunk\/\(.*\)$/\1/p' <<<$changes )
 dev_dir=$(sed -n -E 's/^.*\s([[:alnum:]]*)\/.*$/\1/p' <<<$changes)
 
-/usr/bin/cd /home/drbean/$dev_dir
-/usr/bin/whoami 1>&2
-/usr/bin/git status 1>&2
-/usr/bin/git diff 1>&2
+cd /home/drbean/$dev_dir
+whoami 1>&2
+git status 1>&2
+git diff 1>&2
 # /usr/bin/git add $path 2>&1
-/usr/bin/git commit $path -m "$mess"
-/usr/bin/git push
+git commit $path -m "$mess"
+git push
 # /usr/bin/echo "commit path: $path message: '$mess' pwd: $(pwd)" 2>&1
 
 # "$mess" happened?

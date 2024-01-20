@@ -2,6 +2,8 @@
 
 # was function ploop () {
 
+echo "Who am I? I am '$(whoami)' at '$HOME'"
+
 address_list=$(eval echo email/$LAND/$AREA/*/*/address.txt)
 while true ; do read -p '> ' -a p
 bad=${p[0]}

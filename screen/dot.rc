@@ -2,6 +2,8 @@ screen 9
 stuff "man bash"
 screen 7
 stuff "# for repo in curriculum ; do rm -rf /srv/svn/\$repo && svnadmin create /srv/svn/\$repoo && svn mkdir file:///srv/svn/\$repo/trunk -m \"\$repo: trunk\"; done^M"
+stuff "# for p in '' ; do svn mkdir -m \"Creating *\$p* project in esprimo repo, following https://svnbook.red-bean.com/en/1.7/svn-book.html#svn.ref.svn.c.checkout\" file:///srv/svn/esprimo/\$p^M"
+
 # screen 6
 # stuff "cd et_cetera^M"
 # stuff "# su -^M"

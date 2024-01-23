@@ -17,7 +17,7 @@ stuff "# echo '^M"
 stuff "function sourcer () { readarray -t ul ; for u in \${ul[@]} ; do p=$(trurl \"\$u\" --get [path]) ; q=$(trurl \"\$u\" --get [query]) ; url_assemble -h \"www.\$SCHOOL.ac.kr\" -p \"\$p\" -q \"\$q\"; done }^M"
 
 stuff "# < source_list.html sourcer | e^M"
-stuff "# < cache_url.txt sourcer | curler | sed -ne 's/^.*E-MAIL<\/span><p>\([-._a-zA-Z0-9@]*\)<.*$/\\1/p' >> $A"
+stuff "# < cache_url.txt sourcer | curler | sed -ne 's/^.*E-MAIL<\/span><p>\([-._a-zA-Z0-9@]*\)<.*$/\\1/p' >> $A^M"
 stuff "# head -n 1 prof_page.html | clip ; paste | address.sed | save ; commit^M"
 stuff "head -n 1 prof_page.html | curler | address.sed | save ; commit"
 

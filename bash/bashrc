@@ -128,9 +128,11 @@ function rec () {
 	dirname=${file%/$basename}
     else dirname=.
     fi
-    swap=$dirname/.$basename.swp
+    read -p 'Which swap file ext? If not ".swp", enter last letter: ' ext
+    swap=$dirname/.$basename.sw${ext:=p}
     echo "dirname: '$dirname', basename: '$basename'"
-    diff recover $file
+    echo "swapfile: '$swap'"
+    /usr/bin/diff -u recover $file
     status=$?
     if [[ $status == 1 ]] ; then
 	read -p "cp 'recover' to '$file'? y/n " r2f

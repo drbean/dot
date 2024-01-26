@@ -23,8 +23,8 @@ info=$(svnlook info $repo -r $rev)
 mess=$(sed -n -e '4p' <<<$info )
 
 changes=$(svnlook changed $repo -r $rev)
-path=$(sed -n -e 's/^.*trunk\/\(.*\)$/\1/p' <<<$changes )
-dev_dir=$(sed -n -E 's/^.*\s([[:alnum:]]*)\/.*$/\1/p' <<<$changes)
+path=$(sed -n -e 's/^.*\(trunk\|branch\)\/\(.*\)$/\2/p' <<<$changes )
+dev_dir=$(sed -n -E 's/^.*\s([/.-_[:alnum:]]*)\/([^/]+)$/\1/p' <<<$changes)
 
 cd /home/drbean/$dev_dir
 whoami 1>&2

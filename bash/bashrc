@@ -128,8 +128,9 @@ function rec () {
 	dirname=${file%/$basename}
     else dirname=.
     fi
-    read -p 'Which swap file ext? If not ".swp", enter last letter: ' ext
-    swap=$dirname/.$basename.sw${ext:=p}
+    swaplist=$(ls $dirname/.$basename.sw?)
+    read -p "Which swap file of $swaplist? If not '.swp', enter last letter: " x
+    swap=$dirname/.$basename.sw${x:=p}
     echo "dirname: '$dirname', basename: '$basename'"
     echo "swapfile: '$swap'"
     /usr/bin/diff -u recover $file
@@ -143,7 +144,7 @@ function rec () {
     elif [[ $status == 0 ]] ; then
 	echo "'recover' and '$file' the same."
     fi
-    read -p "OK to remove 'recover', '$dirname/.$basename.swp'? y/n " ok
+    read -p "OK to remove 'recover', '$dirname/.$basename.sw$x'? y/n " ok
     if [[ $ok =~ ^y ]] ; then 
 	rm recover $swap
 	echo "'recover', swap='$swap' removed"

@@ -214,7 +214,7 @@ function edit () {
     # svn up ~/edit/branches/$source --depth empty
     # svn up ~/edit/branches/$source/$file.md
     # svn up ~/edit/branches/$source/issues.md
-    cd ~/edit/branches/$SOURCE
+    cd ~/edit/branch/$SOURCE
     # cd ~/edit/trunk/$source
     #if [[ ! -e ~/edit/gitedit ]] ; then
     #    git clone http://github.com/drbean/edit ~/edit/gitedit

@@ -20,7 +20,7 @@ stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WIN
 stuff "# cygstart media/*^M"
 
 screen 3
-stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE my_\$FILE.docx^M"
+stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE orig_\$FILE.docx^M"
 stuff "# cygstart \$FILE.docx^M"
 stuff "# cygstart my_\$FILE.docx^M"
 stuff "# cygstart their_\$FILE.docx^M"
@@ -36,7 +36,9 @@ stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd 
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/\$f.docx -o \$f.docx && qui\"^M"
 
 screen 6
-stuff "/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE orig_\$FILE.docx"
+stuff "# for i in {5,6} ; do svn ci \$FILE.\$i.md -m \"2024_IJOI_Experience _Part \$i.docx\" ; done^M"
+stuff "# for i in {6,5} ; do for v in svn git ; do \$v add \$FILE.\$i.md ; done ; done^M"
+stuff "# for v in svn git ; do echo \$v: ; \$v status ; \$v diff ; done^M"
 
 screen 9
 stuff "# man pandoc_markdown^M"

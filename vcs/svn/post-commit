@@ -22,12 +22,12 @@ rev=$2
 info=$(svnlook info $repo -r $rev)
 mess=$(sed -n -e '4p' <<<$info )
 
-changes=$(svnlook changed $repo -r $rev)
-path=${changes##* }
-target=${path##*/}
-dev_dir=${path%/$target}
+look_changed=$(svnlook changed $repo -r $rev)
+path=${look_changed#* }
+target=${look_changed##*trunk/}
+dev_dir=${path%/trunk*}
 
-cd /home/drbean/$dev_dir
+cd $HOME/$dev_dir
 whoami 1>&2
 git status 1>&2
 git diff 1>&2

@@ -34,6 +34,7 @@ stuff '# for repo in git-hub git-subrepo ; do git clone https://github.com/drbea
 screen 2
 source vim.rc
 screen 1
+stuff "# for s in cron exim postgreSQL cygserver ; do cygrunsrv --stop $s ; done"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "for x in rc _profile; do cp bash/bash\$x ~/.bash\$x; done^M"
 stuff "# #careful cp bash/history ~/.bash_history^M"

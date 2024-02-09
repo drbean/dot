@@ -33,7 +33,7 @@ LC_NUMERIC LC_MONETARY LC_MESSAGES LC_ALL
 
 # export TERM=screen
 
-MANPATH=$HOME/edit/trunk/email/trurl/man:${MANPATH-}
+MANPATH=$HOME/edit/email/trurl/man:${MANPATH-}
 
 export PATH=$PATH:"/cygdrive/c/Program Files/qutebrowser"
 PATH=$PATH:$HOME/.local/bin:$HOME/bin

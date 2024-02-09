@@ -23,20 +23,22 @@ info=$(svnlook info $repo -r $rev)
 mess=$(sed -n -e '4p' <<<$info )
 
 changes=$(svnlook changed $repo -r $rev)
-path=$(sed -n -e 's/^.*\(trunk\|branch\)\/\(.*\)$/\2/p' <<<$changes )
-dev_dir=$(sed -n -E 's/^.*\s([/.-_[:alnum:]]*)\/([^/]+)$/\1/p' <<<$changes)
+path=${changes##* }
+target=${path##*/}
+dev_dir=${path%/$target}
 
 cd /home/drbean/$dev_dir
 whoami 1>&2
 git status 1>&2
 git diff 1>&2
-# /usr/bin/git add $path 2>&1
-git commit $path -m "$mess"
+# /usr/bin/git add $target 2>&1
+git commit $target -m "$mess"
+# git push -u origin csyu
 git push
-# /usr/bin/echo "commit path: $path message: '$mess' pwd: $(pwd)" 2>&1
+# /usr/bin/echo "commit target: $target message: '$mess' pwd: $(pwd)" 2>&1
 
 # "$mess" happened?
-# $path is?
+# $target is?
 # $(pwd)
 
 # exit 2

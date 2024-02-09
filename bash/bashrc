@@ -191,7 +191,7 @@ function qb () {
     #    svn up ~/qutebrowser/branches/hint/dictation ~/qutebrowser --parents
     #    svn up ~/qutebrowser/trunk/forms/bean --parents
     #fi
-    cd ~/edit/trunk/email
+    cd ~/edit/email
     screen -c /home/$USER/dot/screen/qutebrowser.rc -dR qutebrowser
     cd -
 }

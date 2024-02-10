@@ -40,10 +40,10 @@ function curler () {
 		if [[ -f $file ]] ; then mv {,orig_}$file ; fi
 	done
 	for (( i=0; i<$total; i++ )); do
-		echo ${page[$i]} >> cache_url.txt
+		echo ${page[$i]} | tee -a cache_url.txt
 		if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
 		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
-		${page[$i]}⏎\\n" >> mess 2>&1
+		${page[$i]}⏎\\n" | tee -a mess 2>&1
 		dump_cookies > cookies.txt
 		curl -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
 	done;
@@ -60,10 +60,10 @@ function paste () {
 }
 
 function save () {
-	echo -ne "\\n# " >> $A
+	echo -ne "\\n# " | tee -a $A
 	link=$(< cache_url.txt)
-	echo $link >> $A
-	cat >> $A
+	echo $link | tee -a $A
+	cat | tee -a $A
 }
 
 function commit () {

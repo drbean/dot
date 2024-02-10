@@ -15,11 +15,14 @@ stuff "# DEPARTMENT= h '^M"
 stuff "# echo '^M"
 
 stuff "function sourcer () { readarray -t ul ; for u in \${ul[@]} ; do p=$(trurl \"\$u\" --get [path]) ; q=$(trurl \"\$u\" --get [query]) ; url_assemble -h \"www.\$SCHOOL.ac.kr\" -p \"\$p\" -q \"\$q\"; done }^M"
-
-stuff "# < source_list.html sourcer | e^M"
-stuff "# < cache_url.txt sourcer | curler | sed -ne 's/^.*E-MAIL<\/span><p>\([-._a-zA-Z0-9@]*\)<.*$/\\1/p' >> $A^M"
 stuff "# head -n 1 prof_page.html | clip ; paste | address.sed | save ; commit^M"
-stuff "head -n 1 prof_page.html | curler | address.sed | save ; commit"
+stuff "p=01/0401.jsp"
+stuff "function sourcer () {
+        readarray -t dl ;
+        for d in \${dl[@]} ; do pa="$d$(eval echo \$p)" ;
+        trurl --iterate path="\$(eval echo \$pa)" https://home.$SCHOOL.ac.kr ;
+        done  }^M"
+stuff "< prof_page.html sourcer | curler | address.sed | save ; commit"
 
 screen 3
 stuff "# svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL && "
@@ -27,4 +30,4 @@ stuff " touch $LAND/$AREA/$COUNTY/$SCHOOL/address.txt && svn add $LAND/$AREA/$CO
 stuff "# svn up $LAND/$AREA/$COUNTY^M"
 stuff "# svn ci $LAND/$AREA/$COUNTY/$SCHOOL -m http://$DEPARTMENT.$SCHOOL.ac.kr^M"
 stuff "# svn ci \$LAND/\$AREA/\$COUNTY/\$SCHOOL -m '$URL'^M"
-stuff "log_clip &"
+stuff "# log_clip &^M"

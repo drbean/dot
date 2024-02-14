@@ -115,7 +115,7 @@ function timer () {
 
 function avail () {
     path=$1
-    basename=${oath##*/}
+    basename=${path##*/}
     dir=${path%/*}
     cp $path /usr/local/bin/$basename
     chmod 775 /usr/local/bin/$basename

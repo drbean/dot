@@ -16,12 +16,12 @@ stuff "# echo '^M"
 
 stuff "function sourcer () { readarray -t ul ; for u in \${ul[@]} ; do p=$(trurl \"\$u\" --get [path]) ; q=$(trurl \"\$u\" --get [query]) ; url_assemble -h \"www.\$SCHOOL.ac.kr\" -p \"\$p\" -q \"\$q\"; done }^M"
 stuff "# head -n 1 prof_page.html | clip ; paste | address.sed | save ; commit^M"
-stuff "p=01/0401.jsp"
-stuff "function sourcer () {
-        readarray -t dl ;
-        for d in \${dl[@]} ; do pa="$d$(eval echo \$p)" ;
-        trurl --iterate path="\$(eval echo \$pa)" https://home.$SCHOOL.ac.kr ;
-        done  }^M"
+stuff "p=01/{0301,0401,04}.jsp ^M"
+stuff "function sourcer () { ^M"
+stuff " readarray -t dl ; ^M"
+stuff " for d in \${dl[@]} ; do pa=\"\$d/\$p\" ; ^M"
+stuff " trurl --iterate path=\"\$(eval echo \$pa)\" https://home.$SCHOOL.ac.kr ; ^M"
+stuff " done  }^M"
 stuff "< prof_page.html sourcer | curler | address.sed | save ; commit"
 
 screen 3

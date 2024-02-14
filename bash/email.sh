@@ -43,7 +43,7 @@ function curler () {
 		echo ${page[$i]} | tee -a cache_url.txt
 		if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
 		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
-		${page[$i]}⏎\\n" | tee -a mess 2>&1
+		${page[$i]}⏎\\n" | tee -a mess 1>&2
 		dump_cookies > cookies.txt
 		curl -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
 	done;
@@ -61,8 +61,7 @@ function paste () {
 
 function save () {
 	echo -ne "\\n# " | tee -a $A
-	link=$(< cache_url.txt)
-	echo $link | tee -a $A
+	< cache_url.txt tee -a $A
 	cat | tee -a $A
 }
 
@@ -436,9 +435,9 @@ function int_in_path () {
     for part in 'host' 'path' ; do
         url[$part]=$(trurl --url "$source_url" --get [$part])
     done
-    if [[ ${url[path]} =~ ^/([A-Z]*[0-9]*)/([0-9]{4,})(.*)$  ]]
+    if [[ ${url[path]} =~ ^/(.*0)([1-9]{1,})(.*)$  ]]
     then int=${BASH_REMATCH[2]}
-    else echo "no [0-9]{4,} in ${url[path]}
+    else echo "no [0-9]{2,} in ${url[path]}
            in $source_url"
         return 2
     fi
@@ -514,7 +513,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l kr -a west -c chwungchengnamto -s sch -u http://www.sch.ac.kr"
+alias Pr="premail -l kr -a west -c taycen -s cnu -u http://plus.cnu.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
@@ -539,7 +538,7 @@ function premail () {
     cd -
 }
 
-alias E="email -l tw -a north -c '*'"
+alias E="email -l tw -a mid -c '*'"
 # stage email batches from an area
 function email () {
     OPTIND=1
@@ -692,7 +691,7 @@ function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUN
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
 
-alias Po="postmail -l tw -a north -c '*'"
+alias Po="postmail -l tw -a mid -c '*'"
 # cleanup post-batch posting
 function postmail () {
     OPTIND=1

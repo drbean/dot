@@ -74,10 +74,10 @@ function commit () {
 		read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
 	done
 	mess=$(< cache_url.txt)
-	read -p  "Commit as $mess''? y/n " commit
+	read -p  "Commit as '$mess'? y/n " commit
 	if [[ $commit =~ ^y ]]
 	then exec svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -q \
-		-m $mess > /dev/null 2>&1 &
+		-m "$mess" > /dev/null 2>&1 &
 	fi
 }
 

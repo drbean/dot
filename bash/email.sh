@@ -68,7 +68,7 @@ function save () {
 function commit () {
 	address_page="n"
 	while ! [[ $address_page =~ ^y ]] ; do
-		vim $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+		v $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
 		svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
 		echo
 		read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
@@ -513,7 +513,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l kr -a west -c taycen -s cnu -u http://plus.cnu.ac.kr"
+alias Pr="premail -l kr -a west -c taycen -s mokwon -u http://www.mokwon.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

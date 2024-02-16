@@ -23,11 +23,11 @@ info=$(svnlook info $repo -r $rev)
 mess=$(sed -n -e '4p' <<<$info )
 
 look_changed=$(svnlook changed $repo -r $rev)
-path=${look_changed#* }
-target=${look_changed##*trunk/}
-dev_dir=${path%/trunk*}
+path=${look_changed##* }
+dev_dir=$HOME/${path%/trunk*}
+target=$dev_dir/${look_changed##*trunk/}
 
-cd $HOME/$dev_dir
+cd $dev_dir
 whoami 1>&2
 git status 1>&2
 git diff 1>&2
@@ -35,7 +35,7 @@ git diff 1>&2
 git commit $target -m "$mess"
 # git push -u origin csyu
 git push
-# /usr/bin/echo "commit target: $target message: '$mess' pwd: $(pwd)" 2>&1
+/usr/bin/echo "commit target: $target message: '$mess' pwd: $(pwd)" 2>&1
 
 # "$mess" happened?
 # $target is?

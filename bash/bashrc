@@ -113,6 +113,8 @@ function timer () {
     echo $'\a'
 }
 
+function rot13 () { tr 'A-Za-z' 'N-ZA-Mn-za-m' ;  }
+
 function avail () {
     path=$1
     basename=${path##*/}

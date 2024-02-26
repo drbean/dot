@@ -1,4 +1,5 @@
 screen 1
+stuff "# svn mkdir --parents kr/west/taycen/kaist &&  touch kr/west/taycen/kaist/address.txt && for v in svn git ; do $v add kr/west/taycen/kaist/address.txt ; done"
 stuff "ls^M"
 stuff "# grep -r ^M"
 stuff "cd \$REPO^M"

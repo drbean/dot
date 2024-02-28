@@ -1,5 +1,7 @@
 screen 1
-stuff "# svn mkdir file:///srv/svn/esprimo/edit/branch/\\$SOURCE && touch \$SOURCE/\$FILE && for v in svn git ; do $v add \$SOURCE/\$FILE ; done"
+stuff "# svn mkdir file:///srv/svn/esprimo/edit/branch/\\$SOURCE && touch \$FILE.md issues.md && for v in svn git ; do \$v add \$FILE.md issues.md ; done^M"
+stuff "# echo -ne '\nsvn: '; svn st -q \$FILE.md issues.md; echo -e '\\nand\\n' ; echo -n 'git: '; git status \$FILE.md issues.md^M"
+stuff "# echo -ne '\nsvn: '; svn st -q \$FILE.md issues.md; echo -e '\\nand\\n' ; echo -n 'git: '; git status $FILE.md issues.md | sed -nE '/modified|branch/p'^M"
 stuff "ls^M"
 stuff "# grep -r ^M"
 stuff "cd \$REPO^M"

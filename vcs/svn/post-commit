@@ -24,8 +24,15 @@ mess=$(sed -n -e '4p' <<<$info )
 
 look_changed=$(svnlook changed $repo -r $rev)
 path=${look_changed##* }
-dev_dir=$HOME/${path%/trunk*}
-target=$dev_dir/${look_changed##*trunk/}
+if [[ $path == *edit/branch/* ]] ; then
+	dev_dir=$HOME/${path%/branch*}
+	target=$HOME/$path
+else
+	dev_dir=$HOME/${path%/trunk*}
+	target=$dev_dir/${look_changed##*trunk/}
+fi
+
+echo path=$path, dev_dir=$dev_dir, target=$target 1>&2
 
 cd $dev_dir
 whoami 1>&2
@@ -41,4 +48,4 @@ git push
 # $target is?
 # $(pwd)
 
-# exit 2
+exit 2

@@ -113,6 +113,8 @@ function timer () {
     echo $'\a'
 }
 
+alias whicher='which ‐‐tty‐only ‐‐read‐alias ‐‐read‐functions ‐‐show‐tilde ‐‐show‐dot'
+
 function rot13 () { tr 'A-Za-z' 'N-ZA-Mn-za-m' ;  }
 
 function avail () {

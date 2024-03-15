@@ -54,10 +54,11 @@ function clip () {
 	read p
 	qutebrowser $p
 	echo $p > cache_url.txt
+	sleep 10
 }
 
 function paste () {
-	< /dev/clipboard | sed '/@/!d ; s/^M//'
+	< /dev/clipboard sed '/@/!d ; s/^M//'
 }
 
 function save () {
@@ -373,8 +374,8 @@ function pp () {
 }
 
 function prof_remove () {
-    if [[ -v 1 ]] ; then
-        echo "$@: No args" >&2
+    if [[ $# -ne 1 ]] ; then
+        echo "$@: No/too many args" >&2
         return 2
     fi
     AREA=${AREA%/}

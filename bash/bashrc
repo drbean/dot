@@ -236,6 +236,22 @@ function edit () {
     screen -c /home/$USER/dot/screen/edit.rc -dR ${SOURCE#*/}.edit
 }
 
+function dap () {
+    OPTIND=1
+    local arg SOURCE REPO
+    while getopts 's:r:' arg
+    do
+        case ${arg} in
+            s) SOURCE=${OPTARG};;
+            r) REPO=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+    cd ~/dapper-invoice
+    export SOURCE REPO
+    screen -c /home/$USER/dot/screen/dapper-invoice.rc -dR ${SOURCE#*/}.invoice
+}
+
 function emoeco () {
     #OPTIND=1
     #local arg url search

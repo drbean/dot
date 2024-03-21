@@ -1,4 +1,4 @@
-# Last Edit: 2023 Dec 07,  9:50:35 PM
+# Last Edit: 2024 Mar 21,  3:24:04 PM
 #
 # The ultimate Mutt settings
 #
@@ -863,6 +863,7 @@ fcc-save-hook (paypal|wise\\.com$) =money
 fcc-save-hook yamagomori =taro
 # fcc-save-hook (chinte|chintelin) =prof/chinte
 fcc-save-hook yhlin5545 =prof/yingchih
+fcc-save-hook joeho =prof/joseph
 fcc-save-hook (kk68x7|j27acebc4225qa|koara8|ghm2y|shirokvmayou) =yo
 
 #

@@ -50,6 +50,8 @@ function curler () {
 	done;
 }
 
+alias tr="tr ' ' '\n'"
+
 function clip () {
 	read p
 	qutebrowser $p

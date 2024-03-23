@@ -16,6 +16,7 @@ stuff "# echo their_\$FILE_filename.docx > ~/profedit/\$SOURCE/svn-commit.tmp^M"
 stuff "# cd ~/profedit^M"
 stuff "# svn import \$SOURCE file:///srv/svn/esprimo/edit/branch\$SOURCE -F svn-commit.tmp^M"
 stuff "# svn checkout file:///srv/svn/esprimo/edit/branch\$SOURCE --force^M"
+stuff "# mv ~/profedit/.git ~/profedit/\$SOURCE^M"
 stuff "# for v in svn git ; do \$v add \$FILE.md issues.md ; done^M"
 stuff "# echo -e '\\nsvn: '; svn st -q \$FILE.md issues.md; echo -e '\\nand\\n' ; echo -n 'git: '; git status $FILE.md issues.md | sed -nE '/modified|branch/p'^M"
 stuff "ls^M"
@@ -44,9 +45,6 @@ stuff "# cygstart \$FILE.docx^M"
 stuff "# cygstart my_\$FILE.docx^M"
 stuff "# cygstart their_\$FILE.docx^M"
 
-screen 4
-stuff "/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE their_\$FILE.docx"
-
 screen 5
 stuff "# s=$SOURCE f=$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$f output/\$f.pdf -o invoice.pdf && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd html && put Diff.html -o \${s}_Diff.html && qui\"^M"
@@ -54,14 +52,8 @@ stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd 
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/their_\$f.docx -o their_\$f.docx && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/\$f.docx -o \$f.docx && qui\"^M"
 
-screen 6
-stuff "# for i in {5,6} ; do svn ci \$FILE.\$i.md -m \"2024_IJOI_Experience _Part \$i.docx\" ; done^M"
-stuff "# for i in {6,5} ; do for v in svn git ; do \$v add \$FILE.\$i.md ; done ; done^M"
-stuff "# for v in svn git ; do echo \$v: ; \$v status ; \$v diff ; done^M"
-
 screen 9
-stuff "# man pandoc_markdown^M"
-stuff "man pandoc^M"
+stuff "man git-config^M"
 
 screen 0
 stuff "v --cmd 'set spellfile=spell.en.utf-8.add' \$REPO/{\$FILE,issues}.md^M"

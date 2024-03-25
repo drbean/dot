@@ -25,8 +25,11 @@ mess=$(sed -n -e '4p' <<<$info )
 look_changed=$(svnlook changed $repo -r $rev)
 path=${look_changed##* }
 if [[ $path == *edit/branch/* ]] ; then
-	dev_dir=$HOME/${path%/branch*}
-	target=$HOME/$path
+	filename=${path##*/}
+	branch=${path%/*}
+	prof=${branch##*/}
+	dev_dir=$HOME/profedit/$prof
+	target=$dev_dir/$filename
 else
 	dev_dir=$HOME/${path%/trunk*}
 	target=$dev_dir/${look_changed##*trunk/}

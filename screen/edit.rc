@@ -39,6 +39,7 @@ stuff "# cygstart media/*^M"
 
 screen 3
 stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE orig_\$FILE.docx^M"
+stuff "# cygstart Diff.html^M"
 stuff "# cygstart \$FILE.docx^M"
 stuff "# cygstart my_\$FILE.docx^M"
 stuff "# cygstart their_\$FILE.docx^M"

@@ -45,12 +45,14 @@ function curler () {
 		if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
 		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
 		${page[$i]}⏎\\n" | tee -a mess 1>&2
+		if [[ ${page[$i]} == \#* ]] ; then continue ; fi
 		dump_cookies > cookies.txt
 		curl -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
 	done;
 }
 
 alias tr="tr ' ' '\n'"
+alias cull="sed -E '/^#/d'"
 
 function clip () {
 	read p

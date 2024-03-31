@@ -29,6 +29,7 @@ screen 3
 stuff "# svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL && "
 stuff " touch $LAND/$AREA/$COUNTY/$SCHOOL/address.txt && for v in svn git ; do \$v add $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; done^M"
 stuff "# echo -e \"\$A\\\\nsvn: \"; svn st -q \$A; echo and ; echo -n 'git: '; git status \$A | sed -nE '/modified|branch/p'^M"
+stuff "# cp $A ~/edit/email/faculty.html^M"
 stuff "# svn up $LAND/$AREA/$COUNTY^M"
 stuff "# svn ci $LAND/$AREA/$COUNTY/$SCHOOL -m http://$DEPARTMENT.$SCHOOL.ac.kr^M"
 stuff "# svn ci \$LAND/\$AREA/\$COUNTY/\$SCHOOL -m '$URL'^M"

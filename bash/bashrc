@@ -462,6 +462,10 @@ function gftags2ctags () {
     uniq
 }
 
+function mastodon () {
+    screen -c /home/$USER/dot/screen/toot.rc -dR mastodon
+}
+
 function pages () {
     OPTIND=1
     local arg TOPIC STORY

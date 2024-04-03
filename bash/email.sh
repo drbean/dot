@@ -51,7 +51,14 @@ function curler () {
 }
 
 alias tr="tr ' ' '\n'"
-alias cull="sed -E '/^#/d'"
+function cull () {
+	while read line ; do
+		if [[ $line == \#* ]] ; then
+			continue
+		fi
+		echo $line
+	done
+}
 
 function clip () {
 	read p

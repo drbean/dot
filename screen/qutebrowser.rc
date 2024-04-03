@@ -14,3 +14,6 @@ stuff "ls -al . userscripts^M"
 
 screen 2
 stuff "ls -al *.{sh,bat,ps1}^M" 
+
+screen 3
+stuff "qutebrowser^M" 

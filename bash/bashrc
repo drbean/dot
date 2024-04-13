@@ -212,6 +212,7 @@ function qb () {
 
 source ~/dot/bash/gitwrap_svn.sh
 
+alias Ed='edit -s yingchih -f red_kuroshio'
 function edit () {
     OPTIND=1
     local arg SOURCE REPO FILE
@@ -242,7 +243,8 @@ function edit () {
     #cd ~/edit/gitedit/$source
     #git status
     REPO=${REPO:-'.'}
-    export SOURCE REPO FILE
+    F=$HOME/profedit/$SOURCE/$FILE.md
+    export SOURCE REPO FILE F
     screen -c /home/$USER/dot/screen/edit.rc -dR ${SOURCE#*/}.edit
 }
 

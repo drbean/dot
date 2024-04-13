@@ -1,4 +1,4 @@
-screen 0
-stuff "toot tui^M"
 screen 1
 stuff "toot -h^M"
+screen 0
+stuff "toot tui^M"

@@ -35,7 +35,7 @@ source ~/dot/vcs/git-hub/.rc
 ## ingydotnet/git-subrepo
 #source ~/dot/git/git-subrepo/.rc
 
-alias yuchieh="cd ~/yuchieh/ ; edit -s yuchieh -f 'editing_statement_certificate'"
+alias Mo="mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'"
 # alias mosh="export LANG=\"en_US.UTF-8\" && export LC_CTYPE=\"en_US.UTF-8\" && export LC_COLLATE=\"en_US.UTF-8\" && export LC_TIME=\"en_US.UTF-8\" && export LC_NUMERIC=\"en_US.UTF-8\" && export LC_MONETARY=\"en_US.UTF-8\" && export LC_MESSAGES=\"en_US.UTF-8\" && export LC_ALL=\"en_US.UTF-8\" && mosh"
 alias battery="WMIC PATH Win32_Battery Get EstimatedChargeRemaining"
 alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./\$ROUND"

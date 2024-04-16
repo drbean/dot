@@ -1,4 +1,4 @@
-# Last Edit: 2024 Mar 25, 10:26:15 PM
+# Last Edit: 2024 Apr 16,  8:34:28 AM
 #
 # The ultimate Mutt settings
 #
@@ -212,7 +212,7 @@ set sendmail="/usr/sbin/sendmail -oem -oi"
 # set sendmail="/usr/sbin/exim -oem -oi"
 reset shell		# Take shell from /etc/passwd 
 # set signature='~/.signature'	# Signature (See send-hook!)
-set signature='fortune ~/.mutt/fortunes|'	# Signature (See send-hook!)
+set signature='fortune ~/.mutt/fortunes | ~/.mutt/signature.sh |' # (See send-hook!)
 reset spoolfile	# Default spool-file (e.g. /var/spool/mail/user)
 #set spoolfile=+mbox	# Maildir incoming file (~/Mail/incoming)
 reset tmpdir		# tmp-Dir (use compile time default)

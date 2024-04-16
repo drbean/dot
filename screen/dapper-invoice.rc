@@ -12,7 +12,7 @@ stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WIN
 stuff "# cygstart \$SOURCE.pdf^M"
 
 screen 5
-stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit/\$s && put output/\$s.pdf -o invoice.pdf && qui\"^M"
+stuff "# s=\$SOURCE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit/\$s && put output/\$s.pdf -o invoice.pdf && qui\"^M"
 
 screen 6
 stuff "# for v in svn git ; do \$v add \$SOURCE.tex ; done ; done^M"

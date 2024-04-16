@@ -1,4 +1,4 @@
-#!env bash
+#!/usr/bin/env bash
 
 declare -a fortune signature
 readarray -t fortune
@@ -9,5 +9,6 @@ http://drbean.sdf.org
 drbean@freeshell.org
 SIGNOFF
 
+echo -e '\n-- '
 for (( i=0 ; i<=2 ; i++  )) ; do echo -e "${signature[$i]}\t\t${fortune[$i]}" ; done
 for (( i=3 ; i<=${#fortune[@]} ; i++  )) ; do echo -e "\t\t\t\t${fortune[$i]}" ; done

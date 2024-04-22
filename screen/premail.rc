@@ -23,7 +23,7 @@ stuff " readarray -t dl ; ^M"
 stuff " for d in \${dl[@]} ; do pa=\"\$d/\$p\" ; ^M"
 stuff " trurl --iterate path=\"\$(eval echo \$pa)\" https://home.$SCHOOL.ac.kr ; ^M"
 stuff " done  }^M"
-stuff "< prof_page.html sourcer | curler | address.sed | cleanup.sed | save ; commit"
+stuff "echo faculty_page | tr | curler | address.sh | save ; commit"
 
 screen 3
 stuff "# svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL && "

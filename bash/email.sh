@@ -50,7 +50,7 @@ function curler () {
 	done;
 }
 
-alias tr="tr ' ' '\n'"
+alias Tr="tr ' ' '\n'"
 function cull () {
 	while read line ; do
 		if [[ $line == \#* ]] ; then
@@ -696,7 +696,7 @@ function run_batch () {
 }
 
 function old_address () { sed -E 's/^([^#]+)\s#.*$/\1/' ; } 
-function line_ends_space () { sed -i.BAK -e 's/^\s*//' -e 's/\s*$//' $LAND/$AREA/*/*/address.txt ; }
+function line_ends_space () { sed -ne '/^\s\+/p' -e '/\s\+$/p' $LAND/$AREA/*/*/address.txt ; }
 function wrong_char () { sed -e '/^#/d' $LAND/$AREA/$COUNTY/*/address.txt | old_address | grep -r -P '[^-_.a-zA-Z0-9@]' - ; }
 function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }

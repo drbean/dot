@@ -41,7 +41,7 @@ function curler () {
 	done
 	for (( i=0; i<$total; i++ )); do
 		echo ${page[$i]} >> cache_url.txt
-		echo "# ${page[$i]}"
+		echo -e "\n# ${page[$i]}"
 		if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
 		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
 		${page[$i]}⏎\\n" | tee -a mess 1>&2
@@ -549,7 +549,7 @@ function premail () {
     cd -
 }
 
-alias E="email -l tw -a mid -c '*'"
+alias E="email -l tw -a south -c '*'"
 # stage email batches from an area
 function email () {
     OPTIND=1

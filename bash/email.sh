@@ -672,6 +672,9 @@ function prep_auth () {
 
 function sign_in () {
     PX $word
+    PX "if ! [[ -d ~/job/$LAND/$AREA ]] ; then mkdir ~/job/$LAND/$AREA ; fi"
+    PX "if ! [[ -d ~/job/$LAND/$AREA/body ]] ; then mkdir ~/job/$LAND/$AREA/body ; fi"
+    PX "if ! [[ -d ~/job/$LAND/$AREA/subject ]] ; then mkdir ~/job/$LAND/$AREA/subject ; fi"
     PX "cd ~/job/$LAND/$AREA && tmux new-session -A -s $AREA"
 }
 

@@ -49,7 +49,7 @@ alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/scr
 alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/screen/project.rc -dR comp; cd -"
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
-function tties () {
+function tt () {
     screens=$@
     for screen in $screens ; do
 	mintty bash -i -c $screen &

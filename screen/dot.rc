@@ -35,7 +35,8 @@ stuff "for v in svn git ; do $v "
 screen 2
 source vim.rc
 screen 1
-stuff "# for s in cron exim postgreSQL cygserver ; do cygrunsrv --stop $s ; done"
+stuff "# for s in cron exim postgreSQL cygserver ; do cygrunsrv --stop $s ; done^M"
+stuff "# for l in /tmp/freedns_* ; do truncate -s 0 $l ; done^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "for x in rc _profile; do cp bash/bash\$x ~/.bash\$x; done^M"
 stuff "# #careful cp bash/history ~/.bash_history^M"

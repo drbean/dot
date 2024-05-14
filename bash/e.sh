@@ -61,8 +61,8 @@ SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
 SCHEME=$SCHEME, HOST=$HOST, DOMAIN=$DOMAIN, PATHINFO=$PATHINFO\\n"
         dump_cookies > cookies.txt
         curl -b cookies.txt -c cookies.txt -kL $URL |
-            address.sed | sed -f cleanup.sed | uniq |
-                vipe >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
+            address.sed | sed -f cleanup.sed | uniq >> \
+		    $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
                 exec 3<&0
                 exec 0< /dev/tty
         address_page="n"

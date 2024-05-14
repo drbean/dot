@@ -672,17 +672,23 @@ function prep_auth () {
 
 function sign_in () {
     PX $word
-    PX "if ! [[ -d ~/job/$LAND/$AREA ]] ; then mkdir ~/job/$LAND/$AREA ; fi"
-    PX "if ! [[ -d ~/job/$LAND/$AREA/body ]] ; then mkdir ~/job/$LAND/$AREA/body ; fi"
-    PX "if ! [[ -d ~/job/$LAND/$AREA/subject ]] ; then mkdir ~/job/$LAND/$AREA/subject ; fi"
     PX "cd ~/job/$LAND/$AREA && tmux new-session -A -s $AREA"
 }
 
 function first_batch () {
+    PX "if ! [[ -d ~/job/$LAND/$AREA ]] ; then mkdir ~/job/$LAND/$AREA ; fi"
+    PX "if ! [[ -d ~/job/$LAND/$AREA/body ]] ; then mkdir ~/job/$LAND/$AREA/body ; fi"
+    PX "if ! [[ -d ~/job/$LAND/$AREA/subject ]] ; then mkdir ~/job/$LAND/$AREA/subject ; fi"
+    lftp -c "open drbean@sdf.org && cd ~/job/$LAND && glob -d echo * && \
+	glob echo $AREA/* $AREA/*/* && \
+	put -O $AREA/subject subject/title.txt && \
+	put -O $AREA/body body/original.txt && \
+	mrm $AREA/subject/* && \
+	mrm $AREA/body/* && \
+	qui"
     write_BATCH 000
     read_BATCH
     UP $BATCH\?
-    PX ls
     PX tmux new-window -n $BATCH
 }
 
@@ -705,7 +711,7 @@ function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUN
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
 
-alias Po="postmail -l tw -a mid -c '*'"
+alias Po="postmail -l tw -a SEis -c '*'"
 # cleanup post-batch posting
 function postmail () {
     OPTIND=1

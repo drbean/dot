@@ -50,9 +50,9 @@ alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation 
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
 function tt () {
-    screens=$@
+    screens="$@"
     for screen in $screens ; do
-	mintty bash -i -c $screen &
+	mintty bash -i -c "$screen" &
     done
 }
 

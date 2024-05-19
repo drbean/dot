@@ -40,8 +40,8 @@ function curler () {
 		if [[ -f $file ]] ; then mv {,orig_}$file ; fi
 	done
 	for (( i=0; i<$total; i++ )); do
-		echo ${page[$i]} >> cache_url.txt
-		echo -e "\n# ${page[$i]}"
+		echo ${page[$i]} | tee -a cache_url.txt > url_cache
+		echo
 		if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
 		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
 		${page[$i]}⏎\\n" | tee -a mess 1>&2
@@ -73,6 +73,7 @@ function paste () {
 
 function save () {
 	echo | tee -a $A
+	< url_cache sed -E 's/^(.*)$/# \1/' | tee -a $A
 	cat | tee -a $A
 }
 

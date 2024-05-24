@@ -54,4 +54,4 @@ stuff "for script in cygwin_package.sh ; do /usr/bin/diff -u {~/dot/chocolatey,/
 stuff "/usr/bin/diff -u {~/dot/cygwin,/cygdrive/c/Users/$USER/Downloads}/repo_checkout.sh^M"
 stuff "# lftp -c 'open drbean@sdf.org && cd html && put chocolatey/powerup_cygwin.ps1 && put chocolatey/powerup_ntu_cygwin.ps1 && put chocolatey/cygwin_package.sh && put cygwin/repo_checkout.sh && quit'^M"
 screen 0
-stuff "v bash/{bashrc,e{,mail}.sh} screen/{*mail,dot}.rc ~/.git-hub/config"
+stuff "v bash/{start_tt.bat,bashrc,e{,mail}.sh} screen/{*mail,dot}.rc ~/.git-hub/config"

@@ -667,6 +667,36 @@ function decr_BATCH () {
     echo -n $(printf "%03d" $old_batch)
 }
 
+function process_batch () {
+    read -p "Connect to sdf.org? y/n " prep_auth
+    if [[ $prep_auth =~ ^y ]] ; then prep_auth;
+    else echo "You can try again."
+        return 1;
+    fi
+    echo 'Waiting 5 seconds.'
+    sleep 5;
+    read -p "Authenticate and tmux at -t $AREA? y/n " sign_in
+    if [[ $sign_in =~ ^y ]] ; then sign_in;
+    else echo "You can try again."
+        return 1;
+    fi
+    echo 'Waiting 1 seconds.'
+    sleep 1;
+    read -p "Set next batch up? y/n " set_batch_up
+    if [[ $set_batch_up =~ ^y ]] ; then set_batch_up;
+    else echo "Stopping there."
+        return 1;
+    fi
+    echo 'Waiting 5 seconds.'
+    sleep 5;
+    read -p "Run batch? y/n " run_batch
+    if [[ $run_batch =~ ^y ]] ; then run_batch;
+    else echo "Next batch not run. Please check."
+            return 1;
+    fi
+	
+}
+
 function prep_auth () {
     PX mosh drbean@sdf.org
     read -p "Bird is the word: " word
@@ -691,7 +721,7 @@ function first_batch () {
     write_BATCH 000
     read_BATCH
     UP $BATCH\?
-    PX tmux new-window -n $BATCH
+    PX ls
 }
 
 function set_batch_up () {
@@ -699,10 +729,10 @@ function set_batch_up () {
     UP $BATCH\?
     PX rm $(decr_BATCH)?
     PX ls
-    PX tmux new-window -n $BATCH
 }
 
 function run_batch () {
+    PX tmux new-window -n $BATCH
     PX ../../run.sh $LAND/$AREA $BATCH
 }
 

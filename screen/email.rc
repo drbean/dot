@@ -62,6 +62,7 @@ stuff "# first_batch^M"
 stuff "# run_batch^M"
 stuff "# set_batch_up^M"
 stuff "# sign_in^M"
+stuff "# prep_auth^M"
 stuff "echo -n \"BATCH=\$BATCH, batch.txt=\" && cat \$LAND/\$AREA/batch.txt^M"
-stuff "prep_auth"
+stuff "process_batch"
 

@@ -51,7 +51,7 @@ alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
 function tt () {
     for screen in "$@" ; do
-	mintty bash -i -c $screen &
+	mintty bash -i -c "$screen" &
     done
 }
 

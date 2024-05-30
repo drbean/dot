@@ -9,7 +9,7 @@ stuff "# for o in touch rm ; do \$o output/\$SOURCE.pdf ; done && xelatex --outp
 
 screen 3
 stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE output/\$SOURCE.pdf^M"
-stuff "# cygstart \$SOURCE.pdf^M"
+stuff "# cygstart output/\$SOURCE.pdf^M"
 
 screen 5
 stuff "# s=\$SOURCE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit/\$s && put output/\$s.pdf -o invoice.pdf && qui\"^M"

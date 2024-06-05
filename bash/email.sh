@@ -69,7 +69,7 @@ function clip () {
 }
 
 function paste () {
-	< /dev/clipboard sed '/@/!d ; s/^M//'
+	getclip | sed '/@/!d ; s/^M//'
 }
 
 function save () {

@@ -40,15 +40,13 @@ function curler () {
 		if [[ -f $file ]] ; then mv {,orig_}$file ; fi
 	done
 	for (( i=0; i<$total; i++ )); do
-		echo ${page[$i]} | tee -a cache_url.txt
-		echo
+		echo ${page[$i]} >>  url_cache
 		if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
 		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
 		${page[$i]}⏎\\n" | tee -a mess 1>&2
 		dump_cookies > cookies.txt
 		curl -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
 	done;
-	cat cache_url.txt > url_cache
 }
 
 alias Tr="tr ' ' '\n'"
@@ -74,7 +72,8 @@ function paste () {
 
 function save () {
 	echo | tee -a $A
-	< url_cache sed -E 's/^(.*)$/# \1/' | tee -a $A
+	< url_cache cat | tee cache_url.txt | sed -E 's/^(.*)$/# \1/' >> $A
+	echo | tee -a $A
 	cat | tee -a $A
 }
 
@@ -526,7 +525,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l kr -a west -c chwungchengpukto -s jwu -u http://www.jwu.ac.kr"
+alias Pr="premail -l kr -a west -c chwungchengpukto -s knue -u http://www.knue.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

@@ -714,7 +714,7 @@ function first_batch () {
     lftp -c "open drbean@sdf.org && cd ~/job/$LAND && glob -d echo * && \
 	glob echo $AREA/* $AREA/*/* && \
 	put -O $AREA/subject subject/title.txt && \
-	put -O $AREA/body body/original.txt && \
+	put -O $AREA/body edit_offer/original.txt && \
 	mrm $AREA/subject/* && \
 	mrm $AREA/body/* && \
 	qui"
@@ -743,7 +743,7 @@ function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUN
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
 
-alias Po="postmail -l tw -a SEis -c '*'"
+alias Po="postmail -l kr -a east -c '*'"
 # cleanup post-batch posting
 function postmail () {
     OPTIND=1

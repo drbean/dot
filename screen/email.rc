@@ -33,7 +33,7 @@ stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'intrusive, eol white sp
 stuff "# no_at_mark^M"
 stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'missing @'^M"
 # batch address
-stuff "# cat \$LAND/\$AREA/\$COUNTY/*/address.txt | old_address | sort | uniq | vipe | shuf | split -a 4 -d -l 40 - \$LAND/\$AREA/^M"
+stuff "# cat \$LAND/\$AREA/\$COUNTY/*/address.txt | old_address | sort | uniq | vipe | shuf | split -a 4 -d -l 60 - \$LAND/\$AREA/^M"
 # upload batch
 stuff "# \$LAND/\$AREA/\$COUNTY \$BATCH=$LAND/$AREA/$COUNTY $BATCH^M"
 

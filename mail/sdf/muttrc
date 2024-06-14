@@ -1,4 +1,4 @@
-# Last Edit: 2024 Apr 16,  8:34:28 AM
+# Last Edit: 2024 Jun 14, 10:31:11 PM
 #
 # The ultimate Mutt settings
 #
@@ -787,6 +787,10 @@ send-hook . 'unmy_hdr bcc'
 send-hook '~t gmail\.com$' 'my_hdr Bcc: counterbean@gmail.com'
 send2-hook '~t gmail\.com$' 'my_hdr Bcc: counterbean@gmail.com'
 
+send-hook . 'unmy_hdr From'
+send-hook wise\.com$ 'my_hdr From: drbean+personal@freeshell.org'
+send2-hook '~t wise\.com$' 'my_hdr From: drbean+personal@freeshell.org'
+
 # send-hook penpals-two 'unmy_hdr From' 
 send-hook penpals-two 'my_hdr From: lang-penpals-two@ms.chinmin.edu.tw'
 
@@ -861,7 +865,7 @@ index-format-hook name "~A" $record
 
 fcc-save-hook ^(listproc|listserv|lyris|majordomo|mail2news|sympa|.*request@|.*subscribe@) =z/l
 fcc-save-hook (MAILER-DAEMON) =email
-fcc-save-hook (paypal|wise\\.com$) =money
+fcc-save-hook (bot\\.com\\.tw|paypal|wise\\.com$) =money
 fcc-save-hook yamagomori =taro
 fcc-save-hook yhlin5545 =prof/yingchih
 fcc-save-hook (kk68x7|j27acebc4225qa|koara8|ghm2y|shirokvmayou) =yo

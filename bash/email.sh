@@ -673,22 +673,22 @@ function process_batch () {
     else echo "You can try again."
         return 1;
     fi
-    echo 'Waiting 5 seconds.'
-    sleep 5;
+    echo -n 'Waiting ... '
+    countdown 5
     read -p "Authenticate and tmux at -t $AREA? y/n " sign_in
     if [[ $sign_in =~ ^y ]] ; then sign_in;
     else echo "You can try again."
         return 1;
     fi
-    echo 'Waiting 1 seconds.'
-    sleep 1;
+    echo -n 'Waiting ... '
+    countdown 1
     read -p "Set next batch up? y/n " set_batch_up
     if [[ $set_batch_up =~ ^y ]] ; then set_batch_up;
     else echo "Stopping there."
         return 1;
     fi
-    echo 'Waiting 5 seconds.'
-    sleep 5;
+    echo -n 'Waiting ... '
+    countdown 5
     read -p "Run batch? y/n " run_batch
     if [[ $run_batch =~ ^y ]] ; then run_batch;
     else echo "Next batch not run. Please check."
@@ -733,6 +733,7 @@ function set_batch_up () {
 
 function run_batch () {
     PX tmux new-window -n $BATCH
+    PX sleep 1
     PX ../../run.sh $LAND/$AREA $BATCH
 }
 

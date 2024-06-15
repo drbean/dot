@@ -123,6 +123,15 @@ function timer () {
 
 alias whicher='which ‐‐tty‐only ‐‐read‐alias ‐‐read‐functions ‐‐show‐tilde ‐‐show‐dot'
 
+function countdown () {
+    i=$1
+    for (( n=$i ; n >= 1 ; n--  )) ; do
+        echo -n "$n.. "
+        sleep 1
+    done
+    echo 0
+}
+
 function rot13 () { tr 'A-Za-z' 'N-ZA-Mn-za-m' ;  }
 
 function avail () {

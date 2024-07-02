@@ -39,17 +39,15 @@ stuff "# cp {orig_,their_}$FILE.docx^M"
 stuff "# cp {orig_,}\$FILE.md^M"
 stuff "# pandoc -o orig_\$FILE.md --from=docx+styles --to=markdown-link_attributes --extract-media=./ \$FILE.docx^M"
 stuff "# MINE=my_\$FILE; pandoc -o \$MINE.docx --reference-doc=./\$FILE.reference.docx \$FILE.md "
-stuff "# && /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD /t \$MINE.docx^M"
-stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE \$FILE.docx^M"
-stuff "# cygstart media/*^M"
 
 screen 3
-stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE orig_\$FILE.docx^M"
+stuff "# cygstart /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE^M"
+stuff "# cygstart media/*^M"
 stuff "# cygstart \$FILE.reference.docx^M"
 stuff "# cygstart Diff.html^M"
 stuff "# cygstart my_\$FILE.docx^M"
 stuff "# cygstart their_\$FILE.docx^M"
-stuff "# cygstart \$FILE.docx^M"
+stuff "# cygstart orig_\$FILE.docx^M"
 
 screen 5
 stuff "# s=$SOURCE f=$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$f output/\$f.pdf -o invoice.pdf && qui\"^M"

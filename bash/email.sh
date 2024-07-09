@@ -392,7 +392,7 @@ function prof_remove () {
     fi
     AREA=${AREA%/}
     address=$(grep -l "^$1" $LAND/$AREA/*/*/address.txt)
-    echo $address | xargs sed -i.BAK -e "s/^\($1\)\(\s\|$\)/# \1/"
+    echo $address | sed -i.BAK -e "s/^\($1\)\(\s\|$\)/# \1/"
     # svn diff $LAND/$AREA/*/*/address.txt;
     # echo -ne "\nCommit? y/n "
     # read proceed
@@ -400,6 +400,9 @@ function prof_remove () {
     #     then svn ci $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
     # fi
     svn ci $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
+    git add $LAND/$AREA/*/*/address.txt 
+    git commit $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
+    git push
 }
 
 alias pf='prof_find'
@@ -551,7 +554,7 @@ function premail () {
     cd -
 }
 
-alias E="email -l kr -a east -c '*'"
+alias E="email -l kr -a west -c '*'"
 # stage email batches from an area
 function email () {
     OPTIND=1
@@ -622,7 +625,8 @@ function write_BATCH () {
             if [[ $new_batch =~ ^(0*)([1-9]*)([0-9]*)(.)$  ]] ; then
                 bare_batch=$(printf '%s' ${BASH_REMATCH[@]:2} )
                 echo $bare_batch >$file
-            fi;;
+            else echo "No regex match & no write of '$new_batch'?"
+            fi ;;
     esac
 }
 

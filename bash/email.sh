@@ -529,7 +529,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l kr -a west -c chwungchengpukto -s knue -u http://www.knue.ac.kr"
+alias Pr="premail -l jp -a kinki -c mie -s mie-u -u http://www.mie-u.ac.jp"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
@@ -725,6 +725,7 @@ function first_batch () {
     write_BATCH 000
     read_BATCH
     UP $BATCH\?
+    PX "cp ~/job/{sendmail.sh,drbean_addresses.txt,next} ~/job/$LAND/$AREA/"
     PX ls
 }
 
@@ -748,7 +749,7 @@ function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUN
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
 
-alias Po="postmail -l kr -a east -c '*'"
+alias Po="postmail -l kr -a west -c '*'"
 # cleanup post-batch posting
 function postmail () {
     OPTIND=1

@@ -529,7 +529,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l jp -a kinki -c mie -s mie-u -u http://www.mie-u.ac.jp"
+alias Pr="premail -l jp -a kinki -c shiga -s shiga-u -u http://www.shiga-u.ac.jp"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
@@ -672,15 +672,15 @@ function decr_BATCH () {
 }
 
 function process_batch () {
-    read -p "Connect to sdf.org? y/n " prep_auth
-    if [[ $prep_auth =~ ^y ]] ; then prep_auth;
+    read -p "Connect to sdf.org? y/n " connect_sdf
+    if [[ $connect_sdf =~ ^y ]] ; then connect_sdf;
     else echo "You can try again."
         return 1;
     fi
     echo -n 'Waiting ... '
     countdown 5
-    read -p "Authenticate and tmux at -t $AREA? y/n " sign_in
-    if [[ $sign_in =~ ^y ]] ; then sign_in;
+    read -p "Authenticate and tmux at -t $AREA? y/n " auth_tmux_at
+    if [[ $auth_tmux_at =~ ^y ]] ; then auth_tmux_at;
     else echo "You can try again."
         return 1;
     fi
@@ -701,12 +701,12 @@ function process_batch () {
 	
 }
 
-function prep_auth () {
+function connect_sdf () {
     PX mosh drbean@sdf.org
     read -p "Bird is the word: " word
 }
 
-function sign_in () {
+function auth_tmux_at () {
     PX $word
     PX "cd ~/job/$LAND/$AREA && tmux new-session -A -s $AREA"
 }

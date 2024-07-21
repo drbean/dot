@@ -35,6 +35,9 @@ elif [[ ${#p[@]} -eq 1 ]]; then
     else
         svn diff $address_list;
         svn ci $address_list -m "$bad: User unknown"
+	# git add $address_list
+	# git commit -m "$bad: User unknown"
+	# git push
     fi
 else
     echo "No args: \"${#p[@]}: ${p[@]}\""  >&2

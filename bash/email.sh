@@ -400,9 +400,9 @@ function prof_remove () {
     #     then svn ci $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
     # fi
     svn ci $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
-    git add $LAND/$AREA/*/*/address.txt 
-    git commit $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
-    git push
+    # git add $LAND/$AREA/*/*/address.txt 
+    # git commit $LAND/$AREA/*/*/address.txt -m "$1: User unknown"
+    # git push
 }
 
 alias pf='prof_find'
@@ -529,7 +529,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l jp -a kinki -c shiga -s shiga-u -u http://www.shiga-u.ac.jp"
+alias Pr="premail -l jp -a kinki -c shiga -s shiga-med -u http://www.shiga-med.ac.jp"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

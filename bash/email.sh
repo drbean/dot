@@ -51,6 +51,11 @@ function curler () {
 }
 
 alias Tr="tr ' ' '\n'"
+function Sed () {
+	pattern=$1
+	sed -nE "/$pattern/p"
+}
+
 function cull () {
 	while read line ; do
 		if [[ $line == \#* ]] ; then
@@ -529,7 +534,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l jp -a kinki -c kyoto -s kyoto -u http://www.kyoto.ac.jp"
+alias Pr="premail -l jp -a kinki -c kyoto -s kyoto-u -u http://www.kyoto-u.ac.jp"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

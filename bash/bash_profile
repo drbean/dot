@@ -13,6 +13,10 @@ fi
 # User specific aliases and functions
 # User specific environment and startup programs
 
+# lesspipe less input preprocessor
+# export LESSOPEN
+eval $(/usr/bin/lesspipe.sh)
+
 # https://cygwin.com/pipermail/cygwin/2023-February/253054.html
 # eg, man -H ls
 case $(uname) in
@@ -35,7 +39,7 @@ LC_NUMERIC LC_MONETARY LC_MESSAGES LC_ALL
 
 MANPATH=$HOME/edit/email/trurl/man:${MANPATH-}
 
-export PATH=$PATH:"/cygdrive/c/Program Files/qutebrowser"
+# export PATH=$PATH:"/cygdrive/c/Program Files/qutebrowser"
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 PATH=$PATH:$(cygpath $APPDATA/local/bin)
 

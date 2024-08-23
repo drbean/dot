@@ -23,7 +23,7 @@ stuff " readarray -t dl ; ^M"
 stuff " for d in \${dl[@]} ; do pa=\"\$d/\$p\" ; ^M"
 stuff " trurl --iterate path=\"\$(eval echo \$pa)\" https://home.$SCHOOL.ac.kr ; ^M"
 stuff " done  }^M"
-stuff "echo faculty_page | Tr | curler | address.sh | save ; commit"
+stuff "echo page | Tr | curler | Sed Email | save ; commit"
 
 screen 3
 stuff "# for i in {2320..2330} ; do  echo \$i ; svn cat -r \$i \^/edit/trunk/email/edit_offer/kr.short.txt | vipe | tee body/kr.short.\$((i+467)).txt > edit_offer/kr.short.txt ; svn ci edit_offer/kr.short.txt -m v\$((i-2317)) ; read next ; done^M"

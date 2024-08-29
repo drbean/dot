@@ -45,7 +45,8 @@ function curler () {
 		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
 		${page[$i]}⏎\\n" | tee -a mess 1>&2
 		dump_cookies > cookies.txt
-		curl -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
+		curl -v -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
+		echo
 	done;
 	cat cache_url.txt > url_cache
 }

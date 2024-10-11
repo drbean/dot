@@ -42,7 +42,7 @@ stuff "# mv {,orig_}\$FILE.docx^M"
 stuff "# cp {orig_,their_}$FILE.docx^M"
 stuff "# cp {orig_,}\$FILE.md^M"
 stuff "# pandoc -o orig_\$FILE.md --from=docx+styles --to=markdown-link_attributes --extract-media=./ \$FILE.docx^M"
-stuff "# MINE=my_\$FILE; pandoc -o \$MINE.docx --reference-doc=./\$FILE.reference.docx \$FILE.md "
+stuff "# MINE=my_\$FILE; pandoc -o \$MINE.docx --reference-doc=./\$FILE.reference.docx \$FILE.md^M"
 
 screen 3
 stuff "# cygstart /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE^M"

@@ -535,7 +535,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l jp -a kinki -c kyoto -s kyoto-u -u http://www.kyoto-u.ac.jp"
+alias Pr="premail -l jp -a kinki -c kyoto -s kit -u -u https://www.kit.ac.jp"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
@@ -555,7 +555,8 @@ function premail () {
     cd ~/edit/email || exit 1
     AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
     A="$HOME/edit/email/$LAND/$AREA/$COUNTY/$SCHOOL/address.txt"
-    export A LAND AREA COUNTY SCHOOL DEPARTMENT URL
+    Q="/cygdrive/c/Users/$USER/AppData/Roaming/qutebrowser/config"
+    export Q A LAND AREA COUNTY SCHOOL DEPARTMENT URL
     screen -c /home/$USER/dot/screen/premail.rc -dR premail.$SCHOOL
     cd -
 }

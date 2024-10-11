@@ -1,6 +1,6 @@
 screen 0
 stuff "cd \$(cygpath \$APPDATA/qutebrowser/config)^M"
-stuff "v config.py $HOME/edit/email/{paste_link.{bat,sh},open_{faculty,prof_page}.bat,open_page.sh}^M"
+stuff "v config.py $HOME/edit/email/{paste_{address.bat,link.sh},open_{faculty,prof_page}.bat,open_page.sh}^M"
 
 screen 1
 stuff "# rm $(cygpath \$APPDATA/qutebrowser/config/userscripts/open_{faculty,prof_page}{_wrap.bat,.sh})^M"

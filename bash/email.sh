@@ -535,7 +535,7 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l jp -a kinki -c kyoto -s kit -u -u https://www.kit.ac.jp"
+alias Pr="premail -l jp -a kinki -c kyoto -s kcua -u -u https://www.kcua.ac.jp"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

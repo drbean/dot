@@ -1199,33 +1199,6 @@ function csv2yaml ( ) {
 }
 
 
-function w () {
-    local arg league session week letter topic tables
-    league=$1
-    week=$2
-    OPTIND=3
-    while getopts 'w:l:t:' arg
-    do
-        case ${arg} in
-            l) letter=${OPTARG};;
-            t) topic=${OPTARG};;
-            *) return 1 # illegal option
-        esac
-    done
-    session $league $week
-    tables $league $letter
-    cd ~/$SEMESTER/$league
-    SESSION=$session \
-    WEEK=$week \
-    LASTWEEK=$(($week-1)) \
-    LEAGUE=$league \
-    TOPIC=$topic \
-    LETTER=$letter \
-    TABLES=$tables \
-    screen -c /home/$USER/dot/screen/class.rc -dR ${league}_$week
-    cd -
-}
-
 function cw () {
     local arg league session week letter topic tables
     league=$1

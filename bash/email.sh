@@ -546,7 +546,7 @@ function addre () {
     sed -nE "/$grep/s/^.*[^$char]([$char]+@[$char]+)[^$char].*$/\1/p"
 }
 
-alias Pr="premail -l jp -a kinki -c kyoto -s kyoto-seika https://www.kyoto-seika.ac.jp"
+alias Pr="premail -l jp -a kinki -c kyoto -s kyoto-seika -u https://www.kyoto-seika.ac.jp"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

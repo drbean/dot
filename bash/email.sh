@@ -535,7 +535,18 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
-alias Pr="premail -l jp -a kinki -c kyoto -s kyoto-msc -u https://www.kyoto-msc.ac.jp"
+function href_pref () {
+    grep=$1
+    sed -nE "/$grep/s/^[^\"]*href=\"([^\"]+)\".*$/\1/p"
+}
+
+function addre () {
+    grep=$1
+    char='-._a-zA-Z0-9'
+    sed -nE "/$grep/s/^.*[^$char]([$char]+@[$char]+)[^$char].*$/\1/p"
+}
+
+alias Pr="premail -l jp -a kinki -c kyoto -s kyoto-seika https://www.kyoto-seika.ac.jp"
 # assemble an address list for a school
 function premail () {
     OPTIND=1
@@ -754,7 +765,7 @@ function line_ends_space () { sed -ne '/^\s\+/p' -e '/\s\+$/p' $LAND/$AREA/*/*/a
 function wrong_char () { sed -e '/^#/d' $LAND/$AREA/$COUNTY/*/address.txt | old_address | grep -r -P '[^-_.a-zA-Z0-9@]' - ; }
 function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
-function no_at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
+function at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
 
 alias Po="postmail -l kr -a west -c '*'"
 # cleanup post-batch posting

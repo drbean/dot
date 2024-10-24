@@ -51,7 +51,8 @@ function curler () {
 	cat cache_url.txt > url_cache
 }
 
-alias Tr="tr ' ' '\n'"
+# alias Tr="tr ' ' '\n'"
+function trstr () { tr ' ' '\n' ; }
 function Sed () {
 	pattern=$1
 	sed -nE "/$pattern/p"
@@ -450,6 +451,8 @@ $2"
     fi
 }
 
+# trurl functions with args
+
 function int_in_path () {
     source_url=$1
     declare -A url
@@ -546,7 +549,7 @@ function addre () {
     sed -nE "/$grep/s/^.*[^$char]([$char]+@[$char]+)[^$char].*$/\1/p"
 }
 
-alias Pr="premail -l jp -a kinki -c kyoto -s kyoto-seika -u https://www.kyoto-seika.ac.jp"
+alias Pr="premail -l jp -a kinki -c kyoto -s tachibana-u -u https://www.tachibana-u.ac.jp"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

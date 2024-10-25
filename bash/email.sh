@@ -540,7 +540,7 @@ function permute_url () {
 
 function href_pref () {
     grep=$1
-    sed -nE "/$grep/s/^[^\"]*href=\"([^\"]+)\".*$/\1/p"
+    sed -nE "/$grep/s/^.*href=\"([^\"]+)\".*$/\1/p"
 }
 
 function addre () {

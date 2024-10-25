@@ -549,6 +549,8 @@ function addre () {
     sed -nE "/$grep/s/^.*[^$char]([$char]+@[$char]+)[^$char].*$/\1/p"
 }
 
+source ~/edit/email/sourcer.sh
+
 alias Pr="premail -l jp -a kinki -c kyoto -s tachibana-u -u https://kenkyu.tachibana-u.ac.jp"
 # assemble an address list for a school
 function premail () {

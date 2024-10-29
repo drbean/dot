@@ -1,5 +1,6 @@
 screen 1
 stuff "toot -h^M"
+stuff "# cygstart https://duckduckgo.com/?q=^M"
 stuff "cygstart https://"
 screen 0
 stuff "toot tui^M"

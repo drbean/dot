@@ -48,7 +48,7 @@ function curler () {
 		curl -v -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
 		echo
 	done;
-	cat cache_url.txt > url_cache
+	# cat cache_url.txt > url_cache
 }
 
 # alias Tr="tr ' ' '\n'"

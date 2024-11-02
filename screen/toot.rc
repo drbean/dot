@@ -1,6 +1,6 @@
 screen 1
 stuff "toot -h^M"
-stuff "# cygstart https://google.com/search?udm=14&q=^M"
+stuff "# echo    | tr ' ' '+' | while read q ; do cygstart \"https://google.com/search?q=\$q&udm=14\" ; done^M"
 stuff "# cygstart https://duckduckgo.com/?q=^M"
 stuff "cygstart https://"
 screen 0

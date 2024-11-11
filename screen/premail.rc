@@ -14,7 +14,7 @@ stuff "# lynx '^M"
 stuff "# DEPARTMENT= h '^M"
 stuff "# echo '^M"
 
-stuff "echo page | Tr | curler | Sed Email | save ; commit"
+stuff "< prof_page.html cull | curler | href_pref "
 
 screen 3
 stuff "# for c in wrong_char unescaped_uri line_ends_space in_addr_space no_at_mark; do echo -e "\n$c\n" $c ; done^M"

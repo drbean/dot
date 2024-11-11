@@ -17,7 +17,7 @@ stuff "# echo '^M"
 stuff "< prof_page.html cull | sourcer | curler | href_pref "
 
 screen 3
-stuff "# for c in wrong_char unescaped_uri line_ends_space in_addr_space at_mark; do echo -e \"\n$c\n\" $c ; done^M"
+stuff "# for c in wrong_char unescaped_uri line_ends_space in_addr_space at_mark; do echo -e \"\\n$c\\n\" $c ; done^M"
 stuff "# for i in {2320..2330} ; do  echo \$i ; svn cat -r \$i \^/edit/trunk/email/edit_offer/kr.short.txt | vipe | tee body/kr.short.\$((i+467)).txt > edit_offer/kr.short.txt ; svn ci edit_offer/kr.short.txt -m v\$((i-2317)) ; read next ; done^M"
 stuff "# svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL^M"
 stuff "# touch $LAND/$AREA/$COUNTY/$SCHOOL/address.txt^M"

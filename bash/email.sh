@@ -36,6 +36,7 @@ function curler () {
 	readarray -t page
 	total=${#page[*]}
 	SCHEME=http*//
+	AGENT='Agent 007'
 	for file in mess cache_url.txt ; do
 		if [[ -f $file ]] ; then mv {,orig_}$file ; fi
 	done
@@ -45,7 +46,7 @@ function curler () {
 		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
 		${page[$i]}⏎\\n" | tee -a mess 1>&2
 		dump_cookies > cookies.txt
-		curl -v -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
+		curl -v -A $AGENT -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
 		echo
 	done;
 	# cat cache_url.txt > url_cache
@@ -540,7 +541,7 @@ function permute_url () {
 
 function href_pref () {
     grep=$1
-    sed -nE "/$grep/s/^.*href=\"([^\"]+)\".*$/\1/p"
+    sed -nE "/$grep/s/^.*href= ?\"([^\"]+)\".*$/\1/p"
 }
 
 function addre () {
@@ -551,7 +552,7 @@ function addre () {
 
 source ~/edit/email/sourcer.sh
 
-alias Pr="premail -l jp -a kinki -c kyoto -s tachibana-u -u https://kenkyu.tachibana-u.ac.jp"
+# alias Pr="premail -l jp -a kinki -c kyoto -s tachibana-u -u https://kenkyu.tachibana-u.ac.jp"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

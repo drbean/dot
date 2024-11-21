@@ -36,7 +36,7 @@ function curler () {
 	readarray -t page
 	total=${#page[*]}
 	SCHEME=http*//
-	AGENT='Agent 007'
+	AGENT='Agent_007'
 	for file in mess cache_url.txt ; do
 		if [[ -f $file ]] ; then mv {,orig_}$file ; fi
 	done
@@ -45,8 +45,8 @@ function curler () {
 		if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
 		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
 		${page[$i]}⏎\\n" | tee -a mess 1>&2
-		dump_cookies > cookies.txt
-		curl -v -A $AGENT -b cookies.txt -c cookies.txt -kL "${page[$i]}" 2>> mess
+		dump_cookies > cooky.txt
+		curl -v -A $AGENT -b cooky.txt -c cooky.txt -kL "${page[$i]}" 2>> mess
 		echo
 	done;
 	# cat cache_url.txt > url_cache

@@ -48,6 +48,12 @@ alias swiss="cd ~/swiss; APP=swiss COURSE=business screen -c /home/$USER/dot/scr
 alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation STORY=trinka screen -c /home/$USER/dot/screen/project.rc -dR comp; cd -"
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
+function mintie () {
+    local ARGLINE
+    export ARGLINE="$@"
+    screen -c /home/$USER/dot/screen/mintie.rc -dR mintie
+}
+
 function tt () {
     for screen in "$@" ; do
 	mintty bash -i -c "$screen" &

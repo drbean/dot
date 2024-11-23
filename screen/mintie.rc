@@ -1,2 +1,2 @@
 screen 0
-stuff "tt \"\$ARGLINE\"^M"
+stuff "while read arg ; do tt \"\$arg\" ; done <<<\$ARG_ARRAY^M"

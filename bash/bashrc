@@ -49,8 +49,9 @@ alias comp="cd ~/ttb/competitions/quiz/trunk/web/; APP=comp COURSE=conversation 
 alias rdf="cd ~/rdf; screen -c /home/$USER/dot/screen/rdf.rc -dR rdf; cd -"
 
 function mintie () {
-    local ARGLINE
-    export ARGLINE="$@"
+    local ARG_ARRAY
+    IFS=$'\n'
+    export ARG_ARRAY=$*
     screen -c /home/$USER/dot/screen/mintie.rc -dR mintie
 }
 

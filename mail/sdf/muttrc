@@ -1,4 +1,4 @@
-# Last Edit: 2024 Jun 14, 10:31:11 PM
+# Last Edit: 2024 Dec 12,  5:33:12 PM
 #
 # The ultimate Mutt settings
 #
@@ -784,8 +784,10 @@ send-hook . "set attribution='On %{%a, %d %b %Y}, %n wrote:\n' indent_string='> 
 
 unmy_hdr bcc
 send-hook . 'unmy_hdr bcc'
+send2-hook . 'unmy_hdr bcc'
 send-hook '~t gmail\.com$' 'my_hdr Bcc: counterbean@gmail.com'
 send2-hook '~t gmail\.com$' 'my_hdr Bcc: counterbean@gmail.com'
+unmy_hdr bcc
 
 send-hook . 'unmy_hdr From'
 send-hook wise\.com$ 'my_hdr From: drbean+personal@freeshell.org'
@@ -856,6 +858,7 @@ group -group prof -group tw -rx 'edu\.tw$'
 group -group prof -group kr -rx 'ac\.kr$'
 group -group prof -group jp -rx 'ac\.jp$'
 
+fcc-save-hook (jklstw|jkls\\.tw) =prof/jkliang
 fcc-save-hook (chinte|chintelin) =prof/chinte
 fcc-save-hook joeho =prof/joseph
 save-hook '%L prof' '=prof/%u'

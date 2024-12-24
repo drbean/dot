@@ -16,6 +16,7 @@ fi
 
 export VD=$HOME/dot/vcs/svn/vimdiff
 export W=/cygdrive/c/Users/$USER
+export M=$HOME/curriculum/pages/homepage/markdown
 
 export SEMESTER=111
 export WEEK=1
@@ -64,6 +65,8 @@ function tt () {
 function off () {
     shutdown /s /t 2
 }
+
+function ch () { cygstart https://$1 ; }
 
 function cyg_pack () {
     package=$1
@@ -275,6 +278,11 @@ function dap () {
     cd ~/dapper-invoice
     export SOURCE REPO
     screen -c /home/$USER/dot/screen/dapper-invoice.rc -dR ${SOURCE#*/}.invoice
+}
+
+function shakuhachi () {
+    cd ~/shakuhachi
+    screen -c  $HOME/dot/screen/shakuhachi.rc -dR shakuhachi
 }
 
 function emoeco () {
@@ -632,6 +640,28 @@ function speaking () {
         FORM=$form \
         VIEW=${view:-"presentation"} \
         screen -c /home/$USER/dot/screen/course.rc -dR $topic
+        cd -
+}
+
+function shira () {
+    OPTIND=1
+    local arg course=shira view topic story form
+    while getopts 't:s:f:' arg
+    do
+        case ${arg} in
+            t) topic=${OPTARG};;
+            s) story=${OPTARG};;
+            f) form=${OPTARG};;
+            *) return 1 # illegal option
+        esac
+    done
+        cd ~/class/$course
+        COURSE=$course \
+        VIEW="topics" \
+        TOPIC=$topic \
+        STORY=$story \
+        FORM=$form \
+        screen -c /home/$USER/dot/screen/course.rc -dR topics_$story
         cd -
 }
 

@@ -23,29 +23,32 @@ info=$(svnlook info $repo -r $rev)
 mess=$(sed -n -e '4p' <<<$info )
 
 look_changed=$(svnlook changed $repo -r $rev)
-path=${look_changed##* }
-if [[ $path == *edit/branch/* ]] ; then
-	prof_repo_file=${path#edit/branch/}
-	file=${prof_repo_file##*/}
-	prof_repo=${prof_repo_file%/$file}
-	prof=${prof_repo_file%%/*}
-	dev_dir=$HOME/profedit/$prof
-	target=$dev_dir/$file
-else
-	dev_dir=$HOME/${path%/trunk*}
-	target=$dev_dir/${look_changed##*trunk/}
-fi
+while read p ; do
+	path=${p##* }
+	if [[ $path == *edit/branch/* ]] ; then
+		prof_repo_file=${path#edit/branch/}
+		file=${prof_repo_file##*/}
+		prof_repo=${prof_repo_file%/$file}
+		prof=${prof_repo_file%%/*}
+		dev_dir=$HOME/profedit/$prof
+		target=$dev_dir/$file
+	else
+		dev_dir=$HOME/${path%/trunk*}
+		target=$dev_dir/${look_changed##*trunk/}
+	fi
+	cd $dev_dir
+	git add $target 1>&2
+done <<<$(svnlook changed $repo -r $rev)
 
 echo "path=$path,
 dev_dir=$dev_dir,
 target=$target" 1>&2
 
-cd $dev_dir
 whoami 1>&2
 git status 1>&2
 git diff 1>&2
 # /usr/bin/git add $target 2>&1
-git commit $target -m "$mess"
+git commit -m "$mess"
 # git push -u origin csyu
 git push
 /usr/bin/echo "commit target: $target message: '$mess' pwd: $(pwd)" 2>&1

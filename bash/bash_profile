@@ -45,6 +45,9 @@ PATH=$PATH:$(cygpath $APPDATA/local/bin)
 
 # export PATH=/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim90/:$PATH
 
+# go
+PATH=$PATH:"/cygdrive/c/Users/drbean/go/bin/"
+
 PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"
 export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/node_modules/yarn/bin"
 # export PATH=$PATH:"/cygdrive/c/Users/$USER/node_modules/yarn/bin"
@@ -53,6 +56,9 @@ export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/node_modules/yarn/bin"
 #greg
 # export PATH=$HOME/.cabal/bin:$PATH
 # /etc/profile.d/cabalinstall.sh does it for me
+
+export PATH
+
 export HISTSIZE=50000
 
 export EDITOR=v

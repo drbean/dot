@@ -24,7 +24,7 @@ stuff "# svn mkdir file:///srv/svn/esprimo/edit/branch/\$SOURCE -F svn-commit.tm
 stuff "# echo their_\$FILE_filename.docx > ~/profedit/\$SOURCE/svn-commit.tmp^M"
 stuff "cd ~/profedit^M"
 stuff "# svn import \$SOURCE file:///srv/svn/esprimo/edit/branch/\$SOURCE/\$REPO -F svn-commit.tmp^M"
-stuff "# svn checkout file:///srv/svn/esprimo/edit/branch/\$SOURCE --force^M"
+stuff "# svn checkout file:///srv/svn/esprimo/edit/branch/\$SOURCE/\$REPO $SOURCE --force^M"
 stuff "# mv ~/profedit/\$SOURCE_git ~/profedit/\$SOURCE/.git^M"
 stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# for v in svn git ; do \$v add \$FILE.md issues.md ; done^M"

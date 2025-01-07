@@ -1,0 +1,6 @@
+rem lives.sage.li
+@cls
+cd %~DP0
+@echo Updating FreeDNS
+@C:\CURL\CURL -k https://freedns.afraid.org/dynamic/update.php?Q3VnQWNHTldzS2d2bEg3ZzJpRXFLYkN1OjIyOTk1ODA4
+@pause

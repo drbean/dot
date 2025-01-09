@@ -33,7 +33,7 @@ stuff "# for p in toeflic_splash ; do pandoc --template=c:/$HOME/curriculum/page
 stuff "# for p in \$STORY \$TOPIC HomePage ; do pandoc -o c:/cygwin64/tmp/pandoc/\$p.txt --standalone homepage/markdown/\$p.md ; done^M"
 stuff "# for f in 'html --template=c:$HOME/curriculum/pages/pandoc-templates/git/homepagePost.html5' txt ; do for p in \$STORY \$TOPIC HomePage ; do pandoc -o c:/cygwin64/tmp/pandoc/\$p.\$f homepage/markdown/\$p.md ; done; done^M"
 stuff "# svn mv https://github.com/drbean/curriculum/trunk/pages/homepage/markdown/{$STORY,$STORY}.md -m $TOPIC.$STORY^M"
-stuff "# for v in svn git ; do \$v add \$M/{\$STORY,\$FILE}.md ; done^M"
+stuff "# for v in svn git ; do \$v add \$M/{\$STORY,\$TOPIC}.md ; done^M"
 stuff "# svn add homepage/markdown/\$STORY.md^M"
 stuff "# svn ci homepage/markdown/{\$STORY,\$TOPIC}.md -m \$TOPIC:\$STORY^M"
 stuff "# echo \" \" | post.sh -t \$TOPIC -s \$STORY -k \" \" -h \" \" | toot post^M"

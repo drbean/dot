@@ -186,6 +186,11 @@ function rec () {
 
 declare -a roman=(i ii iii iv v vi vii viii ix x)
 
+function pick_1_of () {
+    n=$1
+    echo $(( $RANDOM % $n ))
+}
+
 source ~/dot/bash/email.sh
 source ~/dot/bash/e.sh
 
@@ -497,24 +502,35 @@ function gftags2ctags () {
 }
 
 function mastodon () {
+    OPTIND=0
+    local arg ACCOUNT
+    while getopts 'a:' arg
+    do
+        case ${arg} in
+            i) ACCOUNT=${OPTARG};;
+        esac
+    done
+    export ACCOUNT
     screen -c /home/$USER/dot/screen/toot.rc -dR mastodon
 }
 
 function pages () {
     OPTIND=1
     local arg TOPIC STORY
-    while getopts 'c:t:s:o:l:x:' arg
+    while getopts 't:s:h:k:' arg
     do
         case ${arg} in
             t) TOPIC=${OPTARG};;
             s) STORY=${OPTARG};;
+            h) HEADER=${OPTARG};;
+            k) KICKER=${OPTARG};;
             *) return 1 # illegal option
         esac
     done
     cd ~/curriculum/pages
     M="$HOME/curriculum/pages/homepage/markdown"
     if [[ ! -f "$M/$STORY.md" ]]
-    then echo -e "% \n\n\nMe at
+    then echo -e "% $HEADER\n\n\nMe at
     <form action='https://mastodon.sdf.org/@drbean'>
     <button type='submit' class='btn'>
     <img src='./mastodon.svg'
@@ -523,7 +539,7 @@ function pages () {
     </button></form>
     \nBack to [$TOPIC]($TOPIC.html)" > $M/$STORY.md
     fi
-    export TOPIC STORY M
+    export TOPIC STORY HEADER KICKER M
     screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$STORY
     cd -
 }

@@ -594,7 +594,7 @@ function email () {
         esac
     done
     cd ~/edit/email || exit 1
-    export LAND=${land:-$LAND} AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
+    export LAND=${land:-$LAND} AREA="${area:-$AREA}" COUNTY="${county:-$COUNTY}"
     cache_batch=$(read_BATCH)
     export BATCH=${batch:-$cache_batch}
     export LA=$LAND/$AREA/

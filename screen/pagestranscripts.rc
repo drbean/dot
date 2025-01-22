@@ -36,4 +36,4 @@ stuff "# svn mv https://github.com/drbean/curriculum/trunk/pages/homepage/markdo
 stuff "# for v in svn git ; do \$v add \$M/{\$STORY,\$TOPIC}.md ; done^M"
 stuff "# svn add homepage/markdown/\$STORY.md^M"
 stuff "# svn ci homepage/markdown/{\$STORY,\$TOPIC}.md -m \$TOPIC:\$STORY^M"
-stuff "# echo \" \" | post.sh -t \$TOPIC -s \$STORY -k \" \" -h \" \" | toot post^M"
+stuff "# echo \" \" | post.sh -t \$TOPIC -s \$STORY -k \"\$KICKER\" -h \"\$HEADER\" | toot post^M"

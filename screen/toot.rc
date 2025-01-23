@@ -1,7 +1,7 @@
 screen 1
 stuff "toot -h^M"
 stuff "toot auth^M"
-stuff "# toot activate drbean@mstdn.jp && echo 'ADSL Wi-Fiルーターの欲しい人！に上げます。詳細は http://drbean.sdf.org/WebCaster3100SV.html' | toot post && toot activate drbean@mstdn.jp && echo 'ADSL Wi-Fiルーターの欲しい人！に上げます。詳細は http://drbean.sdf.org/WebCaster3100SV.html' | toot post'^M"
+stuff "# toot activate drbean@mstdn.jp && echo 'ADSL Wi-Fiルーターの欲しい人！に上げます。詳細は http://drbean.sdf.org/WebCaster3100SV.html' | toot post && toot activate drbean@mstdn.jp && echo 'ADSL Wi-Fiルーターの欲しい人！に上げます。詳細は http://drbean.sdf.org/WebCaster3100SV.html' | toot post^M"
 stuff "# echo    | tr ' ' '+' | while read q ; do cygstart \"https://google.com/search?q=\$q&udm=14\" ; done^M"
 stuff "# c https://duckduckgo.com/?q=^M"
 stuff "ch "

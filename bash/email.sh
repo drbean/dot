@@ -726,7 +726,7 @@ function process_batch () {
 }
 
 function connect_sdf () {
-    PX mosh drbean@sdf.org
+    PX ssh drbean@sdf.org
     read -p "Bird is the word: " word
 }
 
@@ -740,16 +740,21 @@ function first_batch () {
     PX "if ! [[ -d ~/job/$LAND/$AREA/body ]] ; then mkdir ~/job/$LAND/$AREA/body ; fi"
     PX "if ! [[ -d ~/job/$LAND/$AREA/subject ]] ; then mkdir ~/job/$LAND/$AREA/subject ; fi"
     lftp -c "open drbean@sdf.org && cd ~/job/$LAND && glob -d echo * && \
-	glob echo $AREA/* $AREA/*/* && \
-	put -O $AREA/subject subject/title.txt && \
-	put -O $AREA/body edit_offer/original.txt && \
-	mrm $AREA/subject/* && \
-	mrm $AREA/body/* && \
-	qui"
+        glob echo $AREA/* $AREA/*/* && \
+	lcd ~/edit/email/edit_offer && \
+        put -O $AREA/subject subject/title.txt && \
+        put -O $AREA/body original.txt && \
+        mrm $AREA/subject/* && \
+        mrm $AREA/body/* && \
+        qui"
     write_BATCH 000
     read_BATCH
     UP $BATCH\?
-    PX "cp ~/job/{sendmail.sh,drbean_addresses.txt,next} ~/job/$LAND/$AREA/"
+    lftp -c "open drbean@sdf.org && cd ~/job/$LAND/$AREA \
+        && lcd ~/job/mail && mput bone.sh sendmail.sh \
+        && lcd ~/edit/email/edit_offer && put meat.yaml drbean_addresses.txt \
+        && mput -O subject subject/* && qui"
+    PX cp "~/job/next ~/job/$LAND/$AREA/"
     PX ls
 }
 

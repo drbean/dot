@@ -55,7 +55,7 @@ stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && mput dr
 stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/$LAND/ && mget -O $c north/$c/*.txt && qui\" ; done^M"
 stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && mkdir -p \$AREA/\$c && qui\" ; done^M"
 stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && glob -f rm \$AREA/\$c/* && qui\" ; done^M"
-stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && mput -O \$AREA/\$c \$c/*.txt && qui\" ; done^M"
+stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && mput -O \$AREA/\$c edit_offer/\$c/*.txt && qui\" ; done^M"
 stuff "# screen -p 1 -X stuff \"../run.sh $LAND/\$AREA \$BATCH\^M\"^M"
 stuff "# screen -p 1 -X stuff \"tmux new-window -n \$BATCH && ls\^M\"^M"
 stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && mput \$LAND/\$AREA/\$BATCH? && qui\"^M"

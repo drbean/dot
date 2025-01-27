@@ -752,7 +752,8 @@ function first_batch () {
     UP $BATCH\?
     lftp -c "open drbean@sdf.org && cd ~/job/$LAND/$AREA \
         && lcd ~/job/mail && mput bone.sh sendmail.sh \
-        && lcd ~/edit/email/edit_offer && put meat.yaml drbean_addresses.txt \
+        && lcd ~/edit/email/edit_offer \
+	&& mput meat.yaml drbean_addresses.txt \
         && mput -O subject subject/* && qui"
     PX cp "~/job/next ~/job/$LAND/$AREA/"
     PX ls

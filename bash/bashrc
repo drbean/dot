@@ -507,7 +507,7 @@ function mastodon () {
     while getopts 'a:' arg
     do
         case ${arg} in
-            i) ACCOUNT=${OPTARG};;
+            a) ACCOUNT=${OPTARG};;
         esac
     done
     export ACCOUNT

@@ -6,6 +6,7 @@ stuff "# cd && for p in '' ; do mv \$p ~/orig_\$p.svn && git init \$p && cd \$p 
 stuff "# for p in '' ; do svn mkdir -m \"Creating *\$p* project in esprimo repo, following https://svnbook.red-bean.com/en/1.7/svn-book.html#svn.ref.svn.c.checkout\" file:///srv/svn/esprimo/\$p && svn import -m \"import initial github \$p repo codebase\" \$p file:///srv/svn/esprimo/\$p/trunk && svn checkout file:///srv/svn/esprimo/\$p/trunk \$p --force ; done^M"
 
 screen 6
+stuff "#c $W/Downloads/setup-x86_64.exe^M"
 stuff "# ssh Azy4476@localhost^M"
 
 # screen 5

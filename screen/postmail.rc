@@ -6,13 +6,12 @@ stuff "cd $HOME/edit^M"
 stuff "rlwrap remove_email.sh^M"
 
 screen 3
-stuff "# START=000; END=000; svn rm \^/trunk/email/\$LAND/\${AREA}{\$START..\$END} -m \"\${AREA}\$START..\$END $(date)\"; done^M"
-stuff "pf "
 
 screen 0
 stuff "screen -X bind X eval copy 'stuff M2j?@\^Mb\^Me\^M' 'select 4' 'paste .' 'stuff \^M' 'select 0'  'activity \"\^G remove_prof from $AREA in window %\"'^M"
+bind V eval copy 'stuff M2j?@^Mb^Me^M' 'select 3' 'stuff ZZ^M && sleep 1 && pf\040' 'paste .' 'stuff ^M' "activity \"\^G pf from $AREA in window %\""
 bind Y eval copy 'stuff M?@^Mb^Me^M' "activity \"\^G copy $AREA address in window %\""
-bind Z eval copy 'stuff M?@^Ml^Me^M' "activity \"\^G copy $AREA FQDN in window %\""
+bind Z eval copy 'stuff M?@^Ml^Me^M' 'select 1' 'stuff sdf/udd/d/drbean/job/send.sh <<<someoneanyone@' 'paste .' 'stuff ^M' "activity \"\^G $AREA FQDN mail check in window %\""
 # stuff "screen -X bind Z eval 'select 4' 'paste .' 'stuff \^M' 'select 0'^M"
 # stuff "mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'^M"
 stuff "ssh drbean@sdf.org^M"

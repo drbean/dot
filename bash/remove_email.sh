@@ -13,8 +13,8 @@ if [[ $bad != *@* ]] ; then
 school=$(grep -l "^$bad" $address_list)
 #if [[ $bad =~ ^([^@]*@postech\.ac\.kr)[A-Z]+$ ]]; then 
 #    p[1]="${BASH_REMATCH[1]}"; fi
-if [[ $school == *ntupes* ]]; then 
-    p[1]="${bad%ntupes.edu.tw}ntus.edu.tw"; fi
+#if [[ $school == *ntupes* ]]; then 
+#    p[1]="${bad%ntupes.edu.tw}ntus.edu.tw"; fi
 if [[ ${#p[@]} -gt 2 ]]; then
     echo "${p[@]}: Too many args" >&2
 elif [[ ${#p[@]} -eq 2 ]]; then

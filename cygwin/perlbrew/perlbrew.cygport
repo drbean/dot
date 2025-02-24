@@ -1,17 +1,17 @@
 # B
 # -*- mode: sh; sh-shell: bash -*-
 BUILD_REQUIRES+=" libcrypt-devel" # perl.h
-NAME="perl-App-cpanminus"
-VERSION="1.7048"
+NAME="perl-App-perlbrew"
+VERSION="1.01"
 RELEASE="1"
 DESTDIR="/home/drbean/perl5"
-CPAN_AUTHOR="MIYAGAWA"
-HOMEPAGE="https://metacpan.org/release/MIYAGAWA/App-cpanminus-1.7048"
-LICENSE="Artistic-1.0-Perl OR GPL-1.0-or-later"
-DESCRIPTION="Perl distribution App-cpanminus, providing Perl modules:
-App::cpanminus.
+CPAN_AUTHOR="GUGOD"
+HOMEPAGE="https://metacpan.org/pod/App::perlbrew-1.01"
+LICENSE="MIT License"
+DESCRIPTION="Perl distribution App-perlbrew, providing Perl modules:
+App::perlbrew.
 
-Get, unpack, build and install modules from CPAN."
+Manage perl installations in your $HOME
 
 [ "${CYGPORT_RPM_DIR:-no}" == "no"  ] && [ -s "${PN}.src.patch"  ] && PATCH_URI+=" ${PN}.src.patch"
 ARCH=noarch

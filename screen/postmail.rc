@@ -9,7 +9,7 @@ screen 3
 
 screen 0
 stuff "screen -X bind X eval copy 'stuff M2j?@\^Mb\^Me\^M' 'select 4' 'paste .' 'stuff \^M' 'select 0'  'activity \"\^G remove_prof from $AREA in window %\"'^M"
-bind V eval copy 'stuff M2j?@^Mb^Me^M' 'select 3' 'stuff ":wq^M"' 'stuff "pf\040"' 'paste .' 'stuff ^M' "activity \"\^G pf from $AREA in window %\""
+bind V eval copy 'stuff M2j?@^Mb^Me^M' screen 'stuff "pf\040"' 'paste .' 'stuff ^M' monitor "activity \"\^G pf from $AREA in window %\""
 bind Y eval copy 'stuff M?@^Mb^Me^M' "activity \"\^G copy $AREA address in window %\""
 bind Z eval copy 'stuff M?@^Ml^Me^M' 'select 1' 'stuff "echo someoneanyone@"' 'paste .' 'stuff " | /sdf/udd/d/drbean/job/send.sh^M"' 'sleep 2' 'select 0' "activity \"\^G $AREA FQDN mail check in window %\""
 # stuff "screen -X bind Z eval 'select 4' 'paste .' 'stuff \^M' 'select 0'^M"

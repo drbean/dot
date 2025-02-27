@@ -4,19 +4,21 @@ BUILD_REQUIRES+=" libcrypt-devel" # perl.h
 NAME="perl-App-perlbrew"
 VERSION="1.01"
 RELEASE="1"
-DESTDIR="/home/drbean/perl5"
+DESTDIR="${HOME}/perl5/perlbrew"
 CPAN_AUTHOR="GUGOD"
 HOMEPAGE="https://metacpan.org/pod/App::perlbrew-1.01"
 LICENSE="MIT License"
-DESCRIPTION="Perl distribution App-perlbrew, providing Perl modules:
-App::perlbrew.
+DESCRIPTION="Perl distribution App-perlbrew, providing Perl app:
+perlbrew.
 
-Manage perl installations in your $HOME
+Manage perl installations in your \$HOME"
 
 [ "${CYGPORT_RPM_DIR:-no}" == "no"  ] && [ -s "${PN}.src.patch"  ] && PATCH_URI+=" ${PN}.src.patch"
 ARCH=noarch
 DIFF_EXCLUDES="MYMETA.*"
 
 export PERL_NO_VENDOR_DEPS=1
+export PERL_MB_OPT="--install_base ${HOME}/perl5/perlbrew --install_path share=${HOME}/perl5/perlbrew/share"
 inherit perl
 
+# perl_compile --install_base=/home/drbean/perl5

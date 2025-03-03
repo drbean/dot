@@ -144,13 +144,14 @@ function countdown () {
 
 function rot13 () { tr 'A-Za-z' 'N-ZA-Mn-za-m' ;  }
 
-function avail () {
-    path=$1
-    basename=${path##*/}
-    dir=${path%/*}
-    cp $path /usr/local/bin/$basename
-    chmod 775 /usr/local/bin/$basename
-}
+# # use stow
+# function avail () {
+#     path=$1
+#     basename=${path##*/}
+#     dir=${path%/*}
+#     cp $path /usr/local/bin/$basename
+#     chmod 775 /usr/local/bin/$basename
+# }
 
 function rec () {
     file=$1
@@ -308,6 +309,12 @@ function emoeco () {
     screen -c $HOME/dot/screen/emoeco.rc -dR emoeco
     cd -
 }
+
+function perlbrew () {
+    cd ~/dot/cygwin/perlbrew
+    screen -c /home/$USER/dot/screen/perlbrew.rc -dR perlbrew
+}
+
 
 function cygwin () {
     screen -c /home/$USER/dot/screen/cygwin.rc -dR cygwin

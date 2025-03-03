@@ -1,0 +1,12 @@
+screen 6
+stuff "#c $W/Downloads/setup-x86_64.exe^M"
+stuff "# ssh Azy4476@localhost^M"
+
+screen 5
+stuff "ls perlbrew.cygport drbean_package perl-App-perlbrew-1.01-1.noarch^M"
+
+screen 1
+stuff  "cd www.perlbrew.pl^M"
+
+screen 0
+stuff  "# v perlbrew.cygport drbean_package perl-App-perlbrew-1.01-1.noarch/{src,dist}*^M"

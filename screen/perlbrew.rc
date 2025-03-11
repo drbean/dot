@@ -1,12 +1,16 @@
 screen 6
 stuff "#c $W/Downloads/setup-x86_64.exe^M"
+stuff "#drbean_package^M"
 stuff "# ssh Azy4476@localhost^M"
 
 screen 5
 stuff "ls perlbrew.cygport drbean_package perl-App-perlbrew-1.01-1.noarch^M"
+stuff "ls perl-App-perlbrew-1.01-1.noarch/CYGWIN-PATCHES/*^M"
+stuff "ls /etc/postinstall/perl-App-perlbrew.sh* ~drbean/perl5/* /usr/local/bin/perl*^M"
 
 screen 1
 stuff  "cd www.perlbrew.pl^M"
+stuff  "cygport perlbrew.cygport download prep compile install package all^M"
 
 screen 0
 stuff  "# v perlbrew.cygport drbean_package perl-App-perlbrew-1.01-1.noarch/{src,dist}*^M"

@@ -68,6 +68,7 @@ function off () {
 
 function c () { cygstart $1 ; }
 function ch () { cygstart https://$1 ; }
+function pd () { pushd $1 ; }
 
 function cyg_pack () {
     package=$1
@@ -875,32 +876,6 @@ function cnv () {
         QUIZ=${quiz:-"jigsaw"} \
         FORM=$form \
         screen -c /home/$USER/dot/screen/course.rc -dR $topic
-        cd -
-}
-
-function pd () {
-    OPTIND=1
-    local arg course view topic story form
-    while getopts 'c:v:t:s:q:f:' arg
-    do
-        case ${arg} in
-            c) course=${OPTARG};;
-            v) view=${OPTARG};;
-            t) topic=${OPTARG};;
-            s) story=${OPTARG};;
-            q) quiz=${OPTARG};;
-            f) form=${OPTARG};;
-            *) return 1 # illegal option
-        esac
-    done
-        cd ~/curriculum/$course
-        COURSE=$course \
-        VIEW=$view \
-        TOPIC=$topic \
-        STORY=$story \
-        QUIZ=${quiz:-"jigsaw"} \
-        FORM=$form \
-        screen -c /home/$USER/dot/screen/pandoc.rc -dR pandoc_$topic
         cd -
 }
 

@@ -1,4 +1,4 @@
-" Last Edit: 2024 Sep 11,  8:44:21 AM
+" Last Edit: 2025 Mar 12,  8:20:59 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -936,6 +936,17 @@ au BufEnter /tmp/*,~/edit/email/*.html no <buffer> <LocalLeader>U :.! perl
 	\ print uri_unescape($line)'<CR><CR>
 au BufEnter /tmp/*,~/edit/email/*.html no <buffer> <LocalLeader>e :.! perl
 	\ -MHTML::Entities -e 'print decode_entities(<STDIN>)'<CR><CR>
+augroup END
+
+augroup copyread
+	au!
+
+au BufEnter *.md no <buffer> <LocalLeader>M :%s///<CR>
+au BufEnter *.md vn <buffer> <LocalLeader>S S]
+au BufEnter *.md vn <buffer> <LocalLeader>redc
+	\ <Esc>g`<i[<Esc>g`>a]{custom-style="reddenchar"}<Esc>
+au BufEnter *.md vn <buffer> <LocalLeader>bluec
+	\ <Esc>g`<i[<Esc>g`>a]{custom-style="bluenchar"}<Esc>
 augroup END
 
 augroup cards

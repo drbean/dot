@@ -49,6 +49,7 @@ PATH=$PATH:$(cygpath $APPDATA/local/bin)
 PATH=$PATH:"/cygdrive/c/Users/drbean/go/bin/"
 
 PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"
+
 export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/node_modules/yarn/bin"
 # export PATH=$PATH:"/cygdrive/c/Users/$USER/node_modules/yarn/bin"
 # export PATH=$PATH:"/home/$USER/node_modules/yarn/bin"
@@ -81,8 +82,6 @@ if [ "$(uname)" == "CYGWIN_NT-6.1" ]; then
 		mkdir $SCREENDIR
 	fi
 	chmod 700 $SCREENDIR
-	export PATH=$PATH:/cygdrive/c/Users/$USER/Documents/gf-3.8/bin
-	export GF_LIB_PATH=/cygdrive/c/$USER/Documents/gf-3.8/gf-3.8/lib/present
 fi
 
 

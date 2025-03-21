@@ -311,7 +311,7 @@ function emoeco () {
     cd -
 }
 
-function perlbrew () {
+function Perlbrew () {
     cd ~/dot/cygwin/perlbrew
     screen -c /home/$USER/dot/screen/perlbrew.rc -dR perlbrew
 }

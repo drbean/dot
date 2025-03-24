@@ -33,6 +33,10 @@ while read p ; do
 		prof=${prof_repo_file%%/*}
 		dev_dir=$HOME/profedit/$prof
 		target=$dev_dir/$file
+	elif [[ $path == *perlbrew* ]] ; then
+		change=${path#*perlbrew/}
+		dev_dir=$HOME/dot/cygwin/perlbrew
+		target=$dev_dir/$change
 	else
 		dev_dir=$HOME/${path%/trunk*}
 		target=$dev_dir/${look_changed##*trunk/}

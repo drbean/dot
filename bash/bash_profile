@@ -86,4 +86,7 @@ fi
 
 
 export DESKTOP_SESSION=xmonad-mate
+
+source ~/perl5/perlbrew/etc/bashrc
+
 # .bashrc

@@ -6,6 +6,14 @@ stuff "cd $HOME/edit^M"
 stuff "rlwrap remove_email.sh^M"
 
 screen 3
+stuff "# svn info \$LAND/*"
+stuff "# for a in \$LAND/* ; do echo -en "\$a\\t" ; svn info $a | sed -nE '/Last Changed Rev:/p' ; done^M"
+stuff "# for a in \$(ls \$LAND) ; do if [[ \$a == all || \$a == SEis ]] ; then continue ; fi ; for c in \$(ls \$LAND/\$a) ; do echo \$a \$c \$a/\$c ; done ; done^M"
+stuff "# for a in \$(ls \$LAND) ; do for c in \$(ls \$LAND/\$a) ; do if [[ \$c == *0* ]] ; then continue ; fi ; svn diff -r 4555:5559 ^/edit/trunk/email/tw/{all,\$a}/\$c  ; done ; done^M"
+stuff "# for a in \$(ls \$LAND) ; do for c in $(ls $LAND/$a) ; do if [[ $c == *0* || $c == *.* ]] ; then continue ; fi ; svn merge -r 4555:5559 ^/edit/trunk/email/$LA/$c $LAND/$a/$c  ; done ; done^M"
+stuff "# svn ci tw/eastisland/ --depth infinity -m \"merge 4948:5559 tw/all prof_edit,_remove changes 2025-01-24~2025-02-24\"^M"
+stuff "# svn ci tw/{north,mid} --depth infinity -m \"merge to tw[north,mid} r4555:5559 tw/all prof_{edit,remove} changes of 2025-01-24~2025-02-24\"
+
 
 screen 0
 stuff "screen -X bind X eval copy 'stuff M2j?@\^Mb\^Me\^M' 'select 4' 'paste .' 'stuff \^M' 'select 0'  'activity \"\^G remove_prof from $AREA in window %\"'^M"

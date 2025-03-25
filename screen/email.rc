@@ -33,7 +33,7 @@ stuff "# \$LAND/\$AREA/\$COUNTY \$BATCH=$LAND/$AREA/$COUNTY $BATCH^M"
 screen 2
 # AREALIST, COUNTYLIST, SCHOOLLIST
 stuff "declare -a LANDLIST=(tw kr)^M"
-stuff "declare -a AREALIST=(tw/north tw/mid tw/south tw/eastisland kr/east kr/west)^M"
+stuff "declare -a AREALIST=(tw/all tw/north tw/mid tw/south tw/eastisland kr/east kr/west)^M"
 stuff "declare -A COUNTYLIST SCHOOLLIST sc^M"
 stuff "for a in \${AREALIST[*]} ; do COUNTYLIST[\$a]=\$(ls \$a | sed '/\^[0-9]*$/d ; /\.txt/d' ) ; done^M"
 stuff "for c in \${COUNTYLIST[\$LAND/\$AREA]} ; do SCHOOLLIST[\$c]=\$( ls \$LAND/\$AREA/\$c | sed '/\.txt$/d' | tr '\\n' ' ' ); done^M"

@@ -12,12 +12,10 @@ screen
 stuff "lftp sftp://drbean@freeshell.org^M"
 stuff "pwd^M"
 stuff "lcd /tmp/pandoc/^M"
+stuff "cd html/^M"
 stuff "put WittySayings.html^M"
 stuff "put HomePage.html -o index.html^M"
-stuff "put HomePage.html^M"
-stuff "put $TOPIC.html^M"
-stuff "put $STORY.html^M"
-stuff "cd html/^M"
+stuff "mput HomePage.html $TOPIC.html $STORY.html^M"
 stuff "user drbean "
 
 screen 1

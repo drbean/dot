@@ -1,15 +1,7 @@
 #!env bash
 
 instance=(mastodon.sdf.org none mastodon-japan.net duk.space g0v.social)
-timeout=($(yes 10 | head -n 5 | tr '\n' ' '))
-active=
 for n in 0 2 3 4 ; do
-    active=$( toot activate drbean@${instance[$n]} |
-        sed -nE 's/^.*(drbean@[-._[:alnum:]]*)\s.*$/\1/'p)
-    screen -X -p $n stuff "toot tui -m cygstart^M"
-    auth=$(toot auth | sed -nE '/ACTIVE/s/^\* (.*) ACTIVE$/\1/p')
-    echo "In window $n, activated was '$active' & active was '$auth'"
-    echo "sleep ${timeout[$n]}"
-    sleep ${timeout[$n]}
-    timeout[$n]=2*${timeout[$n]}
+    screen -X -p $n stuff "toot --as drbean@${instance[$n]} tui -m cygstart^M"
+    echo "In window $n, toot --as drbean@${instance[$n]} tui"
 done

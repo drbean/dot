@@ -32,14 +32,14 @@ screen 3
 stuff "cd vcs^M"
 stuff "# cp ignore ~/.config/git/ignore^M"
 # stuff 'for repo in git-hub git-subrepo ; do git clone https://github.com/drbean/$repo.git && cd $repo && git remote add upstream https://github.com/ingydotnet/$repo.git && git fetch upstream && git merge upstream/master && cd .. ; done^M'
-stuff "# for v in svn git ; do $v status | head ^M"
+stuff "# for v in svn git ; do \$v status | head ; done^M"
 screen 2
 source vim.rc
 screen 1
 stuff "# for s in cron exim postgreSQL cygserver ; do cygrunsrv --stop $s ; done^M"
 stuff "# for l in /tmp/freedns_* ; do truncate -s 0 $l ; done^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
-stuff "for x in rc _profile; do cp bash/bash\$x ~/.bash\$x; done^M"
+stuff "# for x in rc _profile; do cp bash/bash\$x ~/.bash\$x; done^M"
 stuff "# #careful cp bash/history ~/.bash_history^M"
 stuff "# export HISTTIMEFORMAT='%m-%d '^M"
 stuff "# . alternatives.txt^M"

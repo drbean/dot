@@ -32,11 +32,6 @@ export LEAGUES_RE="cultureA|cultureB|MA0036|GL00018|GL00019|GL00020"
 # # greg
 # ibus-daemon -drx
 
-# ingydotnet/git-hub
-source ~/dot/vcs/git-hub/.rc
-## ingydotnet/git-subrepo
-#source ~/dot/git/git-subrepo/.rc
-
 alias Mo="screen -S Mo mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'"
 # alias mosh="export LANG=\"en_US.UTF-8\" && export LC_CTYPE=\"en_US.UTF-8\" && export LC_COLLATE=\"en_US.UTF-8\" && export LC_TIME=\"en_US.UTF-8\" && export LC_NUMERIC=\"en_US.UTF-8\" && export LC_MONETARY=\"en_US.UTF-8\" && export LC_MESSAGES=\"en_US.UTF-8\" && export LC_ALL=\"en_US.UTF-8\" && mosh"
 alias battery="WMIC PATH Win32_Battery Get EstimatedChargeRemaining"
@@ -145,6 +140,12 @@ function countdown () {
 
 function rot13 () { tr 'A-Za-z' 'N-ZA-Mn-za-m' ;  }
 
+function path_remove () {
+    app=$1
+    <<< $PATH gawk -v RS=: -v ORS=: '{ if ( $0 != "$app" ) print $0}' |
+        sed -E 's/:$//'
+}
+
 # # use stow
 # function avail () {
 #     path=$1
@@ -231,6 +232,12 @@ function qb () {
     #fi
     cd ~/edit/email
     screen -c /home/$USER/dot/screen/qutebrowser.rc -dR qutebrowser
+    cd -
+}
+
+function mpv () {
+    cd ~/mpv-git-2025-03-31-5870c95-x86_64
+    screen -c /home/$USER/dot/screen/mpv.rc -dR mpv
     cd -
 }
 
@@ -509,6 +516,11 @@ function gftags2ctags () {
     uniq
 }
 
+declare -A instance=( [en]=mastodon.sdf.org [ja]=mastodon-japan.net [kr]=duk.space [zh]=g0v.social )
+for i in en ja kr zh ; do
+    eval "function $i.toot () { toot --as drbean@${instance[$i]} \$1 ; }"
+done
+
 function mastodon () {
     OPTIND=0
     local arg ACCOUNT
@@ -519,7 +531,9 @@ function mastodon () {
         esac
     done
     export ACCOUNT
+    cd ~/curriculum/pages/mastodon
     screen -c /home/$USER/dot/screen/toot.rc -dR mastodon
+    cd -
 }
 
 function pages () {

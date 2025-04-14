@@ -48,7 +48,8 @@ PATH=$PATH:$(cygpath $APPDATA/local/bin)
 # go
 PATH=$PATH:"/cygdrive/c/Users/drbean/go/bin/"
 
-PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"
+# set by windows
+# PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"
 
 export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/node_modules/yarn/bin"
 # export PATH=$PATH:"/cygdrive/c/Users/$USER/node_modules/yarn/bin"
@@ -86,6 +87,11 @@ fi
 
 
 export DESKTOP_SESSION=xmonad-mate
+
+# ingydotnet/git-hub
+source ~/dot/vcs/git-hub/.rc
+## ingydotnet/git-subrepo
+#source ~/dot/git/git-subrepo/.rc
 
 source ~/perl5/perlbrew/etc/bashrc
 

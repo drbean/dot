@@ -35,7 +35,8 @@ while read p ; do
 		if [[ $prof == *chinte* ]] ; then
 			file_path=${file_path#*/}
 		fi
-		dev_dir=$HOME/profedit/$prof
+		profedit_dir=$HOME/profedit
+		dev_dir=$profedit_dir/$prof
 		target=$dev_dir/$file_path
 	elif [[ $path == *perlbrew* ]] ; then
 		change=${path#*perlbrew/}

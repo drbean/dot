@@ -29,6 +29,7 @@ while read p ; do
 	if [[ $path == *edit/branch/* ]] ; then
 		prof_repo_file_path=${path#edit/branch/}
 		file_path=${prof_repo_file_path#*/}
+		file=${prof_repo_file_path##*/}
 		prof_repo=${prof_repo_file_path%/$file_path}
 		prof=${prof_repo_file_path%%/*}
 		if [[ $prof == *chinte* ]] ; then

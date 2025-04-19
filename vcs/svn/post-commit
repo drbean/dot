@@ -27,12 +27,12 @@ look_changed=$(svnlook changed $repo -r $rev)
 while read p ; do
 	path=${p##* }
 	if [[ $path == *edit/branch/* ]] ; then
-		prof_repo_file=${path#edit/branch/}
-		file=${prof_repo_file##*/}
-		prof_repo=${prof_repo_file%/$file}
-		prof=${prof_repo_file%%/*}
+		prof_repo_file_path=${path#edit/branch/}
+		file_path=${prof_repo_file_path#*/}
+		prof_repo=${prof_repo_file_path%/$file_path}
+		prof=${prof_repo_file_path%%/*}
 		dev_dir=$HOME/profedit/$prof
-		target=$dev_dir/$file
+		target=$dev_dir/$file_path
 	elif [[ $path == *perlbrew* ]] ; then
 		change=${path#*perlbrew/}
 		dev_dir=$HOME/dot/cygwin/perlbrew
@@ -50,12 +50,16 @@ dev_dir=$dev_dir,
 target=$target" 1>&2
 
 whoami 1>&2
+echo -e "\ngit status\n" 1>&2
 git status 1>&2
-git diff 1>&2
+echo -e "\ngit diff\n" 1>&2
+git diff --cached 1>&2
 # /usr/bin/git add $target 2>&1
+echo -e "\ngit commit\n" 1>&2
 git commit -m "$mess"
 # git push -u origin csyu
-git push
+echo -e "\ngit push\n" 1>&2
+git push 1>&2
 /usr/bin/echo "commit target: $target message: '$mess' pwd: $(pwd)" 2>&1
 
 # "$mess" happened?

@@ -27,7 +27,7 @@ look_changed=$(svnlook changed $repo -r $rev)
 while read p ; do
 	repo_path=${p##* }
 	if [[ $repo_path == *edit/branch/* ]] ; then
-		prof_wc_file_path=${path#edit/branch/}
+		prof_wc_file_path=${repo_path#edit/branch/}
 		file_path=${prof_wc_file_path#*/}
 		file=${prof_wc_file_path##*/}
 		prof_wc=${prof_wc_file_path%/$file_path}
@@ -53,7 +53,12 @@ while read p ; do
 	git add $target 1>&2
 done <<<$(svnlook changed $repo -r $rev)
 
-echo "path=$path,
+echo "repo_path=$repo_path,
+prof_wc_file_path=$prof_wc_file_path,
+file_path=$file_path,
+file=$file,
+prof_wc=$prof_wc,
+prof=$prof,
 dev_dir=$dev_dir,
 target=$target" 1>&2
 
@@ -64,7 +69,7 @@ echo -e "\ngit diff\n" 1>&2
 git diff --cached 1>&2
 # /usr/bin/git add $target 2>&1
 echo -e "\ngit commit\n" 1>&2
-git commit -m "$mess"
+git commit -m "$mess" 1<&2
 # git push -u origin csyu
 echo -e "\ngit push\n" 1>&2
 git push 1>&2

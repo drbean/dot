@@ -548,11 +548,8 @@ function addre () {
     char='-._a-zA-Z0-9'
     grep=$1
     at=@
-    if [[ $# -eq 2 ]]; then
-        at=$2
-    fi
-    sed -ne "/$grep/s/^.*[^$char]\([$char]+\)$at\([$char]+\)[^$char].*$/\1@\2/p"
-    echo "grep='$grep', at='$at'."
+    if [[ $# -eq 2 ]] ; then at=$2 ; fi
+    sed -ne "/$grep/s/^.*[^$char]\([$char]\+\)$at\([$char]\+\)[^$char].*$/\1@\2/p"
 }
 
 source ~/edit/email/sourcer.sh

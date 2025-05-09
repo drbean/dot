@@ -552,7 +552,7 @@ function addre () {
         at=$2
     fi
     sed -ne "/$grep/s/^.*[^$char]\([$char]+\)$at\([$char]+\)[^$char].*$/\1@\2/p"
-    echo grep=$grep, at=$at.
+    echo "grep='$grep', at='$at'."
 }
 
 source ~/edit/email/sourcer.sh

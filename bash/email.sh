@@ -545,9 +545,14 @@ function href_pref () {
 }
 
 function addre () {
-    grep=$1
     char='-._a-zA-Z0-9'
-    sed -nE "/$grep/s/^.*[^$char]([$char]+@[$char]+)[^$char].*$/\1/p"
+    grep=$1
+    at=@
+    if [[ $# -eq 2 ]]; then
+        at=$2
+    fi
+    sed -ne "/$grep/s/^.*[^$char]\([$char]+\)$at\([$char]+\)[^$char].*$/\1@\2/p"
+    echo grep=$grep, at=$at.
 }
 
 source ~/edit/email/sourcer.sh

@@ -36,7 +36,7 @@ function curler () {
 	readarray -t page
 	total=${#page[*]}
 	SCHEME=http*//
-	AGENT='Agent_007'
+    AGENT='Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0'
 	for file in mess cache_url.txt ; do
 		if [[ -f $file ]] ; then mv {,orig_}$file ; fi
 	done
@@ -539,6 +539,10 @@ function permute_url () {
     trurl --url $old_url --set host=$host --set path=$path
 }
 
+function munger () {
+	sed -e "s/$1/$2/"
+}
+
 function href_pref () {
     grep=$1
     sed -nE "/$grep/s/^.*href= ?\"([^\"]+)\".*$/\1/p"
@@ -548,8 +552,19 @@ function addre () {
     char='-._a-zA-Z0-9'
     grep=$1
     at=@
-    if [[ $# -eq 2 ]] ; then at=$2 ; fi
-    sed -ne "/$grep/s/^.*[^$char]\([$char]\+\)$at\([$char]\+\)[^$char].*$/\1@\2/p"
+    address="\([$char]\+\)"
+    domain="[$char]\+"
+    nonmatch="[^$char]"
+    domain_re="\($domain\)$nonmatch"
+    if [[ ! -v 2  ]] ; then
+        sed -ne "/$grep/s/^.*$nonmatch$address$at$domain_re.*$/\1@\2/p"
+    else
+	    at=$2
+	    case $at in
+            ''|no*) sed -ne "/$grep/s/^.*$nonmatch$address$nonmatch.*$/\1/p" ;;
+            *)      sed -ne "/$grep/s/^.*$nonmatch$address$at$domain_re.*$/\1@\2/p"
+       esac
+    fi
 }
 
 source ~/edit/email/sourcer.sh

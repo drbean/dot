@@ -516,9 +516,9 @@ function gftags2ctags () {
     uniq
 }
 
-declare -A instance=( [en]=mastodon.sdf.org [ja]=mastodon-japan.net [kr]=duk.space [zh]=g0v.social )
-for i in en ja kr zh ; do
-    eval "function $i.toot () { toot --as drbean@${instance[$i]} \$1 ; }"
+declare -A instance=( [en]=mastodon.sdf.org [ja]=mastodon-japan.net [ko]=duk.space [zh]=g0v.social )
+for i in en ja ko zh ; do
+    eval "function $i.toot () { toot --as drbean@${instance[$i]} \"\$@\" ; }"
 done
 
 function mastodon () {

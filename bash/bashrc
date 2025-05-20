@@ -108,6 +108,8 @@ function catalyst () {
     cpanm -n --force YAML
 }
 
+function warn () { echo "$@" 1>&2 ; }
+
 function timer () {
     OPTIND=1
     local arg count

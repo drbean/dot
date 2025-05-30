@@ -2,6 +2,8 @@ screen 0
 # editing
 stuff "# echo -e \\\\n# http://$DEPARTMENT.$SCHOOL.ac.kr >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; v $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ^M"
 stuff "# echo -e \\\\n# $URL >> $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; v {page,address}.sed {prof_page,faculty}.html^M"
+register q "\""
+bind I eval copy 'stuff ^M$^M' 'select 1' 'stuff "svn ci issues.md -m "' 'paste q' 'paste .' 'paste q' 'stuff ^M' 'sleep 2' 'select 0' "activity \"\^G svn ci issues.md in window %\""
 stuff "v prof_page.html sourcer.sh^M"
 
 screen 1

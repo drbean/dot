@@ -64,5 +64,5 @@ stuff "man git-config^M"
 
 screen 0
 register q "\""
-bind I eval copy 'stuff ^M$^M' 'select 1' 'stuff "# svn ci issues.md -m "' 'paste q' 'paste .' 'paste q' 'sleep 2' 'select 0' "activity \"\^G svn ci issues.md in window %\""
+bind I eval copy 'stuff ^M$^M' 'select 1' 'stuff "svn ci issues.md -m "' 'paste q' 'paste .' 'paste q' 'stuff ^M' 'sleep 2' 'select 0' "activity \"\^G svn ci issues.md in window %\""
 stuff "v --cmd 'set spellfile=spell.en.utf-8.add' {\$FILE,issues}.md^M"

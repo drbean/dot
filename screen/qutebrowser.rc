@@ -16,4 +16,4 @@ screen 2
 stuff "ls -al *.{sh,bat,ps1}^M" 
 
 screen 3
-stuff "/cygdrive/c/Program\ Files/qutebrowser/qutebrowser-3.5.0/qutebrowser -s qt.force_software_rendering chromium^M" 
+stuff "/cygdrive/c/Program\ Files/qutebrowser/qutebrowser^M" 

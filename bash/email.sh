@@ -553,18 +553,18 @@ function addre () {
     grep=$1
     at=@
     address="\([$char]\+\)"
-    domain="[$char]\+"
+    domain="\([$char]\+\)"
     nonmatch="[^$char]"
-    domain_re="\($domain\)$nonmatch"
-    if [[ ! -v 2  ]] ; then
-        sed -ne "/$grep/s/^.*$nonmatch$address$at$domain_re.*$/\1@\2/p"
-    else
+    prematch="\(^\|^.*$nonmatch\)"
+    postmatch="\($\|$nonmatch.*$\)"
+    if [[ -v 2  ]] ; then
 	    at=$2
-	    case $at in
-            ''|no*) sed -ne "/$grep/s/^.*$nonmatch$address$nonmatch.*$/\1/p" ;;
-            *)      sed -ne "/$grep/s/^.*$nonmatch$address$at$domain_re.*$/\1@\2/p"
-       esac
+	    if [[ $at == '' || $at == no* ]] ;  then
+            sed -ne "/$grep/s/^.*$prematch$address$postmatch.*$/\2/p"
+            return 
+        fi
     fi
+    sed -ne "/$grep/s/$prematch$address$at$domain$postmatch/\2@\3/p"
 }
 
 source ~/edit/email/sourcer.sh

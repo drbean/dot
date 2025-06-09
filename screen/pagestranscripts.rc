@@ -26,7 +26,7 @@ stuff "# perl htmlexerciselist.pl -a COURSE -l bett -s $STORY  > COURSE.html && 
 stuff "# cat ~/dot/mutt/fortunes | sed -f fortune.sed >> ~/curriculum/pages/homepage/markdown/WittySayings.md^M"
 stuff "# echo -e \"% Witty sayings\\n% drbean\\n% $(date -I)\" > ~/curriculum/pages/homepage/html/WittySayings.txt^M"
 stuff "# sed 's/\^%/\\n###\\n/' ~/curriculum/pages/homepage/html/fortunes.md >> ~/curriculum/pages/homepage/html/WittySayings.txt^M"
-stuff "# echo -e \"% Witty Sayings\\n% Dr Bean\\n% \$(date -I)\\n\\n\" |  cat - homepage/html/fortunes.md | ./homepage/html/line_block.sed | pandoc -t revealjs --self-contained -s  -o c:/cygwin64/tmp/pandoc/WittySayings.html^M"
+stuff "# echo -e \"% Witty Sayings\\n% Dr Bean\\n% \$(date -I)\\n\\n\" |  cat - homepage/html/fortunes.md | ./homepage/html/line_block.sed | pandoc -t revealjs --embed-resources --standalone  -o c:/cygwin64/tmp/pandoc/WittySayings.html^M"
 stuff "# for p in toeflic_splash ; do pandoc --template=c:/$HOME/curriculum/pages/pandoc-templates/git/splash.html5 -o c:/cygwin64/tmp/pandoc/\$p.html --standalone homepage/markdown/\$p.md ; done^M"
 stuff "# for p in \$STORY \$TOPIC HomePage ; do pandoc -o c:/cygwin64/tmp/pandoc/\$p.txt --standalone homepage/markdown/\$p.md ; done^M"
 stuff "# for f in 'html --template=c:$HOME/curriculum/pages/pandoc-templates/git/homepagePost.html5' txt ; do for p in \$STORY \$TOPIC HomePage ; do pandoc -o c:/cygwin64/tmp/pandoc/\$p.\$f homepage/markdown/\$p.md ; done; done^M"

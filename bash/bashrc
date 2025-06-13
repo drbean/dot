@@ -61,7 +61,7 @@ function off () {
     shutdown /s /t 2
 }
 
-function c () { cygstart $1 ; }
+function c () { cygstart "$@" ; }
 function ch () { cygstart https://$1 ; }
 function pd () { pushd $1 ; }
 

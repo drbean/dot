@@ -1,4 +1,4 @@
-# Last Edit: 2024 Dec 12,  5:33:12 PM
+# Last Edit: 2025 Jul 11,  9:51:22 PM
 #
 # The ultimate Mutt settings
 #
@@ -861,6 +861,7 @@ group -group prof -group jp -rx 'ac\.jp$'
 fcc-save-hook (jklstw|jkls\\.tw) =prof/jkliang
 fcc-save-hook (chinte|chintelin) =prof/chinte
 fcc-save-hook joeho =prof/joseph
+fcc-save-hook (ying-chih.fang|yhlin5545) =prof/yingchih
 save-hook '%L prof' '=prof/%u'
 # fcc-hook '%L prof' '=prof/%-6@name@'
 index-format-hook name "%C prof" "--%v" 
@@ -870,7 +871,6 @@ fcc-save-hook ^(listproc|listserv|lyris|majordomo|mail2news|sympa|.*request@|.*s
 fcc-save-hook (MAILER-DAEMON) =email
 fcc-save-hook (bot\\.com\\.tw|paypal|wise\\.com$) =money
 fcc-save-hook yamagomori =taro
-fcc-save-hook yhlin5545 =prof/yingchih
 fcc-save-hook (kk68x7|j27acebc4225qa|koara8|ghm2y|shirokvmayou) =yo
 
 #

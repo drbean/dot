@@ -1,8 +1,8 @@
-screen 0
-# stuff "# toot activate \$ACCOUNT ; toot tui^M"
-screen 2
-screen 3
-screen 4
+# screen 0
+# # stuff "# toot activate \$ACCOUNT ; toot tui^M"
+# screen 2
+# screen 3
+# screen 4
 
 screen 1
 stuff "toot -h^M"
@@ -11,5 +11,10 @@ stuff "# toot auth | sed -nE '/ACTIVE/s/\^.+(@[\^[:space:]]+)[[:space:]].+\$/drb
 stuff "# echo \" \" | post.sh -t \$TOPIC -s \$STORY -k \"\$KICKER\" -h \"\$HEADER\" | toot --as drbean@mastodon.sdf.org post^M"
 stuff "# echo    | tr ' ' '+' | while read q ; do cygstart \"https://google.com/search?q=\$q&udm=14\" ; done^M"
 stuff "# c https://duckduckgo.com/?q=^M"
-stuff "active_tooter^M"
+# stuff "active_tooter^M"
 
+screen toot --as drbean@mastodon.sdf.org tui -m cygstart
+screen toot --as drbean@mastodon-japan.net tui -m cygstart
+screen toot --as drbean@duk.space tui -m cygstart
+screen toot --as drbean@g0v.social tui -m cygstart
+screen toot --as drbean@mathstodon.xyz tui -m cygstart

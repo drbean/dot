@@ -129,7 +129,13 @@ function timer () {
     echo $'\a'
 }
 
-alias whicher='which ‐‐tty‐only ‐‐read‐alias ‐‐read‐functions ‐‐show‐tilde ‐‐show‐dot'
+function which () {
+	  ( alias; declare -f ) | command which --tty-only --read-alias \
+	      --read-functions --show-tilde --show-dot "$@"
+}
+
+export -f which
+
 
 function countdown () {
     i=$1
@@ -553,17 +559,18 @@ function pages () {
     done
     cd ~/curriculum/pages
     M="$HOME/curriculum/pages/homepage/markdown"
+    T=$TOPIC; S=$STORY
     if [[ ! -f "$M/$STORY.md" ]]
     then echo -e "% $HEADER\n\n\nMe at
     <form action='https://mastodon.sdf.org/@drbean'>
     <button type='submit' class='btn'>
     <img src='./mastodon.svg'
         alt='https://joinmastodon.org/logos/wordmark-black-text.svg'
-        style='width:100px;height:50px'/>
+        style='width:90px;height:20px'/>
     </button></form>
     \nBack to [$TOPIC]($TOPIC.html)" > $M/$STORY.md
     fi
-    export TOPIC STORY HEADER KICKER M
+    export TOPIC STORY HEADER KICKER M T S
     screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$STORY
     cd -
 }

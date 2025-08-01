@@ -16,6 +16,7 @@ fi
 
 export VD=$HOME/dot/vcs/svn/vimdiff
 export W=/cygdrive/c/Users/$USER
+export D=$W/Downloads
 export M=$HOME/curriculum/pages/homepage/markdown
 
 export SEMESTER=111

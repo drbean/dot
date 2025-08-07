@@ -543,9 +543,22 @@ function munger () {
 	sed -e "s/$1/$2/"
 }
 
+function grepper () {
+    pattern=$1
+    url=$2
+    if [[ $(sed -ne /$pattern/p | wc -l) -gt 0 ]] ; then
+        echo $url
+    fi
+}
+
 function href_pref () {
     grep=$1
-    sed -nE "/$grep/s/^.*href= ?\"([^\"]+)\".*$/\1/p"
+    sed -nE "/$grep/s/^.*href=\"([^\"]+)\".*$/\1/p"
+}
+
+function href_prefs () {
+    grep=$1
+    sed -nE "/$grep/s/href=['\"]/\`/g ; s/[^\`]+\`([^'\"]+)\"/\1\n/pg"
 }
 
 function addre () {
@@ -558,8 +571,8 @@ function addre () {
     prematch="\(^\|^.*$nonmatch\)"
     postmatch="\($\|$nonmatch.*$\)"
     if [[ -v 2  ]] ; then
-	    at=$2
-	    if [[ $at == '' || $at == no* ]] ;  then
+        at=$2
+        if [[ $at == '' || $at == no* ]] ;  then
             sed -ne "/$grep/s/^.*$prematch$address$postmatch.*$/\2/p"
             return 
         fi

@@ -580,6 +580,24 @@ function addre () {
     sed -ne "/$grep/s/$prematch$address$at$domain$postmatch/\2@\3/p"
 }
 
+function addres () {
+    char='-._a-zA-Z0-9'
+    grep=$1
+    prematch=$2
+    at=@
+    address="([$char]+)"
+    domain="([$char]+)"
+    nonmatch="[^$char]"
+    # prematch="(^|^[^：]：)"
+    postmatch="($|$nonmatch)"
+    if [[ -v 3  ]] ; then
+        at=$3
+    fi
+    sed -nE "/$grep/s/[^$prematch]+$prematch($address)$at($domain)$postmatch/\1@\2\n/pg"
+#    sed -nE "/$grep/s/^[^$prematch]*$prematch$address$at/Þ\1$at/g ; \
+#	    s/Þ($address$at$domain)/\1\n/pg"
+}
+
 source ~/edit/email/sourcer.sh
 
 # alias Pr="premail -l jp -a kinki -c kyoto -s tachibana-u -u https://kenkyu.tachibana-u.ac.jp"

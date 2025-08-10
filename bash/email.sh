@@ -564,17 +564,19 @@ function href_prefs () {
 function addre () {
     char='-._a-zA-Z0-9'
     grep=$1
+    prematch=$2
     at=@
     address="\([$char]\+\)"
     domain="\([$char]\+\)"
     nonmatch="[^$char]"
-    prematch="\(^\|^.*$nonmatch\)"
-    postmatch="\($\|$nonmatch.*$\)"
-    if [[ -v 2  ]] ; then
-        at=$2
+    # prematch="\(^\|^.*$nonmatch\)"
+    postmatch="\($\|$nonmatch\)"
+    if [[ -v 3  ]] ; then
+        at=$3
         if [[ $at == '' || $at == no* ]] ;  then
-            sed -ne "/$grep/s/^.*$prematch$address$postmatch.*$/\2/p"
-            return 
+            sed -ne "/$grep/s/^.*$prematch$address$postmatch.*$/\1/p"
+            echo /$grep/s/^.*$prematch$address$postmatch.*$/\1/p
+	     return 
         fi
     fi
     sed -ne "/$grep/s/$prematch$address$at$domain$postmatch/\2@\3/p"

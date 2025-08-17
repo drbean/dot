@@ -28,7 +28,7 @@ stuff "# mv ~/profedit/git.\$SOURCE.\$REPO ~/profedit/\$SOURCE/.git^M"
 stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# for v in svn git ; do \$v add \$FILE.md issues.md ; done^M"
 stuff "# echo -e '\\nsvn: '; svn st -q \$FILE.md issues.md; echo -e '\\nand\\n' ; echo -n 'git: '; git status $FILE.md issues.md | sed -nE '/modified|branch/p'^M"
-stuff "# svn diff -r 1513:HEAD $F^M"
+stuff "# rev1=$(svn log -q -r 1:HEAD --limit 1 $F | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')^M"
 stuff "svn diff --diff-cmd $VD"
 
 screen 2

@@ -1,0 +1,15 @@
+screen 0
+stuff "v measurement.yaml size.sh^M"
+
+screen 1
+stuff "cd yamagomori/tarou.yamagomori.com^M"
+stuff "lftp drbean.yamagomori.com@ftp.homepage.shinobi.jp^M"
+
+screen 2
+stuff "source size.sh^M"
+stuff "echo -e \"\\t\\t5     4     3     2     1     length\" ; for p in \$(yq \"to_entries | .[] | .key\" measurement.yaml) ; do echo -ne \"\$p\\t\" ; for i in {5..1} ; do printf '%s' \$(position -p \$p -h \$i) ; echo -n \" \" ; done ; length -p \$p  ; done^M"
+# stuff "echo -e \"\\t\\t5\\t4\\t3\\t2\\t1\" ; for p in tanso taiwan ; do echo -ne \"\$p\\t\" ; for i in {5..1} ; do printf '%s' \$(ratio -p \$p -h \$i) ; echo -ne \"\\t\" ; done ; length -p \$p ; done^M"
+stuff "echo -e \"\\t\\t5\\t4\\t3\\t2\\t1\" ; for p in \$(yq \"to_entries | .[] | .key\" measurement.yaml) ; do echo -ne \"\$p\\t\" ; for i in {5..1} ; do printf '%s' \$(ratio -p \$p -h \$i) ; echo -n \" \" ; done ; echo ; done^M"
+# stuff "yq -n \".standard.length=\$(echo 1 k \$(declare -i lengthp; lengthp=0 ; for p in matsumoto tanimura matsuda ; do lengthp+=\$(length -p \$p) ; done ; echo \$lengthp) 3 / p | dc )\"^M"
+# stuff "for i in {5..1} ; do yq \".standard.hole.from_top.\$i=\$(echo 5 k \$(declare -i holep; holep=0 ; for p in matsumoto tanimura matsuda ; do holep+=\$(position -p \$p -h \$i) ; done ; echo \$holep) 3 / p | dc )\" ; done^M"
+# yq -n ".standard.hole.from_top.$h=$(echo 5 k $(declare -i holep; holep=0 ; for p in matsumoto tanimura matsuda ; do holep+=$(position -p $p -h 1) ; done ; echo $holep) 3 / p | dc )"

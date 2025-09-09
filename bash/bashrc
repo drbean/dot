@@ -244,7 +244,7 @@ function qb () {
     cd -
 }
 
-function mpv () {
+function Mpv () {
     cd ~/mpv-git-2025-03-31-5870c95-x86_64
     screen -c /home/$USER/dot/screen/mpv.rc -dR mpv
     cd -
@@ -284,7 +284,9 @@ function edit () {
     #git status
     REPO=${REPO:-'.'}
     F=$HOME/profedit/$SOURCE/$FILE.md
-    export SOURCE REPO FILE F
+    O=$(svn log -q -r 1:HEAD --limit 1 $F | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')
+    R=$(svn info $F | sed -nE '5s/^.*(\^.*$)/\1/p')
+    export SOURCE REPO FILE F O R
     screen -c /home/$USER/dot/screen/edit.rc -dR ${SOURCE#*/}.edit
 }
 
@@ -306,6 +308,7 @@ function dap () {
 
 function shakuhachi () {
     cd ~/shakuhachi
+    R=$(svn info . | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
     screen -c  $HOME/dot/screen/shakuhachi.rc -dR shakuhachi
 }
 
@@ -572,6 +575,7 @@ function pages () {
     cd ~/curriculum/pages
     M="$HOME/curriculum/pages/homepage/markdown"
     T=$TOPIC; S=$STORY
+    R=$(svn info . | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
     if [[ ! -f "$M/$STORY.md" ]]
     then echo -e "% $HEADER\n\n\nMe at
     <form action='https://mastodon.sdf.org/@drbean'>
@@ -582,7 +586,7 @@ function pages () {
     </button></form>
     \nBack to [$TOPIC]($TOPIC.html)" > $M/$STORY.md
     fi
-    export TOPIC STORY HEADER KICKER M T S
+    export TOPIC STORY HEADER KICKER M T R
     screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$STORY
     cd -
 }

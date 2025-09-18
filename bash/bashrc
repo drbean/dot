@@ -19,6 +19,9 @@ export W=/cygdrive/c/Users/$USER
 export D=$W/Downloads
 export M=$HOME/curriculum/pages/homepage/markdown
 
+alias arrow="echo -n → "
+alias AT="echo -n ＠"
+
 export SEMESTER=111
 export WEEK=1
 export LEAGUES="cultureA cultureB BMA0036 GL00018 GL00019 GL00020"
@@ -309,6 +312,7 @@ function dap () {
 function shakuhachi () {
     cd ~/shakuhachi
     R=$(svn info . | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
+    export R;
     screen -c  $HOME/dot/screen/shakuhachi.rc -dR shakuhachi
 }
 
@@ -574,7 +578,7 @@ function pages () {
     done
     cd ~/curriculum/pages
     M="$HOME/curriculum/pages/homepage/markdown"
-    T=$TOPIC; S=$STORY
+    T="$M/$TOPIC.md"; S="$M/$STORY.md"
     R=$(svn info . | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
     if [[ ! -f "$M/$STORY.md" ]]
     then echo -e "% $HEADER\n\n\nMe at
@@ -586,7 +590,7 @@ function pages () {
     </button></form>
     \nBack to [$TOPIC]($TOPIC.html)" > $M/$STORY.md
     fi
-    export TOPIC STORY HEADER KICKER M T R
+    export TOPIC STORY HEADER KICKER M T S R
     screen -c /home/$USER/dot/screen/pagestranscripts.rc -dR pages_$STORY
     cd -
 }

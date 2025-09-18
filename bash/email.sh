@@ -552,13 +552,13 @@ function grepper () {
 }
 
 function href_pref () {
-    grep=$1
-    sed -nE "/$grep/s/^.*href=\"([^\"]+)\".*$/\1/p"
+    line=$1
+    sed -nE "${line}s/^.*href=\"([^\"]+)\".*$/\1/p"
 }
 
 function href_prefs () {
-    grep=$1
-    sed -nE "/$grep/s/href=['\"]/\`/g ; s/[^\`]+\`([^'\"]+)\"/\1\n/pg"
+    line=$1
+    sed -nE "${line}s/href=['\"]/\`/g ; s/[^\`]+\`([^'\"]+)\"/\1\n/pg"
 }
 
 function addre () {

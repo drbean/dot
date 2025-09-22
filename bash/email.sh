@@ -32,74 +32,74 @@ function log_clip () {
 }
 
 function curler () {
-	declare -a page
-	readarray -t page
-	total=${#page[*]}
-	SCHEME=http*//
+    declare -a page
+    readarray -t page
+    total=${#page[*]}
+    SCHEME=http*//
     AGENT='Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0'
-	for file in mess cache_url.txt ; do
-		if [[ -f $file ]] ; then mv {,orig_}$file ; fi
-	done
-	for (( i=0; i<$total; i++ )); do
-		echo ${page[$i]} >>  cache_url.txt
-		if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
-		echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
-		${page[$i]}⏎\\n" | tee -a mess 1>&2
-		dump_cookies > cooky.txt
-		curl -v -A $AGENT -b cooky.txt -c cooky.txt -kL "${page[$i]}" 2>> mess
-		echo
-	done;
-	# cat cache_url.txt > url_cache
+    for file in mess cache_url.txt ; do
+        if [[ -f $file ]] ; then mv {,orig_}$file ; fi
+    done
+    for (( i=0; i<$total; i++ )); do
+        echo ${page[$i]} >>  cache_url.txt
+        if (( $i==$total-1 )) ; then echo -e "\\nLAST PAGE!!"  >> mess 2>&1; fi
+        echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
+        ${page[$i]}⏎\\n" | tee -a mess 1>&2
+        dump_cookies > cooky.txt
+        curl -v -A $AGENT -b cooky.txt -c cooky.txt -kL "${page[$i]}" 2>> mess
+        echo
+    done;
+    # cat cache_url.txt > url_cache
 }
 
 # alias Tr="tr ' ' '\n'"
 function trstr () { tr ' ' '\n' ; }
 function Sed () {
-	pattern=$1
-	sed -nE "/$pattern/p"
+    pattern=$1
+    sed -nE "/$pattern/p"
 }
 
 function cull () {
-	while read line ; do
-		if [[ $line == \#* ]] ; then
-			continue
-		fi
-		echo $line
-	done
+    while read line ; do
+        if [[ $line == \#* ]] ; then
+            continue
+        fi
+        echo $line
+    done
 }
 
 function clip () {
-	read p
-	qutebrowser $p
-	echo $p > cache_url.txt
-	sleep 10
+    read p
+    qutebrowser $p
+    echo $p > cache_url.txt
+    sleep 10
 }
 
 function paste () {
-	getclip | sed '/@/!d ; s/^M//'
+    getclip | sed '/@/!d ; s/^M//'
 }
 
 function save () {
-	echo | tee -a $A
-	< url_cache cat | tee cache_url.txt | sed -E 's/^(.*)$/# \1/' >> $A
-	echo | tee -a $A
-	cat | tee -a $A
+    echo | tee -a $A
+    < url_cache cat | tee cache_url.txt | sed -E 's/^(.*)$/# \1/' >> $A
+    echo | tee -a $A
+    cat | tee -a $A
 }
 
 function commit () {
-	address_page="n"
-	while ! [[ $address_page =~ ^y ]] ; do
-		v $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
-		svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
-		echo
-		read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
-	done
-	mess=$(< cache_url.txt)
-	read -p  "Commit as '$mess'? y/n " commit
-	if [[ $commit =~ ^y ]]
-	then exec svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -q \
-		-m "$mess" > /dev/null 2>&1 &
-	fi
+    address_page="n"
+    while ! [[ $address_page =~ ^y ]] ; do
+        v $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+        svn diff $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ;
+        echo
+        read -p "$LAND/$AREA/$COUNTY/$SCHOOL/address.txt looks good? y/n " address_page
+    done
+    mess=$(< cache_url.txt)
+    read -p  "Commit as '$mess'? y/n " commit
+    if [[ $commit =~ ^y ]]
+    then exec svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -q \
+        -m "$mess" > /dev/null 2>&1 &
+    fi
 }
 
 
@@ -166,7 +166,7 @@ new_url:=URL=${new_url:=$URL}"
     read -p "Commit as URL=$new_url? y/n " commit 
     if [[ $commit =~ ^y ]]
         then exec svn ci $LAND/$AREA/$COUNTY/$SCHOOL/address.txt -q \
-    	-m "$new_url" > /dev/null 2>&1 &
+        -m "$new_url" > /dev/null 2>&1 &
     fi
     read -p "Next list ready? y/n " next_list
 done
@@ -507,7 +507,7 @@ function url_assemble () {
     else fqdn="$hostname.$domain"
     fi
     trurl -s scheme=$scheme -s host=$fqdn \
-	-s path=$path -s query:=$query
+    -s path=$path -s query:=$query
 }
 
 function path_assemble () {
@@ -540,7 +540,7 @@ function permute_url () {
 }
 
 function munger () {
-	sed -e "s/$1/$2/"
+    sed -e "s/$1/$2/"
 }
 
 function grepper () {
@@ -549,6 +549,13 @@ function grepper () {
     if [[ $(sed -ne /$pattern/p | wc -l) -gt 0 ]] ; then
         echo $url
     fi
+}
+
+function url_tee () {
+    while read -r url ; do
+        echo "# $url" >> $A
+        echo -n "$url "
+    done
 }
 
 function href_pref () {
@@ -576,7 +583,7 @@ function addre () {
         if [[ $at == '' || $at == no* ]] ;  then
             sed -ne "${line}s/^.*$prematch$address$postmatch.*$/\1/p"
             echo ${line}s/^.*$prematch$address$postmatch.*$/\1/p
-	     return 
+         return 
         fi
     fi
     sed -ne "${line}s/^.*$prematch$address$at$domain$postmatch.*$/\1@\2/p"
@@ -585,7 +592,7 @@ function addre () {
 
 function addres () {
     char='-._a-zA-Z0-9'
-    grep=$1
+    line=$1
     prematch=$2
     at=@
     address="[$char]+"
@@ -596,7 +603,7 @@ function addres () {
     if [[ -v 3  ]] ; then
         at=$3
     fi
-   sed -nE "/$grep/s/$prematch($address)$at/Þ\1$at/g ; \
+   sed -nE "${line}s/$prematch($address)$at/Þ\1$at/g ; \
             s/[^Þ]+Þ($address)$at($domain)$postmatch/\1@\2\n/pg ; \
             s/^.*$//"
 }
@@ -773,7 +780,7 @@ function process_batch () {
     else echo "Next batch not run. Please check."
             return 1;
     fi
-	
+    
 }
 
 function connect_sdf () {
@@ -792,7 +799,7 @@ function first_batch () {
     PX "if ! [[ -d ~/job/$LAND/$AREA/subject ]] ; then mkdir ~/job/$LAND/$AREA/subject ; fi"
     lftp -c "open drbean@sdf.org && cd ~/job/$LAND && glob -d echo * && \
         glob echo $AREA/* $AREA/*/* && \
-	lcd ~/edit/email/edit_offer && \
+        lcd ~/edit/email/edit_offer && \
         put -O $AREA/subject subject/title.txt && \
         put -O $AREA/body original.txt && \
         mrm $AREA/subject/* && \
@@ -804,7 +811,7 @@ function first_batch () {
     lftp -c "open drbean@sdf.org && cd ~/job/$LAND/$AREA \
         && lcd ~/job/mail && mput bone.sh sendmail.sh \
         && lcd ~/edit/email/edit_offer \
-	&& mput meat.yaml drbean_addresses.txt \
+        && mput meat.yaml drbean_addresses.txt \
         && mput -O subject subject/* && qui"
     PX cp "~/job/next ~/job/$LAND/$AREA/"
     PX ls

@@ -19,6 +19,10 @@ export W=/cygdrive/c/Users/$USER
 export D=$W/Downloads
 export M=$HOME/curriculum/pages/homepage/markdown
 
+export IS='　'
+export AT='＠'
+export ARROW='→'
+export STAR='☆'
 alias arrow="echo -n → "
 alias AT="echo -n ＠"
 

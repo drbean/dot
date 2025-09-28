@@ -20,6 +20,7 @@ export D=$W/Downloads
 export M=$HOME/curriculum/pages/homepage/markdown
 
 export IS='　'
+export COLON='：'
 export AT='＠'
 export ARROW='→'
 export STAR='☆'
@@ -291,9 +292,9 @@ function edit () {
     #git status
     REPO=${REPO:-'.'}
     F=$HOME/profedit/$SOURCE/$FILE.md
-    O=$(svn log -q -r 1:HEAD --limit 1 $F | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')
+    R1=$(svn log -q -r 1:HEAD --limit 1 $F | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')
     R=$(svn info $F | sed -nE '5s/^.*(\^.*$)/\1/p')
-    export SOURCE REPO FILE F O R
+    export SOURCE REPO FILE F R1 R
     screen -c /home/$USER/dot/screen/edit.rc -dR ${SOURCE#*/}.edit
 }
 

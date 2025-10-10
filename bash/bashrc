@@ -584,7 +584,7 @@ function pages () {
     cd ~/curriculum/pages
     M="$HOME/curriculum/pages/homepage/markdown"
     T="$M/$TOPIC.md"; S="$M/$STORY.md"
-    R=$(svn info . | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
+    R=$(svn info ./homepage/markdown | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
     if [[ ! -f "$M/$STORY.md" ]]
     then echo -e "% $HEADER\n\n\nMe at
     <form action='https://mastodon.sdf.org/@drbean'>

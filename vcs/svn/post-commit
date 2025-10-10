@@ -21,7 +21,7 @@ done 1>&2
 repo=$1
 rev=$2
 info=$(svnlook info $repo -r $rev)
-mess=$(sed -n -e '4p' <<<$info )
+mess=$(sed -n -e '4,$p' <<<$info )
 
 look_changed=$(svnlook changed $repo -r $rev)
 while read p ; do
@@ -46,21 +46,23 @@ while read p ; do
 		dev_dir=$HOME/dot/cygwin/perlbrew
 		target=$dev_dir/$change
 	else
+		change=${repo_path#*trunk/}
 		dev_dir=$HOME/${repo_path%/trunk*}
-		target=$dev_dir/${look_changed##*trunk/}
+		target=$dev_dir/$change
 	fi
 	cd $dev_dir
 	git add $target 1>&2
-done <<<$(svnlook changed $repo -r $rev)
 
-echo "repo_path=$repo_path,
-prof_wc_file_path=$prof_wc_file_path,
-file_path=$file_path,
-file=$file,
-prof_wc=$prof_wc,
-prof=$prof,
-dev_dir=$dev_dir,
-target=$target" 1>&2
+	echo "repo_path=$repo_path,
+	prof_wc_file_path=$prof_wc_file_path,
+	file_path=$file_path,
+	file=$file,
+	prof_wc=$prof_wc,
+	prof=$prof,
+	dev_dir=$dev_dir,
+	target=$target" 1>&2
+
+done <<<$(svnlook changed $repo -r $rev)
 
 whoami 1>&2
 echo -e "\ngit status\n" 1>&2

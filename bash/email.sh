@@ -554,7 +554,7 @@ function grepper () {
 function url_tee () {
     while read -r url ; do
         echo "# $url" >> $A
-        echo -n "$url "
+        echo "$url"
     done
 }
 

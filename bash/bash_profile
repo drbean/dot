@@ -95,6 +95,4 @@ source ~/dot/vcs/git-hub/.rc
 ## ingydotnet/git-subrepo
 #source ~/dot/git/git-subrepo/.rc
 
-source ~/perl5/perlbrew/etc/bashrc
-
 # .bashrc

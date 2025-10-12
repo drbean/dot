@@ -1606,5 +1606,7 @@ function wcd () {
 # 
 # alias cd=cd_func
 
+source ~/perl5/perlbrew/etc/bashrc
+
 # vim: set ts=8 sts=4 sw=4 noet:
 

@@ -46,7 +46,7 @@ function curler () {
         echo -e "\\nGetting link page $((i+1)) of $total from STDIN\\n
         ${page[$i]}⏎\\n" | tee -a mess 1>&2
         dump_cookies > cooky.txt
-        curl -v -A $AGENT -b cooky.txt -c cooky.txt -kL "${page[$i]}" 2>> mess
+        curl -v -A "$AGENT" -b cooky.txt -c cooky.txt -kL "${page[$i]}" 2>> mess
         echo
     done;
     # cat cache_url.txt > url_cache
@@ -586,8 +586,9 @@ function addre () {
          return 
         fi
     fi
-    sed -ne "${line}s/^.*$prematch$address$at$domain$postmatch.*$/\1@\2/p"
-    echo ${line}s/^.*$prematch$address$at$domain$postmatch.*$/\\1@\\2/p
+    at="\($at\)"
+    sed -ne "${line}s/^.*$prematch$address$at$domain$postmatch.*$/\1@\3/p"
+    echo ${line}s/^.*$prematch$address$at$domain$postmatch.*$/\\1@\\3/p
 }
 
 function addres () {
@@ -631,7 +632,8 @@ function premail () {
     AREA=${area:-$AREA} COUNTY="${county:-$COUNTY}"
     A="$HOME/edit/email/$LAND/$AREA/$COUNTY/$SCHOOL/address.txt"
     Q="/cygdrive/c/Users/$USER/AppData/Roaming/qutebrowser/config"
-    export Q A LAND AREA COUNTY SCHOOL DEPARTMENT URL
+    R=$(svn info . | sed -nE '4s/^.*(\^.*$)/\1/p')
+    export Q A R LAND AREA COUNTY SCHOOL DEPARTMENT URL
     screen -c /home/$USER/dot/screen/premail.rc -dR premail.$SCHOOL
     cd -
 }

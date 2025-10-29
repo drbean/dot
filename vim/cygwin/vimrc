@@ -1,4 +1,4 @@
-" Last Edit: 2025 Oct 10, 10:48:41 AM
+" Last Edit: 2025 Oct 29,  4:38:07 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -35,8 +35,9 @@ if !has('nvim')
 	"if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
 	"   set fileencodings=utf-8,latin1
 	"endif
-	set printencoding=utf-8
 
+	let g:perl_host_prog = 'C:\cygwin64\bin\perl'
+	let g:python3_host_prog = 'C:\cygwin64\bin\python3'
 endif
 
 
@@ -109,20 +110,15 @@ if has("unix")
         "let &term = $TERM      "default, & if not defined, =ansi
         "cab vrc ~/.vimrc
         " nnoremap \v :confirm e ~/.vimrc<CR>
-        nnoremap \u :source ~/.vimrc<CR>
+        " nnoremap \u :source ~/.vimrc<CR>
         if hostname() != "ms" || hostname() != "ms1"
                 "let &shell = '/usr/bin/bash' "cygwin .exe screws shellpipe
                 "let &shellpipe = '2>&1| tee'
                 endif
 elseif has("win32")
-	cd a:/
 	"let is_bash = 'bash'
 	"abbreviations for calling up files
-	cab vrc A:/myvimrc
-	" nnoremap \v :confirm e A:/myvimrc<CR>
-	nnoremap \u :source $V/_vimrc<CR>
-
-
+	" nnoremap \u :source $V/_vimrc<CR>
 	set dir=$V	" on hard drive, A: slows swp file writing down
 	endif
 

@@ -494,7 +494,10 @@ function question_grade_bett () {
 
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
-alias dot="cd ~/dot; screen -c /home/$USER/dot/screen/dot.rc -dR dot"
+# alias dot="cd ~/dot; screen -c /home/$USER/dot/screen/dot.rc -dR dot"
+alias dot="cd ~/dot; \
+    export R=$(svn info ~/dot | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p') ; \
+    screen -c /home/$USER/dot/screen/dot.rc -dR dot"
 
 alias irc="cd ~/znc; screen -c /home/$USER/dot/screen/irc.rc -dR irc; cd -"
 
@@ -584,7 +587,7 @@ function pages () {
     cd ~/curriculum/pages
     M="$HOME/curriculum/pages/homepage/markdown"
     T="$M/$TOPIC.md"; S="$M/$STORY.md"
-    R=$(svn info ./homepage/markdown | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
+    R=$(svn info $M | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
     if [[ ! -f "$M/$STORY.md" ]]
     then echo -e "% $HEADER\n\n\nMe at
     <form action='https://mastodon.sdf.org/@drbean'>

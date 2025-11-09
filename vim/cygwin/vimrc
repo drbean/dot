@@ -1,4 +1,4 @@
-" Last Edit: 2025 Oct 29,  4:38:07 PM
+" Last Edit: 2025 Nov 02,  5:14:56 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -378,6 +378,10 @@ au!
 "let g:syntastic_enable_perl_checker = 1
 "let g:syntastic_perl_checkers = ["perl", "perlcritic", "podchecker"]
 
+" undotree
+
+nnoremap <Leader>u :UndotreeToggle<cr>
+
 " delimitMate
 
 let delimitMate_expand_cr = 1
@@ -401,8 +405,7 @@ vmap \cq  :s/^[><Tab> ]\+$//e<CR>
 vmap \qp :s/^/> /<CR>
 "map \qp :'q,.s/^/> /<CR>
 "map \qp vip:s/^/> /<CR>
-
-vmap \dp :s/^> //<CR>
+" vmap \dp :s/^> //<CR>
 
 " prevent das deleting quote mark
 map \das dasi> <ESC>
@@ -887,7 +890,9 @@ au FileType markdown map <buffer> <LocalLeader>ntw
 	\ :let &textwidth = 40<CR>
 au FileType markdown map <buffer> <LocalLeader>otw
 	\ :let &tw = g:old_tw<CR>
-au FileType markdown vmap <buffer> <LocalLeader>q Jgqj
+au FileType markdown vnoremap <buffer> <LocalLeader>q Jgq$
+" mv to previous line end+space
+au FileType markdown vmap <buffer> <LocalLeader>dp dkA<space><Esc>p<CR>
 au FileType markdown map <buffer> <LocalLeader>w
 	\ :set textwidth=40<CR>
 	\ vip

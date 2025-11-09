@@ -1,0 +1,49 @@
+# file: tt
+# tt parameter completion
+# copied from dic
+# https://www.baeldung.com/linux/shell-auto-completion
+
+function _tt () {
+	local cur prev opts fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	opts="-c -t -s -o -r -l -x"
+	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
+	diropts="-s"
+
+	app="edit pages"
+	prof="jasoncclu ylkao jkliang"
+	words=""
+
+	if [[ ${prev} =~ ${fileopts} ]]; then
+	COMPREPLY=( $(compgen -f -- ${cur}) )
+	return 0
+	elif [[ ${prev} =~ ${diropts} ]]; then
+	COMPREPLY=( $(cd /home/drbean/profedit && compgen -d -- ${cur}) )
+	return 0
+	fi
+
+	case "${prev}" in
+		tt)
+			words='bash dot stowit "edit'
+			;;
+		\"edit)
+			words="-s"
+			;;
+		-s)
+			COMPREPLY=( $(compgen -f --  ~/profedit/${cur}) )
+			return 0
+			;;
+		pages)
+			words="-t"
+			;;
+		HomePage)
+			words="-s"
+			;;
+		*)
+			;;
+	esac
+	COMPREPLY=( $(compgen -W "$words" -- $cur) )
+}
+complete -F _tt tt

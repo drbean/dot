@@ -61,6 +61,10 @@ function mintie () {
 }
 
 function tt () {
+    if [[ "$*" != *[a-z0-9]* ]]; then
+	mintty bash
+	return 0
+    fi
     for screen in "$@" ; do
 	mintty bash -i -c "$screen" &
     done
@@ -171,6 +175,10 @@ function path_remove () {
 #     cp $path /usr/local/bin/$basename
 #     chmod 775 /usr/local/bin/$basename
 # }
+
+function stowit () {
+    screen -c ~/dot/screen/stow.rc -dR stow
+}
 
 function rec () {
     file=$1

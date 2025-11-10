@@ -62,11 +62,11 @@ function mintie () {
 
 function tt () {
     if [[ "$*" != *[a-z0-9]* ]]; then
-	mintty bash
+	mintty bash -l -i &
 	return 0
     fi
     for screen in "$@" ; do
-	mintty bash -i -c "$screen" &
+	mintty bash -l -i -c "$screen" &
     done
 }
 
@@ -303,7 +303,7 @@ function edit () {
     R1=$(svn log -q -r 1:HEAD --limit 1 $F | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')
     R=$(svn info $F | sed -nE '5s/^.*(\^.*$)/\1/p')
     export SOURCE REPO FILE F R1 R
-    screen -c /home/$USER/dot/screen/edit.rc -dR ${SOURCE#*/}.edit
+    screen -c /home/$USER/dot/screen/edit.rc -dR ${SOURCE#*/}.$FILE
 }
 
 function dap () {

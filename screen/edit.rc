@@ -1,5 +1,5 @@
 screen 1
-stuff "cd ~/profedit^M"
+stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# mv \$SOURCE ~/profedit/orig.\$SOURCE^M"
 stuff "# git init \$SOURCE^M"
 stuff "# cd ~/profedit/\$SOURCE^M"
@@ -21,7 +21,7 @@ stuff "# git merge --no-ff --allow-unrelated-histories^M"
 stuff "# echo contact details > ~/profedit/\$SOURCE/svn-commit.tmp^M"
 stuff "# svn mkdir file:///srv/svn/esprimo/edit/branch/\$SOURCE -F svn-commit.tmp^M"
 stuff "# echo their_\$FILE_filename.docx > ~/profedit/\$SOURCE/svn-commit.tmp^M"
-stuff "cd ~/profedit^M"
+stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# svn import \$SOURCE file:///srv/svn/esprimo/edit/branch/\$SOURCE/\$REPO -F svn-commit.tmp^M"
 stuff "# svn checkout file:///srv/svn/esprimo/edit/branch/\$SOURCE/\$REPO $SOURCE --force^M"
 stuff "# mv ~/profedit/git.\$SOURCE.\$REPO ~/profedit/\$SOURCE/.git^M"
@@ -30,7 +30,7 @@ stuff "# for v in svn git ; do \$v add \$FILE.md issues.md ; done^M"
 stuff "# echo -e '\\nsvn: '; svn st -q \$FILE.md issues.md; echo -e '\\nand\\n' ; echo -n 'git: '; git status $FILE.md issues.md | sed -nE '/modified|branch/p'^M"
 
 screen 2
-stuff "cd ~/profedit^M"
+stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# for o in touch rm ; do \$o output/\$FILE.pdf ; done && xelatex --output-directory=output \$FILE.tex && cygstart output/\$FILE.pdf^M"
 stuff "# cd \$REPO^M"
 stuff "# pandoc -o \$FILE.reference.docx --print-default-data-file reference.docx^M"
@@ -43,7 +43,7 @@ stuff "# pandoc -o orig_\$FILE.md --from=docx+styles --to=markdown-link_attribut
 stuff "# MINE=my_\$FILE; pandoc -o \$MINE.docx --reference-doc=./\$FILE.reference.docx \$FILE.md^M"
 
 screen 3
-stuff "cd ~/profedit^M"
+stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# cygstart /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE^M"
 stuff "# echo    | tr ' ' '+' | while read q ; do cygstart \"https://google.com/search?q=\$q&udm=14\" ; done^M"
 stuff "# cygstart media/*^M"
@@ -54,7 +54,7 @@ stuff "# cygstart their_\$FILE.docx^M"
 stuff "# cygstart orig_\$FILE.docx^M"
 
 screen 5
-stuff "cd ~/profedit^M"
+stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# s=$SOURCE f=$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$f output/\$f.pdf -o invoice.pdf && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && lcd media/diff/\$f/ && mput -O \$s diffchar.png gitdiff.png && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$s issues.md -o issues.txt && qui\"^M"
@@ -63,11 +63,11 @@ stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd 
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/\$f.docx -o \$f.docx && qui\"^M"
 
 screen 9
-stuff "cd ~/profedit^M"
+stuff "cd ~/profedit/\$SOURCE^M"
 stuff "svn diff --diff-cmd $VD"
 
 screen 0
-stuff "cd ~/profedit^M"
+stuff "cd ~/profedit/\$SOURCE^M"
 register q "\""
 bind I eval copy 'stuff \^^M$^M' 'select 1' 'stuff "svn ci issues.md -m "' 'paste q' 'paste .' 'paste q' 'stuff ^M' 'sleep 2' 'select 0' "activity \"\^G svn ci issues.md in window %n\""
 stuff "v --cmd 'set spellfile=spell.en.utf-8.add' {\$FILE,issues}.md^M"

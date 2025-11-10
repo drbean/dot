@@ -26,7 +26,7 @@ function _tt () {
 
 	case "${prev}" in
 		tt)
-			words='bash dot stowit "edit'
+			words='bash dot mastodon qb stowit "edit'
 			;;
 		\"edit)
 			words="-s"

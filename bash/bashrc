@@ -76,6 +76,15 @@ function off () {
 
 function c () { cygstart "$@" ; }
 function ch () { cygstart https://$1 ; }
+function book () {
+    term="$*"
+    <<< "$term" tr ' ' '+' | while read q ; do cygstart "https://books.google.com/ngrams/graph?content=$q" ; done
+}
+function goog () {
+    term="$*"
+    <<< "$term" tr ' ' '+' | while read q ; do cygstart "https://google.com/search?q=$q&udm=14" ; done
+}
+
 function pd () { pushd $1 ; }
 
 function cyg_pack () {

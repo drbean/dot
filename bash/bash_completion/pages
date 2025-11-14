@@ -1,0 +1,48 @@
+# file: pages
+# pages parameter completion
+# copied from edit
+# https://www.baeldung.com/linux/shell-auto-completion
+
+function _pages () {
+	local cur prev opts fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	prev2="${COMP_WORDS[COMP_CWORD-2]}"
+	opts="-s -f"
+	fileopts="-f"
+	diropts="-s"
+
+	app="pages pages"
+	prof="jasoncclu ylkao jkliang"
+	words=""
+
+	# if [[ ${prev} =~ ${fileopts} ]]; then
+	# COMPREPLY=( $(compgen -f -- ~/profpages/${cur}) )
+	# return 0
+	# elif [[ ${prev} =~ ${diropts} ]]; then
+	# COMPREPLY=( $(compgen -d -- ~/profpages/${cur}) )
+	# return 0
+	# fi
+
+	case "${prev}" in
+		pages)
+			words="-t"
+			;;
+		-t)
+			cd ~/curriculum/pages/homepage/markdown
+			COMPREPLY=( $(compgen -f -- ${cur}) )
+			return 0
+			;;
+		-s)
+			cd ~/curriculum/pages/homepage/markdown
+			COMPREPLY=( $(compgen -f -- ${cur}) )
+			return 0
+			;;
+		*)
+			words="-s"
+			;;
+	esac
+	COMPREPLY=( $(compgen -W "$words" -- $cur) )
+}
+complete -F _pages pages

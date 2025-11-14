@@ -46,7 +46,7 @@ screen 3
 stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# cygstart /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE^M"
 stuff "# echo    | tr ' ' '+' | while read q ; do cygstart \"https://google.com/search?q=\$q&udm=14\" ; done^M"
-stuff "# cygstart https://books.google.com/ngrams/graph?content=*^M"
+stuff "# tr ' ' '+' | while read q ; do cygstart \"https://books.google.com/ngrams/graph?content=\$q\" ; done <<< \"^M"
 stuff "# cygstart media/*^M"
 stuff "# cygstart \$FILE.reference.docx^M"
 stuff "# cygstart Diff.html^M"

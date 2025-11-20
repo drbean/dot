@@ -36,10 +36,12 @@ function _edit () {
 			;;
 		-f)
 			cd ~/profedit/$prev2
-			COMPREPLY=( $(compgen -f -- ${cur}) )
+			file=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${file[@]%.*} )
 			return 0
 			;;
 		*)
+			words="${opts}"
 			;;
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )

@@ -8,10 +8,10 @@ function _premail () {
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
-	for i in {1..6} ; do
-		declare prev$i="${COMP_WORDS[COMP_CWORD-$i]}"
+	for (( i=0 ; i<${#COMP_WORDS[@]} ; i++ )) ; do
+		declare pre$i="${COMP_WORDS[COMP_CWORD-i]}"
 	done
-	opts="-s -f"
+	opts="-l -a -c -s -u"
 	fileopts="-f"
 	diropts="-s"
 
@@ -35,24 +35,25 @@ function _premail () {
 			words="jp kr tw"
 			;;
 		-a)
-			cd ~/edit/email/$prev2
+			cd ~/edit/email/$pre2
 			COMPREPLY=( $(compgen -d -- ${cur}) )
 			return 0
 			;;
 		-c)
-			cd ~/edit/email/$prev4/$prev2
+			cd ~/edit/email/$pre4/$pre2
 			COMPREPLY=( $(compgen -d -- ${cur}) )
 			return 0
 			;;
 		-s)
-			cd ~/edit/email/$prev6/$prev4/$prev2
+			cd ~/edit/email/$pre6/$pre4/$pre2
 			COMPREPLY=( $(compgen -d -- ${cur}) )
 			return 0
 			;;
 		-u)
-			words="https://www.$prev2.ac.jp"
+			words="https://www.$pre2.ac.jp"
 			;;
 		*)
+			words="${opts}"
 			;;
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )

@@ -568,6 +568,15 @@ function href_prefs () {
     sed -nE "${line}s/href=['\"]/\`/g ; s/[^\`]+\`([^'\"]+)\"/\1\n/pg"
 }
 
+function mailto () {
+	addre '/mailto:/' 'mailto:'
+}
+function mailtoadder () {
+    while read -r page ;
+        do <<< $page mailto
+        <<< $page addre "$@"
+    done
+}
 function addre () {
     char='-._a-zA-Z0-9'
     line=$1
@@ -582,13 +591,13 @@ function addre () {
         at=$3
         if [[ $at == '' || $at == no* ]] ;  then
             sed -ne "${line}s/^.*$prematch$address$postmatch.*$/\1/p"
-            echo ${line}s/^.*$prematch$address$postmatch.*$/\1/p
+            # echo ${line}s/^.*$prematch$address$postmatch.*$/\1/p
          return 
         fi
     fi
     at="\($at\)"
     sed -ne "${line}s/^.*$prematch$address$at$domain$postmatch.*$/\1@\3/p"
-    echo ${line}s/^.*$prematch$address$at$domain$postmatch.*$/\\1@\\3/p
+    # echo ${line}s/^.*$prematch$address$at$domain$postmatch.*$/\\1@\\3/p
 }
 
 function addres () {

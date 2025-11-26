@@ -1,9 +1,21 @@
 screen 9
 stuff "man stow^M"
 
+# pages
+
+screen 3
+stuff "cd ~/stow/^M"
+stuff "ls -al^M"
+stuff "declare -a command=( \"active_tooter\" \"blog.sh\" \"common.sh\" \"masto_master_messter\" \"post.sh\" \"toot\" )^M"
+stuff "# for app in \${command[@]} ; do diff -u ~/curriculum/pages/homepage/markdown/\$app ~/stow/pages/bin/\$app ; done^M"
+stuff "# for app in \${command[@]} ; do diff -u ~/curriculum/pages/homepage/markdown/\$app /usr/local/bin/\$app ; done^M"
+stuff "# for app in \${command[@]} ; do rm ~/stow/pages/bin/\$app ; done^M"
+stuff "# for app in \${command[@]} ; do ln ~/curriculum/pages/homepage/markdown/\$app ~/stow/pages/bin/\$app ; done^M"
+stuff "# stow -n --verbose=2 -t /usr/local/bin -R pages^M"
+
 # dot
 
-screen
+screen 1
 stuff "cd ~/stow/^M"
 stuff "ls -al^M"
 stuff "declare -a command=( \"inputrc\" \"bash_profile\" \"bashrc\" )^M"
@@ -16,10 +28,10 @@ stuff "# stow -n --verbose=2 -t ~ -R dot^M"
 
 # bash_completion
 
-screen
+screen 2
 stuff "cd ~/stow/^M"
 stuff "ls -al^M"
-stuff "declare -a command=( \"pages\" \"edit\" \"tt\" )^M"
+stuff "declare -a command=( \"premail\" \"pages\" \"edit\" \"tt\" )^M"
 stuff "# for c in \${command[@]} ; do diff -u ~/dot/bash/bash_completion/\$c ~/stow/bash_completion/\$c ; done^M"
 stuff "# for c in \${command[@]} ; do diff -u ~/dot/bash/bash_completion/\$c /etc/bash_completion.d/\$c ; done^M"
 stuff "# rm ~/stow/bash_completion/tt^M"

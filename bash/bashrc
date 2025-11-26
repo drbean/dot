@@ -84,6 +84,12 @@ function goog () {
     term="$*"
     <<< "$term" tr ' ' '+' | while read q ; do cygstart "https://google.com/search?q=$q&udm=14" ; done
 }
+function researchmap () {
+    while read -r prof ; do
+	profplus=$(<<< $prof tr ' ' '+')
+	cygstart https://researchmap.jp/researchers?q=$profplus
+    done
+}
 
 function pd () { pushd $1 ; }
 
@@ -186,7 +192,21 @@ function path_remove () {
 # }
 
 function stowit () {
-    screen -c ~/dot/screen/stow.rc -dR stow
+    OPTIND=1
+    local arg SCREENRC
+    while getopts 's:a' arg
+    do
+        case ${arg} in
+            s) SCREENRC="~/dot/screen/stow/${OPTARG}.rc"
+		SCREEN=${OPTARG};;
+            a) SCREENRC="~/dot/screen/stow.rc"
+		SCREEN="all"
+		cat ~/dot/screen/stow/*.rc > $SCREENRC;;
+	    *) echo "opts: -s -a" ; return 1 # illegal option
+        esac
+    done
+    # screen -c $SCREENRC -S stow
+    screen -c $SCREENRC -dR stow.$SCREEN
 }
 
 function rec () {

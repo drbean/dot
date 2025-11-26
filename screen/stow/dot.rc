@@ -1,0 +1,12 @@
+# dot
+
+screen 1
+stuff "cd ~/stow/^M"
+stuff "ls -al^M"
+stuff "declare -a command=( \"inputrc\" \"bash_profile\" \"bashrc\" )^M"
+stuff "# for rc in \${command[@]} ; do diff -u ~/dot/bash/\$rc ~/stow/dot/.\$rc ; done^M"
+stuff "# for rc in \${command[@]} ; do diff -u ~/dot/bash/\$rc ~/.\$rc ; done^M"
+stuff "# rm ~/stow/dot/{.inputrc,.bash_profile,.bashrc}^M"
+stuff "# for rc in \${command[@]} ; do ln ~/dot/bash/\$rc ~/stow/dot/.\$rc ; done^M"
+stuff "# for rc in vimrc ; do ln ~/dot/vim/cygwin/\$rc ~/stow/dot/.\$rc ; done^M"
+stuff "# stow -n --verbose=2 -t ~ -R dot^M"

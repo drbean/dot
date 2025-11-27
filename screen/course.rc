@@ -39,7 +39,7 @@ stuff "#dtach -A /tmp/\$COURSE v online/{default,\$TOPIC.yaml ../online/default.
 stuff "# dtach -a /tmp/\$COURSE^M"
 stuff "# v online/*.yaml^M"
 
-source pandoc.rc
+source ~/dot/screen/pandoc.rc
 
 screen 3
 stuff "# perl ../cclass/cards.pl -t ./$TOPIC && xelatex ./\$TOPIC/jigsaw_${STORY}_$FORM.tex && evince jigsaw_${STORY}_$FORM.pdf^M"

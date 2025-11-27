@@ -1,0 +1,50 @@
+# file: stowit
+# stowit parameter completion
+# copied from pages
+# https://www.baeldung.com/linux/shell-auto-completion
+
+function _stowit () {
+	local cur prev opts fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	prev2="${COMP_WORDS[COMP_CWORD-2]}"
+	opts="-s -a"
+	fileopts="-a"
+	diropts="-s"
+
+	app="stowit stowit"
+	prof="jasoncclu ylkao jkliang"
+	words=""
+
+	# if [[ ${prev} =~ ${fileopts} ]]; then
+	# COMPREPLY=( $(compgen -f -- ~/profstowit/${cur}) )
+	# return 0
+	# elif [[ ${prev} =~ ${diropts} ]]; then
+	# COMPREPLY=( $(compgen -d -- ~/profstowit/${cur}) )
+	# return 0
+	# fi
+
+	case "${prev}" in
+		stowit)
+			words="-t"
+			;;
+		-s)
+			cd ~/dot/screen/stow
+			rc=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${rc[@]%.*} )
+			return 0
+			;;
+		-s)
+			cd ~/dot/screen/stow
+			rc=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${story[@]%.*} )
+			return 0
+			;;
+		*)
+			words="-s"
+			;;
+	esac
+	COMPREPLY=( $(compgen -W "$words" -- $cur) )
+}
+complete -F _stowit stowit

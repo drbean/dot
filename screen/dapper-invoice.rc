@@ -1,4 +1,5 @@
 screen 1
+stuff "cd ~/dapper-invoice^M"
 stuff "# for v in svn git ; do \$v add \$SOURCE.tex ; done^M"
 stuff "# echo -e '\\nsvn: '; svn st -q \$SOURCE.tex ; echo -e '\\nand\\n' ; echo -n 'git: '; git status SOURCE.tex | sed -nE '/modified|branch/p'^M"
 stuff "ls^M"
@@ -6,16 +7,20 @@ stuff "# svn diff --diff-cmd $VD^M"
 stuff "grep newcommand..invoiceNo *.tex | sed -E 's/:/ /' | sort -k 2^M"
 
 screen 2
+stuff "cd ~/dapper-invoice^M"
 stuff "# for o in touch rm ; do \$o output/\$SOURCE.pdf ; done && xelatex --output-directory=output \$SOURCE.tex && cygstart output/\$SOURCE.pdf^M"
 
 screen 3
+stuff "cd ~/dapper-invoice^M"
 stuff "# /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE output/\$SOURCE.pdf^M"
 stuff "# cygstart output/\$SOURCE.pdf^M"
 
 screen 5
+stuff "cd ~/dapper-invoice^M"
 stuff "# s=\$SOURCE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit/\$s && put output/\$s.pdf -o invoice.pdf && qui\"^M"
 
 screen 6
+stuff "cd ~/dapper-invoice^M"
 stuff "# for v in svn git ; do \$v add \$SOURCE.tex ; done ; done^M"
 stuff "# for v in svn git ; do echo \$v: ; \$v status ; \$v diff ; done^M"
 
@@ -23,4 +28,5 @@ screen 9
 stuff "tlmgr --help^M"
 
 screen 0
+stuff "cd ~/dapper-invoice^M"
 stuff "v --cmd 'set spellfile=spell.en.utf-8.add' \$SOURCE.tex^M"

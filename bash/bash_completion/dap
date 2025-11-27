@@ -1,0 +1,43 @@
+# file: dap
+# dap parameter completion
+# copied from edit ?
+# https://www.baeldung.com/linux/shell-auto-completion
+
+function _dap () {
+	local cur prev opts fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	prev2="${COMP_WORDS[COMP_CWORD-2]}"
+	opts="-s"
+	fileopts="-f"
+	diropts="-s"
+
+	app="dap pages"
+	prof="jasoncclu ylkao jkliang"
+	words=""
+
+	# if [[ ${prev} =~ ${fileopts} ]]; then
+	# COMPREPLY=( $(compgen -f -- ~/profdap/${cur}) )
+	# return 0
+	# elif [[ ${prev} =~ ${diropts} ]]; then
+	# COMPREPLY=( $(compgen -d -- ~/profdap/${cur}) )
+	# return 0
+	# fi
+
+	case "${prev}" in
+		dap)
+			words="-s"
+			;;
+		-s)
+			cd ~/profedit
+			COMPREPLY=( $(compgen -d -- ${cur}) )
+			return 0
+			;;
+		*)
+			words="${opts}"
+			;;
+	esac
+	COMPREPLY=( $(compgen -W "$words" -- $cur) )
+}
+complete -F _dap dap

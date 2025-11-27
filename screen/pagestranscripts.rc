@@ -1,4 +1,5 @@
 screen
+stuff "cd ~/curriculum/pages^M"
 stuff "v --cmd 'set spellfile=spell.en.utf-8.add' "
 stuff "homepage/markdown/\$STORY.md "
 stuff "homepage/markdown/$TOPIC.md "
@@ -9,6 +10,7 @@ stuff "Contents.html "
 stuff "~/.weechat/logs/irc.freenodebnc.\\\#\\\#english.weechatlo^M"
 
 screen
+stuff "cd ~/curriculum/pages^M"
 stuff "lftp sftp://drbean@freeshell.org^M"
 stuff "pwd^M"
 stuff "lcd /tmp/pandoc/^M"
@@ -19,6 +21,7 @@ stuff "mput HomePage.html $TOPIC.html $STORY.html^M"
 stuff "user drbean "
 
 screen 1
+stuff "cd ~/curriculum/pages^M"
 stuff "svn st -q^Msvn log -vr BASE:HEAD^M svn info^M"
 stuff "export HISTTIMEFORMAT='%m-%d'^M"
 stuff "# perl htmlexerciselist.pl -a COURSE -l bett -s $STORY  > COURSE.html && lftp -c 'open web.nuu.edu.tw; cd public_html; put COURSE.html'^M"

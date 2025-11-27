@@ -4,7 +4,7 @@ screen 9
 stuff "cd ~/dot^M"
 stuff "man bash"
 
-# svn repo dir creation
+# repo: svn repo dir creation
 
 screen 7
 stuff "cd ~/dot^M"
@@ -12,7 +12,7 @@ stuff "# for repo in curriculum ; do rm -rf /srv/svn/\$repo && svnadmin create /
 stuff "# cd && for p in '' ; do mv \$p ~/orig_\$p.svn && git init \$p && cd \$p && git remote add origin https://github.com/drbean/\$p && git branch --set-upstream-to=origin/master master && git fetch origin && git merge origin/master^M"
 stuff "# for p in '' ; do svn mkdir -m \"Creating *\$p* project in esprimo repo, following https://svnbook.red-bean.com/en/1.7/svn-book.html#svn.ref.svn.c.checkout\" file:///srv/svn/esprimo/\$p && svn import -m \"import initial github \$p repo codebase\" \$p file:///srv/svn/esprimo/\$p/trunk && svn checkout file:///srv/svn/esprimo/\$p/trunk \$p --force ; done^M"
 
-# cygwin setup, ssh root
+# root: cygwin setup, ssh root
 
 screen 6
 stuff "cd ~/dot^M"
@@ -34,7 +34,7 @@ stuff "# ssh Azy4476@localhost^M"
 # stuff "# for service in dns/update_dns ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}.\$type; done; done^M"
 # stuff "# for service in desktop/desktop_background ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}@.\$type; done; done^M"
 
-# mutt, fortunes
+# mail: mutt, fortunes
 
 # screen 4
 # stuff "# cat ~/dot/mail/fortunes | sed -f fortune.sed >> ~/curriculum/pages/homepage/markdown/WittySayings.md^M"
@@ -42,7 +42,7 @@ stuff "# ssh Azy4476@localhost^M"
 # stuff "# lftp -c 'open drbean@sdf.org && mput -O ~/.mutt ~/dot/mail/fortunes*'^M"
 # stuff "# lftp -c 'open drbean@sdf.org && put ~/dot/mail/sdf/muttrc -o ~/.muttrc'^M"
 
-# svn, git
+# vcs: svn, git
 
 screen 3
 stuff "cd ~/dot^M"

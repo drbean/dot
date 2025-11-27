@@ -3,12 +3,12 @@
 screen 2
 stuff "cd ~/stow/^M"
 stuff "ls -al^M"
-stuff "declare -a command=( \"premail\" \"pages\" \"edit\" \"tt\" )^M"
+stuff "declare -a command=( \"dap\" \"edit\" \"pages\" \"premail\" \"stowit\" \"tt\" )^M"
 stuff "# for c in \${command[@]} ; do diff -u ~/dot/bash/bash_completion/\$c ~/stow/bash_completion/\$c ; done^M"
 stuff "# for c in \${command[@]} ; do diff -u ~/dot/bash/bash_completion/\$c /etc/bash_completion.d/\$c ; done^M"
-stuff "# rm ~/stow/bash_completion/tt^M"
+stuff "# rm ~/stow/bash_completion/*^M"
 stuff "# for c in \${command[@]} ; do ln ~/dot/bash/bash_completion/\$c ~/stow/bash_completion/\$c ; done^M"
-stuff "# stow -n --verbose=2 -t /etc/bash_completion.d -R bash_completion^M"
+stuff "# stow -n --verbose=2 -t /etc/bash_completion.d -d ~drbean/stow -R bash_completion^M"
 
 # root Azy4476
 

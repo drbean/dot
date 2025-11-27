@@ -10,3 +10,9 @@ stuff "# rm ~/stow/dot/{.inputrc,.bash_profile,.bashrc}^M"
 stuff "# for rc in \${command[@]} ; do ln ~/dot/bash/\$rc ~/stow/dot/.\$rc ; done^M"
 stuff "# for rc in vimrc ; do ln ~/dot/vim/cygwin/\$rc ~/stow/dot/.\$rc ; done^M"
 stuff "# stow -n --verbose=2 -t ~ -R dot^M"
+
+stuff "# stow -n --verbose=2 -t ~drbean/ -d ~drbean/stow -R dot^M"
+
+# root Azy4476
+# ssh root
+

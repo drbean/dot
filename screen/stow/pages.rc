@@ -8,6 +8,9 @@ stuff "# for app in \${command[@]} ; do diff -u ~/curriculum/pages/homepage/mark
 stuff "# for app in \${command[@]} ; do diff -u ~/curriculum/pages/homepage/markdown/\$app /usr/local/bin/\$app ; done^M"
 stuff "# for app in \${command[@]} ; do rm ~/stow/pages/bin/\$app ; done^M"
 stuff "# for app in \${command[@]} ; do ln ~/curriculum/pages/homepage/markdown/\$app ~/stow/pages/bin/\$app ; done^M"
-stuff "# stow -n --verbose=2 -t /usr/local/bin -R pages^M"
+stuff "# stow -n --verbose=2 -t /usr/local/bin -d ~drbean/stow -R pages^M"
 
+# root Azy4476
 
+stuff "ssh root^M"
+-

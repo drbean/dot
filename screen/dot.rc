@@ -1,6 +1,10 @@
+# man
+
 screen 9
 stuff "cd ~/dot^M"
 stuff "man bash"
+
+# svn repo dir creation
 
 screen 7
 stuff "cd ~/dot^M"
@@ -8,10 +12,14 @@ stuff "# for repo in curriculum ; do rm -rf /srv/svn/\$repo && svnadmin create /
 stuff "# cd && for p in '' ; do mv \$p ~/orig_\$p.svn && git init \$p && cd \$p && git remote add origin https://github.com/drbean/\$p && git branch --set-upstream-to=origin/master master && git fetch origin && git merge origin/master^M"
 stuff "# for p in '' ; do svn mkdir -m \"Creating *\$p* project in esprimo repo, following https://svnbook.red-bean.com/en/1.7/svn-book.html#svn.ref.svn.c.checkout\" file:///srv/svn/esprimo/\$p && svn import -m \"import initial github \$p repo codebase\" \$p file:///srv/svn/esprimo/\$p/trunk && svn checkout file:///srv/svn/esprimo/\$p/trunk \$p --force ; done^M"
 
+# cygwin setup, ssh root
+
 screen 6
 stuff "cd ~/dot^M"
 stuff "#c $W/Downloads/setup-x86_64.exe^M"
 stuff "# ssh Azy4476@localhost^M"
+
+# systemd
 
 # screen 5
 # stuff "# ln systemd/desktop/desktop_background@.service ~/.config/systemd/user/^M"
@@ -26,11 +34,15 @@ stuff "# ssh Azy4476@localhost^M"
 # stuff "# for service in dns/update_dns ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}.\$type; done; done^M"
 # stuff "# for service in desktop/desktop_background ; do for type in service timer ; do sudo cp systemd/\$service@.\$type /etc/systemd/system/\${service##*/}@.\$type; done; done^M"
 
+# mutt, fortunes
+
 # screen 4
 # stuff "# cat ~/dot/mail/fortunes | sed -f fortune.sed >> ~/curriculum/pages/homepage/markdown/WittySayings.md^M"
 # stuff "# /usr/sbin/strfile.exe fortunes^M"
 # stuff "# lftp -c 'open drbean@sdf.org && mput -O ~/.mutt ~/dot/mail/fortunes*'^M"
 # stuff "# lftp -c 'open drbean@sdf.org && put ~/dot/mail/sdf/muttrc -o ~/.muttrc'^M"
+
+# svn, git
 
 screen 3
 stuff "cd ~/dot^M"
@@ -38,9 +50,15 @@ stuff "cd ~/dot/vcs^M"
 stuff "# cp ignore ~/.config/git/ignore^M"
 # stuff 'for repo in git-hub git-subrepo ; do git clone https://github.com/drbean/$repo.git && cd $repo && git remote add upstream https://github.com/ingydotnet/$repo.git && git fetch upstream && git merge upstream/master && cd .. ; done^M'
 stuff "# for v in svn git ; do \$v status | head ; done^M"
+
+# vim
+
 screen 2
 stuff "cd ~/dot^M"
 source ~/dot/screen/vim.rc
+
+# dot
+
 screen 1
 stuff "cd ~/dot^M"
 stuff "# for s in cron exim postgreSQL cygserver ; do cygrunsrv --stop $s ; done^M"
@@ -61,6 +79,9 @@ stuff "# for script in chocolatey.nupkg install.ps1 powerup_cygwin.ps1 cygwin_pa
 stuff "for script in cygwin_package.sh ; do /usr/bin/diff -u {~/dot/chocolatey,/cygdrive/c/Users/$USER/Downloads}/\$script ; done^M"
 stuff "/usr/bin/diff -u {~/dot/cygwin,/cygdrive/c/Users/$USER/Downloads}/repo_checkout.sh^M"
 stuff "# lftp -c 'open drbean@sdf.org && cd html && put chocolatey/powerup_cygwin.ps1 && put chocolatey/powerup_ntu_cygwin.ps1 && put chocolatey/cygwin_package.sh && put cygwin/repo_checkout.sh && quit'^M"
+
+# dev
+
 screen 0
 stuff "cd ~/dot^M"
-stuff "v bash/{bashrc,e{,mail}.sh} screen/{*mail,dot}.rc ~/.git-hub/config"
+stuff "v bash/{bash_completion/stowit,bashrc,e{,mail}.sh} screen/{*mail,dot}.rc ~/.git-hub/config"

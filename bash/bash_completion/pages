@@ -31,12 +31,14 @@ function _pages () {
 			;;
 		-t)
 			cd ~/curriculum/pages/homepage/markdown
-			COMPREPLY=( $(compgen -f -- ${cur}) )
+			file=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${file[@]%.*} )
 			return 0
 			;;
 		-s)
 			cd ~/curriculum/pages/homepage/markdown
-			COMPREPLY=( $(compgen -f -- ${cur}) )
+			file=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${file[@]%.*} )
 			return 0
 			;;
 		*)

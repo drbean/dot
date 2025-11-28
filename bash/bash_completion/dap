@@ -31,7 +31,8 @@ function _dap () {
 			;;
 		-s)
 			cd ~/profedit
-			COMPREPLY=( $(compgen -d -- ${cur}) )
+			file=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${file[@]%.*} )
 			return 0
 			;;
 		*)

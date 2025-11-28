@@ -1,38 +1,38 @@
-# file: stowit
-# stowit parameter completion
+# file: dot
+# dot parameter completion
 # copied from pages
 # https://www.baeldung.com/linux/shell-auto-completion
 
-function _stowit () {
+function _dot () {
 	local cur prev opts fileopts diropts keywords
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	prev2="${COMP_WORDS[COMP_CWORD-2]}"
 	opts="-s -a"
-	fileopts="-a"
-	diropts="-s"
+	fileopts="-s"
+	# diropts="-s"
 
-	app="stowit"
+	app="dot"
 	prof="jasoncclu ylkao jkliang"
 	words=""
 
 	# if [[ ${prev} =~ ${fileopts} ]]; then
-	# COMPREPLY=( $(compgen -f -- ~/profstowit/${cur}) )
+	# COMPREPLY=( $(compgen -f -- ~/profdot/${cur}) )
 	# return 0
 	# elif [[ ${prev} =~ ${diropts} ]]; then
-	# COMPREPLY=( $(compgen -d -- ~/profstowit/${cur}) )
+	# COMPREPLY=( $(compgen -d -- ~/profdot/${cur}) )
 	# return 0
 	# fi
 
 	case "${prev}" in
-		stowit)
+		dot)
 			words="-s -a"
 			;;
 		-s)
-			cd ~/dot/screen/stow
+			cd ~/dot/screen/dots
 			rc=( $(compgen -f -- ${cur}) )
-			COMPREPLY=( ${rc[@]%.*} )
+			COMPREPLY=( ${rc[@]%.rc} )
 			return 0
 			;;
 		*)
@@ -41,4 +41,4 @@ function _stowit () {
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )
 }
-complete -F _stowit stowit
+complete -F _dot dot

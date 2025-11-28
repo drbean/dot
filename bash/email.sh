@@ -569,7 +569,7 @@ function href_prefs () {
 }
 
 function mailto () {
-	addre '/mailto:/' 'mailto:'
+	sed -nE '/mailto:/s/^.*"mailto:([^"]*)".*$/\1/'
 }
 function mailtoadder () {
     while read -r page ;

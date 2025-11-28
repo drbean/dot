@@ -1,0 +1,9 @@
+# mail: mutt, fortunes
+
+# screen 4
+# stuff "# cat ~/dot/mail/fortunes | sed -f fortune.sed >> ~/curriculum/pages/homepage/markdown/WittySayings.md^M"
+# stuff "# /usr/sbin/strfile.exe fortunes^M"
+# stuff "# lftp -c 'open drbean@sdf.org && mput -O ~/.mutt ~/dot/mail/fortunes*'^M"
+# stuff "# lftp -c 'open drbean@sdf.org && put ~/dot/mail/sdf/muttrc -o ~/.muttrc'^M"
+
+

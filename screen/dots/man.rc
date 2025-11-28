@@ -1,0 +1,7 @@
+# man
+
+screen 9
+stuff "cd ~/dot^M"
+stuff "man bash"
+
+

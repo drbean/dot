@@ -1,0 +1,7 @@
+# vim
+
+screen 2
+stuff "cd ~/dot^M"
+source ~/dot/screen/vim.rc
+
+

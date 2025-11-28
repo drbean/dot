@@ -1,0 +1,8 @@
+# root: cygwin setup, ssh root
+
+screen 6
+stuff "cd ~/dot^M"
+stuff "#c $W/Downloads/setup-x86_64.exe^M"
+stuff "# ssh Azy4476@localhost^M"
+
+

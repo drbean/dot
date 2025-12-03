@@ -1,3 +1,5 @@
+# vcs
+
 screen 1
 stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# mv \$SOURCE ~/profedit/orig.\$SOURCE^M"
@@ -29,6 +31,8 @@ stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# for v in svn git ; do \$v add \$FILE.md issues.md ; done^M"
 stuff "# echo -e '\\nsvn: '; svn st -q \$FILE.md issues.md; echo -e '\\nand\\n' ; echo -n 'git: '; git status $FILE.md issues.md | sed -nE '/modified|branch/p'^M"
 
+# pandoc
+
 screen 2
 stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# for o in touch rm ; do \$o output/\$FILE.pdf ; done && xelatex --output-directory=output \$FILE.tex && cygstart output/\$FILE.pdf^M"
@@ -42,6 +46,8 @@ stuff "# cp {orig_,}\$FILE.md^M"
 stuff "# pandoc -o orig_\$FILE.md --from=docx+styles --to=markdown-link_attributes --extract-media=./ \$FILE.docx^M"
 stuff "# MINE=my_\$FILE; pandoc -o \$MINE.docx --reference-doc=./\$FILE.reference.docx \$FILE.md^M"
 
+# cygstart
+
 screen 3
 stuff "cd ~/profedit/\$SOURCE^M"
 stuff "# cygstart /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/WINWORD.EXE^M"
@@ -53,6 +59,8 @@ stuff "# cygstart Diff.html^M"
 stuff "# cygstart my_\$FILE.docx^M"
 stuff "# cygstart their_\$FILE.docx^M"
 stuff "# cygstart orig_\$FILE.docx^M"
+
+# lftp
 
 screen 5
 stuff "cd ~/profedit/\$SOURCE^M"
@@ -67,8 +75,10 @@ screen 9
 stuff "cd ~/profedit/\$SOURCE^M"
 stuff "svn diff --diff-cmd $VD"
 
+# edit
+
 screen 0
 stuff "cd ~/profedit/\$SOURCE^M"
 register q "\""
 bind I eval copy 'stuff \^^M$^M' 'select 1' 'stuff "svn ci issues.md -m "' 'paste q' 'paste .' 'paste q' 'stuff ^M' 'sleep 2' 'select 0' "activity \"\^G svn ci issues.md in window %n\""
-stuff "v --cmd 'set spellfile=spell.en.utf-8.add' {\$FILE,issues}.md^M"
+stuff "v --cmd 'set spellfile=spell.en.utf-8.add' {{,color.}\$FILE,issues}.md^M"

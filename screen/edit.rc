@@ -71,6 +71,8 @@ stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd 
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/their_\$f.docx -o their_\$f.docx && qui\"^M"
 stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/\$f.docx -o \$f.docx && qui\"^M"
 
+# vimdiff
+
 screen 9
 stuff "cd ~/profedit/\$SOURCE^M"
 stuff "svn diff --diff-cmd $VD"

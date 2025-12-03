@@ -1,0 +1,12 @@
+# lftp
+
+screen 5
+stuff "cd ~/profedit/\$SOURCE^M"
+stuff "# s=$SOURCE f=$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$f output/\$f.pdf -o invoice.pdf && qui\"^M"
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && lcd media/diff/\$f/ && mput -O \$s diffchar.png gitdiff.png && qui\"^M"
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$s issues.md -o issues.txt && qui\"^M"
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && put -O \$s their_\$f.docx -o their_\$f.docx && qui\"^M"
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/their_\$f.docx -o their_\$f.docx && qui\"^M"
+stuff "# s=\$SOURCE f=\$FILE ; lftp -c \"open sftp://drbean@freeshell.org && cd edit && get \$s/\$f.docx -o \$f.docx && qui\"^M"
+
+

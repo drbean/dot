@@ -1,0 +1,7 @@
+# vimdiff
+
+screen 9
+stuff "cd ~/profedit/\$SOURCE^M"
+stuff "svn diff --diff-cmd $VD"
+
+

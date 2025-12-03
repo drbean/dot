@@ -1,0 +1,8 @@
+# edit
+
+screen 0
+stuff "cd ~/profedit/\$SOURCE^M"
+register q "\""
+bind I eval copy 'stuff \^^M$^M' 'select 1' 'stuff "svn ci issues.md -m "' 'paste q' 'paste .' 'paste q' 'stuff ^M' 'sleep 2' 'select 0' "activity \"\^G svn ci issues.md in window %n\""
+stuff "v --cmd 'set spellfile=spell.en.utf-8.add' {{,color.}\$FILE,issues}.md^M"
+

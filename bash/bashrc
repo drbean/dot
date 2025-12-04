@@ -194,15 +194,15 @@ function path_remove () {
 function stowit () {
     OPTIND=1
     local arg SCREEN SCREENRC
-    while getopts 's:a' arg
+    while getopts 'w:a' arg
     do
         case ${arg} in
-            s) SCREENRC="~/dot/screen/stow/${OPTARG}.rc"
+            w) SCREENRC="~/dot/screen/stow/${OPTARG}.rc"
 		SCREEN=${OPTARG};;
             a) SCREENRC="~/dot/screen/stow.rc"
 		SCREEN="all"
 		cat ~/dot/screen/stow/*.rc > $SCREENRC;;
-	    *) echo "opts: -s -a" ; exit 0 # illegal option
+	    *) echo "opts: -w -a" ; exit 0 # illegal option
         esac
     done
     # screen -c $SCREENRC -S stow
@@ -300,15 +300,33 @@ source ~/dot/bash/gitwrap_svn.sh
 alias Ed='edit -s yingchih -f red_kuroshio'
 function edit () {
     OPTIND=1
-    local arg SOURCE REPO FILE
-    while getopts 's:r:f:' arg
+    local arg SOURCE REPO FILE SCREEN
+    while getopts 's:r:f:w:a' arg
     do
+	SCREENRC=$HOME/dot/screen/edit.rc
         case ${arg} in
             s) SOURCE=${OPTARG};;
             r) REPO=${OPTARG};;
             f) FILE=${OPTARG};;
-            *) return 1 # illegal option
+            w) SCREEN+=( "${OPTARG}" ) ;;
+            a) SCREEN=( "all" ) ;;
+	    *) echo "opts: -s -r -f -w -a" ; exit 0 # illegal option
         esac
+    done
+    shift $(( OPTIND - 1 ))
+    if [[ $SCREEN == *all* ]] ; then
+	cat $HOME/dot/screen/edits/*.rc > $SCREENRC
+    else
+	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
+	for s in ${SCREEN[@]} ; do
+	    echo w=$s
+	    cat $HOME/dot/screen/edits/$s.rc >> $SCREENRC
+	done
+    fi
+    echo ${SCREEN[*]} $SCREENRC
+    export SCREEN SCREENRC
+    for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
+	sessionname+="${SCREEN[$i]},"
     done
     # svn mkdir ~/edit/branches/$source
     # svn up ~/edit/branches/$source --depth empty
@@ -332,7 +350,7 @@ function edit () {
     R1=$(svn log -q -r 1:HEAD --limit 1 $F | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')
     R=$(svn info $F | sed -nE '5s/^.*(\^.*$)/\1/p')
     export SOURCE REPO FILE F R1 R
-    screen -c /home/$USER/dot/screen/edit.rc -dR ${SOURCE#*/}.$FILE
+    screen -c $SCREENRC -dR ${SOURCE#*/}.$FILE.${sessionname%,}
 }
 
 function dap () {
@@ -535,13 +553,13 @@ alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 function dot () {
     OPTIND=1
     local arg SCREEN
-    while getopts 's:a' arg
+    while getopts 'w:a' arg
     do
 	SCREENRC=$HOME/dot/screen/dot.rc
         case ${arg} in
-            s) SCREEN+=( "${OPTARG}" ) ;;
+            w) SCREEN+=( "${OPTARG}" ) ;;
             a) SCREEN=( "all" ) ;;
-	    *) echo "opts: -s -a" ; exit 0 # illegal option
+	    *) echo "opts: -w -a" ; exit 0 # illegal option
         esac
     done
     shift $(( OPTIND - 1 ))
@@ -550,7 +568,7 @@ function dot () {
     else
 	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
 	for s in ${SCREEN[@]} ; do
-	    echo s=$s
+	    echo w=$s
 	    cat $HOME/dot/screen/dots/$s.rc >> $SCREENRC
 	done
     fi

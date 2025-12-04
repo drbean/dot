@@ -9,7 +9,7 @@ function _edit () {
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	prev2="${COMP_WORDS[COMP_CWORD-2]}"
-	opts="-s -f"
+	opts="-s -f -w -a"
 	fileopts="-f"
 	diropts="-s"
 
@@ -38,6 +38,12 @@ function _edit () {
 			cd ~/profedit/$prev2
 			file=( $(compgen -f -- ${cur}) )
 			COMPREPLY=( ${file[@]%.*} )
+			return 0
+			;;
+		-w)
+			cd ~/dot/screen/edits
+			rc=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${rc[@]%.rc} )
 			return 0
 			;;
 		*)

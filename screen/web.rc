@@ -1,12 +1,6 @@
 screen 1 lftp sftp://drbean@freeshell.org
 screen 3 
 stuff "# v ~/.muttrc^M"
-# stuff "# FTP_PASSWORD='' PASSPHRASE='' duplicity --exclude /home/drbean/soundfiles --exclude /home/drbean/Downloads /home/drbean ftp://greg@web.nuu.edu.tw/duplicity/sac_drbean_fedora25^M"
-# screen 4
-# stuff " cd /etc && sudo su"
-# screen 5 ssh -L 5902:localhost:5902 drbean@sac.nuu.edu.tw
-# screen 9
-# stuff "man httpd_selinux"
 screen 0
 stuff "mosh drbean@freeshell.org --server='LANG=en_US.UTF-8 mosh-server'^M"
 screen 2

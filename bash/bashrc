@@ -45,7 +45,6 @@ alias Mo="screen -S Mo mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-serve
 # alias mosh="export LANG=\"en_US.UTF-8\" && export LC_CTYPE=\"en_US.UTF-8\" && export LC_COLLATE=\"en_US.UTF-8\" && export LC_TIME=\"en_US.UTF-8\" && export LC_NUMERIC=\"en_US.UTF-8\" && export LC_MONETARY=\"en_US.UTF-8\" && export LC_MESSAGES=\"en_US.UTF-8\" && export LC_ALL=\"en_US.UTF-8\" && mosh"
 alias battery="WMIC PATH Win32_Battery Get EstimatedChargeRemaining"
 alias mogr="mv ~/Downloads/\$LEAGUE\ Grades-201701*-comma_separated.csv ./\$ROUND"
-alias web="cd; screen -c /home/$USER/dot/screen/web.rc -dR web; cd -"
 alias surf="cd; tmux attach-session; cd -"
 alias tennis="cd ~/tennis; screen -dR tennis; cd -"
 alias beans="cd ~/ttb/beans; APP=beans COURSE= screen -c /home/$USER/dot/screen/project.rc -dR beans; cd -"
@@ -549,6 +548,36 @@ function question_grade_bett () {
 
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
+# https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash
+function web () {
+    OPTIND=1
+    local arg SCREEN
+    while getopts 'w:a' arg
+    do
+	SCREENRC=$HOME/dot/screen/web.rc
+        case ${arg} in
+            w) SCREEN+=( "${OPTARG}" ) ;;
+            a) SCREEN=( "all" ) ;;
+	    *) echo "opts: -w -a" ; exit 0 # illegal option
+        esac
+    done
+    shift $(( OPTIND - 1 ))
+    if [[ $SCREEN == *all* ]] ; then
+	cat $HOME/dot/screen/webs/*.rc > $SCREENRC
+    else
+	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
+	for s in ${SCREEN[@]} ; do
+	    echo w=$s
+	    cat $HOME/dot/screen/webs/$s.rc >> $SCREENRC
+	done
+    fi
+    echo ${SCREEN[*]} $SCREENRC
+    export SCREEN SCREENRC
+    for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
+	sessionname+="${SCREEN[$i]},"
+    done
+    screen -c $SCREENRC -S web.${sessionname%,}
+}
 # https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash
 function dot () {
     OPTIND=1

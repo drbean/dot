@@ -9,9 +9,9 @@ function _stowit () {
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	prev2="${COMP_WORDS[COMP_CWORD-2]}"
-	opts="-s -a"
+	opts="-w -a"
 	fileopts="-a"
-	diropts="-s"
+	diropts="-w"
 
 	app="stowit"
 	prof="jasoncclu ylkao jkliang"
@@ -27,9 +27,9 @@ function _stowit () {
 
 	case "${prev}" in
 		stowit)
-			words="-s -a"
+			words="-w -a"
 			;;
-		-s)
+		-w)
 			cd ~/dot/screen/stow
 			rc=( $(compgen -f -- ${cur}) )
 			COMPREPLY=( ${rc[@]%.*} )

@@ -1,0 +1,7 @@
+# sdf
+
+screen 0
+stuff "# mosh drbean@freeshell.org --server='LANG=en_US.UTF-8 mosh-server'^M"
+stuff "ssh -o ConnectTimeout=120 sdf^M"
+
+

@@ -9,8 +9,8 @@ function _dot () {
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	prev2="${COMP_WORDS[COMP_CWORD-2]}"
-	opts="-s -a"
-	fileopts="-s"
+	opts="-w -a"
+	fileopts="-w"
 	# diropts="-s"
 
 	app="dot"
@@ -27,9 +27,9 @@ function _dot () {
 
 	case "${prev}" in
 		dot)
-			words="-s -a"
+			words="-w -a"
 			;;
-		-s)
+		-w)
 			cd ~/dot/screen/dots
 			rc=( $(compgen -f -- ${cur}) )
 			COMPREPLY=( ${rc[@]%.rc} )

@@ -1,0 +1,7 @@
+# email
+#
+screen 2
+stuff "cd ~/edit/email^M"
+stuff "ls -al *.{sh,bat,ps1}^M" 
+
+

@@ -1,9 +1,9 @@
-# file: web
-# web parameter completion
-# copied from dot
+# file: qb
+# qb parameter completion
+# copied from web
 # https://www.baeldung.com/linux/shell-auto-completion
 
-function _web () {
+function _qb () {
 	local cur prev opts fileopts diropts keywords
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
@@ -13,24 +13,24 @@ function _web () {
 	fileopts="-w"
 	# diropts="-s"
 
-	app="web"
+	app="qb"
 	prof="jasoncclu ylkao jkliang"
 	words=""
 
 	# if [[ ${prev} =~ ${fileopts} ]]; then
-	# COMPREPLY=( $(compgen -f -- ~/profweb/${cur}) )
+	# COMPREPLY=( $(compgen -f -- ~/profqb/${cur}) )
 	# return 0
 	# elif [[ ${prev} =~ ${diropts} ]]; then
-	# COMPREPLY=( $(compgen -d -- ~/profweb/${cur}) )
+	# COMPREPLY=( $(compgen -d -- ~/profqb/${cur}) )
 	# return 0
 	# fi
 
 	case "${prev}" in
-		web)
+		qb)
 			words="-w -a"
 			;;
 		-w)
-			cd ~/dot/screen/webs
+			cd ~/dot/screen/qbs
 			rc=( $(compgen -f -- ${cur}) )
 			COMPREPLY=( ${rc[@]%.rc} )
 			return 0
@@ -41,4 +41,4 @@ function _web () {
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )
 }
-complete -F _web web
+complete -F _qb qb

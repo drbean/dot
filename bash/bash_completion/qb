@@ -1,0 +1,44 @@
+# file: web
+# web parameter completion
+# copied from dot
+# https://www.baeldung.com/linux/shell-auto-completion
+
+function _web () {
+	local cur prev opts fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	prev2="${COMP_WORDS[COMP_CWORD-2]}"
+	opts="-w -a"
+	fileopts="-w"
+	# diropts="-s"
+
+	app="web"
+	prof="jasoncclu ylkao jkliang"
+	words=""
+
+	# if [[ ${prev} =~ ${fileopts} ]]; then
+	# COMPREPLY=( $(compgen -f -- ~/profweb/${cur}) )
+	# return 0
+	# elif [[ ${prev} =~ ${diropts} ]]; then
+	# COMPREPLY=( $(compgen -d -- ~/profweb/${cur}) )
+	# return 0
+	# fi
+
+	case "${prev}" in
+		web)
+			words="-w -a"
+			;;
+		-w)
+			cd ~/dot/screen/webs
+			rc=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${rc[@]%.rc} )
+			return 0
+			;;
+		*)
+			words="-a"
+			;;
+	esac
+	COMPREPLY=( $(compgen -W "$words" -- $cur) )
+}
+complete -F _web web

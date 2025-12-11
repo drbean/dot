@@ -278,6 +278,7 @@ function ttb () {
     cd -
 }
 
+alias qb_-w_qt='qb -w qt' 
 function qb () {
     #if [[ ! -e ~/qutebrowser ]] ; then
     #    svn co http://github.com/drbean/qutebrowser ~/qutebrowser --depth empty
@@ -576,6 +577,7 @@ function question_grade_bett () {
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
 # https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash
+alias web_-w_sdf='web -w sdf' 
 function web () {
     OPTIND=1
     local arg SCREEN
@@ -694,9 +696,6 @@ declare -A instance=( [en]=mastodon.sdf.org [ja]=mastodon-japan.net [ko]=duk.spa
 for i in en ja ko zh ; do
     eval "function $i.toot () { toot --as drbean@${instance[$i]} \"\$@\" ; }"
 done
-
-for a in 'web -w sdf' 'qb -w qt' ; do
-    eval "function ${a// /_} () { $a ; } "; done
 
 function mastodon () {
     OPTIND=0

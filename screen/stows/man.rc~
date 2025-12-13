@@ -1,0 +1,6 @@
+# man
+
+screen 9
+stuff "man stow^M"
+
+

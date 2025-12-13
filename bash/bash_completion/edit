@@ -10,7 +10,7 @@ function _edit () {
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	prev2="${COMP_WORDS[COMP_CWORD-2]}"
 	opts="-s -f -w -a"
-	fileopts="-f"
+	fileopts="-f -w"
 	diropts="-s"
 
 	app="edit pages"

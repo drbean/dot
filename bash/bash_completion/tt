@@ -6,11 +6,17 @@
 function _tt () {
 	local cur prev opts fileopts diropts keywords
 	COMPREPLY=()
-	cur="${COMP_WORDS[COMP_CWORD]}"
-	prev="${COMP_WORDS[COMP_CWORD-1]}"
-	opts="-c -t -s -o -r -l -x"
-	fileopts="-a|--batch-file|--download-archive|--cookies|--load-info"
-	diropts="-s"
+
+	_comp_get_words -n : -w prevall cur prev
+
+	# cur="${COMP_WORDS[COMP_CWORD]}"
+	# prev="${COMP_WORDS[COMP_CWORD-1]}"
+	for (( i=0 ; i<${#COMP_WORDS[@]} ; i++ )) ; do
+		declare pre$i="${COMP_WORDS[COMP_CWORD-i]}"
+	done
+	opts="-c -t -s -f -r -w -a"
+	fileopts="-t -f"
+	diropts="-s -r"
 
 	app="edit pages"
 	prof="jasoncclu ylkao jkliang"
@@ -24,24 +30,30 @@ function _tt () {
 	return 0
 	fi
 
+	if [[ $cur == :dot ]]; then
+		cd ~/dot/screen/dots
+		COMPREPLY=( $(compgen -f -- ${cur}) )
+		return 0
+	fi
+
+
 	case "${prev}" in
 		tt)
-			words='bash dot mastodon qb stowit web "edit'
+			words='lib mastodon pages :dot :edit :qb :stowit :web'
 			;;
-		'"edit')
-			words="-s"
+		::*)
+			words='-w -a'
 			;;
-		-s)
-			COMPREPLY=( $(compgen -f --  ~/profedit/${cur}) )
+		-w)
+			screendecor=${prevall[-3]}
+			dir="${screendecor#::}s"
+			cd ~/dot/screen/${dir}
+			rc=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${rc[@]%.rc} )
 			return 0
 			;;
-		pages)
-			words="-t"
-			;;
-		HomePage)
-			words="-s"
-			;;
 		*)
+			echo "opts: -w -a" >&2 ; return 1
 			;;
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )

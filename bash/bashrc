@@ -42,6 +42,10 @@ export LEAGUES_RE="cultureA|cultureB|MA0036|GL00018|GL00019|GL00020"
 # # greg
 # ibus-daemon -drx
 
+for i in 'qb -w qt' 'web -w sdf' ; do
+    eval "alias ${i// /_}=\"$i\""
+done
+
 alias Mo="screen -S Mo mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'"
 # alias mosh="export LANG=\"en_US.UTF-8\" && export LC_CTYPE=\"en_US.UTF-8\" && export LC_COLLATE=\"en_US.UTF-8\" && export LC_TIME=\"en_US.UTF-8\" && export LC_NUMERIC=\"en_US.UTF-8\" && export LC_MONETARY=\"en_US.UTF-8\" && export LC_MESSAGES=\"en_US.UTF-8\" && export LC_ALL=\"en_US.UTF-8\" && mosh"
 alias battery="WMIC PATH Win32_Battery Get EstimatedChargeRemaining"
@@ -64,10 +68,14 @@ function tt () {
     if [[ "$*" != *[a-z0-9]* ]]; then
 	mintty bash -l -i &
 	return 0
+    elif [[ "$*" == ::* ]]; then
+	mintty bash -l -i -c "${*#::}" &
+	return 0
+    else
+	for screen in "$@" ; do
+	    mintty bash -l -i -c "$screen" &
+	done
     fi
-    for screen in "$@" ; do
-	mintty bash -l -i -c "$screen" &
-    done
 }
 
 function off () {
@@ -76,11 +84,16 @@ function off () {
 
 function c () { cygstart "$@" ; }
 function ch () { cygstart https://$1 ; }
+function wik () {
+    lang=$1
+    term="${*#* }"
+    <<< "$term" tr ' ' '+' | while read q ; do cygstart "https://$lang.wikipedia.org/wiki/$q" ; done
+}
 function book () {
     term="$*"
     <<< "$term" tr ' ' '+' | while read q ; do cygstart "https://books.google.com/ngrams/graph?content=$q" ; done
 }
-function goog () {
+function goo () {
     term="$*"
     <<< "$term" tr ' ' '+' | while read q ; do cygstart "https://google.com/search?q=$q&udm=14" ; done
 }
@@ -197,11 +210,11 @@ function stowit () {
     while getopts 'w:a' arg
     do
         case ${arg} in
-            w) SCREENRC="~/dot/screen/stow/${OPTARG}.rc"
+            w) SCREENRC="~/dot/screen/stows/${OPTARG}.rc"
 		SCREEN=${OPTARG};;
             a) SCREENRC="~/dot/screen/stow.rc"
 		SCREEN="all"
-		cat ~/dot/screen/stow/*.rc > $SCREENRC;;
+		cat ~/dot/screen/stows/*.rc > $SCREENRC;;
 	    *) echo "opts: -w -a" ; exit 0 # illegal option
         esac
     done
@@ -278,7 +291,6 @@ function ttb () {
     cd -
 }
 
-alias qb_-w_qt='qb -w qt' 
 function qb () {
     #if [[ ! -e ~/qutebrowser ]] ; then
     #    svn co http://github.com/drbean/qutebrowser ~/qutebrowser --depth empty
@@ -577,7 +589,6 @@ function question_grade_bett () {
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
 # https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash
-alias web_-w_sdf='web -w sdf' 
 function web () {
     OPTIND=1
     local arg SCREEN
@@ -638,6 +649,36 @@ function dot () {
 	sessionname+="${SCREEN[$i]},"
     done
     screen -c $SCREENRC -S dot.${sessionname%,}
+}
+function lib () {
+    OPTIND=1
+    local arg SCREEN
+    while getopts 'w:a' arg
+    do
+	SCREENRC=$HOME/dot/screen/lib.rc
+        case ${arg} in
+            w) SCREEN+=( "${OPTARG}" ) ;;
+            a) SCREEN=( "all" ) ;;
+	    *) echo "opts: -w -a" >&2 ; exit 0 # illegal option
+        esac
+    done
+    shift $(( OPTIND - 1 ))
+    if [[ $SCREEN == *all* ]] ; then
+	cat $HOME/dot/screen/libs/*.rc > $SCREENRC
+    else
+	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
+	for s in ${SCREEN[@]} ; do
+	    echo w=$s
+	    cat $HOME/dot/screen/libs/$s.rc >> $SCREENRC
+	done
+    fi
+    echo ${SCREEN[*]} $SCREENRC
+    export SCREEN SCREENRC
+    sessionname=
+    for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
+	sessionname+="${SCREEN[$i]},"
+    done
+    screen -c $SCREENRC -S lib.${sessionname%,}
 }
 
 alias irc="cd ~/znc; screen -c /home/$USER/dot/screen/irc.rc -dR irc; cd -"

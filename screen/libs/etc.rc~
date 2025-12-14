@@ -1,0 +1,4 @@
+# bash_completion
+#
+
+screen v /usr/share/bash/bash-completion/bash_completion /etc/profile.d/bash_completion.sh

@@ -9,7 +9,7 @@ function _edit () {
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	prev2="${COMP_WORDS[COMP_CWORD-2]}"
-	opts="-s -f -w -a"
+	opts="-s -f -r -w -a"
 	fileopts="-f -w"
 	diropts="-s"
 

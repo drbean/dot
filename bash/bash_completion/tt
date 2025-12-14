@@ -14,7 +14,7 @@ function _tt () {
 	for (( i=0 ; i<${#COMP_WORDS[@]} ; i++ )) ; do
 		declare pre$i="${COMP_WORDS[COMP_CWORD-i]}"
 	done
-	opts="-c -t -s -f -r -w -a"
+	opts="-c -t, edit:-s,-f,-r window:-w,-a"
 	fileopts="-t -f"
 	diropts="-s -r"
 
@@ -45,7 +45,7 @@ function _tt () {
 			words='-w -a'
 			;;
 		-w)
-			screendecor=${prevall[-3]}
+			screendecor=${prevall[1]}
 			dir="${screendecor#::}s"
 			cd ~/dot/screen/${dir}
 			rc=( $(compgen -f -- ${cur}) )
@@ -53,7 +53,7 @@ function _tt () {
 			return 0
 			;;
 		*)
-			echo "opts: -w -a" >&2 ; return 1
+			words="${opts}"
 			;;
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )

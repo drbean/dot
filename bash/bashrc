@@ -85,9 +85,30 @@ function off () {
 function c () { cygstart "$@" ; }
 function ch () { cygstart https://$1 ; }
 function wik () {
-    lang=$1
-    term="${*:2}"
-    <<< "$term" tr ' ' '_' | while read q ; do cygstart "https://$lang.wikipedia.org/wiki/$q" ; done
+    OPTIND=1
+    local arg LANG
+    while getopts 'l:a:' arg
+    do
+        case ${arg} in
+            l) LANG=${OPTARG};;
+	    a) LANG="all";;
+	    *) echo "opts: -l"
+        esac
+    done
+    shift $(( OPTIND - 1 ))
+
+    term="${*:1}"
+    if [[ $LANG == *all* ]] ; then
+	for l in {en,jp,kr,zh} ; do
+	    echo lang=$l
+	    <<< "$term" tr ' ' '_' | while read q ; do cygstart "https://$l.wikipedia.org/wiki/$q" ; done
+	done
+    else
+	for l in ${LANG[@]} ; do
+	    echo lang=$l
+	    <<< "$term" tr ' ' '_' | while read q ; do cygstart "https://$l.wikipedia.org/wiki/$q" ; done
+	done
+    fi
 }
 function book () {
     term="$*"

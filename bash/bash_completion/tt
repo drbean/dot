@@ -42,7 +42,22 @@ function _tt () {
 			words='lib mastodon pages :dot :edit :qb :stowit :web'
 			;;
 		::*)
-			words='-w -a'
+			words=':dot :edit :qb :stowit :web'
+			;;
+		-s)
+			appdecor=${prevall[1]}
+			dir="${appdecor#::}s"
+			# cd ~/dot/screen/${dir}
+			cd ~/profedit
+			prof=( $(compgen -d -- ${cur}) )
+			COMPREPLY=( ${prof[@]} )
+			return 0
+			;;
+		-f)
+			cd ~/profedit/${prevall[3]}
+			file=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${file[@]%.*} )
+			return 0
 			;;
 		-w)
 			screendecor=${prevall[1]}
@@ -53,7 +68,7 @@ function _tt () {
 			return 0
 			;;
 		*)
-			words="${opts}"
+			words="${opts[*]}"
 			;;
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )

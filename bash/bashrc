@@ -86,8 +86,8 @@ function c () { cygstart "$@" ; }
 function ch () { cygstart https://$1 ; }
 function wik () {
     lang=$1
-    term="${*#* }"
-    <<< "$term" tr ' ' '+' | while read q ; do cygstart "https://$lang.wikipedia.org/wiki/$q" ; done
+    term="${*:2}"
+    <<< "$term" tr ' ' '_' | while read q ; do cygstart "https://$lang.wikipedia.org/wiki/$q" ; done
 }
 function book () {
     term="$*"

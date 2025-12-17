@@ -41,6 +41,12 @@ function _tt () {
 		tt)
 			words='lib mastodon pages :dot :edit :qb :stowit :web'
 			;;
+		::edit)
+			words='-s -f -r -w -a'
+			;;
+		::dot)
+			words='-w -a'
+			;;
 		::*)
 			words=':dot :edit :qb :stowit :web'
 			;;

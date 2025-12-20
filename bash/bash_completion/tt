@@ -7,15 +7,15 @@ function _tt () {
 	local cur prev opts fileopts diropts keywords
 	COMPREPLY=()
 
-	_comp_get_words -n : -w prevall cur prev
+	_comp_get_words -n : -w prev_ cur prev
 
 	# cur="${COMP_WORDS[COMP_CWORD]}"
 	# prev="${COMP_WORDS[COMP_CWORD-1]}"
 	for (( i=0 ; i<${#COMP_WORDS[@]} ; i++ )) ; do
 		declare pre$i="${COMP_WORDS[COMP_CWORD-i]}"
 	done
-	opts="-c -t, edit:-s,-f,-r window:-w,-a"
-	fileopts="-t -f"
+	opts="-c -t, edit:-s,-f,-r pages:-t,-s window:-w,-a"
+	fileopts="-s -t -f"
 	diropts="-s -r"
 
 	app="edit pages"
@@ -39,7 +39,7 @@ function _tt () {
 
 	case "${prev}" in
 		tt)
-			words='lib mastodon pages :dot :edit :qb :stowit :web'
+			words='lib mastodon :dot :edit :pages :qb :stowit :web'
 			;;
 		::edit)
 			words='-s -f -r -w -a'
@@ -47,26 +47,49 @@ function _tt () {
 		::dot)
 			words='-w -a'
 			;;
+		::pages)
+			words='-t -s'
+			;;
 		::*)
-			words=':dot :edit :qb :stowit :web'
+			words=':dot :edit :pages :qb :stowit :web'
+			;;
+		-t)
+			appdecor=${prev_[1]}
+			app="${appdecor#::}"
+			if [[ ${app} == pages ]] ; then
+				cd ~/curriculum/$app/homepage/markdown
+				word=( $(compgen -f -- ${cur}) )
+			else
+				cd $M
+				word=( $(compgen -f -- ${cur}) )
+			fi
+			COMPREPLY=( ${word[@]%.*} )
+			return 0
 			;;
 		-s)
-			appdecor=${prevall[1]}
-			dir="${appdecor#::}s"
-			# cd ~/dot/screen/${dir}
-			cd ~/profedit
-			prof=( $(compgen -d -- ${cur}) )
-			COMPREPLY=( ${prof[@]} )
+			appdecor=${prev_[1]}
+			app="${appdecor#::}"
+			if [[ ${app} == edit ]] ; then
+				cd ~/profedit
+				word=( $(compgen -d -- ${cur}) )
+			elif [[ ${app} == pages ]] ; then
+				cd ~/curriculum/$app/homepage/markdown
+				word=( $(compgen -f -- ${cur}) )
+			else
+				cd $M
+				word=( $(compgen -f -- ${cur}) )
+			fi
+			COMPREPLY=( ${word[@]%.*} )
 			return 0
 			;;
 		-f)
-			cd ~/profedit/${prevall[3]}
+			cd ~/profedit/${prev_[3]}
 			file=( $(compgen -f -- ${cur}) )
 			COMPREPLY=( ${file[@]%.*} )
 			return 0
 			;;
 		-w)
-			screendecor=${prevall[1]}
+			screendecor=${prev_[1]}
 			dir="${screendecor#::}s"
 			cd ~/dot/screen/${dir}
 			rc=( $(compgen -f -- ${cur}) )

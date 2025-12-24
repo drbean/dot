@@ -14,7 +14,7 @@ function _tt () {
 	for (( i=0 ; i<${#COMP_WORDS[@]} ; i++ )) ; do
 		declare pre$i="${COMP_WORDS[COMP_CWORD-i]}"
 	done
-	opts="-c -t, edit:-s,-f,-r pages:-t,-s window:-w,-a"
+	opts="-c -t, edit:-s,-f,-r pages:-t,-s premail:-l,-a,-c,-s,-u window:-w,-a"
 	fileopts="-s -t -f"
 	diropts="-s -r"
 
@@ -39,7 +39,7 @@ function _tt () {
 
 	case "${prev}" in
 		tt)
-			words='lib mastodon :dot :edit :pages :qb :stowit :web'
+			words='lib mastodon :dot :edit :pages :premail :qb :stowit :web'
 			;;
 		::edit)
 			words='-s -f -r -w -a'
@@ -50,8 +50,11 @@ function _tt () {
 		::pages)
 			words='-t -s'
 			;;
+		::premail)
+			words='-l -a -c -s -u'
+			;;
 		::*)
-			words=':dot :edit :pages :qb :stowit :web'
+			words=':dot :edit :pages :premail :qb :stowit :web'
 			;;
 		-t)
 			appdecor=${prev_[1]}
@@ -75,6 +78,10 @@ function _tt () {
 			elif [[ ${app} == pages ]] ; then
 				cd ~/curriculum/$app/homepage/markdown
 				word=( $(compgen -f -- ${cur}) )
+			elif [[ ${app} == premail ]] ; then
+				cd ~/edit/email/${prev_[3]}/${prev_[5]}/${prev_[7]}
+				COMPREPLY=( $(compgen -d -- ${cur}) )
+			return 0
 			else
 				cd $M
 				word=( $(compgen -f -- ${cur}) )
@@ -95,6 +102,36 @@ function _tt () {
 			rc=( $(compgen -f -- ${cur}) )
 			COMPREPLY=( ${rc[@]%.rc} )
 			return 0
+			;;
+		-l)
+			appdecor=${prev_[1]}
+			app="${appdecor#::}"
+			if [[ ${app} == premail ]] ; then
+				word=( jp kr tw )
+			fi
+			COMPREPLY=( ${word[@]%.*} )
+			return 0
+			;;
+		-a)
+			appdecor=${prev_[1]}
+			app="${appdecor#::}"
+			if [[ ${app} == premail ]] ; then
+				cd ~/edit/email/${prev_[3]}
+				COMPREPLY=( $(compgen -d -- ${cur}) )
+			fi
+			return 0
+			;;
+		-c)
+			appdecor=${prev_[1]}
+			app="${appdecor#::}"
+			if [[ ${app} == premail ]] ; then
+				cd ~/edit/email/${prev_[3]}/${prev_[5]}
+				COMPREPLY=( $(compgen -d -- ${cur}) )
+			fi
+			return 0
+			;;
+		-u)
+			words="https://www.${prev_[9]}.ac.jp"
 			;;
 		*)
 			words="${opts[*]}"

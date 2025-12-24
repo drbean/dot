@@ -30,7 +30,7 @@ function _stowit () {
 			words="-w -a"
 			;;
 		-w)
-			cd ~/dot/screen/stow
+			cd ~/dot/screen/stowits
 			rc=( $(compgen -f -- ${cur}) )
 			COMPREPLY=( ${rc[@]%.*} )
 			return 0

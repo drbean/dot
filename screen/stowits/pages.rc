@@ -4,6 +4,7 @@ screen 3
 stuff "cd ~/stow/^M"
 stuff "ls -al^M"
 stuff "declare -a command=( \"active_tooter\" \"blog.sh\" \"common.sh\" \"masto_master_messter\" \"post.sh\" \"toot\" )^M"
+stuff "declare -A arry_command=( [mastodon]=\"{active_tooter,masto_master_messter}\", [markdown]=\"common.sh\" [top]=\"{blog.sh,post.sh}\" [toot]=\"toot\" )^M"
 stuff "for app in \${command[@]} ; do diff -u ~/curriculum/pages/homepage/markdown/\$app ~/stow/pages/bin/\$app ; done^M"
 stuff "for app in \${command[@]} ; do diff -u ~/curriculum/pages/homepage/markdown/\$app /usr/local/bin/\$app ; done^M"
 stuff "# for app in \${command[@]} ; do rm ~/stow/pages/bin/\$app ; done^M"

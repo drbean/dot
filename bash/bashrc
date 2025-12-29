@@ -663,8 +663,9 @@ function dot () {
 	    cat $HOME/dot/screen/dots/$s.rc >> $SCREENRC
 	done
     fi
+    R=$(svn info . | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
     echo ${SCREEN[*]} $SCREENRC
-    export SCREEN SCREENRC
+    export SCREEN SCREENRC R
     sessionname=
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
 	sessionname+="${SCREEN[$i]},"

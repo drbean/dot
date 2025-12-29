@@ -797,7 +797,7 @@ function pages () {
     <button type='submit' class='btn'>
     <img src='./mastodon.svg'
         alt='https://joinmastodon.org/logos/wordmark-black-text.svg'
-        style='width:90px;height:20px'/>
+        style='width:50px;height:20px'/>
     </button></form>
     \nBack to [$TOPIC]($TOPIC.html)" > $M/$STORY.md
     fi

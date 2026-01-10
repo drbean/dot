@@ -14,7 +14,7 @@ function _tt () {
 	for (( i=0 ; i<${#COMP_WORDS[@]} ; i++ )) ; do
 		declare pre$i="${COMP_WORDS[COMP_CWORD-i]}"
 	done
-	opts="-c -t, edit:-s,-f,-r pages:-t,-s premail:-l,-a,-c,-s,-u window:-w,-a"
+	opts="-c -t, dap:s edit:-s,-f,-r pages:-t,-s premail:-l,-a,-c,-s,-u window:-w,-a"
 	fileopts="-s -t -f"
 	diropts="-s -r"
 
@@ -39,7 +39,10 @@ function _tt () {
 
 	case "${prev}" in
 		tt)
-			words='lib mastodon :dot :edit :pages :premail :qb :stowit :web'
+			words='lib mastodon :dap :dot :edit :pages :premail :qb :stowit :web'
+			;;
+		::dap)
+			words='-s'
 			;;
 		::edit)
 			words='-s -f -r -w -a'
@@ -72,7 +75,10 @@ function _tt () {
 		-s)
 			appdecor=${prev_[1]}
 			app="${appdecor#::}"
-			if [[ ${app} == edit ]] ; then
+			if [[ ${app} == dap ]] ; then
+				cd ~/dapper-invoice
+				word=( $(compgen -f -- ${cur}) )
+			elif [[ ${app} == edit ]] ; then
 				cd ~/profedit
 				word=( $(compgen -d -- ${cur}) )
 			elif [[ ${app} == pages ]] ; then

@@ -3,13 +3,15 @@
 # screen 2
 # screen 3
 # screen 4
+# screen 5
+
+screen 7
+stuff "echo \""
 
 screen 1
 stuff "toot -h^M"
 stuff "toot auth^M"
-stuff "# toot auth | sed -nE '/ACTIVE/s/\^.+(@[\^[:space:]]+)[[:space:]].+\$/drbean\\1/p' > ur_auth && toot activate drbean@mstdn.jp && echo 'ADSL Wi-Fiルーターの欲しい人！に上げます。詳細は http://drbean.sdf.org/WebCaster3100SV.html' | toot post && toot activate drbean@mastodon-japan.net && echo 'ADSL Wi-Fiルーターの欲しい人！に上げます。詳細は http://drbean.sdf.org/WebCaster3100SV.html' | toot post && toot activate \$(< ur_auth)^M"
 stuff "# echo \" \" | post.sh -t \$TOPIC -s \$STORY -k \"\$KICKER\" -h \"\$HEADER\" | toot --as drbean@mastodon.sdf.org post^M"
-stuff "# echo    | tr ' ' '+' | while read q ; do cygstart \"https://google.com/search?q=\$q&udm=14\" ; done^M"
 stuff "# c https://duckduckgo.com/?q=^M"
 # stuff "active_tooter^M"
 
@@ -18,3 +20,5 @@ screen toot --as drbean@mastodon-japan.net tui -m cygstart
 screen toot --as drbean@duk.space tui -m cygstart
 screen toot --as drbean@g0v.social tui -m cygstart
 screen toot --as drbean@mathstodon.xyz tui -m cygstart
+
+screen mastui

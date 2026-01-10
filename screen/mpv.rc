@@ -1,0 +1,15 @@
+screen 1
+stuff "cd ~/yt-dlp/english^M"
+stuff "ls -al^M"
+stuff "~/mpv-git-2025-03-31-5870c95-x86_64/mpv "
+
+screen 2
+stuff "cd ~/yt-dlp/shakuhachi^M"
+stuff "ls -al^M"
+stuff "~/mpv-git-2025-03-31-5870c95-x86_64/mpv "
+
+screen 3
+stuff "cd ~/yt-dlp/freejazz^M"
+stuff "ls -al^M"
+stuff "~/mpv-git-2025-03-31-5870c95-x86_64/mpv "
+

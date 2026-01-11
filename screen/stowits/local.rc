@@ -1,20 +1,29 @@
-# pages
+# local
 
 screen 3
 stuff "cd ~/stow/^M"
 stuff "ls -al^M"
 stuff "declare -a cmd=( \"active_tooter\" \"blog.sh\" \"common.sh\" \"masto_master_messter\" \"post.sh\" \"toot\" \"trurl\")^M"
 stuff "declare -A key_cmd=( [mastodon]=\"{active_tooter,masto_master_messter}\" [homepage/markdown]=\"common.sh\" [.]=\"{blog.sh,post.sh}\" [../../dot/browser/toot/.venv.39/bin]=\"toot\" [../../edit/email/trurl]=\"trurl.exe\")^M"
-stuff "for dir in \${!key_cmd[*]} ; do for app in \$(eval echo \${key_cmd[\$dir]})  ; do echo \$dir: \$app ; diff -u ~/curriculum/pages/\$dir/\$app ~/stow/pages/bin/\$app ; done ; done^M"
-stuff "# for dir in \${!key_cmd[@]} ; do for app in \${!key_cmd[\$dir]} ; do diff -u ~/curriculum/pages/\$dir/\$app ~/stow/pages/bin/\$app ; done ; done^M"
-stuff "# for app in \${cmd[@]} ; do diff -u  ~/stow/pages/bin/\$app /usr/local/bin/\$app ; done^M"
-stuff "# for app in \${cmd[@]} ; do rm ~/stow/pages/bin/\$app ; done^M"
-stuff "# for app in \${cmd[@]} ; do ln ~/curriculum/pages/homepage/markdown/\$app ~/stow/pages/bin/\$app ; done^M"
+stuff "for dir in \${!key_cmd[*]} ; do for app in \$(eval echo \${key_cmd[\$dir]})  ; do echo \$dir: \$app ; diff -u ~/curriculum/local/\$dir/\$app ~/stow/local/bin/\$app ; done ; done^M"
+stuff "# for dir in \${!key_cmd[@]} ; do for app in \${!key_cmd[\$dir]} ; do diff -u ~/curriculum/local/\$dir/\$app ~/stow/local/bin/\$app ; done ; done^M"
+stuff "# for app in \${cmd[@]} ; do diff -u  ~/stow/local/bin/\$app /usr/local/bin/\$app ; done^M"
+stuff "# for app in \${cmd[@]} ; do rm ~/stow/local/bin/\$app ; done^M"
+stuff "# for app in \${cmd[@]} ; do ln ~/curriculum/local/homepage/markdown/\$app ~/stow/local/bin/\$app ; done^M"
+stuff "# for dir in ${!key_cmd[@]} ; do
+    for appl in \${key_cmd[\$dir]} ; do
+	    echo appl: \${appl[@]}
+        for app in \$(eval echo \$appl) ; do
+            echo app: \$app
+            diff -u ~/curriculum/pages/\$dir/\$app ~/stow/local/bin/\$app
+        done
+    done
+done^M"
 stuff "for dir in \${!key_cmd[@]} ; do 
     for app in \${!key_cmd[\$dir]} ; do
-        ln ~/curriculum/pages/\$dir/\$app ~/stow/pages/bin/\$app
+        ln ~/curriculum/local/\$dir/\$app ~/stow/local/bin/\$app
     done ; done^M"
-stuff "# stow -n --verbose=2 -t /usr/local -d ~drbean/stow -R pages^M"
+stuff "# stow -n --verbose=2 -t /usr/local -d ~drbean/stow -R local^M"
 
 # root Azy4476
 

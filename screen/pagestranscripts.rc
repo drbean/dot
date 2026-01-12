@@ -17,7 +17,7 @@ stuff "lcd /tmp/pandoc/^M"
 stuff "cd html/^M"
 stuff "put WittySayings.html^M"
 stuff "put HomePage.html -o index.html^M"
-stuff "mput HomePage.html \$TOPIC.html \$STORY.html^M"
+stuff "mput HomePage.html $TOPIC.html $STORY.html^M"
 stuff "user drbean "
 
 screen 1

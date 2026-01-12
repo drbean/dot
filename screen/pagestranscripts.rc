@@ -7,7 +7,7 @@ stuff "homepage/markdown/HomePage.md "
 stuff "homepage/html/fortunes.md "
 stuff "/tmp/pandoc/\$STORY.txt "
 stuff "Contents.html "
-stuff "~/.weechat/logs/irc.freenodebnc.\\\#\\\#english.weechatlo^M"
+stuff "^M"
 
 screen
 stuff "cd ~/curriculum/pages^M"

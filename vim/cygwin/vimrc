@@ -1,4 +1,4 @@
-" Last Edit: 2025 Nov 02,  5:14:56 PM
+" Last Edit: 2026 Jan 21, 10:11:38 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -589,6 +589,17 @@ au!
 
 "au BufUnload,BufHidden * if &filetype == "help" | bdel | endif
 "au BufUnload * if &filetype == "help" | bdel | endif
+
+augroup END
+
+augroup vim-pandoc
+au!
+
+" https://github.com/vim-pandoc/vim-pandoc
+" pandoc integration and utilities for vim
+
+" vim-pandoc maps j and k to move across visible lines, not real ones
+au BufReadPre *.md let g:pandoc#keyboard#display_motions = 0
 
 augroup END
 

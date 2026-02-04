@@ -1,4 +1,4 @@
-" Last Edit: 2026 Jan 21, 10:11:38 PM
+" Last Edit: 2026 Feb 04,  8:24:10 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -600,6 +600,9 @@ au!
 
 " vim-pandoc maps j and k to move across visible lines, not real ones
 au BufReadPre *.md let g:pandoc#keyboard#display_motions = 0
+
+au BufEnter $FILE.md no <buffer> <LocalLeader>a <Esc>:%s/^\*\*\\/*\\*\\/<CR>
+au BufEnter $FILE.md no <buffer> <LocalLeader>b <Esc>:%s/^\*\\\*\\/**\\/<CR>
 
 augroup END
 

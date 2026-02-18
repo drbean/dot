@@ -1,4 +1,4 @@
-" Last Edit: 2026 Feb 04,  8:24:10 AM
+" Last Edit: 2026 Feb 18,  8:57:05 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -601,8 +601,8 @@ au!
 " vim-pandoc maps j and k to move across visible lines, not real ones
 au BufReadPre *.md let g:pandoc#keyboard#display_motions = 0
 
-au BufEnter $FILE.md no <buffer> <LocalLeader>a <Esc>:%s/^\*\*\\/*\\*\\/<CR>
-au BufEnter $FILE.md no <buffer> <LocalLeader>b <Esc>:%s/^\*\\\*\\/**\\/<CR>
+au BufEnter $FILE.md no <buffer> <LocalLeader>a mx<Esc>:%s/^\*\*\\/*\\*\\/<CR>`x
+au BufEnter $FILE.md no <buffer> <LocalLeader>b mx<Esc>:%s/^\*\\\*\\/**\\/<CR>`x
 
 augroup END
 
@@ -634,8 +634,10 @@ au!
 "eyy'ai## ee. . .''18yy''PjjOma''19k
 
 " pandoc link list
-au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>l ^/https*:<CR>i](<Esc>A)<Esc>Bi[<Esc>
+au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>l ^/https*:<CR>i](<Esc>A)<Esc>I[<Esc>
 au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I[V<o
+
+au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>ll "lyiWi<CR><Esc>mBEmEa<CR><Esc>"lPkgJ`Bi[<Esc>`Ea](<Esc>$a)<CR><Esc>
 
 au BufEnter slides.md nn <buffer> <LocalLeader>p :! pandoc -i --self-contained -t revealjs -o culture.html slides.md<CR>
 

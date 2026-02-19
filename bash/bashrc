@@ -25,6 +25,8 @@ export AT='＠'
 export ARROW='→'
 export STAR='☆'
 export TH='Þ'
+export FA='∀'
+export TE='∃'
 alias arrow="echo -n → "
 alias AT="echo -n ＠"
 
@@ -116,9 +118,7 @@ function book () {
 }
 function goo () {
     term="$*"
-    <<< "$term" tr ' ' '+' | while read q ; do
-	cygstart "https://google.com/search?q=$q&udm=14"
-	<<< "https://google.com/search?q=$q" pub -i en; done
+    <<< "$term" tr ' ' '+' | while read q ; do cygstart "https://google.com/search?q=$q&udm=14" ; done
 }
 function researchmap () {
     while read -r prof ; do
@@ -695,7 +695,11 @@ function spec () {
 	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
 	for s in ${SCREEN[@]} ; do
 	    echo w=$s
-	    cat $HOME/dot/screen/specs/$s.rc >> $SCREENRC
+	    file="$HOME/dot/screen/specs/$s.rc"
+	    if [[ ! -f $file ]] ;
+		then echo "screen man $s" > $file
+	    fi
+	    cat $file >> $SCREENRC
 	done
     fi
     echo ${SCREEN[*]} $SCREENRC
@@ -759,14 +763,14 @@ function gftags2ctags () {
     uniq
 }
 
-declare -xA instance=( [en]=mastodon.sdf.org [ja]=mastodon-japan.net [ko]=duk.space [zh]=g0v.social [math]=mathstodon.xyz [lang]=polyglot.city)
+declare -xA instance=( [en]=mastodon.social [ja]=mstdn.jp [ko]=duk.space [zh]=g0v.social [math]=mathstodon.xyz [sec]=infosec.exchange)
 declare -xn instanceref=instance
 
 for i in "${!instance[@]}"; do
     eval "function $i.toot () { toot --as drbean@${instance[$i]} \"\$@\" ; }"
 done
 for i in  "${!instance[@]}"; do
-    eval "function $i.pub () { pub -i $i]} \"\$@\" ; }"
+    eval "function $i.pub () { pub -i $i \"\$@\" ; }"
 done
 
 function mastodon () {

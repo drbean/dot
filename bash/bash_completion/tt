@@ -39,7 +39,7 @@ function _tt () {
 
 	case "${prev}" in
 		tt)
-			words='lib mastodon :dap :dot :edit :pages :premail :qb :stowit :web'
+			words=':spec mastodon :dap :dot :edit :pages :premail :qb :stowit :web'
 			;;
 		::dap)
 			words='-s'
@@ -48,6 +48,9 @@ function _tt () {
 			words='-s -f -r -w -a'
 			;;
 		::dot)
+			words='-w -a'
+			;;
+		::spec)
 			words='-w -a'
 			;;
 		::pages)

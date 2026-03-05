@@ -1,6 +1,4 @@
 # dev
 
-screen 0
-stuff "cd ~/dot^M"
-stuff "v bash/{bash_completion/stowit,bashrc,e{,mail}.sh} screen/{*mail,dot}.rc ~/.git-hub/config"
-
+chdir $HOME/dot
+screen v

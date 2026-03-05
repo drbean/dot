@@ -284,8 +284,12 @@ function pick_1_of () {
     echo $(( $RANDOM % $n ))
 }
 
-source ~/dot/bash/email.sh
-source ~/dot/bash/e.sh
+if [[ $(uname) =~ ^CYGWIN ]] ; then
+    source ~/dot/bash/email.sh
+    source ~/dot/bash/e.sh
+    source ~/dot/bash/gitwrap_svn.sh
+    source ~/perl5/perlbrew/etc/bashrc
+fi
 
 function  tm () {
     # AREA=kangwento
@@ -355,8 +359,6 @@ function Mpv () {
     screen -c /home/$USER/dot/screen/mpv.rc -dR mpv
     cd -
 }
-
-source ~/dot/bash/gitwrap_svn.sh
 
 alias Ed='edit -s yingchih -f red_kuroshio'
 function edit () {
@@ -1831,8 +1833,6 @@ function wcd () {
 # }
 # 
 # alias cd=cd_func
-
-source ~/perl5/perlbrew/etc/bashrc
 
 # vim: set ts=8 sts=4 sw=4 noet:
 

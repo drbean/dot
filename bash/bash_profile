@@ -39,32 +39,43 @@ LC_NUMERIC LC_MONETARY LC_MESSAGES LC_ALL
 
 # export TERM=screen
 
-MANPATH=$HOME/edit/email/trurl/man:${MANPATH-}
-# export MANPATH=$HOME/edit/email/trurl/man:${MANPATH-}
-# export MANPATH=$HOME/perl5/perlbrew/man:${MANPATH-}
+if [[ $(uname) =~ ^CYGWIN ]] ; then
 
-# export PATH=$PATH:"/cygdrive/c/Program Files/qutebrowser"
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
-PATH=$PATH:$(cygpath $APPDATA/local/bin)
+    MANPATH=$HOME/edit/email/trurl/man:${MANPATH-}
+    # export MANPATH=$HOME/edit/email/trurl/man:${MANPATH-}
+    # export MANPATH=$HOME/perl5/perlbrew/man:${MANPATH-}
+    
+    # export PATH=$PATH:"/cygdrive/c/Program Files/qutebrowser"
+    PATH=$PATH:$HOME/.local/bin:$HOME/bin
+    PATH=$PATH:$(cygpath $APPDATA/local/bin)
+    
+    # export PATH=/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim90/:$PATH
+    
+    # go
+    PATH=$PATH:"/cygdrive/c/Users/drbean/go/bin/"
+    
+    # lua-language-server for nvim: https://github.com/LuaLS/lua-language-server/releases/download/3.17.1/lua-language-server-3.17.1-win32-x64.zip
+    PATH=$PATH:"$HOME/.vim/pack/git-plugins/start/lua-language-server/lua-language-server-3.17.1-win32-x64/bin/"
+    
+    # set by windows
+    # PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"
+    
+    export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/node_modules/yarn/bin"
+    # export PATH=$PATH:"/cygdrive/c/Users/$USER/node_modules/yarn/bin"
+    # export PATH=$PATH:"/home/$USER/node_modules/yarn/bin"
+    
+    #greg
+    # export PATH=$HOME/.cabal/bin:$PATH
+    # /etc/profile.d/cabalinstall.sh does it for me
 
-# export PATH=/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim90/:$PATH
-
-# go
-PATH=$PATH:"/cygdrive/c/Users/drbean/go/bin/"
-
-# lua-language-server for nvim: https://github.com/LuaLS/lua-language-server/releases/download/3.17.1/lua-language-server-3.17.1-win32-x64.zip
-PATH=$PATH:"$HOME/.vim/pack/git-plugins/start/lua-language-server/lua-language-server-3.17.1-win32-x64/bin/"
-
-# set by windows
-# PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"
-
-export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/node_modules/yarn/bin"
-# export PATH=$PATH:"/cygdrive/c/Users/$USER/node_modules/yarn/bin"
-# export PATH=$PATH:"/home/$USER/node_modules/yarn/bin"
-
-#greg
-# export PATH=$HOME/.cabal/bin:$PATH
-# /etc/profile.d/cabalinstall.sh does it for me
+elif [[ $(uname) =~ ^MINGW64 ]] ; then
+    # go
+    PATH=$PATH:"~/go/bin/"
+    
+    # lua-language-server for nvim: https://github.com/LuaLS/lua-language-server/releases/download/3.17.1/lua-language-server-3.17.1-win32-x64.zip
+    PATH=$PATH:"/c/home/$USER/.vim/pack/git-plugins/start/lua-language-server/lua-language-server-3.17.1-win32-x64/bin/"
+    
+fi
 
 export PATH
 

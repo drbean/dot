@@ -15,4 +15,4 @@ stuff "# su -c 'cp perl-tags-vim/ftplugin/perl.vim /usr/share/vim/vimfiles/after
 stuff "# for repo in repo ; do for dev in dev ; do git hub clone \$dev/\$repo && cd \$repo && git remote add upstream https://github.com/\$dev/\$repo && git fetch upstream && git merge upstream/master && cd .. ; done ; done^M"
 stuff "# diff -u {cygwin/,~/.}vimrc^M"
 stuff "cd ~/.vim/pack/git-plugins/start^M"
-stuff "for i in * ; do cd \$i ; git fetch upstream ; cd - ; done^M"
+stuff "for i in * ; do cd \$i ; echo -n \"\$i: \" && git fetch upstream ; cd - ; done^M"

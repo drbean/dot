@@ -74,7 +74,11 @@ elif [[ $(uname) =~ ^MINGW64 ]] ; then
     
     # lua-language-server for nvim: https://github.com/LuaLS/lua-language-server/releases/download/3.17.1/lua-language-server-3.17.1-win32-x64.zip
     PATH=$PATH:"/c/home/$USER/.vim/pack/git-plugins/start/lua-language-server/lua-language-server-3.17.1-win32-x64/bin/"
-    
+   # https://github.com/bash-lsp/bash-language-server
+   PATH=$PATH:"/c/Program Files/Neovim/bin/bash-language-server"
+
+   # node, npm
+   export PATH=$PATH:"/c/Program Files/nodejs"
 fi
 
 export PATH

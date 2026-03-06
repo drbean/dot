@@ -4,21 +4,20 @@
 # screen 3
 # screen 4
 # screen 5
+# screen 6
+# screen 7
 
-screen 7
-stuff "echo \""
-
-screen 1
+screen 0
 stuff "toot -h^M"
 stuff "toot auth^M"
 stuff "# echo \" \" | post.sh -t \$TOPIC -s \$STORY -k \"\$KICKER\" -h \"\$HEADER\" | toot --as drbean@mastodon.sdf.org post^M"
 stuff "# c https://duckduckgo.com/?q=^M"
 # stuff "active_tooter^M"
 
-screen toot --as drbean@mastodon.sdf.org tui -m cygstart
-screen toot --as drbean@mastodon-japan.net tui -m cygstart
-screen toot --as drbean@duk.space tui -m cygstart
+screen bash -l -i -c en_toot_tui
+screen bash -l -i -c ja_toot_tui
+screen bash -l -i -c ko_toot_tui
 screen toot --as drbean@g0v.social tui -m cygstart
 screen toot --as drbean@mathstodon.xyz tui -m cygstart
-
+screen toot --as drbean@infosec.exchange tui -m cygstart
 screen mastui

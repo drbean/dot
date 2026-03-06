@@ -1,4 +1,4 @@
-" Last Edit: 2026 Feb 18,  8:57:05 AM
+" Last Edit: 2026 Mar 06,  3:55:11 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -24,12 +24,6 @@ if !has('nvim')
 	" map \P :set paste!<CR>: se paste?<CR>
 	" pastetoggle for inside insert mode
 	se pastetoggle=\\P
-
-	augroup snippets
-	au!
-
-	autocmd FileType snippets setlocal runtimepath+=~/.vim/pack/git-plugins/start/ultisnips
-	augroup END
 
 	" default handles bom. This doesn't
 	"if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
@@ -138,7 +132,7 @@ elseif has("win32")
 " cab rc <C-R>=vimrc<CR><CR>
 
 set path=.,		" path for files accessed by gf, etc
-set runtimepath^=~/.vim/pack/git-plugins/start/ultisnips
+
 " let g:ycm_key_list_select_completion = ['<Down>']
 " set runtimepath=~/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim63,/usr/share/vim/vimfiles/after,~/.vim/after	"fedora 3 got it wrong
 
@@ -309,8 +303,6 @@ nn \Y :%s/^\w*\s//<CR>:%s/<Tab>/:<Space>/<CR>G$"eyiw:v/e$/d<CR>:%s/\s*e$//<CR>
 " dic.yaml question creator
 nn <buffer> <Leader>answers y14y"0P"0P"0P14j3j27.jrB7k.1347.jrC7k.1367.jrD7k.27-wC
 
-"snipMate
-
 let s:i = 0
 fu! Increment_i()
        let s:i = s:i + 1
@@ -344,11 +336,18 @@ endfunc
 
 map <LocalLeader>i :call Insert_increment()<CR>
 
+"autocmds
+
+augroup snippets
+au!
+
+autocmd FileType snippets setlocal runtimepath+=~/.vim/pack/git-plugins/start/ultisnips
+" autocmd FileType yaml setlocal runtimepath^=~/.vim/pack/git-plugins/start/ultisnips
+" autocmd FileType yaml let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+" autocmd FileType yaml let g:UltiSnipsExpandTrigger="<tab>"
 " map <silent> <LocalLeader>snip <Esc>:call ResetSnippets() \| call GetSnippets(g:snippets_dir, "_") \| call GetSnippets(g:snippets_dir, &ft)<CR><Esc>:echo "Snippets for format \"" . &ft . "\" updated."<CR>
 
-
-
-"autocmds
+augroup END
 
 " supertab
 
@@ -495,10 +494,6 @@ augroup yaml
 au!
 
 autocmd FileType yaml setlocal shiftwidth=2
-" autocmd FileType yaml setlocal runtimepath^=~/.vim/pack/git-plugins/start/ultisnips
-" autocmd FileType yaml let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-" autocmd FileType yaml let g:UltiSnipsExpandTrigger="<tab>"
-"
 " YouCompleteMe and UltiSnips compatibility, with the helper of supertab
 " https://gist.github.com/lencioni/dff45cd3d1f0e5e23fe6
 " (via http://stackoverflow.com/a/22253548/1626737)
@@ -1300,7 +1295,8 @@ digraphs AT 65312
 
 " dense-analysis/ale
 let g:ale_completion_enabled=1
-let g:ale_disable_lsp = 1
+" let g:ale_disable_lsp = 1
+let g:ale_linters = { 'sh': ['language_server'], }
 
 packloadall
 " silent! helptags ALL

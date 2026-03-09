@@ -44,7 +44,7 @@ export LEAGUES_RE="cultureA|cultureB|MA0036|GL00018|GL00019|GL00020"
 # # greg
 # ibus-daemon -drx
 
-for i in 'qb -w qt' 'web -w sdf' 'web -w google' ; do
+for i in 'qb -w qt' 'web -w sdf -w google' ; do
     eval "alias ${i// /_}=\"$i\""
 done
 

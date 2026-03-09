@@ -55,7 +55,7 @@ if [[ $(uname) =~ ^CYGWIN ]] ; then
     PATH=$PATH:"/cygdrive/c/Users/drbean/go/bin/"
     
     # lua-language-server for nvim: https://github.com/LuaLS/lua-language-server/releases/download/3.17.1/lua-language-server-3.17.1-win32-x64.zip
-    PATH=$PATH:"$HOME/.vim/pack/git-plugins/start/lua-language-server/lua-language-server-3.17.1-win32-x64/bin/"
+    # PATH=$PATH:"$HOME/.vim/pack/git-plugins/start/lua-language-server/lua-language-server-3.17.1-win32-x64/bin/"
     
     # set by windows
     # PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"

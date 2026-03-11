@@ -651,6 +651,7 @@ function dot () {
     while getopts 'w:a' arg
     do
 	SCREENRC=$HOME/dot/screen/dot.rc
+	echo "chdir ~/dot" > $SCREENRC
         case ${arg} in
             w) SCREEN+=( "${OPTARG}" ) ;;
             a) SCREEN=( "all" ) ;;
@@ -659,9 +660,8 @@ function dot () {
     done
     shift $(( OPTIND - 1 ))
     if [[ $SCREEN == *all* ]] ; then
-	cat $HOME/dot/screen/dots/*.rc > $SCREENRC
+	cat $HOME/dot/screen/dots/*.rc >> $SCREENRC
     else
-	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
 	for s in ${SCREEN[@]} ; do
 	    echo w=$s
 	    cat $HOME/dot/screen/dots/$s.rc >> $SCREENRC

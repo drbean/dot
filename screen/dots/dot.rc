@@ -4,7 +4,6 @@ screen 1
 stuff "cd ~/dot^M"
 stuff "# for s in cron exim postgreSQL cygserver ; do cygrunsrv --stop $s ; done^M"
 stuff "# for l in /tmp/freedns_* ; do truncate -s 0 $l ; done^M"
-stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 stuff "# for x in rc _profile; do cp bash/bash\$x ~/.bash\$x; done^M"
 stuff "# #careful cp bash/history ~/.bash_history^M"
 stuff "# export HISTTIMEFORMAT='%m-%d '^M"
@@ -20,5 +19,6 @@ stuff "# for script in chocolatey.nupkg install.ps1 powerup_cygwin.ps1 cygwin_pa
 stuff "for script in cygwin_package.sh ; do /usr/bin/diff -u {~/dot/chocolatey,/cygdrive/c/Users/$USER/Downloads}/\$script ; done^M"
 stuff "/usr/bin/diff -u {~/dot/cygwin,/cygdrive/c/Users/$USER/Downloads}/repo_checkout.sh^M"
 stuff "# lftp -c 'open drbean@sdf.org && cd html && put chocolatey/powerup_cygwin.ps1 && put chocolatey/powerup_ntu_cygwin.ps1 && put chocolatey/cygwin_package.sh && put cygwin/repo_checkout.sh && quit'^M"
+stuff "svn st -q^Msvn log -vr BASE:HEAD^M"
 
 

@@ -68,7 +68,7 @@ if [[ $(uname) =~ ^CYGWIN ]] ; then
     # export PATH=$HOME/.cabal/bin:$PATH
     # /etc/profile.d/cabalinstall.sh does it for me
 
-elif [[ $(uname) =~ ^MINGW64 ]] ; then
+elif [[ $(uname) =~ ^MINGW64 || $(uname) =~ ^MSYS ]] ; then
     # go
     PATH=$PATH:"~/go/bin/"
     

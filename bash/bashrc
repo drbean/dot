@@ -27,6 +27,7 @@ export STAR='☆'
 export TH='Þ'
 export FA='∀'
 export TE='∃'
+export TM='™'
 alias arrow="echo -n → "
 alias AT="echo -n ＠"
 
@@ -651,7 +652,7 @@ function dot () {
     while getopts 'w:a' arg
     do
 	SCREENRC=$HOME/dot/screen/dot.rc
-	echo "chdir ~/dot" > $SCREENRC
+	echo "chdir $HOME/dot" > $SCREENRC
         case ${arg} in
             w) SCREEN+=( "${OPTARG}" ) ;;
             a) SCREEN=( "all" ) ;;

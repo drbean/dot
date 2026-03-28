@@ -13,11 +13,6 @@ stuff "toot auth^M"
 stuff "# echo \" \" | post.sh -t \$TOPIC -s \$STORY -k \"\$KICKER\" -h \"\$HEADER\" | toot --as drbean@mastodon.sdf.org post^M"
 stuff "# c https://duckduckgo.com/?q=^M"
 # stuff "active_tooter^M"
-
-screen bash -l -i -c en_toot_tui
-screen bash -l -i -c ja_toot_tui
-screen bash -l -i -c ko_toot_tui
-screen toot --as drbean@g0v.social tui -m cygstart
-screen toot --as drbean@mathstodon.xyz tui -m cygstart
-screen toot --as drbean@infosec.exchange tui -m cygstart
+stuff "for i in \$instanceS ; do screen bash -lic \${i}_toot_tui ; done^M"
 screen mastui
+screen $HOME/dot/browser/perch/perch/perch

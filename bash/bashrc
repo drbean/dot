@@ -768,17 +768,19 @@ function gftags2ctags () {
 
 declare -xA instance=( [en]=mastodon.social [ja]=mstdn.jp [ko]=duk.space [zh]=g0v.social [math]=mathstodon.xyz [sec]=infosec.exchange [hack]=hachyderm.io)
 
-for i in ${!instance[@]} ; do declare -x ${i}_instance=${instance[$i]} ; done
+declare -x instanceS="${!instance[@]}"
 
-for i in "${!instance[@]}"; do
+for i in $instanceS ; do declare -x ${i}_instance=${instance[$i]} ; done
+
+for i in $instanceS ; do
     eval "function $i.toot () { toot --as drbean@${instance[$i]} \"\$@\" ; }"
 done
 
-for i in "${!instance[@]}"; do
+for i in $instanceS; do
     eval "alias ${i}_toot_tui=\"$i.toot tui -m cygstart\""
 done
 
-for i in  "${!instance[@]}"; do
+for i in $instanceS; do
     eval "function $i.pub () { pub -i $i \"\$@\" ; }"
 done
 

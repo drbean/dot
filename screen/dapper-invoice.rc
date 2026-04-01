@@ -4,6 +4,7 @@ stuff "# for v in svn git ; do \$v add \$SOURCE.tex ; done^M"
 stuff "# echo -e '\\nsvn: '; svn st -q \$SOURCE.tex ; echo -e '\\nand\\n' ; echo -n 'git: '; git status SOURCE.tex | sed -nE '/modified|branch/p'^M"
 stuff "ls^M"
 stuff "# svn diff --diff-cmd $VD^M"
+stuff "# svn ci \$SOURCE.tex -m \$(svn log -r \$R1 ~/profedit/\$SOURCE/ | sed -ne 4p)^M"
 stuff "grep newcommand..invoiceNo *.tex | sed -E 's/:/ /' | sort -k 2^M"
 
 screen 2

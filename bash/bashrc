@@ -28,6 +28,7 @@ export TH='Þ'
 export FA='∀'
 export TE='∃'
 export TM='™'
+export SHRUG='¯\_(ツ)_/¯'
 alias arrow="echo -n → "
 alias AT="echo -n ＠"
 
@@ -818,7 +819,7 @@ function pages () {
     R=$(svn info $M | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
     if [[ ! -f "$M/$STORY.md" ]]
     then echo -e "% $HEADER\n\n\nMe at
-    <form action='https://mastodon.sdf.org/@drbean'>
+    <form action='https://mastodon.social/@drbean'>
     <button type='submit' class='btn'>
     <img src='./mastodon.svg'
         alt='https://joinmastodon.org/logos/wordmark-black-text.svg'

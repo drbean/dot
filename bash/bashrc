@@ -5,6 +5,15 @@ if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
 
+## Load any supplementary scripts from ~/.bashrc.d/
+if [[ -d $HOME/.bashrc.d ]]; then
+   for f in "$HOME"/.bashrc.d/*.bash; do
+      [[ -f "$f" ]] && source "$f"
+   done
+
+   unset -v f
+fi
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 

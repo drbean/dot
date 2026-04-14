@@ -244,9 +244,9 @@ function stowit () {
     while getopts 'w:a' arg
     do
         case ${arg} in
-            w) SCREENRC="~/dot/screen/stowits/${OPTARG}.rc"
+            w) SCREENRC="$HOME/dot/screen/stowits/${OPTARG}.rc"
 		SCREEN=${OPTARG};;
-            a) SCREENRC="~/dot/screen/stowit.rc"
+            a) SCREENRC="$HOME/dot/screen/stowit.rc"
 		SCREEN="all"
 		cat ~/dot/screen/stowits/*.rc > $SCREENRC;;
 	    *) echo "opts: -w -a" ; exit 0 # illegal option

@@ -1,0 +1,9 @@
+# edit
+
+screen 0
+stuff "cd ~/profedit/\$SOURCE^M"
+register q "\""
+bind I eval copy 'stuff \^l^M$^M' 'select 1' 'stuff "svn ci ~/profedit/\$SOURCE/issues.md -m "' 'paste q' 'paste .' 'paste q' 'stuff ^M' 'sleep 2' 'select 0' "activity \"\^G svn ci issues.md in window %n\""
+bind K eval copy 'stuff \^^M$^M' 'select 1' 'stuff "# svn ci \$F -m "' 'paste q' "stuff \"\${PREV}: \"" 'paste .' 'paste q' "activity \"\^G last log message, section\""
+stuff "v --cmd 'set spellfile=spell.en.utf-8.add' {\$FILE{,.response},red.\$FILE,issues}.md^M"
+

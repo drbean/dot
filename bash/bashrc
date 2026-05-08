@@ -131,6 +131,10 @@ function goo () {
     term="$*"
     <<< "$term" tr ' ' '+' | while read q ; do cygstart "https://google.com/search?q=$q&udm=14" ; done
 }
+function img () {
+    pic="$*"
+    <<< "$pic" tr ' ' '+' | while read q ; do cygstart "https://images.search.yahoo.com/search/images?p=$q" ; done
+}
 function researchmap () {
     while read -r prof ; do
 	profplus=$(<<< $prof tr ' ' '+')

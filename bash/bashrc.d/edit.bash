@@ -1,6 +1,6 @@
 # functions, vars etc instantiated in bashrc for prof paper editing
 
-alias jasoncclu='tt ::edit -s jasoncclu -f emergency -w ed -w vcs'
+alias jasoncclu='tt ::edit -s jasoncclu -f expand -w ed -w vcs'
 function edit () {
     OPTIND=1
     local arg SOURCE REPO FILE SCREEN

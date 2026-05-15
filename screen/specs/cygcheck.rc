@@ -1,0 +1,5 @@
+# cygcheck --help
+
+# echo "you ar uzing screen"
+screen 0
+stuff "cygcheck --help | less^M"

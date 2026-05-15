@@ -29,6 +29,7 @@ stuff "# svn import \$SOURCE file:///srv/svn/esprimo/edit/branch/\$SOURCE/\$REPO
 stuff "# svn checkout file:///srv/svn/esprimo/edit/branch/\$SOURCE/\$REPO $SOURCE --force^M"
 stuff "# mv ~/profedit/git.\$SOURCE.\$REPO ~/profedit/\$SOURCE/.git^M"
 stuff "cd ~/profedit/\$SOURCE^M"
+bind J eval 'stuff "# svn ci \$F -m "' 'paste q' "stuff \"\${PREV}\"" 'paste q' "activity \"\^G last svn log message\""
 stuff "# for v in svn git ; do \$v add \$FILE.md issues.md ; done^M"
 stuff "# echo -e '\\nsvn: '; svn st -q \$FILE.md issues.md; echo -e '\\nand\\n' ; echo -n 'git: '; git status $FILE.md issues.md | sed -nE '/modified|branch/p'^M"
 

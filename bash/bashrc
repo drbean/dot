@@ -724,7 +724,7 @@ function gftags2ctags () {
     uniq
 }
 
-declare -xA instance=( [en]=mastodon.social [ja]=mstdn.jp [ko]=duk.space [zh]=g0v.social [math]=mathstodon.xyz [sec]=infosec.exchange [hack]=hachyderm.io)
+declare -xA instance=( [soc]=mastodon.social [ja]=mstdn.jp [ko]=duk.space [zh]=g0v.social [math]=mathstodon.xyz [sec]=infosec.exchange [hack]=hachyderm.io)
 
 declare -x instanceS="${!instance[@]}"
 

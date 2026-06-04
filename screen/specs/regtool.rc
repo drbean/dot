@@ -1,5 +1,2 @@
-# regtool --help
-
-# echo "you ar uzing screen"
-screen 0
-stuff "regtool --help | less^M"
+screen
+stuff "regtool --help|less^M"

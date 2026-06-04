@@ -657,8 +657,12 @@ function spec () {
 	for s in ${SCREEN[@]} ; do
 	    echo w=$s
 	    file="$HOME/dot/screen/specs/$s.rc"
-	    if [[ ! -f $file ]] ;
-		then echo "screen man $s" > $file
+	    if [[ ! -f $file ]] ; then
+		if man $s > /dev/null 2>&1 ; then
+		    echo "screen man $s" > $file
+		elif $s -h > /dev/null 2>&1 ; then
+		    echo -e "screen\nstuff \"$s --help|less^M\"" > $file
+		fi
 	    fi
 	    cat $file >> $SCREENRC
 	done

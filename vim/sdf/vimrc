@@ -1,4 +1,4 @@
-" Last Edit: 2023 Feb 09,  6:14:24 PM
+" Last Edit: 2026 Jun 06, 10:21:13 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -484,6 +484,12 @@ au!
 " au BufUnload,BufHidden * if &filetype == "help" | bdel | endif
 " au BufUnload * if &filetype == "help" | bdel | endif
 augroup END
+augroup edit
+  au!	
+au FileType markdown imap <buffer> <LocalLeader>gq$ <Esc>gq$A
+au FileType markdown vnoremap <buffer> <LocalLeader>q Jgq$$
+augroup END
+
 
 "New way of unzipping files
 augroup gzip

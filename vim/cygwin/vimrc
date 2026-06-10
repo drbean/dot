@@ -1,4 +1,4 @@
-" Last Edit: 2026 May 01,  4:08:21 PM
+" Last Edit: 2026 Jun 10,  8:47:04 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -632,7 +632,7 @@ au!
 au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>l ^/https*:<CR>i](<Esc>A)<Esc>I[<Esc>
 au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I[V<o
 
-au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>ll "lyiWi<CR><Esc>mBEmEa<CR><Esc>"lPkgJ`Bi[<Esc>`Ea](<Esc>$a)<CR><Esc>
+au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>ll "lyiWi<CR><Esc>mBEmEa<CR><Esc>"lPkgJ`Bi[<Esc>`Ela](<Esc>$a)<CR><Esc>
 
 au BufEnter slides.md nn <buffer> <LocalLeader>p :! pandoc -i --self-contained -t revealjs -o culture.html slides.md<CR>
 

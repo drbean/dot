@@ -300,7 +300,6 @@ function pick_1_of () {
 }
 
 if [[ $(uname) =~ ^CYGWIN ]] ; then
-    source ~/dot/bash/email.sh
     source ~/dot/bash/e.sh
     source ~/dot/bash/gitwrap_svn.sh
     source ~/perl5/perlbrew/etc/bashrc

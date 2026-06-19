@@ -579,27 +579,34 @@ function mailtoadder () {
     done
 }
 function addre () {
+    OPTIND=1
+    local arg ANCHOR='' LINE PREMATCH AT=@
+    while getopts 'a:l:p:@:' arg ; do
+        case ${arg} in
+            a) ANCHOR="${OPTARG}"  ;;
+            l) LINE="${OPTARG}" ;;
+            p) PREMATCH="${OPTARG}" ;;
+            @) AT="${OPTARG}" ;;
+            *) echo "ANCHOR,LINE,PREMATCH,AT opt: -alp@" ; exit 0 # illegal option
+        esac
+    done
     char='-._a-zA-Z0-9'
-    line=$1
-    prematch=$2
-    at=@
     address="\([$char]\+\)"
     domain="\([$char]\+\)"
     nonmatch="[^$char]"
     # prematch="\(^\|^.*$nonmatch\)"
     postmatch="\($\|$nonmatch\)"
-    if [[ -v 3  ]] ; then
-        at=$3
-        if [[ $at == '' || $at == no* ]] ;  then
-            sed -ne "${line}s/^.*$prematch$address$postmatch.*$/\1/p"
-            # echo ${line}s/^.*$prematch$address$postmatch.*$/\1/p
-         return 
-        fi
+    if [[ $AT == '' || $AT == no* ]] ;  then
+        sed -ne "${LINE}{ $ANCHOR s/^.*$PREMATCH$address$postmatch.*$/\1/p }"
+     return 
     fi
-    at="\($at\)"
-    sed -ne "${line}s/^.*$prematch$address$at$domain$postmatch.*$/\1@\3/p"
-    # echo ${line}s/^.*$prematch$address$at$domain$postmatch.*$/\\1@\\3/p
+    AT="\($AT\)"
+    sed -ne "${LINE}{ $ANCHOR s/^.*$PREMATCH$address$AT$domain$postmatch.*$/\1@\3/p }"
+    echo "${LINE}{ $ANCHOR s/^.*$PREMATCH$address$AT$domain$postmatch.*$/\1@\3/p }"
 }
+
+function address () { addre $1 $2 $3 ; }
+function offline_addre () { addre -a 'n;' -- $1 $2 $3 ; }
 
 function addres () {
     char='-._a-zA-Z0-9'

@@ -1,0 +1,6 @@
+# file: sourcer
+# sourcer assignee, delegatee  completion
+# copied from addre
+# https://www.baeldung.com/linux/shell-auto-completion
+
+complete -W "$(sed -nE 's/^function ([a-z]*)\s.*$/\1/p' $HOME/edit/email/sourcer.sh)" -X sourcer sourcer

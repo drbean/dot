@@ -14,11 +14,6 @@ stuff "# while read p ; do curl -L \"\${p%\$\'\\r\'}\" | sed -f address.sed | te
 stuff "# for p in {..} ; do curl -L \"\$p\" | l ; done^M"
 stuff "# curl -L \"$URL\" > faculty.html^M"
 stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"
-stuff "# lynx '^M"
-stuff "# DEPARTMENT= h '^M"
-stuff "# echo '^M"
-
-stuff "< prof_page.html cull | sourcer | curler | href_pref "
 
 screen 3
 stuff "cd ~/edit/email^M"

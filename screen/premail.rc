@@ -7,14 +7,6 @@ register q "\""
 bind I eval copy 'stuff \^2l^M$^M' 'select 3' 'stuff "svn ci \$A -m "' 'paste q' 'paste .' 'paste q' 'stuff ^M' 'sleep 2' 'select 0' "activity \"\^G svn ci \\\$A in window %n \""
 stuff "v prof_page.html sourcer.sh^M"
 
-screen 1
-stuff "cd ~/edit/email^M"
-stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"
-stuff "# while read p ; do curl -L \"\${p%\$\'\\r\'}\" | sed -f address.sed | tee -a $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; done < scratch.html^M"
-stuff "# for p in {..} ; do curl -L \"\$p\" | l ; done^M"
-stuff "# curl -L \"$URL\" > faculty.html^M"
-stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"
-
 screen 3
 stuff "cd ~/edit/email^M"
 stuff "# for c in wrong_char unescaped_uri line_ends_space in_addr_space at_mark; do echo -e \"\\n\$c\\n\" ; \$c ; done^M"
@@ -30,3 +22,11 @@ stuff "# svn ci $LAND/$AREA/$COUNTY/$SCHOOL -m http://$DEPARTMENT.$SCHOOL.ac.kr^
 stuff "# svn ci \$LAND/\$AREA/\$COUNTY/\$SCHOOL -m '$URL'^M"
 stuff "# log_clip &^M"
 stuff "# tail -F $A^M"
+
+screen 1
+stuff "cd ~/edit/email^M"
+stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"
+stuff "# while read p ; do curl -L \"\${p%\$\'\\r\'}\" | sed -f address.sed | tee -a $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; done < scratch.html^M"
+stuff "# for p in {..} ; do curl -L \"\$p\" | l ; done^M"
+stuff "# curl -L \"$URL\" > faculty.html^M"
+stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"

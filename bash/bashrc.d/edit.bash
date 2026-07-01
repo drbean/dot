@@ -1,7 +1,7 @@
 # functions, vars etc instantiated in bashrc for prof paper editing
 
 alias jasoncclu='tt ::edit -s jasoncclu -f expand -w ed -w vcs'
-alias huichiehli='tt ::edit -s huichiehli -f delivery -w ed -w vcs'
+alias huichiehli='tt ::edit -s huichiehli -f perseverance -w ed -w vcs'
 function edit () {
     OPTIND=1
     local arg SOURCE REPO FILE SCREEN

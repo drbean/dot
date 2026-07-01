@@ -628,7 +628,7 @@ function addres () {
 
 source ~/edit/email/sourcer.sh
 
-# alias Pr="premail -l jp -a kinki -c kyoto -s tachibana-u -u https://kenkyu.tachibana-u.ac.jp"
+alias Pre="premail -l kr -a north -c kyengkito -s catholic -u https://www.catholic.ac.kr"
 # assemble an address list for a school
 function premail () {
     OPTIND=1

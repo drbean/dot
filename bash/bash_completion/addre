@@ -1,0 +1,59 @@
+# file: addre
+# sed address extract parameter completion
+# copied from premail
+# https://www.baeldung.com/linux/shell-auto-completion
+
+function _addre () {
+	local cur prev opts fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	for (( i=0 ; i<${#COMP_WORDS[@]} ; i++ )) ; do
+		declare pre$i="${COMP_WORDS[COMP_CWORD-i]}"
+	done
+	opts="-a -l -p -@"
+	fileopts="-f"
+	diropts="-a -c -s"
+
+	words=""
+
+	# if [[ ${prev} =~ ${fileopts} ]]; then
+	# COMPREPLY=( $(compgen -f -- ~/profpremail/${cur}) )
+	# return 0
+	# elif [[ ${prev} =~ ${diropts} ]]; then
+	# COMPREPLY=( $(compgen -d -- ~/profpremail/${cur}) )
+	# return 0
+	# fi
+
+	case "${prev}" in
+		addre)
+			words="-a -l -p -@"
+			;;
+		-a)
+			words="\"'n;' \"'n;n;'"
+			# words="\"'n;\"' \"'n;n\"';"
+			# words="'n;' 'n;n;'"
+			;;
+		-l)
+			# words="55 \"'/mail/\"'"
+			words="/mailto:/"
+			;;
+		-p)
+			# words="\"'>\"'"
+			words="mailto:"
+			;;
+		-@)
+			words="\"''\" none @ ＠"
+			;;
+		*)
+			if [[ ${COMP_WORDS[*]} =~ -l && ${COMP_WORDS[*]} =~ -p ]]; then
+				COMPREPLY=( " | vipe >> \$A" )
+				return 0
+			else
+				words="${opts}"
+			fi
+			;;
+	esac
+	COMPREPLY=( $(compgen -W "$words" -- $cur) )
+}
+complete -F _addre addre

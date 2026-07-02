@@ -109,7 +109,7 @@ function _tt () {
 			dir="${screendecor#::}s"
 			cd ~/dot/screen/${dir}
 			rc=( $(compgen -f -- ${cur}) )
-			COMPREPLY=( ${rc[@]%.rc} )
+			COMPREPLY=( ${rc[@]%.rc*} )
 			return 0
 			;;
 		-l)

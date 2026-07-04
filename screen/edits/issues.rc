@@ -1,5 +1,7 @@
 # edit
 
+screen 1
+
 screen 8
 stuff "cd ~/profedit/\$SOURCE^M"
 register q "\""

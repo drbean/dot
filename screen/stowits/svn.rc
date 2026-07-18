@@ -1,15 +1,15 @@
-# bash_completion
+# svn post-commit
 
 screen 2
 stuff "cd ~/stow/^M"
 stuff "ls -al^M"
-stuff "declare -a command=( \$( ls ~/dot/bash/bash_completion/ --hide=*~ ) )^M"
-stuff "echo \${command[@]}^M"
-stuff "for c in \${command[@]} ; do diff -u ~/dot/bash/bash_completion/\$c ~/stow/bash_completion/\$c ; done^M"
-stuff "for c in \${command[@]} ; do diff -u ~/dot/bash/bash_completion/\$c /etc/bash_completion.d/\$c ; done^M"
-stuff "# rm ~/stow/bash_completion/*^M"
-stuff "# for c in \${command[@]} ; do ln ~/dot/bash/bash_completion/\$c ~/stow/bash_completion/\$c ; done^M"
-stuff "# stow -n --verbose=2 -t /etc/bash_completion.d -d ~drbean/stow -R bash_completion^M"
+stuff "declare -a hook=( post-commit )^M"
+stuff "echo \${hook[@]}^M"
+stuff "for h in \${hook[@]} ; do diff -u ~/dot/vcs/svn/hooks/\$h ~/stow/hooks/\$h ; done^M"
+stuff "for h in \${hook[@]} ; do diff -u ~/dot/vcs/svn/hooks/\$h /srv/svn/esprimo/hooks/\$h ; done^M"
+stuff "# rm ~/stow/hooks/*^M"
+stuff "# for h in \${hook[@]} ; do ln ~/dot/vcs/svn/hooks/\$r ~/stow/hooks/\$h ; done^M"
+stuff "# stow -n --verbose=2 -t /srv/svn/esprimo -d ~drbean/stow -R hooks^M"
 
 # root Azy4476
 

@@ -1,0 +1,3 @@
+cd /cygdrive/c/Users/Public/Desktop
+ls -al
+ssh root

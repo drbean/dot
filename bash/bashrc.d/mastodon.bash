@@ -40,6 +40,19 @@ function conitzer () {
 	i=$1
 	status=status-$i.json
 	conitzers=~/curriculum/pages/mastodon/math/conitzer
+	story=$M/ConitzerFail.md
+	enterline=$(( $(wc -l < $story) - 11 ))
 	mv $(pwd)/$status $conitzers
-	yq .url $conitzers/$status | sed -nE 's/^"(.*)"$/\[\1]\(\1\)/' >> ~/curriculum/pages/homepage/markdown/ConitzerFail.md
+	url=$(yq .url $conitzers/$status | sed -nE 's/^"(.*)"$/\[\1]\(\1\)/')
+	ai="$url
+\
+	###### Making of the sausage:\
+\
+	###### Sausage prophylactic:\
+\
+	"
+	echo $ai
+	sed -E "${enterline}a\ 
+	$ai"
+
 }

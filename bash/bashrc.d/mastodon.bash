@@ -36,4 +36,10 @@ function mastodon () {
     cd -
 }
 
-
+function conitzer () {
+	i=$1
+	status=status-$i.json
+	conitzers=~/curriculum/pages/mastodon/math/conitzer
+	mv $(pwd)/$status $conitzers
+	yq .url $conitzers/$status | sed -nE 's/^"(.*)"$/\[\1]\(\1\)/' >> ~/curriculum/pages/homepage/markdown/ConitzerFail.md
+}

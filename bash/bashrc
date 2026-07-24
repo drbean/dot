@@ -571,6 +571,43 @@ function question_grade_bett () {
 
 alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
+function screenwriter () {
+    a=$1
+    OPTIND=1
+    local arg SCREEN
+    while getopts 'w:a' arg
+    do
+	SCREENRC=$HOME/dot/screen/$a.rc
+        case ${arg} in
+            w) SCREEN+=( "${OPTARG}" ) ;;
+            a) SCREEN=( "all" ) ;;
+	    *) echo "opts: -w -a" ; exit 0 # illegal option
+        esac
+    done
+    shift $(( OPTIND - 1 ))
+    if [[ $SCREEN == *all* ]] ; then
+	cat $HOME/dot/screen/${a}s/*.rc > $SCREENRC
+    else
+	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
+	for s in ${SCREEN[@]} ; do
+	    echo w=$s
+	    cat $HOME/dot/screen/$a/$s.rc >> $SCREENRC
+	done
+    fi
+    echo ${SCREEN[*]} $SCREENRC
+    export SCREEN SCREENRC
+    sessionname=
+    for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
+	sessionname+="${SCREEN[$i]},"
+    done
+    echo SCREENRC=$SCREENRC a_sessionname=$a.${sessionname%,}
+    screen -c $SCREENRC -S $a.${sessionname%,}
+}
+
+for a in shortcut ; do
+    eval "function $a () { screenwriter $a \"\$@\" ; }"
+done
+
 # https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash
 function web () {
     OPTIND=1

@@ -601,11 +601,10 @@ function screenwriter () {
 	sessionname+="${SCREEN[$i]},"
     done
     echo SCREENRC=$SCREENRC a_sessionname=$a.${sessionname%,}
-    screen -c $SCREENRC -S $a.${sessionname%,}
 }
 
 for a in shortcut ; do
-    eval "function $a () { screenwriter $a \"\$@\" ; }"
+    eval "function $a () { screenwriter $a \"\$@\" ; screen -c $SCREENRC -S $a.${sessionname%,} ; }"
 done
 
 # https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash

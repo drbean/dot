@@ -573,7 +573,7 @@ alias hpaste="cd ~/hpaste; screen -dR hpaste; cd -"
 
 function screenwriter () {
     a=$1
-    OPTIND=1
+    OPTIND=2
     local arg SCREEN
     while getopts 'w:a' arg
     do
@@ -590,21 +590,26 @@ function screenwriter () {
     else
 	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
 	for s in ${SCREEN[@]} ; do
-	    echo w=$s
-	    cat $HOME/dot/screen/$a/$s.rc >> $SCREENRC
+	    # echo w=$s >2
+	    cat $HOME/dot/screen/${a}s/$s.rc >> $SCREENRC
 	done
     fi
-    echo ${SCREEN[*]} $SCREENRC
-    export SCREEN SCREENRC
+    chmod 755 $SCREENRC
+    # echo ${SCREEN[*]} $SCREENRC
+    export SCREEN SCREENRC sessionname
     sessionname=
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
 	sessionname+="${SCREEN[$i]},"
     done
-    echo SCREENRC=$SCREENRC a_sessionname=$a.${sessionname%,}
+    echo "$SCREENRC ${sessionname%,}"
 }
 
 for a in shortcut ; do
-    eval "function $a () { screenwriter $a \"\$@\" ; screen -c $SCREENRC -S $a.${sessionname%,} ; }"
+    eval "function $a () {
+	rc_name=\$(screenwriter $a \"\$@\")
+	SCREENRC=\${rc_name% *}
+	sessionname=\${rc_name#* }
+	screen -c \$SCREENRC -S $a.\${sessionname%,} \$SCREENRC ; }"
 done
 
 # https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash

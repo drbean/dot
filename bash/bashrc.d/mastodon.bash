@@ -43,16 +43,19 @@ function conitzer () {
 	story=$M/ConitzerFail.md
 	enterline=$(( $(wc -l < $story) - 11 ))
 	mv $(pwd)/$status $conitzers
-	url=$(yq .url $conitzers/$status | sed -nE 's/^"(.*)"$/\[\1]\(\1\)/')
-	ai="$url
-\
-	###### Making of the sausage:\
-\
-	###### Sausage prophylactic:\
-\
-	"
+	url=$(yq .url $conitzers/$status | sed -nE 's/^"(.*)"$/\[\1]\(\1\)/p')
+	echo url=$url
+	ai="$url\\
+\\
+###### Making of the sausage:\\
+\\
+\\
+###### Sausage prophylactic:\\
+\\
+\\
+"
 	echo $ai
-	sed -E "${enterline}a\ 
-	$ai"
+	sed -i.BAK -E "${enterline}a\\
+$ai" $story
 
 }

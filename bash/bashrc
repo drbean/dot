@@ -28,6 +28,8 @@ export W=/cygdrive/c/Users/$USER
 export D=$W/Downloads
 export M=$HOME/curriculum/pages/homepage/markdown
 
+export TAO="https://teorth.github.io/tao-web/ai-views.html"
+
 export IS='　'
 export COLON='：'
 export AT='＠'

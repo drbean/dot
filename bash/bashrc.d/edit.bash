@@ -1,7 +1,7 @@
 # functions, vars etc instantiated in bashrc for prof paper editing
 
 alias jasoncclu='edit -s jasoncclu -f v2g -w ed -w vcs'
-alias huichiehli='edit -s huichiehli -f gap -w ed -w vcs'
+alias huichiehli='edit -s huichiehli -f active -w vcs -w ed'
 alias issues='edit -s huichiehli -f gap -w issues'
 function edit () {
     OPTIND=1
@@ -63,4 +63,16 @@ function edit () {
 # returns previous \$FILE commit/ci message parameterized on number before
 function ci () { n=$1 ; svn log $F | head -n $((4 * $n)) | tail -n 1 ; }
 
-export edit ci
+function package_product () {
+
+	MINE=my_$FILE; pandoc -o $MINE.docx --reference-doc=./$FILE.docx $FILE.md
+	pandoc -o issues.docx issues.md
+}
+
+function upload_product () {
+	cd ~/profedit/$SOURCE
+	lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && mput their_$FILE.docx issues.docx"
+	lftp -c "open sftp://drbean@freeshell.org && lcd media/diff/$FILE/ && cd edit/$SOURCE && mput diffchar.png gitdiff.png"
+}
+
+export edit ci upload_product

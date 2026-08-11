@@ -2,7 +2,8 @@
 
 alias jasoncclu='edit -s jasoncclu -f v2g -w ed -w vcs'
 alias huichiehli='edit -s huichiehli -f active -w vcs -w ed'
-alias issues='edit -s huichiehli -f gap -w issues'
+alias jkliang='edit -s jkliang -f ai -w vcs -w ed'
+alias issues='edit -s jkliang -f ai -w issues'
 function edit () {
     OPTIND=1
     local arg SOURCE REPO FILE SCREEN

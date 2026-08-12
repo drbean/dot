@@ -1,0 +1,3 @@
+# mastodon.bash
+
+screen v bash/bashrc.d/mastodon.bash

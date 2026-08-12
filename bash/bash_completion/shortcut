@@ -1,9 +1,9 @@
-# file: stowit
-# stowit parameter completion
-# copied from pages
+# file: shortcut
+# shortcut parameter completion
+# copied from stowit
 # https://www.baeldung.com/linux/shell-auto-completion
 
-function _stowit () {
+function _shortcut () {
 	local cur prev opts fileopts diropts keywords
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
@@ -13,8 +13,7 @@ function _stowit () {
 	fileopts="-a"
 	diropts="-w"
 
-	app="stowit"
-	prof="jasoncclu ylkao jkliang"
+	app="shortcut"
 	words=""
 
 	# if [[ ${prev} =~ ${fileopts} ]]; then
@@ -26,11 +25,11 @@ function _stowit () {
 	# fi
 
 	case "${prev}" in
-		stowit)
+		shortcut)
 			words="-w -a"
 			;;
 		-w)
-			cd ~/dot/screen/stowits
+			cd ~/dot/screen/shortcuts
 			rc=( $(compgen -f -- ${cur}) )
 			COMPREPLY=( ${rc[@]%.*} )
 			return 0
@@ -41,4 +40,4 @@ function _stowit () {
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )
 }
-complete -F _stowit stowit
+complete -F _shortcut shortcut

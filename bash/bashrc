@@ -600,12 +600,47 @@ function screenwriter () {
     echo "$SCREENRC ${sessionname%,}"
 }
 
-for a in shortcut ; do
-    eval "function $a () {
-	rc_name=\$(screenwriter $a \"\$@\")
+for app in bash_completion shortcut ; do
+    eval "function $app () {
+	rc_name=\$(screenwriter $app \"\$@\")
 	SCREENRC=\${rc_name% *}
 	sessionname=\${rc_name#* }
-	screen -c \$SCREENRC -S $a.\${sessionname%,} \$SCREENRC ; }"
+	screen -c \$SCREENRC -S $app.\${sessionname%,} \$SCREENRC ; }"
+
+   echo "# file: $app
+# $app parameter completion
+# created by bashrc on startup
+
+function _${app} () {
+	local cur prev opts fileopts diropts keywords
+	COMPREPLY=()
+	cur=\"\${COMP_WORDS[COMP_CWORD]}\"
+	prev=\"\${COMP_WORDS[COMP_CWORD-1]}\"
+	prev2=\"\${COMP_WORDS[COMP_CWORD-2]}\"
+	opts=\"-w -a\"
+	fileopts=\"-a\"
+	diropts=\"-w\"
+
+	words=\"\"
+
+	case \"\${prev}\" in
+		${app})
+			words=\"-w -a\"
+			;;
+		-w)
+			cd ~/dot/screen/${app}s
+			rc=( \$(compgen -f -- \${cur}) )
+			COMPREPLY=( \${rc[@]%.*} )
+			return 0
+			;;
+		*)
+			words=\"-a\"
+			;;
+	esac
+	COMPREPLY=( \$(compgen -W \"\$words\" -- \$cur) )
+}
+complete -F _${app} ${app}" > ~/dot/bash/bash_completion/$app
+
 done
 
 # https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash

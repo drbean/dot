@@ -16,14 +16,6 @@ function _shortcut () {
 	app="shortcut"
 	words=""
 
-	# if [[ ${prev} =~ ${fileopts} ]]; then
-	# COMPREPLY=( $(compgen -f -- ~/profstowit/${cur}) )
-	# return 0
-	# elif [[ ${prev} =~ ${diropts} ]]; then
-	# COMPREPLY=( $(compgen -d -- ~/profstowit/${cur}) )
-	# return 0
-	# fi
-
 	case "${prev}" in
 		shortcut)
 			words="-w -a"

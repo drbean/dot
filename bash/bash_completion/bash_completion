@@ -4,7 +4,7 @@
 
 app=bash_completion
 
-function _$app () {
+function _bash_completion () {
 	local cur prev opts fileopts diropts keywords
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"

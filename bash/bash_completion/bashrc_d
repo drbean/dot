@@ -1,8 +1,8 @@
-# file: shortcut
-# shortcut parameter completion
+# file: bashrc_d
+# bashrc_d parameter completion
 # created by bashrc on startup
 
-function _shortcut () {
+function _bashrc_d () {
 	local cur prev opts fileopts diropts keywords
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
@@ -15,11 +15,11 @@ function _shortcut () {
 	words=""
 
 	case "${prev}" in
-		shortcut)
+		bashrc_d)
 			words="-w -a"
 			;;
 		-w)
-			cd ~/dot/screen/shortcuts
+			cd ~/dot/screen/bashrc_ds
 			rc=( $(compgen -f -- ${cur}) )
 			COMPREPLY=( ${rc[@]%.*} )
 			return 0
@@ -30,4 +30,4 @@ function _shortcut () {
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )
 }
-complete -F _shortcut shortcut
+complete -F _bashrc_d bashrc_d

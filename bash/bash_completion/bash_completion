@@ -1,8 +1,6 @@
 # file: bash_completion
-# shortcut parameter completion
-# copied from shortcut
-
-app=bash_completion
+# bash_completion parameter completion
+# created by bashrc on startup
 
 function _bash_completion () {
 	local cur prev opts fileopts diropts keywords
@@ -16,20 +14,12 @@ function _bash_completion () {
 
 	words=""
 
-	# if [[ ${prev} =~ ${fileopts} ]]; then
-	# COMPREPLY=( $(compgen -f -- ~/profstowit/${cur}) )
-	# return 0
-	# elif [[ ${prev} =~ ${diropts} ]]; then
-	# COMPREPLY=( $(compgen -d -- ~/profstowit/${cur}) )
-	# return 0
-	# fi
-
 	case "${prev}" in
-		"${app}")
+		bash_completion)
 			words="-w -a"
 			;;
 		-w)
-			cd ~/dot/screen/${app}s
+			cd ~/dot/screen/bash_completions
 			rc=( $(compgen -f -- ${cur}) )
 			COMPREPLY=( ${rc[@]%.*} )
 			return 0
@@ -40,4 +30,4 @@ function _bash_completion () {
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )
 }
-complete -F _${app} "${app}"
+complete -F _bash_completion bash_completion

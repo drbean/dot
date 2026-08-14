@@ -600,7 +600,7 @@ function screenwriter () {
     echo "$SCREENRC ${sessionname%,}"
 }
 
-for app in bash_completion shortcut ; do
+for app in bash_completion bashrc_d shortcut ; do
     eval "function $app () {
 	rc_name=\$(screenwriter $app \"\$@\")
 	SCREENRC=\${rc_name% *}

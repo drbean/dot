@@ -3,8 +3,8 @@
 screen 3
 stuff "cd ~/stow/^M"
 stuff "ls -al^M"
-stuff "declare -a cmd=( \"active_tooter\" \"blog.sh\" \"common.sh\" \"easyblogger\" \"masto_master_messter\" \"post.sh\" \"toot\" \"trurl\")^M"
-stuff "declare -A key_cmd=( [mastodon]=\"{active_tooter,masto_master_messter}\" [posse]=\"{blog.sh,common.sh,pub}\" [.]=\"post.sh\" [posse/easyblogger/.venv39/bin]=\"easyblogger\" [../../dot/browser/toot/.venv.39/bin]=\"toot\" [../../edit/email/trurl]=\"trurl.exe\")^M"
+stuff "declare -a cmd=( \"active_tooter\" \"blog.sh\" \"common.sh\" \"easyblogger\" \"masto_master_messter\" \"post.sh\" \"toot\" \"trurl\" \"webcaster.sh\")^M"
+stuff "declare -A key_cmd=( [mastodon]=\"{active_tooter,masto_master_messter,webcaster.sh}\" [posse]=\"{blog.sh,common.sh,pub}\" [.]=\"post.sh\" [posse/easyblogger/.venv39/bin]=\"easyblogger\" [../../dot/browser/toot/.venv.39/bin]=\"toot\" [../../edit/email/trurl]=\"trurl.exe\")^M"
 stuff "for dir in \${!key_cmd[*]} ; do for app in \$(eval echo \${key_cmd[\$dir]})  ; do echo \$dir: \$app ; diff -u ~/curriculum/pages/\$dir/\$app ~/stow/local/bin/\$app ; done ; done^M"
 stuff "# for dir in \${!key_cmd[@]} ; do for app in \${!key_cmd[\$dir]} ; do diff -u ~/curriculum/pages/\$dir/\$app ~/stow/local/bin/\$app ; done ; done^M"
 stuff "# for app in \${cmd[@]} ; do diff -u  ~/stow/local/bin/\$app /usr/local/bin/\$app ; done^M"

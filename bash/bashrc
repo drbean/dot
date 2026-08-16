@@ -605,7 +605,7 @@ for app in bash_completion bashrc_d screening shortcut ; do
 	rc_name=\$(screenwriter $app \"\$@\")
 	SCREENRC=\${rc_name% *}
 	sessionname=\${rc_name#* }
-	screen -c \$SCREENRC -S $app.\${sessionname%,} \$SCREENRC ; }"
+	screen -S $app.\${sessionname%,} \$SCREENRC ; }"
 
     if ! [[ -r ~/dot/bash/bash_completion/$app ]] ; then
 	echo "# file: $app

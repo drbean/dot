@@ -600,14 +600,15 @@ function screenwriter () {
     echo "$SCREENRC ${sessionname%,}"
 }
 
-for app in bash_completion bashrc_d shortcut ; do
+for app in bash_completion bashrc_d screening shortcut ; do
     eval "function $app () {
 	rc_name=\$(screenwriter $app \"\$@\")
 	SCREENRC=\${rc_name% *}
 	sessionname=\${rc_name#* }
 	screen -c \$SCREENRC -S $app.\${sessionname%,} \$SCREENRC ; }"
 
-   echo "# file: $app
+    if ! [[ -r ~/dot/bash/bash_completion/$app ]] ; then
+	echo "# file: $app
 # $app parameter completion
 # created by bashrc on startup
 
@@ -640,6 +641,7 @@ function _${app} () {
 	COMPREPLY=( \$(compgen -W \"\$words\" -- \$cur) )
 }
 complete -F _${app} ${app}" > ~/dot/bash/bash_completion/$app
+    fi
 
 done
 

@@ -33,9 +33,9 @@ function edit () {
     fi
     echo ${SCREEN[*]} $SCREENRC
     export SCREEN
-    sessionname=
+    screenname=
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
-	sessionname+="${SCREEN[$i]},"
+	screenname+="${SCREEN[$i]},"
     done
     cd ~/profedit/$SOURCE
     REPO=${REPO:-'.'}
@@ -44,7 +44,7 @@ function edit () {
     R=$(svn info $F | sed -nE '5s/^.*(\^.*$)/\1/p')
     PREV=$(ci 1)
     export SOURCE REPO FILE F R1 R PREV
-    screen -dR ${SOURCE#*/}.$FILE.${sessionname%,}
+    screen -dR ${SOURCE#*/}.$FILE.${screenname%,}
 }
 
 # returns previous \$FILE commit/ci message parameterized on number before

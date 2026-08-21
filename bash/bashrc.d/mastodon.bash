@@ -64,5 +64,6 @@ $content\\
 	echo enterline = $enterline
 	sed -i.BAK -E "${enterline}a\\
 $ai" $story
+	tt ::pages -t AIFail -s ConitzerFail
 
 }

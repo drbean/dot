@@ -41,9 +41,10 @@ function edit () {
     REPO=${REPO:-'.'}
     F=$HOME/profedit/$SOURCE/$FILE.md
     R1=$(svn log -q -r 1:HEAD --limit 1 $F | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')
+    GIT_R1=$(git log --diff-filter=A -- $FILE.md | sed -nE '1s/^commit ([a-z0-9]*)$/\1/p')
     R=$(svn info $F | sed -nE '5s/^.*(\^.*$)/\1/p')
     PREV=$(ci 1)
-    export SOURCE REPO FILE F R1 R PREV
+    export SOURCE REPO FILE F R1 GIT_R1 R PREV
     screen -dR ${SOURCE#*/}.$FILE.${screenname%,}
 }
 

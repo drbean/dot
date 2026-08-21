@@ -37,23 +37,7 @@ function edit () {
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
 	sessionname+="${SCREEN[$i]},"
     done
-    # svn mkdir ~/edit/branches/$source
-    # svn up ~/edit/branches/$source --depth empty
-    # svn up ~/edit/branches/$source/$file.md
-    # svn up ~/edit/branches/$source/issues.md
     cd ~/profedit/$SOURCE
-    # cd ~/edit/trunk/$source
-    #if [[ ! -e ~/edit/gitedit ]] ; then
-    #    git clone http://github.com/drbean/edit ~/edit/gitedit
-    #elif [[ ! -e ~/edit/gitedit/$source ]] ; then
-    #    cd ~/edit/gitedit
-    #    git checkout $source
-    #else
-    #    cd ~/edit/gitedit/$source
-    #    git checkout $source
-    #fi
-    #cd ~/edit/gitedit/$source
-    #git status
     REPO=${REPO:-'.'}
     F=$HOME/profedit/$SOURCE/$FILE.md
     R1=$(svn log -q -r 1:HEAD --limit 1 $F | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')

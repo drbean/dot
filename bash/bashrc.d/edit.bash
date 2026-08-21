@@ -3,7 +3,9 @@
 alias jasoncclu='edit -s jasoncclu -f v2g -w ed -w vcs'
 alias huichiehli='edit -s huichiehli -f active -w vcs -w ed'
 alias jkliang='edit -s jkliang -f ai -w vcs -w ed'
-alias issues='edit -s jkliang -f ai -w issues'
+alias yschien='edit -s yschien -f comparison -w vcs -w ed'
+alias product='edit -s yschien -f comparison -w pandoc -w cygstart -w lftp'
+alias issues='edit -s yschien -f comparison -w issues'
 function edit () {
     OPTIND=1
     local arg SOURCE REPO FILE SCREEN
@@ -30,7 +32,7 @@ function edit () {
 	done
     fi
     echo ${SCREEN[*]} $SCREENRC
-    export SCREEN SCREENRC
+    export SCREEN
     sessionname=
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
 	sessionname+="${SCREEN[$i]},"
@@ -58,7 +60,7 @@ function edit () {
     R=$(svn info $F | sed -nE '5s/^.*(\^.*$)/\1/p')
     PREV=$(ci 1)
     export SOURCE REPO FILE F R1 R PREV
-    screen -c $SCREENRC -dR ${SOURCE#*/}.$FILE.${sessionname%,}
+    screen -dR ${SOURCE#*/}.$FILE.${sessionname%,}
 }
 
 # returns previous \$FILE commit/ci message parameterized on number before
@@ -72,7 +74,7 @@ function package_product () {
 
 function upload_product () {
 	cd ~/profedit/$SOURCE
-	lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && mput their_$FILE.docx issues.docx"
+	lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && mput their_$FILE.docx issues.docx issues.md -o issues.txt"
 	lftp -c "open sftp://drbean@freeshell.org && lcd media/diff/$FILE/ && cd edit/$SOURCE && mput diffchar.png gitdiff.png"
 }
 

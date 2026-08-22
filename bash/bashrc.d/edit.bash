@@ -11,7 +11,7 @@ function edit () {
     local arg SOURCE REPO FILE SCREEN
     while getopts 's:r:f:w:a' arg
     do
-	SCREENRC=$HOME/dot/screen/edit.rc
+	SESSIONSH=$HOME/dot/screen/edit.sh
         case ${arg} in
             s) SOURCE=${OPTARG};;
             r) REPO=${OPTARG};;
@@ -23,15 +23,17 @@ function edit () {
     done
     shift $(( OPTIND - 1 ))
     if [[ $SCREEN == *all* ]] ; then
-	cat $HOME/dot/screen/edits/*.rc > $SCREENRC
+	cat $HOME/dot/screen/edits/*.sh > $SESSIONSH
     else
-	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
+	if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
+	echo -e '#!\n\n' > $SESSIONSH
+	chmod 755 $SESSIONSH
 	for s in ${SCREEN[@]} ; do
 	    echo w=$s
-	    cat $HOME/dot/screen/edits/$s.rc >> $SCREENRC
+	    echo "screen $HOME/dot/screen/edits/$s.sh" >> $SESSIONSH
 	done
     fi
-    echo ${SCREEN[*]} $SCREENRC
+    echo ${SCREEN[*]} $SESSIONSH
     export SCREEN
     screenname=
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
@@ -45,7 +47,7 @@ function edit () {
     R=$(svn info $F | sed -nE '5s/^.*(\^.*$)/\1/p')
     PREV=$(ci 1)
     export SOURCE REPO FILE F R1 GIT_R1 R PREV
-    screen -dR ${SOURCE#*/}.$FILE.${screenname%,}
+    screen -dR ${SOURCE#*/}.$FILE.${screenname%,} $SESSIONSH
 }
 
 # returns previous \$FILE commit/ci message parameterized on number before

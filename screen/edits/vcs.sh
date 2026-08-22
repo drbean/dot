@@ -4,5 +4,4 @@ $(svn diff $F)
 
 PREV = $PREV
 "
-cd ~/profedit/$SOURCE
 exec bash -l

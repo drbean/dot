@@ -573,7 +573,7 @@ function screenwriter () {
     local arg SCREEN
     while getopts 'w:a' arg
     do
-	SCREENRC=$HOME/dot/screen/$a.rc
+	SESSIONSH=$HOME/dot/screen/$a.sh
         case ${arg} in
             w) SCREEN+=( "${OPTARG}" ) ;;
             a) SCREEN=( "all" ) ;;
@@ -582,30 +582,34 @@ function screenwriter () {
     done
     shift $(( OPTIND - 1 ))
     if [[ $SCREEN == *all* ]] ; then
-	cat $HOME/dot/screen/${a}s/*.rc > $SCREENRC
+	cat $HOME/dot/screen/${a}s/*.sh > $SESSIONSH
     else
-	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
+	if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
+	touch $SESSIONSH
+	chmod 755 $SESSIONSH
 	for s in ${SCREEN[@]} ; do
-	    # echo w=$s >2
-	    cat $HOME/dot/screen/${a}s/$s.rc >> $SCREENRC
+	    echo w=$s
+	    cat $HOME/dot/screen/${a}s/$s.sh >> $SESSIONSH
 	done
     fi
-    chmod 755 $SCREENRC
-    # echo ${SCREEN[*]} $SCREENRC
-    export SCREEN SCREENRC sessionname
+    chmod 755 $SESSIONSH
+    # echo ${SCREEN[*]} $SESSIONSH
+    export SCREEN SESSIONSH sessionname
     sessionname=
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
 	sessionname+="${SCREEN[$i]},"
     done
-    echo "$SCREENRC ${sessionname%,}"
+    echo -e "sh_name: $sh_name\nSESSIONSH: $SESSIONSH\nsessionname: $sessionname"
+    echo "$SESSIONSH ${sessionname%,}"
 }
 
 for app in bash_completion bashrc_d screening shortcut ; do
     eval "function $app () {
-	rc_name=\$(screenwriter $app \"\$@\")
-	SCREENRC=\${rc_name% *}
-	sessionname=\${rc_name#* }
-	screen -S $app.\${sessionname%,} \$SCREENRC ; }"
+	sh_name=\$(screenwriter $app \"\$@\")
+	SESSIONSH=\${sh_name% *}
+	sessionname=\${sh_name#* }
+	echo -e "sh_name: $sh_name, SESSIONSH: $SESSIONSH, sessionname: $sessionname"
+	screen -S $app.\${sessionname%,} \$SESSIONSH ; }"
 
     if ! [[ -r ~/dot/bash/bash_completion/$app ]] ; then
 	echo "# file: $app

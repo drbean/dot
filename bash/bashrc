@@ -238,24 +238,6 @@ function path_remove () {
 #     chmod 775 /usr/local/bin/$basename
 # }
 
-function stowit () {
-    OPTIND=1
-    local arg SCREEN SCREENRC
-    while getopts 'w:a' arg
-    do
-        case ${arg} in
-            w) SCREENRC="$HOME/dot/screen/stowits/${OPTARG}.rc"
-		SCREEN=${OPTARG};;
-            a) SCREENRC="$HOME/dot/screen/stowit.rc"
-		SCREEN="all"
-		cat ~/dot/screen/stowits/*.rc > $SCREENRC;;
-	    *) echo "opts: -w -a" ; exit 0 # illegal option
-        esac
-    done
-    # screen -c $SCREENRC -S stow
-    screen -c $SCREENRC -dR stow.$SCREEN
-}
-
 function rec () {
     file=$1
     basename=${file##*/}
@@ -603,7 +585,7 @@ function screenwriter () {
     echo "$SESSIONSH ${sessionname%,}"
 }
 
-for app in bash_completion bashrc_d screening shortcut ; do
+for app in bash_completion bashrc_d screening shortcut stowit ; do
     eval "function $app () {
 	sh_name=\$(screenwriter $app \"\$@\")
 	SESSIONSH=\${sh_name% *}

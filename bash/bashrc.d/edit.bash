@@ -26,7 +26,8 @@ function edit () {
 	cat $HOME/dot/screen/edits/*.sh > $SESSIONSH
     else
 	if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
-	echo -e '#!\n\n' > $SESSIONSH
+	# echo -e '#!\n\n' > $SESSIONSH
+	touch $SESSIONSH
 	chmod 755 $SESSIONSH
 	for s in ${SCREEN[@]} ; do
 	    echo w=$s
@@ -61,7 +62,7 @@ function package_product () {
 
 function upload_product () {
 	cd ~/profedit/$SOURCE
-	lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && mput their_$FILE.docx issues.docx issues.md -o issues.txt"
+	lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && mput their_$FILE.docx issues.docx issues.md"
 	lftp -c "open sftp://drbean@freeshell.org && lcd media/diff/$FILE/ && cd edit/$SOURCE && mput diffchar.png gitdiff.png"
 }
 

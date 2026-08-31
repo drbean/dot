@@ -1,0 +1,4 @@
+cd ~/dot/screen/edits && pwd && ls && exec bash -l
+cd ~/dot/screen/edits && pwd && ls && exec bash -l
+cd ~/dot/screen/shortcuts && pwd && ls && exec bash -l
+cd ~/dot/screen/shortcuts && pwd && ls && exec bash -l

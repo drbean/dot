@@ -1,0 +1,2 @@
+cd ~/dot/screen/edits && pwd && ls && exec bash -l
+cd ~/dot/screen && pwd && echo && ls -B && exec bash -l

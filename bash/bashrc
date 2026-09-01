@@ -570,7 +570,7 @@ function screenwriter () {
 	touch $SESSIONSH
 	chmod 755 $SESSIONSH
 	for s in ${SCREEN[@]} ; do
-	    echo w=$s
+	    # echo w=$s
 	    cat $HOME/dot/screen/${a}s/$s.sh >> $SESSIONSH
 	done
     fi
@@ -581,7 +581,7 @@ function screenwriter () {
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
 	sessionname+="${SCREEN[$i]},"
     done
-    echo -e "sh_name: $sh_name\nSESSIONSH: $SESSIONSH\nsessionname: $sessionname"
+    # echo -e "sh_name: $sh_name\nSESSIONSH: $SESSIONSH\nsessionname: $sessionname"
     echo "$SESSIONSH ${sessionname%,}"
 }
 
@@ -590,7 +590,7 @@ for app in bash_completion bashrc_d screening shortcut stowit ; do
 	sh_name=\$(screenwriter $app \"\$@\")
 	SESSIONSH=\${sh_name% *}
 	sessionname=\${sh_name#* }
-	echo -e "sh_name: $sh_name, SESSIONSH: $SESSIONSH, sessionname: $sessionname"
+	echo -e "sh_name: \$sh_name, SESSIONSH: \$SESSIONSH, sessionname: \$sessionname"
 	screen -S $app.\${sessionname%,} \$SESSIONSH ; }"
 
     if ! [[ -r ~/dot/bash/bash_completion/$app ]] ; then

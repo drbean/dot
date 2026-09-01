@@ -1,9 +1,5 @@
 # bash_completion
 
-echo "sourcing bashrc, bash_profile"
-source ~/.bashrc
-source ~/.bash_profile
-
 cd ~/stow/bash_completion
 echo pwd: $(pwd)
 

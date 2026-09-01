@@ -1,10 +1,22 @@
 # bash_completion
 
+<<<<<<< .working
 screen 2
 stuff "cd ~/stow/^M"
 stuff "ls -al^M"
 stuff "declare -a command=( \$( ls ~/dot/bash/bash_completion/ --hide=*~ ) )^M"
-stuff "echo ${command[@]}^M"
+stuff "echo \${command[@]}^M"
+stuff "for c in \${command[@]} ; do diff -u ~/dot/bash/bash_completion/\$c ~/stow/bash_completion/\$c ; done^M"
+stuff "for c in \${command[@]} ; do diff -u ~/dot/bash/bash_completion/\$c ~/.local/share/bash-completion/completions/\$c ; done^M"
+stuff "# rm ~/stow/bash_completion/*^M"
+stuff "# for c in \${command[@]} ; do ln ~/dot/bash/bash_completion/\$c ~/stow/bash_completion/\$c ; done^M"
+stuff "# stow -n  --verbose=2 -t ~/.local/share/bash-completion/completions -d ~drbean/stow -R bash_completion^M"
+||||||| .merge-left.r8932
+screen 2
+stuff "cd ~/stow/^M"
+stuff "ls -al^M"
+stuff "declare -a command=( \$( ls ~/dot/bash/bash_completion/ --hide=*~ ) )^M"
+stuff "echo \${command[@]}^M"
 stuff "for c in \${command[@]} ; do diff -u ~/dot/bash/bash_completion/\$c ~/stow/bash_completion/\$c ; done^M"
 stuff "for c in \${command[@]} ; do diff -u ~/dot/bash/bash_completion/\$c /etc/bash_completion.d/\$c ; done^M"
 stuff "# rm ~/stow/bash_completion/*^M"
@@ -14,3 +26,45 @@ stuff "# stow -n --verbose=2 -t /etc/bash_completion.d -d ~drbean/stow -R bash_c
 # root Azy4476
 
 stuff "ssh root^M"
+=======
+echo "sourcing bashrc, bash_profile"
+source ~/.bashrc
+source ~/.bash_profile
+
+cd ~/stow/bash_completion
+echo pwd: $(pwd)
+
+declare -a command=( $( ls ~/dot/bash/bash_completion/ --hide=*~ ) )
+echo bash_completion command="( ${command[@]} )"
+
+echo "Checking ~/dot, ~/stow diffs"
+for c in ${command[@]} ; do diff -u ~/dot/bash/bash_completion/$c ~/stow/bash_completion/$c ; done
+echo
+
+echo "Checking ~/dot/ /etc/bash_completion.d diffs"
+for c in ${command[@]} ; do diff -u ~/dot/bash/bash_completion/$c /etc/bash_completion.d/$c ; done
+echo
+
+rm ~/stow/bash_completion/* ; echo "Removing stow/bash_completion/*"
+echo
+
+echo "Linking ~/dot/bash_completion/* <- ~/stow/bash_completion/*"
+for c in ${command[@]} ; do ln --symbolic ../../dot/bash/bash_completion/$c ~/stow/bash_completion ; done
+echo
+
+echo "Stowing bash_completion files in /etc/bash_completion.d"
+# stow -n --verbose=2 -t /etc/bash_completion.d -d $HOME/stow -R bash_completion
+# stow --verbose=2 -t /etc/bash_completion.d -d $HOME/stow -R bash_completion
+stow --verbose=2 -t /etc/bash_completion.d -d $HOME/stow -R bash_completion --adopt
+
+echo "Checking ~/dot/bash/bash_completion files"
+ls -al ~/dot/bash/bash_completion
+
+echo "Checking  ~/stow/bash_completion files"
+ls -al ~/stow/bash_completion
+
+echo "Checking  /etc/bash_completion.d files"
+ls -al /etc/bash_completion.d
+
+exec bash -l
+>>>>>>> .merge-right.r9530

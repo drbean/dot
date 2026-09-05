@@ -10,8 +10,8 @@ echo "Checking ~/dot, ~/stow diffs"
 for c in ${command[@]} ; do diff -u ~/dot/bash/bash_completion/$c ~/stow/bash_completion/$c ; done
 echo
 
-echo "Checking ~/dot/ /etc/bash_completion.d diffs"
-for c in ${command[@]} ; do diff -u ~/dot/bash/bash_completion/$c /etc/bash_completion.d/$c ; done
+echo "Checking ~/dot/ /~/.local/share/bash-completion/completions diffs"
+for c in ${command[@]} ; do diff -u ~/dot/bash/bash_completion/$c ~/.local/share/bash-completion/completions/$c ; done
 echo
 
 echo "Removing stow/bash_completion/*"

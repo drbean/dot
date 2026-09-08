@@ -2,7 +2,7 @@
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+	source ~/.bashrc
 fi
 
 # fedora22 ~/.bashrc
@@ -116,5 +116,8 @@ if [[ $(uname) =~ ^CYGWIN ]] ; then
     ## ingydotnet/git-subrepo
     #source ~/dot/git/git-subrepo/.rc
 fi
+
+# svn completion
+source /usr/share/bash-completion/completions/svn
 
 # .bashrc

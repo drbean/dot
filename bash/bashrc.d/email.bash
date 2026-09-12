@@ -655,7 +655,7 @@ function premail () {
     cd -
 }
 
-alias E="email -l kr -a west -c '*'"
+alias Em="email -l kr -a all -c '*'"
 # stage email batches from an area
 function email () {
     OPTIND=1

@@ -1,7 +1,7 @@
 # functions, vars etc instantiated in bashrc for mastodon use
 # other script files in curriculum/pages/mastodon,posse
 
-declare -xA instance=( [soc]=mastodon.social [ja]=mstdn.jp [ko]=duk.space [zh]=g0v.social [math]=mathstodon.xyz [sec]=infosec.exchange [hack]=hachyderm.io)
+declare -xA instance=( [burn]=burningboard.net [soc]=mastodon.social [ja]=mstdn.jp [ko]=duk.space [zh]=g0v.social [math]=mathstodon.xyz [sec]=infosec.exchange [hack]=hachyderm.io)
 
 declare -x instanceS="${!instance[@]}"
 
@@ -23,31 +23,32 @@ function unfollow_follow () { account=$1 ; preinstance=$2 ; postinstance=$3 ;  $
 
 function mastodon () {
     OPTIND=0
-    local arg ACCOUNT
+    local arg ACCOUNT SESSIONSH
+    SESSIONSH=$HOME/dot/screen/mastodon.sh
     while getopts 'a:' arg
     do
         case ${arg} in
             a) ACCOUNT=${OPTARG};;
         esac
     done
-    export ACCOUNT
+    export ACCOUNT SESSIONSH
     cd ~/curriculum/pages/mastodon
-    screen -c /home/$USER/dot/screen/toot.rc -dR mastodon
+    screen -dR mastodon $SESSIONSH
     cd -
 }
 
 function conitzer () {
-	i=$1
-	status=status-$i.json
-	conitzers=~/curriculum/pages/mastodon/math/conitzer
-	story=$M/ConitzerFail.md
-	enterline=$(( $(wc -l < $story) - 11 ))
-	mv $(pwd)/$status $conitzers
-	url=$(yq -r .url $conitzers/$status | sed -nE 's/^(.*)$/\[\1]\(\1\)/p')
-	content=$(yq -r .content $conitzers/$status | sed -nE 's/"/\\"/gp')
-	echo url = $url
-	echo content = $content
-	ai="### $url\\
+    i=$1
+    status=status-$i.json
+    conitzers=~/curriculum/pages/mastodon/math/conitzer
+    story=$M/ConitzerFail.md
+    enterline=$(( $(wc -l < $story) - 11 ))
+    mv $(pwd)/$status $conitzers
+    url=$(yq -r .url $conitzers/$status | sed -nE 's/^(.*)$/\[\1]\(\1\)/p')
+    content=$(yq -r .content $conitzers/$status | sed -nE 's/"/\\"/gp')
+    echo url = $url
+    echo content = $content
+    ai="### $url\\
 \\
 ###### Conitzer toot content:\\
 \\
@@ -60,10 +61,10 @@ $content\\
 ###### Sausage prophylactic:\\
 \\
 "
-	echo ai = $ai
-	echo enterline = $enterline
-	sed -i.BAK -E "${enterline}a\\
+    echo ai = $ai
+    echo enterline = $enterline
+    sed -i.BAK -E "${enterline}a\\
 $ai" $story
-	tt ::pages -t AIFail -s ConitzerFail
+    tt ::pages -t AIFail -s ConitzerFail
 
 }

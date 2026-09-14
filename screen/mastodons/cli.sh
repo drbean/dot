@@ -1,0 +1,10 @@
+# cli
+echo "pwd=$(pwd)"
+echo
+
+toot -h
+echo
+
+toot auth
+exec bash -l
+

@@ -12,30 +12,16 @@ for i in $instanceS ; do
 done
 
 for i in $instanceS; do
-    eval "alias ${i}_toot_tui=\"$i.toot tui -m cygstart\""
+    eval "function ${i}_toot_tui () { $i.toot tui -m cygstart ; }"
 done
+
+echo "for i in \$instanceS ; do screen bash -lic \${i}_toot_tui ; done" > ~/curriculum/pages/mastodon/toot_instance
 
 for i in $instanceS; do
     eval "function $i.pub () { pub -i $i \"\$@\" ; }"
 done
 
 function unfollow_follow () { account=$1 ; preinstance=$2 ; postinstance=$3 ;  $preinstance.toot unfollow $account &&  $postinstance.toot follow  $account ;  }
-
-function mastodon () {
-    OPTIND=0
-    local arg ACCOUNT SESSIONSH
-    SESSIONSH=$HOME/dot/screen/mastodon.sh
-    while getopts 'a:' arg
-    do
-        case ${arg} in
-            a) ACCOUNT=${OPTARG};;
-        esac
-    done
-    export ACCOUNT SESSIONSH
-    cd ~/curriculum/pages/mastodon
-    screen -dR mastodon $SESSIONSH
-    cd -
-}
 
 function conitzer () {
     i=$1

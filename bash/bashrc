@@ -585,7 +585,7 @@ function screenwriter () {
     echo "$SESSIONSH ${sessionname%,}"
 }
 
-for app in bash_completion bashrc_d screening shortcut stowit ; do
+for app in bash_completion bashrc_d mastodon screening shortcut stowit ; do
     eval "function $app () {
 	sh_name=\$(screenwriter $app \"\$@\")
 	SESSIONSH=\${sh_name% *}

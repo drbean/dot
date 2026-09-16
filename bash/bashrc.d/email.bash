@@ -656,6 +656,13 @@ function premail () {
 }
 
 alias Em="email -l kr -a all -c '*'"
+
+function envar_setup () {
+    for envar in LAND AREA COUNTY SCHOOL URL ; do
+        SETX $envar $(declare -n envar ; echo $envar)
+    done
+}
+
 # stage email batches from an area
 function email () {
     OPTIND=1

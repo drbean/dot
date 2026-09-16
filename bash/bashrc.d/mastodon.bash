@@ -17,6 +17,8 @@ done
 
 echo "for i in \$instanceS ; do screen bash -lic \${i}_toot_tui ; done" > ~/curriculum/pages/mastodon/toot_instance
 
+alias mastodon_-o="mastodon -o"
+
 for i in $instanceS; do
     eval "function $i.pub () { pub -i $i \"\$@\" ; }"
 done

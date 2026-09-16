@@ -863,6 +863,12 @@ function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUN
 function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
 function at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
 
+function check_address () {
+    for c in wrong_char unescaped_uri line_ends_space in_addr_space at_mark; do
+        echo -e "\n$c\n" ; $c
+    done
+}
+
 alias Po="postmail -l kr -a west -c '*'"
 # cleanup post-batch posting
 function postmail () {

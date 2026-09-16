@@ -553,17 +553,19 @@ function screenwriter () {
     a=$1
     OPTIND=2
     local arg SCREEN
-    while getopts 'w:a' arg
+    while getopts 'w:ao' arg
     do
 	SESSIONSH=$HOME/dot/screen/$a.sh
         case ${arg} in
             w) SCREEN+=( "${OPTARG}" ) ;;
             a) SCREEN=( "all" ) ;;
-	    *) echo "opts: -w -a" ; exit 0 # illegal option
+	    o) SCREEN=( "original" ) ;;
+	    *) echo "opts: -w -a -o" ; exit 0 # illegal option
         esac
     done
     shift $(( OPTIND - 1 ))
-    if [[ $SCREEN == *all* ]] ; then
+    if [[ $SCREEN == *original* ]] ; then touch $SESSIONSH
+    elif [[ $SCREEN == *all* ]] ; then
 	cat $HOME/dot/screen/${a}s/*.sh > $SESSIONSH
     else
 	if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
@@ -612,7 +614,7 @@ function _${app} () {
 
 	case \"\${prev}\" in
 		${app})
-			words=\"-w -a\"
+			words=\"-w -a -o\"
 			;;
 		-w)
 			cd ~/dot/screen/${app}s
@@ -620,8 +622,14 @@ function _${app} () {
 			COMPREPLY=( \${rc[@]%.*} )
 			return 0
 			;;
-		*)
+		-a)
 			words=\"-a\"
+			;;
+		-o)
+			words=\"-o\"
+			;;
+		*)
+			words=\"-w -a -o\"
 			;;
 	esac
 	COMPREPLY=( \$(compgen -W \"\$words\" -- \$cur) )

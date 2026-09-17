@@ -661,6 +661,12 @@ function envar_setup () {
     done
 }
 
+function start_school () {
+    svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL
+    touch $LAND/$AREA/$COUNTY/$SCHOOL/address.txt
+    for v in svn git ; do $v add $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; done
+}
+
 alias Em="email -l kr -a all -c '*'"
 
 # stage email batches from an area

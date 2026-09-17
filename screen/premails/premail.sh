@@ -1,25 +1,9 @@
 cd ~/edit/email
+
 screen v prof_page.html sourcer.sh
 
-screen 3
-stuff "cd ~/edit/email^M"
-stuff "# for c in wrong_char unescaped_uri line_ends_space in_addr_space at_mark; do echo -e \"\\n\$c\\n\" ; \$c ; done^M"
-stuff "# for i in {2320..2330} ; do  echo \$i ; svn cat -r \$i \^/edit/trunk/email/edit_offer/kr.short.txt | vipe | tee body/kr.short.\$((i+467)).txt > edit_offer/kr.short.txt ; svn ci edit_offer/kr.short.txt -m v\$((i-2317)) ; read next ; done^M"
-stuff "# svn mkdir --parents $LAND/$AREA/$COUNTY/$SCHOOL^M"
-stuff "# touch $LAND/$AREA/$COUNTY/$SCHOOL/address.txt^M"
-stuff "# for v in svn git ; do \$v add $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; done^M"
-stuff "# echo -e \"\$A\\\\nsvn: \"; svn st -q \$A; echo and ; echo -n 'git: '; git status \$A | sed -nE '/modified|branch/p'^M"
-stuff "# cp $A ~/edit/email/faculty.html^M"
-stuff "# svn up $LAND/$AREA/$COUNTY^M"
-stuff "# svn ci $LAND/$AREA/$COUNTY/$SCHOOL -m http://$DEPARTMENT.$SCHOOL.ac.kr^M"
-stuff "# svn ci \$LAND/\$AREA/\$COUNTY/\$SCHOOL -m '$URL'^M"
-stuff "# log_clip &^M"
-stuff "# tail -F $A^M"
+screen bash -lc "< prof_page.html sourcer | curler | addre -l /mailto/ -p mailto: | vipe >> \$A"
 
-screen 1
-stuff "cd ~/edit/email^M"
-stuff "# curl -L \"\" | sed -e '/site_content_sn=/!d' -f page.sed > scratch.html^M"
-stuff "# while read p ; do curl -L \"\${p%\$\'\\r\'}\" | sed -f address.sed | tee -a $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; done < scratch.html^M"
-stuff "# for p in {..} ; do curl -L \"\$p\" | l ; done^M"
-stuff "# curl -L \"$URL\" > faculty.html^M"
-stuff "# for p in {..} ; do echo \"open -t $p\" ; done > scratch.html^M"
+screen svn st -q
+
+exec bash -l

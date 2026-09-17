@@ -651,17 +651,17 @@ function premail () {
     Q="/cygdrive/c/Users/$USER/AppData/Roaming/qutebrowser/config"
     R=$(svn info . | sed -nE '4s/^.*(\^.*$)/\1/p')
     export Q A R LAND AREA COUNTY SCHOOL DEPARTMENT URL
-    screen -c /home/$USER/dot/screen/premail.rc -dR premail.$SCHOOL
+    screen -dR premail.$SCHOOL /home/$USER/dot/screen/premail.sh
     cd -
 }
-
-alias Em="email -l kr -a all -c '*'"
 
 function envar_setup () {
     for envar in LAND AREA COUNTY SCHOOL URL ; do
         SETX $envar $(declare -n envar ; echo $envar)
     done
 }
+
+alias Em="email -l kr -a all -c '*'"
 
 # stage email batches from an area
 function email () {

@@ -1,0 +1,61 @@
+# file: premail
+# premail parameter completion
+# copied from edit
+# https://www.baeldung.com/linux/shell-auto-completion
+
+function _premail () {
+	local cur prev opts fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	for (( i=0 ; i<${#COMP_WORDS[@]} ; i++ )) ; do
+		declare pre$i="${COMP_WORDS[COMP_CWORD-i]}"
+	done
+	opts="-l -a -c -s -u"
+	fileopts="-f"
+	diropts="-a -c -s"
+
+	app="premail pages"
+	prof="jasoncclu ylkao jkliang"
+	words=""
+
+	# if [[ ${prev} =~ ${fileopts} ]]; then
+	# COMPREPLY=( $(compgen -f -- ~/profpremail/${cur}) )
+	# return 0
+	# elif [[ ${prev} =~ ${diropts} ]]; then
+	# COMPREPLY=( $(compgen -d -- ~/profpremail/${cur}) )
+	# return 0
+	# fi
+
+	case "${prev}" in
+		premail)
+			words="-l"
+			;;
+		-l)
+			words="jp kr tw"
+			;;
+		-a)
+			cd ~/edit/email/$pre2
+			COMPREPLY=( $(compgen -d -- ${cur}) )
+			return 0
+			;;
+		-c)
+			cd ~/edit/email/$pre4/$pre2
+			COMPREPLY=( $(compgen -d -- ${cur}) )
+			return 0
+			;;
+		-s)
+			cd ~/edit/email/$pre6/$pre4/$pre2
+			COMPREPLY=( $(compgen -d -- ${cur}) )
+			return 0
+			;;
+		-u)
+			words="https://www.$pre2.ac.jp"
+			;;
+		*)
+			words="${opts}"
+			;;
+	esac
+	COMPREPLY=( $(compgen -W "$words" -- $cur) )
+}
+complete -F _premail premail

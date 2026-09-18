@@ -1,9 +1,9 @@
-# file: premail
-# premail parameter completion
+# file: email
+# email parameter completion
 # copied from edit
 # https://www.baeldung.com/linux/shell-auto-completion
 
-function _premail () {
+function _email () {
 	local cur prev opts fileopts diropts keywords
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
@@ -15,20 +15,20 @@ function _premail () {
 	fileopts="-f"
 	diropts="-a -c -s"
 
-	app="premail pages"
+	app="email pages"
 	prof="jasoncclu ylkao jkliang"
 	words=""
 
 	# if [[ ${prev} =~ ${fileopts} ]]; then
-	# COMPREPLY=( $(compgen -f -- ~/profpremail/${cur}) )
+	# COMPREPLY=( $(compgen -f -- ~/profemail/${cur}) )
 	# return 0
 	# elif [[ ${prev} =~ ${diropts} ]]; then
-	# COMPREPLY=( $(compgen -d -- ~/profpremail/${cur}) )
+	# COMPREPLY=( $(compgen -d -- ~/profemail/${cur}) )
 	# return 0
 	# fi
 
 	case "${prev}" in
-		premail)
+		email)
 			words="-l"
 			;;
 		-l)
@@ -58,4 +58,4 @@ function _premail () {
 	esac
 	COMPREPLY=( $(compgen -W "$words" -- $cur) )
 }
-complete -F _premail premail
+complete -F _email email

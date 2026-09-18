@@ -1,0 +1,4 @@
+cd ~/dot/screen/mastodons &&
+pwd && echo &&
+ls -B && echo && ls ../mastodon.sh && cat ../mastodon.sh &&
+exec bash -l

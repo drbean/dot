@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screening/email.sh:
+echo ~/dot/screen/screenS/email.sh:
 echo
 
-nl ~/dot/screen/screenings/email.sh
+nl ~/dot/screen/screenSs/email.sh
 echo
 
 echo ~/dot/screen/emails:

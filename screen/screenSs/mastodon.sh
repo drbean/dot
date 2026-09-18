@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screening/mastodon.sh:
+echo ~/dot/screen/screenS/mastodon.sh:
 echo
 
-nl ~/dot/screen/screenings/mastodon.sh
+nl ~/dot/screen/screenSs/mastodon.sh
 echo
 
 echo ~/dot/screen/mastodons:

@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screening/spec.sh:
+echo ~/dot/screen/screenS/spec.sh:
 echo
 
-nl ~/dot/screen/screenings/spec.sh
+nl ~/dot/screen/screenSs/spec.sh
 echo
 
 echo ~/dot/screen/specs:

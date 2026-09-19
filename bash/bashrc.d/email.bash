@@ -720,6 +720,20 @@ function commit_bag () {
     done
 }
 
+# function roll_call () {
+#     screen 2
+#     AREALIST, COUNTYLIST, SCHOOLLIST
+#     stuff "declare -a LANDLIST=(tw kr)^M"
+#     stuff "declare -a AREALIST=(tw/all tw/north tw/mid tw/south tw/eastisland kr/east kr/west)^M"
+#     stuff "declare -A COUNTYLIST SCHOOLLIST sc^M"
+#     stuff "for a in \${AREALIST[*]} ; do COUNTYLIST[\$a]=\$(ls \$a | sed '/\^[0-9]*$/d ; /\.txt/d' ) ; done^M"
+#     stuff "for c in \${COUNTYLIST[\$LAND/\$AREA]} ; do SCHOOLLIST[\$c]=\$( ls \$LAND/\$AREA/\$c | sed '/\.txt$/d' | tr '\\n' ' ' ); done^M"
+#     stuff "for c in \${COUNTYLIST[\$LAND/\$AREA]} ; do  for s in \${SCHOOLLIST[\$c]} ; do sc[\$s]=\$c ; done  ; done^M"
+#     stuff "export sc^M"
+#     stuff "# for s in \${!sc[*]} ; do echo -e \$s:\\\\t\${sc[\$s]} ; done | sort^M"
+#     }}]}']]']"
+# }
+
 function UP {
     file=$1
     lftp -c "open sftp://drbean@sdf.org && cd job/$LAND/$AREA && \

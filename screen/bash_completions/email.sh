@@ -1,2 +1,2 @@
-# premail
-v ~/dot/bash/bash_completion/premail
+# email
+v ~/dot/bash/bash_completion/email

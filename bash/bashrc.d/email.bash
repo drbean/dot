@@ -720,6 +720,24 @@ function commit_bag () {
     done
 }
 
+# function address_pack () {
+#     
+# # clean address.txt
+# stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'unescaped http web page links'^M"
+# stuff "# wrong_char^M"
+# stuff "# unescaped_uri^M"
+# stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'intrusive email chars'^M"
+# stuff "# line_ends_space^M"
+# stuff "# in_addr_space^M"
+# stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'intrusive, eol white space'^M"
+# stuff "# no_at_mark^M"
+# stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'missing @'^M"
+# # batch address
+# stuff "# cat \$LAND/\$AREA/\$COUNTY/*/address.txt | old_address | sort | uniq | vipe | shuf | split -a 4 -d -l 60 - \$LAND/\$AREA/^M"
+# # upload batch
+# stuff "# \$LAND/\$AREA/\$COUNTY \$BATCH=$LAND/$AREA/$COUNTY $BATCH^M"
+# }
+
 # function manage_batch () {
 #     screen 0
 #     stuff "cd ~/edit/email^M"

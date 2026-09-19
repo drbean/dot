@@ -667,7 +667,7 @@ function start_school () {
     for v in svn git ; do $v add $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; done
 }
 
-alias Em="email -l kr -a all -c '*'"
+alias Em="email -l kr -a north -c kyengkito -b 0001"
 
 # stage email batches from an area
 function email () {
@@ -800,8 +800,8 @@ function decr_BATCH () {
 }
 
 function process_batch () {
-    read -p "Connect to sdf.org? y/n " connect_sdf
-    if [[ $connect_sdf =~ ^y ]] ; then connect_sdf;
+    read -p "Connect to sdf.org? y/n " ssh_sdf
+    if [[ $ssh_sdf =~ ^y ]] ; then ssh_sdf;
     else echo "You can try again."
         return 1;
     fi
@@ -829,7 +829,7 @@ function process_batch () {
     
 }
 
-function connect_sdf () {
+function ssh_sdf () {
     PX ssh drbean@sdf.org
     read -p "Bird is the word: " word
 }

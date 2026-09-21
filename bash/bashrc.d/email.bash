@@ -667,7 +667,7 @@ function start_school () {
     for v in svn git ; do $v add $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; done
 }
 
-alias Em="email -l kr -a north -c kyengkito -b 0001"
+alias Em="email -l kr -a north -c '*' -b 0001"
 
 # stage email batches from an area
 function email () {
@@ -720,7 +720,7 @@ function commit_bag () {
     done
 }
 
-# function address_pack () {
+# function pack_address () {
 #     
 # # clean address.txt
 # stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'unescaped http web page links'^M"

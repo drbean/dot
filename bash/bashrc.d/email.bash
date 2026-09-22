@@ -728,43 +728,45 @@ function pack_address () {
         # v $EM/$LAND/$AREA/*/*/address.txt ;
         echo
         check_address
-        read -p "$LAND/$AREA/*/*/address.txt looks good? y/n " address_ready
+        read -p "$EM/$LA/$COUNTY/*/address.txt looks good? y/n " address_ready
     done
-# batch address
-    cat $LAND/$AREA/*/*/address.txt | old_address | sort | uniq | vipe | shuf | split -a 4 -d -l 60 - $LAND/$AREA/
-    ls $LAND/$AREA/????
+
+    count=60 ; dig=4
+    echo "Packing $EM/$LA/$COUNTY $count addresses in $dig-digit-named files in $EM/$LA"
+    cat $EM/$LA/*/*/address.txt | old_address | sort | uniq | sed -nE '/^#/!p' | shuf | split -a $dig -d -l $count - $EM/$LA/
+    ls $EM/$LA/????
 }
 
 # function manage_batch () {
 #     screen 0
-#     stuff "cd ~/edit/email^M"
-#     stuff "# read_BATCH^M"
-#     stuff "# cached batch=$(< \$LAND/\$AREA/batch.txt )^M"
-#     stuff "# decr_BATCH^M"
-#     stuff "# BATCH=$((--BATCH))^M"
-#     stuff "# BATCH=000 && echo $BATCH > \$LAND/\$AREA/batch.txt^M"
-#     stuff "# \$BATCH=$BATCH^M"
-#     stuff "# PX './sendmail.sh < drbean_addresses.txt'^M"
-#     stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/ && put ~/job/mail/run.sh && chmod 775 run.sh && qui\"^M"
-#     stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && lcd ~/edit/email/edit_offer && mput drbean_addresses.txt meat.yaml && lcd ~/job/mail/ && mput bone.sh sendmail.sh && chmod 775 bone.sh sendmail.sh && qui\"^M"
-#     stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/$LAND/ && mget -O $c north/$c/*.txt && qui\" ; done^M"
-#     stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && mkdir -p \$AREA/\$c && qui\" ; done^M"
-#     stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && glob -f rm \$AREA/\$c/* && qui\" ; done^M"
-#     stuff "# for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && mput -O \$AREA/\$c edit_offer/\$c/*.txt && qui\" ; done^M"
-#     stuff "# screen -p 1 -X stuff \"../run.sh $LAND/\$AREA \$BATCH\^M\"^M"
-#     stuff "# screen -p 1 -X stuff \"tmux new-window -n \$BATCH && ls\^M\"^M"
-#     stuff "# lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && mput \$LAND/\$AREA/\$BATCH? && qui\"^M"
-#     stuff "# incr_BATCH^M"
-#     stuff "# PX rm $BATCH?^M" 
-#     stuff "# screen -p 1 -X stuff 'cd ~/job/\LAND/\$AREA && tmux new-session -A -s \$AREA\^M'^M"
-#     stuff "# screen -p 1 -X stuff \"ssh drbean@sdf.org\^M\"^M"
-#     stuff "# first_batch^M"
-#     stuff "# run_batch^M"
-#     stuff "# set_batch_up^M"
-#     stuff "# auth_tmux_at^M"
-#     stuff "# ssh_sdf^M"
-#     stuff "echo -n BATCH=\$BATCH, batch.txt=\\\'$(cat \$LAND/\$AREA/batch.txt)\\\'^M"
-#     stuff "process_batch"
+#     cd ~/edit/email
+#     read_BATCH
+#     cached batch=$(< \$LAND/\$AREA/batch.txt )
+#     decr_BATCH
+#     BATCH=$((--BATCH))
+#     BATCH=000 && echo $BATCH > \$LAND/\$AREA/batch.txt
+#     \$BATCH=$BATCH
+#     PX './sendmail.sh < drbean_addresses.txt'
+#     lftp -c \"open sftp://drbean@sdf.org && cd job/ && put ~/job/mail/run.sh && chmod 775 run.sh && qui\"
+#     lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && lcd ~/edit/email/edit_offer && mput drbean_addresses.txt meat.yaml && lcd ~/job/mail/ && mput bone.sh sendmail.sh && chmod 775 bone.sh sendmail.sh && qui\"
+#     for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/$LAND/ && mget -O $c north/$c/*.txt && qui\" ; done
+#     for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && mkdir -p \$AREA/\$c && qui\" ; done
+#     for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && glob -f rm \$AREA/\$c/* && qui\" ; done
+#     for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && mput -O \$AREA/\$c edit_offer/\$c/*.txt && qui\" ; done
+#     screen -p 1 -X stuff \"../run.sh $LAND/\$AREA \$BATCH\^M\"
+#     screen -p 1 -X stuff \"tmux new-window -n \$BATCH && ls\^M\"
+#     lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && mput \$LAND/\$AREA/\$BATCH? && qui\"
+#     incr_BATCH
+#     PX rm $BATCH?^
+#     screen -p 1 -X stuff 'cd ~/job/\LAND/\$AREA && tmux new-session -A -s \$AREA\^M'
+#     screen -p 1 -X stuff \"ssh drbean@sdf.org\^M\"
+#     first_batch
+#     run_batch
+#     set_batch_up
+#     auth_tmux_at
+#     ssh_sdf
+#     -n BATCH=\$BATCH, batch.txt=\\\'$(cat \$LAND/\$AREA/batch.txt)\\\'
+#     
 # }
 
 # function roll_call () {

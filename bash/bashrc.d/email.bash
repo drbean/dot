@@ -687,8 +687,10 @@ function email () {
     export LAND=${land:-$LAND} AREA="${area:-$AREA}" COUNTY="${county:-$COUNTY}"
     cache_batch=$(read_BATCH)
     export BATCH=${batch:-$cache_batch}
-    export LA=$LAND/$AREA
-    screen -c /home/$USER/dot/screen/email.rc -dR email:${AREA%/}
+    LA=$LAND/$AREA
+    EM=$HOME/edit/email
+    export LA EM
+    screen -dR email:${AREA%/} /home/$USER/dot/screen/email.sh
     cd -
 }
 
@@ -720,23 +722,18 @@ function commit_bag () {
     done
 }
 
-# function pack_address () {
-#     
-# # clean address.txt
-# stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'unescaped http web page links'^M"
-# stuff "# wrong_char^M"
-# stuff "# unescaped_uri^M"
-# stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'intrusive email chars'^M"
-# stuff "# line_ends_space^M"
-# stuff "# in_addr_space^M"
-# stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'intrusive, eol white space'^M"
-# stuff "# no_at_mark^M"
-# stuff "# svn ci \$LAND/\$AREA/\$COUNTY/*/address.txt -m 'missing @'^M"
-# # batch address
-# stuff "# cat \$LAND/\$AREA/\$COUNTY/*/address.txt | old_address | sort | uniq | vipe | shuf | split -a 4 -d -l 60 - \$LAND/\$AREA/^M"
-# # upload batch
-# stuff "# \$LAND/\$AREA/\$COUNTY \$BATCH=$LAND/$AREA/$COUNTY $BATCH^M"
-# }
+function pack_address () {
+    address_ready=n
+    while ! [[ $address_ready =~ ^y ]] ; do
+        # v $EM/$LAND/$AREA/*/*/address.txt ;
+        echo
+        check_address
+        read -p "$LAND/$AREA/*/*/address.txt looks good? y/n " address_ready
+    done
+# batch address
+    cat $LAND/$AREA/*/*/address.txt | old_address | sort | uniq | vipe | shuf | split -a 4 -d -l 60 - $LAND/$AREA/
+    ls $LAND/$AREA/????
+}
 
 # function manage_batch () {
 #     screen 0
@@ -927,15 +924,16 @@ function run_batch () {
 }
 
 function old_address () { sed -E 's/^([^#]+)\s#.*$/\1/' ; } 
-function line_ends_space () { sed -ne '/^\s\+/p' -e '/\s\+$/p' $LAND/$AREA/*/*/address.txt ; }
-function wrong_char () { sed -e '/^#/d' $LAND/$AREA/$COUNTY/*/address.txt | old_address | grep -r -P '[^-_.a-zA-Z0-9@]' - ; }
-function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $LAND/$AREA/$COUNTY/*/address.txt ; }
-function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $LAND/$AREA/$COUNTY/*/address.txt ; }
-function at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $LAND/${AREA}/$COUNTY/*/address.txt ; }
+function line_ends_space () { sed -ne '/^\s\+/p' -e '/\s\+$/p' $EM/$LA/$COUNTY/*/address.txt 2>&1; }
+function wrong_char () { sed -e '/^#/d' $EM/$LA/$COUNTY/*/address.txt | old_address | grep -r -P '[^-_.a-zA-Z0-9@]' - ; } 2>&1
+function unescaped_uri () { grep -e '[^-_.a-zA-Z0-9@#/:?&=% ]' $EM/$LA/$COUNTY/*/address.txt 2>&1; }
+function in_addr_space () { sed -n -e '/#/d' -e '/\s.*@/p' -e '/@.*\s/p' $EM/$LA/$COUNTY/*/address.txt 2>&1; }
+function at_mark () { sed -e '/^#/d' -e '/^$/d' -e '/@/d' $EM/$LA/$COUNTY/*/address.txt 2>&1; }
 
 function check_address () {
     for c in wrong_char unescaped_uri line_ends_space in_addr_space at_mark; do
-        echo -e "\n$c\n" ; $c
+        echo -e $c: $($c)
+	echo
     done
 }
 

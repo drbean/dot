@@ -42,6 +42,7 @@ LC_NUMERIC LC_MONETARY LC_MESSAGES LC_ALL
 if [[ $(uname) =~ ^CYGWIN ]] ; then
 
     MANPATH=$HOME/edit/email/trurl/man:${MANPATH-}
+    MANPATH=$W/go/share/man:${MANPATH-}
     # export MANPATH=$HOME/edit/email/trurl/man:${MANPATH-}
     # export MANPATH=$HOME/perl5/perlbrew/man:${MANPATH-}
     
@@ -119,5 +120,6 @@ fi
 
 # svn completion
 source /usr/share/bash-completion/completions/svn
+SVN_BASH_COMPL_EXT=svnstatus,commit,add,revert
 
 # .bashrc

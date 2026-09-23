@@ -1,2 +1,3 @@
 screen
 stuff "regtool --help|less^M"
+## <<< "regtool --help|less" > ~/dot/screen/specs/regtool.rc

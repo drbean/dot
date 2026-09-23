@@ -1,0 +1,5 @@
+# bash_completion
+#
+
+screen v /usr/share/bash-completion/bash_completion /etc/profile.d/bash_completion.sh ~/.local/share/bash-completion/completions/*
+screen cygstart https://github.com/scop/bash-completion

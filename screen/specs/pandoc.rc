@@ -1,4 +1,5 @@
 # screen cygstart "/cygdrive/c/Program\ Files/Pandoc/Pandoc\ User\'s\ Guide.html"
-# screen bash -c cygstart /cygdrive/c/Program\ Files/Pandoc/Pandoc\ User\'s\ Guide.html
-screen cygstart https://pandoc.org/MANUAL.html
+# screen bash -c 'cygstart /cygdrive/c/Program\ Files/Pandoc/Pandoc\ User\'s\ Guide.html'
+screen cygstart /cygdrive/c/PROGRA~1/Pandoc/PANDOC~1.HTM
+# screen cygstart https://pandoc.org/MANUAL.html
 screen man pandoc

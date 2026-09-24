@@ -685,8 +685,8 @@ function email () {
     done
     cd ~/edit/email || exit 1
     export LAND=${land:-$LAND} AREA="${area:-$AREA}" COUNTY="${county:-$COUNTY}"
-    cache_batch=$(read_BATCH)
-    export BATCH=${batch:-$cache_batch}
+    cache_packet=$(read_PACKET)
+    export PACKET=${packet:-$cache_packet}
     LA=$LAND/$AREA
     EM=$HOME/edit/email
     export LA EM
@@ -731,9 +731,14 @@ function pack_address () {
         read -p "$EM/$LA/$COUNTY/*/address.txt looks good? y/n " address_ready
     done
 
-    count=60 ; dig=4
-    echo "Packing $EM/$LA/$COUNTY $count addresses in $dig-digit-named files in $EM/$LA"
-    cat $EM/$LA/*/*/address.txt | old_address | sort | uniq | sed -nE '/^#/!p' | shuf | split -a $dig -d -l $count - $EM/$LA/
+    size=60 ; dig=4
+    cat $EM/$LA/*/*/address.txt | old_address | sort | uniq | sed -nE '/^#/!p' |
+        tee $EM/$LA/address.txt |
+        shuf | split -a $dig -d -l $size - $EM/$LA/
+    count=$(wc -l $EM/$LA/address.txt | cut -d ' ' -f 1)
+    echo "Packing $count $EM/$LA/$COUNTY addresses in \
+$(echo 2 k $count $size / p | dc) \
+$size-address size, $dig-digit named files in $EM/$LA" >> mess
     ls $EM/$LA/????
 }
 
@@ -958,3 +963,10 @@ function postmail () {
     export LA=$LAND/$AREA/
     screen -c /home/$USER/dot/screen/postmail.rc -dR postmail:${area%/}
 }
+
+case "$1" in
+    "") ;;
+    pack_address) "$@"; exit;;
+    process_packet) "$@"; exit;;
+    *) echo "Unkown function: $1()"; exit 2;;
+esac

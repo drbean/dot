@@ -673,14 +673,14 @@ alias Em="email -l kr -a north -c '*' -b 0001"
 function email () {
     OPTIND=1
     local arg land area county batch
-    while getopts 'l:a:c:b:' arg
+    while getopts 'l:a:c:b:w:ao' arg
     do
         case ${arg} in
             l) land=${OPTARG};;
             a) area=${OPTARG};;
             c) county=${OPTARG};;
             b) batch=${OPTARG};;
-            *) return 1 # illegal option
+            *) echo "${OPTARG} of screenwriter opts: w:ao?"
         esac
     done
     cd ~/edit/email || exit 1
@@ -690,8 +690,10 @@ function email () {
     LA=$LAND/$AREA
     EM=$HOME/edit/email
     export LA EM
-    screen -dR email:${AREA%/} /home/$USER/dot/screen/email.sh
-    cd -
+    window=$(screenwriter email "$@")
+    SESSIONSH=${window% *}
+    sessionname=${window#* }
+    screen -S email.${sessionname%,} $SESSIONSH ;
 }
 
 function commit_bag () {

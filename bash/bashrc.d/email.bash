@@ -673,14 +673,14 @@ alias Em="email -l kr -a north -c '*' -b 0001"
 function email () {
     OPTIND=1
     local arg land area county batch
-    while getopts 'l:a:c:b:w:ao' arg
+    while getopts 'l:a:c:b:w:fo' arg
     do
         case ${arg} in
             l) land=${OPTARG};;
             a) area=${OPTARG};;
             c) county=${OPTARG};;
             b) batch=${OPTARG};;
-            *) echo "${OPTARG} of screenwriter opts: w:ao?"
+            *) echo "'${OPTARG}' arg of screenwriter opts: w:fo?"
         esac
     done
     cd ~/edit/email || exit 1
@@ -738,9 +738,9 @@ function pack_address () {
         tee $EM/$LA/address.txt |
         shuf | split -a $dig -d -l $size - $EM/$LA/
     count=$(wc -l $EM/$LA/address.txt | cut -d ' ' -f 1)
-    echo "Packing $count $EM/$LA/$COUNTY addresses in \
+    echo "$(date -Iminutes): Packing $count $EM/$LA/$COUNTY addresses in \
 $(echo 2 k $count $size / p | dc) \
-$size-address size, $dig-digit named files in $EM/$LA" >> mess
+$size-address-sized, $dig-digit-named files in $EM/$LA" >> mess
     ls $EM/$LA/????
 }
 

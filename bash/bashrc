@@ -555,35 +555,34 @@ function screenwriter () {
     a=$1
     OPTIND=2
     local arg SCREEN
-    while getopts 'l:a:c:b:w:ao' arg
-    do
-	SESSIONSH=$HOME/dot/screen/$a.sh
+    while getopts 'l:a:c:b:w:fo' arg ; do
+        SESSIONSH=$HOME/dot/screen/$a.sh
         case ${arg} in
             w) SCREEN+=( "${OPTARG}" ) ;;
-            a) SCREEN=( "all" ) ;;
-	    o) SCREEN=( "original" ) ;;
-	    *) echo "${OPTARG} of l:a:c:b: LAND, AREA, COUNTY email batch source?" ;;
+            f) SCREEN=( "full" ) ;;
+            o) SCREEN=( "original" ) ;;
+            lacb) echo "${OPTARG} of l:a:c:b: LAND, AREA, COUNTY email batch source?" ;;
         esac
     done
     shift $(( OPTIND - 1 ))
     if [[ $SCREEN == *original* ]] ; then touch $SESSIONSH
-    elif [[ $SCREEN == *all* ]] ; then
-	cat $HOME/dot/screen/${a}s/*.sh > $SESSIONSH
+    elif [[ $SCREEN == *full* ]] ; then
+        cat $HOME/dot/screen/${a}s/*.sh > $SESSIONSH
     else
-	if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
-	touch $SESSIONSH
-	chmod 755 $SESSIONSH
-	for s in ${SCREEN[@]} ; do
-	    # echo w=$s
-	    cat $HOME/dot/screen/${a}s/$s.sh >> $SESSIONSH
-	done
+        if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
+        touch $SESSIONSH
+        chmod 755 $SESSIONSH
+        for s in ${SCREEN[@]} ; do
+            # echo w=$s
+            cat $HOME/dot/screen/${a}s/$s.sh >> $SESSIONSH
+        done
     fi
     chmod 755 $SESSIONSH
     # echo ${SCREEN[*]} $SESSIONSH
     export SCREEN SESSIONSH sessionname
     sessionname=
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
-	sessionname+="${SCREEN[$i]},"
+        sessionname+="${SCREEN[$i]},"
     done
     # echo -e "sh_name: $sh_name\nSESSIONSH: $SESSIONSH\nsessionname: $sessionname"
     echo "$SESSIONSH ${sessionname%,}"
@@ -591,10 +590,10 @@ function screenwriter () {
 
 for app in bash_completion bashrc_d mastodon screenS shortcut stowit ; do
     eval "function $app () {
-	sh_name=\$(screenwriter $app \"\$@\")
-	SESSIONSH=\${sh_name% *}
-	sessionname=\${sh_name#* }
-	echo -e "sh_name: \$sh_name, SESSIONSH: \$SESSIONSH, sessionname: \$sessionname"
+	window=\$(screenwriter $app \"\$@\")
+	SESSIONSH=\${window% *}
+	sessionname=\${window#* }
+	echo "window SESSIONSH: \$SESSIONSH, sessionname: \$sessionname"
 	screen -S $app.\${sessionname%,} \$SESSIONSH ; }"
 
     if ! [[ -r ~/dot/bash/bash_completion/$app ]] ; then

@@ -221,6 +221,8 @@ function countdown () {
     echo 0
 }
 
+export -f countdown
+
 function rot13 () { tr 'A-Za-z' 'N-ZA-Mn-za-m' ;  }
 
 function path_remove () {
@@ -553,14 +555,14 @@ function screenwriter () {
     a=$1
     OPTIND=2
     local arg SCREEN
-    while getopts 'w:ao' arg
+    while getopts 'l:a:c:b:w:ao' arg
     do
 	SESSIONSH=$HOME/dot/screen/$a.sh
         case ${arg} in
             w) SCREEN+=( "${OPTARG}" ) ;;
             a) SCREEN=( "all" ) ;;
 	    o) SCREEN=( "original" ) ;;
-	    *) echo "opts: -w -a -o" ; exit 0 # illegal option
+	    *) echo "${OPTARG} of l:a:c:b: LAND, AREA, COUNTY email batch source?" ;;
         esac
     done
     shift $(( OPTIND - 1 ))

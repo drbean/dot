@@ -16,6 +16,7 @@ echo
 
 echo "Removing stow/bash_completion/*"
 # rm ~/.local/share/bash-completion/completions/*
+for command in ${cmd[@]} ; do rm ~/stow/bash_completion/$command ; done
 
 echo
 
@@ -24,7 +25,7 @@ for c in ${command[@]} ; do ln --symbolic ../../dot/bash/bash_completion/$c ~/st
 echo
 
 echo "Stowing bash_completion files in ~/.local/share/bash-completion/completions"
-# stow -n  --verbose=2 -t ~/.local/share/bash-completion/completions -d ~drbean/stow -R bash_completion
+stow --verbose=2 -t ~/.local/share/bash-completion/completions -d ~drbean/stow -R bash_completion
 # stow -n  --verbose=2 -t ~/.local/share/bash-completion/completions -d ~drbean/stow -R bash_completion --adopt
 
 echo "Checking ~/dot/bash/bash_completion files"
@@ -37,3 +38,5 @@ echo "Checking  ~/.local/share/bash-completion/completions files"
 ls -al ~/.local/share/bash-completion/completions 
 
 exec bash -l
+
+cd ~/dot/screen/stowits ; ls

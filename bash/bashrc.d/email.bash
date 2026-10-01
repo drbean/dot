@@ -969,6 +969,6 @@ function postmail () {
 case "$1" in
     "") ;;
     pack_address) "$@"; exit;;
-    process_packet) "$@"; exit;;
+    process_batch) "$@"; exit;;
     *) echo "Unkown function: $1()"; exit 2;;
 esac

@@ -685,8 +685,8 @@ function email () {
     done
     cd ~/edit/email || exit 1
     export LAND=${land:-$LAND} AREA="${area:-$AREA}" COUNTY="${county:-$COUNTY}"
-    cache_packet=$(read_PACKET)
-    export PACKET=${packet:-$cache_packet}
+    cache_batch=$(read_BATCH)
+    export BATCH=${batch:-$cache_batch}
     LA=$LAND/$AREA
     EM=$HOME/edit/email
     export LA EM

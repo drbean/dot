@@ -744,15 +744,15 @@ $size-address-sized, $dig-digit-named files in $EM/$LA" >> mess
     ls $EM/$LA/????
 }
 
-# function manage_packet () {
+# function manage_batch () {
 #     screen 0
 #     cd ~/edit/email
-#     read_PACKET
-#     cached packet=$(< \$LAND/\$AREA/packet.txt )
-#     decr_PACKET
-#     PACKET=$((--PACKET))
-#     PACKET=000 && echo $PACKET > \$LAND/\$AREA/packet.txt
-#     \$PACKET=$PACKET
+#     read_BATCH
+#     cached batch=$(< \$LAND/\$AREA/batch.txt )
+#     decr_BATCH
+#     BATCH=$((--BATCH))
+#     BATCH=000 && echo $BATCH > \$LAND/\$AREA/batch.txt
+#     \$BATCH=$BATCH
 #     PX './sendmail.sh < drbean_addresses.txt'
 #     lftp -c \"open sftp://drbean@sdf.org && cd job/ && put ~/job/mail/run.sh && chmod 775 run.sh && qui\"
 #     lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && lcd ~/edit/email/edit_offer && mput drbean_addresses.txt meat.yaml && lcd ~/job/mail/ && mput bone.sh sendmail.sh && chmod 775 bone.sh sendmail.sh && qui\"
@@ -760,19 +760,19 @@ $size-address-sized, $dig-digit-named files in $EM/$LA" >> mess
 #     for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && mkdir -p \$AREA/\$c && qui\" ; done
 #     for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && glob -f rm \$AREA/\$c/* && qui\" ; done
 #     for c in subject body ; do lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/ && mput -O \$AREA/\$c edit_offer/\$c/*.txt && qui\" ; done
-#     screen -p 1 -X stuff \"../run.sh $LAND/\$AREA \$PACKET\^M\"
-#     screen -p 1 -X stuff \"tmux new-window -n \$PACKET && ls\^M\"
-#     lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && mput \$LAND/\$AREA/\$PACKET? && qui\"
-#     incr_PACKET
-#     PX rm $PACKET?^
+#     screen -p 1 -X stuff \"../run.sh $LAND/\$AREA \$BATCH\^M\"
+#     screen -p 1 -X stuff \"tmux new-window -n \$BATCH && ls\^M\"
+#     lftp -c \"open sftp://drbean@sdf.org && cd job/\$LAND/\$AREA && mput \$LAND/\$AREA/\$BATCH? && qui\"
+#     incr_BATCH
+#     PX rm $BATCH?^
 #     screen -p 1 -X stuff 'cd ~/job/\LAND/\$AREA && tmux new-session -A -s \$AREA\^M'
 #     screen -p 1 -X stuff \"ssh drbean@sdf.org\^M\"
-#     first_packet
-#     run_packet
-#     set_packet_up
+#     first_batch
+#     run_batch
+#     set_batch_up
 #     auth_tmux_at
 #     ssh_sdf
-#     -n PACKET=\$PACKET, packet.txt=\\\'$(cat \$LAND/\$AREA/packet.txt)\\\'
+#     -n BATCH=\$BATCH, batch.txt=\\\'$(cat \$LAND/\$AREA/batch.txt)\\\'
 #     
 # }
 
@@ -801,61 +801,61 @@ function PX {
     screen -p 1 -X stuff "$*^M"
 }
 
-function write_PACKET () {
-    new_packet=$1
-    case $new_packet in
-        ''|*[!0-9]*) echo "PACKET=$new_packet, not integer"; return 1 ;;
-        *) file="$HOME/edit/email/$LAND/$AREA/packet.txt"
-            if [[ $new_packet =~ ^(0*)([1-9]*)([0-9]*)(.)$  ]] ; then
-                bare_packet=$(printf '%s' ${BASH_REMATCH[@]:2} )
-                echo $bare_packet >$file
-            else echo "No regex match & no write of '$new_packet'?"
+function write_BATCH () {
+    new_batch=$1
+    case $new_batch in
+        ''|*[!0-9]*) echo "BATCH=$new_batch, not integer"; return 1 ;;
+        *) file="$HOME/edit/email/$LAND/$AREA/batch.txt"
+            if [[ $new_batch =~ ^(0*)([1-9]*)([0-9]*)(.)$  ]] ; then
+                bare_batch=$(printf '%s' ${BASH_REMATCH[@]:2} )
+                echo $bare_batch >$file
+            else echo "No regex match & no write of '$new_batch'?"
             fi ;;
     esac
 }
 
-function read_PACKET () {
-    # declare -i PACKET
-    file="$HOME/edit/email/$LAND/$AREA/packet.txt"
+function read_BATCH () {
+    # declare -i BATCH
+    file="$HOME/edit/email/$LAND/$AREA/batch.txt"
     if [[ -f $file ]] 
-    then PACKET=$(printf "%03d" $(< $file ))
-    else echo "No packet.txt! PACKET=$PACKET?"; return 1
+    then BATCH=$(printf "%03d" $(< $file ))
+    else echo "No batch.txt! BATCH=$BATCH?"; return 1
     fi
-    echo $PACKET
+    echo $BATCH
 }
 
-function update_PACKET () {
-    file="$HOME/edit/email/$LAND/$AREA/packet.txt"
-    echo ${PACKET##*0} 1>$file
+function update_BATCH () {
+    file="$HOME/edit/email/$LAND/$AREA/batch.txt"
+    echo ${BATCH##*0} 1>$file
 
 }
-function incr_PACKET () {
-    cache_packet=$(read_PACKET)
-    declare -i bare_packet plus_packet
-    case $cache_packet in
-        ''|*[!0-9]*) echo "PACKET=$cache_packet, not integer"; return 1 ;;
-        *) echo -n "PACKET was "
-            if [[ $cache_packet =~ ^(0*)([1-9]*)([0-9]*)(.)$  ]] ; then
-                bare_packet=$(printf '%s' ${BASH_REMATCH[@]:2} ) ; fi
-            plus_packet=$(( bare_packet + 1 ))
-            old_PACKET=$(printf "%03d" $bare_packet)
-            new_PACKET=$(printf "%03d" $plus_packet)
-            echo "$old_PACKET. Now PACKET=$new_PACKET"
-            export PACKET=$new_PACKET
+function incr_BATCH () {
+    cache_batch=$(read_BATCH)
+    declare -i bare_batch plus_batch
+    case $cache_batch in
+        ''|*[!0-9]*) echo "BATCH=$cache_batch, not integer"; return 1 ;;
+        *) echo -n "BATCH was "
+            if [[ $cache_batch =~ ^(0*)([1-9]*)([0-9]*)(.)$  ]] ; then
+                bare_batch=$(printf '%s' ${BASH_REMATCH[@]:2} ) ; fi
+            plus_batch=$(( bare_batch + 1 ))
+            old_BATCH=$(printf "%03d" $bare_batch)
+            new_BATCH=$(printf "%03d" $plus_batch)
+            echo "$old_BATCH. Now BATCH=$new_BATCH"
+            export BATCH=$new_BATCH
     esac
-    read -p "Save good new $PACKET packet value? y/n " go
-    if [[ $go =~ ^y ]] ; then write_PACKET $PACKET ;
-    else echo "You can 'write_PACKET old_good_value' to file and try again."
+    read -p "Save good new $BATCH batch value? y/n " go
+    if [[ $go =~ ^y ]] ; then write_BATCH $BATCH ;
+    else echo "You can 'write_BATCH old_good_value' to file and try again."
     fi
 }
 
-function decr_PACKET () {
-    PACKET=$(read_PACKET)
-    export old_packet=$(( $(< $LAND/$AREA/packet.txt) -1  ))
-    echo -n $(printf "%03d" $old_packet)
+function decr_BATCH () {
+    BATCH=$(read_BATCH)
+    export old_batch=$(( $(< $LAND/$AREA/batch.txt) -1  ))
+    echo -n $(printf "%03d" $old_batch)
 }
 
-function process_packet () {
+function process_batch () {
     read -p "Connect to sdf.org? y/n " ssh_sdf
     if [[ $ssh_sdf =~ ^y ]] ; then ssh_sdf;
     else echo "You can try again."
@@ -870,16 +870,16 @@ function process_packet () {
     fi
     echo -n 'Waiting ... '
     countdown 1
-    read -p "Set next packet up? y/n " set_packet_up
-    if [[ $set_packet_up =~ ^y ]] ; then set_packet_up;
+    read -p "Set next batch up? y/n " set_batch_up
+    if [[ $set_batch_up =~ ^y ]] ; then set_batch_up;
     else echo "Stopping there."
         return 1;
     fi
     echo -n 'Waiting ... '
     countdown 5
-    read -p "Run packet? y/n " run_packet
-    if [[ $run_packet =~ ^y ]] ; then run_packet;
-    else echo "Next packet not run. Please check."
+    read -p "Run batch? y/n " run_batch
+    if [[ $run_batch =~ ^y ]] ; then run_batch;
+    else echo "Next batch not run. Please check."
             return 1;
     fi
     
@@ -895,7 +895,7 @@ function auth_tmux_at () {
     PX "cd ~/job/$LAND/$AREA && tmux new-session -A -s $AREA"
 }
 
-function first_packet () {
+function first_batch () {
     PX "if ! [[ -d ~/job/$LAND/$AREA ]] ; then mkdir ~/job/$LAND/$AREA ; fi"
     PX "if ! [[ -d ~/job/$LAND/$AREA/body ]] ; then mkdir ~/job/$LAND/$AREA/body ; fi"
     PX "if ! [[ -d ~/job/$LAND/$AREA/subject ]] ; then mkdir ~/job/$LAND/$AREA/subject ; fi"
@@ -907,9 +907,9 @@ function first_packet () {
         mrm $AREA/subject/* && \
         mrm $AREA/body/* && \
         qui"
-    write_PACKET 000
-    read_PACKET
-    UP $PACKET\?
+    write_BATCH 000
+    read_BATCH
+    UP $BATCH\?
     lftp -c "open drbean@sdf.org && cd ~/job/$LAND/$AREA \
         && lcd ~/job/mail && mput bone.sh sendmail.sh \
         && lcd ~/edit/email/edit_offer \
@@ -919,17 +919,17 @@ function first_packet () {
     PX ls
 }
 
-function set_packet_up () {
-    incr_PACKET
-    UP $PACKET\?
-    PX rm $(decr_PACKET)?
+function set_batch_up () {
+    incr_BATCH
+    UP $BATCH\?
+    PX rm $(decr_BATCH)?
     PX ls
 }
 
-function run_packet () {
-    PX tmux new-window -n $PACKET
+function run_batch () {
+    PX tmux new-window -n $BATCH
     PX sleep 1
-    PX ../../run.sh $LAND/$AREA $PACKET
+    PX ../../run.sh $LAND/$AREA $BATCH
 }
 
 function old_address () { sed -E 's/^([^#]+)\s#.*$/\1/' ; } 

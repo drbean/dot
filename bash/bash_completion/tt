@@ -39,7 +39,10 @@ function _tt () {
 
 	case "${prev}" in
 		tt)
-			words=':spec mastodon :dap :dot :edit :pages :premail :qb :stowit :web'
+			words=':bash_completion :bashrc_d :dap :dot :edit :email mastodon :pages :premail :qb :screenS :spec :shortcut :stowit :web'
+			;;
+		::bash_completion|::bashrc_d)
+			words='-w -a -o'
 			;;
 		::dap)
 			words='-s'
@@ -53,6 +56,9 @@ function _tt () {
 		::spec)
 			words='-w -a'
 			;;
+		::screenS)
+			words='-w -a -o'
+			;;
 		::shortcut)
 			words='-w -a'
 			;;
@@ -63,7 +69,7 @@ function _tt () {
 			words='-l -a -c -s -u'
 			;;
 		::*)
-			words=':dot :edit :pages :premail :qb :shortcut :stowit :web'
+			words=':bash_completion :bashrc_d :dap :dot :edit :email mastodon :pages :premail :qb :screenS :shortcut :spec :stowit :web'
 			;;
 		-t)
 			appdecor=${prev_[1]}
@@ -111,8 +117,8 @@ function _tt () {
 			screendecor=${prev_[1]}
 			dir="${screendecor#::}s"
 			cd ~/dot/screen/${dir}
-			rc=( $(compgen -f -- ${cur}) )
-			COMPREPLY=( ${rc[@]%%.rc*} )
+			window=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${window[@]%%.*} )
 			return 0
 			;;
 		-l)

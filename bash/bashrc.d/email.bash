@@ -673,9 +673,10 @@ alias Em="email -l kr -a north -c '*' -b 0001"
 function email () {
     OPTIND=1
     local arg land area county batch
-    while getopts 'l:a:c:b:w:fo' arg
+    while getopts 'p:l:a:c:b:w:fo' arg
     do
         case ${arg} in
+            p) project=${OPTARG};;
             l) land=${OPTARG};;
             a) area=${OPTARG};;
             c) county=${OPTARG};;
@@ -684,6 +685,7 @@ function email () {
         esac
     done
     cd ~/edit/email || exit 1
+    export PROJECT=${project:-$PROJECT}
     export LAND=${land:-$LAND} AREA="${area:-$AREA}" COUNTY="${county:-$COUNTY}"
     cache_batch=$(read_BATCH)
     export BATCH=${batch:-$cache_batch}

@@ -1,0 +1,4 @@
+cd ~/dot/screen/emails
+
+# prep
+screen pack_address

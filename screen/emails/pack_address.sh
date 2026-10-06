@@ -1,1 +1,1 @@
-screen ~/dot/bash/bashrc.d/email.bash pack_address
+screen ~/edit/email/batch_util.sh pack_address

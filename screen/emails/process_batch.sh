@@ -1,1 +1,1 @@
-screen ~/dot/bash/bashrc.d/email.bash process_batch
+screen ~/edit/email/batch_util.sh process_batch

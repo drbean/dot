@@ -54,5 +54,43 @@ $content\\
     sed -i.BAK -E "${enterline}a\\
 $ai" $story
     tt ::pages -t AIFail -s ConitzerFail
+}
 
+function mjd () {
+    i=$1
+    status=status-$i.json
+    mjds=~/curriculum/pages/mastodon/math/mjd
+    story=$M/MJDFailUp.md
+    enterline=$(( $(wc -l < $story) - 11 ))
+    if [[ -f $(pwd)/$status ]] ; then mv $(pwd)/$status $mjds ; fi
+    url=$(yq -r .url $mjds/$status | sed -nE 's/^(.*)$/\[\1]\(\1\)/p')
+    spoiler=$(yq -r .spoiler_text $mjds/$status)
+    content=$(yq -r .content $mjds/$status | sed -e "s/&#39;/'/g" -e 's/"/\\"/g')
+    echo url = $url
+    echo spoiler = $spoiler
+    echo content = $content
+    ai="### $url\\
+\\
+###### MJD toot content:\\
+\\
+$spoiler
+\\
+$content\\
+\\
+###### MJD evaluation:\\
+\\
+* AI-positive\\
+\\
+* AI-neutral\\
+\\
+* AI-negative\\
+\\
+###### Dr Bean evaluation:\\
+\\
+"
+    echo ai = $ai
+    echo enterline = $enterline
+    sed -i.BAK -E "${enterline}a\\
+$ai" $story
+    tt ::pages -t AIFail -s MJDFailUp
 }

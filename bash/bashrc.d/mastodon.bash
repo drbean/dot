@@ -61,13 +61,20 @@ function mjd () {
     status=status-$i.json
     mjds=~/curriculum/pages/mastodon/math/mjd
     story=$M/MJDFailUp.md
-    enterline=$(( $(wc -l < $story) - 11 ))
+    enterline=$(( $(wc -l < $story) - 8 ))
     if [[ -f $(pwd)/$status ]] ; then mv $(pwd)/$status $mjds ; fi
     url=$(yq -r .url $mjds/$status | sed -nE 's/^(.*)$/\[\1]\(\1\)/p')
     spoiler=$(yq -r .spoiler_text $mjds/$status)
     content=$(yq -r .content $mjds/$status | sed -e "s/&#39;/'/g" -e 's/"/\\"/g')
     echo url = $url
     echo spoiler = $spoiler
+    preamble="### $url\\
+\\
+###### MJD toot content:\\
+\\
+$spoiler
+\\
+"
     echo content = $content
     ai="### $url\\
 \\
@@ -90,7 +97,10 @@ $content\\
 "
     echo ai = $ai
     echo enterline = $enterline
+    echo preamble = $preamble
+    sed -i.BAK -E "${enterline}i\\
+$preamble" $story
     sed -i.BAK -E "${enterline}a\\
-$ai" $story
+$content" $story
     tt ::pages -t AIFail -s MJDFailUp
 }

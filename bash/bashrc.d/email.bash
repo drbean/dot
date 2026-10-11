@@ -667,7 +667,7 @@ function start_school () {
     for v in svn git ; do $v add $LAND/$AREA/$COUNTY/$SCHOOL/address.txt ; done
 }
 
-alias Em="email -l kr -a north -c '*' -b 0001"
+alias Em="email -p report -l kr -a north -c '*' -b 0001"
 
 # stage email batches from an area
 function email () {

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenSs/job.sh:
+ls -al ~/dot/screen/screenSs/job.sh
 echo
 
 nl ~/dot/screen/screenSs/job.sh
@@ -10,7 +10,7 @@ echo ~/dot/screen/jobs:
 echo
 
 for f in ~/dot/screen/jobs/*.{sh,rc} ; do
-	echo -e $f:
+	ls -al $f
 	nl $f
 	echo
 done

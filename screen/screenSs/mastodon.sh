@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenSs/mastodon.sh:
+ls -al ~/dot/screen/screenSs/mastodon.sh
 echo
 
 nl ~/dot/screen/screenSs/mastodon.sh
@@ -10,7 +10,7 @@ echo ~/dot/screen/mastodons:
 echo
 
 for f in ~/dot/screen/mastodons/*.{sh,rc} ; do
-	echo -e $f:
+	ls -al $f
 	nl $f
 	echo
 done

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenSs/email.sh:
+ls -al ~/dot/screen/screenSs/email.sh
 echo
 
 nl ~/dot/screen/screenSs/email.sh
@@ -10,7 +10,7 @@ echo ~/dot/screen/emails:
 echo
 
 for f in ~/dot/screen/emails/*.{sh,rc} ; do
-	echo -e $f:
+	ls -al $f
 	nl $f
 	echo
 done

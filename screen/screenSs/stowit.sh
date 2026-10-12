@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenSs/stowit.sh:
+ls -al ~/dot/screen/screenSs/stowit.sh
 echo
 
 nl ~/dot/screen/screenSs/stowit.sh
@@ -10,7 +10,7 @@ echo ~/dot/screen/stowits:
 echo
 
 for f in ~/dot/screen/stowits/*.{sh,rc} ; do
-	echo -e $f:
+	ls -al $f
 	nl $f
 	echo
 done

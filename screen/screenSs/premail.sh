@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenSs/premail.sh:
+ls -al ~/dot/screen/screenSs/premail.sh
 echo
 
 nl ~/dot/screen/screenSs/premail.sh
@@ -10,7 +10,7 @@ echo ~/dot/screen/premails:
 echo
 
 for f in ~/dot/screen/premails/*.{sh,rc} ; do
-	echo -e $f:
+	ls -al $f
 	nl $f
 	echo
 done

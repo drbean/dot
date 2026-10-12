@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenS/spec.sh:
+echo ~/dot/screen/screenSs/spec.sh:
 echo
 
 nl ~/dot/screen/screenSs/spec.sh

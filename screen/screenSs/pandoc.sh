@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenS/pandoc.sh:
+echo ~/dot/screen/screenSs/pandoc.sh:
 echo
 
 nl ~/dot/screen/screenSs/pandoc.sh

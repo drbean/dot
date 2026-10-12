@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenS/email.sh:
+echo ~/dot/screen/screenSs/email.sh:
 echo
 
 nl ~/dot/screen/screenSs/email.sh

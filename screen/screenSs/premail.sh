@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenS/premail.sh:
+echo ~/dot/screen/screenSs/premail.sh:
 echo
 
 nl ~/dot/screen/screenSs/premail.sh

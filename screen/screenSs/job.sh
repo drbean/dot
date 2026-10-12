@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenS/job.sh:
+echo ~/dot/screen/screenSs/job.sh:
 echo
 
 nl ~/dot/screen/screenSs/job.sh

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenS/bashrc_d.sh:
+echo ~/dot/screen/screenSs/bashrc_d.sh:
 echo
 
 nl ~/dot/screen/screenSs/bashrc_d.sh

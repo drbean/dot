@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenS/mastodon.sh:
+echo ~/dot/screen/screenSs/mastodon.sh:
 echo
 
 nl ~/dot/screen/screenSs/mastodon.sh

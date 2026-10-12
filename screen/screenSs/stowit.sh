@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo ~/dot/screen/screenS/stowit.sh:
+echo ~/dot/screen/screenSs/stowit.sh:
 echo
 
 nl ~/dot/screen/screenSs/stowit.sh

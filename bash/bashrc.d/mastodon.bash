@@ -61,7 +61,7 @@ function mjd () {
     status=status-$i.json
     mjds=~/curriculum/pages/mastodon/math/mjd
     story=$M/MJDFailUp.md
-    enterline=$(( $(wc -l < $story) - 8 ))
+    enterline=$(( $(wc -l < $story) - 10 ))
     if [[ -f $(pwd)/$status ]] ; then mv $(pwd)/$status $mjds ; fi
     url=$(yq -r .url $mjds/$status | sed -nE 's/^(.*)$/\[\1]\(\1\)/p')
     spoiler=$(yq -r .spoiler_text $mjds/$status)

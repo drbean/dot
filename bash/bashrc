@@ -555,7 +555,7 @@ function screenwriter () {
     a=$1
     OPTIND=2
     local arg SCREEN
-    while getopts 'l:a:c:b:w:fo' arg ; do
+    while getopts 'p:l:a:c:b:w:fo' arg ; do
         SESSIONSH=$HOME/dot/screen/$a.sh
         case ${arg} in
             w) SCREEN+=( "${OPTARG}" ) ;;
@@ -588,7 +588,7 @@ function screenwriter () {
     echo "$SESSIONSH ${sessionname%,}"
 }
 
-for app in bash_completion bashrc_d mastodon screenS shortcut stowit ; do
+for app in bash_completion bashrc_d job mastodon screenS shortcut stowit ; do
     eval "function $app () {
 	window=\$(screenwriter $app \"\$@\")
 	SESSIONSH=\${window% *}
@@ -1619,8 +1619,6 @@ function hw () {
 }
 
 alias contest="cd ~/001/contest; screen -dR contest; cd -"
-
-alias job="cd ~/job; screen -c /home/$USER/dot/screen/job.rc -dR job"
 
 alias q=exit
 

@@ -65,32 +65,27 @@ function mjd () {
     if [[ -f $(pwd)/$status ]] ; then mv $(pwd)/$status $mjds ; fi
     url=$(yq -r .url $mjds/$status | sed -nE 's/^(.*)$/\[\1]\(\1\)/p')
     spoiler=$(yq -r .spoiler_text $mjds/$status)
-    content=$(yq -r .content $mjds/$status | sed -e "s/&#39;/'/g" -e 's/"/\\"/g')
+    content=$(yq -r .content $mjds/$status)
     echo url = $url
     echo spoiler = $spoiler
     preamble="### $url\\
 \\
 ###### MJD toot content:\\
 \\
-$spoiler
+$spoiler\\
 \\
 "
     echo content = $content
-    ai="### $url\\
-\\
-###### MJD toot content:\\
-\\
-$spoiler
-\\
+    ai="$preamble\\
 $content\\
 \\
 ###### MJD evaluation:\\
 \\
-* AI-positive\\
++ AI-positive\\
 \\
-* AI-neutral\\
++ AI-neutral\\
 \\
-* AI-negative\\
++ AI-negative\\
 \\
 ###### Dr Bean evaluation:\\
 \\
@@ -98,9 +93,10 @@ $content\\
     echo ai = $ai
     echo enterline = $enterline
     echo preamble = $preamble
-    sed -i.BAK -E "${enterline}i\\
-$preamble" $story
+#     sed -i.BAK -E "${enterline}i\\
+# $preamble" $story
     sed -i.BAK -E "${enterline}a\\
-$content" $story
+$ai" $story
+# echo $ai >> $story
     tt ::pages -t AIFail -s MJDFailUp
 }

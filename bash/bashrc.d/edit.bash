@@ -1,7 +1,7 @@
 # functions, vars etc instantiated in bashrc for prof paper editing
 
 alias jasoncclu='edit -s jasoncclu -f v2g -w ed -w vcs'
-alias huichiehli='edit -s huichiehli -f domain -w ed -w vcs'
+alias huichiehli='edit -s huichiehli -f rev-active -w ed -w vcs'
 alias jkliang='edit -s jkliang -f ai -w vcs -w ed'
 alias yingchih='edit -s yingchih -f rev-hfr.supp -w vcs -w ed'
 alias yschien='edit -s yschien -f comparison -w vcs -w ed'

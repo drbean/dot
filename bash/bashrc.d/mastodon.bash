@@ -68,7 +68,8 @@ function mjd () {
     content=$(yq -r .content $mjds/$status)
     echo url = $url
     echo spoiler = $spoiler
-    preamble="### $url\\
+    preamble="\\
+### $url\\
 \\
 ###### MJD toot content:\\
 \\

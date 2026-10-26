@@ -6,7 +6,7 @@ alias jkliang='edit -s jkliang -f ai -w vcs -w ed'
 alias yingchih='edit -s yingchih -f rev-hfr.supp -w vcs -w ed'
 alias yschien='edit -s yschien -f comparison -w vcs -w ed'
 alias product='edit -s yschien -f comparison -w pandoc -w cygstart -w lftp'
-alias issues='edit -s yingchih -f rev-hfr -w issues'
+alias issues='edit -s huichiehli -f rev-active -w issues'
 function edit () {
     OPTIND=1
     local arg SOURCE REPO FILE SCREEN

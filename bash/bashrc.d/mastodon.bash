@@ -31,12 +31,13 @@ function conitzer () {
     conitzers=~/curriculum/pages/mastodon/math/conitzer
     story=$M/ConitzerFail.md
     enterline=$(( $(wc -l < $story) - 11 ))
-    mv $(pwd)/$status $conitzers
-    url=$(yq -r .url $conitzers/$status | sed -nE 's/^(.*)$/\[\1]\(\1\)/p')
+    if [[ -f $(pwd)/$status ]] ; then mv $(pwd)/$status $conitzers ; fi
+    url=$(yq -r .url $conitzers/$status)
+    link=$(sed -nE 's/^(.*)$/\[\1]\(\1\)/p' <<< $url)
     content=$(yq -r .content $conitzers/$status | sed -nE 's/"/\\"/gp')
-    echo url = $url
+    echo url = "$url" , link = "$link" , spoiler = "$spoiler"
     echo content = $content
-    ai="### $url\\
+    ai="### $link\\
 \\
 ###### Conitzer toot content:\\
 \\
@@ -53,6 +54,7 @@ $content\\
     echo enterline = $enterline
     sed -i.BAK -E "${enterline}a\\
 $ai" $story
+    cygstart $url
     tt ::pages -t AIFail -s ConitzerFail
 }
 
@@ -63,13 +65,13 @@ function mjd () {
     story=$M/MJDFailUp.md
     enterline=$(( $(wc -l < $story) - 10 ))
     if [[ -f $(pwd)/$status ]] ; then mv $(pwd)/$status $mjds ; fi
-    url=$(yq -r .url $mjds/$status | sed -nE 's/^(.*)$/\[\1]\(\1\)/p')
+    url=$(yq -r .url $mjds/$status)
+    link=$(sed -nE 's/^(.*)$/\[\1]\(\1\)/p' <<< $url)
     spoiler=$(yq -r .spoiler_text $mjds/$status)
     content=$(yq -r .content $mjds/$status)
-    echo url = $url
-    echo spoiler = $spoiler
+    echo url = "$url" , link = "$link" , spoiler = "$spoiler"
     preamble="\\
-### $url\\
+### $link\\
 \\
 ###### MJD toot content:\\
 \\
@@ -99,5 +101,6 @@ $content\\
     sed -i.BAK -E "${enterline}a\\
 $ai" $story
 # echo $ai >> $story
+    cygstart $url
     tt ::pages -t AIFail -s MJDFailUp
 }

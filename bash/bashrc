@@ -35,6 +35,7 @@ export TE='∃'
 export TM='™'
 export SHRUG='¯\_(ツ)_/¯'
 export PILCROW='¶'
+export RETURN='⏎'
 alias arrow="echo -n → "
 alias AT="echo -n ＠"
 

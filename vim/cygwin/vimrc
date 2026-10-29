@@ -1,4 +1,4 @@
-" Last Edit: 2026 Jun 10,  8:47:04 AM
+" Last Edit: 2026 Oct 29, 10:22:14 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -630,7 +630,7 @@ au!
 
 " pandoc link list
 au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>l ^/https*:<CR>i](<Esc>A)<Esc>I[<Esc>
-au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:i](A)I[V<o
+au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md ino <buffer> <LocalLeader>l <Esc>^/https*:<CR>i](<Esc>A)<Esc>I[<Esc>V<I
 
 au BufEnter slides.md,README.md,$STORY.md,*/markdown/*.md nn <buffer> <LocalLeader>ll "lyiWi<CR><Esc>mBEmEa<CR><Esc>"lPkgJ`Bi[<Esc>`Ela](<Esc>$a)<CR><Esc>
 
@@ -916,6 +916,8 @@ au FileType markdown map <LocalLeader>e
 " pandoc/markdown's U+2019 apostrophe
 au BufEnter *.md inoremap <LocalLeader>' [']{dir="rtl"}
 au BufEnter issues.md setlocal textwidth=43
+	\ setlocal et ts=4 sts=4
+	\ %ret!
 au FileType markdown imap <buffer> <LocalLeader>gq$ <Esc>gq$A
 
 augroup END

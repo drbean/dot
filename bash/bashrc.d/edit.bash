@@ -52,8 +52,10 @@ function edit () {
     screen -dR ${SOURCE#*/}.$FILE.${screenname%,} $SESSIONSH
 }
 
-# returns previous \$FILE commit/ci message parameterized on number before
-function ci () { n=$1 ; svn log $F | head -n $((4 * $n)) | tail -n 1 ; }
+# return previous \$FILE log data, commit/ci message parameterized on number before
+function logdata () { n=$1 ; svn log $F | head -n $((4 * $n)) | tail -n 4 ; }
+function ci () { n=$1 ; logdata $n | sed -nE '4p' ; }
+function r () { n=$1 ; logdata $n | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p' ; }
 
 function package_product () {
 

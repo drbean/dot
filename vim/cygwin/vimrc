@@ -1,4 +1,4 @@
-" Last Edit: 2026 Oct 29, 10:56:48 PM
+" Last Edit: 2026 Oct 31,  8:49:33 PM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -915,9 +915,8 @@ au FileType markdown map <LocalLeader>e
 	\ vip:s/^:\@!/> /<CR>
 " pandoc/markdown's U+2019 apostrophe
 au BufEnter *.md inoremap <LocalLeader>' [']{dir="rtl"}
-au BufEnter issues.md setlocal textwidth=43
-	\ :setlocal et ts=4 sts=4
-	\ :%ret!
+au BufEnter issues.md setlocal textwidth=43 et ts=4 sts=4
+au BufEnter issues.md %ret!
 au FileType markdown imap <buffer> <LocalLeader>gq$ <Esc>gq$A
 
 augroup END

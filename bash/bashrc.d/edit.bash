@@ -52,21 +52,45 @@ function edit () {
     screen -dR ${SOURCE#*/}.$FILE.${screenname%,} $SESSIONSH
 }
 
-# return previous \$FILE log data, commit/ci message parameterized on number before
-function logdata () { n=$1 ; svn log $F | head -n $((4 * $n)) | tail -n 4 ; }
-function ci () { n=$1 ; logdata $n | sed -nE '4p' ; }
-function r () { n=$1 ; logdata $n | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p' ; }
+# return previous \$FILE,issue log data, commit/ci message parameterized on number before
+function log_FILE_data () { n=$1 ; svn log $F | head -n $((4 * $n)) | tail -n 4 ; }
+function log_ISSUES_data () { n=$1 ; svn log issues.md | head -n $((4 * $n)) | tail -n 4 ; }
+function ci () { n=$1 ; log_FILE_data $n | sed -nE '4p' ; }
+function r () { n=$1 ; log_FILE_data $n | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p' ; }
 
 function package_product () {
 
+	FILE=issues pandoc -o $FILE.docx --reference-doc=./$FILE.docx $FILE.md
 	MINE=my_$FILE; pandoc -o $MINE.docx --reference-doc=./$FILE.docx $FILE.md
-	pandoc -o issues.docx issues.md
+	cp {orig,their}_$FILE.docx
+	cygstart $MINE.docx
+	cygstart their_$FILE.docx
+}
+
+# rev-FILE png in media/diff/FILE#rev-
+function generate_png_log () {
+	PNG=$(ls $W/Pictures/mintty/$(date -I)*)
+	magick $PNG -append media/diff/${FILE#rev-}/chargitdiff.png
+	cygstart media/diff/${FILE#rev-}/chargitdiff.png
 }
 
 function upload_product () {
 	cd ~/profedit/$SOURCE
+	docx_upload
+	png_upload
+}
+function docx_upload () {
 	lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && mput their_$FILE.docx issues.docx issues.md"
-	lftp -c "open sftp://drbean@freeshell.org && lcd media/diff/$FILE/ && cd edit/$SOURCE && mput diffchar.png gitdiff.png"
+}
+function png_upload () {
+	lftp -c "open sftp://drbean@freeshell.org && lcd media/diff/${FILE#rev-}/ && cd edit/$SOURCE && mput diffchar.png gitdiff.png"
 }
 
-export edit ci upload_product
+export edit ci package_product upload_product log_FILE_data log_ISSUES_dat
+
+case "$1" in
+    "") ;;
+    log_FILE_data) "$@"; exit;;
+    log_ISSUES_data) "$@"; exit;;
+    *) echo "Unkown function: $1()"; exit 2;;
+esac

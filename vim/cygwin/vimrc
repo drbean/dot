@@ -1,4 +1,4 @@
-" Last Edit: 2026 Oct 31,  8:49:33 PM
+" Last Edit: 2026 Nov 07,  4:48:42 AM
 
 " I sourced this from $HOME/share/vim, using same vimrc on other platforms,
 " but now I've changed my mind, FTPing wrong file many times
@@ -19,6 +19,10 @@ if !has('nvim')
 
 	unlet! skip_defaults_vim
 	source $VIMRUNTIME/defaults.vim
+
+	" no 'scrolloff-line context around cursor
+	" moved to edge of window
+	se scrolloff=0
 
 	" Toggles no/paste and reports it
 	" map \P :set paste!<CR>: se paste?<CR>

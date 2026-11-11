@@ -85,6 +85,7 @@ function download_docx () {
         esac
     done
     lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && get $FILE.docx"
+    cp {,orig_}$FILE.docx
 }
 function docx2markdown () {
     pandoc -o $FILE.reference.docx --print-default-data-file reference.docx

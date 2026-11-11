@@ -12,34 +12,34 @@ function edit () {
     local arg SOURCE REPO FILE SCREEN
     while getopts 's:r:f:w:a' arg
     do
-	SESSIONSH=$HOME/dot/screen/edit.sh
+    SESSIONSH=$HOME/dot/screen/edit.sh
         case ${arg} in
             s) SOURCE=${OPTARG};;
             r) REPO=${OPTARG};;
             f) FILE=${OPTARG};;
             w) SCREEN+=( "${OPTARG}" ) ;;
             a) SCREEN=( "all" ) ;;
-	    *) echo "opts: -s -r -f -w -a" ; exit 0 # illegal option
+        *) echo "opts: -s -r -f -w -a" ; exit 0 # illegal option
         esac
     done
     shift $(( OPTIND - 1 ))
     if [[ $SCREEN == *all* ]] ; then
-	cat $HOME/dot/screen/edits/*.sh > $SESSIONSH
+    cat $HOME/dot/screen/edits/*.sh > $SESSIONSH
     else
-	if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
-	# echo -e '#!\n\n' > $SESSIONSH
-	touch $SESSIONSH
-	chmod 755 $SESSIONSH
-	for s in ${SCREEN[@]} ; do
-	    echo w=$s
-	    echo "screen $HOME/dot/screen/edits/$s.sh" >> $SESSIONSH
-	done
+    if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
+    # echo -e '#!\n\n' > $SESSIONSH
+    touch $SESSIONSH
+    chmod 755 $SESSIONSH
+    for s in ${SCREEN[@]} ; do
+        echo w=$s
+        echo "screen $HOME/dot/screen/edits/$s.sh" >> $SESSIONSH
+    done
     fi
     echo ${SCREEN[*]} $SESSIONSH
     export SCREEN
     screenname=
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
-	screenname+="${SCREEN[$i]},"
+    screenname+="${SCREEN[$i]},"
     done
     cd ~/profedit/$SOURCE
     REPO=${REPO:-'.'}
@@ -60,30 +60,47 @@ function r () { n=$1 ; log_FILE_data $n | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p'
 
 function package_product () {
 
-	FILE=issues pandoc -o $FILE.docx --reference-doc=./$FILE.docx $FILE.md
-	MINE=my_$FILE; pandoc -o $MINE.docx --reference-doc=./$FILE.docx $FILE.md
-	cp {orig,their}_$FILE.docx
-	cygstart $MINE.docx
-	cygstart their_$FILE.docx
+    FILE=issues pandoc -o $FILE.docx --reference-doc=./$FILE.docx $FILE.md
+    MINE=my_$FILE; pandoc -o $MINE.docx --reference-doc=./$FILE.docx $FILE.md
+    cp {orig,their}_$FILE.docx
+    cygstart $MINE.docx
+    cygstart their_$FILE.docx
 }
 
 # rev-FILE png in media/diff/FILE#rev-
 function generate_png_log () {
-	PNG=$(ls $W/Pictures/mintty/$(date -I)*)
-	magick $PNG -append media/diff/${FILE#rev-}/chargitdiff.png
-	cygstart media/diff/${FILE#rev-}/chargitdiff.png
+    PNG=$(ls $W/Pictures/mintty/$(date -I)*)
+    magick $PNG -append media/diff/${FILE#rev-}/chargitdiff.png
+    cygstart media/diff/${FILE#rev-}/chargitdiff.png
 }
 
+function download_docx () {
+    local arg SOURCE FILE
+    while getopts 's:f:' arg
+    do
+        case ${arg} in
+            s) SOURCE=${OPTARG};;
+            f) FILE=${OPTARG};;
+        *) echo "opts: -s -f" ; exit 0 # illegal option
+        esac
+    done
+    lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && get $FILE.docx"
+}
+function docx2markdown () {
+    pandoc -o $FILE.reference.docx --print-default-data-file reference.docx
+    pandoc -o orig_$FILE.md --from=docx+styles --to=markdown-link_attributes --extract-media=./ $FILE.docx
+    cp {orig_,}$FILE.md
+}
 function upload_product () {
-	cd ~/profedit/$SOURCE
-	docx_upload
-	png_upload
+    cd ~/profedit/$SOURCE
+    docx_upload
+    png_upload
 }
 function docx_upload () {
-	lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && mput their_$FILE.docx issues.docx issues.md"
+    lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && mput their_$FILE.docx issues.docx issues.md"
 }
 function png_upload () {
-	lftp -c "open sftp://drbean@freeshell.org && lcd media/diff/${FILE#rev-}/ && cd edit/$SOURCE && mput diffchar.png gitdiff.png"
+    lftp -c "open sftp://drbean@freeshell.org && lcd media/diff/${FILE#rev-}/ && cd edit/$SOURCE && mput diffchar.png gitdiff.png"
 }
 
 export edit ci package_product upload_product log_FILE_data log_ISSUES_dat

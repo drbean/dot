@@ -49,7 +49,7 @@ function edit () {
     R=$(svn info $F | sed -nE '5s/^.*(\^.*$)/\1/p')
     PREV=$(ci 1)
     export SOURCE REPO FILE F R1 GIT_R1 R PREV
-    screen -dR ${SOURCE#*/}.$FILE.${screenname%,} $SESSIONSH
+    screen -dR $FILE.${screenname%,} $SESSIONSH
 }
 
 # return previous \$FILE,issue log data, commit/ci message parameterized on number before

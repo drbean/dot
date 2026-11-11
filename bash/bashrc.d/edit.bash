@@ -58,11 +58,23 @@ function log_ISSUES_data () { n=$1 ; svn log issues.md | head -n $((4 * $n)) | t
 function ci () { n=$1 ; log_FILE_data $n | sed -nE '4p' ; }
 function r () { n=$1 ; log_FILE_data $n | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p' ; }
 
+function markdown2docx () {
+    local arg FILE
+    while getopts 's:f:' arg
+    do
+        case ${arg} in
+            f) FILE=${OPTARG};;
+	    *) echo "opts: -f" ; exit 0 # illegal option
+        esac
+    done
+    pandoc -o $FILE.docx --reference-doc=./$FILE.docx $FILE.md ;
+}
 function package_product () {
 
     FILE=issues pandoc -o $FILE.docx --reference-doc=./$FILE.docx $FILE.md
     MINE=my_$FILE; pandoc -o $MINE.docx --reference-doc=./$FILE.docx $FILE.md
     cp {orig,their}_$FILE.docx
+    md5sum {,orig_,their_,my_}$FILE.docx
     cygstart $MINE.docx
     cygstart their_$FILE.docx
 }

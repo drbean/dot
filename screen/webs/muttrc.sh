@@ -1,0 +1,4 @@
+# muttrc
+
+screen v ~/.muttrc
+

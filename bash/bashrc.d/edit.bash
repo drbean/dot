@@ -1,47 +1,47 @@
 # functions, vars etc instantiated in bashrc for prof paper editing
 
 alias jasoncclu='edit -s jasoncclu -f v2g -w ed -w vcs'
-alias huichiehli='edit -s huichiehli -f ideas -w ed -w vcs'
+function huichiehli () { edit -s huichiehli -f ideas -w ed -w vcs ; }
 alias jkliang='edit -s jkliang -f ai -w vcs -w ed'
 alias yingchih='edit -s yingchih -f rev-hfr.supp -w vcs -w ed'
 alias yschien='edit -s yschien -f comparison -w vcs -w ed'
 alias product='edit -s yschien -f comparison -w pandoc -w cygstart -w lftp'
 alias issues='edit -s huichiehli -f ideas -w issues'
 function edit () {
+    PATH=/usr/bin:$PATH
     OPTIND=1
     local arg SOURCE REPO FILE SCREEN
     while getopts 's:r:f:w:a' arg
     do
     SESSIONSH=$HOME/dot/screen/edit.sh
-        case ${arg} in
-            s) SOURCE=${OPTARG};;
-            r) REPO=${OPTARG};;
-            f) FILE=${OPTARG};;
-            w) SCREEN+=( "${OPTARG}" ) ;;
-            a) SCREEN=( "all" ) ;;
-        *) echo "opts: -s -r -f -w -a" ; exit 0 # illegal option
-        esac
+    case ${arg} in
+        s) SOURCE=${OPTARG};;
+        r) REPO=${OPTARG};;
+        f) FILE=${OPTARG};;
+        w) SCREEN+=( "$HOME/dot/screen/edits/${OPTARG}.sh" ) ;;
+        a) SCREEN=( "all" ) ;;
+    *) echo "opts: -s -r -f -w -a" ; exit 0 # illegal option
+    esac
     done
+    cd ~/profedit/$SOURCE
     shift $(( OPTIND - 1 ))
     if [[ $SCREEN == *all* ]] ; then
-    cat $HOME/dot/screen/edits/*.sh > $SESSIONSH
-    else
+    SCREEN=( $(ls $HOME/dot/screen/edits/*.sh) )
+    fi
     if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
     # echo -e '#!\n\n' > $SESSIONSH
     touch $SESSIONSH
     chmod 755 $SESSIONSH
     for s in ${SCREEN[@]} ; do
-        echo w=$s
-        echo "screen $HOME/dot/screen/edits/$s.sh" >> $SESSIONSH
+    echo w=$s
+    echo "screen $s" >> $SESSIONSH
     done
-    fi
-    echo ${SCREEN[*]} $SESSIONSH
+    echo ${SCREEN[*]##*/} $SESSIONSH
     export SCREEN
     screenname=
     for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
-    screenname+="${SCREEN[$i]},"
+        screenname+="${SCREEN[$i]##*/},"
     done
-    cd ~/profedit/$SOURCE
     REPO=${REPO:-'.'}
     F=$HOME/profedit/$SOURCE/$FILE.md
     R1=$(svn log -q -r 1:HEAD --limit 1 $F | sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')
@@ -49,7 +49,7 @@ function edit () {
     R=$(svn info $F | sed -nE '5s/^.*(\^.*$)/\1/p')
     PREV=$(ci 1)
     export SOURCE REPO FILE F R1 GIT_R1 R PREV
-    screen -dR $FILE.${screenname%,} $SESSIONSH
+    screen -S $FILE.${screenname%,} $SESSIONSH
 }
 
 # return previous \$FILE,issue log data, commit/ci message parameterized on number before
@@ -62,10 +62,10 @@ function markdown2docx () {
     local arg FILE
     while getopts 's:f:' arg
     do
-        case ${arg} in
-            f) FILE=${OPTARG};;
-	    *) echo "opts: -f" ; exit 0 # illegal option
-        esac
+    case ${arg} in
+        f) FILE=${OPTARG};;
+    *) echo "opts: -f" ; exit 0 # illegal option
+    esac
     done
     pandoc -o $FILE.docx --reference-doc=./$FILE.docx $FILE.md ;
 }
@@ -90,11 +90,11 @@ function download_docx () {
     local arg SOURCE FILE
     while getopts 's:f:' arg
     do
-        case ${arg} in
-            s) SOURCE=${OPTARG};;
-            f) FILE=${OPTARG};;
-        *) echo "opts: -s -f" ; exit 0 # illegal option
-        esac
+    case ${arg} in
+        s) SOURCE=${OPTARG};;
+        f) FILE=${OPTARG};;
+    *) echo "opts: -s -f" ; exit 0 # illegal option
+    esac
     done
     lftp -c "open sftp://drbean@freeshell.org && cd edit/$SOURCE && get $FILE.docx"
     cp {,orig_}$FILE.docx
@@ -120,7 +120,10 @@ export edit ci package_product upload_product log_FILE_data log_ISSUES_dat
 
 case "$1" in
     "") ;;
+    # edit.bash
+    huichiehli) "$@"; exit;;
+    edit) "$@"; exit;;
     log_FILE_data) "$@"; exit;;
     log_ISSUES_data) "$@"; exit;;
-    *) echo "Unkown function: $1()"; exit 2;;
 esac
+

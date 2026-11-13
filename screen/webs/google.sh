@@ -1,3 +1,3 @@
 # google search interaction with goo, wik, book
 
-screen
+screen ~/dot/bash/bashrc goo drbean commonplace

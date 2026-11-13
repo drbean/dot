@@ -970,7 +970,8 @@ function postmail () {
 
 case "$1" in
     "") ;;
+    # email.bash
     pack_address) "$@"; exit;;
     process_batch) "$@"; exit;;
-    *) echo "Unkown function: $1()"; exit 2;;
 esac
+

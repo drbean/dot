@@ -671,32 +671,31 @@ function screenwriter () {
     while getopts 'p:l:a:c:b:w:fo' arg ; do
         SESSIONSH=$HOME/dot/screen/$a.sh
         case ${arg} in
-            w) SCREEN+=( "${OPTARG}" ) ;;
             f) SCREEN=( "full" ) ;;
             o) SCREEN=( "original" ) ;;
+            w) SCREEN+=( "$HOME/dot/screen/${a}s/${OPTARG}.sh" ) ;;
             lacb) echo "${OPTARG} of l:a:c:b: LAND, AREA, COUNTY email batch source?" ;;
         esac
     done
     shift $(( OPTIND - 1 ))
-    if [[ $SCREEN == *original* ]] ; then touch $SESSIONSH
-    elif [[ $SCREEN == *full* ]] ; then
-        SCREEN=( $(ls $HOME/dot/screen/${a}s/*.sh)  )
+    if [[ $SCREEN != *original* ]] ; then
+        if [[ $SCREEN == *full* ]] ; then
+            SCREEN=( $(ls $HOME/dot/screen/${a}s/*.sh)  )
+        fi
+        if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
+        for s in ${SCREEN[@]} ; do
+            [[ $s =~ \/([^/]*)\.sh ]] && shorts+=( ${BASH_REMATCH[1]} )
+            echo "screen $s" >> $SESSIONSH
+        done
     fi
-    if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
     touch $SESSIONSH
-    chmod 755 $SESSIONSH
-    for s in ${SCREEN[@]} ; do
-        # echo w=$s
-        echo screen $HOME/dot/screen/${a}s/$s.sh >> $SESSIONSH
-    done
     chmod 755 $SESSIONSH
     # echo ${SCREEN[*]} $SESSIONSH
     export SCREEN SESSIONSH sessionname
     sessionname=
-    for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
-        sessionname+="${SCREEN[$i]},"
+    for short in ${shorts[@]} ; do
+        sessionname+="$short,"
     done
-    # echo -e "sh_name: $sh_name\nSESSIONSH: $SESSIONSH\nsessionname: $sessionname"
     echo "$SESSIONSH ${sessionname%,}"
 }
 
@@ -735,14 +734,14 @@ function _${app} () {
 			COMPREPLY=( \${rc[@]%.*} )
 			return 0
 			;;
-		-a)
-			words=\"-a\"
+		-f)
+			words=\"-f\"
 			;;
 		-o)
 			words=\"-o\"
 			;;
 		*)
-			words=\"-w -a -o\"
+			words=\"-w -f -o\"
 			;;
 	esac
 	COMPREPLY=( \$(compgen -W \"\$words\" -- \$cur) )
@@ -1844,6 +1843,7 @@ case "$1" in
     "") ;;
     goo) "$@"; exit;;
     web) "$@"; exit;;
+    tt) "$@"; exit;;
     *) echo "Unknown function: $1()"; exit 2;;
 esac
 

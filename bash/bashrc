@@ -56,6 +56,117 @@ export LEAGUES_RE="cultureA|cultureB|MA0036|GL00018|GL00019|GL00020"
 for i in 'qb -w qt' 'web -w google -w sdf' ; do
     eval "alias ${i// /_}=\"$i\""
 done
+#
+# https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash
+function web () {
+    OPTIND=1
+    local arg SCREEN
+    while getopts 'fow:' arg
+    do
+        SESSIONSH=$HOME/dot/screen/web.sh
+        case ${arg} in
+            f) SCREEN=( "full" ) ;;
+            o) SCREEN=( "original" ) ;;
+            w) SCREEN+=( "$HOME/dot/screen/webs/${OPTARG}.sh" ) ;;
+	    *) echo "opts: -f -o -w" ; exit 0 # illegal option
+        esac
+    done
+    shift $(( OPTIND - 1 ))
+    if [[ $SCREEN != *original* ]] ; then
+        if [[ $SCREEN == *full* ]] ; then
+            SCREEN=( $(ls $HOME/dot/screen/webs/*.sh)  )
+        fi
+        if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
+        for s in ${SCREEN[@]} ; do
+            [[ $s =~ \/([^/]*)\.sh ]] && shorter+=( ${BASH_REMATCH[1]} )
+            echo w=${BASH_REMATCH[1]}
+            echo "screen $s" >> $SESSIONSH
+        done
+    fi
+    touch $SESSIONSH
+    chmod 755 $SESSIONSH
+    echo ${shorter[*]} $SESSIONSH
+    export SCREEN SESSIONSH sessionname
+    sessionname=
+    for (( i=0; i<${#shorter[@]}; i++ )) ; do
+        sessionname+="${shorter[$i]},"
+    done
+    screen -S web.${sessionname%,} $SESSIONSH
+}
+
+# https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash
+function dot () {
+    OPTIND=1
+    local arg SCREEN
+    while getopts 'w:a' arg
+    do
+	SCREENRC=$HOME/dot/screen/dot.rc
+	echo "chdir $HOME/dot" > $SCREENRC
+        case ${arg} in
+            w) SCREEN+=( "${OPTARG}" ) ;;
+            a) SCREEN=( "all" ) ;;
+	    *) echo "opts: -w -a" ; exit 0 # illegal option
+        esac
+    done
+    shift $(( OPTIND - 1 ))
+    if [[ $SCREEN == *all* ]] ; then
+	cat $HOME/dot/screen/dots/*.rc >> $SCREENRC
+    else
+	for s in ${SCREEN[@]} ; do
+	    echo w=$s
+	    cat $HOME/dot/screen/dots/$s.rc >> $SCREENRC
+	done
+    fi
+    R1=$(svn log -q -r 1:HEAD --limit 1 ~/dot | \
+	sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')
+    R=$(svn info ~/dot | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
+    echo ${SCREEN[*]} $SCREENRC
+    export SCREEN SCREENRC R
+    sessionname=
+    for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
+	sessionname+="${SCREEN[$i]},"
+    done
+    screen -c $SCREENRC -S dot.${sessionname%,}
+}
+function spec () {
+    OPTIND=1
+    local arg SCREEN
+    while getopts 'w:a' arg
+    do
+	SCREENRC=$HOME/dot/screen/spec.rc
+        case ${arg} in
+            w) SCREEN+=( "${OPTARG}" ) ;;
+            a) SCREEN=( "all" ) ;;
+	    *) echo "opts: -w -a" >&2 ; exit 0 # illegal option
+        esac
+    done
+    shift $(( OPTIND - 1 ))
+    if [[ $SCREEN == *all* ]] ; then
+	cat $HOME/dot/screen/specs/*.rc > $SCREENRC
+    else
+	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
+	for s in ${SCREEN[@]} ; do
+	    echo w=$s
+	    file="$HOME/dot/screen/specs/$s.rc"
+	    if [[ ! -f $file ]] ; then
+		if man $s > /dev/null 2>&1 ; then
+		    echo "screen man $s" > $file
+		elif $s -h > /dev/null 2>&1 ; then
+		    echo -e "screen\nstuff \"$s --help|less^M\"" > $file
+		fi
+	    fi
+	    cat $file >> $SCREENRC
+	done
+    fi
+    echo ${SCREEN[*]} $SCREENRC
+    export SCREEN SCREENRC
+    sessionname=
+    for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
+	sessionname+="${SCREEN[$i]},"
+    done
+    screen -c $SCREENRC -S spec.${sessionname%,}
+}
+
 
 alias Mo="screen -S Mo mosh drbean@sdf.org --server='LANG=en_US.UTF-8 mosh-server'"
 # alias mosh="export LANG=\"en_US.UTF-8\" && export LC_CTYPE=\"en_US.UTF-8\" && export LC_COLLATE=\"en_US.UTF-8\" && export LC_TIME=\"en_US.UTF-8\" && export LC_NUMERIC=\"en_US.UTF-8\" && export LC_MONETARY=\"en_US.UTF-8\" && export LC_MESSAGES=\"en_US.UTF-8\" && export LC_ALL=\"en_US.UTF-8\" && mosh"
@@ -569,16 +680,15 @@ function screenwriter () {
     shift $(( OPTIND - 1 ))
     if [[ $SCREEN == *original* ]] ; then touch $SESSIONSH
     elif [[ $SCREEN == *full* ]] ; then
-        cat $HOME/dot/screen/${a}s/*.sh > $SESSIONSH
-    else
-        if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
-        touch $SESSIONSH
-        chmod 755 $SESSIONSH
-        for s in ${SCREEN[@]} ; do
-            # echo w=$s
-            cat $HOME/dot/screen/${a}s/$s.sh >> $SESSIONSH
-        done
+        SCREEN=( $(ls $HOME/dot/screen/${a}s/*.sh)  )
     fi
+    if [[ -f $SESSIONSH ]] ; then rm $SESSIONSH ; fi
+    touch $SESSIONSH
+    chmod 755 $SESSIONSH
+    for s in ${SCREEN[@]} ; do
+        # echo w=$s
+        echo screen $HOME/dot/screen/${a}s/$s.sh >> $SESSIONSH
+    done
     chmod 755 $SESSIONSH
     # echo ${SCREEN[*]} $SESSIONSH
     export SCREEN SESSIONSH sessionname
@@ -641,110 +751,6 @@ complete -F _${app} ${app}" > ~/dot/bash/bash_completion/$app
     fi
 
 done
-
-# https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash
-function web () {
-    OPTIND=1
-    local arg SCREEN
-    while getopts 'w:a' arg
-    do
-	SCREENRC=$HOME/dot/screen/web.rc
-        case ${arg} in
-            w) SCREEN+=( "${OPTARG}" ) ;;
-            a) SCREEN=( "all" ) ;;
-	    *) echo "opts: -w -a" ; exit 0 # illegal option
-        esac
-    done
-    shift $(( OPTIND - 1 ))
-    if [[ $SCREEN == *all* ]] ; then
-	cat $HOME/dot/screen/webs/*.rc > $SCREENRC
-    else
-	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
-	for s in ${SCREEN[@]} ; do
-	    echo w=$s
-	    cat $HOME/dot/screen/webs/$s.rc >> $SCREENRC
-	done
-    fi
-    echo ${SCREEN[*]} $SCREENRC
-    export SCREEN SCREENRC
-    sessionname=
-    for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
-	sessionname+="${SCREEN[$i]},"
-    done
-    screen -c $SCREENRC -S web.${sessionname%,}
-}
-# https://stackoverflow.com/questions/7529856/retrieving-multiple-arguments-for-a-single-option-using-getopts-in-bash
-function dot () {
-    OPTIND=1
-    local arg SCREEN
-    while getopts 'w:a' arg
-    do
-	SCREENRC=$HOME/dot/screen/dot.rc
-	echo "chdir $HOME/dot" > $SCREENRC
-        case ${arg} in
-            w) SCREEN+=( "${OPTARG}" ) ;;
-            a) SCREEN=( "all" ) ;;
-	    *) echo "opts: -w -a" ; exit 0 # illegal option
-        esac
-    done
-    shift $(( OPTIND - 1 ))
-    if [[ $SCREEN == *all* ]] ; then
-	cat $HOME/dot/screen/dots/*.rc >> $SCREENRC
-    else
-	for s in ${SCREEN[@]} ; do
-	    echo w=$s
-	    cat $HOME/dot/screen/dots/$s.rc >> $SCREENRC
-	done
-    fi
-    R1=$(svn log -q -r 1:HEAD --limit 1 ~/dot | \
-	sed -nE '2s/^r([[:digit:]]+) .*$/\1/p')
-    R=$(svn info ~/dot | sed -nE '/^Relative/s/^.*(\^.*$)/\1/p')
-    echo ${SCREEN[*]} $SCREENRC
-    export SCREEN SCREENRC R
-    sessionname=
-    for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
-	sessionname+="${SCREEN[$i]},"
-    done
-    screen -c $SCREENRC -S dot.${sessionname%,}
-}
-function spec () {
-    OPTIND=1
-    local arg SCREEN
-    while getopts 'w:a' arg
-    do
-	SCREENRC=$HOME/dot/screen/spec.rc
-        case ${arg} in
-            w) SCREEN+=( "${OPTARG}" ) ;;
-            a) SCREEN=( "all" ) ;;
-	    *) echo "opts: -w -a" >&2 ; exit 0 # illegal option
-        esac
-    done
-    shift $(( OPTIND - 1 ))
-    if [[ $SCREEN == *all* ]] ; then
-	cat $HOME/dot/screen/specs/*.rc > $SCREENRC
-    else
-	if [[ -f $SCREENRC ]] ; then rm $SCREENRC ; fi
-	for s in ${SCREEN[@]} ; do
-	    echo w=$s
-	    file="$HOME/dot/screen/specs/$s.rc"
-	    if [[ ! -f $file ]] ; then
-		if man $s > /dev/null 2>&1 ; then
-		    echo "screen man $s" > $file
-		elif $s -h > /dev/null 2>&1 ; then
-		    echo -e "screen\nstuff \"$s --help|less^M\"" > $file
-		fi
-	    fi
-	    cat $file >> $SCREENRC
-	done
-    fi
-    echo ${SCREEN[*]} $SCREENRC
-    export SCREEN SCREENRC
-    sessionname=
-    for (( i=0; i<${#SCREEN[@]}; i++ )) ; do
-	sessionname+="${SCREEN[$i]},"
-    done
-    screen -c $SCREENRC -S spec.${sessionname%,}
-}
 
 alias irc="cd ~/znc; screen -c /home/$USER/dot/screen/irc.rc -dR irc; cd -"
 
@@ -1649,8 +1655,8 @@ alias q=exit
 
 # User dependent .bashrc file
 
-# If not running interactively, don't do anything
-[[ "$-" != *i* ]] && return
+# # If not running interactively, don't do anything
+# [[ "$-" != *i* ]] && return
 
 # Shell Options
 #
@@ -1834,5 +1840,12 @@ function wcd () {
 # 
 # alias cd=cd_func
 
-# vim: set ts=8 sts=4 sw=4 noet:
+case "$1" in
+    "") ;;
+    goo) "$@"; exit;;
+    web) "$@"; exit;;
+    *) echo "Unknown function: $1()"; exit 2;;
+esac
+
+# vim: set ts=4 sts=4 sw=4 et:
 

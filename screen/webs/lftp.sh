@@ -1,5 +1,5 @@
 # lftp
 
-screen lftp sftp://drbean@freeshell.org
+lftp sftp://drbean@freeshell.org
 
 

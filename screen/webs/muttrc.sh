@@ -1,4 +1,4 @@
 # muttrc
 
-screen v ~/.muttrc
+v ~/.muttrc
 

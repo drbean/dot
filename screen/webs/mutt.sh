@@ -1,5 +1,5 @@
 # mutt
 
-screen mutt
+mutt
 
 

@@ -730,8 +730,8 @@ function _${app} () {
 			;;
 		-w)
 			cd ~/dot/screen/${app}s
-			rc=( \$(compgen -f -- \${cur}) )
-			COMPREPLY=( \${rc[@]%.*} )
+			sh=( \$(compgen -f -- \${cur}) )
+			COMPREPLY=( \${sh[@]%%.*} )
 			return 0
 			;;
 		-f)

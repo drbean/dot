@@ -1,0 +1,39 @@
+# file: job
+# job parameter completion
+# created by bashrc on startup
+
+function _job () {
+	local cur prev opts fileopts diropts keywords
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	prev2="${COMP_WORDS[COMP_CWORD-2]}"
+	opts="-w -a"
+	fileopts="-a"
+	diropts="-w"
+
+	words=""
+
+	case "${prev}" in
+		job)
+			words="-w -a -o"
+			;;
+		-w)
+			cd ~/dot/screen/jobs
+			sh=( $(compgen -f -- ${cur}) )
+			COMPREPLY=( ${sh[@]%%.*} )
+			return 0
+			;;
+		-f)
+			words="-f"
+			;;
+		-o)
+			words="-o"
+			;;
+		*)
+			words="-w -f -o"
+			;;
+	esac
+	COMPREPLY=( $(compgen -W "$words" -- $cur) )
+}
+complete -F _job job

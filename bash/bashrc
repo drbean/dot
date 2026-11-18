@@ -726,7 +726,7 @@ function _${app} () {
 
 	case \"\${prev}\" in
 		${app})
-			words=\"-w -a -o\"
+			words=\"-w -f -o\"
 			;;
 		-w)
 			cd ~/dot/screen/${app}s

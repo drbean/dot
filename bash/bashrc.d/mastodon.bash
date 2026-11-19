@@ -8,11 +8,11 @@ declare -x instanceS="${!instance[@]}"
 for i in $instanceS ; do declare -x ${i}_instance=${instance[$i]} ; done
 
 for i in $instanceS ; do
-    eval "function $i.toot () { toot --as drbean@${instance[$i]} \"\$@\" ; }"
+    eval "function ${i}_toot () { toot --as drbean@${instance[$i]} \"\$@\" ; }"
 done
 
 for i in $instanceS; do
-    eval "function ${i}_toot_tui () { $i.toot tui -m cygstart ; }"
+    eval "function ${i}_toot_tui () { ${i}_toot tui -m cygstart ; }"
 done
 
 echo "for i in \$instanceS ; do screen bash -lic \${i}_toot_tui ; done" > ~/curriculum/pages/mastodon/toot_instance
@@ -20,10 +20,10 @@ echo "for i in \$instanceS ; do screen bash -lic \${i}_toot_tui ; done" > ~/curr
 alias mastodon_-o="mastodon -o"
 
 for i in $instanceS; do
-    eval "function $i.pub () { pub -i $i \"\$@\" ; }"
+    eval "function ${i}_pub () { pub -i $i \"\$@\" ; }"
 done
 
-function unfollow_follow () { account=$1 ; preinstance=$2 ; postinstance=$3 ;  $preinstance.toot unfollow $account &&  $postinstance.toot follow  $account ;  }
+function unfollow_follow () { account=$1 ; preinstance=$2 ; postinstance=$3 ;  ${preinstance}_toot unfollow $account &&  ${postinstance}_toot follow  $account ;  }
 
 function conitzer () {
     i=$1
